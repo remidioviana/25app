@@ -1,0 +1,469 @@
+{
+  "raster_count": 77,
+  "landscape_count": 0,
+  "visual_inspection": "See VISUAL_AUDIT.json for actual viewport checks; dimension audit alone does not validate rendering.",
+  "assets": [
+    {
+      "path": "mobile/assets/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/splash-icon.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/adab/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/adab/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/adab/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/adl/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/adl/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/adl/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/amanah-eco/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/amanah-eco/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/amanah-eco/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/gurbah/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/gurbah/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/gurbah/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/himam/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/himam/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/himam/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/himayah/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/himayah/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/himayah/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/hisad/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/hisad/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/hisad/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/iqamah/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/iqamah/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/iqamah/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/istithmar/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/istithmar/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/istithmar/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/jomrok/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/jomrok/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/jomrok/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/khibrat/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/khibrat/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/khibrat/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/khidmah/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/khidmah/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/khidmah/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/majlis/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/majlis/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/majlis/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/manzil/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/manzil/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/manzil/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/mizan/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/mizan/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/mizan/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/munagasah/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/munagasah/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/munagasah/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/nafas/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/nafas/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/nafas/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/rafiq/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/rafiq/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/rafiq/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/sahil/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/sahil/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/sahil/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/sawm/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/sawm/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/sawm/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/tadweer/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/tadweer/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/tadweer/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/tawassul/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/tawassul/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/tawassul/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/tawteen/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/tawteen/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/tawteen/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/thawg/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/thawg/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/thawg/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    },
+    {
+      "path": "mobile/assets/variants/turath/hero.png",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": 0.5625
+    },
+    {
+      "path": "mobile/assets/variants/turath/icon.png",
+      "width": 1024,
+      "height": 1024,
+      "aspect_ratio": 1.0
+    },
+    {
+      "path": "mobile/assets/variants/turath/splash.png",
+      "width": 1284,
+      "height": 2778,
+      "aspect_ratio": 0.46220302375809935
+    }
+  ]
+}

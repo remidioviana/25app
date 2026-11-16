@@ -1,0 +1,128 @@
+{
+  "id": "190be929-4461-4147-811e-c4f0a60a742c",
+  "agent": "tawteen",
+  "goal": "Workforce planning: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "employees": [
+      {
+        "active": true,
+        "id": "E1",
+        "national": false
+      },
+      {
+        "active": true,
+        "id": "E2",
+        "national": false
+      },
+      {
+        "active": false,
+        "id": "E3",
+        "national": true
+      }
+    ],
+    "target_percent": 10
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.811543+00:00",
+  "updated": "2026-11-15T05:20:08.813645+00:00",
+  "result": {
+    "agent": "tawteen",
+    "analysis": {
+      "active": 2,
+      "current_percent": 0.0,
+      "gap_at_current_headcount": 1,
+      "national_count": 0,
+      "note": "User-specified target, not a regulatory determination; assumes a constant workforce size.",
+      "target_count_at_current_headcount": 1
+    },
+    "analysis_hash": "737e07b109d783cfeb5d1889ddf7847c6fc936440bdcf32e0c37987b6fb72548",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Workforce planning: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "2499b378370af9c57482a25a67e03fd27eacf6fbc5832d6fa53aae444b7edb3c",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "4492f9a1b83228856c3e10a74e656b3ec2c48b26fa26c282803d22afdeabee1a",
+  "review": "pending",
+  "lease": "e58dfd55-9b18-40ad-b338-0476370c9cbf",
+  "events": [
+    {
+      "id": 111,
+      "run": "190be929-4461-4147-811e-c4f0a60a742c",
+      "at": "2026-11-15T05:20:08.812226+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 112,
+      "run": "190be929-4461-4147-811e-c4f0a60a742c",
+      "at": "2026-11-15T05:20:08.812574+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 113,
+      "run": "190be929-4461-4147-811e-c4f0a60a742c",
+      "at": "2026-11-15T05:20:08.813039+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "active": 2,
+          "current_percent": 0.0,
+          "gap_at_current_headcount": 1,
+          "national_count": 0,
+          "note": "User-specified target, not a regulatory determination; assumes a constant workforce size.",
+          "target_count_at_current_headcount": 1
+        },
+        "output_hash": "737e07b109d783cfeb5d1889ddf7847c6fc936440bdcf32e0c37987b6fb72548",
+        "tool": "tawteen_analyze"
+      }
+    },
+    {
+      "id": 114,
+      "run": "190be929-4461-4147-811e-c4f0a60a742c",
+      "at": "2026-11-15T05:20:08.813399+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "2499b378370af9c57482a25a67e03fd27eacf6fbc5832d6fa53aae444b7edb3c",
+        "output_hash": "737e07b109d783cfeb5d1889ddf7847c6fc936440bdcf32e0c37987b6fb72548",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 115,
+      "run": "190be929-4461-4147-811e-c4f0a60a742c",
+      "at": "2026-11-15T05:20:08.813843+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "bfeb83ee35731b8c5d9dd491ec85b72c42036aaa6b9a6a07c83dd0d8911f7d7a",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "bfeb83ee35731b8c5d9dd491ec85b72c42036aaa6b9a6a07c83dd0d8911f7d7a"
+}

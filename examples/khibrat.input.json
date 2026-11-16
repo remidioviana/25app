@@ -1,0 +1,17 @@
+{
+  "criteria": [
+    "python",
+    "sql",
+    "testing"
+  ],
+  "evidence": [
+    {
+      "criterion": "python",
+      "reference": "portfolio:project1"
+    },
+    {
+      "criterion": "testing",
+      "reference": "portfolio:tests"
+    }
+  ]
+}

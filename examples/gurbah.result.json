@@ -1,0 +1,163 @@
+{
+  "id": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+  "agent": "gurbah",
+  "goal": "Move command center: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14",
+    "tasks": [
+      {
+        "depends_on": [],
+        "done": false,
+        "due": "2026-11-10",
+        "id": "visa",
+        "title": "Prepare documents"
+      },
+      {
+        "depends_on": [
+          "visa"
+        ],
+        "done": false,
+        "due": "2026-12-01",
+        "id": "housing",
+        "title": "Compare housing"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.732547+00:00",
+  "updated": "2026-11-15T05:20:08.734847+00:00",
+  "result": {
+    "agent": "gurbah",
+    "analysis": {
+      "ordered_tasks": [
+        {
+          "depends_on": [],
+          "done": false,
+          "due": "2026-11-10",
+          "id": "visa",
+          "overdue": true,
+          "ready": true,
+          "title": "Prepare documents"
+        },
+        {
+          "depends_on": [
+            "visa"
+          ],
+          "done": false,
+          "due": "2026-12-01",
+          "id": "housing",
+          "overdue": false,
+          "ready": false,
+          "title": "Compare housing"
+        }
+      ],
+      "remaining": 2
+    },
+    "analysis_hash": "a3f65db1a8c6b1facc846ecafb8436f15c6e9c6fda980144b12c3fb47f1ca81d",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Move command center: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "3124e2907ce2847359460cfe17fd0f06920e2478707464cd31e3484d7460cb3d",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "77ab692af31b6a21198a2608a8af3aadc2da97ed16107a28e9cbb3f452af7cdc",
+  "review": "pending",
+  "lease": "d6e5bcad-c2c5-4595-8a1b-78d74d38f003",
+  "events": [
+    {
+      "id": 16,
+      "run": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+      "at": "2026-11-15T05:20:08.733204+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "run": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+      "at": "2026-11-15T05:20:08.733720+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 18,
+      "run": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+      "at": "2026-11-15T05:20:08.734109+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "ordered_tasks": [
+            {
+              "depends_on": [],
+              "done": false,
+              "due": "2026-11-10",
+              "id": "visa",
+              "overdue": true,
+              "ready": true,
+              "title": "Prepare documents"
+            },
+            {
+              "depends_on": [
+                "visa"
+              ],
+              "done": false,
+              "due": "2026-12-01",
+              "id": "housing",
+              "overdue": false,
+              "ready": false,
+              "title": "Compare housing"
+            }
+          ],
+          "remaining": 2
+        },
+        "output_hash": "a3f65db1a8c6b1facc846ecafb8436f15c6e9c6fda980144b12c3fb47f1ca81d",
+        "tool": "gurbah_analyze"
+      }
+    },
+    {
+      "id": 19,
+      "run": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+      "at": "2026-11-15T05:20:08.734527+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "3124e2907ce2847359460cfe17fd0f06920e2478707464cd31e3484d7460cb3d",
+        "output_hash": "a3f65db1a8c6b1facc846ecafb8436f15c6e9c6fda980144b12c3fb47f1ca81d",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 20,
+      "run": "239f5ffb-2bc6-4132-99ee-ff884cafb9f6",
+      "at": "2026-11-15T05:20:08.735079+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "2630a37d7f1926405fcbd6b22656659ab148964bbcc1d9d05a1920fa070ffdfb",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "2630a37d7f1926405fcbd6b22656659ab148964bbcc1d9d05a1920fa070ffdfb"
+}

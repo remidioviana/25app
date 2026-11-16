@@ -1,0 +1,44 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> agent-studio-mobile@6.0.0 test
+> tsc -p tsconfig.tests.json && node --test .test-build/tests/*.test.js
+
+✔ server origin: HTTPS, no embedded credentials or arbitrary base path (7.758241ms)
+✔ authenticated run uses an explicit idempotency key and fixed API path (10.907948ms)
+✔ review is bound to the artifact hash (1.692891ms)
+✔ HTTP errors retain status; no fabricated success (4.833905ms)
+✔ request paths cannot override the configured origin (0.57736ms)
+✔ aborted polling propagates cancellation to transport (0.644561ms)
+✔ form edits do not mutate original data (0.39795ms)
+✔ schema defaults exist for all 25 native agent forms (9.209518ms)
+✔ goal validation rejects empty and oversized requests (0.374624ms)
+✔ evidence search scopes the app, trims query and disables provider search (0.918745ms)
+✔ evidence search rejects blank and oversized queries before transport (0.291449ms)
+✔ evidence search cancellation reaches transport (0.493253ms)
+✔ missing server error message uses English fallback (0.555497ms)
+✔ native API client completes all 25 agents against actual authenticated Python backend (1395.632857ms)
+✔ local results and malformed claims create no invented claims (1.735595ms)
+✔ citations resolve only against the saved run evidence and deduplicate (0.378961ms)
+✔ evidence claims with absent or invalid citations are flagged (0.228605ms)
+✔ input, calculation and unknown basis remain distinct (0.325671ms)
+✔ local results do not invent model approval or role activity (1.48648ms)
+✔ review summary preserves plan, issues and actual fallback provenance (0.699455ms)
+✔ human-review decision takes precedence over a model verdict (0.138689ms)
+✔ malformed optional metadata cannot fabricate a model name or crash (0.196866ms)
+✔ schedule preserves timezone instant and exact count (8.259697ms)
+✔ invalid calendar dates cannot silently roll forward (0.478471ms)
+✔ timezone and time fields must be explicit and valid (0.270718ms)
+✔ counts reject empty fractional exponential and out-of-range input (0.27866ms)
+✔ one-time count and interval selection are validated (0.188574ms)
+✔ all 25 agent examples pass the mobile schema guard (3.248735ms)
+✔ rejects nonfinite numbers, wrong types, and out-of-range values (0.221534ms)
+✔ nested fields report actionable paths and preserve input (0.294254ms)
+✔ required, extra, nullable, lengths and dynamic properties (9.059858ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1711.6845

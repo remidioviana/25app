@@ -1,0 +1,126 @@
+{
+  "id": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+  "agent": "jomrok",
+  "goal": "Shipment review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "currency": "AED",
+    "duty_rate_percent": 5,
+    "freight": 500,
+    "goods_value": 10000,
+    "required_fields": [
+      "origin",
+      "invoice",
+      "hs_code"
+    ],
+    "shipment": {
+      "hs_code": "",
+      "invoice": "INV-001",
+      "origin": "BR"
+    }
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.759308+00:00",
+  "updated": "2026-11-15T05:20:08.761433+00:00",
+  "result": {
+    "agent": "jomrok",
+    "analysis": {
+      "currency": "AED",
+      "customs_value_assumption": 10500.0,
+      "estimated_duty": 525.0,
+      "missing_fields": [
+        "hs_code"
+      ],
+      "note": "Supplied duty rate. Does not classify HS codes, certify compliance or submit declarations."
+    },
+    "analysis_hash": "1a4271d02d14ef7527e796de5ede94e85aa284b2dbb7a513d33a68757ad4ebdd",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Shipment review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "98e2b2960363d1401ab15e4f437dee7766c08e810aabd0239cb7279ada29bb1a",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "f3df991eab15b0f2aec438c90c61f4c2d170c4e3824fc4d441a1f9d105fe4eef",
+  "review": "pending",
+  "lease": "f6ee1fd7-9392-44e1-a77f-b2ccee2b1706",
+  "events": [
+    {
+      "id": 46,
+      "run": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+      "at": "2026-11-15T05:20:08.759969+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "run": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+      "at": "2026-11-15T05:20:08.760497+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 48,
+      "run": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+      "at": "2026-11-15T05:20:08.760877+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "currency": "AED",
+          "customs_value_assumption": 10500.0,
+          "estimated_duty": 525.0,
+          "missing_fields": [
+            "hs_code"
+          ],
+          "note": "Supplied duty rate. Does not classify HS codes, certify compliance or submit declarations."
+        },
+        "output_hash": "1a4271d02d14ef7527e796de5ede94e85aa284b2dbb7a513d33a68757ad4ebdd",
+        "tool": "jomrok_analyze"
+      }
+    },
+    {
+      "id": 49,
+      "run": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+      "at": "2026-11-15T05:20:08.761228+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "98e2b2960363d1401ab15e4f437dee7766c08e810aabd0239cb7279ada29bb1a",
+        "output_hash": "1a4271d02d14ef7527e796de5ede94e85aa284b2dbb7a513d33a68757ad4ebdd",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 50,
+      "run": "5097de76-8a84-485b-bd0f-76e8c81bda11",
+      "at": "2026-11-15T05:20:08.761612+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "24c8d9ede81ce9045bc04f5c917ccbaba50d18b4f941aa1b6d96b5cd5ecf28f9",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "24c8d9ede81ce9045bc04f5c917ccbaba50d18b4f941aa1b6d96b5cd5ecf28f9"
+}

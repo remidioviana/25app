@@ -1,0 +1,162 @@
+{
+  "id": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+  "agent": "sawm",
+  "goal": "Energy planner: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "buffer_minutes": 10,
+    "busy": [
+      {
+        "end": "13:00",
+        "start": "12:00",
+        "title": "Selected break"
+      }
+    ],
+    "end": "17:00",
+    "start": "09:00",
+    "tasks": [
+      {
+        "minutes": 30,
+        "title": "Reading"
+      },
+      {
+        "minutes": 120,
+        "title": "Work"
+      },
+      {
+        "minutes": 20,
+        "title": "Rest"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.796151+00:00",
+  "updated": "2026-11-15T05:20:08.798688+00:00",
+  "result": {
+    "agent": "sawm",
+    "analysis": {
+      "calendar_changed": false,
+      "existing_conflicts": [],
+      "planned_blocks": [
+        {
+          "end": "09:30",
+          "start": "09:00",
+          "title": "Reading"
+        },
+        {
+          "end": "11:40",
+          "start": "09:40",
+          "title": "Work"
+        },
+        {
+          "end": "13:30",
+          "start": "13:10",
+          "title": "Rest"
+        }
+      ],
+      "unscheduled": []
+    },
+    "analysis_hash": "3650658d56a68bb5ade59d5aa7ea083d6606833212049760d503576bf3d98cd1",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Energy planner: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "4507c9f9dfe169b56302644942b7d7bcbe88dfb3682790768599070828b8d4a0",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "80d6865f12c0a1621c95efe89cd43d32fe3043b7ff72143f9d69e68fe72a561d",
+  "review": "pending",
+  "lease": "504bc2f6-d0dd-4548-9247-6c7a623585f6",
+  "events": [
+    {
+      "id": 96,
+      "run": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+      "at": "2026-11-15T05:20:08.797285+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 97,
+      "run": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+      "at": "2026-11-15T05:20:08.797670+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 98,
+      "run": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+      "at": "2026-11-15T05:20:08.798059+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "calendar_changed": false,
+          "existing_conflicts": [],
+          "planned_blocks": [
+            {
+              "end": "09:30",
+              "start": "09:00",
+              "title": "Reading"
+            },
+            {
+              "end": "11:40",
+              "start": "09:40",
+              "title": "Work"
+            },
+            {
+              "end": "13:30",
+              "start": "13:10",
+              "title": "Rest"
+            }
+          ],
+          "unscheduled": []
+        },
+        "output_hash": "3650658d56a68bb5ade59d5aa7ea083d6606833212049760d503576bf3d98cd1",
+        "tool": "sawm_analyze"
+      }
+    },
+    {
+      "id": 99,
+      "run": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+      "at": "2026-11-15T05:20:08.798451+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "4507c9f9dfe169b56302644942b7d7bcbe88dfb3682790768599070828b8d4a0",
+        "output_hash": "3650658d56a68bb5ade59d5aa7ea083d6606833212049760d503576bf3d98cd1",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 100,
+      "run": "18bb3c09-8bd0-4bc4-a021-e0c4dbeb835e",
+      "at": "2026-11-15T05:20:08.798837+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "4368120e83d94f4915389689e313498e8781d439dce988e520660192df22787e",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "4368120e83d94f4915389689e313498e8781d439dce988e520660192df22787e"
+}

@@ -1,0 +1,37 @@
+{
+  "needs": [
+    "step_free"
+  ],
+  "routes": [
+    {
+      "name": "Route A — example",
+      "minutes": 30,
+      "segments": [
+        {
+          "name": "Station 1",
+          "access": {
+            "step_free": true
+          }
+        },
+        {
+          "name": "Station 2",
+          "access": {
+            "step_free": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Route B — example",
+      "minutes": 40,
+      "segments": [
+        {
+          "name": "Bus",
+          "access": {
+            "step_free": true
+          }
+        }
+      ]
+    }
+  ]
+}

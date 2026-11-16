@@ -1,0 +1,177 @@
+{
+  "id": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+  "agent": "adl",
+  "goal": "Dispute timeline: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "claims": [
+      {
+        "amount": 5000,
+        "evidence": "recibo:1",
+        "label": "Claimed deposit"
+      },
+      {
+        "amount": 250,
+        "evidence": "nota:1",
+        "label": "Claimed expense"
+      }
+    ],
+    "currency": "AED",
+    "events": [
+      {
+        "date": "2026-10-01",
+        "description": "Property handover",
+        "reference": "termo:1"
+      },
+      {
+        "date": "2026-09-01",
+        "description": "Deposit payment",
+        "reference": "recibo:1"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.714763+00:00",
+  "updated": "2026-11-15T05:20:08.718652+00:00",
+  "result": {
+    "agent": "adl",
+    "analysis": {
+      "claimed_total": 5250.0,
+      "claims": [
+        {
+          "amount": 5000.0,
+          "evidence": "recibo:1",
+          "label": "Claimed deposit"
+        },
+        {
+          "amount": 250.0,
+          "evidence": "nota:1",
+          "label": "Claimed expense"
+        }
+      ],
+      "currency": "AED",
+      "note": "Sum of claimed amounts; does not establish entitlement to compensation.",
+      "timeline": [
+        {
+          "date": "2026-09-01",
+          "description": "Deposit payment",
+          "reference": "recibo:1"
+        },
+        {
+          "date": "2026-10-01",
+          "description": "Property handover",
+          "reference": "termo:1"
+        }
+      ]
+    },
+    "analysis_hash": "01ab34bc4194b17f000c63b8959c3f0098a4662182a73d4677305dced43fa835",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Dispute timeline: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "42d9f9d2cd0f195a859b311d1d83c9fb6165aa40a6d6a6fdd58d3bb018cb9e2b",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "aea7036803a863b945c432ae31ebfca5bb1570bf8426f6d1426bc2cad0a371d4",
+  "review": "pending",
+  "lease": "0af11c4f-4e5b-4dd2-a025-9ceba0c54e3c",
+  "events": [
+    {
+      "id": 6,
+      "run": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+      "at": "2026-11-15T05:20:08.715535+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "run": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+      "at": "2026-11-15T05:20:08.716014+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 8,
+      "run": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+      "at": "2026-11-15T05:20:08.716701+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "claimed_total": 5250.0,
+          "claims": [
+            {
+              "amount": 5000.0,
+              "evidence": "recibo:1",
+              "label": "Claimed deposit"
+            },
+            {
+              "amount": 250.0,
+              "evidence": "nota:1",
+              "label": "Claimed expense"
+            }
+          ],
+          "currency": "AED",
+          "note": "Sum of claimed amounts; does not establish entitlement to compensation.",
+          "timeline": [
+            {
+              "date": "2026-09-01",
+              "description": "Deposit payment",
+              "reference": "recibo:1"
+            },
+            {
+              "date": "2026-10-01",
+              "description": "Property handover",
+              "reference": "termo:1"
+            }
+          ]
+        },
+        "output_hash": "01ab34bc4194b17f000c63b8959c3f0098a4662182a73d4677305dced43fa835",
+        "tool": "adl_analyze"
+      }
+    },
+    {
+      "id": 9,
+      "run": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+      "at": "2026-11-15T05:20:08.717916+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "42d9f9d2cd0f195a859b311d1d83c9fb6165aa40a6d6a6fdd58d3bb018cb9e2b",
+        "output_hash": "01ab34bc4194b17f000c63b8959c3f0098a4662182a73d4677305dced43fa835",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 10,
+      "run": "c320847c-7453-401b-8439-dc03f1a8c2b6",
+      "at": "2026-11-15T05:20:08.719283+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "ed9be0dff2e16898b610dc4da48b451ba221562f3ea1d822d69d6d0436a39b01",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "ed9be0dff2e16898b610dc4da48b451ba221562f3ea1d822d69d6d0436a39b01"
+}

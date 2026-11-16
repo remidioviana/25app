@@ -1,0 +1,13 @@
+{
+  "requirements": [
+    "ISO9001",
+    "delivery_plan",
+    "references"
+  ],
+  "capabilities": [
+    "delivery_plan",
+    "references"
+  ],
+  "deadline": "2026-12-01",
+  "as_of": "2026-11-14"
+}

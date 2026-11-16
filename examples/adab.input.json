@@ -1,0 +1,13 @@
+{
+  "copy": "Guaranteed delivery within 24 hours.",
+  "claims": [
+    "Guaranteed delivery within 24 hours."
+  ],
+  "approved_claims": [
+    "Estimated delivery within 48 hours."
+  ],
+  "prohibited_terms": [
+    "guaranteed"
+  ],
+  "max_characters": 80
+}

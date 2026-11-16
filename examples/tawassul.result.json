@@ -1,0 +1,142 @@
+{
+  "id": "71cdb103-d238-4865-9e10-63136f53812a",
+  "agent": "tawassul",
+  "goal": "Pitch studio: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "account": "Example Company",
+    "needs": [
+      "logistics",
+      "reporting"
+    ],
+    "products": [
+      {
+        "approved_fact": "Organizes tasks and deadlines in a workspace.",
+        "name": "Operations",
+        "tags": [
+          "logistics"
+        ]
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.804666+00:00",
+  "updated": "2026-11-15T05:20:08.810114+00:00",
+  "result": {
+    "agent": "tawassul",
+    "analysis": {
+      "account": "Example Company",
+      "draft": "Proposta para Example Company\n• Operations: Organizes tasks and deadlines in a workspace.",
+      "matches": [
+        {
+          "approved_fact": "Organizes tasks and deadlines in a workspace.",
+          "name": "Operations",
+          "tags": [
+            "logistics"
+          ]
+        }
+      ],
+      "sent": false,
+      "uncovered_needs": [
+        "reporting"
+      ]
+    },
+    "analysis_hash": "0ef54f9ab5c3c0db3759aa69b450d8a44a9f5b947c11fc41cd1dece6c535ed05",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Pitch studio: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "328d7901df96c8ca8c9ad5bb4d84801c7087f47d6b6bd9bd0c377b4c00ecdad8",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "6f1f91610ba03d063354dc97a0f73ac680a127a9af486a6fa78a990b642ffacd",
+  "review": "pending",
+  "lease": "802fea6c-092a-49c7-be54-c7f3ad8414c0",
+  "events": [
+    {
+      "id": 106,
+      "run": "71cdb103-d238-4865-9e10-63136f53812a",
+      "at": "2026-11-15T05:20:08.805174+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 107,
+      "run": "71cdb103-d238-4865-9e10-63136f53812a",
+      "at": "2026-11-15T05:20:08.805476+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 108,
+      "run": "71cdb103-d238-4865-9e10-63136f53812a",
+      "at": "2026-11-15T05:20:08.807058+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "account": "Example Company",
+          "draft": "Proposta para Example Company\n• Operations: Organizes tasks and deadlines in a workspace.",
+          "matches": [
+            {
+              "approved_fact": "Organizes tasks and deadlines in a workspace.",
+              "name": "Operations",
+              "tags": [
+                "logistics"
+              ]
+            }
+          ],
+          "sent": false,
+          "uncovered_needs": [
+            "reporting"
+          ]
+        },
+        "output_hash": "0ef54f9ab5c3c0db3759aa69b450d8a44a9f5b947c11fc41cd1dece6c535ed05",
+        "tool": "tawassul_analyze"
+      }
+    },
+    {
+      "id": 109,
+      "run": "71cdb103-d238-4865-9e10-63136f53812a",
+      "at": "2026-11-15T05:20:08.808658+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "328d7901df96c8ca8c9ad5bb4d84801c7087f47d6b6bd9bd0c377b4c00ecdad8",
+        "output_hash": "0ef54f9ab5c3c0db3759aa69b450d8a44a9f5b947c11fc41cd1dece6c535ed05",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 110,
+      "run": "71cdb103-d238-4865-9e10-63136f53812a",
+      "at": "2026-11-15T05:20:08.810315+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "73a574e5d61bb98578fb1a616021d3d549afb958939d900d43643055f1890710",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "73a574e5d61bb98578fb1a616021d3d549afb958939d900d43643055f1890710"
+}

@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-11-14",
+  "tasks": [
+    {
+      "id": "visa",
+      "title": "Prepare documents",
+      "due": "2026-11-10",
+      "depends_on": [],
+      "done": false
+    },
+    {
+      "id": "housing",
+      "title": "Compare housing",
+      "due": "2026-12-01",
+      "depends_on": [
+        "visa"
+      ],
+      "done": false
+    }
+  ]
+}

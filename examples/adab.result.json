@@ -1,0 +1,133 @@
+{
+  "id": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+  "agent": "adab",
+  "goal": "Copy review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "approved_claims": [
+      "Estimated delivery within 48 hours."
+    ],
+    "claims": [
+      "Guaranteed delivery within 24 hours."
+    ],
+    "copy": "Guaranteed delivery within 24 hours.",
+    "max_characters": 80,
+    "prohibited_terms": [
+      "guaranteed"
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.705750+00:00",
+  "updated": "2026-11-15T05:20:08.713321+00:00",
+  "result": {
+    "agent": "adab",
+    "analysis": {
+      "character_count": 36,
+      "claim_review": [
+        {
+          "approved_exact_match": false,
+          "claim": "Guaranteed delivery within 24 hours."
+        }
+      ],
+      "over_channel_limit": false,
+      "prohibited_term_hits": [
+        "guaranteed"
+      ],
+      "published": false
+    },
+    "analysis_hash": "eba281bfb72c90e7fa5f4dc117fb58adee9c798e123c65cb1e199a0d0f46708b",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Copy review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "c0b9ef55296ebeba4b52133fed65089f65625e1838a479b40dabb6d7364c5196",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "c80f63f507b289a92fc9b72107b98f414bc66ae0c146abf022b4572df104bdbc",
+  "review": "pending",
+  "lease": "b6d70618-7556-4a0f-9629-20b80d486e96",
+  "events": [
+    {
+      "id": 1,
+      "run": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+      "at": "2026-11-15T05:20:08.707219+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "run": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+      "at": "2026-11-15T05:20:08.708893+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 3,
+      "run": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+      "at": "2026-11-15T05:20:08.710249+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "character_count": 36,
+          "claim_review": [
+            {
+              "approved_exact_match": false,
+              "claim": "Guaranteed delivery within 24 hours."
+            }
+          ],
+          "over_channel_limit": false,
+          "prohibited_term_hits": [
+            "guaranteed"
+          ],
+          "published": false
+        },
+        "output_hash": "eba281bfb72c90e7fa5f4dc117fb58adee9c798e123c65cb1e199a0d0f46708b",
+        "tool": "adab_analyze"
+      }
+    },
+    {
+      "id": 4,
+      "run": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+      "at": "2026-11-15T05:20:08.712158+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "c0b9ef55296ebeba4b52133fed65089f65625e1838a479b40dabb6d7364c5196",
+        "output_hash": "eba281bfb72c90e7fa5f4dc117fb58adee9c798e123c65cb1e199a0d0f46708b",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 5,
+      "run": "8567e72d-ae85-4b9f-8bc2-0e9d16d3d57b",
+      "at": "2026-11-15T05:20:08.713521+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "0bd8868bd0e67467ae83263c0ebd125a703f1dc4c99550c28d3e19bc6033b868",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "0bd8868bd0e67467ae83263c0ebd125a703f1dc4c99550c28d3e19bc6033b868"
+}

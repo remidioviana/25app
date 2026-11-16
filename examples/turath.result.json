@@ -1,0 +1,129 @@
+{
+  "id": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+  "agent": "turath",
+  "goal": "Heritage trail: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "sources": [
+      {
+        "excerpt": "Demonstration text for a reading trail. Not a historical source.",
+        "reference": "example:card-1",
+        "title": "Test card — replace with a reviewed source",
+        "topics": [
+          "pearling"
+        ]
+      }
+    ],
+    "topics": [
+      "pearling"
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.818455+00:00",
+  "updated": "2026-11-15T05:20:08.821029+00:00",
+  "result": {
+    "agent": "turath",
+    "analysis": {
+      "lessons": [
+        {
+          "citation": "example:card-1",
+          "reading": "Demonstration text for a reading trail. Not a historical source.",
+          "reflection": "What does the source Test card — replace with a reviewed source state, and what does it leave unclear?",
+          "title": "Test card — replace with a reviewed source"
+        }
+      ],
+      "missing_topics": []
+    },
+    "analysis_hash": "978a2767d529bd0c9036a140fffa6ef706852e032f339497c4ebb48f79d207e8",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Heritage trail: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "591e4958ca31f24255a87b4eadac2c203aa7e238859bd6573fee2e9312384a72",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "a16b01ca943ec038260abd708fe71a717fd01db66b487c27184c6e81bfcab5c9",
+  "review": "pending",
+  "lease": "fe6c94aa-8878-4454-943d-cb7a4f7eaf78",
+  "events": [
+    {
+      "id": 121,
+      "run": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+      "at": "2026-11-15T05:20:08.819696+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 122,
+      "run": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+      "at": "2026-11-15T05:20:08.820046+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 123,
+      "run": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+      "at": "2026-11-15T05:20:08.820404+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "lessons": [
+            {
+              "citation": "example:card-1",
+              "reading": "Demonstration text for a reading trail. Not a historical source.",
+              "reflection": "What does the source Test card — replace with a reviewed source state, and what does it leave unclear?",
+              "title": "Test card — replace with a reviewed source"
+            }
+          ],
+          "missing_topics": []
+        },
+        "output_hash": "978a2767d529bd0c9036a140fffa6ef706852e032f339497c4ebb48f79d207e8",
+        "tool": "turath_analyze"
+      }
+    },
+    {
+      "id": 124,
+      "run": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+      "at": "2026-11-15T05:20:08.820822+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "591e4958ca31f24255a87b4eadac2c203aa7e238859bd6573fee2e9312384a72",
+        "output_hash": "978a2767d529bd0c9036a140fffa6ef706852e032f339497c4ebb48f79d207e8",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 125,
+      "run": "cb352214-930e-4e05-8a5b-ead67c1a6d6c",
+      "at": "2026-11-15T05:20:08.821213+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "495759bfeb34eeb61d7398c475bd64474caad985cb72cca378934abaf8f7293c",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "495759bfeb34eeb61d7398c475bd64474caad985cb72cca378934abaf8f7293c"
+}

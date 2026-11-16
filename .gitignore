@@ -1,0 +1,9 @@
+data/
+__pycache__/
+*.pyc
+.env
+node_modules/
+.venv*/
+.design-test-artifacts/
+.env.*
+!.env.example

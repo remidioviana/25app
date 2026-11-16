@@ -1,0 +1,150 @@
+{
+  "id": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+  "agent": "istithmar",
+  "goal": "Business setup: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "activity": "software",
+    "currency": "AED",
+    "options": [
+      {
+        "activities": [
+          "software"
+        ],
+        "annual_fee": 6000,
+        "name": "Option A — example",
+        "setup_fee": 1000,
+        "visa_fee": 2000
+      },
+      {
+        "activities": [
+          "software"
+        ],
+        "annual_fee": 5000,
+        "name": "Option B — example",
+        "setup_fee": 4000,
+        "visa_fee": 1800
+      }
+    ],
+    "visas": 2,
+    "years": 3
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.755775+00:00",
+  "updated": "2026-11-15T05:20:08.757920+00:00",
+  "result": {
+    "agent": "istithmar",
+    "analysis": {
+      "assumptions": "Supplied figures; fees and permissions were not checked live.",
+      "comparison": [
+        {
+          "eligible_for_activity": true,
+          "name": "Option B — example",
+          "total": 22600.0
+        },
+        {
+          "eligible_for_activity": true,
+          "name": "Option A — example",
+          "total": 23000.0
+        }
+      ],
+      "currency": "AED"
+    },
+    "analysis_hash": "f1e7a9fab5cd346d8b2e78c873456170dd59c89122282bd8b635fc7b6ef37015",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Business setup: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "a0d5c4ba1d8ca951b52d9b081af56168ae8cc365a45f5798149ede71cae0ff46",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "cf4d2af8e5ca020333dcf15be71bc0fc5cc1665cd28f970eb3daa171fdd82061",
+  "review": "pending",
+  "lease": "b67d7c40-a156-454a-a16c-15207dcfc31f",
+  "events": [
+    {
+      "id": 41,
+      "run": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+      "at": "2026-11-15T05:20:08.756447+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "run": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+      "at": "2026-11-15T05:20:08.756845+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 43,
+      "run": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+      "at": "2026-11-15T05:20:08.757229+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "assumptions": "Supplied figures; fees and permissions were not checked live.",
+          "comparison": [
+            {
+              "eligible_for_activity": true,
+              "name": "Option B — example",
+              "total": 22600.0
+            },
+            {
+              "eligible_for_activity": true,
+              "name": "Option A — example",
+              "total": 23000.0
+            }
+          ],
+          "currency": "AED"
+        },
+        "output_hash": "f1e7a9fab5cd346d8b2e78c873456170dd59c89122282bd8b635fc7b6ef37015",
+        "tool": "istithmar_analyze"
+      }
+    },
+    {
+      "id": 44,
+      "run": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+      "at": "2026-11-15T05:20:08.757690+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "a0d5c4ba1d8ca951b52d9b081af56168ae8cc365a45f5798149ede71cae0ff46",
+        "output_hash": "f1e7a9fab5cd346d8b2e78c873456170dd59c89122282bd8b635fc7b6ef37015",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 45,
+      "run": "13fdbe13-d565-4b6b-adad-f9f9822ddb33",
+      "at": "2026-11-15T05:20:08.758114+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "182792af402bdd09ba6f48c92c86bf47eaed605349f6a9474be489d92a62a6d1",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "182792af402bdd09ba6f48c92c86bf47eaed605349f6a9474be489d92a62a6d1"
+}

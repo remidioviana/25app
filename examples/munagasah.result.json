@@ -1,0 +1,131 @@
+{
+  "id": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+  "agent": "munagasah",
+  "goal": "Tender workspace: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14",
+    "capabilities": [
+      "delivery_plan",
+      "references"
+    ],
+    "deadline": "2026-12-01",
+    "requirements": [
+      "ISO9001",
+      "delivery_plan",
+      "references"
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.781628+00:00",
+  "updated": "2026-11-15T05:20:08.783635+00:00",
+  "result": {
+    "agent": "munagasah",
+    "analysis": {
+      "bid_submitted": false,
+      "coverage_percent": 66.7,
+      "days_to_deadline": 17,
+      "deadline_passed": false,
+      "matched": [
+        "delivery_plan",
+        "references"
+      ],
+      "missing": [
+        "ISO9001"
+      ]
+    },
+    "analysis_hash": "5c385a98dedbf9450daa7abb080c0bd563a206c513e551dedfda6a910f40c5df",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Tender workspace: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "70126494e086bb3155541eef6dbc93395d419b75b6f44282c2050d4e0dc9bebb",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "038fb73fc38df9eb353a4e880941b5bcfc508fedbd5a9dd3048340bfbc0df337",
+  "review": "pending",
+  "lease": "40f69833-3a4f-43c1-9e14-20de01d4f9aa",
+  "events": [
+    {
+      "id": 76,
+      "run": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+      "at": "2026-11-15T05:20:08.782248+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 77,
+      "run": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+      "at": "2026-11-15T05:20:08.782629+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 78,
+      "run": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+      "at": "2026-11-15T05:20:08.783016+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "bid_submitted": false,
+          "coverage_percent": 66.7,
+          "days_to_deadline": 17,
+          "deadline_passed": false,
+          "matched": [
+            "delivery_plan",
+            "references"
+          ],
+          "missing": [
+            "ISO9001"
+          ]
+        },
+        "output_hash": "5c385a98dedbf9450daa7abb080c0bd563a206c513e551dedfda6a910f40c5df",
+        "tool": "munagasah_analyze"
+      }
+    },
+    {
+      "id": 79,
+      "run": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+      "at": "2026-11-15T05:20:08.783409+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "70126494e086bb3155541eef6dbc93395d419b75b6f44282c2050d4e0dc9bebb",
+        "output_hash": "5c385a98dedbf9450daa7abb080c0bd563a206c513e551dedfda6a910f40c5df",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 80,
+      "run": "913fc8bb-19a0-43d4-a88b-ebaaa5ba1860",
+      "at": "2026-11-15T05:20:08.783782+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "fed44c8380b37816c4394238570d0d018e0020e9662f6e4271c10225dea45055",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "fed44c8380b37816c4394238570d0d018e0020e9662f6e4271c10225dea45055"
+}

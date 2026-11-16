@@ -1,0 +1,346 @@
+test_all_429_falls_back_after_three (test_provider.ProviderTests.test_all_429_falls_back_after_three) ... ok
+test_connection_error_among_429_never_downgrades (test_provider.ProviderTests.test_connection_error_among_429_never_downgrades) ... ERROR
+test_duplicate_and_empty_keys (test_provider.ProviderTests.test_duplicate_and_empty_keys) ... ok
+test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) ... 
+  test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': ''}}) ... FAIL
+  test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': 'partial'}, 'finish_reason': 'length'}) ... FAIL
+  test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': None, 'refusal': 'private policy detail'}}) ... FAIL
+  test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': 'partial'}, 'finish_reason': 'content_filter'}) ... FAIL
+test_endpoint_and_override (test_provider.ProviderTests.test_endpoint_and_override) ... ok
+test_fast_model_never_falls_back (test_provider.ProviderTests.test_fast_model_never_falls_back) ... ok
+test_interrupted_response_rotates_without_model_downgrade (test_provider.ProviderTests.test_interrupted_response_rotates_without_model_downgrade) ... 
+  test_interrupted_response_rotates_without_model_downgrade (test_provider.ProviderTests.test_interrupted_response_rotates_without_model_downgrade) (error='ConnectionResetError') ... ERROR
+  test_interrupted_response_rotates_without_model_downgrade (test_provider.ProviderTests.test_interrupted_response_rotates_without_model_downgrade) (error='IncompleteRead') ... ERROR
+test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) ... 
+  test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=None) ... ERROR
+  test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=[]) ... ERROR
+  test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=True) ... ERROR
+  test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw={'choices': [{'message': {'content': ['private']}}]}) ... FAIL
+  test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw={'choices': [{'message': {'content': 'ok'}}], 'usage': ['private']}) ... ERROR
+test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) ... 
+  test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=-1) ... FAIL
+  test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=True) ... FAIL
+  test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count='10') ... FAIL
+  test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=inf) ... FAIL
+test_malformed_response (test_provider.ProviderTests.test_malformed_response) ... ok
+test_mixed_failures_never_downgrade (test_provider.ProviderTests.test_mixed_failures_never_downgrade) ... ok
+test_network_error_uses_next_key (test_provider.ProviderTests.test_network_error_uses_next_key) ... ok
+test_nonretryable_error_stops (test_provider.ProviderTests.test_nonretryable_error_stops) ... ok
+test_parallel_tool_messages (test_provider.ProviderTests.test_parallel_tool_messages) ... ok
+test_partial_429_success_does_not_fallback (test_provider.ProviderTests.test_partial_429_success_does_not_fallback) ... ok
+test_roles (test_provider.ProviderTests.test_roles) ... ok
+test_rotation (test_provider.ProviderTests.test_rotation) ... ok
+test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) ... 
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls='bad') ... ERROR
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[None]) ... ERROR
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': None}]) ... ERROR
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 7, 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}]) ... FAIL
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}, {'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}]) ... FAIL
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '[1]'}}]) ... FAIL
+  test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{"broken"'}}]) ... FAIL
+test_valid_tool_only_response (test_provider.ProviderTests.test_valid_tool_only_response) ... ok
+
+======================================================================
+ERROR: test_connection_error_among_429_never_downgrades (test_provider.ProviderTests.test_connection_error_among_429_never_downgrades)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 84, in test_connection_error_among_429_never_downgrades
+    with self.assertRaises(p.ProviderFailure) as caught:self.call()
+                                                        ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 81, in respond
+    try:raw=_request('/chat/completions',payload,keys)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 67, in _request
+    with urlopen(request,timeout=60) as response:return json.load(response)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1202, in _execute_mock_call
+    raise result
+ConnectionResetError: private
+
+======================================================================
+ERROR: test_interrupted_response_rotates_without_model_downgrade (test_provider.ProviderTests.test_interrupted_response_rotates_without_model_downgrade) (error='ConnectionResetError')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 81, in test_interrupted_response_rotates_without_model_downgrade
+    self.assertFalse(self.call()['usage']['fallback']);self.assertEqual(send.call_count,2)
+                     ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 81, in respond
+    try:raw=_request('/chat/completions',payload,keys)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 67, in _request
+    with urlopen(request,timeout=60) as response:return json.load(response)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1202, in _execute_mock_call
+    raise result
+ConnectionResetError: private transport
+
+======================================================================
+ERROR: test_interrupted_response_rotates_without_model_downgrade (test_provider.ProviderTests.test_interrupted_response_rotates_without_model_downgrade) (error='IncompleteRead')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 81, in test_interrupted_response_rotates_without_model_downgrade
+    self.assertFalse(self.call()['usage']['fallback']);self.assertEqual(send.call_count,2)
+                     ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 81, in respond
+    try:raw=_request('/chat/completions',payload,keys)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 67, in _request
+    with urlopen(request,timeout=60) as response:return json.load(response)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1202, in _execute_mock_call
+    raise result
+http.client.IncompleteRead: IncompleteRead(7 bytes read)
+
+======================================================================
+ERROR: test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 55, in test_invalid_envelopes_are_sanitized
+    with self.assertRaises(ValueError) as caught:self.call()
+                                                 ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 86, in respond
+    choices=raw.get('choices')
+            ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 55, in test_invalid_envelopes_are_sanitized
+    with self.assertRaises(ValueError) as caught:self.call()
+                                                 ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 86, in respond
+    choices=raw.get('choices')
+            ^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+======================================================================
+ERROR: test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 55, in test_invalid_envelopes_are_sanitized
+    with self.assertRaises(ValueError) as caught:self.call()
+                                                 ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 86, in respond
+    choices=raw.get('choices')
+            ^^^^^^^
+AttributeError: 'bool' object has no attribute 'get'
+
+======================================================================
+ERROR: test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw={'choices': [{'message': {'content': 'ok'}}], 'usage': ['private']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 55, in test_invalid_envelopes_are_sanitized
+    with self.assertRaises(ValueError) as caught:self.call()
+                                                 ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 96, in respond
+    'usage':{'input_tokens':usage.get('prompt_tokens',0),'output_tokens':usage.get('completion_tokens',0),'total_tokens':usage.get('total_tokens',0),
+                            ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+======================================================================
+ERROR: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+                                       ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 91, in respond
+    fn=call.get('function',{})
+       ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+======================================================================
+ERROR: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[None])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+                                       ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 91, in respond
+    fn=call.get('function',{})
+       ^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': None}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+                                       ^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 13, in call
+    def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/model_provider.py", line 92, in respond
+    if not call.get('id') or not fn.get('name') or not isinstance(fn.get('arguments'),str):raise ValueError('Provider returned an invalid tool call.')
+                                 ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+FAIL: test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': ''}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 61, in test_empty_refused_or_truncated_response_is_not_success
+    with self.assertRaises(ValueError) as caught:self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': 'partial'}, 'finish_reason': 'length'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 61, in test_empty_refused_or_truncated_response_is_not_success
+    with self.assertRaises(ValueError) as caught:self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': None, 'refusal': 'private policy detail'}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 61, in test_empty_refused_or_truncated_response_is_not_success
+    with self.assertRaises(ValueError) as caught:self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_empty_refused_or_truncated_response_is_not_success (test_provider.ProviderTests.test_empty_refused_or_truncated_response_is_not_success) (choice={'message': {'content': 'partial'}, 'finish_reason': 'content_filter'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 61, in test_empty_refused_or_truncated_response_is_not_success
+    with self.assertRaises(ValueError) as caught:self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_envelopes_are_sanitized (test_provider.ProviderTests.test_invalid_envelopes_are_sanitized) (raw={'choices': [{'message': {'content': ['private']}}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 55, in test_invalid_envelopes_are_sanitized
+    with self.assertRaises(ValueError) as caught:self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 76, in test_invalid_token_counts_rejected
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 76, in test_invalid_token_counts_rejected
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count='10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 76, in test_invalid_token_counts_rejected
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_token_counts_rejected (test_provider.ProviderTests.test_invalid_token_counts_rejected) (count=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 76, in test_invalid_token_counts_rejected
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 7, 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}, {'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{}'}}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '[1]'}}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_tool_calls_are_validated_before_return (test_provider.ProviderTests.test_tool_calls_are_validated_before_return) (calls=[{'id': 'call-1', 'type': 'function', 'function': {'name': 'analyze', 'arguments': '{"broken"'}}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b947b1dca524/routing-release/25-mobile-agent-apps-3keys/tests/test_provider.py", line 68, in test_tool_calls_are_validated_before_return
+    with self.assertRaises(ValueError):self.call()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.026s
+
+FAILED (failures=13, errors=10)

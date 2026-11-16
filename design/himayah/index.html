@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Himayah AI — interactive design prototype</title><meta name="description" content="32-view mobile design prototype. Local literal screening, no legal compliance claim."></head><body style="margin:0">
+<div id="himayah-design" class="viz-dotted-background">
+  <div class="reference"><label for="hm-screen">Screen reference <select id="hm-screen"></select></label><label for="hm-platform">Platform <select id="hm-platform"><option value="ios">iOS</option><option value="android">Android</option></select></label></div>
+  <article class="phone" aria-label="Himayah AI mobile prototype">
+    <div class="demo">INTERACTIVE DESIGN · LOCAL SCREENING ONLY</div>
+    <header><button id="hm-back" aria-label="Back">‹</button><span class="brand"><svg width="21" height="25" viewBox="0 0 24 28" aria-hidden="true"><path d="M12 2 22 6v8c0 6-6 10-10 12C8 24 2 20 2 14V6Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m7 13 3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg> Himayah<span class="ai">AI</span></span><button data-go="28" aria-label="Privacy and settings">⋯</button></header>
+    <main id="hm-content" aria-live="polite"></main>
+    <nav aria-label="Primary"><button data-go="1">Review</button><button data-go="23">Library</button><button data-go="25">Activity</button></nav>
+  </article>
+</div>
+<style>
+#himayah-design{color-scheme:light dark;padding-block:16px;--hm-bg:light-dark(#F5F7FA,#0B1220);--hm-panel:light-dark(#FFFFFF,#152133);--hm-ink:light-dark(#0B192C,#F3F6FC);--hm-muted:light-dark(#526174,#B6C2D2);--hm-line:light-dark(#D8DEE8,#35455A);--hm-accent:light-dark(#0B192C,#DDE9FA);--hm-on:light-dark(#FFFFFF,#0B192C);--hm-success:light-dark(#086344,#87DFC0);--hm-warning:light-dark(#875000,#FFD18A);--hm-danger:light-dark(#A8262B,#FFADB0);--hm-soft:light-dark(#EDF1F6,#223149);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#himayah-design *{box-sizing:border-box}
+#himayah-design .reference{max-width:420px;margin:0 auto 16px;display:flex;gap:12px;flex-wrap:wrap;color:var(--hm-ink);font-size:13px}
+#himayah-design .reference label{flex:1;min-width:100px}
+#himayah-design select,#himayah-design input,#himayah-design textarea{font:inherit;color:var(--hm-ink);background:var(--hm-panel);border:1px solid var(--hm-line);border-radius:10px;padding:12px;width:100%;min-height:46px}
+#himayah-design .phone{max-width:390px;margin:auto;background:var(--hm-bg);color:var(--hm-ink);border:1px solid var(--hm-line);border-radius:28px;overflow:hidden;box-shadow:0 16px 45px #00000012;font-size:16px;line-height:1.5}
+#himayah-design .demo{background:var(--hm-soft);color:var(--hm-muted);font-size:10px;font-weight:650;letter-spacing:1px;text-align:center;padding:11px 8px}
+#himayah-design header{display:flex;align-items:center;justify-content:space-between;padding:12px 12px 8px;gap:6px}
+#himayah-design button{font:inherit;cursor:pointer;color:var(--hm-ink);background:transparent;border:0;min-height:48px;padding:10px 12px;border-radius:10px;touch-action:manipulation}
+#himayah-design button:hover{background:var(--hm-soft)}
+#himayah-design button:focus-visible,#himayah-design input:focus-visible,#himayah-design textarea:focus-visible,#himayah-design select:focus-visible{outline:3px solid var(--hm-success);outline-offset:2px}
+#himayah-design header button{min-width:48px;font-size:26px}
+#himayah-design .brand{display:flex;gap:8px;align-items:center;font-size:19px;font-weight:650;letter-spacing:-.7px}
+#himayah-design .ai{font-size:11px;letter-spacing:1px;font-weight:600;align-self:flex-start;margin-top:5px}
+#himayah-design main{padding:12px 24px 28px;min-height:560px;overflow-wrap:anywhere}
+#himayah-design h1{font-size:32px;line-height:1.12;letter-spacing:-1.2px;margin:12px 0 16px;font-weight:650}
+#himayah-design h2{font-size:19px;line-height:1.3;letter-spacing:-.3px;margin:28px 0 10px;font-weight:600}
+#himayah-design h3{font-size:16px;margin:0 0 7px;font-weight:600}
+#himayah-design p{margin:0 0 16px}
+#himayah-design .eyebrow{font-size:11px;font-weight:650;letter-spacing:1.5px;color:var(--hm-muted);text-transform:uppercase}
+#himayah-design .sub,#himayah-design small{color:var(--hm-muted)}
+#himayah-design small{display:block;font-size:13px;line-height:1.5}
+#himayah-design .primary{display:block;width:100%;background:var(--hm-accent);color:var(--hm-on);font-weight:600;padding:14px 16px;margin:20px 0 10px;min-height:52px;text-align:center;border-radius:13px}
+#himayah-design .primary:hover{background:var(--hm-accent);opacity:.9}
+#himayah-design .secondary{border:1px solid var(--hm-line);width:100%;text-align:center;margin:4px 0 8px;font-weight:500}
+#himayah-design .text-link{padding-inline:0;text-decoration:underline;text-underline-offset:4px;text-align:start}
+#himayah-design .row{border-bottom:1px solid var(--hm-line);padding:16px 0;display:flex;gap:12px;align-items:flex-start}
+#himayah-design .row .body{flex:1;min-width:0}
+#himayah-design .row button{padding:0 8px;min-width:44px;margin:-6px 0}
+#himayah-design .number{font-size:13px;color:var(--hm-muted);font-variant-numeric:tabular-nums;min-width:21px;padding-top:2px}
+#himayah-design .tag{display:inline-block;font-size:12px;font-weight:600;padding:4px 8px;background:var(--hm-soft);border-radius:6px;color:var(--hm-muted);margin-bottom:12px}
+#himayah-design .warning{color:var(--hm-warning)}
+#himayah-design .success{color:var(--hm-success)}
+#himayah-design .danger{color:var(--hm-danger)}
+#himayah-design .quote{border-inline-start:2px solid var(--hm-line);padding:4px 0 4px 16px;margin:20px 0;font-family:Georgia,serif;font-size:19px;line-height:1.6}
+#himayah-design .sheet{padding:18px;background:var(--hm-panel);border:1px solid var(--hm-line);border-radius:14px;margin:20px 0}
+#himayah-design .sheet p:last-child{margin-bottom:0}
+#himayah-design label.field{display:block;margin:20px 0 7px;font-size:14px;font-weight:600}
+#himayah-design textarea{resize:vertical;min-height:170px;font-size:16px;line-height:1.6}
+#himayah-design .check{display:flex;gap:10px;align-items:flex-start;margin:15px 0;font-size:14px}
+#himayah-design input[type=checkbox]{width:22px;min-height:22px;flex-shrink:0;accent-color:var(--hm-success)}
+#himayah-design nav{display:flex;justify-content:space-around;border-top:1px solid var(--hm-line);padding:8px 8px 16px;background:var(--hm-panel);gap:4px}
+#himayah-design nav button{font-size:13px;font-weight:550;flex:1}
+#himayah-design nav button[aria-current=page]{background:var(--hm-soft);color:var(--hm-ink)}
+#himayah-design .count{font-size:64px;letter-spacing:-3px;font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums;margin:22px 0 4px}
+#himayah-design .metricline{display:flex;gap:18px;border-block:1px solid var(--hm-line);margin:24px 0;padding:18px 0}
+#himayah-design .metricline strong{display:block;font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+#himayah-design .timeline{list-style:none;padding:0;margin:20px 0}
+#himayah-design .timeline li{padding:0 0 20px 24px;border-inline-start:1px solid var(--hm-line);position:relative}
+#himayah-design .timeline li:before{content:"";position:absolute;inset-inline-start:-4px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--hm-success)}
+#himayah-design .timeline li.pending:before{background:var(--hm-muted)}
+#himayah-design .error{color:var(--hm-danger);margin:12px 0;font-size:14px}
+#himayah-design .android.phone{border-radius:20px}
+#himayah-design .android .primary{border-radius:24px}
+#himayah-design .android .brand{letter-spacing:0}
+#himayah-design .android h1{font-weight:500}
+#himayah-design details{padding:14px 0;border-bottom:1px solid var(--hm-line)}
+#himayah-design summary{cursor:pointer;min-height:44px}
+#himayah-design .notice{padding:12px 0;border-block:1px solid var(--hm-line);font-size:13px;color:var(--hm-muted);margin:20px 0}
+#himayah-design main{animation:hm-in .16s ease-out}
+@keyframes hm-in{from{opacity:.6;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#himayah-design main{animation:none}}
+@media(max-width:360px){#himayah-design main{padding-inline:18px}#himayah-design h1{font-size:29px}#himayah-design .phone{border-radius:18px}}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('himayah-design'), content=root.querySelector('#hm-content');
+const titles=['Review home','How review works','Choose document','Contract editor','Review scope','Jurisdiction','Rule checklist','Add a rule','Source pack','Review brief','Execution plan','Processing consent','Run local review','Agent activity','Results overview','Finding detail','Contract passage','Rule provenance','Missing evidence','Draft recommendation','Packet builder','Export preview','Saved reviews','Search library','Task history','Recovery','External services','Privacy and controls','Delete local data','Accessibility','Help and limitations','Completion record'];
+const original='The supplier may share data. The agreement has a term of 12 months.';
+const defaults=[{label:'Retention provision',phrase:'retention',required:true},{label:'Data sharing',phrase:'share data',required:false}];
+const settings={dark:false,large:false,platform:'ios'};
+let page=1,backstack=[],draft=original,rules=structuredClone(defaults),findings=null,selected=0,status='Not started',events=[],error='',scope='Privacy and contract triage',jurisdiction='UAE · jurisdiction to confirm',ack=false,deleted=false,query='',note='',rev=0,resultRev=-1;
+const saved=window.openai?.widgetState?.privateContent;
+if(saved?.page>=1&&saved.page<=32)page=saved.page;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const go=(n,push=true)=>{if(push&&n!==page)backstack.push(page);page=n;error='';render();persist()};
+const persist=()=>{window.openai?.setWidgetState?.({modelContent:{application:'Himayah AI',screen:titles[page-1],mode:'local-screening-prototype'},privateContent:{page}})?.catch(()=>{})};
+const btn=(label,n,cls='primary')=>`<button class="${cls}" data-go="${n}">${label}</button>`;
+const action=(label,a,cls='primary')=>`<button class="${cls}" data-action="${a}">${label}</button>`;
+const row=(n,title,sub,target)=>`<div class="row"><span class="number">${n}</span><div class="body"><h3>${title}</h3><small>${sub}</small></div>${target?`<button data-go="${target}" aria-label="Open ${title}">→</button>`:''}</div>`;
+const head=(eyebrow,title,sub='')=>`<span class="eyebrow">${eyebrow}</span><h1>${title}</h1>${sub?`<p class="sub">${sub}</p>`:''}`;
+const empty=()=>`${head('No review yet','Start with a contract.','Run the local checklist to see results here.')}${btn('Start review',3)}`;
+const matchCount=()=>findings?.reduce((n,f)=>n+f.matches.length,0)||0;
+function screen(){
+switch(page){
+case 1:return head('The UAE compliance shield','Clarity before\nyou commit.','Check a supplier contract against your own rules. Keep every finding connected to its evidence.')+btn('Review a contract',3)+btn('How it works',2,'text-link')+'<h2>Your workspace</h2>'+ (findings?row('01','Supplier agreement',`${findings.filter(f=>f.flagged).length} checks need review · local result`,15):'<div class="row"><div class="body"><h3>Your first review starts here</h3><small>No account. No upload in this prototype. Your text stays in this session.</small></div></div>')+'<div class="notice">A review aid. It does not establish legal compliance.</div>';
+case 2:return head('Quick guide','Evidence comes first.','Three steps, with you in control.')+row('01','Bring the contract','Paste text or use the fictional sample.',3)+row('02','Choose your rules','Confirm which phrases to find or flag.',7)+row('03','Review the evidence','Inspect each result, then prepare a packet.',10)+btn('Start a review',3);
+case 3:return head('New review','Choose your starting point.','No broad access to your files is requested.')+btn('Paste contract text',4)+action('Use fictional sample','sample','secondary')+'<div class="notice">PDF and image extraction are planned for the native app. This prototype accepts text only.</div>';
+case 4:return head('Contract · editable','What should we review?','Text is held in memory for this prototype. Leaving or reloading clears it.')+`<label class="field" for="hm-text">Contract text</label><textarea id="hm-text" maxlength="100000">${esc(draft)}</textarea><small>Maximum 100,000 characters. This check is literal, not semantic.</small>`+action('Save text and continue','save-text');
+case 5:return head('Review scope','Set the boundaries.','A smaller, explicit brief makes a review easier to verify.')+`<label class="field" for="hm-scope">Review objective</label><input id="hm-scope" maxlength="180" value="${esc(scope)}">`+row('01','Jurisdiction',esc(jurisdiction),6)+row('02','Checklist',`${rules.length} user-supplied rules`,7)+action('Save scope','save-scope');
+case 6:return head('Jurisdiction','Context is not a legal conclusion.','The selected jurisdiction is recorded in the brief. It does not change this literal screening engine.')+`<label class="field" for="hm-jurisdiction">Relevant jurisdiction</label><select id="hm-jurisdiction"><option>UAE · jurisdiction to confirm</option><option>UAE federal · user-selected</option><option>DIFC · user-selected</option><option>ADGM · user-selected</option><option>Other · professional review required</option></select>`+action('Use selected context','save-jurisdiction')+'<small>Applicable law, sector and legal entity must be confirmed by a qualified reviewer.</small>';
+case 7:return head('User-supplied rules','Make the checks explicit.','A match proves a phrase is present, not that a clause is adequate.')+rules.map((r,i)=>`<div class="row"><span class="number">${String(i+1).padStart(2,'0')}</span><div class="body"><h3>${esc(r.label)}</h3><small>${r.required?'Flag if absent':'Flag if present'}: “${esc(r.phrase)}”</small></div><button data-remove="${i}" aria-label="Remove ${esc(r.label)}">×</button></div>`).join('')+btn('Add a rule',8,'secondary')+btn('Continue with these rules',9);
+case 8:return head('New rule','What should we look for?')+'<label class="field" for="hm-label">Rule label</label><input id="hm-label" maxlength="120" placeholder="e.g. Retention provision"><label class="field" for="hm-phrase">Exact phrase</label><input id="hm-phrase" maxlength="200" placeholder="e.g. retention"><label class="field" for="hm-kind">Flag condition</label><select id="hm-kind"><option value="missing">Phrase absent</option><option value="present">Phrase present</option></select>'+action('Add to checklist','add-rule');
+case 9:return head('Evidence boundary','No legal source pack is verified.','The sample contains a contract and two user-supplied rules. It contains no authenticated, current legal corpus.')+row('01','Contract text',`${draft.length} characters · supplied in this session`,4)+row('02','Screening rules','Owner: user · authority not established',18)+'<div class="sheet"><h3>Production requirement</h3><p class="sub">Store issuer, jurisdiction, publication date, retrieval date, version and passage references for every legal source.</p></div>'+btn('Review brief',10);
+case 10:return head('Confirm understanding','A focused contract triage.')+`<div class="sheet"><h3>${esc(scope)}</h3><p>${esc(jurisdiction)}</p><small>${draft.length} characters · ${rules.length} rules</small></div>`+row('01','What will happen','Search exact phrases without case sensitivity.',11)+row('02','What will not be inferred','Legal adequacy, current law or a compliance score.')+btn('See the plan',11)+btn('Edit scope',5,'secondary');
+case 11:return head('Execution plan','Small steps. Visible evidence.')+'<ol class="timeline"><li><h3>Validate the input</h3><small>Text and non-empty rules are required.</small></li><li><h3>Screen each phrase</h3><small>Record matches and character offsets.</small></li><li><h3>Prepare findings</h3><small>Separate presence from user-rule flags.</small></li><li class="pending"><h3>Wait for your review</h3><small>No automatic external send.</small></li></ol>'+btn('Continue',12)+btn('Revise the brief',5,'secondary');
+case 12:return head('Local processing','Your text stays in this prototype.','The browser will run a literal phrase check. No AI provider is called.')+'<label class="check"><input id="hm-ack" type="checkbox" '+(ack?'checked':'')+'>I understand this is local text screening, not a legal compliance determination.</label>'+action('Run local screening','consent')+btn('Return to brief',10,'secondary');
+case 13:return head('Local execution','Ready when you are.','There is no simulated waiting or invented AI progress.')+row('01','Input validated',`${draft.length} characters · ${rules.length} rules`)+action('Execute now','run')+btn('Cancel this review',26,'secondary');
+case 14:return !findings?empty():head('Agent activity','An auditable local run.',status)+`<ol class="timeline">${events.map(e=>`<li><h3>${esc(e.title)}</h3><small>${esc(e.detail)}</small></li>`).join('')}</ol>`+btn('Open results',15)+'<small>These are actual local events. Provider orchestration and external actions are not connected.</small>';
+case 15:return !findings?empty():head('Supplier agreement','Review the exceptions.','Flagged by your checklist. Legal significance remains unverified.')+`<div class="count">${findings.filter(f=>f.flagged).length}</div><p class="sub">checks need your attention</p><div class="metricline"><div><strong>${rules.length}</strong><small>rules checked</small></div><div><strong>${matchCount()}</strong><small>phrase matches</small></div><div><strong>0</strong><small>legal sources verified</small></div></div>`+findings.map((f,i)=>`<div class="row"><span class="number ${f.flagged?'warning':'success'}">${f.flagged?'!':'✓'}</span><div class="body"><h3>${esc(f.label)}</h3><small>${f.flagged?'Needs review':'No flag under this rule'} · ${f.matches.length} matches</small></div><button data-finding="${i}" aria-label="Inspect ${esc(f.label)}">→</button></div>`).join('')+btn('Prepare review packet',21)+btn('View execution record',14,'text-link');
+case 16:{if(!findings)return empty();const f=findings[selected];return head('Finding '+String(selected+1).padStart(2,'0'),esc(f.label),f.flagged?'Needs review under your rule.':'No flag under your rule.')+`<span class="tag ${f.flagged?'warning':'success'}">${f.matches.length?'Phrase found':'Phrase not found'}</span><div class="sheet"><h3>Rule applied</h3><p>${f.required?'Flag when absent':'Flag when present'}: “${esc(f.phrase)}”</p><small>${f.matches.length?'Matches are inspectable in the original text.':'The phrase may be expressed differently. This engine cannot determine semantic absence.'}</small></div>`+btn(f.matches.length?'Inspect contract passage':'See evidence gap',f.matches.length?17:19)+btn('Rule provenance',18,'secondary')+btn('Draft a follow-up',20,'text-link');}
+case 17:{if(!findings)return empty();const f=findings[selected];return head('Contract evidence','Read it in context.','Offsets use Unicode code points, zero-based, end-exclusive; aligned with the Python tool.')+(f.matches.length?f.matches.map(m=>`<div class="quote">${esc(m.quote)}</div><small>Contract text · characters ${m.start}–${m.end}</small>`).join(''): '<p>No matching passage exists for this rule.</p>')+btn('Back to finding',16)+btn('Read full contract',4,'secondary');}
+case 18:return head('Source provenance','A supplied rule, not verified law.','Never confuse a checklist with a legal source.')+row('01','Rule owner','User-supplied checklist')+row('02','Authority','Not established')+row('03','Publication / retrieval dates','Not provided')+row('04','Legal effect','Requires a qualified reviewer')+btn('Inspect source boundary',9)+btn('Back to checklist',7,'secondary');
+case 19:return head('Evidence gap','Absence needs interpretation.','A missing word is not proof of a missing obligation.')+row('01','Read surrounding clauses','Synonyms and cross-references may address the issue.',4)+row('02','Supply authoritative sources','Confirm applicability and the version in force.',9)+row('03','Ask a qualified reviewer','The app has not resolved legal adequacy.')+btn('Write a reviewer question',20)+btn('Revise checklist',7,'secondary');
+case 20:return head('Review recommendation','Ask a precise question.','This is a template, not an AI-generated legal recommendation.')+`<label class="field" for="hm-note">Question for your reviewer</label><textarea id="hm-note" maxlength="2000">${esc(note||'Please review whether the contract addresses data retention and the conditions for data sharing. The attached checklist is literal text screening only.')}</textarea>`+action('Save question to packet','save-note');
+case 21:return !findings?empty():head('Review packet','Keep evidence attached.','A local packet for human review. Nothing will be sent automatically.')+row('01','Contract',`${draft.length} characters · supplied text`,4)+row('02','Findings',`${findings.length} checks with offsets and excerpts`,15)+row('03','Reviewer question',note?'Question saved':'No question added',20)+row('04','Limitations','No verified legal corpus · no compliance verdict',31)+btn('Preview packet',22)+btn('External sending requirements',27,'text-link');
+case 22:return !findings?empty():head('Packet preview','Ready for human review.','Plain-text export is available in this prototype. PDF layout belongs to the native handoff.')+`<div class="sheet"><h3>Supplier contract triage</h3><p>${esc(scope)}</p><small>${esc(jurisdiction)}<br>${findings.length} checks · ${findings.filter(f=>f.flagged).length} flags<br>Method: literal text screening<br>External delivery: not performed</small></div><label class="field" for="hm-export">Copyable review packet</label><textarea id="hm-export" readonly>${esc(packet())}</textarea>`+btn('View completion record',32)+btn('Edit reviewer question',20,'secondary');
+case 23:return head('Local library','Your review, close at hand.','This prototype retains one run in memory. Reloading clears it.')+(findings?row('01','Supplier agreement',`${status} · local session`,15):'<p>No saved review in this session.</p>')+btn('Search this review',24,'secondary')+btn('New review',3);
+case 24:{let q=query.trim().toLowerCase();let rows=rules.filter(r=>!q||r.label.toLowerCase().includes(q)||r.phrase.toLowerCase().includes(q));return head('Search library','Find a rule or phrase.','Search is local and literal; no embeddings or AI retrieval are used.')+`<label class="field" for="hm-query">Search terms</label><input id="hm-query" value="${esc(query)}" maxlength="200">`+action('Search checklist','search','secondary')+rows.map(r=>row('·',esc(r.label),esc(r.phrase),7)).join('')+(rows.length?'':'<p>No matching rules. Try another phrase.</p>');}
+case 25:return head('Activity','Know what happened.',status)+(events.length?events.map((e,i)=>row(String(i+1).padStart(2,'0'),esc(e.title),esc(e.detail),14)).join(''):'<p>No task events yet.</p>')+btn('Start or revise review',3)+btn('Recovery options',26,'text-link');
+case 26:return head('Recovery','Continue with a clear boundary.','No external operation has started. Your draft remains available until you clear it.')+btn('Edit contract',4)+btn('Review the rules',7,'secondary')+action('Cancel local task','cancel','secondary')+btn('Help with limitations',31,'text-link');
+case 27:return head('External services','Sending is not connected.','In production, a counsel integration requires authorization for the selected destination only.')+row('01','Prepare first','Review the exact document, recipient and attachments.',21)+row('02','Approve the action','One-time approval tied to the packet version.')+row('03','Verify delivery','Show a receipt only after a confirmed response.')+'<div class="notice">No provider credentials or external account authorization are requested in this prototype.</div>'+btn('Return to packet',21);
+case 28:return head('Privacy','A smaller data footprint.','No registration, tracking, advertising or background network calls in this prototype.')+row('01','Data location','Contract and results: browser memory only.')+row('02','External processing','None in this prototype; separate consent required for future provider use.')+row('03','Delete this session','Clear contract, findings and review history.',29)+row('04','Accessibility','Motion and text behavior.',30)+btn('Help and limitations',31,'secondary');
+case 29:return head('Delete local data','Clear this session?','This removes the contract, checklist changes, findings, reviewer question and execution history from memory.')+action('Delete local review','delete')+btn('Keep my review',28,'secondary')+'<small>No server deletion is performed because this prototype does not upload your text.</small>';
+case 30:return head('Accessibility','Built for inspection.','The prototype follows your system’s reduced-motion preference. Keyboard focus remains visible.')+row('01','Readable type','Body 16 px · secondary 13 px · scalable native handoff.')+row('02','No color-only status','Labels and symbols identify every result.')+row('03','Touch and keyboard','Controls ≥48 px high with native keyboard behavior.')+'<div class="notice">VoiceOver, TalkBack and native Dynamic Type require device testing. This browser view is not proof of native accessibility.</div>'+btn('Return to review',1);
+case 31:return head('Help','Know the limits.','This design is a specification and local interactive prototype, not a deployed legal service.')+'<details><summary>What does this review actually do?</summary><p>Case-insensitive, literal phrase matching against rules you supplied. It cannot interpret the legal meaning of a clause.</p></details><details><summary>Is any legislation verified?</summary><p>No. The current sample has no authenticated legal source pack.</p></details><details><summary>Can the agent email counsel?</summary><p>Not here. No email connector is active. The packet is prepared for human review.</p></details><details><summary>Does free access mean free infrastructure?</summary><p>No. Production inference, hosting and store distribution require an operating budget or a viable on-device alternative.</p></details>'+btn('Review the plan',11);
+case 32:return !findings?empty():head('Completion record','Prepared. Not sent.','The local checklist finished. Legal review and external delivery remain pending.')+row('✓','Local screening','Completed with inspectable matches.',14)+row('✓','Review packet','Copyable text prepared.',22)+row('—','Legal compliance','Not determined.',18)+row('—','Counsel delivery','Not performed.',27)+btn('Return to workspace',1);
+}}
+function packet(){return JSON.stringify({product:'Himayah AI',mode:'local literal screening',objective:scope,jurisdiction,contract:draft,rules,findings,note,external_delivery:'not performed',legal_sources_verified:0,limitations:'Phrase screening is not semantic interpretation or legal advice.'},null,2)}
+function invalidate(){rev++;findings=null;resultRev=-1;events=[];status='Draft changed; rerun required';ack=false}
+function run(){
+if(!draft.trim()){error='Paste a contract before screening.';render();return}
+if(!rules.length){error='Add at least one non-empty rule before screening.';render();return}
+const chars=Array.from(draft);const reEscape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+findings=rules.map(r=>{const regex=new RegExp(reEscape(r.phrase),'giu');const matches=Array.from(draft.matchAll(regex),m=>{const start=Array.from(draft.slice(0,m.index)).length,end=start+Array.from(m[0]).length;return {start,end,quote:chars.slice(Math.max(0,start-60),Math.min(chars.length,end+100)).join('')}});return {...r,matches,flagged:r.required?!matches.length:!!matches.length}});
+resultRev=rev;selected=0;status='Local screening completed';events=[{title:'Input validated',detail:`${chars.length} code points; ${rules.length} supplied rules.`},{title:'Literal screening completed',detail:`${matchCount()} matches; ${findings.filter(f=>f.flagged).length} flags.`},{title:'Human review pending',detail:'No legal verdict or external delivery.'}];go(14);
+}
+function render(){
+root.querySelector('.phone').classList.toggle('android',settings.platform==='android');
+root.querySelector('.phone').style.fontSize=settings.large?'20px':'16px';
+root.style.colorScheme=settings.dark?'dark':'light dark';
+content.innerHTML=screen()+(error?`<p class="error" role="alert">${esc(error)}</p>`:'');
+root.querySelector('#hm-screen').value=String(page);
+if(page===6)root.querySelector('#hm-jurisdiction').value=jurisdiction;
+root.querySelector('#hm-back').disabled=!backstack.length;
+root.querySelector('header #hm-back').textContent=settings.platform==='android'?'←':'‹';
+root.querySelectorAll('nav button').forEach(b=>{if(Number(b.dataset.go)===(page>=23&&page<=24?23:page===25||page===14?25:1))b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+}
+root.querySelector('#hm-screen').innerHTML=titles.map((t,i)=>`<option value="${i+1}">${String(i+1).padStart(2,'0')} · ${t}</option>`).join('');
+root.querySelector('#hm-screen').addEventListener('change',e=>go(Number(e.target.value)));
+root.querySelector('#hm-platform').addEventListener('change',e=>{settings.platform=e.target.value;render()});
+root.querySelector('#hm-back').addEventListener('click',()=>{if(backstack.length){page=backstack.pop();error='';render();persist()}});
+root.addEventListener('click',e=>{
+const b=e.target.closest('button');if(!b)return;
+if(b.dataset.go){go(Number(b.dataset.go));return}
+if(b.dataset.finding!==undefined){selected=Number(b.dataset.finding);go(16);return}
+if(b.dataset.remove!==undefined){rules.splice(Number(b.dataset.remove),1);invalidate();render();return}
+const a=b.dataset.action;if(!a)return;
+if(a==='sample'){draft=original;rules=structuredClone(defaults);deleted=false;invalidate();go(4)}
+if(a==='save-text'){const value=root.querySelector('#hm-text').value;if(draft!==value){draft=value;invalidate()}if(!value.trim()){error='Paste a non-empty contract.';render()}else go(5)}
+if(a==='save-scope'){scope=root.querySelector('#hm-scope').value.trim();if(!scope){error='Add a review objective.';render()}else{invalidate();go(7)}}
+if(a==='save-jurisdiction'){jurisdiction=root.querySelector('#hm-jurisdiction').value;invalidate();go(5)}
+if(a==='add-rule'){const label=root.querySelector('#hm-label').value.trim(),phrase=root.querySelector('#hm-phrase').value.trim();if(!label||!phrase){error='Provide a label and a non-empty phrase.';const old=error;content.querySelector('.error')?.remove();content.insertAdjacentHTML('beforeend',`<p class="error" role="alert">${esc(old)}</p>`)}else if(rules.length>=500){error='Limit: 500 rules.';render()}else{rules.push({label,phrase,required:root.querySelector('#hm-kind').value==='missing'});invalidate();go(7)}}
+if(a==='consent'){ack=root.querySelector('#hm-ack').checked;if(!ack){error='Confirm that you understand the local screening method.';render()}else go(13)}
+if(a==='run')run();
+if(a==='save-note'){note=root.querySelector('#hm-note').value;go(21)}
+if(a==='search'){query=root.querySelector('#hm-query').value;render()}
+if(a==='cancel'){status='Cancelled locally';events.push({title:'Task cancelled',detail:'No external action was active.'});go(25)}
+if(a==='delete'){draft='';rules=structuredClone(defaults);findings=null;events=[];note='';query='';scope='Privacy and contract triage';jurisdiction='UAE · jurisdiction to confirm';status='Local data cleared';deleted=true;ack=false;invalidate();backstack=[];go(1,false)}
+});
+render();
+window.addEventListener('openai:set_globals',e=>{const next=e.detail?.globals?.widgetState?.privateContent?.page;if(next>=1&&next<=32){page=next;render()}});
+if(globalThis.Tweak){const t=new Tweak({container:root.querySelector('.phone'),onChange:render});t.addToggle(settings,'dark',{label:'Dark appearance'});t.addSelect(settings,'platform',{label:'Platform',options:['ios','android']});}
+})();
+</script>
+
+</body></html>

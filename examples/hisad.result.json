@@ -1,0 +1,162 @@
+{
+  "id": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+  "agent": "hisad",
+  "goal": "Rescue board: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14T12:00:00+04:00",
+    "lot": {
+      "allergens": [
+        "milk"
+      ],
+      "allergens_known": true,
+      "expires": "2026-11-14T16:00:00+04:00",
+      "handling_verified": true,
+      "quantity": 20
+    },
+    "recipients": [
+      {
+        "capacity": 30,
+        "excluded_allergens": [],
+        "name": "Recipient A — example",
+        "travel_minutes": 45
+      },
+      {
+        "capacity": 10,
+        "excluded_allergens": [
+          "milk"
+        ],
+        "name": "Recipient B — example",
+        "travel_minutes": 20
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.744233+00:00",
+  "updated": "2026-11-15T05:20:08.746245+00:00",
+  "result": {
+    "agent": "hisad",
+    "analysis": {
+      "handoff_confirmed": false,
+      "matches": [
+        {
+          "eligible_for_review": true,
+          "reasons": [],
+          "recipient": "Recipient A — example",
+          "travel_minutes": 45
+        },
+        {
+          "eligible_for_review": false,
+          "reasons": [
+            "insufficient_capacity",
+            "allergen_conflict"
+          ],
+          "recipient": "Recipient B — example",
+          "travel_minutes": 20
+        }
+      ],
+      "note": "Screening of supplied records; not a food-safety certification."
+    },
+    "analysis_hash": "87df3a9be1cce2c140e48cf957617b2465f92480bb29186bebe6e1646c4416d0",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Rescue board: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "3a8e32cbb795c662d25cdf228d32bba7929ae5e172edb6a32a916e3c193a3af6",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "bc9e4aadf39af426f16ee4773af33a0d33f6a04b9c627bcf589bfec8cfa8fd91",
+  "review": "pending",
+  "lease": "0e2009d5-615d-4b66-a074-8df5161d6c56",
+  "events": [
+    {
+      "id": 31,
+      "run": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+      "at": "2026-11-15T05:20:08.744885+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "run": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+      "at": "2026-11-15T05:20:08.745255+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 33,
+      "run": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+      "at": "2026-11-15T05:20:08.745651+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "handoff_confirmed": false,
+          "matches": [
+            {
+              "eligible_for_review": true,
+              "reasons": [],
+              "recipient": "Recipient A — example",
+              "travel_minutes": 45
+            },
+            {
+              "eligible_for_review": false,
+              "reasons": [
+                "insufficient_capacity",
+                "allergen_conflict"
+              ],
+              "recipient": "Recipient B — example",
+              "travel_minutes": 20
+            }
+          ],
+          "note": "Screening of supplied records; not a food-safety certification."
+        },
+        "output_hash": "87df3a9be1cce2c140e48cf957617b2465f92480bb29186bebe6e1646c4416d0",
+        "tool": "hisad_analyze"
+      }
+    },
+    {
+      "id": 34,
+      "run": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+      "at": "2026-11-15T05:20:08.746033+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "3a8e32cbb795c662d25cdf228d32bba7929ae5e172edb6a32a916e3c193a3af6",
+        "output_hash": "87df3a9be1cce2c140e48cf957617b2465f92480bb29186bebe6e1646c4416d0",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 35,
+      "run": "75926dcd-e28d-4ab5-92b7-1be0a6769240",
+      "at": "2026-11-15T05:20:08.746428+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "31d435f2496edd3c607497234b976f6a02266f6a4c0864cde7e4885bf8cd1da8",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "31d435f2496edd3c607497234b976f6a02266f6a4c0864cde7e4885bf8cd1da8"
+}

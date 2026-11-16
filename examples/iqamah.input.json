@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-11-14",
+  "requirements": [
+    "passport",
+    "income_evidence"
+  ],
+  "documents": [
+    {
+      "name": "passport",
+      "expires": "2028-01-01",
+      "reference": "passport.pdf, p.1"
+    }
+  ]
+}

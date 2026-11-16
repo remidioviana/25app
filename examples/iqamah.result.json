@@ -1,0 +1,144 @@
+{
+  "id": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+  "agent": "iqamah",
+  "goal": "Dossier readiness: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14",
+    "documents": [
+      {
+        "expires": "2028-01-01",
+        "name": "passport",
+        "reference": "passport.pdf, p.1"
+      }
+    ],
+    "requirements": [
+      "passport",
+      "income_evidence"
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.747880+00:00",
+  "updated": "2026-11-15T05:20:08.754256+00:00",
+  "result": {
+    "agent": "iqamah",
+    "analysis": {
+      "as_of": "2026-11-14",
+      "checks": [
+        {
+          "reference": "passport.pdf, p.1",
+          "requirement": "passport",
+          "status": "present_unverified"
+        },
+        {
+          "reference": null,
+          "requirement": "income_evidence",
+          "status": "missing"
+        }
+      ],
+      "missing": [
+        "income_evidence"
+      ],
+      "note": "User-supplied checklist; document presence does not establish legal eligibility."
+    },
+    "analysis_hash": "b197135d2ec320d5bffeddffebec72da57d8feab14c5c574f3ad5d767a25b471",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Dossier readiness: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "2bfcb3a6065c8456d83fb3899d659551c42e598cbefec78528babb753c2e7f83",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "5a3324e20990049ade894d745bf4692b8cf82bd3a84d285afb756e31440fd4d3",
+  "review": "pending",
+  "lease": "b92ee202-17da-446e-8721-9ae7ca44047c",
+  "events": [
+    {
+      "id": 36,
+      "run": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+      "at": "2026-11-15T05:20:08.750320+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "run": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+      "at": "2026-11-15T05:20:08.751745+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 38,
+      "run": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+      "at": "2026-11-15T05:20:08.752940+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "as_of": "2026-11-14",
+          "checks": [
+            {
+              "reference": "passport.pdf, p.1",
+              "requirement": "passport",
+              "status": "present_unverified"
+            },
+            {
+              "reference": null,
+              "requirement": "income_evidence",
+              "status": "missing"
+            }
+          ],
+          "missing": [
+            "income_evidence"
+          ],
+          "note": "User-supplied checklist; document presence does not establish legal eligibility."
+        },
+        "output_hash": "b197135d2ec320d5bffeddffebec72da57d8feab14c5c574f3ad5d767a25b471",
+        "tool": "iqamah_analyze"
+      }
+    },
+    {
+      "id": 39,
+      "run": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+      "at": "2026-11-15T05:20:08.754045+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "2bfcb3a6065c8456d83fb3899d659551c42e598cbefec78528babb753c2e7f83",
+        "output_hash": "b197135d2ec320d5bffeddffebec72da57d8feab14c5c574f3ad5d767a25b471",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 40,
+      "run": "5c62afe4-54a1-4adf-92f7-6f095ab943b1",
+      "at": "2026-11-15T05:20:08.754401+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "4ddcfea8b6de9c7b6fc0d2105679b191a1abaeee724338e9984f643ac268d001",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "4ddcfea8b6de9c7b6fc0d2105679b191a1abaeee724338e9984f643ac268d001"
+}

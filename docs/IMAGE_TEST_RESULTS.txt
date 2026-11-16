@@ -1,0 +1,1 @@
+PASS: 77 raster images, exact required dimensions, zero landscape; SVG viewboxes square or portrait.

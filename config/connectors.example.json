@@ -1,0 +1,10 @@
+{
+  "finance_snapshot": {
+    "label": "Meu serviço financeiro — fotografia JSON",
+    "url": "https://api.example.com/my-finance/snapshot",
+    "users": ["rafael"],
+    "agents": ["mizan", "manzil"],
+    "token_env": "CONNECTOR_FINANCE_TOKEN",
+    "json_pointer": "/data"
+  }
+}

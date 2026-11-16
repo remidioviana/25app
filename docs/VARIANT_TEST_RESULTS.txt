@@ -1,0 +1,1 @@
+PASS: 25 standalone portrait variants; unique names/IDs/icons/splashes, logos and EAS profiles; Mizan default; invalid variants rejected. No signed binary/device validation claimed.

@@ -1,0 +1,154 @@
+{
+  "id": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+  "agent": "manzil",
+  "goal": "Household ledger: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "budgets": {
+      "groceries": 1000
+    },
+    "currency": "AED",
+    "transactions": [
+      {
+        "amount": 99.9,
+        "category": "groceries",
+        "id": "receipt1",
+        "verified": true
+      },
+      {
+        "amount": 99.9,
+        "category": "groceries",
+        "id": "receipt1",
+        "verified": true
+      },
+      {
+        "amount": 50,
+        "category": "groceries",
+        "id": "receipt2",
+        "verified": false
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.774328+00:00",
+  "updated": "2026-11-15T05:20:08.776498+00:00",
+  "result": {
+    "agent": "manzil",
+    "analysis": {
+      "by_category": [
+        {
+          "budget": 1000,
+          "category": "groceries",
+          "remaining": 850.1,
+          "spent": 149.9
+        }
+      ],
+      "currency": "AED",
+      "duplicate_ids_excluded": [
+        "receipt1"
+      ],
+      "total": 149.9,
+      "unverified_records": [
+        "receipt2"
+      ]
+    },
+    "analysis_hash": "68e4aa55016d0fb784c55a427ce49a08a6ffef209e65a83dbd70eae46de6b6ab",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Household ledger: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "f6f4017d7cf2b7e49309c69edaad9313241c54dd1b886eeb25238c4ca89981c6",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "f448ce61e7f5bee3ca0bfa231b92811b5fd690101a8d9f77ae28a678e730e374",
+  "review": "pending",
+  "lease": "881ad0b4-c425-457e-9989-7bb272e95f9e",
+  "events": [
+    {
+      "id": 66,
+      "run": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+      "at": "2026-11-15T05:20:08.775128+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 67,
+      "run": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+      "at": "2026-11-15T05:20:08.775484+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 68,
+      "run": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+      "at": "2026-11-15T05:20:08.775907+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "by_category": [
+            {
+              "budget": 1000,
+              "category": "groceries",
+              "remaining": 850.1,
+              "spent": 149.9
+            }
+          ],
+          "currency": "AED",
+          "duplicate_ids_excluded": [
+            "receipt1"
+          ],
+          "total": 149.9,
+          "unverified_records": [
+            "receipt2"
+          ]
+        },
+        "output_hash": "68e4aa55016d0fb784c55a427ce49a08a6ffef209e65a83dbd70eae46de6b6ab",
+        "tool": "manzil_analyze"
+      }
+    },
+    {
+      "id": 69,
+      "run": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+      "at": "2026-11-15T05:20:08.776285+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "f6f4017d7cf2b7e49309c69edaad9313241c54dd1b886eeb25238c4ca89981c6",
+        "output_hash": "68e4aa55016d0fb784c55a427ce49a08a6ffef209e65a83dbd70eae46de6b6ab",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 70,
+      "run": "b82b93d6-4139-42bc-b0f5-7ebbe42d3bd0",
+      "at": "2026-11-15T05:20:08.776664+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "1a4213239943d920ab12fefd265d0908430df135a95575394e21790f4175c0d4",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "1a4213239943d920ab12fefd265d0908430df135a95575394e21790f4175c0d4"
+}

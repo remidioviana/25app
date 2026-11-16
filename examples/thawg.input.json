@@ -1,0 +1,25 @@
+{
+  "budget": 150,
+  "party_size": 3,
+  "required_tags": [
+    "vegetarian"
+  ],
+  "restaurants": [
+    {
+      "name": "Venue A — example",
+      "price": 100,
+      "available_seats": 4,
+      "tags": [
+        "vegetarian"
+      ]
+    },
+    {
+      "name": "Venue B — example",
+      "price": 180,
+      "available_seats": 2,
+      "tags": [
+        "vegetarian"
+      ]
+    }
+  ]
+}

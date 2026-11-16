@@ -1,0 +1,171 @@
+{
+  "id": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+  "agent": "himam",
+  "goal": "Accessible journeys: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "needs": [
+      "step_free"
+    ],
+    "routes": [
+      {
+        "minutes": 30,
+        "name": "Route A — example",
+        "segments": [
+          {
+            "access": {
+              "step_free": true
+            },
+            "name": "Station 1"
+          },
+          {
+            "access": {
+              "step_free": null
+            },
+            "name": "Station 2"
+          }
+        ]
+      },
+      {
+        "minutes": 40,
+        "name": "Route B — example",
+        "segments": [
+          {
+            "access": {
+              "step_free": true
+            },
+            "name": "Bus"
+          }
+        ]
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.736221+00:00",
+  "updated": "2026-11-15T05:20:08.738689+00:00",
+  "result": {
+    "agent": "himam",
+    "analysis": {
+      "note": "Reported conditions; no live elevator or traffic telemetry.",
+      "routes": [
+        {
+          "blocked": [],
+          "confirmed_by_supplied_data": true,
+          "minutes": 40,
+          "name": "Route B — example",
+          "unknown": []
+        },
+        {
+          "blocked": [],
+          "confirmed_by_supplied_data": false,
+          "minutes": 30,
+          "name": "Route A — example",
+          "unknown": [
+            "Station 2: step_free"
+          ]
+        }
+      ]
+    },
+    "analysis_hash": "9071567d8bfbb0de4b0480319f01d4493c7e7eeed12a1be536e87392e755e3a5",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Accessible journeys: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "709d9bcf164fac8bc5165a951a39a2268f57d4a64333d63f423d9749be8614ae",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "e7672f61bc9d33a43780eb0782edbe5711ffa9cd261aceddc2da0a30b9445ebc",
+  "review": "pending",
+  "lease": "41b2f314-1166-4996-8379-ca5387addb38",
+  "events": [
+    {
+      "id": 21,
+      "run": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+      "at": "2026-11-15T05:20:08.737260+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "run": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+      "at": "2026-11-15T05:20:08.737652+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 23,
+      "run": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+      "at": "2026-11-15T05:20:08.738032+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "note": "Reported conditions; no live elevator or traffic telemetry.",
+          "routes": [
+            {
+              "blocked": [],
+              "confirmed_by_supplied_data": true,
+              "minutes": 40,
+              "name": "Route B — example",
+              "unknown": []
+            },
+            {
+              "blocked": [],
+              "confirmed_by_supplied_data": false,
+              "minutes": 30,
+              "name": "Route A — example",
+              "unknown": [
+                "Station 2: step_free"
+              ]
+            }
+          ]
+        },
+        "output_hash": "9071567d8bfbb0de4b0480319f01d4493c7e7eeed12a1be536e87392e755e3a5",
+        "tool": "himam_analyze"
+      }
+    },
+    {
+      "id": 24,
+      "run": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+      "at": "2026-11-15T05:20:08.738422+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "709d9bcf164fac8bc5165a951a39a2268f57d4a64333d63f423d9749be8614ae",
+        "output_hash": "9071567d8bfbb0de4b0480319f01d4493c7e7eeed12a1be536e87392e755e3a5",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 25,
+      "run": "bd6c4724-a71b-4608-a30a-1f285cdce894",
+      "at": "2026-11-15T05:20:08.738928+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "da80e0d7db7bde8b1ecd68ad2b4b2f5307259618f0242c0672a98544e9843037",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "da80e0d7db7bde8b1ecd68ad2b4b2f5307259618f0242c0672a98544e9843037"
+}

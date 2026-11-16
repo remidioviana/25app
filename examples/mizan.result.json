@@ -1,0 +1,153 @@
+{
+  "id": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+  "agent": "mizan",
+  "goal": "Wealth overview: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "budgets": {
+      "food": 500,
+      "transport": 200
+    },
+    "currency": "AED",
+    "transactions": [
+      {
+        "amount": 200,
+        "category": "food",
+        "id": "t1",
+        "verified": true
+      },
+      {
+        "amount": 250,
+        "category": "transport",
+        "id": "t2",
+        "verified": true
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.777719+00:00",
+  "updated": "2026-11-15T05:20:08.779801+00:00",
+  "result": {
+    "agent": "mizan",
+    "analysis": {
+      "by_category": [
+        {
+          "budget": 500,
+          "category": "food",
+          "remaining": 300.0,
+          "spent": 200.0
+        },
+        {
+          "budget": 200,
+          "category": "transport",
+          "remaining": -50.0,
+          "spent": 250.0
+        }
+      ],
+      "currency": "AED",
+      "duplicate_ids_excluded": [],
+      "total": 450.0,
+      "unverified_records": []
+    },
+    "analysis_hash": "63a615fa8be565c5d2f29560531d6bb0bbcc19801a4c92906c57cab959a43949",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Wealth overview: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "c23ba8809e32c3a4a5b43ab64a93cda0c634004a8e0ea6d0dab3081021a304db",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "a0e115e13c8c55ea95aae2f6b4f194815aa0fb5ad1661b4e1b92db59d29912ba",
+  "review": "pending",
+  "lease": "93fdfecf-182d-4f73-9ddc-8da2e7c4aa04",
+  "events": [
+    {
+      "id": 71,
+      "run": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+      "at": "2026-11-15T05:20:08.778318+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 72,
+      "run": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+      "at": "2026-11-15T05:20:08.778690+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 73,
+      "run": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+      "at": "2026-11-15T05:20:08.779074+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "by_category": [
+            {
+              "budget": 500,
+              "category": "food",
+              "remaining": 300.0,
+              "spent": 200.0
+            },
+            {
+              "budget": 200,
+              "category": "transport",
+              "remaining": -50.0,
+              "spent": 250.0
+            }
+          ],
+          "currency": "AED",
+          "duplicate_ids_excluded": [],
+          "total": 450.0,
+          "unverified_records": []
+        },
+        "output_hash": "63a615fa8be565c5d2f29560531d6bb0bbcc19801a4c92906c57cab959a43949",
+        "tool": "mizan_analyze"
+      }
+    },
+    {
+      "id": 74,
+      "run": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+      "at": "2026-11-15T05:20:08.779537+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "c23ba8809e32c3a4a5b43ab64a93cda0c634004a8e0ea6d0dab3081021a304db",
+        "output_hash": "63a615fa8be565c5d2f29560531d6bb0bbcc19801a4c92906c57cab959a43949",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 75,
+      "run": "9353a6fc-c6ef-4fe2-bf91-0ba4966b03b9",
+      "at": "2026-11-15T05:20:08.780005+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "f8210c5d7953d5011812f8819ae7415a8dc3b5b4964fc16371c4460618e478a3",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "f8210c5d7953d5011812f8819ae7415a8dc3b5b4964fc16371c4460618e478a3"
+}

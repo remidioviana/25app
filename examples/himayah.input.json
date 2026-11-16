@@ -1,0 +1,15 @@
+{
+  "text": "The supplier may share data. The agreement has a term of 12 months.",
+  "rules": [
+    {
+      "label": "Retention provision",
+      "phrase": "retention",
+      "required": true
+    },
+    {
+      "label": "Data sharing",
+      "phrase": "share data",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "theme": "light",
+    "text": "#0B192C",
+    "surface": "#F5F7FA",
+    "ratio": 16.45
+  },
+  {
+    "theme": "light",
+    "text": "#0B192C",
+    "surface": "#FFFFFF",
+    "ratio": 17.65
+  },
+  {
+    "theme": "light",
+    "text": "#526174",
+    "surface": "#F5F7FA",
+    "ratio": 5.89
+  },
+  {
+    "theme": "light",
+    "text": "#526174",
+    "surface": "#FFFFFF",
+    "ratio": 6.32
+  },
+  {
+    "theme": "light",
+    "text": "#086344",
+    "surface": "#F5F7FA",
+    "ratio": 6.8
+  },
+  {
+    "theme": "light",
+    "text": "#086344",
+    "surface": "#FFFFFF",
+    "ratio": 7.3
+  },
+  {
+    "theme": "light",
+    "text": "#875000",
+    "surface": "#F5F7FA",
+    "ratio": 6.16
+  },
+  {
+    "theme": "light",
+    "text": "#875000",
+    "surface": "#FFFFFF",
+    "ratio": 6.61
+  },
+  {
+    "theme": "light",
+    "text": "#A8262B",
+    "surface": "#F5F7FA",
+    "ratio": 6.57
+  },
+  {
+    "theme": "light",
+    "text": "#A8262B",
+    "surface": "#FFFFFF",
+    "ratio": 7.05
+  },
+  {
+    "theme": "dark",
+    "text": "#F3F6FC",
+    "surface": "#0B1220",
+    "ratio": 17.3
+  },
+  {
+    "theme": "dark",
+    "text": "#F3F6FC",
+    "surface": "#152133",
+    "ratio": 14.95
+  },
+  {
+    "theme": "dark",
+    "text": "#B6C2D2",
+    "surface": "#0B1220",
+    "ratio": 10.37
+  },
+  {
+    "theme": "dark",
+    "text": "#B6C2D2",
+    "surface": "#152133",
+    "ratio": 8.97
+  },
+  {
+    "theme": "dark",
+    "text": "#87DFC0",
+    "surface": "#0B1220",
+    "ratio": 11.9
+  },
+  {
+    "theme": "dark",
+    "text": "#87DFC0",
+    "surface": "#152133",
+    "ratio": 10.29
+  },
+  {
+    "theme": "dark",
+    "text": "#FFD18A",
+    "surface": "#0B1220",
+    "ratio": 13.14
+  },
+  {
+    "theme": "dark",
+    "text": "#FFD18A",
+    "surface": "#152133",
+    "ratio": 11.36
+  },
+  {
+    "theme": "dark",
+    "text": "#FFADB0",
+    "surface": "#0B1220",
+    "ratio": 10.57
+  },
+  {
+    "theme": "dark",
+    "text": "#FFADB0",
+    "surface": "#152133",
+    "ratio": 9.14
+  }
+]

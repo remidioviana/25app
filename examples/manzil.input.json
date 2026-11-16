@@ -1,0 +1,26 @@
+{
+  "currency": "AED",
+  "budgets": {
+    "groceries": 1000
+  },
+  "transactions": [
+    {
+      "id": "receipt1",
+      "category": "groceries",
+      "amount": 99.9,
+      "verified": true
+    },
+    {
+      "id": "receipt1",
+      "category": "groceries",
+      "amount": 99.9,
+      "verified": true
+    },
+    {
+      "id": "receipt2",
+      "category": "groceries",
+      "amount": 50,
+      "verified": false
+    }
+  ]
+}

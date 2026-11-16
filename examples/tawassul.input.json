@@ -1,0 +1,16 @@
+{
+  "account": "Example Company",
+  "needs": [
+    "logistics",
+    "reporting"
+  ],
+  "products": [
+    {
+      "name": "Operations",
+      "tags": [
+        "logistics"
+      ],
+      "approved_fact": "Organizes tasks and deadlines in a workspace."
+    }
+  ]
+}

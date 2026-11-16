@@ -1,0 +1,144 @@
+{
+  "id": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+  "agent": "tadweer",
+  "goal": "Material routing: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "hazardous": true,
+    "material": "battery",
+    "routes": [
+      {
+        "accepted_materials": [
+          "battery"
+        ],
+        "accepts_hazardous": true,
+        "distance_km": 5,
+        "name": "Specialist operator — example"
+      },
+      {
+        "accepted_materials": [
+          "paper"
+        ],
+        "accepts_hazardous": false,
+        "distance_km": 1,
+        "name": "General collection — example"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.801283+00:00",
+  "updated": "2026-11-15T05:20:08.803121+00:00",
+  "result": {
+    "agent": "tadweer",
+    "analysis": {
+      "collection_booked": false,
+      "needs_local_confirmation": true,
+      "next_step": "Confirm acceptance with a specialist operator",
+      "routes": [
+        {
+          "accepted_materials": [
+            "battery"
+          ],
+          "accepts_hazardous": true,
+          "distance_km": 5,
+          "name": "Specialist operator — example"
+        }
+      ]
+    },
+    "analysis_hash": "326a1bcc7949e10daaed7abdfe340c68bcb78ff79349840353930cb60ea6e88e",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Material routing: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "f1af2a85811cbe2e34f0b4e654a88744a7fca9a23c6fb3eb32e77fc964e72975",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "c5c1e67f78a82f945586c0992d499e8680ec8c90f60558c30aa0b97817c6cf53",
+  "review": "pending",
+  "lease": "b7ffff7a-dd37-4e39-8d4f-b2107c9e232d",
+  "events": [
+    {
+      "id": 101,
+      "run": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+      "at": "2026-11-15T05:20:08.801874+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "run": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+      "at": "2026-11-15T05:20:08.802160+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 103,
+      "run": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+      "at": "2026-11-15T05:20:08.802547+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "collection_booked": false,
+          "needs_local_confirmation": true,
+          "next_step": "Confirm acceptance with a specialist operator",
+          "routes": [
+            {
+              "accepted_materials": [
+                "battery"
+              ],
+              "accepts_hazardous": true,
+              "distance_km": 5,
+              "name": "Specialist operator — example"
+            }
+          ]
+        },
+        "output_hash": "326a1bcc7949e10daaed7abdfe340c68bcb78ff79349840353930cb60ea6e88e",
+        "tool": "tadweer_analyze"
+      }
+    },
+    {
+      "id": 104,
+      "run": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+      "at": "2026-11-15T05:20:08.802958+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "f1af2a85811cbe2e34f0b4e654a88744a7fca9a23c6fb3eb32e77fc964e72975",
+        "output_hash": "326a1bcc7949e10daaed7abdfe340c68bcb78ff79349840353930cb60ea6e88e",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 105,
+      "run": "b441bfc6-94e5-490e-ba3f-cceb21ff4c1f",
+      "at": "2026-11-15T05:20:08.803257+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "7cd5d1e5f055c07ec7f423035bcd1e5905f22eea9e1d7f91539ca0472a674d40",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "7cd5d1e5f055c07ec7f423035bcd1e5905f22eea9e1d7f91539ca0472a674d40"
+}

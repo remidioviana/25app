@@ -1,0 +1,124 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> agent-studio-mobile@6.0.0 export:native
+> expo export --platform android --platform ios --output-dir /workspace/scratch/b947b1dca524/native-release
+
+Using src/app as the root directory for Expo Router.
+Starting Metro Bundler
+
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:18) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 17181ms node_modules/expo-router/entry.js (1355 modules)
+iOS Bundled 25732ms node_modules/expo-router/entry.js (1377 modules)
+
+› Assets (108):
+assets/variants/adab/hero.png (40KB)
+assets/variants/adab/icon.png (33KB)
+assets/variants/adab/splash.png (50KB)
+assets/variants/adl/hero.png (44KB)
+assets/variants/adl/icon.png (42KB)
+assets/variants/adl/splash.png (55KB)
+assets/variants/amanah-eco/hero.png (54KB)
+assets/variants/amanah-eco/icon.png (54KB)
+assets/variants/amanah-eco/splash.png (65KB)
+assets/variants/gurbah/hero.png (47KB)
+assets/variants/gurbah/icon.png (46KB)
+assets/variants/gurbah/splash.png (58KB)
+assets/variants/himam/hero.png (45KB)
+assets/variants/himam/icon.png (41KB)
+assets/variants/himam/splash.png (56KB)
+assets/variants/himayah/hero.png (45KB)
+assets/variants/himayah/icon.png (41KB)
+assets/variants/himayah/splash.png (55KB)
+assets/variants/hisad/hero.png (51KB)
+assets/variants/hisad/icon.png (52KB)
+assets/variants/hisad/splash.png (62KB)
+assets/variants/iqamah/hero.png (45KB)
+assets/variants/iqamah/icon.png (39KB)
+assets/variants/iqamah/splash.png (56KB)
+assets/variants/istithmar/hero.png (37KB)
+assets/variants/istithmar/icon.png (25KB)
+assets/variants/istithmar/splash.png (47KB)
+assets/variants/jomrok/hero.png (45KB)
+assets/variants/jomrok/icon.png (40KB)
+assets/variants/jomrok/splash.png (56KB)
+assets/variants/khibrat/hero.png (53KB)
+assets/variants/khibrat/icon.png (53KB)
+assets/variants/khibrat/splash.png (64KB)
+assets/variants/khidmah/hero.png (41KB)
+assets/variants/khidmah/icon.png (36KB)
+assets/variants/khidmah/splash.png (50KB)
+assets/variants/majlis/hero.png (44KB)
+assets/variants/majlis/icon.png (38KB)
+assets/variants/majlis/splash.png (55KB)
+assets/variants/manzil/hero.png (36KB)
+assets/variants/manzil/icon.png (30KB)
+assets/variants/manzil/splash.png (45KB)
+assets/variants/mizan/hero.png (36KB)
+assets/variants/mizan/icon.png (30KB)
+assets/variants/mizan/splash.png (46KB)
+assets/variants/munagasah/hero.png (35KB)
+assets/variants/munagasah/icon.png (22KB)
+assets/variants/munagasah/splash.png (44KB)
+assets/variants/nafas/hero.png (51KB)
+assets/variants/nafas/icon.png (54KB)
+assets/variants/nafas/splash.png (61KB)
+assets/variants/rafiq/hero.png (53KB)
+assets/variants/rafiq/icon.png (56KB)
+assets/variants/rafiq/splash.png (64KB)
+assets/variants/sahil/hero.png (48KB)
+assets/variants/sahil/icon.png (50KB)
+assets/variants/sahil/splash.png (58KB)
+assets/variants/sawm/hero.png (51KB)
+assets/variants/sawm/icon.png (48KB)
+assets/variants/sawm/splash.png (61KB)
+assets/variants/tadweer/hero.png (51KB)
+assets/variants/tadweer/icon.png (47KB)
+assets/variants/tadweer/splash.png (62KB)
+assets/variants/tawassul/hero.png (46KB)
+assets/variants/tawassul/icon.png (40KB)
+assets/variants/tawassul/splash.png (56KB)
+assets/variants/tawteen/hero.png (51KB)
+assets/variants/tawteen/icon.png (48KB)
+assets/variants/tawteen/splash.png (62KB)
+assets/variants/thawg/hero.png (44KB)
+assets/variants/thawg/icon.png (38KB)
+assets/variants/thawg/splash.png (55KB)
+assets/variants/turath/hero.png (51KB)
+assets/variants/turath/icon.png (51KB)
+assets/variants/turath/splash.png (62KB)
+node_modules/expo-router/assets/arrow_down.png (9.5KB)
+node_modules/expo-router/assets/arrow_right.xml (307B)
+node_modules/expo-router/assets/checkmark.xml (312B)
+node_modules/expo-router/assets/error.png (469B)
+node_modules/expo-router/assets/file.png (138B)
+node_modules/expo-router/assets/forward.png (188B)
+node_modules/expo-router/assets/pkg.png (364B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon-mask.png (653B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon.png (8 variations | 359B)
+node_modules/expo-router/assets/react-navigation/elements/clear-icon.png (4 variations | 425B)
+node_modules/expo-router/assets/react-navigation/elements/close-icon.png (4 variations | 235B)
+node_modules/expo-router/assets/react-navigation/elements/search-icon.png (7 variations | 592B)
+node_modules/expo-router/assets/sitemap.png (465B)
+node_modules/expo-router/assets/unmatched.png (4.8KB)
+
+› android bundles (1):
+_expo/static/js/android/entry-e6309771b9abb6885a8526342e8f2993.hbc (2.9MB)
+
+› ios bundles (1):
+_expo/static/js/ios/entry-4eed1edbd7907f334c95e2e867ff5c45.hbc (2.9MB)
+
+› Files (1):
+metadata.json (13KB)
+
+Exported: /workspace/scratch/b947b1dca524/native-release

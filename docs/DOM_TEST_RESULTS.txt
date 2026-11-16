@@ -1,0 +1,1 @@
+PASS: 25 UI flows via DOM + real local HTTP API; forms, exports, team option, review, history, retrieval, document import, schedule create/disable, invalid JSON. Not visual QA.

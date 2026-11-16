@@ -1,0 +1,159 @@
+{
+  "id": "db05b58c-6d24-4125-af5a-407f78b65c95",
+  "agent": "sahil",
+  "goal": "Service guide: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14",
+    "documents": [
+      {
+        "expires": "2026-10-01",
+        "name": "identity",
+        "reference": "identity.txt:1"
+      }
+    ],
+    "requirements": [
+      "identity",
+      "address",
+      "application"
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.792813+00:00",
+  "updated": "2026-11-15T05:20:08.794715+00:00",
+  "result": {
+    "agent": "sahil",
+    "analysis": {
+      "as_of": "2026-11-14",
+      "checks": [
+        {
+          "reference": "identity.txt:1",
+          "requirement": "identity",
+          "status": "expired"
+        },
+        {
+          "reference": null,
+          "requirement": "address",
+          "status": "missing"
+        },
+        {
+          "reference": null,
+          "requirement": "application",
+          "status": "missing"
+        }
+      ],
+      "missing": [
+        "identity",
+        "address",
+        "application"
+      ],
+      "note": "User-supplied checklist; document presence does not establish legal eligibility."
+    },
+    "analysis_hash": "f2b3a07518215e2ca2a587e572fc8c4732e6512ceab79d89b37fca68cacb25bd",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Service guide: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "6a17c3fe6db31e6b15027b5fcb8dee0198eeb9aee69db16016f476c89b949055",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "82b76a5dd252b7c594c95dfb32ffe263d1aafa0a35b9ba63ff100fe88b0433d6",
+  "review": "pending",
+  "lease": "c2d0bea4-8511-462c-ba04-c7f3309a82f2",
+  "events": [
+    {
+      "id": 91,
+      "run": "db05b58c-6d24-4125-af5a-407f78b65c95",
+      "at": "2026-11-15T05:20:08.793387+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 92,
+      "run": "db05b58c-6d24-4125-af5a-407f78b65c95",
+      "at": "2026-11-15T05:20:08.793776+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 93,
+      "run": "db05b58c-6d24-4125-af5a-407f78b65c95",
+      "at": "2026-11-15T05:20:08.794117+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "as_of": "2026-11-14",
+          "checks": [
+            {
+              "reference": "identity.txt:1",
+              "requirement": "identity",
+              "status": "expired"
+            },
+            {
+              "reference": null,
+              "requirement": "address",
+              "status": "missing"
+            },
+            {
+              "reference": null,
+              "requirement": "application",
+              "status": "missing"
+            }
+          ],
+          "missing": [
+            "identity",
+            "address",
+            "application"
+          ],
+          "note": "User-supplied checklist; document presence does not establish legal eligibility."
+        },
+        "output_hash": "f2b3a07518215e2ca2a587e572fc8c4732e6512ceab79d89b37fca68cacb25bd",
+        "tool": "sahil_analyze"
+      }
+    },
+    {
+      "id": 94,
+      "run": "db05b58c-6d24-4125-af5a-407f78b65c95",
+      "at": "2026-11-15T05:20:08.794490+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "6a17c3fe6db31e6b15027b5fcb8dee0198eeb9aee69db16016f476c89b949055",
+        "output_hash": "f2b3a07518215e2ca2a587e572fc8c4732e6512ceab79d89b37fca68cacb25bd",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 95,
+      "run": "db05b58c-6d24-4125-af5a-407f78b65c95",
+      "at": "2026-11-15T05:20:08.794933+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "80a998c97513e5e3d19a468780d4a14126743ce6a82e316f528d8f39a70fe594",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "80a998c97513e5e3d19a468780d4a14126743ce6a82e316f528d8f39a70fe594"
+}

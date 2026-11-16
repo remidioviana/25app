@@ -1,0 +1,26 @@
+{
+  "start": "09:00",
+  "end": "17:00",
+  "buffer_minutes": 10,
+  "busy": [
+    {
+      "title": "Selected break",
+      "start": "12:00",
+      "end": "13:00"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Reading",
+      "minutes": 30
+    },
+    {
+      "title": "Work",
+      "minutes": 120
+    },
+    {
+      "title": "Rest",
+      "minutes": 20
+    }
+  ]
+}

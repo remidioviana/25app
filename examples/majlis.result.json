@@ -1,0 +1,163 @@
+{
+  "id": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+  "agent": "majlis",
+  "goal": "Protocol guide: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "as_of": "2026-11-14",
+    "tasks": [
+      {
+        "depends_on": [],
+        "done": false,
+        "due": "2026-11-15",
+        "id": "account",
+        "title": "Create corporate account"
+      },
+      {
+        "depends_on": [
+          "account"
+        ],
+        "done": false,
+        "due": "2026-11-17",
+        "id": "training",
+        "title": "Initial training"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.769704+00:00",
+  "updated": "2026-11-15T05:20:08.772929+00:00",
+  "result": {
+    "agent": "majlis",
+    "analysis": {
+      "ordered_tasks": [
+        {
+          "depends_on": [],
+          "done": false,
+          "due": "2026-11-15",
+          "id": "account",
+          "overdue": false,
+          "ready": true,
+          "title": "Create corporate account"
+        },
+        {
+          "depends_on": [
+            "account"
+          ],
+          "done": false,
+          "due": "2026-11-17",
+          "id": "training",
+          "overdue": false,
+          "ready": false,
+          "title": "Initial training"
+        }
+      ],
+      "remaining": 2
+    },
+    "analysis_hash": "02d4ea63d55576c6151b21d419f0ba4896e92a3759b2497b64cf5e2205ff5242",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Protocol guide: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "867ffdc481341494d14a532055a06aec6042b9c63c5f7c49b2db4f2575d1fb91",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "b0af93c1f4512e5feed2192d1f95256e3e3162e0dfd269835e1d6a370ec88774",
+  "review": "pending",
+  "lease": "db0e18f8-4541-47be-a684-a485c0f83488",
+  "events": [
+    {
+      "id": 61,
+      "run": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+      "at": "2026-11-15T05:20:08.770373+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 62,
+      "run": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+      "at": "2026-11-15T05:20:08.771043+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 63,
+      "run": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+      "at": "2026-11-15T05:20:08.772111+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "ordered_tasks": [
+            {
+              "depends_on": [],
+              "done": false,
+              "due": "2026-11-15",
+              "id": "account",
+              "overdue": false,
+              "ready": true,
+              "title": "Create corporate account"
+            },
+            {
+              "depends_on": [
+                "account"
+              ],
+              "done": false,
+              "due": "2026-11-17",
+              "id": "training",
+              "overdue": false,
+              "ready": false,
+              "title": "Initial training"
+            }
+          ],
+          "remaining": 2
+        },
+        "output_hash": "02d4ea63d55576c6151b21d419f0ba4896e92a3759b2497b64cf5e2205ff5242",
+        "tool": "majlis_analyze"
+      }
+    },
+    {
+      "id": 64,
+      "run": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+      "at": "2026-11-15T05:20:08.772687+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "867ffdc481341494d14a532055a06aec6042b9c63c5f7c49b2db4f2575d1fb91",
+        "output_hash": "02d4ea63d55576c6151b21d419f0ba4896e92a3759b2497b64cf5e2205ff5242",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 65,
+      "run": "3cd0ff60-6a5b-4990-811e-2dfdc5f0278a",
+      "at": "2026-11-15T05:20:08.773140+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "52595b2e95e414c8d6e2e13023c2cbae83abf8be968f35989b6eca7415d4c804",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "52595b2e95e414c8d6e2e13023c2cbae83abf8be968f35989b6eca7415d4c804"
+}

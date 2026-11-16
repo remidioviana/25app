@@ -1,0 +1,1 @@
+PASS: local omission, collapsed/expanded sources, exact saved excerpt, missing reference/date, missing citation, accessible expanded state. DOM behavior only; no visual QA.

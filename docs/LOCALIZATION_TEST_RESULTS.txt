@@ -1,0 +1,1 @@
+PASS: 172 UTF-8 source/spec/example files, no residual Portuguese tokens or mojibake detected by regression scan.

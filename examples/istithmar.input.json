@@ -1,0 +1,26 @@
+{
+  "activity": "software",
+  "currency": "AED",
+  "years": 3,
+  "visas": 2,
+  "options": [
+    {
+      "name": "Option A — example",
+      "setup_fee": 1000,
+      "annual_fee": 6000,
+      "visa_fee": 2000,
+      "activities": [
+        "software"
+      ]
+    },
+    {
+      "name": "Option B — example",
+      "setup_fee": 4000,
+      "annual_fee": 5000,
+      "visa_fee": 1800,
+      "activities": [
+        "software"
+      ]
+    }
+  ]
+}

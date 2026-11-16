@@ -1,0 +1,149 @@
+{
+  "id": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+  "agent": "khibrat",
+  "goal": "Competency evidence: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "criteria": [
+      "python",
+      "sql",
+      "testing"
+    ],
+    "evidence": [
+      {
+        "criterion": "python",
+        "reference": "portfolio:project1"
+      },
+      {
+        "criterion": "testing",
+        "reference": "portfolio:tests"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.763289+00:00",
+  "updated": "2026-11-15T05:20:08.765361+00:00",
+  "result": {
+    "agent": "khibrat",
+    "analysis": {
+      "note": "Does not rank candidates or infer skills from missing evidence.",
+      "rubric": [
+        {
+          "criterion": "python",
+          "reference": "portfolio:project1",
+          "status": "evidence_present_for_review"
+        },
+        {
+          "criterion": "sql",
+          "reference": null,
+          "status": "not_evidenced"
+        },
+        {
+          "criterion": "testing",
+          "reference": "portfolio:tests",
+          "status": "evidence_present_for_review"
+        }
+      ]
+    },
+    "analysis_hash": "25ec5b0a5b0bcf4834969ae6d57e92aeac445757f16edbf8305dd97c3989144e",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Competency evidence: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "f62f88ef0051f3866ee6a3083b0d817081d9651e4925b6886452ee26c12c1745",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "728368cc03561d7074a913995112e6511687620e55ac31b99d433199eb45a2b3",
+  "review": "pending",
+  "lease": "c0bd4a13-3c14-4368-98bb-26004074973c",
+  "events": [
+    {
+      "id": 51,
+      "run": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+      "at": "2026-11-15T05:20:08.764005+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 52,
+      "run": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+      "at": "2026-11-15T05:20:08.764437+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 53,
+      "run": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+      "at": "2026-11-15T05:20:08.764826+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "note": "Does not rank candidates or infer skills from missing evidence.",
+          "rubric": [
+            {
+              "criterion": "python",
+              "reference": "portfolio:project1",
+              "status": "evidence_present_for_review"
+            },
+            {
+              "criterion": "sql",
+              "reference": null,
+              "status": "not_evidenced"
+            },
+            {
+              "criterion": "testing",
+              "reference": "portfolio:tests",
+              "status": "evidence_present_for_review"
+            }
+          ]
+        },
+        "output_hash": "25ec5b0a5b0bcf4834969ae6d57e92aeac445757f16edbf8305dd97c3989144e",
+        "tool": "khibrat_analyze"
+      }
+    },
+    {
+      "id": 54,
+      "run": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+      "at": "2026-11-15T05:20:08.765163+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "f62f88ef0051f3866ee6a3083b0d817081d9651e4925b6886452ee26c12c1745",
+        "output_hash": "25ec5b0a5b0bcf4834969ae6d57e92aeac445757f16edbf8305dd97c3989144e",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 55,
+      "run": "2e22799e-c263-48d0-9d4b-980fec5f21a9",
+      "at": "2026-11-15T05:20:08.765541+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "278411c075abe562e356550e03971459755986b46d3cef74403806ac711c1f39",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "278411c075abe562e356550e03971459755986b46d3cef74403806ac711c1f39"
+}

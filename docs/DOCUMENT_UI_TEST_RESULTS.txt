@@ -1,0 +1,1 @@
+PASS: connection reset, late list suppression, save clears date, picker cannot upload to old connection, new import clears source/date, stale preview/save/error suppression. DOM behavior only.

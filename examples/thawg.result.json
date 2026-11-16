@@ -1,0 +1,175 @@
+{
+  "id": "0c8572fa-19bc-45c2-8981-7160c439db19",
+  "agent": "thawg",
+  "goal": "Dining shortlist: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "budget": 150,
+    "party_size": 3,
+    "required_tags": [
+      "vegetarian"
+    ],
+    "restaurants": [
+      {
+        "available_seats": 4,
+        "name": "Venue A — example",
+        "price": 100,
+        "tags": [
+          "vegetarian"
+        ]
+      },
+      {
+        "available_seats": 2,
+        "name": "Venue B — example",
+        "price": 180,
+        "tags": [
+          "vegetarian"
+        ]
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.814977+00:00",
+  "updated": "2026-11-15T05:20:08.817093+00:00",
+  "result": {
+    "agent": "thawg",
+    "analysis": {
+      "booked": false,
+      "note": "Confirm availability and dietary restrictions directly with the venue.",
+      "shortlist": [
+        {
+          "available_seats": 4,
+          "eligible_on_supplied_data": true,
+          "name": "Venue A — example",
+          "price": 100,
+          "reasons": [],
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "available_seats": 2,
+          "eligible_on_supplied_data": false,
+          "name": "Venue B — example",
+          "price": 180,
+          "reasons": [
+            "over_budget",
+            "insufficient_reported_seats"
+          ],
+          "tags": [
+            "vegetarian"
+          ]
+        }
+      ]
+    },
+    "analysis_hash": "7c8d0b3b1c3f26ba0af117f0d639bbaddaac51404845c7860214acec9b43f99c",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Dining shortlist: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "0330ca4f367e071ddceab77445ede768920cf6a41ef3cb7ef3c8d1a700a7cdc1",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "1179cf4cff002a7e8a63ed23467f2a294d3aa8ade14f739d85f02d907d154172",
+  "review": "pending",
+  "lease": "e59d570b-41ab-4199-923d-0d8ccbed1e7e",
+  "events": [
+    {
+      "id": 116,
+      "run": "0c8572fa-19bc-45c2-8981-7160c439db19",
+      "at": "2026-11-15T05:20:08.815621+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 117,
+      "run": "0c8572fa-19bc-45c2-8981-7160c439db19",
+      "at": "2026-11-15T05:20:08.815976+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 118,
+      "run": "0c8572fa-19bc-45c2-8981-7160c439db19",
+      "at": "2026-11-15T05:20:08.816344+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "booked": false,
+          "note": "Confirm availability and dietary restrictions directly with the venue.",
+          "shortlist": [
+            {
+              "available_seats": 4,
+              "eligible_on_supplied_data": true,
+              "name": "Venue A — example",
+              "price": 100,
+              "reasons": [],
+              "tags": [
+                "vegetarian"
+              ]
+            },
+            {
+              "available_seats": 2,
+              "eligible_on_supplied_data": false,
+              "name": "Venue B — example",
+              "price": 180,
+              "reasons": [
+                "over_budget",
+                "insufficient_reported_seats"
+              ],
+              "tags": [
+                "vegetarian"
+              ]
+            }
+          ]
+        },
+        "output_hash": "7c8d0b3b1c3f26ba0af117f0d639bbaddaac51404845c7860214acec9b43f99c",
+        "tool": "thawg_analyze"
+      }
+    },
+    {
+      "id": 119,
+      "run": "0c8572fa-19bc-45c2-8981-7160c439db19",
+      "at": "2026-11-15T05:20:08.816866+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "0330ca4f367e071ddceab77445ede768920cf6a41ef3cb7ef3c8d1a700a7cdc1",
+        "output_hash": "7c8d0b3b1c3f26ba0af117f0d639bbaddaac51404845c7860214acec9b43f99c",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 120,
+      "run": "0c8572fa-19bc-45c2-8981-7160c439db19",
+      "at": "2026-11-15T05:20:08.817244+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "b75c808a805ef4922df7de82f9c2a54458bd850bf48bde6f91788fc8186cf229",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "b75c808a805ef4922df7de82f9c2a54458bd850bf48bde6f91788fc8186cf229"
+}

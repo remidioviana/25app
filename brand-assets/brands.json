@@ -1,0 +1,252 @@
+[
+  {
+    "id": "himayah",
+    "name": "Himayah AI",
+    "title": "The UAE Compliance Shield",
+    "primary": "#0B192C",
+    "secondary": "#10B981",
+    "pillar": "GovTech",
+    "persona": "Legal teams",
+    "homeTitle": "Privacy review"
+  },
+  {
+    "id": "iqamah",
+    "name": "Iqamah AI",
+    "title": "The Golden Visa Procurer",
+    "primary": "#D4AF37",
+    "secondary": "#111827",
+    "pillar": "GovTech",
+    "persona": "Visa applicants",
+    "homeTitle": "Dossier readiness"
+  },
+  {
+    "id": "istithmar",
+    "name": "Istithmar AI",
+    "title": "The Free Zone & Tax Navigator",
+    "primary": "#0D9488",
+    "secondary": "#1E293B",
+    "pillar": "GovTech",
+    "persona": "Business founders",
+    "homeTitle": "Business setup"
+  },
+  {
+    "id": "munagasah",
+    "name": "Munagasah AI",
+    "title": "The Gov-Tender Proposal Writer",
+    "primary": "#1D4ED8",
+    "secondary": "#F8FAFC",
+    "pillar": "GovTech",
+    "persona": "Bid managers",
+    "homeTitle": "Tender workspace"
+  },
+  {
+    "id": "sahil",
+    "name": "Sahil AI",
+    "title": "The E-Gov Interface Simplifier",
+    "primary": "#0284C7",
+    "secondary": "#FAF8F5",
+    "pillar": "GovTech",
+    "persona": "Residents",
+    "homeTitle": "Service guide"
+  },
+  {
+    "id": "tawteen",
+    "name": "Tawteen AI",
+    "title": "The Emiratisation Compliance Monitor",
+    "primary": "#047857",
+    "secondary": "#DC2626",
+    "pillar": "GovTech",
+    "persona": "Workforce managers",
+    "homeTitle": "Workforce planning"
+  },
+  {
+    "id": "adl",
+    "name": "Adl AI",
+    "title": "The RERA Property Dispute Agent",
+    "primary": "#B45309",
+    "secondary": "#18181B",
+    "pillar": "GovTech",
+    "persona": "Tenants and landlords",
+    "homeTitle": "Dispute timeline"
+  },
+  {
+    "id": "tawassul",
+    "name": "Tawassul B2B",
+    "title": "The GCC Market Gateway",
+    "primary": "#4338CA",
+    "secondary": "#F3E8D2",
+    "pillar": "Enterprise",
+    "persona": "GCC sales leaders",
+    "homeTitle": "Pitch studio"
+  },
+  {
+    "id": "adab",
+    "name": "Adab AI",
+    "title": "The Cultural Marketing Copy Adapter",
+    "primary": "#7E22CE",
+    "secondary": "#F59E0B",
+    "pillar": "Enterprise",
+    "persona": "Marketing teams",
+    "homeTitle": "Copy review"
+  },
+  {
+    "id": "khidmah",
+    "name": "Khidmah AI",
+    "title": "The Automated Khaleeji Care Agent",
+    "primary": "#2563EB",
+    "secondary": "#F1F5F9",
+    "pillar": "Enterprise",
+    "persona": "Customer care teams",
+    "homeTitle": "Refund desk"
+  },
+  {
+    "id": "jomrok",
+    "name": "Jomrok AI",
+    "title": "The GCC Cross-Border Customs Agent",
+    "primary": "#0369A1",
+    "secondary": "#D97706",
+    "pillar": "Enterprise",
+    "persona": "Trade operators",
+    "homeTitle": "Shipment review"
+  },
+  {
+    "id": "khibrat",
+    "name": "Khibrat AI",
+    "title": "The Intelligent Arabic CV Screener",
+    "primary": "#115E59",
+    "secondary": "#F43F5E",
+    "pillar": "Enterprise",
+    "persona": "Recruiters",
+    "homeTitle": "Competency evidence"
+  },
+  {
+    "id": "majlis",
+    "name": "Majlis AI",
+    "title": "The Corporate Onboarding Companion",
+    "primary": "#451A03",
+    "secondary": "#D97706",
+    "pillar": "Enterprise",
+    "persona": "New executives",
+    "homeTitle": "Protocol guide"
+  },
+  {
+    "id": "rafiq",
+    "name": "Rafiq",
+    "title": "The Premium Khaleeji Lifestyle Agent",
+    "primary": "#0F172A",
+    "secondary": "#F97316",
+    "pillar": "Lifestyle",
+    "persona": "Busy residents",
+    "homeTitle": "Daily rhythm"
+  },
+  {
+    "id": "sawm",
+    "name": "Sawm AI",
+    "title": "The Ramadan Productivity Coach",
+    "primary": "#312E81",
+    "secondary": "#FACC15",
+    "pillar": "Lifestyle",
+    "persona": "Fasting professionals",
+    "homeTitle": "Energy planner"
+  },
+  {
+    "id": "mizan",
+    "name": "Mizan AI",
+    "title": "The Sharia-Compliant Wealth Mentor",
+    "primary": "#059669",
+    "secondary": "#FEFCE8",
+    "pillar": "Lifestyle",
+    "persona": "Values-led households",
+    "homeTitle": "Wealth overview"
+  },
+  {
+    "id": "thawg",
+    "name": "Thawg AI",
+    "title": "The High-End Gastronomy & Halal Auditor",
+    "primary": "#881337",
+    "secondary": "#EAB308",
+    "pillar": "Lifestyle",
+    "persona": "Dining guests",
+    "homeTitle": "Dining shortlist"
+  },
+  {
+    "id": "manzil",
+    "name": "Manzil AI",
+    "title": "The Family Expense Arabic Tracker",
+    "primary": "#166534",
+    "secondary": "#FFFBEB",
+    "pillar": "Lifestyle",
+    "persona": "Families",
+    "homeTitle": "Household ledger"
+  },
+  {
+    "id": "gurbah",
+    "name": "Gurbah AI",
+    "title": "The Expat Relocation Companion",
+    "primary": "#0F766E",
+    "secondary": "#FEF3C7",
+    "pillar": "Lifestyle",
+    "persona": "Relocating families",
+    "homeTitle": "Move command center"
+  },
+  {
+    "id": "amanah-eco",
+    "name": "Amanah Eco",
+    "title": "The Green-Citizen Multimodal Node",
+    "primary": "#15803D",
+    "secondary": "#0EA5E9",
+    "pillar": "Impact",
+    "persona": "Households",
+    "homeTitle": "Resource insights"
+  },
+  {
+    "id": "nafas",
+    "name": "Nafas AI",
+    "title": "The Arabic Mental Wellbeing Companion",
+    "primary": "#4D7C0F",
+    "secondary": "#F7FEE7",
+    "pillar": "Impact",
+    "persona": "Mindful residents",
+    "homeTitle": "Breathing space"
+  },
+  {
+    "id": "tadweer",
+    "name": "Tadweer AI",
+    "title": "The Community Waste & Recycling Router",
+    "primary": "#047857",
+    "secondary": "#78350F",
+    "pillar": "Impact",
+    "persona": "Community recyclers",
+    "homeTitle": "Material routing"
+  },
+  {
+    "id": "turath",
+    "name": "Turath AI",
+    "title": "The Local Heritage Educational Tutor",
+    "primary": "#9A3412",
+    "secondary": "#0D9488",
+    "pillar": "Impact",
+    "persona": "Curious learners",
+    "homeTitle": "Heritage trail"
+  },
+  {
+    "id": "himam",
+    "name": "Himam AI",
+    "title": "The Accessible Dubai Mobility Agent",
+    "primary": "#1E40AF",
+    "secondary": "#F59E0B",
+    "pillar": "Impact",
+    "persona": "People of Determination",
+    "homeTitle": "Accessible journeys"
+  },
+  {
+    "id": "hisad",
+    "name": "Hisad AI",
+    "title": "The Food Security & Waste Mitigation Agent",
+    "primary": "#CA8A04",
+    "secondary": "#3F6212",
+    "pillar": "Impact",
+    "persona": "Food rescue teams",
+    "homeTitle": "Rescue board"
+  }
+]

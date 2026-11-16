@@ -1,0 +1,1 @@
+PASS: disconnect supersedes restore, newest connect wins, connection change clears run/draft, queued credential writes cannot undo disconnect, restored session validates standalone app. Fake API/storage; no real credentials.

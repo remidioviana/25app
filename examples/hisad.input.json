@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-11-14T12:00:00+04:00",
+  "lot": {
+    "quantity": 20,
+    "expires": "2026-11-14T16:00:00+04:00",
+    "allergens_known": true,
+    "allergens": [
+      "milk"
+    ],
+    "handling_verified": true
+  },
+  "recipients": [
+    {
+      "name": "Recipient A — example",
+      "capacity": 30,
+      "excluded_allergens": [],
+      "travel_minutes": 45
+    },
+    {
+      "name": "Recipient B — example",
+      "capacity": 10,
+      "excluded_allergens": [
+        "milk"
+      ],
+      "travel_minutes": 20
+    }
+  ]
+}

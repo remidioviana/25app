@@ -1,0 +1,2 @@
+# Tested for PDF extraction. TXT, MD, CSV and DOCX use the standard library.
+pypdf==6.21.4

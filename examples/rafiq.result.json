@@ -1,0 +1,148 @@
+{
+  "id": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+  "agent": "rafiq",
+  "goal": "Daily rhythm: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "buffer_minutes": 15,
+    "busy": [
+      {
+        "end": "11:00",
+        "start": "10:00",
+        "title": "Meeting"
+      }
+    ],
+    "end": "18:00",
+    "start": "08:00",
+    "tasks": [
+      {
+        "minutes": 90,
+        "title": "Focused work"
+      },
+      {
+        "minutes": 60,
+        "title": "Project review"
+      }
+    ]
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.787571+00:00",
+  "updated": "2026-11-15T05:20:08.791424+00:00",
+  "result": {
+    "agent": "rafiq",
+    "analysis": {
+      "calendar_changed": false,
+      "existing_conflicts": [],
+      "planned_blocks": [
+        {
+          "end": "09:30",
+          "start": "08:00",
+          "title": "Focused work"
+        },
+        {
+          "end": "12:15",
+          "start": "11:15",
+          "title": "Project review"
+        }
+      ],
+      "unscheduled": []
+    },
+    "analysis_hash": "9c8d95ef93fb7997eda5eaaa6f3f14ea0b6d5728a24456ae0a060ecb3594c021",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Daily rhythm: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "17db27c754700f043d934e9d3b9500d2a734334118f3bd105a6fdecdb4725fbe",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "4ab54599f3090bd4576e4e3df5d7360ba8813a6f064c09b0aa63c021cee94993",
+  "review": "pending",
+  "lease": "f52468dd-11d4-463f-9285-b4d4d36d8586",
+  "events": [
+    {
+      "id": 86,
+      "run": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+      "at": "2026-11-15T05:20:08.788697+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 87,
+      "run": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+      "at": "2026-11-15T05:20:08.789050+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 88,
+      "run": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+      "at": "2026-11-15T05:20:08.790496+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "calendar_changed": false,
+          "existing_conflicts": [],
+          "planned_blocks": [
+            {
+              "end": "09:30",
+              "start": "08:00",
+              "title": "Focused work"
+            },
+            {
+              "end": "12:15",
+              "start": "11:15",
+              "title": "Project review"
+            }
+          ],
+          "unscheduled": []
+        },
+        "output_hash": "9c8d95ef93fb7997eda5eaaa6f3f14ea0b6d5728a24456ae0a060ecb3594c021",
+        "tool": "rafiq_analyze"
+      }
+    },
+    {
+      "id": 89,
+      "run": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+      "at": "2026-11-15T05:20:08.790992+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "17db27c754700f043d934e9d3b9500d2a734334118f3bd105a6fdecdb4725fbe",
+        "output_hash": "9c8d95ef93fb7997eda5eaaa6f3f14ea0b6d5728a24456ae0a060ecb3594c021",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 90,
+      "run": "8e91f2df-3f8c-47c4-a22b-e579190e480f",
+      "at": "2026-11-15T05:20:08.791578+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "ad38cf7218bef3b1e26071ace79b13eebfa4de20d8af06f675672ab3258bd393",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "ad38cf7218bef3b1e26071ace79b13eebfa4de20d8af06f675672ab3258bd393"
+}

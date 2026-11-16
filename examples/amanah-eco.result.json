@@ -1,0 +1,113 @@
+{
+  "id": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+  "agent": "amanah-eco",
+  "goal": "Resource insights: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "current_days": 28,
+    "current_usage": 420,
+    "previous_days": 30,
+    "previous_usage": 500,
+    "unit": "kWh"
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.721386+00:00",
+  "updated": "2026-11-15T05:20:08.729499+00:00",
+  "result": {
+    "agent": "amanah-eco",
+    "analysis": {
+      "current_per_day": 15.0,
+      "normalized_change_percent": -10.0,
+      "note": "Daily comparison; not adjusted for weather, occupancy or tariffs; no emissions estimate.",
+      "previous_per_day": 16.6667,
+      "unit": "kWh"
+    },
+    "analysis_hash": "05b280097141e158407f716395a99ebec6641c13d5b8d1afd2fb3e190e36f603",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Resource insights: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "1aebb0ecb5c812d6232c61355c0694c81886999e06b7465482ccccab91043545",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "522dda07c46540f6c26eceabb0d71ad311d0c14815fffaf5b2679f22cc8a8331",
+  "review": "pending",
+  "lease": "262ec12e-018a-4d71-8be6-ed3fd4802536",
+  "events": [
+    {
+      "id": 11,
+      "run": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+      "at": "2026-11-15T05:20:08.724186+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "run": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+      "at": "2026-11-15T05:20:08.726135+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 13,
+      "run": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+      "at": "2026-11-15T05:20:08.727447+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "current_per_day": 15.0,
+          "normalized_change_percent": -10.0,
+          "note": "Daily comparison; not adjusted for weather, occupancy or tariffs; no emissions estimate.",
+          "previous_per_day": 16.6667,
+          "unit": "kWh"
+        },
+        "output_hash": "05b280097141e158407f716395a99ebec6641c13d5b8d1afd2fb3e190e36f603",
+        "tool": "amanah_eco_analyze"
+      }
+    },
+    {
+      "id": 14,
+      "run": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+      "at": "2026-11-15T05:20:08.728806+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "1aebb0ecb5c812d6232c61355c0694c81886999e06b7465482ccccab91043545",
+        "output_hash": "05b280097141e158407f716395a99ebec6641c13d5b8d1afd2fb3e190e36f603",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 15,
+      "run": "ce604d24-ad4c-40cc-b006-95be6bf74fc7",
+      "at": "2026-11-15T05:20:08.730293+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "7cd72874ae6a0ddbec6565ff660b68f170662ee45b316bcd76529e298874145a",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "7cd72874ae6a0ddbec6565ff660b68f170662ee45b316bcd76529e298874145a"
+}

@@ -1,0 +1,16 @@
+{
+  "required_fields": [
+    "origin",
+    "invoice",
+    "hs_code"
+  ],
+  "shipment": {
+    "origin": "BR",
+    "invoice": "INV-001",
+    "hs_code": ""
+  },
+  "goods_value": 10000,
+  "freight": 500,
+  "duty_rate_percent": 5,
+  "currency": "AED"
+}

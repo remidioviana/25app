@@ -1,0 +1,21 @@
+{
+  "currency": "AED",
+  "budgets": {
+    "food": 500,
+    "transport": 200
+  },
+  "transactions": [
+    {
+      "id": "t1",
+      "category": "food",
+      "amount": 200,
+      "verified": true
+    },
+    {
+      "id": "t2",
+      "category": "transport",
+      "amount": 250,
+      "verified": true
+    }
+  ]
+}

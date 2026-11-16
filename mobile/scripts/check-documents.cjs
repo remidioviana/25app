@@ -1,0 +1,41 @@
+// Real component behavior through DOM adapters; not native or visual QA.
+const {JSDOM}=require('jsdom'),fs=require('fs'),path=require('path'),Module=require('module'),assert=require('assert/strict');
+const dom=new JSDOM('<div id="root"></div>');global.window=dom.window;global.document=dom.window.document;global.IS_REACT_ACT_ENVIRONMENT=true;
+const React=require('react'),{act}=React,{createRoot}=require('react-dom/client'),ts=require('typescript');
+const original=Module._load,fields={};let pickerResolve,errors=[],previews=0;
+const View=({children})=>React.createElement('div',{},children);
+Module._load=function(name){
+ if(name==='react-native')return {View,Text:View,TextInput:({accessibilityLabel,value,onChangeText,editable})=>{fields[accessibilityLabel]=onChangeText;return React.createElement('input',{'aria-label':accessibilityLabel,value,readOnly:true,disabled:!editable})}};
+ if(name==='expo-document-picker')return {getDocumentAsync:()=>new Promise(r=>pickerResolve=r)};
+ if(name==='expo-file-system')return {File:class {size=12;async base64(){return 'fixture'}}};
+ if(name==='../src/theme')return {styles:{},colors:{}};
+ if(name==='./EvidenceSearch')return {EvidenceSearch:()=>null};
+ if(name==='./Controls')return {Notice:View,Button:({title,onPress,disabled,busy})=>React.createElement('button',{onClick:onPress,disabled:disabled||busy},title)};
+ return original.apply(this,arguments);
+};
+const file=path.resolve(__dirname,'../components/Documents.tsx'),m=new Module(file,module);m.filename=file;m.paths=module.paths;m._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText,file);Module._load=original;
+const root=createRoot(document.getElementById('root')),onError=e=>errors.push(e);
+const render=api=>act(async()=>root.render(React.createElement(m.exports.Documents,{api,agent:'mizan',onError})));
+const click=title=>act(async()=>[...document.querySelectorAll('button')].find(b=>b.textContent===title).click());
+const value=label=>document.querySelector(`[aria-label="${label}"]`).value;
+const base={documents:async()=>({documents:[]}),preview:async()=>{previews++;return {text:'Extracted fixture',warnings:[]}},addDocument:async()=>({id:'saved'})};
+(async()=>{
+ let resolveOld;await render({...base,documents:()=>new Promise(r=>resolveOld=r)});
+ await act(async()=>{fields['Document title']('Private old draft');fields['Source date']('2026-11-01')});
+ const current={...base};await render(current);assert.equal(value('Document title'),'');assert.equal(value('Source date'),'');
+ await act(async()=>resolveOld({documents:[{id:'old',title:'STALE PRIVATE DOCUMENT'}]}));assert.ok(!document.body.textContent.includes('STALE PRIVATE'));
+ await act(async()=>{fields['Document title']('New title');fields['Extracted text']('New content');fields['Source date']('2026-11-02')});
+ await click('Add to evidence');assert.equal(value('Source date'),'');assert.equal(value('Extracted text'),'');
+ await click('Choose document');await render({...base});await act(async()=>pickerResolve({canceled:false,assets:[{name:'old.txt',uri:'old',size:12}]}));assert.equal(previews,0);
+ await act(async()=>{fields['Source date']('2026-01-01');fields['Source reference']('Old reference')});
+ await click('Choose document');await act(async()=>pickerResolve({canceled:false,assets:[{name:'new.txt',uri:'new',size:12}]}));
+ assert.equal(value('Document title'),'new.txt');assert.equal(value('Extracted text'),'Extracted fixture');assert.equal(value('Source date'),'');assert.equal(value('Source reference'),'');
+ let resolvePreview;await render({...base,preview:()=>new Promise(r=>resolvePreview=r)});await click('Choose document');
+ await act(async()=>pickerResolve({canceled:false,assets:[{name:'delayed.txt',uri:'delayed',size:12}]}));await render({...base});
+ await act(async()=>resolvePreview({text:'STALE EXTRACTED TEXT',warnings:['STALE WARNING']}));assert.equal(value('Extracted text'),'');assert.ok(!document.body.textContent.includes('STALE WARNING'));
+ let resolveSave,oldReloads=0;await render({...base,documents:async()=>{oldReloads++;return {documents:[]}},addDocument:()=>new Promise(r=>resolveSave=r)});
+ await act(async()=>{fields['Document title']('Pending save');fields['Extracted text']('Pending text')});await click('Add to evidence');await render({...base});
+ await act(async()=>fields['Document title']('New connection draft'));await act(async()=>resolveSave({id:'old-save'}));assert.equal(value('Document title'),'New connection draft');assert.equal(oldReloads,1);
+ let rejectOld;await render({...base,documents:()=>new Promise((r,j)=>rejectOld=j)});await render({...base});await act(async()=>rejectOld(Error('stale failure')));assert.deepEqual(errors,[]);
+ console.log('PASS: connection reset, late list suppression, save clears date, picker cannot upload to old connection, new import clears source/date, stale preview/save/error suppression. DOM behavior only.');
+})().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await act(async()=>root.unmount());dom.window.close()});

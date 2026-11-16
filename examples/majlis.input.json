@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-11-14",
+  "tasks": [
+    {
+      "id": "account",
+      "title": "Create corporate account",
+      "due": "2026-11-15",
+      "depends_on": [],
+      "done": false
+    },
+    {
+      "id": "training",
+      "title": "Initial training",
+      "due": "2026-11-17",
+      "depends_on": [
+        "account"
+      ],
+      "done": false
+    }
+  ]
+}

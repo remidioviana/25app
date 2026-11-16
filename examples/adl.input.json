@@ -1,0 +1,27 @@
+{
+  "currency": "AED",
+  "events": [
+    {
+      "date": "2026-10-01",
+      "description": "Property handover",
+      "reference": "termo:1"
+    },
+    {
+      "date": "2026-09-01",
+      "description": "Deposit payment",
+      "reference": "recibo:1"
+    }
+  ],
+  "claims": [
+    {
+      "label": "Claimed deposit",
+      "amount": 5000,
+      "evidence": "recibo:1"
+    },
+    {
+      "label": "Claimed expense",
+      "amount": 250,
+      "evidence": "nota:1"
+    }
+  ]
+}

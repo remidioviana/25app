@@ -1,0 +1,1 @@
+PASS: evidence excerpts/references, app scope, cancel, stale-result suppression, empty state, error state and connection-change reset. Not visual QA.

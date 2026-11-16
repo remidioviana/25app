@@ -1,0 +1,320 @@
+{
+  "cli": {
+    "version": ">=16.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "autoIncrement": true
+    },
+    "himayah-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "himayah"
+      }
+    },
+    "himayah-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "himayah"
+      }
+    },
+    "iqamah-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "iqamah"
+      }
+    },
+    "iqamah-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "iqamah"
+      }
+    },
+    "istithmar-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "istithmar"
+      }
+    },
+    "istithmar-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "istithmar"
+      }
+    },
+    "munagasah-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "munagasah"
+      }
+    },
+    "munagasah-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "munagasah"
+      }
+    },
+    "sahil-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "sahil"
+      }
+    },
+    "sahil-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "sahil"
+      }
+    },
+    "tawteen-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "tawteen"
+      }
+    },
+    "tawteen-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "tawteen"
+      }
+    },
+    "adl-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "adl"
+      }
+    },
+    "adl-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "adl"
+      }
+    },
+    "tawassul-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "tawassul"
+      }
+    },
+    "tawassul-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "tawassul"
+      }
+    },
+    "adab-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "adab"
+      }
+    },
+    "adab-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "adab"
+      }
+    },
+    "khidmah-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "khidmah"
+      }
+    },
+    "khidmah-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "khidmah"
+      }
+    },
+    "jomrok-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "jomrok"
+      }
+    },
+    "jomrok-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "jomrok"
+      }
+    },
+    "khibrat-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "khibrat"
+      }
+    },
+    "khibrat-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "khibrat"
+      }
+    },
+    "majlis-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "majlis"
+      }
+    },
+    "majlis-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "majlis"
+      }
+    },
+    "rafiq-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "rafiq"
+      }
+    },
+    "rafiq-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "rafiq"
+      }
+    },
+    "sawm-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "sawm"
+      }
+    },
+    "sawm-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "sawm"
+      }
+    },
+    "mizan-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "mizan"
+      }
+    },
+    "mizan-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "mizan"
+      }
+    },
+    "thawg-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "thawg"
+      }
+    },
+    "thawg-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "thawg"
+      }
+    },
+    "manzil-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "manzil"
+      }
+    },
+    "manzil-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "manzil"
+      }
+    },
+    "gurbah-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "gurbah"
+      }
+    },
+    "gurbah-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "gurbah"
+      }
+    },
+    "amanah-eco-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "amanah-eco"
+      }
+    },
+    "amanah-eco-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "amanah-eco"
+      }
+    },
+    "nafas-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "nafas"
+      }
+    },
+    "nafas-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "nafas"
+      }
+    },
+    "tadweer-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "tadweer"
+      }
+    },
+    "tadweer-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "tadweer"
+      }
+    },
+    "turath-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "turath"
+      }
+    },
+    "turath-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "turath"
+      }
+    },
+    "himam-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "himam"
+      }
+    },
+    "himam-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "himam"
+      }
+    },
+    "hisad-preview": {
+      "extends": "preview",
+      "env": {
+        "AGENT_ID": "hisad"
+      }
+    },
+    "hisad-production": {
+      "extends": "production",
+      "env": {
+        "AGENT_ID": "hisad"
+      }
+    }
+  }
+}

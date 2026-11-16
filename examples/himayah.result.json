@@ -1,0 +1,155 @@
+{
+  "id": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+  "agent": "himayah",
+  "goal": "Privacy review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "rules": [
+      {
+        "label": "Retention provision",
+        "phrase": "retention",
+        "required": true
+      },
+      {
+        "label": "Data sharing",
+        "phrase": "share data",
+        "required": false
+      }
+    ],
+    "text": "The supplier may share data. The agreement has a term of 12 months."
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.740744+00:00",
+  "updated": "2026-11-15T05:20:08.742963+00:00",
+  "result": {
+    "agent": "himayah",
+    "analysis": {
+      "findings": [
+        {
+          "flagged": true,
+          "matches": [],
+          "required": true,
+          "rule": "Retention provision"
+        },
+        {
+          "flagged": true,
+          "matches": [
+            {
+              "end": 27,
+              "quote": "The supplier may share data. The agreement has a term of 12 months.",
+              "start": 17
+            }
+          ],
+          "required": false,
+          "rule": "Data sharing"
+        }
+      ],
+      "flag_count": 2,
+      "note": "Text screening against supplied rules; not legal advice or semantic interpretation."
+    },
+    "analysis_hash": "f281f7751e4d8620df1ebe7946ea6e30acf17542a96fcc5079060f98cabbed71",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Privacy review: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "d7f5d51ecf3c338368479b787a5bff3bbbef6315afde61e4cad020b6736d71fd",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "c4798abafea92a35d8d497821161ee58d557a692833496755a430bf666700814",
+  "review": "pending",
+  "lease": "601deda5-dd90-47f1-addf-be9e0efff58f",
+  "events": [
+    {
+      "id": 26,
+      "run": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+      "at": "2026-11-15T05:20:08.741366+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "run": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+      "at": "2026-11-15T05:20:08.741813+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 28,
+      "run": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+      "at": "2026-11-15T05:20:08.742277+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "findings": [
+            {
+              "flagged": true,
+              "matches": [],
+              "required": true,
+              "rule": "Retention provision"
+            },
+            {
+              "flagged": true,
+              "matches": [
+                {
+                  "end": 27,
+                  "quote": "The supplier may share data. The agreement has a term of 12 months.",
+                  "start": 17
+                }
+              ],
+              "required": false,
+              "rule": "Data sharing"
+            }
+          ],
+          "flag_count": 2,
+          "note": "Text screening against supplied rules; not legal advice or semantic interpretation."
+        },
+        "output_hash": "f281f7751e4d8620df1ebe7946ea6e30acf17542a96fcc5079060f98cabbed71",
+        "tool": "himayah_analyze"
+      }
+    },
+    {
+      "id": 29,
+      "run": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+      "at": "2026-11-15T05:20:08.742718+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "d7f5d51ecf3c338368479b787a5bff3bbbef6315afde61e4cad020b6736d71fd",
+        "output_hash": "f281f7751e4d8620df1ebe7946ea6e30acf17542a96fcc5079060f98cabbed71",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 30,
+      "run": "efeafe74-1e01-4fcf-818a-b8e5235042e7",
+      "at": "2026-11-15T05:20:08.743106+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "b0a6bcc4b8b602c800ddcd2d5f452a9cb5e7ea1e005fc983dffff9a10b78d5f9",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "b0a6bcc4b8b602c800ddcd2d5f452a9cb5e7ea1e005fc983dffff9a10b78d5f9"
+}

@@ -1,0 +1,15 @@
+{
+  "topics": [
+    "pearling"
+  ],
+  "sources": [
+    {
+      "title": "Test card — replace with a reviewed source",
+      "topics": [
+        "pearling"
+      ],
+      "excerpt": "Demonstration text for a reading trail. Not a historical source.",
+      "reference": "example:card-1"
+    }
+  ]
+}

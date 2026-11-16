@@ -1,0 +1,22 @@
+{
+  "material": "battery",
+  "hazardous": true,
+  "routes": [
+    {
+      "name": "Specialist operator — example",
+      "accepted_materials": [
+        "battery"
+      ],
+      "accepts_hazardous": true,
+      "distance_km": 5
+    },
+    {
+      "name": "General collection — example",
+      "accepted_materials": [
+        "paper"
+      ],
+      "accepts_hazardous": false,
+      "distance_km": 1
+    }
+  ]
+}

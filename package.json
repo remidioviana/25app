@@ -1,0 +1,15 @@
+{
+  "name": "25-mobile-agent-apps",
+  "version": "5.0.0",
+  "private": true,
+  "description": "25 local domain agent workflows with optional model tool calling",
+  "scripts": {
+    "start": "python3 server.py",
+    "test": "python3 -m unittest discover -s tests -v",
+    "check": "node --check public/app.js",
+    "test:dom": "node tests/dom-smoke.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "31.0.1"
+  }
+}

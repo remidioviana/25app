@@ -1,0 +1,1 @@
+2026-11-15: headless Chromium launch probe requested viewport 390x844. Launch failed before page render: process_singleton socket operation not permitted. No app page was rendered; no screenshot or visual verification was produced. Status: NOT VERIFIED.

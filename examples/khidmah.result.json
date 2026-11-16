@@ -1,0 +1,120 @@
+{
+  "id": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+  "agent": "khidmah",
+  "goal": "Refund desk: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+  "input": {
+    "amount": 150,
+    "as_of": "2026-11-14",
+    "eligible_reasons": [
+      "damaged",
+      "wrong_item"
+    ],
+    "purchase_date": "2026-11-10",
+    "reason": "damaged",
+    "refund_limit": 100,
+    "return_window_days": 14
+  },
+  "mode": "local",
+  "example": 1,
+  "status": "completed",
+  "phase": "completed",
+  "created": "2026-11-15T05:20:08.766669+00:00",
+  "updated": "2026-11-15T05:20:08.768524+00:00",
+  "result": {
+    "agent": "khidmah",
+    "analysis": {
+      "age_days": 4,
+      "amount": 150.0,
+      "policy_eligible": true,
+      "recommended_action": "prepare_refund",
+      "refund_issued": false,
+      "within_delegation_limit": false
+    },
+    "analysis_hash": "14b0b435a89f5faa5a482b7130864d0a837da1b53c030e25ab555550c4ccd072",
+    "evidence": [],
+    "example": true,
+    "external_actions_performed": false,
+    "goal": "Refund desk: analyze my supplied inputs, identify gaps and prepare verifiable next steps.",
+    "input_hash": "176764b325b3bc8db39586adc1462a02045381de24ac034eec620b5baf1494e8",
+    "limits": [
+      "User-supplied sources; freshness and authenticity are not automatically verified.",
+      "AI narrative, when present, is separate from verifiable calculations."
+    ],
+    "mode": "local",
+    "narrative": null,
+    "usage": []
+  },
+  "error": null,
+  "request_hash": "93660bbe407000c5526310742125b8da975e34b912d196153e12f93260a1e056",
+  "review": "pending",
+  "lease": "8fc6ede9-87dc-4005-9190-e0ebc1610d83",
+  "events": [
+    {
+      "id": 56,
+      "run": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+      "at": "2026-11-15T05:20:08.767280+00:00",
+      "phase": "planning",
+      "detail": {
+        "example": true,
+        "mode": "local",
+        "steps": [
+          "validate",
+          "retrieve",
+          "analyze",
+          "verify",
+          "report"
+        ]
+      }
+    },
+    {
+      "id": 57,
+      "run": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+      "at": "2026-11-15T05:20:08.767640+00:00",
+      "phase": "retrieving",
+      "detail": {
+        "citations": [],
+        "matches": 0
+      }
+    },
+    {
+      "id": 58,
+      "run": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+      "at": "2026-11-15T05:20:08.767975+00:00",
+      "phase": "acting",
+      "detail": {
+        "output": {
+          "age_days": 4,
+          "amount": 150.0,
+          "policy_eligible": true,
+          "recommended_action": "prepare_refund",
+          "refund_issued": false,
+          "within_delegation_limit": false
+        },
+        "output_hash": "14b0b435a89f5faa5a482b7130864d0a837da1b53c030e25ab555550c4ccd072",
+        "tool": "khidmah_analyze"
+      }
+    },
+    {
+      "id": 59,
+      "run": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+      "at": "2026-11-15T05:20:08.768314+00:00",
+      "phase": "verifying",
+      "detail": {
+        "input_hash": "176764b325b3bc8db39586adc1462a02045381de24ac034eec620b5baf1494e8",
+        "output_hash": "14b0b435a89f5faa5a482b7130864d0a837da1b53c030e25ab555550c4ccd072",
+        "recomputed": true
+      }
+    },
+    {
+      "id": 60,
+      "run": "c8051e8b-44b0-4f52-80ad-aab5d9a0b91a",
+      "at": "2026-11-15T05:20:08.768690+00:00",
+      "phase": "completed",
+      "detail": {
+        "artifact_hash": "7e2995c84f474895fc7ae94115d8124b01b5ac02138227aace6b65a6bee6c0e3",
+        "message": "Local artifact ready for review"
+      }
+    }
+  ],
+  "artifact_hash": "7e2995c84f474895fc7ae94115d8124b01b5ac02138227aace6b65a6bee6c0e3"
+}

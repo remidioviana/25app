@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-11-14",
+  "requirements": [
+    "identity",
+    "address",
+    "application"
+  ],
+  "documents": [
+    {
+      "name": "identity",
+      "expires": "2026-10-01",
+      "reference": "identity.txt:1"
+    }
+  ]
+}

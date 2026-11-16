@@ -1,0 +1,20 @@
+{
+  "target_percent": 10,
+  "employees": [
+    {
+      "id": "E1",
+      "active": true,
+      "national": false
+    },
+    {
+      "id": "E2",
+      "active": true,
+      "national": false
+    },
+    {
+      "id": "E3",
+      "active": false,
+      "national": true
+    }
+  ]
+}
