@@ -6,6 +6,7 @@ def validate(value, schema, path='$'):
            'number':type(value) in (int,float) and math.isfinite(value),'integer':type(value) is int,
            'boolean':type(value) is bool,'null':value is None}
     if not any(valid.get(t,False) for t in types): raise ValueError(f'{path}: expected type {types}')
+    if 'enum' in schema and value not in schema['enum']:raise ValueError(path+': value is outside the permitted choices')
     if isinstance(value,dict):
         for k in schema.get('required',[]):
             if k not in value: raise ValueError(f'{path}.{k}: required')

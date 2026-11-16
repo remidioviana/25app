@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-16T10:56:52.552676+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over freshly retrieved fixed official sources; no embedding calls",
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply — Procurement portal information",
+        "started_at": "2026-11-16T10:56:53.225454+00:00",
+        "fetched_at": "2026-11-16T10:56:54.078060+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "7f630d61-640e-4d61-9e87-88aa71b47127"
+      },
+      "run_status": "failed",
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "specialist"
+      ],
+      "reported_total_tokens": 11253,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Invalid claim basis"
+    }
+  ],
+  "verified_at": "2026-11-16T10:57:03.021267+00:00",
+  "reported_total_tokens": 11253,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43853313100"
+}

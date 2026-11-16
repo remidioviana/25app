@@ -24,8 +24,8 @@ def obj(properties):return {'type':'object','properties':properties,'required':l
 def arr(items,maxitems=12):return {'type':'array','items':items,'maxItems':maxitems}
 PLAN=obj({'objective':STR,'queries':arr(STR,3),'steps':arr(STR,8),'missing_information':arr(STR,10)})
 PLAN['properties']['source_ids']=arr({'type':'string','maxLength':64},5)
-DRAFT=obj({'summary':STR,'claims':arr(obj({'text':STR,'basis':{'type':'string'},'citations':arr(STR,6)}),12),'next_steps':arr(STR,8)})
-CRITIC=obj({'verdict':{'type':'string'},'issues':arr(STR,10),'follow_up_queries':arr(STR,2)})
+DRAFT=obj({'summary':STR,'claims':arr(obj({'text':STR,'basis':{'type':'string','enum':['input','calculation','evidence']},'citations':arr(STR,6)}),12),'next_steps':arr(STR,8)})
+CRITIC=obj({'verdict':{'type':'string','enum':['accept','revise','needs_evidence']},'issues':arr(STR,10),'follow_up_queries':arr(STR,2)})
 
 class State(TypedDict,total=False):
     plan:dict

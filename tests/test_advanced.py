@@ -123,3 +123,22 @@ class EvidenceBudgetTests(unittest.TestCase):
             with self.subTest(limit=limit),patch.dict(os.environ,{'AGENT_MAX_EVIDENCE_PASSAGES':limit}),patch('model_provider.respond') as model:
                 with self.assertRaises(ValueError) as caught:advanced.run({'id':'test','agent':'himayah'}, {},lambda:None)
                 self.assertNotIn('private-invalid-value',str(caught.exception));model.assert_not_called()
+
+class RoleSchemaChoiceTests(unittest.TestCase):
+    def test_role_payload_rejects_unknown_claim_basis_and_verdict(self):
+        from validation import validate
+        for basis in ('input','calculation','evidence'):
+            value={'summary':'short','claims':[{'text':'claim','basis':basis,'citations':[]}],'next_steps':[]}
+            validate(value,advanced.DRAFT)
+        value['claims'][0]['basis']='source'
+        with self.assertRaisesRegex(ValueError,'permitted choices'):validate(value,advanced.DRAFT)
+        for verdict in ('accept','revise','needs_evidence'):
+            validate({'verdict':verdict,'issues':[],'follow_up_queries':[]},advanced.CRITIC)
+        with self.assertRaisesRegex(ValueError,'permitted choices'):
+            validate({'verdict':'approved','issues':[],'follow_up_queries':[]},advanced.CRITIC)
+    def test_real_adapter_receives_enumerated_role_contract(self):
+        response={'output':[{'type':'function_call','name':'deliver_role_result','arguments':json.dumps({'summary':'short','claims':[{'text':'claim','basis':'source','citations':[]}],'next_steps':[]})}],'usage':{}}
+        with patch('model_provider.respond',return_value=response) as model:
+            with self.assertRaisesRegex(ValueError,'permitted choices'):advanced.role('specialist',advanced.DRAFT,{},'')
+        schema=model.call_args.args[1][0]['parameters']
+        self.assertEqual(schema['properties']['claims']['items']['properties']['basis']['enum'],['input','calculation','evidence'])
