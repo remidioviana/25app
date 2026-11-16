@@ -137,10 +137,10 @@ class RoleSchemaChoiceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'permitted choices'):
             validate({'verdict':'approved','issues':[],'follow_up_queries':[]},advanced.CRITIC)
     def test_real_adapter_receives_enumerated_role_contract(self):
-        response={'output':[{'type':'function_call','name':'deliver_role_result','arguments':json.dumps({'summary':'short','claims':[{'text':'claim','basis':'source','citations':[]}],'next_steps':[]})}],'usage':{}}
+        response={'output_text':json.dumps({'summary':'short','claims':[{'text':'claim','basis':'source','citations':[]}],'next_steps':[]}),'output':[],'usage':{}}
         with patch('model_provider.respond',return_value=response) as model:
             with self.assertRaisesRegex(ValueError,'permitted choices'):advanced.role('specialist',advanced.DRAFT,{},'')
-        schema=model.call_args.args[1][0]['parameters']
+        schema=model.call_args.kwargs['response_schema']
         self.assertEqual(schema['properties']['claims']['items']['properties']['basis']['enum'],['input','calculation','evidence'])
 
 class ReviewerStructuredOutputTests(unittest.TestCase):
@@ -168,3 +168,23 @@ class PreviewReviewerContractTests(unittest.TestCase):
             actual,_=advanced.role('critic',advanced.CRITIC,{},'Audit')
             self.assertEqual(actual,value);self.assertEqual(model.call_args.args[1],[])
             self.assertEqual(model.call_args.kwargs['response_schema'],advanced.CRITIC)
+
+class StrictPlannerSchemaTests(unittest.TestCase):
+    def test_optional_source_selection_becomes_required_empty_array_without_mutating_legacy_schema(self):
+        original=copy.deepcopy(advanced.PLAN)
+        schema=advanced.strict_role_schema(advanced.PLAN)
+        self.assertIn('source_ids',schema['required']);self.assertNotIn('source_ids',advanced.PLAN['required'])
+        self.assertEqual(advanced.PLAN,original)
+        from validation import validate
+        value={'objective':'diagnostic','queries':[],'steps':[],'missing_information':[],'source_ids':[]}
+        validate(value,schema)
+        del value['source_ids']
+        with self.assertRaisesRegex(ValueError,'source_ids'):validate(value,schema)
+    def test_planner_and_specialist_use_strict_json_for_documented_models(self):
+        values={'planner':{'objective':'diagnostic','queries':[],'steps':[],'missing_information':[],'source_ids':[]},
+                'specialist':{'summary':'diagnostic','claims':[],'next_steps':[]}}
+        for name,value in values.items():
+            with self.subTest(role=name),patch('model_provider.respond',return_value={'output_text':json.dumps(value),'output':[],'usage':{}}) as model:
+                actual,_=advanced.role(name,advanced.PLAN if name=='planner' else advanced.DRAFT,{},'Diagnostic')
+                self.assertEqual(actual,value);self.assertEqual(model.call_args.args[1],[])
+                self.assertIn('response_schema',model.call_args.kwargs)

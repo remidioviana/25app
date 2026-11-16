@@ -174,7 +174,7 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
     if response_schema is not None:
         if tools or required_tool is not None or not isinstance(response_schema,dict) or response_schema.get('type')!='object':
             raise ValueError('Strict structured output requires an object schema and no tool calls.')
-        payload['response_format']={'type':'json_schema','json_schema':{'name':'role_result','strict':True,'schema':response_schema}}
+        payload['response_format']={'type':'json_schema','json_schema':{'name':(role or 'role')+'_result','strict':True,'schema':response_schema}}
     fallback=False
     try:raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
     except ProviderFailure as exc:

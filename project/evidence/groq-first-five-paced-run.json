@@ -1,0 +1,332 @@
+{
+  "checked_at": "2026-11-16T11:27:15.292952+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": true,
+  "minimum_role_interval_seconds": 15,
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "himayah",
+      "source_id": "uae-pdpl",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "status": "imported_reviewed_snapshot",
+        "imported_at": "2026-11-16T11:27:16.722798+00:00",
+        "original_fetched_at": "2026-11-16T11:03:31.796948+00:00",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "original_raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "characters": 44406,
+        "document_id": "0859a40f-9eb6-4d04-8aca-63efac1aace2",
+        "external_read": false,
+        "external_write": false,
+        "fresh_source_fetch_verified": false,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "warning": "Repository-reviewed historical snapshot, not a fresh HTTP retrieval or legal currency verification."
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [],
+      "completed_role_details": [],
+      "reported_total_tokens": 0,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 400. Safe provider codes: tool_use_failed. Check server configuration and provider access."
+    },
+    {
+      "app": "iqamah",
+      "source_id": "icp-golden-residency",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "title": "ICP — Golden Residency service information",
+        "started_at": "2026-11-16T11:27:17.566884+00:00",
+        "fetched_at": "2026-11-16T11:27:19.787274+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 227422,
+        "characters": 18640,
+        "raw_sha256": "41b2d878d954aaad2983337d1fa549750c037a75fee6c876cf8b8583d879d95e",
+        "text_sha256": "0fb68274efcbe13495e623462868ecb8b62bcb8a275f651f479b023853c0ba31",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "aed54966-7ac5-4511-9874-d28910b6d9ef"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 1546
+        }
+      ],
+      "reported_total_tokens": 1546,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 400. Safe provider codes: tool_use_failed. Check server configuration and provider access."
+    },
+    {
+      "app": "istithmar",
+      "source_id": "dmcc-charges",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dmcc-charges",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "authority": "Dubai Multi Commodities Centre",
+        "title": "DMCC — Schedule of charges",
+        "started_at": "2026-11-16T11:27:49.712029+00:00",
+        "fetched_at": "2026-11-16T11:27:49.842115+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 641670,
+        "characters": 68139,
+        "raw_sha256": "1186bc866ce71153f4a2d9c06e9b8c6caaadec5bd3451d56067a983fe8ae9a07",
+        "text_sha256": "e231783da71e62883f3e954a08fd5655f83e02aab43730d59a904f6ab47d77ff",
+        "last_modified_header": "Mon, 16 Nov 2026 09:56:45 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "0b2c5152-3df5-4d65-863f-e966e4718802"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 1263
+        }
+      ],
+      "reported_total_tokens": 1263,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 400. Safe provider codes: tool_use_failed. Check server configuration and provider access."
+    },
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply — Procurement portal information",
+        "started_at": "2026-11-16T11:28:21.319197+00:00",
+        "fetched_at": "2026-11-16T11:28:21.658878+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "7f3d0eda-87af-4daf-9896-dd82e5daa1d9"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 921
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 2518
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 2347
+        }
+      ],
+      "reported_total_tokens": 5786,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": false,
+      "retrieved_passages": 2,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "model_review_decision": "reviewed_by_model",
+      "artifact_sha256": "3223b1d20b3f08d3dcade87d283bd2e0c319bb34506aaadea272081489e5cf78",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "sahil",
+      "source_id": "dewa-move-in",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "dewa-move-in",
+        "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "authority": "Dubai Electricity and Water Authority",
+        "title": "DEWA — Activation of electricity/water, Move-in",
+        "started_at": "2026-11-16T11:29:09.539337+00:00",
+        "fetched_at": "2026-11-16T11:29:12.579750+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 250454,
+        "characters": 24848,
+        "raw_sha256": "cab4f531d533567a54019ba66cbe73a49841b58731dded6d2c374531eb4bbe41",
+        "text_sha256": "a96de2708d460e8e1c03b2472c2a56064bb6f284fff296e8fe87e1f95032e55a",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "14e86995-60f4-4766-bfcd-147c58de4b98"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "specialist",
+        "critic",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 1435
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 2876
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 3138
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 3158
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 3426
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 3605
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 2872
+        }
+      ],
+      "reported_total_tokens": 20510,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": false,
+      "retrieved_passages": 2,
+      "cited_passages": 1,
+      "role_calls": 7,
+      "model_review_decision": "requires_human_review",
+      "artifact_sha256": "0960bf3e26017eace543e8d1290f880d364c49c67dcef572b0c09544abae1936",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "verified_at": "2026-11-16T11:31:08.051679+00:00",
+  "reported_total_tokens": 29105,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43857824132"
+}

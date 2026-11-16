@@ -19,3 +19,11 @@ O diagnóstico adiciona intervalo padrão de 15 segundos entre respostas de pap�
 O catálogo documental também apresenta Muse Spark Open como Preview/Enterprise, não um terceiro modelo de produção geral demonstrado. Foi incluído na guarda explícita de Preview; nenhum acesso ou inferência desse ID foi testado. A verificação de modelos continua baseada nos IDs realmente devolvidos pelo provedor.
 
 A consolidação desta frente passou **178 testes Python**, além dos 48 testes mobile já executados após a correção dos dossiês. O validador de portfólio exige prova RAG bem-sucedida no app correto e rejeita usar um probe de transporte ou resultado de outro app como prova integrada.
+
+## Lote com espaçamento: dois grafos concluídos
+
+O run [43857824132](https://github.com/remidioviana/25app/actions/runs/43857824132) concluiu Munagasah novamente e Sahil. Sahil teve três rodadas e terminou com `requires_human_review`; o diagnóstico RAG passou, mas o modelo não aprovou a conclusão de domínio. O relatório registra 29.105 tokens de resultados de papel aceitos pelo runtime. Não houve HTTP429 nesse run, o que demonstra apenas essa execução espaçada, sem garantir a quota futura.
+
+Himayah falhou no planner; Iqamah e Istithmar concluíram somente o planner. Os três encontraram HTTP400 `tool_use_failed`. Evidência: `project/evidence/groq-first-five-paced-run.json`. A saída de sucesso anterior do auditor em JSON estrito motivou aplicar o mesmo formato de mensagem aos demais papéis nos modelos documentados. Isso não substitui ferramentas: o grafo executa as decisões do plano, busca, leitores e análise de domínio, mantendo recomputação. A função de entrega continua apenas no caminho de modelos customizados sem suporte declarado.
+
+Para schemas estritos, o campo source_ids é obrigatório e o planejador informa [] quando não solicita atualização; a cópia de schema não modifica o contrato legado. Dois testes novos verificam essa exigência e o caminho JSON do planner/especialista. Total local: 181 testes Python aprovados. O contador sintético do portfólio passou a dois; nenhum fluxo primário ou release foi promovido.

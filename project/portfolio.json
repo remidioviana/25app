@@ -151,7 +151,7 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-munagasah-rag-verified.json"
+        "project/evidence/groq-first-five-paced-run.json"
       ]
     },
     {
@@ -183,9 +183,11 @@
       "public_source_read_evidence": [
         "project/evidence/public-source-reads.json"
       ],
-      "live_graph_diagnostic_verified": false,
+      "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-paced-run.json"
+      ]
     },
     {
       "order": 6,
