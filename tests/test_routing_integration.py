@@ -14,6 +14,7 @@ class RoutingIntegrationTests(unittest.TestCase):
  def tearDown(self):self.env.stop();db.DB=self.old;self.temp.cleanup()
  def transport(self,request,timeout):
   payload=json.loads(request.data);role=payload['tools'][0]['function']['description'].rsplit(' ',1)[1]
+  self.assertEqual(payload['tool_choice'],{'type':'function','function':{'name':'deliver_role_result'}})
   self.requests.append((role,payload['model'],request.get_header('Authorization')))
   if role=='critic' and payload['model']==provider.AUDIT_MODEL and self.failure:
    self.auditor_attempts+=1

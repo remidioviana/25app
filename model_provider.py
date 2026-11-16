@@ -158,7 +158,7 @@ def list_models():
         if record.get('active') is not False and model not in models:models.append(model)
     return models
 
-def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60):
+def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60,required_tool=None):
     keys=_key_order();requested=model_override or os.environ.get('OPENAI_MODEL') or FAST_MODEL
     requested=_model_name(requested)
     if role is not None and role not in ROLE_ENV:raise ValueError('Unknown AI role.')
@@ -166,6 +166,11 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
     if type(request_timeout) not in (int,float) or not 1<=request_timeout<=60:raise ValueError('Provider request timeout must be between 1 and 60 seconds.')
     payload={'model':requested,'messages':_to_chat_messages(messages),'max_tokens':max_output_tokens,'temperature':0}
     if tools:payload.update(tools=_to_chat_tools(tools),tool_choice='auto')
+    if required_tool is not None:
+        if (not isinstance(required_tool,str) or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_-]{0,63}',required_tool)
+            or required_tool not in [t['function']['name'] for t in payload.get('tools',[])]):
+            raise ValueError('Required tool must name a registered function.')
+        payload['tool_choice']={'type':'function','function':{'name':required_tool}}
     fallback=False
     try:raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
     except ProviderFailure as exc:

@@ -96,3 +96,13 @@ class ProviderTests(unittest.TestCase):
   with patch.object(p,'urlopen',side_effect=error):
    with self.assertRaises(p.ProviderFailure) as caught:self.call()
   self.assertEqual(caught.exception.codes,[]);self.assertNotIn('controlled-private',str(caught.exception))
+
+ def test_named_required_tool_is_bound_to_registered_function(self):
+  tools=[{'type':'function','name':'deliver_role_result','parameters':{'type':'object','properties':{},'required':[],'additionalProperties':False}}]
+  with patch.object(p,'urlopen',return_value=self.ok()) as send:
+   p.respond([],tools,required_tool='deliver_role_result')
+  self.assertEqual(json.loads(send.call_args.args[0].data)['tool_choice'],{'type':'function','function':{'name':'deliver_role_result'}})
+  for required in ('unregistered','controlled private value'):
+   with self.subTest(required=required),patch.object(p,'urlopen') as network:
+    with self.assertRaisesRegex(ValueError,'registered function'):p.respond([],tools,required_tool=required)
+    network.assert_not_called()
