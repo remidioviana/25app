@@ -13,6 +13,13 @@ AUDIT_MODEL='openai/gpt-oss-120b'
 # Backward-compatible defaults, not a declaration of live model availability.
 ROLE_MODELS={'planner':FAST_MODEL,'specialist':FAST_MODEL,'critic':AUDIT_MODEL}
 ROLE_ENV={'planner':'AGENT_PLANNER_MODEL','specialist':'AGENT_SPECIALIST_MODEL','critic':'AGENT_AUDITOR_MODEL'}
+# Public general-purpose text IDs in the official Groq catalogue (2026-11-16).
+# This is a classification allowlist, not a claim of account access or fallback readiness.
+CATALOGUE_TEXT_CANDIDATES=(
+    'openai/gpt-oss-20b','openai/gpt-oss-120b','qwen/qwen3.8-27b',
+    'llama-3.3-70b-versatile','llama-3.1-8b-instant',
+    'meta-models/muse-spark-open','minimaxai/minimax-m2.7',
+)
 KNOWN_PREVIEW_MODELS={'qwen/qwen3.8-27b','meta-models/muse-spark-open'}
 _LOCK=Lock()
 _KEY_INDEX=0
