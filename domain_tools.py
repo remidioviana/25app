@@ -3,6 +3,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta
 from decimal import Decimal, ROUND_HALF_UP
 import math
+import hashlib
 import re
 
 
@@ -35,13 +36,36 @@ def checklist(d):
 def contract(d):
     text = d['text']
     findings = []
+    remaining = 1000
     for rule in d['rules']:
-        hits = [{'start': m.start(), 'end': m.end(), 'quote': text[max(0, m.start()-60):min(len(text), m.end()+100)]}
-                for m in re.finditer(re.escape(rule['phrase']), text, flags=re.I)]
-        flagged = not hits if rule['required'] else bool(hits)
-        findings.append({'rule': rule['label'], 'flagged': flagged, 'matches': hits, 'required': rule['required']})
+        if not rule['phrase'].strip():
+            raise ValueError('A screening phrase must contain non-whitespace text')
+        hits = []
+        found = False
+        truncated = False
+        limit = min(100, remaining)
+        for match in re.finditer(re.escape(rule['phrase']), text, flags=re.I):
+            found = True
+            if len(hits) >= limit:
+                truncated = True
+                break
+            quote_start = max(0, match.start()-60)
+            quote_end = min(len(text), match.end()+100, quote_start+600)
+            hits.append({'start': match.start(), 'end': match.end(),
+                         'quote_start': quote_start, 'quote_end': quote_end,
+                         'quote': text[quote_start:quote_end],
+                         'quote_contains_entire_match': match.end() <= quote_end})
+        remaining -= len(hits)
+        flagged = not found if rule['required'] else found
+        findings.append({'rule': rule['label'], 'flagged': flagged, 'matches': hits,
+                         'match_found': found, 'matches_truncated': truncated,
+                         'required': rule['required']})
     return {'findings': findings, 'flag_count': sum(x['flagged'] for x in findings),
-            'note': 'Text screening against supplied rules; not legal advice or semantic interpretation.'}
+            'input_text_sha256': hashlib.sha256(text.encode()).hexdigest(),
+            'input_character_count': len(text), 'offset_unit': 'unicode_code_points',
+            'limits': {'max_matches_per_rule': 100, 'max_matches_total': 1000,
+                       'max_quote_characters': 600},
+            'note': 'Literal text screening against supplied rules. Quotes and offsets refer only to the supplied text. Missing phrases do not establish missing legal obligations; matches do not establish noncompliance. Not legal advice or semantic interpretation.'}
 
 
 def setup(d):
