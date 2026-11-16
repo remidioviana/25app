@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "title": "Service home"
+  },
+  {
+    "id": 2,
+    "title": "Service context"
+  },
+  {
+    "id": 3,
+    "title": "Official-source boundary"
+  },
+  {
+    "id": 4,
+    "title": "Required steps"
+  },
+  {
+    "id": 5,
+    "title": "Edit requirements"
+  },
+  {
+    "id": 6,
+    "title": "Document records"
+  },
+  {
+    "id": 7,
+    "title": "Add document record"
+  },
+  {
+    "id": 8,
+    "title": "Record detail"
+  },
+  {
+    "id": 9,
+    "title": "Edit document record"
+  },
+  {
+    "id": 10,
+    "title": "Reference date"
+  },
+  {
+    "id": 11,
+    "title": "Check method"
+  },
+  {
+    "id": 12,
+    "title": "Service brief"
+  },
+  {
+    "id": 13,
+    "title": "Preparation plan"
+  },
+  {
+    "id": 14,
+    "title": "Local data boundary"
+  },
+  {
+    "id": 15,
+    "title": "Run service checks"
+  },
+  {
+    "id": 16,
+    "title": "Actual activity"
+  },
+  {
+    "id": 17,
+    "title": "Guided journey"
+  },
+  {
+    "id": 18,
+    "title": "Current step"
+  },
+  {
+    "id": 19,
+    "title": "Requirement source"
+  },
+  {
+    "id": 20,
+    "title": "Missing records"
+  },
+  {
+    "id": 21,
+    "title": "Expired records"
+  },
+  {
+    "id": 22,
+    "title": "Present, unverified"
+  },
+  {
+    "id": 23,
+    "title": "Next actions"
+  },
+  {
+    "id": 24,
+    "title": "Support questions"
+  },
+  {
+    "id": 25,
+    "title": "Service packet"
+  },
+  {
+    "id": 26,
+    "title": "Export preview"
+  },
+  {
+    "id": 27,
+    "title": "Official handoff"
+  },
+  {
+    "id": 28,
+    "title": "Session history"
+  },
+  {
+    "id": 29,
+    "title": "Search records"
+  },
+  {
+    "id": 30,
+    "title": "Privacy controls"
+  },
+  {
+    "id": 31,
+    "title": "Delete session"
+  },
+  {
+    "id": 32,
+    "title": "Help and limitations"
+  },
+  {
+    "id": 33,
+    "title": "Accessibility"
+  },
+  {
+    "id": 34,
+    "title": "Recovery"
+  }
+]

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Istithmar AI — the decision room</title><meta name="description" content="Mobile design prototype: compare supplied setup costs with explicit assumptions. No live fee or licensing verification."><link rel="stylesheet" href="styles.css"><script defer src="engine.js"></script><script defer src="app.js"></script></head>
+<body>
+  <div class="inspection"><label for="screen">Screen reference<select id="screen"></select></label><label for="platform">Platform<select id="platform"><option value="ios">iOS intent</option><option value="android">Android intent</option></select></label><label for="theme">Appearance<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></div>
+  <article id="app" class="app" aria-label="Istithmar AI mobile prototype">
+    <div class="prototype-label">DESIGN PROTOTYPE · SUPPLIED COSTS ONLY</div>
+    <header><button id="back" aria-label="Back">‹</button><span class="brand"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V10h5v11M10 21V3h5v18M17 21V7h4v14M1 21h22" stroke="currentColor" stroke-width="1.6"/></svg>Istithmar<span>AI</span></span><button data-go="32" aria-label="Privacy controls">⋯</button></header>
+    <main id="content"></main><p id="announcement" class="sr-only" aria-live="polite"></p>
+    <nav aria-label="Primary"><button data-go="1">Decision</button><button data-go="4">Options</button><button data-go="22">Scenarios</button></nav>
+  </article>
+</body>
+</html>

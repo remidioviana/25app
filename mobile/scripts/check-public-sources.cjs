@@ -1,0 +1,30 @@
+// Actual component through DOM adapters, controlled API only; not live/native proof.
+const {JSDOM}=require('jsdom'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),assert=require('node:assert/strict');
+const dom=new JSDOM('<div id="root"></div>');global.window=dom.window;global.document=dom.window.document;global.IS_REACT_ACT_ENVIRONMENT=true;
+const React=require('react'),{act}=React,{createRoot}=require('react-dom/client'),ts=require('typescript');
+const original=Module._load,View=({children})=>React.createElement('div',{},children);
+Module._load=function(name){if(name==='react-native')return {View,Text:View};if(name==='../src/theme')return {styles:{}};if(name==='./Controls')return {Notice:View,Button:({title,onPress,disabled,busy})=>React.createElement('button',{onClick:onPress,disabled:disabled||busy},title)};return original.apply(this,arguments)};
+const filename=path.resolve(__dirname,'../components/PublicSources.tsx'),m=new Module(filename,module);m.filename=filename;m.paths=module.paths;m._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText,filename);Module._load=original;
+const root=createRoot(document.getElementById('root')),gets=[],reads=[];let updates=0;
+const source={id:'uae-pdpl',title:'Official source fixture',url:'https://official.test/source',authority:'Authority fixture',read_only:true,kind:'pdf',status:'available_to_attempt'};
+const api={publicSources:(agent,signal)=>new Promise((resolve,reject)=>gets.push({agent,signal,resolve,reject})),refreshPublicSource:(agent,id,signal)=>new Promise((resolve,reject)=>reads.push({agent,id,signal,resolve,reject}))};
+const text=()=>document.body.textContent;
+const render=(client,agent='himayah')=>act(async()=>root.render(React.createElement(m.exports.PublicSources,{api:client,agent,onRetrieved:()=>updates++})));
+const click=label=>act(async()=>{const b=[...document.querySelectorAll('button')].find(x=>x.textContent===label);assert.ok(b,label);assert.equal(b.disabled,false,label);b.click()});
+const receipt=tag=>({source_id:'uae-pdpl',url:source.url,title:source.title,status:'retrieved',started_at:'test-start',fetched_at:tag,http_status:200,characters:200,raw_sha256:'a'.repeat(64),document_id:'doc-'+tag,publication_date_verified:false,legal_applicability_verified:false,external_write:false,warnings:['Test fixture warning']});
+const success=tag=>({receipt:receipt(tag),document_id:'doc-'+tag,source_content:'Saved fixture'});
+(async()=>{
+ await render(null);assert.match(text(),/No source has been contacted/);assert.equal(gets.length,0);
+ await render(api);assert.equal(gets[0].agent,'himayah');await act(async()=>gets[0].resolve({sources:[source],reads:[]}));assert.match(text(),/Available to attempt/);assert.match(text(),/No source read has been recorded/);
+ await click('Read source: '+source.title);assert.equal(reads[0].id,'uae-pdpl');assert.match(text(),/No result is confirmed/);
+ await act(async()=>reads[0].resolve(success('confirmed-read')));assert.equal(updates,1);assert.match(text(),/Retrieved source text/);assert.match(text(),/confirmed-read/);assert.match(text(),/legal applicability are not verified/);assert.match(text(),/Raw SHA-256/);
+ await click('Read source: '+source.title);await act(async()=>reads[1].reject(Error('Source HTTP 403')));assert.equal(gets.length,2);
+ await act(async()=>gets[1].resolve({sources:[source],reads:[{source_id:source.id,url:source.url,status:'failed',started_at:'failure',finished_at:'failure-finished',error:'Source HTTP 403',external_write:false}]}));assert.match(text(),/Source read failed/);assert.match(text(),/Source HTTP 403/);
+ await click('Read source: '+source.title);const stopped=reads[2];await click('Stop waiting for source read');assert.equal(stopped.signal.aborted,true);assert.match(text(),/server may finish/);
+ await click('Read source: '+source.title);const newer=reads[3];await act(async()=>stopped.resolve(success('STALE-CANCELLED')));assert.ok(!text().includes('STALE-CANCELLED'));assert.match(text(),/No result is confirmed/);
+ await act(async()=>newer.resolve(success('newer-read')));assert.equal(updates,2);
+ await click('Reload source history');await act(async()=>gets.at(-1).resolve({sources:[source],reads:[receipt('reconciled')]}));assert.match(text(),/reconciled/);
+ await click('Read source: '+source.title);const old=reads.at(-1);await render({...api},'iqamah');assert.equal(old.signal.aborted,true);await act(async()=>old.resolve(success('OLD-CONNECTION')));assert.ok(!text().includes('OLD-CONNECTION'));assert.equal(gets.at(-1).agent,'iqamah');
+ await act(async()=>gets.at(-1).resolve({sources:[],reads:[]}));assert.match(text(),/No reviewed source is configured/);
+ console.log('PASS: disconnected/catalogue/empty/error states; no automatic read; actual receipt display; failed history; cancellation/reconciliation; stale-response suppression; per-app reset; source retrieval not labelled legal verification. Controlled API/DOM only.');
+})().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await act(async()=>root.unmount());dom.window.close()});

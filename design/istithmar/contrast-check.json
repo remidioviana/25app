@@ -1,0 +1,122 @@
+[
+  {
+    "theme": "light",
+    "text_token": "ink",
+    "surface_token": "bg",
+    "ratio": 13.14
+  },
+  {
+    "theme": "light",
+    "text_token": "ink",
+    "surface_token": "surface",
+    "ratio": 14.22
+  },
+  {
+    "theme": "light",
+    "text_token": "muted",
+    "surface_token": "bg",
+    "ratio": 6.58
+  },
+  {
+    "theme": "light",
+    "text_token": "muted",
+    "surface_token": "surface",
+    "ratio": 7.12
+  },
+  {
+    "theme": "light",
+    "text_token": "accent",
+    "surface_token": "bg",
+    "ratio": 6.23
+  },
+  {
+    "theme": "light",
+    "text_token": "accent",
+    "surface_token": "surface",
+    "ratio": 6.75
+  },
+  {
+    "theme": "light",
+    "text_token": "error",
+    "surface_token": "bg",
+    "ratio": 6.5
+  },
+  {
+    "theme": "light",
+    "text_token": "error",
+    "surface_token": "surface",
+    "ratio": 7.03
+  },
+  {
+    "theme": "light",
+    "text_token": "accent-ink",
+    "surface_token": "accent",
+    "ratio": 6.75
+  },
+  {
+    "theme": "light",
+    "text_token": "accent",
+    "surface_token": "soft",
+    "ratio": 5.69
+  },
+  {
+    "theme": "dark",
+    "text_token": "ink",
+    "surface_token": "bg",
+    "ratio": 15.3
+  },
+  {
+    "theme": "dark",
+    "text_token": "ink",
+    "surface_token": "surface",
+    "ratio": 13.01
+  },
+  {
+    "theme": "dark",
+    "text_token": "muted",
+    "surface_token": "bg",
+    "ratio": 10.23
+  },
+  {
+    "theme": "dark",
+    "text_token": "muted",
+    "surface_token": "surface",
+    "ratio": 8.7
+  },
+  {
+    "theme": "dark",
+    "text_token": "accent",
+    "surface_token": "bg",
+    "ratio": 10.93
+  },
+  {
+    "theme": "dark",
+    "text_token": "accent",
+    "surface_token": "surface",
+    "ratio": 9.29
+  },
+  {
+    "theme": "dark",
+    "text_token": "error",
+    "surface_token": "bg",
+    "ratio": 10.13
+  },
+  {
+    "theme": "dark",
+    "text_token": "error",
+    "surface_token": "surface",
+    "ratio": 8.61
+  },
+  {
+    "theme": "dark",
+    "text_token": "accent-ink",
+    "surface_token": "accent",
+    "ratio": 9.42
+  },
+  {
+    "theme": "dark",
+    "text_token": "accent",
+    "surface_token": "soft",
+    "ratio": 7.27
+  }
+]

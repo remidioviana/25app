@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "title": "Decision home"
+  },
+  {
+    "id": 2,
+    "title": "Business activity"
+  },
+  {
+    "id": 3,
+    "title": "Planning horizon"
+  },
+  {
+    "id": 4,
+    "title": "Supplied options"
+  },
+  {
+    "id": 5,
+    "title": "Add option"
+  },
+  {
+    "id": 6,
+    "title": "Option detail"
+  },
+  {
+    "id": 7,
+    "title": "Edit option"
+  },
+  {
+    "id": 8,
+    "title": "Activity-list boundary"
+  },
+  {
+    "id": 9,
+    "title": "Currency assumption"
+  },
+  {
+    "id": 10,
+    "title": "Fee sources"
+  },
+  {
+    "id": 11,
+    "title": "Omitted costs"
+  },
+  {
+    "id": 12,
+    "title": "Decision brief"
+  },
+  {
+    "id": 13,
+    "title": "Data boundary"
+  },
+  {
+    "id": 14,
+    "title": "Comparison plan"
+  },
+  {
+    "id": 15,
+    "title": "Run comparison"
+  },
+  {
+    "id": 16,
+    "title": "Execution activity"
+  },
+  {
+    "id": 17,
+    "title": "Ranked comparison"
+  },
+  {
+    "id": 18,
+    "title": "Cost breakdown"
+  },
+  {
+    "id": 19,
+    "title": "Cost chart"
+  },
+  {
+    "id": 20,
+    "title": "Activity matches"
+  },
+  {
+    "id": 21,
+    "title": "Non-matching options"
+  },
+  {
+    "id": 22,
+    "title": "Sensitivity scenario"
+  },
+  {
+    "id": 23,
+    "title": "Compare a pair"
+  },
+  {
+    "id": 24,
+    "title": "Tax assumptions"
+  },
+  {
+    "id": 25,
+    "title": "Tax illustration"
+  },
+  {
+    "id": 26,
+    "title": "Reviewer questions"
+  },
+  {
+    "id": 27,
+    "title": "Decision packet"
+  },
+  {
+    "id": 28,
+    "title": "Export preview"
+  },
+  {
+    "id": 29,
+    "title": "Licensing handoff"
+  },
+  {
+    "id": 30,
+    "title": "Session history"
+  },
+  {
+    "id": 31,
+    "title": "Search options"
+  },
+  {
+    "id": 32,
+    "title": "Privacy controls"
+  },
+  {
+    "id": 33,
+    "title": "Delete session"
+  },
+  {
+    "id": 34,
+    "title": "Help and limitations"
+  },
+  {
+    "id": 35,
+    "title": "Accessibility"
+  },
+  {
+    "id": 36,
+    "title": "Recovery"
+  }
+]

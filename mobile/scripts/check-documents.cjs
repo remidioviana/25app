@@ -15,7 +15,7 @@ Module._load=function(name){
 };
 const file=path.resolve(__dirname,'../components/Documents.tsx'),m=new Module(file,module);m.filename=file;m.paths=module.paths;m._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText,file);Module._load=original;
 const root=createRoot(document.getElementById('root')),onError=e=>errors.push(e);
-const render=api=>act(async()=>root.render(React.createElement(m.exports.Documents,{api,agent:'mizan',onError})));
+const render=(api,refreshVersion=0)=>act(async()=>root.render(React.createElement(m.exports.Documents,{api,agent:'mizan',onError,refreshVersion})));
 const click=title=>act(async()=>[...document.querySelectorAll('button')].find(b=>b.textContent===title).click());
 const value=label=>document.querySelector(`[aria-label="${label}"]`).value;
 const base={documents:async()=>({documents:[]}),preview:async()=>{previews++;return {text:'Extracted fixture',warnings:[]}},addDocument:async()=>({id:'saved'})};
@@ -37,5 +37,8 @@ const base={documents:async()=>({documents:[]}),preview:async()=>{previews++;ret
  await act(async()=>{fields['Document title']('Pending save');fields['Extracted text']('Pending text')});await click('Add to evidence');await render({...base});
  await act(async()=>fields['Document title']('New connection draft'));await act(async()=>resolveSave({id:'old-save'}));assert.equal(value('Document title'),'New connection draft');assert.equal(oldReloads,1);
  let rejectOld;await render({...base,documents:()=>new Promise((r,j)=>rejectOld=j)});await render({...base});await act(async()=>rejectOld(Error('stale failure')));assert.deepEqual(errors,[]);
- console.log('PASS: connection reset, late list suppression, save clears date, picker cannot upload to old connection, new import clears source/date, stale preview/save/error suppression. DOM behavior only.');
+ let oldList,calls=0;const refreshApi={...base,documents:()=>{calls++;return calls===1?new Promise(r=>oldList=r):Promise.resolve({documents:[{id:'current',title:'Current stored source',source:'https://official.test',as_of:'',source_version_state:'current'},{id:'prior',title:'Prior source',source:'https://official.test',as_of:'',source_version_state:'superseded'}]})}};
+ await render(refreshApi);await act(async()=>fields['Document title']('Preserve unsaved import'));await render(refreshApi,1);assert.equal(value('Document title'),'Preserve unsaved import');assert.match(document.body.textContent,/Superseded source version/);assert.match(document.body.textContent,/not proof of current law/);
+ await act(async()=>oldList({documents:[{id:'stale',title:'STALE LIST AFTER REFRESH'}]}));assert.ok(!document.body.textContent.includes('STALE LIST AFTER REFRESH'));
+ console.log('PASS: connection reset, late list suppression, save clears date, picker cannot upload to old connection, new import clears source/date, stale preview/save/error suppression, source refresh preserves drafts and labels superseded versions. DOM behavior only.');
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await act(async()=>root.unmount());dom.window.close()});

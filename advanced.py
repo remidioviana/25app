@@ -23,6 +23,7 @@ STR={'type':'string','maxLength':4000}
 def obj(properties):return {'type':'object','properties':properties,'required':list(properties),'additionalProperties':False}
 def arr(items,maxitems=12):return {'type':'array','items':items,'maxItems':maxitems}
 PLAN=obj({'objective':STR,'queries':arr(STR,3),'steps':arr(STR,8),'missing_information':arr(STR,10)})
+PLAN['properties']['source_ids']=arr({'type':'string','maxLength':64},5)
 DRAFT=obj({'summary':STR,'claims':arr(obj({'text':STR,'basis':{'type':'string'},'citations':arr(STR,6)}),12),'next_steps':arr(STR,8)})
 CRITIC=obj({'verdict':{'type':'string'},'issues':arr(STR,10),'follow_up_queries':arr(STR,2)})
 
@@ -37,6 +38,7 @@ class State(TypedDict,total=False):
     roles:list
     tokens:int
     decision:str
+    source_reads:list
 
 
 def role(name,schema,context,instructions):
@@ -67,23 +69,34 @@ def run(task,spec,check):
         return value,{'roles':state.get('roles',[])+[{'role':name,'usage':usage}],
                       'tokens':state.get('tokens',0)+usage.get('total_tokens',0)}
     def plan(state):
-        value,updates=ask('planner',PLAN,{'goal':task['goal'],'data':task['input'],'domain':spec['instructions']},state,
-          'Plan a domain analysis with up to three useful searches, verifiable steps and missing information. Never invent legal requirements or data.')
+        value,updates=ask('planner',PLAN,{'goal':task['goal'],'data':task['input'],'domain':spec['instructions'],'available_public_sources':tools['sources'].invoke({})},state,
+          'Plan a domain analysis with up to three useful searches, verifiable steps and missing information. Optionally select source_ids only from the permitted public source catalogue when current source retrieval is needed. Never invent sources, legal requirements or data.')
         return updates|{'plan':value,'revision':0}
     def retrieve(state):
-        checked();evidence={x['citation']:x for x in state.get('evidence',[])};warnings=[]
+        checked();evidence={x['citation']:x for x in db.current_evidence(agent,state.get('evidence',[]))};warnings=list(state.get('retrieval_warnings',[]));source_reads=list(state.get('source_reads',[]))
+        if not state.get('source_reads'):
+            for source_id in dict.fromkeys(state['plan'].get('source_ids',[])):
+                checked()
+                try:
+                    value=tools['refresh'].invoke({'source_id':source_id});checked();source_reads.append(value['receipt'])
+                    log('source_retrieved',value['receipt'])
+                except (ValueError,PermissionError):
+                    warnings.append('Requested public source '+source_id+' was not retrieved; do not infer current source-backed conclusions.')
+                    log('source_unavailable',{'source_id':source_id,'status':'not retrieved'})
+        evidence={x['citation']:x for x in db.current_evidence(agent,list(evidence.values()))}
         queries=state.get('critique',{}).get('follow_up_queries') or state['plan']['queries'] or [task['goal']]
         for q in queries:
             checked();result=tools['search'].invoke({'query':q[:2000] or task['goal'][:2000]});warnings.extend(result['warnings'])
             for x in result['matches']:evidence[x['citation']]=x
         log('retrieving',{'citations':list(evidence),'warnings':warnings,'semantic_requested':semantic})
-        return {'evidence':list(evidence.values())[:24],'retrieval_warnings':warnings}
+        return {'evidence':list(evidence.values())[:24],'retrieval_warnings':warnings,'source_reads':source_reads}
     def analyze(state):
         checked();value=tools['analyze'].invoke({});log('acting',{'tool':spec['tool'],'output':value,'output_hash':db.digest(value)})
         return {'analysis':value}
     def write(state):
         context={'goal':task['goal'],'plan':state['plan'],'input':task['input'],'analysis':state['analysis'],
-                 'evidence':state.get('evidence',[]),'memory':tools['memory'].invoke({}),'critic_feedback':state.get('critique')}
+                 'evidence':state.get('evidence',[]),'retrieval_warnings':state.get('retrieval_warnings',[]),
+                 'source_reads':state.get('source_reads',[]),'memory':tools['memory'].invoke({}),'critic_feedback':state.get('critique')}
         value,updates=ask('specialist',DRAFT,context,state,spec['instructions']+' Every claim must declare its basis as input, calculation or evidence. Evidence claims require exact retrieved citation IDs. Distinguish uncertainty from facts.')
         known={x['citation'] for x in state.get('evidence',[])}
         for claim in value['claims']:
@@ -104,6 +117,7 @@ def run(task,spec,check):
         return 'retrieve_again' if state['critique']['verdict']=='needs_evidence' else 'write'
     def finish(state):
         checked()
+        if len(db.current_evidence(agent,state.get('evidence',[])))!=len(state.get('evidence',[])):raise ValueError('A public source version changed during this task; rerun with current evidence')
         if db.digest(TOOLS[agent](task['input']))!=db.digest(state['analysis']):raise ValueError('Recomputation mismatch')
         decision='reviewed_by_model' if state['critique']['verdict']=='accept' else 'requires_human_review'
         log('verifying',{'recomputed':True,'decision':decision,'critic_rounds':state['revision']})
@@ -125,5 +139,6 @@ def run(task,spec,check):
       'analysis':state['analysis'],'narrative':state['draft']['summary'],'draft':state['draft'],'plan':state['plan'],
       'critique':state['critique'],'decision':state['decision'],'evidence':state.get('evidence',[]),
       'retrieval_warnings':state.get('retrieval_warnings',[]),'usage':state.get('roles',[]),
+      'source_reads':state.get('source_reads',[]),'external_reads_performed':bool(state.get('source_reads')),
       'input_hash':db.digest(task['input']),'analysis_hash':db.digest(state['analysis']),
       'external_actions_performed':False,'limits':['Model review is not factual certification.','Supplied sources; freshness is not automatically verified.']}

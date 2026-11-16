@@ -16,6 +16,7 @@ import scheduling
 import document_import
 import connectors
 import intake
+import source_tools
 from agent_runtime import SPECS, recover, submit
 from model_provider import configured
 from validation import validate
@@ -77,10 +78,15 @@ class Handler(BaseHTTPRequestHandler):
             if match[1] not in SPECS:return self.reply({'error':'Unknown app'},404)
             return self.reply(connectors.pull(match[2],match[1],SPECS[match[1]]))
         if path=='/api/agents' and method=='GET': return self.reply({'agents':list(SPECS.values())})
-        m=re.fullmatch(r'/api/agents/([a-z-]+)/(?P<action>runs|documents|search|index|schedules|connectors|intake)',path)
+        m=re.fullmatch(r'/api/agents/([a-z-]+)/(?P<action>runs|documents|search|index|schedules|connectors|intake|sources)',path)
         if m:
             agent=m[1]; action=m['action']
             if agent not in SPECS: return self.reply({'error':'Unknown app'},404)
+            if action=='sources':
+                if method=='GET':return self.reply({'sources':source_tools.available(agent),'reads':source_tools.receipts(agent)})
+                if method=='POST':
+                    validate(data,{'type':'object','properties':{'source_id':{'type':'string','maxLength':64}},'required':['source_id'],'additionalProperties':False})
+                    return self.reply(source_tools.refresh(data['source_id'],agent),201)
             if action=='intake' and method=='POST':return self.reply(intake.prepare(agent,SPECS[agent],data.get('request')))
             if action=='connectors' and method=='GET':return self.reply({'connectors':connectors.allowed(agent)})
             if action=='schedules':

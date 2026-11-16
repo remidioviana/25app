@@ -8,7 +8,7 @@ Status: design foundation and 32-view browser prototype delivered; native and li
 
 **Known behavior.** The Python domain tool performs case-insensitive literal phrase screening against supplied rules and returns flags, quotes and offsets. It does not interpret clauses, validate applicable legislation, or establish compliance. The shared runtime has separate model and storage mechanisms; this prototype does not connect them. The existing server health response reports no external connectors.
 
-**Name.** The supplied source does not document the official naming rationale or approved Arabic brand spelling. Protection is an appropriate creative association, not a recovered brand fact.
+**Name.** The additional user-supplied historical brief identifies Himayah with protection/amparo and traces the former concept GovNavigator to the current name. This is recovered user-provided naming context; approved Arabic spelling and native linguistic/brand validation remain pending. See `competition/ORIGEM_E_AUTORIA.md`.
 
 **Problem hypothesis.** A small-business operator receives a supplier contract, cannot confidently locate relevant privacy provisions, and needs to prepare a focused, traceable question for counsel. Friction includes locating clauses, distinguishing absence of a word from absence of protection, and retaining source references across drafts. These hypotheses require interviews; no usability research is claimed.
 

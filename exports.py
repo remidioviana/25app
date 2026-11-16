@@ -46,12 +46,19 @@ def markdown(run):
               ('model','requested_model','fallback','fallback_reason','total_tokens') if key in usage}})
         lines+=json_section('Recorded model routing',roles)
     if result.get('retrieval_warnings'):lines+=json_section('Retrieval warnings',result['retrieval_warnings'])
+    if result.get('source_reads'):
+        fields=('source_id','url','authority','fetched_at','http_status','content_type','raw_sha256','text_sha256',
+                'publication_date_verified','legal_applicability_verified','status','document_id','warnings')
+        lines+=json_section('Public-source read receipts',[
+            {key:item[key] for key in fields if key in item}
+            for item in result['source_reads'] if isinstance(item,dict)])
     lines+=json_section('Review status',{'model_decision':result.get('decision','not_recorded'),
       'human_review':run.get('review','not_recorded')})
     lines+=['Model review is not factual certification. Citation IDs link recorded evidence; they do not establish support or freshness.','', '## Evidence','']
-    for e in result.get('evidence',[]):lines += [f"### {e['title']}",f"Reference: {e['citation']} | Source: {e['source']} | Date: {e['as_of']}",'',e['text'],'']
+    for e in result.get('evidence',[]):lines += [f"### {e['title']}",f"Reference: {e['citation']} | Source: {e['source']} | Supplied publication date: {e['as_of'] or 'not recorded'} | Retrieved: {e.get('retrieved_at') or 'not recorded'}",'',e['text'],'']
     lines+=['## Limits','',*['- '+x for x in result.get('limits',[])],'']
-    if result.get('external_actions_performed') is False:lines+=['No external action was performed.','']
+    if result.get('external_actions_performed') is False:
+        lines+=['External public sources were read; no external write was performed.' if result.get('external_reads_performed') else 'No external action was performed.','']
     else:lines+=['External-action status: '+('reported as performed; verify execution receipts' if result.get('external_actions_performed') is True else 'not recorded')+'.','']
     lines+=[f"Analysis hash: `{result['analysis_hash']}`"]
     return Artifact(f"{run['agent']}-{run['id']}.md",'text/markdown; charset=utf-8','\n'.join(lines).encode())

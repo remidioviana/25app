@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "title": "Tender pipeline"
+  },
+  {
+    "id": 2,
+    "title": "Tender identity"
+  },
+  {
+    "id": 3,
+    "title": "Requirement register"
+  },
+  {
+    "id": 4,
+    "title": "Edit requirements"
+  },
+  {
+    "id": 5,
+    "title": "Capability register"
+  },
+  {
+    "id": 6,
+    "title": "Edit capabilities"
+  },
+  {
+    "id": 7,
+    "title": "Deadline context"
+  },
+  {
+    "id": 8,
+    "title": "Amendment notes"
+  },
+  {
+    "id": 9,
+    "title": "Source boundaries"
+  },
+  {
+    "id": 10,
+    "title": "Bid brief"
+  },
+  {
+    "id": 11,
+    "title": "Execution plan"
+  },
+  {
+    "id": 12,
+    "title": "Local data boundary"
+  },
+  {
+    "id": 13,
+    "title": "Run fit check"
+  },
+  {
+    "id": 14,
+    "title": "Actual activity"
+  },
+  {
+    "id": 15,
+    "title": "Requirement matrix"
+  },
+  {
+    "id": 16,
+    "title": "Supported requirements"
+  },
+  {
+    "id": 17,
+    "title": "Evidence gaps"
+  },
+  {
+    "id": 18,
+    "title": "Requirement detail"
+  },
+  {
+    "id": 19,
+    "title": "Evidence provenance"
+  },
+  {
+    "id": 20,
+    "title": "Deadline detail"
+  },
+  {
+    "id": 21,
+    "title": "Resolution plan"
+  },
+  {
+    "id": 22,
+    "title": "Owner assignments"
+  },
+  {
+    "id": 23,
+    "title": "Bid outline"
+  },
+  {
+    "id": 24,
+    "title": "Reviewer questions"
+  },
+  {
+    "id": 25,
+    "title": "Bid packet"
+  },
+  {
+    "id": 26,
+    "title": "Export preview"
+  },
+  {
+    "id": 27,
+    "title": "Submission approval boundary"
+  },
+  {
+    "id": 28,
+    "title": "Session history"
+  },
+  {
+    "id": 29,
+    "title": "Search requirements"
+  },
+  {
+    "id": 30,
+    "title": "Privacy controls"
+  },
+  {
+    "id": 31,
+    "title": "Delete session"
+  },
+  {
+    "id": 32,
+    "title": "Help and limitations"
+  },
+  {
+    "id": 33,
+    "title": "Accessibility"
+  },
+  {
+    "id": 34,
+    "title": "Recovery"
+  }
+]

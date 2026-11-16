@@ -25,7 +25,9 @@ def index(agent):
     with db.connect() as c:
         rows=[dict(x) for x in c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text FROM chunks
           LEFT JOIN embeddings e ON e.doc=chunks.doc AND e.chunk=chunks.chunk AND e.model=?
-          WHERE chunks.agent=? AND e.doc IS NULL LIMIT 512''',(model,agent))]
+          WHERE chunks.agent=? AND e.doc IS NULL
+          AND NOT EXISTS (SELECT 1 FROM public_source_versions v WHERE v.doc=chunks.doc AND v.agent=chunks.agent AND v.is_current=0)
+          LIMIT 512''',(model,agent))]
     count=0
     for start in range(0,len(rows),32):
         batch=rows[start:start+32];vectors=model_provider.embed([x['text'] for x in batch])
@@ -46,9 +48,12 @@ def search(agent,query,semantic=False):
     init();model=os.environ.get('OPENAI_EMBEDDING_MODEL')
     if not model: raise ValueError('Semantic search requires an embedding model')
     with db.connect() as c:
-        rows=[dict(x) for x in c.execute('''SELECT e.vector,e.text_hash,e.doc,e.chunk,c.text,d.title,d.source,d.as_of
+        rows=[dict(x) for x in c.execute('''SELECT e.vector,e.text_hash,e.doc,e.chunk,c.text,d.title,d.source,d.as_of,v.fetched_at AS retrieved_at
           FROM embeddings e JOIN chunks c ON c.doc=e.doc AND c.chunk=e.chunk
-          JOIN documents d ON d.id=e.doc WHERE e.agent=? AND c.agent=? AND d.agent=? AND e.model=? LIMIT 10000''',(agent,agent,agent,model))]
+          JOIN documents d ON d.id=e.doc LEFT JOIN public_source_versions v ON v.doc=e.doc AND v.agent=e.agent
+          WHERE e.agent=? AND c.agent=? AND d.agent=? AND e.model=?
+          AND NOT EXISTS (SELECT 1 FROM public_source_versions old WHERE old.doc=e.doc AND old.agent=e.agent AND old.is_current=0)
+          LIMIT 10000''',(agent,agent,agent,model))]
     if not rows: return {'matches':lexical,'method':'bm25','warnings':['No vectors for this model; index the app evidence first.']}
     q=vector(model_provider.embed([query[:4000]])[0]);ranked=[];warnings=[]
     for row in rows:

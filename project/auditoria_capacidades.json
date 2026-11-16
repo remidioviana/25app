@@ -1,0 +1,1066 @@
+{
+  "checked_at": "2026-11-16T05:38:15.720611+00:00",
+  "scope": "Source audit, not completed live-agent acceptance",
+  "products": [
+    {
+      "order": 1,
+      "id": "himayah",
+      "name": "Himayah AI",
+      "requested_mission": "A genuinely autonomous regulatory compliance auditing agent.",
+      "requested_capabilities": [
+        "Ingest authentic contracts, privacy policies, terms of service and relevant supporting documents.",
+        "Extract and structure the actual clauses.",
+        "Retrieve authoritative UAE Personal Data Protection Law materials and relevant official guidance.",
+        "Determine applicable legal obligations based on jurisdiction, document purpose and available facts.",
+        "Identify potentially noncompliant provisions.",
+        "Connect each finding to the specific document clause and relevant legal authority.",
+        "Differentiate verified findings, interpretive concerns and unresolved questions.",
+        "Prioritize compliance risks.",
+        "Generate corrective drafting suggestions.",
+        "Produce an evidence-backed audit report.",
+        "Reassess findings when underlying legal sources change.",
+        "Preserve a traceable record of sources and conclusions."
+      ],
+      "implemented_local_tool": "contract",
+      "input_schema_fields": [
+        "text",
+        "rules"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 2,
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "requested_mission": "An autonomous UAE Golden Visa eligibility and application preparation agent.",
+      "requested_capabilities": [
+        "Retrieving current official UAE residency and Golden Visa requirements.",
+        "Distinguishing applicable categories and relevant jurisdictions.",
+        "Reviewing authentic financial, academic and professional documents supplied or authorized by the user.",
+        "Determining which eligibility criteria are supported by evidence.",
+        "Identifying missing documentation.",
+        "Checking document validity and relevant requirements.",
+        "Building a structured application dossier.",
+        "Generating personalized document checklists.",
+        "Identifying discrepancies.",
+        "Tracking official changes to eligibility and documentation requirements.",
+        "Preparing relevant submission materials.",
+        "Supporting authorized submission workflows when an official integration actually permits them."
+      ],
+      "implemented_local_tool": "checklist",
+      "input_schema_fields": [
+        "as_of",
+        "requirements",
+        "documents"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 3,
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "requested_mission": "An autonomous business establishment and UAE tax analysis agent.",
+      "requested_capabilities": [
+        "Understand the user's actual business model.",
+        "Identify applicable business activities.",
+        "Retrieve current official information for relevant UAE free zones.",
+        "Compare permitted activities and licensing requirements.",
+        "Retrieve published establishment and renewal fees.",
+        "Distinguish official fees from estimated costs.",
+        "Analyze relevant corporate tax treatment.",
+        "Evaluate operational constraints.",
+        "Compare legal and commercial structures.",
+        "Calculate grounded financial scenarios.",
+        "Explain material assumptions and uncertainties.",
+        "Rank suitable options using transparent criteria.",
+        "Assemble a business establishment action plan.",
+        "Update recommendations when verified requirements change."
+      ],
+      "implemented_local_tool": "setup",
+      "input_schema_fields": [
+        "activity",
+        "currency",
+        "years",
+        "visas",
+        "options"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 4,
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "requested_mission": "An autonomous government procurement research and proposal preparation agent.",
+      "requested_capabilities": [
+        "Access authorized official procurement portals.",
+        "Discover authentic published tender opportunities.",
+        "Retrieve actual tender documents.",
+        "Extract deadlines.",
+        "Identify mandatory qualification requirements.",
+        "Detect required forms and certifications.",
+        "Analyze technical specifications.",
+        "Evaluate an organization's documented eligibility.",
+        "Identify missing evidence.",
+        "Construct a compliance matrix.",
+        "Draft a technical proposal grounded in the organization's real capabilities.",
+        "Prepare commercial proposal structures using verified company-provided pricing information.",
+        "Validate submission completeness.",
+        "Track amendments and deadlines.",
+        "Support authorized submission actions where available."
+      ],
+      "implemented_local_tool": "tender",
+      "input_schema_fields": [
+        "requirements",
+        "capabilities",
+        "deadline",
+        "as_of"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 5,
+      "id": "sahil",
+      "name": "Sahil AI",
+      "requested_mission": "An autonomous government service navigation and procedural assistance agent.",
+      "requested_capabilities": [
+        "Understand the citizen's intended government service.",
+        "Retrieve current procedures from relevant official portals.",
+        "Identify the applicable authority.",
+        "Determine documentation requirements.",
+        "Explain procedures in natural language.",
+        "Support Arabic and English interaction.",
+        "Offer voice-driven navigation where supported.",
+        "Guide users through actual procedural steps.",
+        "Prepare authorized data entry.",
+        "Identify missing information.",
+        "Track procedural progress where integrations allow.",
+        "Execute authorized digital actions when technically supported."
+      ],
+      "implemented_local_tool": "checklist",
+      "input_schema_fields": [
+        "as_of",
+        "requirements",
+        "documents"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 6,
+      "id": "tawteen",
+      "name": "Tawteen AI",
+      "requested_mission": "An autonomous workforce compliance intelligence system.",
+      "requested_capabilities": [
+        "Ingest authorized workforce records.",
+        "Analyze applicable workforce categories.",
+        "Retrieve current official Emiratisation obligations.",
+        "Identify the actual regulatory requirements for the organization.",
+        "Calculate relevant workforce metrics.",
+        "Detect potential shortfalls.",
+        "Evaluate upcoming deadlines.",
+        "Calculate potential exposure using verified rules.",
+        "Produce evidence-backed compliance reports.",
+        "Generate corrective action plans.",
+        "Track relevant official policy changes.",
+        "Issue preventive alerts based on actual data."
+      ],
+      "implemented_local_tool": "workforce",
+      "input_schema_fields": [
+        "target_percent",
+        "employees"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 7,
+      "id": "adl",
+      "name": "Adl AI",
+      "requested_mission": "An autonomous property-contract and dispute analysis agent.",
+      "requested_capabilities": [
+        "Analyze authentic rental and purchase documents.",
+        "Identify contractual obligations.",
+        "Retrieve current applicable Dubai property rules.",
+        "Evaluate rent adjustment conditions.",
+        "Retrieve relevant official index information where available.",
+        "Identify possible procedural or contractual concerns.",
+        "Produce documented legal issue summaries.",
+        "Organize relevant evidence.",
+        "Prepare appropriate dispute documentation drafts.",
+        "Explain official procedural pathways.",
+        "Track relevant regulatory changes.",
+        "Identify situations requiring licensed legal advice."
+      ],
+      "implemented_local_tool": "case",
+      "input_schema_fields": [
+        "currency",
+        "events",
+        "claims"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 8,
+      "id": "tawassul",
+      "name": "Tawassul B2B",
+      "requested_mission": "An autonomous GCC B2B market-entry and negotiation preparation system.",
+      "requested_capabilities": [
+        "Analyze real company products and services.",
+        "Research current GCC business conditions.",
+        "Identify relevant industries and market opportunities.",
+        "Analyze publicly verifiable potential business partners.",
+        "Adapt sales materials to regional business conventions.",
+        "Prepare culturally appropriate Arabic and English communications.",
+        "Generate negotiation strategies grounded in actual business requirements.",
+        "Examine commercial constraints.",
+        "Prepare localized proposals.",
+        "Analyze documented counterparty responses.",
+        "Recommend evidence-backed next steps.",
+        "Support authorized outreach through connected systems."
+      ],
+      "implemented_local_tool": "proposal",
+      "input_schema_fields": [
+        "account",
+        "needs",
+        "products"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 9,
+      "id": "adab",
+      "name": "Adab AI",
+      "requested_mission": "An autonomous bilingual cultural marketing localization and compliance review agent.",
+      "requested_capabilities": [
+        "Ingest real campaign text and assets.",
+        "Analyze intended audiences and countries.",
+        "Assess linguistic appropriateness.",
+        "Review cultural sensitivities.",
+        "Identify potentially unsuitable visual elements.",
+        "Adapt messages into natural regional Arabic.",
+        "Preserve brand intent.",
+        "Create localized content variations grounded in supplied claims.",
+        "Detect unsupported marketing promises.",
+        "Validate language quality.",
+        "Produce revision-ready creative assets.",
+        "Explain important editorial decisions."
+      ],
+      "implemented_local_tool": "campaign",
+      "input_schema_fields": [
+        "copy",
+        "claims",
+        "approved_claims",
+        "prohibited_terms",
+        "max_characters"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 10,
+      "id": "khidmah",
+      "name": "Khidmah AI",
+      "requested_mission": "An autonomous, courteous GCC e-commerce customer-service execution agent.",
+      "requested_capabilities": [
+        "Receive authentic customer support requests.",
+        "Retrieve authorized order information.",
+        "Determine applicable merchant policies.",
+        "Classify the issue.",
+        "Investigate shipping status.",
+        "Evaluate return eligibility.",
+        "Determine refund conditions.",
+        "Communicate clearly in appropriate Arabic or English.",
+        "Initiate authorized logistics workflows.",
+        "Execute permitted refunds and exchanges.",
+        "Escalate exceptions.",
+        "Confirm actual outcomes.",
+        "Maintain accurate support history."
+      ],
+      "implemented_local_tool": "order",
+      "input_schema_fields": [
+        "as_of",
+        "purchase_date",
+        "amount",
+        "refund_limit",
+        "return_window_days",
+        "reason",
+        "eligible_reasons"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 11,
+      "id": "jomrok",
+      "name": "Jomrok AI",
+      "requested_mission": "An autonomous import compliance and customs intelligence agent.",
+      "requested_capabilities": [
+        "Parse authentic commercial invoices.",
+        "Extract product descriptions.",
+        "Determine required classification information.",
+        "Consult current official customs tariff references.",
+        "Identify candidate customs classifications.",
+        "Validate classification against product attributes.",
+        "Calculate applicable duties using verified rules.",
+        "Check documentation requirements.",
+        "Identify applicable restrictions.",
+        "Determine when certification requirements, including Halal certification, may apply.",
+        "Assemble customs documentation checklists.",
+        "Identify ambiguous classifications requiring specialist review."
+      ],
+      "implemented_local_tool": "shipment",
+      "input_schema_fields": [
+        "required_fields",
+        "shipment",
+        "goods_value",
+        "freight",
+        "duty_rate_percent",
+        "currency"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 12,
+      "id": "khibrat",
+      "name": "Khibrat AI",
+      "requested_mission": "A multilingual recruitment analysis and professional qualification assessment agent.",
+      "requested_capabilities": [
+        "Process authorized CVs and applicant-provided profiles.",
+        "Extract verified professional information.",
+        "Analyze role requirements.",
+        "Compare documented experience to job-relevant criteria.",
+        "Identify transferable skills.",
+        "Detect missing qualifications.",
+        "Evaluate language requirements where relevant.",
+        "Produce evidence-backed qualification summaries.",
+        "Identify unanswered recruitment questions.",
+        "Support consistent human review.",
+        "Explain assessments transparently."
+      ],
+      "implemented_local_tool": "skills",
+      "input_schema_fields": [
+        "criteria",
+        "evidence"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 13,
+      "id": "majlis",
+      "name": "Majlis AI",
+      "requested_mission": "An autonomous executive relocation and GCC business culture learning agent.",
+      "requested_capabilities": [
+        "Assess the user's professional objectives.",
+        "Retrieve trustworthy regional workplace information.",
+        "Identify relevant corporate etiquette.",
+        "Explain common business practices.",
+        "Provide contextual language assistance.",
+        "Prepare meeting etiquette guidance.",
+        "Help interpret local business terminology.",
+        "Create individualized learning pathways.",
+        "Track completed learning activities.",
+        "Adjust guidance according to the user's actual industry and destination.",
+        "Identify regional variation and uncertainty."
+      ],
+      "implemented_local_tool": "dependencies",
+      "input_schema_fields": [
+        "as_of",
+        "tasks"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 14,
+      "id": "rafiq",
+      "name": "Rafiq",
+      "requested_mission": "An autonomous daily planning and contextual scheduling agent.",
+      "requested_capabilities": [
+        "Retrieve accurate location-specific prayer times using Aladhan or another appropriate verified source.",
+        "Obtain real traffic and travel-time information from authorized services.",
+        "Read connected calendar events with user permission.",
+        "Evaluate scheduling conflicts.",
+        "Identify available time windows.",
+        "Recalculate schedules when relevant conditions change.",
+        "Propose optimized meeting times.",
+        "Respect user-defined prayer and personal preferences.",
+        "Identify realistic travel constraints.",
+        "Modify calendar events only when authorized.",
+        "Notify users of important changes.",
+        "Reevaluate plans when new information arrives."
+      ],
+      "implemented_local_tool": "schedule",
+      "input_schema_fields": [
+        "start",
+        "end",
+        "buffer_minutes",
+        "busy",
+        "tasks"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 15,
+      "id": "sawm",
+      "name": "Sawm AI",
+      "requested_mission": "An adaptive Ramadan routine and personal productivity agent.",
+      "requested_capabilities": [
+        "Retrieve accurate location-specific fasting and prayer schedules.",
+        "Understand user-defined routines.",
+        "Evaluate actual work commitments.",
+        "Adapt productivity schedules.",
+        "Support practical rest planning.",
+        "Help organize appropriate hydration opportunities outside fasting hours.",
+        "Adjust optional exercise planning.",
+        "Track user-entered or authorized activity information.",
+        "Detect scheduling conflicts.",
+        "Recommend realistic adjustments.",
+        "Respect individual religious observance preferences."
+      ],
+      "implemented_local_tool": "schedule",
+      "input_schema_fields": [
+        "start",
+        "end",
+        "buffer_minutes",
+        "busy",
+        "tasks"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 16,
+      "id": "mizan",
+      "name": "Mizan AI",
+      "requested_mission": "An autonomous financial organization and Islamic finance research agent.",
+      "requested_capabilities": [
+        "Analyze authorized spending records.",
+        "Categorize actual transactions.",
+        "Retrieve reliable financial product information.",
+        "Identify investment screening criteria from recognized Islamic finance methodologies.",
+        "Examine applicable financial instruments.",
+        "Identify potential interest-based exposure.",
+        "Explain screening uncertainties.",
+        "Develop transparent budgeting recommendations.",
+        "Analyze savings objectives.",
+        "Compare actual financial products.",
+        "Identify applicable risks.",
+        "Produce evidence-backed financial reports."
+      ],
+      "implemented_local_tool": "ledger",
+      "input_schema_fields": [
+        "currency",
+        "budgets",
+        "transactions"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 17,
+      "id": "thawg",
+      "name": "Thawg AI",
+      "requested_mission": "An autonomous luxury dining research, dietary verification and reservation agent.",
+      "requested_capabilities": [
+        "Discover real restaurants.",
+        "Retrieve current restaurant information.",
+        "Analyze authentic menus.",
+        "Check published ingredient information.",
+        "Investigate actual Halal certification evidence.",
+        "Distinguish verified certification from unconfirmed claims.",
+        "Evaluate user dietary constraints.",
+        "Retrieve real reservation availability from authorized booking providers.",
+        "Compare viable dining options.",
+        "Initiate reservations when integration permits.",
+        "Confirm actual bookings.",
+        "Communicate limitations transparently."
+      ],
+      "implemented_local_tool": "dining",
+      "input_schema_fields": [
+        "budget",
+        "party_size",
+        "required_tags",
+        "restaurants"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 18,
+      "id": "manzil",
+      "name": "Manzil AI",
+      "requested_mission": "An autonomous household financial organization agent.",
+      "requested_capabilities": [
+        "Capture real receipts using the device camera.",
+        "Extract receipt data.",
+        "Validate transaction amounts.",
+        "Classify expenses.",
+        "Identify merchants.",
+        "Apply relevant verified VAT rules.",
+        "Organize household spending.",
+        "Detect possible duplicate entries.",
+        "Generate actual budget summaries.",
+        "Identify significant spending changes.",
+        "Suggest practical savings opportunities.",
+        "Export accurate financial records."
+      ],
+      "implemented_local_tool": "ledger",
+      "input_schema_fields": [
+        "currency",
+        "budgets",
+        "transactions"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 19,
+      "id": "gurbah",
+      "name": "Gurbah AI",
+      "requested_mission": "An autonomous Gulf relocation planning and coordination agent.",
+      "requested_capabilities": [
+        "Understand the household's relocation destination.",
+        "Retrieve current official residency and relocation requirements.",
+        "Identify relevant documentation.",
+        "Research real international schools.",
+        "Check published admissions and availability information.",
+        "Compare residential considerations.",
+        "Retrieve authentic utility onboarding requirements.",
+        "Develop an actionable relocation plan.",
+        "Coordinate deadlines.",
+        "Prepare forms and document checklists.",
+        "Support authorized service applications where available.",
+        "Track genuine confirmations and unresolved tasks."
+      ],
+      "implemented_local_tool": "dependencies",
+      "input_schema_fields": [
+        "as_of",
+        "tasks"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 20,
+      "id": "amanah-eco",
+      "name": "Amanah Eco",
+      "requested_mission": "An autonomous household sustainability analysis agent.",
+      "requested_capabilities": [
+        "Process authentic utility bills.",
+        "Extract real consumption values.",
+        "Validate billing periods.",
+        "Analyze consumption changes.",
+        "Retrieve relevant official energy and water information.",
+        "Identify efficiency opportunities.",
+        "Calculate transparent savings scenarios.",
+        "Recommend actionable conservation measures.",
+        "Track verified progress.",
+        "Investigate authentic incentive programs.",
+        "Determine documented eligibility for available programs."
+      ],
+      "implemented_local_tool": "utility",
+      "input_schema_fields": [
+        "previous_usage",
+        "previous_days",
+        "current_usage",
+        "current_days",
+        "unit"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 21,
+      "id": "nafas",
+      "name": "Nafas AI",
+      "requested_mission": "A culturally informed, privacy-conscious mental well-being support application.",
+      "requested_capabilities": [
+        "Understand user-expressed well-being goals.",
+        "Offer appropriate reflective exercises.",
+        "Provide evidence-informed mindfulness and relaxation guidance.",
+        "Adapt language and presentation to the user's cultural preferences.",
+        "Support self-directed routine planning.",
+        "Track only information the user intentionally provides.",
+        "Recognize when professional assistance may be appropriate.",
+        "Provide trustworthy support resources.",
+        "Avoid presenting itself as a clinician.",
+        "Respect religious diversity and individual preferences."
+      ],
+      "implemented_local_tool": "wellbeing",
+      "input_schema_fields": [
+        "start_date",
+        "days",
+        "preferred_activities"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 22,
+      "id": "tadweer",
+      "name": "Tadweer AI",
+      "requested_mission": "An autonomous waste identification and responsible disposal guidance agent.",
+      "requested_capabilities": [
+        "Analyze actual photographs of household waste.",
+        "Identify likely material categories.",
+        "Express uncertainty where necessary.",
+        "Retrieve official local disposal rules.",
+        "Identify special handling requirements.",
+        "Locate verified recycling or collection facilities.",
+        "Check available operating information.",
+        "Retrieve actual transport and routing data.",
+        "Calculate appropriate disposal routes.",
+        "Provide practical next-step instructions.",
+        "Update recommendations when verified municipal information changes."
+      ],
+      "implemented_local_tool": "recycle",
+      "input_schema_fields": [
+        "material",
+        "hazardous",
+        "routes"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 23,
+      "id": "turath",
+      "name": "Turath AI",
+      "requested_mission": "An autonomous, source-grounded UAE history and cultural education agent.",
+      "requested_capabilities": [
+        "Retrieve trustworthy historical and cultural information.",
+        "Organize age-appropriate learning pathways.",
+        "Explain UAE history and heritage.",
+        "Teach traditional topics such as falconry and pearl diving.",
+        "Present the region's economic development accurately.",
+        "Adapt educational explanations to the user's learning level.",
+        "Answer questions using verifiable sources.",
+        "Generate personalized learning activities.",
+        "Assess understanding through appropriate exercises.",
+        "Distinguish established facts from historical uncertainty."
+      ],
+      "implemented_local_tool": "heritage",
+      "input_schema_fields": [
+        "topics",
+        "sources"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 24,
+      "id": "himam",
+      "name": "Himam AI",
+      "requested_mission": "A real-time accessibility-focused mobility and navigation agent for People of Determination.",
+      "requested_capabilities": [
+        "Understand user-defined accessibility requirements.",
+        "Retrieve real pedestrian routing information.",
+        "Identify available official accessibility data.",
+        "Check known accessible transport services.",
+        "Consider elevator and station accessibility information when available.",
+        "Evaluate documented mobility barriers.",
+        "Calculate routes according to the user's actual constraints.",
+        "Update routing when verified live conditions change.",
+        "Explain data gaps.",
+        "Clearly identify unverified segments.",
+        "Provide practical alternative routes where supported.",
+        "Integrate suitable accessibility controls."
+      ],
+      "implemented_local_tool": "accessibility",
+      "input_schema_fields": [
+        "needs",
+        "routes"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    },
+    {
+      "order": 25,
+      "id": "hisad",
+      "name": "Hisad AI",
+      "requested_mission": "An autonomous food surplus coordination and donation logistics system.",
+      "requested_capabilities": [
+        "Receive authentic authorized food inventory information.",
+        "Identify surplus food.",
+        "Track real expiration and handling information.",
+        "Apply documented food safety requirements.",
+        "Identify eligible donation categories.",
+        "Retrieve real partner organization information.",
+        "Match available inventory with authorized recipient organizations.",
+        "Evaluate logistics constraints.",
+        "Optimize collection and delivery opportunities.",
+        "Coordinate permitted donation workflows.",
+        "Verify receiving-party acceptance.",
+        "Track actual transfer confirmations.",
+        "Calculate real waste reduction outcomes."
+      ],
+      "implemented_local_tool": "rescue",
+      "input_schema_fields": [
+        "as_of",
+        "lot",
+        "recipients"
+      ],
+      "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
+      "models_configured_roles": {
+        "planner": "llama-3.3-70b-versatile",
+        "specialist": "llama-3.3-70b-versatile",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "live_model_calls_verified": false,
+      "primary_workflow_verified": false,
+      "external_write_connected": false,
+      "blockers": [
+        "Actual sufficient user/domain input for the requested primary task",
+        "Live provider execution not validated in this environment",
+        "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
+        "Native end-to-end and required external operation acceptance pending"
+      ],
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+    }
+  ]
+}

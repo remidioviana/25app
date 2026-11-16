@@ -1,0 +1,1930 @@
+{
+  "schema_version": 1,
+  "audit_started_at": "2026-11-16T01:54:38+00:00",
+  "audit_research_completed_at": "2026-11-16T05:48:08.678583+00:00",
+  "scope": "Baseline audit plus independently cross-reviewed real public-source ingestion pilot. Source connection scope is explicit and does not imply an authentic primary task, legal applicability, live prices, a discovered tender, or official submission.",
+  "status_taxonomy": [
+    "VERIFIED & CONNECTED",
+    "VERIFIED BUT NOT CONNECTED",
+    "AUTHORIZATION REQUIRED",
+    "SOURCE AVAILABLE, API UNCONFIRMED",
+    "UNAVAILABLE"
+  ],
+  "audited_code": [
+    "connectors.py",
+    "agent_runtime.py",
+    "domain_tools.py",
+    "server.py",
+    "storage.py",
+    "retrieval.py"
+  ],
+  "baseline_runtime_observations": {
+    "APP_CONNECTORS_FILE_configured": false,
+    "configured_source_connectors_count": 0,
+    "external_write_tools_registered": false,
+    "generic_connector_contract": "Fixed HTTPS JSON snapshot, read-only, validates pulled content as legacy domain input; not general PDF/HTML or domain API orchestration."
+  },
+  "rules": [
+    "No source marked VERIFIED & CONNECTED from research HTTP alone.",
+    "HTTP200 is transport evidence, not validated dataset/schema/freshness/applicability.",
+    "Research dates/timestamps are actual; proposed refresh intervals are not running jobs.",
+    "No government submission, booking, refund, calendar change or message was performed.",
+    "No complete real-data primary workflow is claimed from source discovery or a deterministic local tool."
+  ],
+  "sources": [
+    {
+      "id": "pdpl",
+      "title": "UAE legislation — Personal Data Protection Law",
+      "authority": "UAE federal legislation portal",
+      "kind": "official_publication",
+      "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+      "status": "VERIFIED & CONNECTED",
+      "api_contract_verified": false,
+      "application_connected": true,
+      "probe": {
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "final_url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:57:20.859018+00:00",
+        "source_last_modified_http": "Wed, 24 Jan 2024 06:16:33 GMT",
+        "bytes": 194597,
+        "sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "content_type": "application/pdf"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Publication text can be read; applicability, amendments and authoritative language still require validation.",
+      "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+      "runtime_source_id": "uae-pdpl",
+      "runtime_receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "authority": "UAE Legislation",
+        "title": "UAE Federal Decree by Law No.45 of 2021 — Personal Data Protection",
+        "started_at": "2026-11-16T05:35:07.300699+00:00",
+        "fetched_at": "2026-11-16T05:35:14.739191+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 194597,
+        "characters": 44406,
+        "raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "last_modified_header": "Wed, 24 Jan 2024 06:16:33 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "d650731b-369e-4f05-ba66-d3bebc86d500"
+      },
+      "runtime_tested_apps": [
+        "himayah"
+      ],
+      "runtime_ingestion_status": "retrieved"
+    },
+    {
+      "id": "icp-golden",
+      "title": "ICP Golden Residency Guide",
+      "authority": "Federal Authority for Identity, Citizenship, Customs & Port Security",
+      "kind": "official_guidance",
+      "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+      "status": "VERIFIED & CONNECTED",
+      "api_contract_verified": false,
+      "application_connected": true,
+      "probe": {
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "final_url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:58:01.832843+00:00",
+        "source_last_modified_http": null,
+        "bytes": 227422,
+        "sha256": "ba2bc74812e7013c2f4c9eb7ccb3f070389ae4e5b93c28226097744f5fcaa47a",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Guide read; categories differ. No application API or user eligibility established.",
+      "runtime_source_id": "icp-golden-residency",
+      "ingestion_history": [
+        {
+          "observation": "Initial attempt before extraction/DNS corrections",
+          "runtime_ingestion_status": "failed",
+          "runtime_ingestion_error": "Source has insufficient readable text; a script/login/challenge page is not verified evidence",
+          "runtime_failure_timestamp": null
+        }
+      ],
+      "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+      "runtime_receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "title": "ICP — Golden Residency service information",
+        "started_at": "2026-11-16T05:35:14.745510+00:00",
+        "fetched_at": "2026-11-16T05:35:18.305014+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 227422,
+        "characters": 18640,
+        "raw_sha256": "ba2bc74812e7013c2f4c9eb7ccb3f070389ae4e5b93c28226097744f5fcaa47a",
+        "text_sha256": "09e7661f6556935ee88d5b3516309f9d93a3a8a8210cf6f3808c47ec98f4add0",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "a0773852-6bd2-48d7-948d-7ba03cef2148"
+      },
+      "runtime_tested_apps": [
+        "iqamah"
+      ],
+      "runtime_ingestion_status": "retrieved"
+    },
+    {
+      "id": "dmcc-fees",
+      "title": "DMCC Schedule of Charges",
+      "authority": "DMCC Authority",
+      "kind": "official_fee_publication",
+      "url": "https://dmcc.ae/members/support/schedule-charges",
+      "status": "VERIFIED & CONNECTED",
+      "api_contract_verified": false,
+      "application_connected": true,
+      "probe": {
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "final_url": "https://dmcc.ae/members/support/schedule-charges",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:57:59.173393+00:00",
+        "source_last_modified_http": "Thu, 12 Nov 2026 08:28:46 GMT",
+        "bytes": 640582,
+        "sha256": "a32f94c060b89df93234b8e1a3a39061127fd1dc529909af7af8ffcdef738dd2",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "A single free zone schedule is not a complete UAE directory; units, packages and terms must be normalized.",
+      "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+      "runtime_source_id": "dmcc-charges",
+      "runtime_receipt": {
+        "source_id": "dmcc-charges",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "authority": "Dubai Multi Commodities Centre",
+        "title": "DMCC — Schedule of charges",
+        "started_at": "2026-11-16T05:35:18.307482+00:00",
+        "fetched_at": "2026-11-16T05:35:18.752996+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 640582,
+        "characters": 68139,
+        "raw_sha256": "a32f94c060b89df93234b8e1a3a39061127fd1dc529909af7af8ffcdef738dd2",
+        "text_sha256": "e231783da71e62883f3e954a08fd5655f83e02aab43730d59a904f6ab47d77ff",
+        "last_modified_header": "Thu, 12 Nov 2026 08:28:46 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "859d8e9d-86db-453b-a930-5f0ebb913ec3"
+      },
+      "runtime_tested_apps": [
+        "istithmar"
+      ],
+      "runtime_ingestion_status": "retrieved"
+    },
+    {
+      "id": "fta-guides",
+      "title": "FTA Corporate Tax guides and public clarifications",
+      "authority": "Federal Tax Authority",
+      "kind": "official_guidance",
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+        "final_url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:58:03.068864+00:00",
+        "source_last_modified_http": null,
+        "bytes": 398828,
+        "sha256": "9029f89cf1b074181b3912c32b37919a1ac5fa9872a1df14fe832b81b91772e3",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Use individual issue/version dates; generic footer dates are not the date of every rule."
+    },
+    {
+      "id": "esupply",
+      "title": "eSupply Dubai procurement portal",
+      "authority": "Government of Dubai / eSupply",
+      "kind": "official_portal",
+      "url": "https://esupply.dubai.gov.ae/web/",
+      "status": "VERIFIED & CONNECTED",
+      "api_contract_verified": false,
+      "application_connected": true,
+      "probe": {
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "final_url": "https://esupply.dubai.gov.ae/web/",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:57:59.812536+00:00",
+        "source_last_modified_http": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "bytes": 29393,
+        "sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "content_type": "text/html"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Public portal and login observed; no specific live tender, downloadable pack or submission API validated.",
+      "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+      "runtime_source_id": "dubai-esupply",
+      "runtime_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply — Procurement portal information",
+        "started_at": "2026-11-16T05:35:18.756059+00:00",
+        "fetched_at": "2026-11-16T05:35:20.189938+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "661c3d7e-611a-4be6-bbf7-ac8bbdcc7b71"
+      },
+      "runtime_tested_apps": [
+        "munagasah"
+      ],
+      "runtime_ingestion_status": "retrieved"
+    },
+    {
+      "id": "dewa-move-in",
+      "title": "DEWA Activation of Electricity/Water (Move-in)",
+      "authority": "Dubai Electricity & Water Authority",
+      "kind": "official_procedure",
+      "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+      "status": "VERIFIED & CONNECTED",
+      "api_contract_verified": false,
+      "application_connected": true,
+      "probe": {
+        "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "final_url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:58:04.371588+00:00",
+        "source_last_modified_http": null,
+        "bytes": 252350,
+        "sha256": "63653769ad0c2139be2510bb9ad1f5da739414e296e91f763ecc4272b11e0b78",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Procedural guide has different tenant/free-zone/owner branches; not universal documentation requirements.",
+      "runtime_source_id": "dewa-move-in",
+      "ingestion_history": [
+        {
+          "observation": "Initial attempt before extraction/DNS corrections",
+          "runtime_ingestion_status": "failed",
+          "runtime_ingestion_error": "[Errno -2] Name or service not known",
+          "runtime_failure_timestamp": null
+        }
+      ],
+      "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+      "runtime_receipt": {
+        "source_id": "dewa-move-in",
+        "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "authority": "Dubai Electricity and Water Authority",
+        "title": "DEWA — Activation of electricity/water, Move-in",
+        "started_at": "2026-11-16T05:35:20.191796+00:00",
+        "fetched_at": "2026-11-16T05:35:25.134784+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 259230,
+        "characters": 25488,
+        "raw_sha256": "78cb2ff54147e110a0b0dadf9a985e10a539ba9fc841a2cf3867d6c5b2f4bc9a",
+        "text_sha256": "963db45b2add1d61ada19cd9951b784abac390849561d0b245fbcb15cbd3c3c7",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "284c7ddc-19a3-4680-8567-5a73d8004ab0"
+      },
+      "runtime_tested_apps": [
+        "sahil"
+      ],
+      "runtime_ingestion_status": "retrieved"
+    },
+    {
+      "id": "dubainow",
+      "title": "DubaiNow service overview",
+      "authority": "Digital Dubai",
+      "kind": "official_service_overview",
+      "url": "https://www.digitaldubai.ae/en/apps-services/dubai-now",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.digitaldubai.ae/en/apps-services/dubai-now",
+        "final_url": "https://www.digitaldubai.ae/en/apps-services/dubai-now",
+        "http_status": 200,
+        "fetched_at": "2026-11-16T01:57:23.354033+00:00",
+        "source_last_modified_http": null,
+        "bytes": 64328,
+        "sha256": "bb43fad198a760666f2842fa478fc9b2879d70a60be053364313adc5e91dc4c7",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "UAE PASS required for service interactions. Public overview does not expose a third-party transactional API."
+    },
+    {
+      "id": "mohre-emiratisation",
+      "title": "MoHRE institutional entry point",
+      "authority": "Ministry of Human Resources and Emiratisation",
+      "kind": "candidate_authority_page",
+      "url": "https://www.mohre.gov.ae/en/home.aspx",
+      "status": "UNAVAILABLE",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.mohre.gov.ae/en/home.aspx",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 503: Service Unavailable",
+        "checked_at": "2026-11-16T02:00:05.437530+00:00",
+        "discovery_status": "candidate authority path; runtime503, no policy text verified"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Direct read failed503; this candidate path is not evidence of usable current rules.",
+      "availability_scope": "This attempted candidate path is not usable; no current primary policy text/API verified here. Not a global claim that MoHRE has no sources."
+    },
+    {
+      "id": "dld-rental-index",
+      "title": "Dubai Land Department Rental Index",
+      "authority": "Dubai Land Department",
+      "kind": "official_interactive_service",
+      "url": "https://dubailand.gov.ae/en/eservices/rental-index-overview/rental-index/?lang=en",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://dubailand.gov.ae/en/eservices/rental-index-overview/rental-index/?lang=en",
+        "http_status": 200,
+        "final_url": "https://dubailand.gov.ae/en/eservices/rental-index-overview/rental-index/?lang=en",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": null,
+        "bytes_read": 238868,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "28dbbe221df43a66a4216489221fbf7cc98201af25ecd55ce8438660457419ef",
+        "checked_at": "2026-11-16T02:00:01.227253+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Index page exists; no automated result retrieval or case-specific index was performed."
+    },
+    {
+      "id": "dmcc-directory",
+      "title": "DMCC business directory",
+      "authority": "DMCC Authority",
+      "kind": "official_directory",
+      "url": "https://dmcc.ae/business-directory",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://dmcc.ae/business-directory",
+        "http_status": 200,
+        "final_url": "https://dmcc.ae/business-directory",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": "Thu, 12 Nov 2026 08:28:39 GMT",
+        "bytes_read": 66965,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "e3f7c659918b55d5c067254fdf94a3bf987fcbaab36dd21427a1a78c130e153b",
+        "checked_at": "2026-11-16T02:00:00.050316+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Directory page is not verified counterparties, contact permission or a documented bulk API."
+    },
+    {
+      "id": "media-standards",
+      "title": "Advertiser Permit guidance",
+      "authority": "National Media Authority",
+      "kind": "official_guidance",
+      "url": "https://www.nma.gov.ae/en/initiatives/advertiser-permit-1",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.nma.gov.ae/en/initiatives/advertiser-permit-1",
+        "http_status": 200,
+        "final_url": "https://www.nma.gov.ae/en/initiatives/advertiser-permit-1",
+        "content_type": "text/html",
+        "source_last_modified_http": null,
+        "bytes_read": 74536,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "52c01853da4dfc01f90a0974a6c3ab009c5057985e276946795514fd2a8ab208",
+        "checked_at": "2026-11-16T02:00:01.696845+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Advertiser guidance is not universal cultural compliance; verify content standards and country/channel applicability."
+    },
+    {
+      "id": "shopify-refund-docs",
+      "title": "Shopify GraphQL refundCreate API reference",
+      "authority": "Shopify",
+      "kind": "vendor_api_documentation",
+      "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/refundCreate",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/refundCreate",
+        "http_status": 200,
+        "final_url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/refundCreate",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": null,
+        "bytes_read": 481157,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "e6dc789cbf12a56aec7288dc182d1c5b2c2feda10ee6f7cc5d649eaec0f716da",
+        "checked_at": "2026-11-16T02:00:00.411792+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Contract exists; no merchant/store/order is authorized. Use a selected supported version and idempotency requirements."
+    },
+    {
+      "id": "customs-tariff",
+      "title": "Dubai Customs integrated tariff reference",
+      "authority": "Dubai Customs",
+      "kind": "official_tariff_publication",
+      "url": "https://www.dubaicustoms.gov.ae/en/CustomsInformation/Pages/IntegratedCustomsTariff.aspx",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.dubaicustoms.gov.ae/en/CustomsInformation/Pages/IntegratedCustomsTariff.aspx",
+        "http_status": 200,
+        "final_url": "https://www.dubaicustoms.gov.ae/en/CustomsInformation/Pages/IntegratedCustomsTariff.aspx",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": "Mon, 16 Nov 2026 02:00:02 GMT",
+        "bytes_read": 91995,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "335c35654e5ddad6743bc2435a5efa2b5d72f3c692139c1336831ebbff7b84bc",
+        "checked_at": "2026-11-16T02:00:03.415257+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Product classification, current version and restrictions require attributes and official/specialist review."
+    },
+    {
+      "id": "google-calendar-list",
+      "title": "Google Calendar Events list",
+      "authority": "Google",
+      "kind": "vendor_api_documentation",
+      "url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/list",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/list",
+        "http_status": 200,
+        "final_url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/list",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": "Wed, 29 Jul 2026 08:26:57 GMT",
+        "bytes_read": 189986,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "bd22f6f78fcff002b6e82cea65f453925feaa47749b7adff28cdce72d2a66777",
+        "checked_at": "2026-11-16T02:00:01.324103+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Private calendar reads require scoped authorization; public-calendar capability does not grant private access."
+    },
+    {
+      "id": "google-calendar-patch",
+      "title": "Google Calendar Events patch",
+      "authority": "Google",
+      "kind": "vendor_api_documentation",
+      "url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/patch",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/patch",
+        "http_status": 200,
+        "final_url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/patch",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": "Wed, 01 Jul 2026 08:17:21 GMT",
+        "bytes_read": 172461,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "eea961767f5ffd65f210d4684f25a3593d793e0978742cde62456644dba3aab2",
+        "checked_at": "2026-11-16T02:00:03.049994+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Authorized write contract exists; changes may notify guests. No calendar event was changed."
+    },
+    {
+      "id": "aladhan-docs",
+      "title": "Aladhan Prayer Times API documentation",
+      "authority": "Islamic Network / Aladhan",
+      "kind": "third_party_api_documentation",
+      "url": "https://aladhan.com/prayer-times-api",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://aladhan.com/prayer-times-api",
+        "http_status": 200,
+        "final_url": "https://aladhan.com/prayer-times-api",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": null,
+        "bytes_read": 172817,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "b6ebd558cefa7a30231a0b906febe3b2fbc87f7ddf158659f015a926f8f9f849",
+        "checked_at": "2026-11-16T02:00:01.852134+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Provider-derived calculations, not an official UAE authority. Method/timezone must be explicit."
+    },
+    {
+      "id": "aladhan-runtime-probe",
+      "title": "Aladhan Dubai date-specific calculation probe",
+      "authority": "Islamic Network / Aladhan",
+      "kind": "third_party_public_api",
+      "url": "https://api.aladhan.com/v1/timingsByCity/16-11-2026?city=Dubai&country=AE&method=16&timezonestring=Asia%2FDubai&iso8601=true",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://api.aladhan.com/v1/timingsByCity/16-11-2026?city=Dubai&country=AE&method=16&timezonestring=Asia%2FDubai&iso8601=true",
+        "http_status": 200,
+        "content_type": "application/json",
+        "fetched_at": "2026-11-16T02:03:17.795478+00:00",
+        "bytes": 1486,
+        "sha256": "963e22ec6e981dbb143daaa5a38f35548a17941a28800a571eae5f8efa949d6a",
+        "response_code": 200,
+        "response_date": "16-11-2026",
+        "timezone": "Asia/Dubai",
+        "method_name": "Dubai (experimental)",
+        "timing_fields": [
+          "Fajr",
+          "Sunrise",
+          "Dhuhr",
+          "Asr",
+          "Sunset",
+          "Maghrib",
+          "Isha",
+          "Imsak",
+          "Midnight",
+          "Firstthird",
+          "Lastthird"
+        ]
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Response says Dubai (experimental); vendor explicitly says this is not an official Dubai calculation."
+    },
+    {
+      "id": "google-routes",
+      "title": "Google Routes computeRoutes reference",
+      "authority": "Google Maps Platform",
+      "kind": "vendor_api_documentation",
+      "url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+      "status": "VERIFIED BUT NOT CONNECTED",
+      "api_contract_verified": true,
+      "application_connected": false,
+      "probe": {
+        "url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "http_status": 200,
+        "final_url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": "Thu, 08 Oct 2026 22:34:09 GMT",
+        "bytes_read": 400738,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "87f9a19b35faa07f4ab81d6548de89c3a83ba647bf423b215988d5ac575245df",
+        "checked_at": "2026-11-16T02:00:02.558870+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Requires billing/auth. Route output does not verify physical accessibility or live elevator operation."
+    },
+    {
+      "id": "dewa-smartliving",
+      "title": "DEWA Smart Living",
+      "authority": "Dubai Electricity & Water Authority",
+      "kind": "official_customer_service",
+      "url": "https://www.dewa.gov.ae/en/smartliving",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.dewa.gov.ae/en/smartliving",
+        "http_status": 200,
+        "final_url": "https://www.dewa.gov.ae/en/smartliving",
+        "content_type": "text/html; charset=utf-8",
+        "source_last_modified_http": null,
+        "bytes_read": 226325,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "209cebb76bc22f63e3e8966e9d7048cf3d22ff4e83cf75bbeff8ba40c44a00f3",
+        "checked_at": "2026-11-16T02:00:06.682987+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Customer consumption service exists; no public consumer meter API contract was verified."
+    },
+    {
+      "id": "khda-schools",
+      "title": "KHDA school directory",
+      "authority": "Knowledge and Human Development Authority",
+      "kind": "official_directory",
+      "url": "https://web.khda.gov.ae/en/Education-Directory/Schools",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://web.khda.gov.ae/en/Education-Directory/Schools",
+        "http_status": 200,
+        "final_url": "https://web.khda.gov.ae/en/Education-Directory/Schools",
+        "content_type": "text/html",
+        "source_last_modified_http": null,
+        "bytes_read": 212,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+        "checked_at": "2026-11-16T02:00:03.401448+00:00",
+        "usable_content": false,
+        "content_rejection_reason": "Incapsula anti-bot/interstitial body, not school-directory records"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "HTTP200 returned an Incapsula challenge, not usable school records; no availability data validated."
+    },
+    {
+      "id": "open-finance-regulation",
+      "title": "CBUAE Open Finance Regulation",
+      "authority": "Central Bank of the UAE",
+      "kind": "official_regulation",
+      "url": "https://rulebook.centralbank.ae/en/rulebook/open-finance-regulation",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://rulebook.centralbank.ae/en/rulebook/open-finance-regulation",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 403: Forbidden",
+        "checked_at": "2026-11-16T02:00:04.270249+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Regulation exists in official search evidence; runtime403. A regulatory framework is not an open unauthenticated bank API."
+    },
+    {
+      "id": "aaoifi-standards",
+      "title": "AAOIFI Sharia standards entry",
+      "authority": "AAOIFI",
+      "kind": "standards_body",
+      "url": "https://aaoifi.com/shariah-standards-2/?lang=en",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://aaoifi.com/shariah-standards-2/?lang=en",
+        "http_status": 200,
+        "final_url": "https://aaoifi.com/shariah-standards-2/?lang=en",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 111557,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "c31a435e79abcd6f4b5780178c33c912bc18873a97a76abefe24d3293a1bb372",
+        "checked_at": "2026-11-16T02:00:04.612709+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Access/license of the selected standard must be established; no full normative corpus or certification authority delegated."
+    },
+    {
+      "id": "moiat-halal",
+      "title": "MoIAT registered Halal certification bodies",
+      "authority": "Ministry of Industry and Advanced Technology",
+      "kind": "official_certification_registry",
+      "url": "https://moiat.gov.ae/en/programs/halal/registered-halal-certification-bodies",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://moiat.gov.ae/en/programs/halal/registered-halal-certification-bodies",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 503: Service Unavailable",
+        "checked_at": "2026-11-16T02:00:08.933704+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Runtime503. A registered certifier does not prove any particular restaurant or dish is certified."
+    },
+    {
+      "id": "sevenrooms-docs",
+      "title": "SevenRooms API documentation entry",
+      "authority": "SevenRooms",
+      "kind": "vendor_documentation_portal",
+      "url": "https://api-docs.sevenrooms.com/",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://api-docs.sevenrooms.com/",
+        "http_status": 200,
+        "final_url": "https://api-docs.sevenrooms.com/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 283380,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "e5c576af90b2d9f536e8cfad86d8b3d9ed26d5ed7a54b7c7514811e8f053f93c",
+        "checked_at": "2026-11-16T02:00:04.921019+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Documentation portal exists; no usable booking contract, venue scope, credentials or availability response validated."
+    },
+    {
+      "id": "mental-health",
+      "title": "Dubai mental-health information",
+      "authority": "Government of Dubai",
+      "kind": "official_public_health_information",
+      "url": "https://www.dubai.ae/web/dubai.ae/living/healthcare/mental-health",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.dubai.ae/web/dubai.ae/living/healthcare/mental-health",
+        "http_status": 200,
+        "final_url": "https://www.dubai.ae/web/dubai.ae/living/healthcare/mental-health",
+        "content_type": "text/html;charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 168587,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "d8357fe91f92ba01c32530926b41fe5f6dcf2dce243c02d88a459f24366226e0",
+        "checked_at": "2026-11-16T02:00:07.014787+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Information resource only, not clinical authorization, diagnosis or emergency case management."
+    },
+    {
+      "id": "municipal-waste",
+      "title": "Dubai Municipality Waste Department",
+      "authority": "Dubai Municipality",
+      "kind": "official_municipal_guidance",
+      "url": "https://www.dm.gov.ae/municipality-business/waste-dept/",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.dm.gov.ae/municipality-business/waste-dept/",
+        "http_status": 200,
+        "final_url": "https://www.dm.gov.ae/municipality-business/waste-dept/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 78298,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "99ad04b39fa786af733ae3f9cf492893fbc90333fde3ff367e886e911e799e62",
+        "checked_at": "2026-11-16T02:00:09.876998+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Guidance page read; no current item acceptance, facility capacity or pickup API confirmed."
+    },
+    {
+      "id": "heritage-museum",
+      "title": "Al Shindagha Museum English brochure",
+      "authority": "Dubai Culture",
+      "kind": "official_cultural_publication",
+      "url": "https://alshindagha.dubaiculture.gov.ae/Documents/ASM-Brochure-English.pdf",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://alshindagha.dubaiculture.gov.ae/Documents/ASM-Brochure-English.pdf",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 503: Service Unavailable",
+        "checked_at": "2026-11-16T02:00:06.469385+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Official-source discovery succeeded, runtime503; no extracted historical facts in application verified."
+    },
+    {
+      "id": "rta-accessibility",
+      "title": "RTA About Metro / accessibility information",
+      "authority": "Roads & Transport Authority",
+      "kind": "official_transport_guidance",
+      "url": "https://www.rta.ae/wps/portal/rta/ae/public-transport/metro/about-metro",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.rta.ae/wps/portal/rta/ae/public-transport/metro/about-metro",
+        "http_status": 200,
+        "final_url": "https://www.rta.ae/wps/portal/rta/ae/public-transport/metro/about-metro",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 139044,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "53ebf648e367a526843e86e8082a9a9cbb05ee755a51cf5306bdd56f16b16d76",
+        "checked_at": "2026-11-16T02:00:11.640775+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "General accessibility description is not live barrier/elevator availability or a verified accessible route."
+    },
+    {
+      "id": "rta-open-data",
+      "title": "RTA Open Data",
+      "authority": "Roads & Transport Authority",
+      "kind": "official_data_catalogue",
+      "url": "https://rta.ae/wps/portal/rta/ae/home/open-data?lang=en",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://rta.ae/wps/portal/rta/ae/home/open-data?lang=en",
+        "http_status": 200,
+        "final_url": "https://rta.ae/wps/portal/rta/ae/home/open-data?lang=en",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 186182,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "1d074d21158b55fe4d8b3c8ea3ed5b2aa2f236230443dc9092929779dc1d844c",
+        "checked_at": "2026-11-16T02:00:10.555802+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Catalogue exists; specific dataset license, schema, refresh interval and production access remain unverified."
+    },
+    {
+      "id": "foodbank",
+      "title": "UAE Food Bank",
+      "authority": "Dubai Municipality / UAE Food Bank",
+      "kind": "official_partner_information",
+      "url": "https://www.dm.gov.ae/foodbank/",
+      "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+      "api_contract_verified": false,
+      "application_connected": false,
+      "probe": {
+        "url": "https://www.dm.gov.ae/foodbank/",
+        "http_status": 200,
+        "final_url": "https://www.dm.gov.ae/foodbank/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_last_modified_http": null,
+        "bytes_read": 73098,
+        "read_truncated": false,
+        "sha256_of_read_bytes": "f0f08228594a8318343adf7cef95aaa38b0c36e07f4a8e7de44197ba86955a07",
+        "checked_at": "2026-11-16T02:00:11.280009+00:00"
+      },
+      "source_updated_at": null,
+      "source_updated_at_note": "Publication/validity date not inferred from HTTP Last-Modified; inspect each actual document or dataset version.",
+      "qualification": "Institutional presence is verified; no donation partner agreement, receiving capacity or handoff API is connected."
+    }
+  ],
+  "products": [
+    {
+      "order": 1,
+      "id": "himayah",
+      "name": "Himayah AI",
+      "task": "Review a supplier agreement for privacy and contract risks",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Literal clause-phrase flags and quotes from supplied text; no legal applicability/semantic audit.",
+      "source_connections": [
+        {
+          "source_id": "pdpl",
+          "status": "VERIFIED & CONNECTED",
+          "application_connected": true,
+          "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+          "runtime_tested_for_this_app": true
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authentic contract/policy and jurisdiction/purpose facts.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read official legal text and authorized clauses; no counsel transmission.",
+      "refresh_design": "Recheck legal versions on demand and before each audit; daily change detection proposed, not running.",
+      "refresh_implemented": false,
+      "retention_design": "Contracts contain business/personal data; minimize upload, define retention/deletion and restrict legal-source snapshots to public text.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Ingest official legal publication with receipt/hash/passages, then require a real user document and legal-applicability facts; no violations can be concluded from absent inputs.",
+      "fallback": "If legal source retrieval fails or no contract exists, report source unavailable/input missing and do not produce compliance conclusions.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 2,
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "task": "Check my Golden Visa evidence against the selected route",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Exact document-name and recorded-date checklist; not visa eligibility.",
+      "source_connections": [
+        {
+          "source_id": "icp-golden",
+          "status": "VERIFIED & CONNECTED",
+          "application_connected": true,
+          "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+          "runtime_tested_for_this_app": true
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Applicant-selected category, actual authorized evidence and relevant authority.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read category guidance and applicant documents; submission is not enabled.",
+      "refresh_design": "Refresh official route criteria at dossier creation and before handoff; no continuous monitoring exists.",
+      "refresh_implemented": false,
+      "retention_design": "Passport, finance and qualification evidence requires minimum fields, scoped storage and explicit retention/deletion.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Parse official criteria by category/version and cite them; request missing actual profile evidence; official submission needs a verified authority integration and authorization.",
+      "fallback": "Stop at incomplete dossier/category uncertainty; never present a missing word/record as an eligibility denial or approval.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 3,
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "task": "Compare two UAE business setup options for my activity",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied fee/activity comparison; exact local arithmetic in new overview; no current fee/permit/tax verification.",
+      "source_connections": [
+        {
+          "source_id": "dmcc-fees",
+          "status": "VERIFIED & CONNECTED",
+          "application_connected": true,
+          "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+          "runtime_tested_for_this_app": true
+        },
+        {
+          "source_id": "fta-guides",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Business model, actual activity and selected dated fee records.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read selected authority fee/rule publications; no license filing or binding quote.",
+      "refresh_design": "Recheck quotes and conditions per comparison; validity/terms recorded per source, not a generic live badge.",
+      "refresh_implemented": false,
+      "retention_design": "Business plans/quotes may be confidential; source snapshots public, financial inputs owner-scoped.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Normalize a real authority schedule without mixing package and recurring charges; add current tax applicability evidence before recommendations.",
+      "fallback": "If fee scope/date or permission is uncertain, retain unknown/omitted items and do not rank as a legally suitable setup.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 4,
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "task": "Check this tender pack for bid fit, evidence gaps and deadlines",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied requirement/capability names and date difference; no live opportunity discovery or qualification verification.",
+      "source_connections": [
+        {
+          "source_id": "esupply",
+          "status": "VERIFIED & CONNECTED",
+          "application_connected": true,
+          "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+          "runtime_tested_for_this_app": true
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Real tender/pack/amendments and authorized organization capabilities.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read permitted public tender information; supplier-only documents and bid submission need actual authority.",
+      "refresh_design": "Check each chosen tender and amendments before drafting/submitting; exact date/time/timezone required.",
+      "refresh_implemented": false,
+      "retention_design": "Tender packs/company credentials/pricing need documented access rights and scoped retention.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Obtain an actual opportunity and permitted document retrieval contract; record deadline with timezone and revisions; submission remains off.",
+      "fallback": "No opportunity/pack means empty workspace; portal login or inaccessible pack must not become a fictional tender.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 5,
+      "id": "sahil",
+      "name": "Sahil AI",
+      "task": "Prepare a renewal checklist for my selected UAE service",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied checklist/record dates and guide prototype; no live service procedure selection or official execution.",
+      "source_connections": [
+        {
+          "source_id": "dewa-move-in",
+          "status": "VERIFIED & CONNECTED",
+          "application_connected": true,
+          "connected_scope": "Public-document HTTPS retrieval, extraction and persistence with real receipt only; primary workflow unverified.",
+          "runtime_tested_for_this_app": true
+        },
+        {
+          "source_id": "dubainow",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual requested service and tenant/free-zone/owner or other applicable context.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read public procedural guidance; UAE PASS/official transactions only via legitimate service authorization.",
+      "refresh_design": "Retrieve selected procedure on demand and before each user handoff; no background status poll is implemented.",
+      "refresh_implemented": false,
+      "retention_design": "Identity/account details should remain local until a selected authorized service needs them; no credentials retained in notes.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Use a real selected service and its branched official procedure; map only supported requirements with dated evidence; confirm official action contract separately.",
+      "fallback": "If service/context or official procedure cannot be confirmed, show unresolved next question and no submitted/accepted status.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 6,
+      "id": "tawteen",
+      "name": "Tawteen AI",
+      "task": "Reconcile our workforce records with the current compliance checklist",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Workforce arithmetic against user-selected target; not organization-specific Emiratisation compliance.",
+      "source_connections": [
+        {
+          "source_id": "mohre-emiratisation",
+          "status": "UNAVAILABLE",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authorized HR roster, sector/category, applicable official policy and exclusions.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read policy and authorized roster; no employment-record changes.",
+      "refresh_design": "Re-evaluate after roster/policy changes and before deadline alerts; schedules not connected.",
+      "refresh_implemented": false,
+      "retention_design": "Employee data is sensitive; avoid unnecessary identifiers and specify organization-controlled retention.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Find current primary MoHRE rule/version for organization class, validate roster denominator/exemptions and then compute exposure; HR API selection requires authorization.",
+      "fallback": "Unavailable policy or unknown class yields unverified target comparison, not a fine prediction.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 7,
+      "id": "adl",
+      "name": "Adl AI",
+      "task": "Organize my tenancy case evidence and calculate the requested amounts",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "User-event chronology and claimed-amount arithmetic; not legal entitlement or case filing.",
+      "source_connections": [
+        {
+          "source_id": "dld-rental-index",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Real lease/case evidence and authorized case details.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read official property/index/procedure sources; no legal submission or party contact.",
+      "refresh_design": "Check applicable index/version and procedure per case; actual cutoff events require source timestamps.",
+      "refresh_implemented": false,
+      "retention_design": "Leases/case documents require access isolation, redaction and case-specific retention.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Connect a permitted case-specific index/procedure lookup; DLD page alone is insufficient; verify current RDC route because services have migrated.",
+      "fallback": "No index/case evidence means unresolved issue summary, not invented rent value, ruling or remedy.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 8,
+      "id": "tawassul",
+      "name": "Tawassul B2B",
+      "task": "Prepare a localized proposal from approved product facts",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Proposal from supplied product facts/account needs; no live partner research, CRM or outreach.",
+      "source_connections": [
+        {
+          "source_id": "dmcc-directory",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual company facts, selected market and approved account/contact data.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read public directory and approved CRM records; outreach only after recipient/payload approval.",
+      "refresh_design": "Recheck company facts/contact provenance at research and before outreach; no automatic prospect monitoring.",
+      "refresh_implemented": false,
+      "retention_design": "Business contacts and counterparty responses require purpose limitation, no unauthorized bulk harvesting.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Choose authorized company/CRM data; verify counterparties and communication integration; public directory does not grant outreach permission.",
+      "fallback": "No verified account/facts leaves an empty research queue; practice scenarios must be isolated from real executives.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 9,
+      "id": "adab",
+      "name": "Adab AI",
+      "task": "Review this campaign for claim, channel and locale issues",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied-claim/term and length checks; no verified bilingual cultural/legal review or publishing connector.",
+      "source_connections": [
+        {
+          "source_id": "media-standards",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual campaign assets, approved claims and selected country/channel.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read applicable official content rules and authorized brand material; do not publish.",
+      "refresh_design": "Check version/country/channel per campaign revision; editorial preferences are not immutable law.",
+      "refresh_implemented": false,
+      "retention_design": "Unreleased brand/campaign material stays scoped with explicit sharing and deletion policy.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Retrieve relevant actual content standards and local review criteria; connect publishing only under a selected account with approval.",
+      "fallback": "Unsupported claim or unavailable rule becomes a reviewer issue, never an invented universal GCC prohibition.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 10,
+      "id": "khidmah",
+      "name": "Khidmah AI",
+      "task": "Resolve this eligible order issue within the merchant policy",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Policy screening of supplied order fields; no authenticated merchant orders, shipment feed or refunds.",
+      "source_connections": [
+        {
+          "source_id": "shopify-refund-docs",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authorized merchant store/order, policy and delegated financial authority.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read selected store orders with scoped authorization; refund/logistics writes require delegated authority and confirmed receipt.",
+      "refresh_design": "Refresh order/policy immediately before action; process actual webhooks only after a real integration exists.",
+      "refresh_implemented": false,
+      "retention_design": "Customer/order/payment metadata should be minimized and retained under merchant policy; no card secrets in app.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Select merchant/platform and grant legitimate access; implement versioned GraphQL order/refund workflow, idempotency and receipt reconciliation; no refund probe executed.",
+      "fallback": "Auth failure/policy exception/unknown refund response escalates without claiming money moved.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 11,
+      "id": "jomrok",
+      "name": "Jomrok AI",
+      "task": "Find missing information in this cross-border shipment record",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied shipment-record gap screening; no actual HS/tariff, duty or certification retrieval.",
+      "source_connections": [
+        {
+          "source_id": "customs-tariff",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "moiat-halal",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authentic invoice/product attributes, origin/destination and trade permissions.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read official tariff/conformity references and authorized shipment docs; do not file binding declarations.",
+      "refresh_design": "Verify tariff/version/restrictions for each jurisdiction and shipment date.",
+      "refresh_implemented": false,
+      "retention_design": "Invoices/supplier data are confidential; retain minimum audit references per authorized trade workflow.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Extract real invoice attributes, retrieve current official tariff and validate candidate codes; MoIAT registry does not establish product certification.",
+      "fallback": "Ambiguous attributes or unavailable rules require broker/specialist review, no invented HS code/rate.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 12,
+      "id": "khibrat",
+      "name": "Khibrat AI",
+      "task": "Map candidate-provided evidence to the approved role rubric",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied candidate-evidence/rubric comparison; no CV provenance verification or hiring-system integration.",
+      "source_connections": [],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authorized candidate CV/evidence and approved job-relevant rubric.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read only authorized applicant/role materials; no autonomous rejection or hiring communication.",
+      "refresh_design": "Use candidate/role document versions per assessment; re-evaluate after authorized revisions.",
+      "refresh_implemented": false,
+      "retention_design": "Recruitment data requires access/deletion policy; never infer protected attributes from names/photos/language.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Select an authorized applicant/ATS source and actual evidence extraction; credentials/references need separate verification, and a human owns decisions.",
+      "fallback": "Missing rubric/evidence remains an unanswered question, not fabricated qualifications or a hiring verdict.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 13,
+      "id": "majlis",
+      "name": "Majlis AI",
+      "task": "Build my next-week onboarding plan from assigned company tasks",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Dependency planning over assigned milestones; no sourced regional-learning or corporate handbook connector.",
+      "source_connections": [
+        {
+          "source_id": "dmcc-directory",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual destination/industry/objectives and approved employer guidance.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read authorized handbook/assigned learning and trustworthy regional sources; sharing to manager needs authorization.",
+      "refresh_design": "Refresh company policy as issued and regional guidance per learning context.",
+      "refresh_implemented": false,
+      "retention_design": "Employee learning/progress data is private; define employer-vs-personal storage and sharing boundaries.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Connect approved handbook and relevant source collection; directory is context only, not evidence of a universal cultural practice.",
+      "fallback": "Unsourced practice stays uncertain; never substitute stereotypes for actual company guidance.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 14,
+      "id": "rafiq",
+      "name": "Rafiq",
+      "task": "Find a better time for my selected meetings and travel buffer",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Planning over supplied calendar blocks/travel estimates; no live calendar or traffic connection.",
+      "source_connections": [
+        {
+          "source_id": "aladhan-docs",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "aladhan-runtime-probe",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-calendar-list",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-calendar-patch",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-routes",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "User-authorized calendar, location/constraints and selected calculation preferences.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read selected calendar/location with consent; modify events only with scoped user authority and receipt.",
+      "refresh_design": "Calendar sync/watch needs real OAuth/worker; traffic queried near planning time; prayer date/method/timezone recorded.",
+      "refresh_implemented": false,
+      "retention_design": "Calendar/location/religious preferences are sensitive; minimize location history and revoke scopes cleanly.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "OAuth calendar read first, then authorized change/reconciliation; enable billed routing only after selection; Aladhan method16 is experimental, not authoritative Dubai timing.",
+      "fallback": "Absent authorization/traffic means no event changes or invented travel time; show freshness and ask only necessary context.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 15,
+      "id": "sawm",
+      "name": "Sawm AI",
+      "task": "Rebalance today's work, rest and reminders around my selected routine",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied routine rescheduling; no live fasting/prayer/context or biometric data.",
+      "source_connections": [
+        {
+          "source_id": "aladhan-docs",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "aladhan-runtime-probe",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-calendar-list",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Voluntary routine/observance choices and authorized commitments.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read opted-in routine/calendar/calculation service; external sharing or health-related change not automatic.",
+      "refresh_design": "Date/location/method-based retrieval per day; no continuous autonomous background task claimed.",
+      "refresh_implemented": false,
+      "retention_design": "Wellbeing/religious preferences stay private; no biometric inference or medical profile creation.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Connect opted-in schedule/context using explicit method; resolve competition content constraints separately; no medical recommendation engine claimed.",
+      "fallback": "Missing current context yields user-led routine preparation, not fictional prayer/biometric readings.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 16,
+      "id": "mizan",
+      "name": "Mizan AI",
+      "task": "Explain this month's spending against my budget and selected standards",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Arithmetic/categorization over supplied transactions and selected criteria; no bank, market or religious certification integration.",
+      "source_connections": [
+        {
+          "source_id": "open-finance-regulation",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "aaoifi-standards",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "fta-guides",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authorized real transactions, selected methodology and actual product documents.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read consented financial data via an eligible licensed provider or user import; no transfers/trades.",
+      "refresh_design": "Actual bank/product updates and methodology versions; no live balance or return feed exists.",
+      "refresh_implemented": false,
+      "retention_design": "Financial records require strict minimization, scoped encryption/retention and revocable consent.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Choose licensed/authorized Open Finance path and methodology access rights; retrieve product evidence; do not equate standards access with certification.",
+      "fallback": "Unavailable balance/price/methodology remains absent/unverified; no invented holdings or guaranteed compliant result.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 17,
+      "id": "thawg",
+      "name": "Thawg AI",
+      "task": "Find a suitable dinner option and check the evidence I care about",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Filtering supplied dining availability/disclosures; no actual restaurant discovery, certification or booking.",
+      "source_connections": [
+        {
+          "source_id": "moiat-halal",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "sevenrooms-docs",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Selected real restaurant/menu, actual dietary constraints and authorized reservation channel.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read permitted menus/certification records; reservation/deposit needs explicit booking authority and receipt.",
+      "refresh_design": "Recheck availability immediately before booking; track menu/certification date and scope.",
+      "refresh_implemented": false,
+      "retention_design": "Dietary/booking preferences and contact details require minimized retention and no broad profiling.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Obtain actual venue/channel contract and evidence; verify certification scope beyond certifier registration; no availability endpoint is invented.",
+      "fallback": "No live availability means unavailable booking, not simulated tables or confirmation.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 18,
+      "id": "manzil",
+      "name": "Manzil AI",
+      "task": "Review these receipts and prepare this month's household summary",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Ledger/duplicate arithmetic over supplied receipt records; no camera/OCR/imported-bank live pipeline or VAT validity decision.",
+      "source_connections": [
+        {
+          "source_id": "fta-guides",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual receipts with user-reviewed extraction and household categorization consent.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read user-selected receipts/criteria; shared ledger/payment requires appropriate authorization.",
+      "refresh_design": "Update from actual receipt events and dated applicable VAT source; no synthetic spending history.",
+      "refresh_implemented": false,
+      "retention_design": "Household spending/merchant information stays scoped with export/deletion and explicit family-sharing choices.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Implement real camera/OCR and correction chain, retrieve applicable VAT evidence, preserve original receipt lineage; no payment initiation exists.",
+      "fallback": "Unreadable receipt amount stays unresolved and excluded from confirmed totals, not guessed.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 19,
+      "id": "gurbah",
+      "name": "Gurbah AI",
+      "task": "Update our move plan with dependencies and expiring documents",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Dependency/expiry planning over supplied milestones; no real school vacancies or service activations.",
+      "source_connections": [
+        {
+          "source_id": "icp-golden",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false,
+          "connected_scope": "Shared official source was exercised by another app; this product-specific source ingestion has not been exercised.",
+          "runtime_tested_for_this_app": false
+        },
+        {
+          "source_id": "dewa-move-in",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false,
+          "connected_scope": "Shared official source was exercised by another app; this product-specific source ingestion has not been exercised.",
+          "runtime_tested_for_this_app": false
+        },
+        {
+          "source_id": "khda-schools",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual move dates/household goals and authorized documents.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read permitted residency/school/utility sources; booking/payment/application requires contextual approval.",
+      "refresh_design": "Check current service rules and selected school admissions directly at each decision; directory is not vacancy data.",
+      "refresh_implemented": false,
+      "retention_design": "Family/child/residency data must be minimized and separately permissioned; avoid indefinite cloud retention.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Choose actual family move scenario; handle KHDA anti-bot challenge without bypass; obtain direct admissions evidence and authorized service channels.",
+      "fallback": "Missing school/activation information stays pending; no generated vacancies, approvals or activation success.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 20,
+      "id": "amanah-eco",
+      "name": "Amanah Eco",
+      "task": "Compare this month's utility usage with my previous period",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied utility-period comparison; no actual bill camera/OCR, meter feed, incentive eligibility or verified carbon calculation.",
+      "source_connections": [
+        {
+          "source_id": "dewa-smartliving",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Authentic bills, units/periods and optional authorized consumption access.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read selected bills and public conservation information; do not change utilities or publish claims automatically.",
+      "refresh_design": "Validate periods per bill; refresh tariff/incentive evidence per scenario; no customer meter API contract verified.",
+      "refresh_implemented": false,
+      "retention_design": "Bills include account/address data; extract only needed consumption fields and define local/remote deletion.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Implement authentic bill extraction and period normalization; separate measured consumption from hypothetical savings; official emissions factor needed for carbon claims.",
+      "fallback": "No bill means empty consumption view; no invented usage, discounts or carbon savings.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 21,
+      "id": "nafas",
+      "name": "Nafas AI",
+      "task": "Help me plan a gentle check-in routine for the next three days",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "User-selected routine support/breathing UI; no actual clinical assessment, adaptive evidence retrieval or clinician system.",
+      "source_connections": [
+        {
+          "source_id": "mental-health",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Voluntary user-expressed goals and intentionally supplied check-ins only.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read trustworthy support information and optional private notes; contacting others requires authority, no autonomous diagnosis.",
+      "refresh_design": "Review guidance/support resources periodically and verify availability before presenting location-specific resources.",
+      "refresh_implemented": false,
+      "retention_design": "Wellbeing notes are sensitive; local-first and explicit sharing/deletion, no hidden health inference.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Connect reviewed guidance resources and adapt to actual user intent; implement support/escalation boundaries without pretending to be clinical care.",
+      "fallback": "No expressed goal/check-in means a welcoming empty state, not an inferred mood/diagnosis or medical action.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 22,
+      "id": "tadweer",
+      "name": "Tadweer AI",
+      "task": "Check the right disposal route for this household item",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied item/rules routing; no actual photo classifier, current facility acceptance or map route.",
+      "source_connections": [
+        {
+          "source_id": "municipal-waste",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "rta-open-data",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-routes",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual item photograph/description and opted-in location.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read municipal rules and permitted routing; paid collection/location sharing needs explicit authority.",
+      "refresh_design": "Verify item acceptance/hours per trip and refresh route near use; no live municipal feed connected.",
+      "refresh_implemented": false,
+      "retention_design": "Photos/location should be minimized with discard controls; no unnecessary geolocation history.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Implement real photo uncertainty, retrieve current local acceptance and actual routing under selected terms; verify hazardous handling separately.",
+      "fallback": "Unknown material/facility data means no guaranteed disposal route; do not invent centers or safe handling.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 23,
+      "id": "turath",
+      "name": "Turath AI",
+      "task": "Create a short learning path about Dubai's pearling history",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied lesson/source milestones; no current source-grounded tutoring or reviewed learner adaptation.",
+      "source_connections": [
+        {
+          "source_id": "heritage-museum",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Actual learner preference/level and approved historical source set.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read authorized museum/history publications; sharing learner report requires consent.",
+      "refresh_design": "Version/review educational sources on retrieval and curriculum revision; avoid a live badge for static history.",
+      "refresh_implemented": false,
+      "retention_design": "Minimize learner/child data, separate practice answers from historic fact and provide deletion.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Retrieve/extract actual museum/heritage sources; current brochure503 requires permitted alternative or retry, not invented facts.",
+      "fallback": "Unavailable source produces unverified/missing answer or clarification, not fictional events presented as history.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 24,
+      "id": "himam",
+      "name": "Himam AI",
+      "task": "Plan an accessible trip and identify any uncertain route segments",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied route-segment/access-need screening; no real-time accessibility navigation or live elevator feed.",
+      "source_connections": [
+        {
+          "source_id": "rta-accessibility",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "rta-open-data",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        },
+        {
+          "source_id": "google-routes",
+          "status": "VERIFIED BUT NOT CONNECTED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "User-chosen access needs, location/destination and trustworthy segment data.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read opted-in routing/accessibility sources; live location sharing/booking needs authority.",
+      "refresh_design": "Recheck route near travel; actual station/lift status needs an explicit timely feed not found in this audit.",
+      "refresh_implemented": false,
+      "retention_design": "Accessibility needs/location are sensitive; retain minimum route context with revocation/deletion.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "UNAVAILABLE",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Validate a real routing dataset and accessibility coverage; obtain status contract for lifts/barriers or mark segments unverified; generic Routes output is not proof of access.",
+      "fallback": "No verified segment condition means uncertainty/alternative, never a guaranteed barrier-free journey.",
+      "authentic_e2e_evidence": null
+    },
+    {
+      "order": 25,
+      "id": "hisad",
+      "name": "Hisad AI",
+      "task": "Check this surplus lot against recipient and safe-handling requirements",
+      "current_primary_workflow_status": "INCOMPLETE",
+      "actual_local_behavior": "Supplied-lot/allergen/expiry/capacity screening; no authentic partner match, acceptance or custody receipt.",
+      "source_connections": [
+        {
+          "source_id": "foodbank",
+          "status": "SOURCE AVAILABLE, API UNCONFIRMED",
+          "application_connected": false
+        }
+      ],
+      "private_data_connection": {
+        "kind": "authorized_user_or_organization_data",
+        "status": "AUTHORIZATION REQUIRED",
+        "source_requirement": "Real authorized lot, handling/expiry records and recipient acceptance.",
+        "read_scope": "Only data intentionally supplied or authorized for the selected task.",
+        "write_scope": "No external write registered in the audited runtime.",
+        "credentials_or_permission": "Contextual permission required; do not add mandatory application registration."
+      },
+      "approved_third_party_alternatives": "None selected or contracted. Vendor documentation listed is a verified technical candidate, not user/organization approval.",
+      "read_write_permissions": "Read permitted partner/safety data; donation handoff or logistics commitment needs actual authority and confirmation.",
+      "refresh_design": "Check lot conditions and recipient capacity immediately before coordination; use actual event timestamps.",
+      "refresh_implemented": false,
+      "retention_design": "Inventory/recipient/contact data needs organization scope, food-safety audit lineage and retention policy.",
+      "retention_implemented_note": "Existing SQLite document/run persistence has no configured automatic TTL in the audited code; design text is not a retention guarantee.",
+      "write_integration_status": "AUTHORIZATION REQUIRED",
+      "write_status_scope": "No authorized external-write integration is available in this project; this is not a claim that no API exists anywhere.",
+      "next_dependency_and_action": "Obtain partner agreement/data contract and actual lot inputs; implement acceptance/handoff receipts before impact reporting.",
+      "fallback": "No recipient/lot verification means incomplete coordination; never invent food donations, collection or safety approval.",
+      "authentic_e2e_evidence": null
+    }
+  ],
+  "pilot_reader_review": {
+    "code": "source_tools.py",
+    "independent_raw_hash_match_for_pdpl": true,
+    "cross_review_findings": [
+      "HTML source-specific anchors needed to reject 200 login/interstitial content.",
+      "DNS errors need normalized persisted failure receipts.",
+      "Superseded source versions must remain out of current lexical/semantic retrieval."
+    ],
+    "corrective_work_status": "Code cross-review confirms source-specific anchors, normalized DNS handling with recorded trusted-proxy fallback, and superseded-version exclusion from current retrieval. Coordinator reports regression suite passed (129 Python tests); five actual reader receipts and HTTP proof independently inspected. Anchors do not establish legal applicability.",
+    "evidence_read": [
+      "project/evidence/public-source-reads.json",
+      "project/evidence/public-reader-http.json"
+    ],
+    "full_primary_workflows_verified": 0,
+    "connected_reader_sources": 5,
+    "http_component_evidence": {
+      "checked_at": "2026-11-16T05:39:42.239717+00:00",
+      "scope": "Real local HTTP API to live official PDF and current scoped retrieval; no model call or compliance audit",
+      "http_status": 201,
+      "receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "authority": "UAE Legislation",
+        "title": "UAE Federal Decree by Law No.45 of 2021 — Personal Data Protection",
+        "started_at": "2026-11-16T05:39:34.794680+00:00",
+        "fetched_at": "2026-11-16T05:39:42.229849+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 194597,
+        "characters": 44406,
+        "raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "last_modified_header": "Wed, 24 Jan 2024 06:16:33 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "d650731b-369e-4f05-ba66-d3bebc86d500"
+      },
+      "search_method": "bm25",
+      "passages_returned": 6,
+      "all_matches_current_document": true,
+      "all_matches_have_retrieval_time": true,
+      "primary_agent_workflow_verified": false,
+      "external_write_performed": false
+    }
+  }
+}

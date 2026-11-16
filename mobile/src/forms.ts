@@ -2,10 +2,15 @@ import type {Json,Schema} from './types';
 export function blank(schema:Schema):Json {
  if(schema.type==='object')return Object.fromEntries(Object.entries(schema.properties||{}).map(([key,value])=>[key,blank(value)]));
  if(schema.type==='array')return [];
- if(schema.type==='boolean')return false;
- if(schema.type==='number'||schema.type==='integer')return 0;
+ // Unknown numeric/boolean inputs are not assertions of real zero/false values.
+ if(schema.type==='boolean'||schema.type==='number'||schema.type==='integer')return null;
  if(Array.isArray(schema.type))return null;
  return '';
+}
+export function emptyWorkspace(schema:Schema):{draft:Record<string,Json>;example:false;hasInputs:false} {
+ const value=blank(schema);
+ if(value===null||typeof value!=='object'||Array.isArray(value))throw new Error('An application workspace requires an object schema.');
+ return {draft:value,example:false,hasInputs:false};
 }
 export function replaceAt(root:Json,path:(string|number)[],value:Json):Json {
  if(!path.length)return value;

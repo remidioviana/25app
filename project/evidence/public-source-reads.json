@@ -1,0 +1,164 @@
+{
+  "scope": "Actual public document retrieval only, not 5 primary agent workflows",
+  "reads": [
+    {
+      "app": "himayah",
+      "receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "authority": "UAE Legislation",
+        "title": "UAE Federal Decree by Law No.45 of 2021 \u2014 Personal Data Protection",
+        "started_at": "2026-11-16T05:35:07.300699+00:00",
+        "fetched_at": "2026-11-16T05:35:14.739191+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 194597,
+        "characters": 44406,
+        "raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "last_modified_header": "Wed, 24 Jan 2024 06:16:33 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "d650731b-369e-4f05-ba66-d3bebc86d500"
+      },
+      "document_id": "d650731b-369e-4f05-ba66-d3bebc86d500",
+      "source_content": "Retrieved into this app/session evidence store; use search_knowledge to inspect passages."
+    },
+    {
+      "app": "iqamah",
+      "receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "title": "ICP \u2014 Golden Residency service information",
+        "started_at": "2026-11-16T05:35:14.745510+00:00",
+        "fetched_at": "2026-11-16T05:35:18.305014+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 227422,
+        "characters": 18640,
+        "raw_sha256": "ba2bc74812e7013c2f4c9eb7ccb3f070389ae4e5b93c28226097744f5fcaa47a",
+        "text_sha256": "09e7661f6556935ee88d5b3516309f9d93a3a8a8210cf6f3808c47ec98f4add0",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "a0773852-6bd2-48d7-948d-7ba03cef2148"
+      },
+      "document_id": "a0773852-6bd2-48d7-948d-7ba03cef2148",
+      "source_content": "Retrieved into this app/session evidence store; use search_knowledge to inspect passages."
+    },
+    {
+      "app": "istithmar",
+      "receipt": {
+        "source_id": "dmcc-charges",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "authority": "Dubai Multi Commodities Centre",
+        "title": "DMCC \u2014 Schedule of charges",
+        "started_at": "2026-11-16T05:35:18.307482+00:00",
+        "fetched_at": "2026-11-16T05:35:18.752996+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 640582,
+        "characters": 68139,
+        "raw_sha256": "a32f94c060b89df93234b8e1a3a39061127fd1dc529909af7af8ffcdef738dd2",
+        "text_sha256": "e231783da71e62883f3e954a08fd5655f83e02aab43730d59a904f6ab47d77ff",
+        "last_modified_header": "Thu, 12 Nov 2026 08:28:46 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "859d8e9d-86db-453b-a930-5f0ebb913ec3"
+      },
+      "document_id": "859d8e9d-86db-453b-a930-5f0ebb913ec3",
+      "source_content": "Retrieved into this app/session evidence store; use search_knowledge to inspect passages."
+    },
+    {
+      "app": "munagasah",
+      "receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply \u2014 Procurement portal information",
+        "started_at": "2026-11-16T05:35:18.756059+00:00",
+        "fetched_at": "2026-11-16T05:35:20.189938+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "661c3d7e-611a-4be6-bbf7-ac8bbdcc7b71"
+      },
+      "document_id": "661c3d7e-611a-4be6-bbf7-ac8bbdcc7b71",
+      "source_content": "Retrieved into this app/session evidence store; use search_knowledge to inspect passages."
+    },
+    {
+      "app": "sahil",
+      "receipt": {
+        "source_id": "dewa-move-in",
+        "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "authority": "Dubai Electricity and Water Authority",
+        "title": "DEWA \u2014 Activation of electricity/water, Move-in",
+        "started_at": "2026-11-16T05:35:20.191796+00:00",
+        "fetched_at": "2026-11-16T05:35:25.134784+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 259230,
+        "characters": 25488,
+        "raw_sha256": "78cb2ff54147e110a0b0dadf9a985e10a539ba9fc841a2cf3867d6c5b2f4bc9a",
+        "text_sha256": "963db45b2add1d61ada19cd9951b784abac390849561d0b245fbcb15cbd3c3c7",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "284c7ddc-19a3-4680-8567-5a73d8004ab0"
+      },
+      "document_id": "284c7ddc-19a3-4680-8567-5a73d8004ab0",
+      "source_content": "Retrieved into this app/session evidence store; use search_knowledge to inspect passages."
+    }
+  ]
+}

@@ -45,7 +45,12 @@ def init():
         CREATE TABLE IF NOT EXISTS documents(id TEXT PRIMARY KEY,agent TEXT NOT NULL,title TEXT NOT NULL,
           source TEXT NOT NULL,as_of TEXT NOT NULL,created TEXT NOT NULL);
         CREATE VIRTUAL TABLE IF NOT EXISTS chunks USING fts5(doc UNINDEXED,agent UNINDEXED,chunk UNINDEXED,text,tokenize='unicode61 remove_diacritics 2');
+        CREATE TABLE IF NOT EXISTS public_source_versions(agent TEXT NOT NULL,source_id TEXT NOT NULL,
+          doc TEXT NOT NULL REFERENCES documents(id) ON DELETE CASCADE,text_hash TEXT NOT NULL,
+          is_current INTEGER NOT NULL,fetched_at TEXT,PRIMARY KEY(agent,source_id,doc));
         ''')
+        if 'fetched_at' not in {r[1] for r in c.execute('PRAGMA table_info(public_source_versions)')}:
+            c.execute('ALTER TABLE public_source_versions ADD COLUMN fetched_at TEXT')
 
 def emit(run,phase,detail):
     with connect() as c:
@@ -94,7 +99,11 @@ def ingest(agent,title,text,source,as_of):
     return {'id':doc,'chunks':len(chunks),'title':title}
 
 def documents(agent):
-    with connect() as c: return [dict(x) for x in c.execute('SELECT * FROM documents WHERE agent=? ORDER BY created DESC',(agent,))]
+    with connect() as c:
+        return [dict(x) for x in c.execute('''SELECT documents.*,
+          CASE WHEN v.is_current=1 THEN 'current' WHEN v.is_current=0 THEN 'superseded' ELSE NULL END AS source_version_state
+          FROM documents LEFT JOIN public_source_versions v ON v.doc=documents.id AND v.agent=documents.agent
+          WHERE documents.agent=? ORDER BY created DESC''',(agent,))]
 
 def delete_document(agent,doc):
     with connect() as c:
@@ -108,6 +117,17 @@ def search(agent,query):
     if not tokens: return []
     expression=' OR '.join('"'+t.replace('"','""')+'"' for t in tokens)
     with connect() as c:
-        rows=c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text,documents.title,documents.source,documents.as_of,bm25(chunks) AS rank
-        FROM chunks JOIN documents ON documents.id=chunks.doc WHERE chunks MATCH ? AND chunks.agent=? ORDER BY rank LIMIT 6''',(expression,agent))
+        rows=c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text,documents.title,documents.source,documents.as_of,
+        v.fetched_at AS retrieved_at,bm25(chunks) AS rank
+        FROM chunks JOIN documents ON documents.id=chunks.doc
+        LEFT JOIN public_source_versions v ON v.doc=chunks.doc AND v.agent=chunks.agent
+        WHERE chunks MATCH ? AND chunks.agent=?
+        AND NOT EXISTS (SELECT 1 FROM public_source_versions v WHERE v.doc=chunks.doc AND v.agent=chunks.agent AND v.is_current=0)
+        ORDER BY rank LIMIT 6''',(expression,agent))
         return [dict(x)|{'citation':x['doc']+':'+str(x['chunk'])} for x in rows]
+
+def current_evidence(agent,evidence):
+    """Do not reuse superseded public-source passages as current task evidence."""
+    with connect() as c:
+        obsolete={r[0] for r in c.execute('SELECT doc FROM public_source_versions WHERE agent=? AND is_current=0',(agent,))}
+    return [x for x in evidence if x.get('doc',x.get('citation','').split(':')[0]) not in obsolete]

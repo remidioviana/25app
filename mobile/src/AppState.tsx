@@ -4,13 +4,16 @@ import type {Config,Json,Run} from './types';
 import {brandId} from './brand';
 import {catalog} from './catalog';
 import {loadConnection,saveConnection,clearConnection} from './session';
-type State={api:AgentAPI|null;config:Config|null;draft:Record<string,Json>;setDraft:React.Dispatch<React.SetStateAction<Record<string,Json>>>;run:Run|null;setRun:React.Dispatch<React.SetStateAction<Run|null>>;example:boolean;setExample:(x:boolean)=>void;connect:(url:string,token:string,remember:boolean)=>Promise<void>;disconnect:()=>Promise<void>;connectionError:string};
+import {emptyWorkspace} from './forms';
+type State={api:AgentAPI|null;config:Config|null;draft:Record<string,Json>;setDraft:React.Dispatch<React.SetStateAction<Record<string,Json>>>;hasInputs:boolean;run:Run|null;setRun:React.Dispatch<React.SetStateAction<Run|null>>;example:boolean;setExample:(x:boolean)=>void;connect:(url:string,token:string,remember:boolean)=>Promise<void>;disconnect:()=>Promise<void>;connectionError:string};
 const Context=createContext<State|null>(null);
 export const spec=catalog[brandId];
 export function AppProvider({children}:{children:React.ReactNode}){
- const [api,setApi]=useState<AgentAPI|null>(null),[config,setConfig]=useState<Config|null>(null),[draft,setDraft]=useState<Record<string,Json>>(JSON.parse(JSON.stringify(spec.example))),[run,setRun]=useState<Run|null>(null),[example,setExample]=useState(true),[connectionError,setConnectionError]=useState('');
+ const [api,setApi]=useState<AgentAPI|null>(null),[config,setConfig]=useState<Config|null>(null),[draft,setDraftValue]=useState<Record<string,Json>>(()=>emptyWorkspace(spec.schema).draft),[hasInputs,setHasInputs]=useState(false),[run,setRun]=useState<Run|null>(null),[example,setExample]=useState(false),[connectionError,setConnectionError]=useState('');
  const revision=useRef(0),writes=useRef<Promise<void>>(Promise.resolve());
- function reset(){setApi(null);setConfig(null);setRun(null);setDraft(JSON.parse(JSON.stringify(spec.example)));setExample(true);setConnectionError('')}
+ // hasInputs means a draft was explicitly edited/applied, never that it is authentic.
+ function setDraft(value:React.SetStateAction<Record<string,Json>>){setDraftValue(value);setHasInputs(true)}
+ function reset(){setApi(null);setConfig(null);setRun(null);setDraftValue(emptyWorkspace(spec.schema).draft);setHasInputs(false);setExample(false);setConnectionError('')}
  function persist(id:number,write:()=>Promise<void>){
   const next=writes.current.catch(()=>{}).then(async()=>{if(revision.current===id)await write()});
   writes.current=next;return next;
@@ -44,6 +47,6 @@ export function AppProvider({children}:{children:React.ReactNode}){
   }).catch(e=>{if(revision.current===id)setConnectionError(e instanceof Error?e.message:'Connection failed')});
   return()=>{lifecycle.current++};
  },[]);
- return <Context.Provider value={{api,config,draft,setDraft,run,setRun,example,setExample,connect,disconnect,connectionError}}>{children}</Context.Provider>;
+ return <Context.Provider value={{api,config,draft,setDraft,hasInputs,run,setRun,example,setExample,connect,disconnect,connectionError}}>{children}</Context.Provider>;
 }
 export function useApp(){const value=useContext(Context);if(!value)throw Error('App state is unavailable');return value}

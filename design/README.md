@@ -1,3 +1,5 @@
+> Estado de execução: estes arquivos são artefatos de design e testes locais, não prova de inteligência autônoma ou integração de produção. A prioridade atual está em `project/PRIORIDADE_AGENTICA.md`.
+
 # Product design program — deliveries 01–02
 
 This directory starts the 25-app design program in the order recovered from `apps/apps.json`. It is an incremental delivery, not a claim that 25 production apps or 750 screens are complete.

@@ -1,4 +1,4 @@
-import type {Agent,Config,Run,RunSummary,Document,Schedule,Intake,Mode,Json,EvidenceSearchResult} from './types';
+import type {Agent,Config,Run,RunSummary,Document,Schedule,Intake,Mode,Json,EvidenceSearchResult,PublicSourcesResult,PublicSourceRefresh} from './types';
 
 export class ApiError extends Error {constructor(message:string,public status:number){super(message);this.name='ApiError'}}
 export function serverURL(raw:string,allowLocalHttp=false):string {
@@ -30,6 +30,11 @@ export class AgentAPI {
   review(run:Run,decision:'accepted'|'rejected'){return this.request<Run>(`/api/runs/${encodeURIComponent(run.id)}/review`,'POST',{decision,artifact_hash:run.artifact_hash})}
   intake(agent:string,request:string){return this.request<Intake>(`/api/agents/${encodeURIComponent(agent)}/intake`,'POST',{request})}
   documents(agent:string){return this.request<{documents:Document[]}>(`/api/agents/${encodeURIComponent(agent)}/documents`)}
+  publicSources(agent:string,signal?:AbortSignal){return this.request<PublicSourcesResult>(`/api/agents/${encodeURIComponent(agent)}/sources`,'GET',undefined,{},signal)}
+  refreshPublicSource(agent:string,sourceId:string,signal?:AbortSignal){
+    if(!/^[a-z0-9][a-z0-9-]{0,63}$/.test(sourceId))return Promise.reject(new Error('Choose an approved source identifier.'));
+    return this.request<PublicSourceRefresh>(`/api/agents/${encodeURIComponent(agent)}/sources`,'POST',{source_id:sourceId},{},signal);
+  }
   searchEvidence(agent:string,query:string,signal?:AbortSignal){
     const normalized=query.trim();
     if(!normalized||normalized.length>2000)return Promise.reject(new Error('Enter a search query of 1 to 2,000 characters.'));

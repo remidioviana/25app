@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 import storage as db
 import model_provider
 import advanced
+import source_tools
 from domain_tools import TOOLS
 from validation import validate
 
@@ -73,7 +74,7 @@ def _execute(run):
             if changed: db.emit(run,'completed',{'artifact_hash':db.digest(result),'decision':result['decision']})
             return
         db.emit(run,'planning',{'steps':['validate','retrieve','analyze','verify','report'],'mode':task['mode'],'example':bool(task['example'])})
-        evidence=db.search(agent,task['goal']); output=None; narrative=None; usage=[]; called=[]
+        evidence=db.search(agent,task['goal']); output=None; narrative=None; usage=[]; called=[];source_reads=[]
         db.emit(run,'retrieving',{'citations':[x['citation'] for x in evidence],'matches':len(evidence)})
         def call(name,args):
             nonlocal output,evidence
@@ -88,6 +89,14 @@ def _execute(run):
             elif name=='read_memory':
                 if args: raise ValueError('read_memory takes no arguments')
                 value=db.memory(agent)
+            elif name=='list_sources':
+                if args:raise ValueError('list_sources takes no arguments')
+                value=source_tools.available(agent)
+            elif name=='refresh_source':
+                validate(args,{'type':'object','properties':{'source_id':{'type':'string','maxLength':64}},'required':['source_id'],'additionalProperties':False})
+                value=source_tools.refresh(args['source_id'],agent)
+                source_reads.append(value['receipt'])
+                evidence=list({x['citation']:x for x in db.current_evidence(agent,evidence)+db.search(agent,task['goal'])}.values())
             else: raise ValueError('Unauthorized tool')
             called.append(name)
             db.emit(run,'acting',{'tool':name,'output_hash':db.digest(value),'output':value})
@@ -99,7 +108,11 @@ def _execute(run):
             tools=[{'type':'function','name':spec['tool'],'description':'Analyzes the mission immutable original inputs. Required before the final response.','parameters':empty,'strict':True},
                    {'type':'function','name':'read_memory','description':'Reads up to three user-accepted, non-demo results from this app. Historical context, not current facts.','parameters':empty,'strict':True},
                    {'type':'function','name':'search_knowledge','description':'Searches the app supplied documents, not the internet.','parameters':{'type':'object','properties':{'query':{'type':'string'}},'required':['query'],'additionalProperties':False},'strict':True}]
-            messages=[{'role':'system','content':spec['instructions']}, {'role':'user','content':db.encode({'goal':task['goal'],'data':task['input'],'retrieved_evidence':evidence})}]
+            if source_tools.available(agent):
+                tools.extend([
+                  {'type':'function','name':'list_sources','description':'Lists fixed public sources permitted for this app. Availability is not successful retrieval.','parameters':empty,'strict':True},
+                  {'type':'function','name':'refresh_source','description':'Reads one permitted fixed public source into this app evidence store. No user URLs or external writes. Inspect actual receipt and source passages; retrieval does not establish legal applicability.','parameters':{'type':'object','properties':{'source_id':{'type':'string'}},'required':['source_id'],'additionalProperties':False},'strict':True}])
+            messages=[{'role':'system','content':spec['instructions']}, {'role':'user','content':db.encode({'goal':task['goal'],'data':task['input'],'retrieved_evidence':evidence,'available_public_sources':source_tools.available(agent)})}]
             for turn in range(8):
                 check(run,lease); response=model_provider.respond(messages,tools,model_override=ROLE_MODELS['specialist']); check(run,lease)
                 usage.append(response.get('usage',{})); messages.extend(response.get('output',[]))
@@ -114,19 +127,21 @@ def _execute(run):
                 for c in calls:
                     if len(called)>=12: raise ValueError('Twelve-tool-call limit reached')
                     try: value=call(c['name'],json.loads(c['arguments']))
-                    except (ValueError,KeyError,TypeError) as e:
+                    except (ValueError,KeyError,TypeError,PermissionError) as e:
                         value={'error':str(e)}; called.append('invalid_call'); db.emit(run,'tool_error',value)
                     messages.append({'type':'function_call_output','call_id':c['call_id'],'output':db.encode(value)})
             else: raise ValueError('Eight-round limit reached; execution stopped')
         check(run,lease)
         # Recompute the pure tool: independently compare the persisted artifact to its inputs.
         verification=TOOLS[agent](task['input'])
+        if len(db.current_evidence(agent,evidence))!=len(evidence):raise ValueError('A public source version changed during this task; review current evidence and rerun')
         if output is None or db.digest(output)!=db.digest(verification): raise ValueError('Result verification failed')
         db.emit(run,'verifying',{'input_hash':db.digest(task['input']),'output_hash':db.digest(output),'recomputed':True})
         result={'agent':agent,'goal':task['goal'],'mode':task['mode'],'example':bool(task['example']),
                 'analysis':output,'narrative':narrative,'evidence':evidence,'usage':usage,
                 'input_hash':db.digest(task['input']),'analysis_hash':db.digest(output),
-                'external_actions_performed':False,'limits':['User-supplied sources; freshness and authenticity are not automatically verified.', 'AI narrative, when present, is separate from verifiable calculations.']}
+                'external_actions_performed':False,'external_reads_performed':bool(source_reads),'source_reads':source_reads,
+                'limits':['Source retrieval timestamps do not establish legal applicability or publication currency.', 'AI narrative, when present, is separate from verifiable calculations.']}
         with db.connect() as c:
             changed=c.execute("UPDATE runs SET status='completed',phase='completed',result=?,updated=? WHERE id=? AND status='running' AND lease=?",(db.encode(result),db.now(),run,lease)).rowcount
         if changed: db.emit(run,'completed',{'artifact_hash':db.digest(result),'message':'Local artifact ready for review'})

@@ -26,6 +26,8 @@ async function until(fn,label){for(let i=0;i<200;i++){if(fn())return;await new P
   for(const id of ids){
     $(`[data-agent="${id}"]`).click();
     assert.ok($('#mode option[value="team"]'),'Team option missing');
+    assert.equal($('#example').checked,false,'Runtime must start empty');$('#toggle-view').click();$('#payload').value=JSON.stringify(JSON.parse(fs.readFileSync(path.join(root,'agents',id,'agent.json'),'utf8')).example);$('#payload').dispatchEvent(new w.Event('input'));$('#example').checked=true;$('#example').dispatchEvent(new w.Event('change'));
+
     $('#run').click();await until(()=>$('#accept'),'result '+id);
     assert.ok($('#right').textContent.includes('Completed'));
     assert.ok($('[data-export="markdown"]'));assert.ok($('[data-export="csv"]'));

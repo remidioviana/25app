@@ -1,5 +1,23 @@
 # 25 standalone mobile agents — release 6.0
 
+## Operational audit and real public-source pilot
+
+Start with the [structural plan](PLANO_ESTRUTURAL.md),
+[agentic priority and actual model roles](project/PRIORIDADE_AGENTICA.md),
+[25-app capability audit](project/auditoria_capacidades.json), and
+[real integration/source matrix](project/INTEGRACOES_REAIS.md).
+
+Operational apps now start with empty/unknown data instead of preloaded fictional
+records. Five reviewed public-source readers have actual retrieval receipts and a
+native Evidence panel. The tool-calling and team runtimes can request permitted
+source reads, preserve provenance and exclude superseded source versions from
+current retrieval. These are partial capabilities, not completed primary agents.
+
+The default runtime has three roles and two distinct model IDs. Live model calls
+were not validated in this environment. No government submission, financial write,
+booking, signed app or complete primary live-agent workflow is claimed. See the
+[integrated verification report](project/VERIFICACAO_INTEGRADA.md).
+
 ## New design program — incremental delivery
 
 The original source package is preserved below. The [design program](design/README.md)

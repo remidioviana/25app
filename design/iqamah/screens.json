@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "title": "Dossier home"
+  },
+  {
+    "id": 2,
+    "title": "Route context"
+  },
+  {
+    "id": 3,
+    "title": "Route sources"
+  },
+  {
+    "id": 4,
+    "title": "Requirements"
+  },
+  {
+    "id": 5,
+    "title": "Add requirement"
+  },
+  {
+    "id": 6,
+    "title": "Document index"
+  },
+  {
+    "id": 7,
+    "title": "Add document record"
+  },
+  {
+    "id": 8,
+    "title": "Document detail"
+  },
+  {
+    "id": 9,
+    "title": "Edit document record"
+  },
+  {
+    "id": 10,
+    "title": "Review date"
+  },
+  {
+    "id": 11,
+    "title": "Unknown expiry"
+  },
+  {
+    "id": 12,
+    "title": "Check methodology"
+  },
+  {
+    "id": 13,
+    "title": "Dossier brief"
+  },
+  {
+    "id": 14,
+    "title": "Data boundary"
+  },
+  {
+    "id": 15,
+    "title": "Preparation plan"
+  },
+  {
+    "id": 16,
+    "title": "Run local checks"
+  },
+  {
+    "id": 17,
+    "title": "Task activity"
+  },
+  {
+    "id": 18,
+    "title": "Dossier summary"
+  },
+  {
+    "id": 19,
+    "title": "Missing evidence"
+  },
+  {
+    "id": 20,
+    "title": "Expired records"
+  },
+  {
+    "id": 21,
+    "title": "Present, unverified"
+  },
+  {
+    "id": 22,
+    "title": "Evidence reference"
+  },
+  {
+    "id": 23,
+    "title": "Next steps"
+  },
+  {
+    "id": 24,
+    "title": "Reviewer notes"
+  },
+  {
+    "id": 25,
+    "title": "Packet builder"
+  },
+  {
+    "id": 26,
+    "title": "Export preview"
+  },
+  {
+    "id": 27,
+    "title": "Official handoff"
+  },
+  {
+    "id": 28,
+    "title": "Local history"
+  },
+  {
+    "id": 29,
+    "title": "Search records"
+  },
+  {
+    "id": 30,
+    "title": "Privacy controls"
+  },
+  {
+    "id": 31,
+    "title": "Delete session"
+  },
+  {
+    "id": 32,
+    "title": "Help and limits"
+  },
+  {
+    "id": 33,
+    "title": "Accessibility"
+  },
+  {
+    "id": 34,
+    "title": "Recover a draft"
+  }
+]
