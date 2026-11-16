@@ -11,6 +11,7 @@ class RoutingIntegrationTests(unittest.TestCase):
   self.temp=tempfile.TemporaryDirectory();self.old=db.DB;db.DB=Path(self.temp.name)/'db.sqlite3';db.init()
   self.env=patch.dict(os.environ,{'OPENAI_API_KEY':'test-one,test-two,test-three','OPENAI_BASE_URL':'https://api.groq.com/openai/v1','AGENT_SEMANTIC_SEARCH':'0'});self.env.start()
   provider._KEY_CONFIG=();provider._KEY_INDEX=0;self.requests=[];self.auditor_attempts=0;self.failure=None
+  catalogue=patch.object(provider,'list_models',return_value=list(provider.FALLBACK_MODELS));catalogue.start();self.addCleanup(catalogue.stop)
  def tearDown(self):self.env.stop();db.DB=self.old;self.temp.cleanup()
  def transport(self,request,timeout):
   payload=json.loads(request.data);role=payload['response_format']['json_schema']['name'].removesuffix('_result') if 'response_format' in payload else payload['tools'][0]['function']['description'].rsplit(' ',1)[1]
@@ -43,10 +44,11 @@ class RoutingIntegrationTests(unittest.TestCase):
   self.failure='all429';result=self.execute('mizan');self.assertEqual(result['status'],'completed',result['error'])
   self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3+[provider.FAST_MODEL])
   usage=result['result']['usage'][-1]['usage'];self.assertTrue(usage['fallback']);self.assertEqual(usage['fallback_reason'],'all_keys_http_429');self.assertEqual(usage['requested_model'],provider.AUDIT_MODEL)
- def test_mixed_failure_stops_graph_without_downgrade(self):
-  self.failure='mixed';result=self.execute('mizan');self.assertEqual(result['status'],'failed')
-  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3)
-  self.assertIsNone(result['result']);self.assertNotIn('test-',result['error'])
+ def test_quota_and_unavailability_fallback_is_recorded_in_graph(self):
+  self.failure='mixed';result=self.execute('mizan');self.assertEqual(result['status'],'completed',result['error'])
+  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3+[provider.FAST_MODEL])
+  usage=result['result']['usage'][-1]['usage'];self.assertTrue(usage['fallback']);self.assertEqual(usage['fallback_reason'],'provider_unavailable')
+  self.assertEqual(usage['fallback_history'][0]['statuses'],[429,500,429])
 
  def test_strict_graph_records_three_provider_reported_models(self):
   self.report_identity=True

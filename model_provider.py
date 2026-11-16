@@ -21,6 +21,10 @@ CATALOGUE_TEXT_CANDIDATES=(
     'meta-models/muse-spark-open','minimaxai/minimax-m2.7',
 )
 KNOWN_PREVIEW_MODELS={'qwen/qwen3.8-27b','meta-models/muse-spark-open'}
+# Authenticated Groq catalogue audit: 2026-11-16, run 43905713925.
+# Only three general-purpose text models were active; never pad with audio/guards.
+FALLBACK_MODELS=('openai/gpt-oss-20b','openai/gpt-oss-120b','qwen/qwen3.8-27b')
+FALLBACK_RETRYABLE_STATUSES=frozenset((429,500,502,503,504,'connection_error'))
 _LOCK=Lock()
 _KEY_INDEX=0
 _KEY_CONFIG=()
@@ -129,11 +133,12 @@ def _to_chat_tools(tools):
     return [t if 'function' in t else {'type':'function','function':{'name':t['name'],'description':t.get('description',''),'parameters':t['parameters']}} for t in (tools or [])]
 
 class ProviderFailure(RuntimeError):
-    def __init__(self,statuses,codes=None,retry_after=None):
-        self.statuses=statuses;self.codes=codes or [];self.retry_after=retry_after
+    def __init__(self,statuses,codes=None,retry_after=None,attempts=None):
+        self.statuses=statuses;self.codes=codes or [];self.retry_after=retry_after;self.attempts=attempts or []
         detail=(' Safe provider codes: '+', '.join(self.codes)+'.') if self.codes else ''
         wait=(' Retry after '+str(retry_after)+' seconds.') if retry_after is not None else ''
-        super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'.'+detail+wait+' Check server configuration and provider access.')
+        trail=(' Model attempts: '+', '.join(item['model']+' ('+'/'.join(str(status) for status in item['statuses'])+')' for item in self.attempts)+'.') if self.attempts else ''
+        super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'.'+detail+wait+trail+' Check server configuration and provider access.')
 
 def _request(endpoint,payload,keys,method='POST',timeout=60):
     _validate_keys(keys)
@@ -170,6 +175,17 @@ def list_models():
         if record.get('active') is not False and model not in models:models.append(model)
     return models
 
+def _retryable_failure(error):
+    return bool(error.statuses) and all(status in FALLBACK_RETRYABLE_STATUSES for status in error.statuses)
+
+
+def fallback_models(requested,active):
+    # All current pool members support text, tools and strict JSON. No format downgrade.
+    return [model for model in dict.fromkeys(FALLBACK_MODELS[:5])
+            if model!=requested and model in active
+            and (model not in KNOWN_PREVIEW_MODELS or _flag('AGENT_ALLOW_PREVIEW_MODELS'))]
+
+
 def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60,required_tool=None,response_schema=None):
     keys=_key_order();requested=model_override or os.environ.get('OPENAI_MODEL') or FAST_MODEL
     requested=_model_name(requested)
@@ -187,13 +203,34 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
         if tools or required_tool is not None or not isinstance(response_schema,dict) or response_schema.get('type')!='object':
             raise ValueError('Strict structured output requires an object schema and no tool calls.')
         payload['response_format']={'type':'json_schema','json_schema':{'name':(role or 'role')+'_result','strict':True,'schema':response_schema}}
-    fallback=False
+    fallback=False;fallback_history=[];fallback_reason=None
     try:raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
-    except ProviderFailure as exc:
-        # Only the auditor may downgrade, and only when EVERY distinct key returned 429.
-        if (not allow_fallback or _flag('AGENT_REQUIRE_DISTINCT_MODELS') or role not in (None,'critic')
-            or requested!=AUDIT_MODEL or exc.statuses!=[429]*len(keys)):raise
-        payload['model']=FAST_MODEL;raw=_request('/chat/completions',payload,keys,timeout=request_timeout);fallback=True
+    except ProviderFailure as primary:
+        # Proof mode preserves its strict identity guarantee; explicit callers can opt out.
+        if not allow_fallback or _flag('AGENT_REQUIRE_DISTINCT_MODELS') or not _retryable_failure(primary):raise
+        base=urlparse(_base_url())
+        if base.hostname!='api.groq.com' or base.path!='/openai/v1' or base.port not in (None,443):raise
+        # Revalidate the account catalogue at failover time. Healthy requests do not list models.
+        try:active=set(list_models())
+        except (ValueError,RuntimeError):raise primary from None
+        candidates=fallback_models(requested,active)
+        if not candidates:raise
+        fallback_reason='all_keys_http_429' if primary.statuses==[429]*len(keys) else 'provider_unavailable'
+        fallback_history.append({'model':requested,'statuses':primary.statuses,'codes':primary.codes,'retry_after':primary.retry_after})
+        last=primary
+        for candidate in candidates:
+            payload['model']=candidate
+            try:
+                raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
+                fallback=True
+                break
+            except ProviderFailure as failure:
+                last=failure
+                fallback_history.append({'model':candidate,'statuses':failure.statuses,'codes':failure.codes,'retry_after':failure.retry_after})
+                # Catalogue presence is not per-project inference permission. Skip a denied reserve.
+                if failure.statuses and all(status==403 for status in failure.statuses):continue
+                if not _retryable_failure(failure):raise ProviderFailure(failure.statuses,failure.codes,failure.retry_after,attempts=fallback_history) from None
+        else:raise ProviderFailure(last.statuses,last.codes,last.retry_after,attempts=fallback_history) from None
     if not isinstance(raw,dict):raise ValueError('Provider returned an invalid response envelope.')
     reported=raw.get('model')
     if reported is not None:reported=_model_name(reported)
@@ -234,7 +271,7 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
       'usage':{'input_tokens':usage.get('prompt_tokens',0),'output_tokens':usage.get('completion_tokens',0),'total_tokens':usage.get('total_tokens',0),
                'requested_model':requested,'model':reported or payload['model'],'request_model_after_fallback':payload['model'],
                'provider_reported_model':reported,'model_identity_evidence':'provider_reported' if reported else 'request_only','response_contract':'json_schema_strict' if response_schema is not None else 'tools' if tools else 'text',
-               'fallback':fallback,'fallback_reason':'all_keys_http_429' if fallback else None}}
+               'fallback':fallback,'fallback_reason':fallback_reason if fallback else None,'fallback_history':fallback_history}}
 
 def embed(texts):
     model=os.environ.get('OPENAI_EMBEDDING_MODEL')

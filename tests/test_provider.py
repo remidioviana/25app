@@ -8,6 +8,7 @@ class ProviderTests(unittest.TestCase):
  def setUp(self):
   self.env=patch.dict(os.environ,{'OPENAI_API_KEY':'test-a,test-b,test-c','OPENAI_BASE_URL':'https://api.groq.com/openai/v1','OPENAI_MODEL':p.FAST_MODEL});self.env.start();self.addCleanup(self.env.stop)
   p._KEY_CONFIG=();p._KEY_INDEX=0
+  catalogue=patch.object(p,'list_models',return_value=list(p.FALLBACK_MODELS));catalogue.start();self.addCleanup(catalogue.stop)
  def ok(self):return io.BytesIO(json.dumps({'choices':[{'message':{'content':'checked'}}],'usage':{'total_tokens':9}}).encode())
  def error(self,status):return HTTPError('https://api.groq.com',status,'mock',{},io.BytesIO(b'secret response must not leak'))
  def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
@@ -22,15 +23,16 @@ class ProviderTests(unittest.TestCase):
  def test_partial_429_success_does_not_fallback(self):
   with patch.object(p,'urlopen',side_effect=[self.error(429),self.ok()]) as send:r=self.call()
   self.assertEqual(send.call_count,2);self.assertFalse(r['usage']['fallback']);self.assertEqual(r['usage']['model'],p.AUDIT_MODEL)
- def test_mixed_failures_never_downgrade(self):
-  for status in (401,403,500,502,503,504):
+ def test_auth_failure_mixed_with_quota_never_changes_model(self):
+  for status in (401,403):
    with self.subTest(status=status),patch.object(p,'urlopen',side_effect=[self.error(429),self.error(status),self.error(429)]) as send:
     with self.assertRaises(p.ProviderFailure) as caught:self.call()
     self.assertEqual(send.call_count,3);self.assertNotIn('secret',str(caught.exception));self.assertNotIn('test-',str(caught.exception))
- def test_fast_model_never_falls_back(self):
-  with patch.object(p,'urlopen',side_effect=[self.error(429) for _ in range(3)]) as send:
-   with self.assertRaises(p.ProviderFailure):self.call(p.FAST_MODEL)
-   self.assertEqual(send.call_count,3)
+ def test_fast_model_falls_back_without_changing_role_defaults(self):
+  with patch.object(p,'urlopen',side_effect=[self.error(429) for _ in range(3)]+[self.ok()]) as send:r=self.call(p.FAST_MODEL)
+  self.assertEqual(send.call_count,4);self.assertTrue(r['usage']['fallback'])
+  self.assertEqual(json.loads(send.call_args.args[0].data)['model'],p.AUDIT_MODEL)
+  self.assertEqual(p.ROLE_MODELS,{'planner':p.FAST_MODEL,'specialist':p.FAST_MODEL,'critic':p.AUDIT_MODEL})
  def test_nonretryable_error_stops(self):
   with patch.object(p,'urlopen',side_effect=self.error(400)) as send:
    with self.assertRaises(p.ProviderFailure):self.call()
@@ -79,10 +81,12 @@ class ProviderTests(unittest.TestCase):
   for error in (ConnectionResetError('private transport'),IncompleteRead(b'private')):
    with self.subTest(error=type(error).__name__),patch.object(p,'urlopen',side_effect=[error,self.ok()]) as send:
     self.assertFalse(self.call()['usage']['fallback']);self.assertEqual(send.call_count,2)
- def test_connection_error_among_429_never_downgrades(self):
-  with patch.object(p,'urlopen',side_effect=[self.error(429),ConnectionResetError('private'),self.error(429)]) as send:
-   with self.assertRaises(p.ProviderFailure) as caught:self.call()
-   self.assertEqual(send.call_count,3);self.assertEqual(caught.exception.statuses,[429,'connection_error',429]);self.assertNotIn('private',str(caught.exception))
+ def test_connection_and_quota_failure_can_use_an_active_reserve(self):
+  with patch.object(p,'urlopen',side_effect=[self.error(429),ConnectionResetError('private'),self.error(429),self.ok()]) as send:
+   response=self.call()
+  self.assertEqual(send.call_count,4);self.assertTrue(response['usage']['fallback'])
+  self.assertEqual(response['usage']['fallback_reason'],'provider_unavailable')
+  self.assertNotIn('private',json.dumps(response))
 
  def test_provider_error_classification_never_copies_message_or_failed_generation(self):
   raw={'error':{'code':'tool_use_failed','message':'controlled-private-message','failed_generation':'controlled-private-generation'}}

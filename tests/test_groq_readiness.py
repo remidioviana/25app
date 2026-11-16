@@ -77,10 +77,10 @@ class GroqReadinessTests(unittest.TestCase):
             report,code=verify(live=True,probe_models=True)
         self.assertEqual(code,2);self.assertIn('absent',report['error']);inference.assert_not_called()
 
-    def test_specialist_cannot_obtain_auditor_fallback_even_if_identifiers_match(self):
+    def test_explicit_no_fallback_preserves_requested_specialist_identity(self):
         error=HTTPError('https://api.groq.com/openai/v1/chat/completions',429,'controlled',{},io.BytesIO(b'private fixture body'))
         with patch.object(provider,'urlopen',side_effect=error) as network:
-            with self.assertRaises(provider.ProviderFailure):provider.respond([],[],model_override=provider.AUDIT_MODEL,role='specialist')
+            with self.assertRaises(provider.ProviderFailure):provider.respond([],[],model_override=provider.AUDIT_MODEL,role='specialist',allow_fallback=False)
         self.assertEqual(network.call_count,1)
 
     def test_strict_distinct_mode_disables_even_auditor_model_downgrade(self):
