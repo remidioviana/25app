@@ -6,6 +6,10 @@ on:
         description: 'Run potentially billable tool roundtrips for all three roles'
         type: boolean
         default: false
+      team_first_five:
+        description: 'Run potentially billable first-five graphs with synthetic inputs and official source RAG'
+        type: boolean
+        default: false
       allow_preview:
         description: 'Explicitly allow configured Preview model'
         type: boolean
@@ -45,11 +49,27 @@ jobs:
           if [ "$PROBE_MODELS" = true ]; then args+=(--probe-models); fi
           if [ "$ALLOW_SHARED_MODELS" = true ]; then args+=(--allow-shared-models); fi
           python scripts/verify_groq.py "${args[@]}"
+      - name: Install graph and public PDF dependencies
+        if: ${{ inputs.team_first_five }}
+        run: python -m pip install -r requirements-agentic.txt -r requirements-documents.txt
+      - name: Verify first-five graphs with live RAG and synthetic domain inputs
+        if: ${{ inputs.team_first_five }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENAI_BASE_URL: https://api.groq.com/openai/v1
+          AGENT_PLANNER_MODEL: ${{ vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_SPECIALIST_MODEL: ${{ vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_AUDITOR_MODEL: ${{ vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
+          AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
+          AGENT_SEMANTIC_SEARCH: '0'
+        run: python scripts/verify_team.py --live --output project/evidence/groq-team-actions.json
       - name: Upload redacted verification report
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: groq-verification
-          path: project/evidence/groq-actions.json
+          path: |
+            project/evidence/groq-actions.json
+            project/evidence/groq-team-actions.json
           if-no-files-found: ignore
           retention-days: 7
