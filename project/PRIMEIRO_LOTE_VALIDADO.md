@@ -33,3 +33,5 @@ Priorizar fonte/trecho exato e documento original nas análises dos cinco; avan�
 O Markdown exportado inclui um índice de afirmações e seus trechos registrados, com texto exato, fonte, data fornecida e data de recuperação quando disponíveis. Referências sem passagem registrada aparecem explicitamente como ausentes. Esse vínculo não verifica suporte factual, autenticidade do documento, aplicabilidade jurídica ou atualização da fonte. Afirmações baseadas na entrada ou em cálculo mantêm a classificação original do modelo.
 
 A contingência de modelos foi publicada separadamente e validada por consulta autenticada, sem nova inferência: [relatório](evidence/groq-fallback-catalogue-verified.json). Ela preserva os papéis padrão; Qwen continua Preview com opt-in.
+
+O índice exportado preserva `doc` e `chunk` quando registrados e inclui SHA-256 do texto UTF-8 exato de cada passagem. O hash identifica o trecho exportado; não certifica o documento original nem sua autenticidade. O registro [de CI](evidence/github-code-checks.json) foi atualizado para a execução 43935644962, no commit 3500354 (207 testes Python), anterior a esta ampliação.

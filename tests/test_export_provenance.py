@@ -47,7 +47,7 @@ class ExportProvenanceTests(unittest.TestCase):
         result={'draft':{'claims':[
             {'text':'Model assertion','basis':'evidence','citations':['doc:0','missing:1']},
             {'text':'User statement','basis':'input','citations':[]}]},
-            'evidence':[{'citation':'doc:0','title':'Agreement clause','text':'Exact recorded clause.','source':'Uploaded agreement',
+            'evidence':[{'citation':'doc:0','doc':'doc','chunk':0,'title':'Agreement clause','text':'Exact recorded clause.','source':'Uploaded agreement',
                          'as_of':'2026-01-01','authorization':'must-not-export'}]}
         links=exports.claim_evidence_links(result)
         self.assertEqual(links[0]['passages'][0]['text'],'Exact recorded clause.')
@@ -61,3 +61,14 @@ class ExportProvenanceTests(unittest.TestCase):
         self.assertIn('Claim-to-passage traceability',text)
         self.assertIn('missing:1',text)
         self.assertNotIn('must-not-export',text)
+
+    def test_passage_fingerprint_tracks_unicode_text_without_normalizing(self):
+        def link(text):
+            return exports.claim_evidence_links({'draft':{'claims':[{'citations':['d:2']}]},
+                'evidence':[{'citation':'d:2','doc':'d','chunk':2,'text':text}]})[0]['passages'][0]
+        import hashlib
+        original=link('Cláusula 2 — obrigação.\n')
+        self.assertEqual(original['doc'],'d')
+        self.assertEqual(original['chunk'],2)
+        self.assertEqual(original['passage_sha256'],hashlib.sha256('Cláusula 2 — obrigação.\n'.encode('utf-8')).hexdigest())
+        self.assertNotEqual(original['passage_sha256'],link('Cláusula 2 — obrigação.')['passage_sha256'])

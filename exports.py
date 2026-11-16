@@ -40,7 +40,9 @@ def claim_evidence_links(result):
             passage={'citation':citation,'recorded_passage_found':item is not None}
             if item is not None:
                 passage.update({key:item[key] for key in
-                    ('title','source','as_of','retrieved_at','text') if key in item})
+                    ('doc','chunk','title','source','as_of','retrieved_at','text') if key in item})
+            if item is not None and isinstance(item.get('text'),str):
+                passage['passage_sha256']=hashlib.sha256(item['text'].encode('utf-8')).hexdigest()
             passages.append(passage)
         links.append({'claim_index':index,'text':claim.get('text'),'basis':claim.get('basis'),
                       'passages':passages,'factual_support_verified':False})
