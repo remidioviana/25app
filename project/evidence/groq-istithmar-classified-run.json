@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-16T11:45:50.735516+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_role_interval_seconds": 15,
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "istithmar",
+      "source_id": "dmcc-charges",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dmcc-charges",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "authority": "Dubai Multi Commodities Centre",
+        "title": "DMCC — Schedule of charges",
+        "started_at": "2026-11-16T11:45:51.852034+00:00",
+        "fetched_at": "2026-11-16T11:45:52.139473+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 641670,
+        "characters": 68139,
+        "raw_sha256": "1186bc866ce71153f4a2d9c06e9b8c6caaadec5bd3451d56067a983fe8ae9a07",
+        "text_sha256": "e231783da71e62883f3e954a08fd5655f83e02aab43730d59a904f6ab47d77ff",
+        "last_modified_header": "Mon, 16 Nov 2026 09:56:45 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "54f37c0e-3a14-407c-8209-617c30db00c9"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 1605
+        }
+      ],
+      "reported_total_tokens": 1605,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 400. Safe provider codes: json_validate_failed, invalid_request_error. Check server configuration and provider access."
+    }
+  ],
+  "verified_at": "2026-11-16T11:46:09.487933+00:00",
+  "reported_total_tokens": 1605,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43860552993"
+}

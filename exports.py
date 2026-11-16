@@ -43,7 +43,7 @@ def markdown(run):
             usage=item.get('usage')
             if not isinstance(usage,dict):usage={}
             roles.append({'role':item.get('role'),'usage':{key:usage[key] for key in
-              ('model','requested_model','provider_reported_model','request_model_after_fallback','model_identity_evidence','response_contract','fallback','fallback_reason','total_tokens') if key in usage}})
+              ('model','requested_model','provider_reported_model','request_model_after_fallback','model_identity_evidence','response_contract','structured_generation_retries','output_token_limit','failed_attempt_usage_unavailable','fallback','fallback_reason','total_tokens') if key in usage}})
         lines+=json_section('Recorded model routing',roles)
     if result.get('retrieval_warnings'):lines+=json_section('Retrieval warnings',result['retrieval_warnings'])
     if result.get('source_reads'):

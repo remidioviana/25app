@@ -35,3 +35,13 @@ O run [43858874377](https://github.com/remidioviana/25app/actions/runs/438588743
 O portfólio diferencia quatro sucessos sintéticos históricos de três sucessos na última tentativa por app. O último estado falho do Munagasah permanece visível, sem ser substituído pelo sucesso anterior. Esses contadores não são aceite do código atual, de caso autêntico, de fluxo primário ou de release.
 
 O classificador de erros passou a reconhecer também códigos fixos de JSON/schema e a conservar tipos seguros mesmo quando o código é desconhecido. A leitura do corpo de erro permanece limitada, agora a 64 KiB: um campo failed_generation maior que 8 KiB truncava o JSON antes de extrair o código. O conteúdo é descartado e nunca aparece no relatório. Testes controlados cobrem essa situação; a causa específica do último HTTP400 depende de outra observação segura.
+
+## Código do erro confirmado e recuperação limitada de geração
+
+O [run isolado 43860552993](https://github.com/remidioviana/25app/actions/runs/43860552993) identificou `json_validate_failed` e `invalid_request_error` no Istithmar. O planner respondeu; o especialista falhou na geração do JSON. Esse código não prova que a regra de negócio, uma taxa oficial ou o conteúdo de uma conclusão estivesse incorreto. Evidência: `project/evidence/groq-istithmar-classified-run.json`.
+
+Somente `HTTP400 + json_validate_failed` pode gerar uma segunda requisição do mesmo papel/modelo/schema, com teto explícito de saída ampliado de 2.200 para 4.096 tokens. A resposta de erro e seu failed_generation nunca são usados como resultado. A segunda resposta precisa passar no mesmo schema, enum e verificação de citações. Não existe terceira tentativa desse mecanismo. HTTP401/403/429 e erro de schema inválido não recebem essa regeneração; fallback de modelo é desabilitado na segunda requisição. A ampliação de saída é uma tentativa de recuperação, não uma conclusão demonstrada sobre a causa do JSON inválido.
+
+Os metadados informam quantidade de regenerações, teto usado e ausência de contagem de tokens da tentativa falha. Tokens reportados não representam necessariamente todo consumo cobrado. O limite de três respostas do especialista e o orçamento de tokens reportados continuam sendo limites lógicos do grafo; cada papel pode realizar uma regeneração adicional somente nesse erro específico.
+
+Três regressões novas verificam recuperação controlada, ausência de repetição para quota/auth/schema e interrupção após segunda falha. A suíte completa passou com **187 testes Python**. O funcionamento real da regeneração exige evidência posterior; estes testes usam respostas controladas.
