@@ -20,6 +20,11 @@ on:
         type: choice
         options: [first-five, himayah, iqamah, istithmar, munagasah, sahil]
         default: first-five
+      exclude_app:
+        description: 'Exclude one app already verified separately from the selected scope'
+        type: choice
+        options: [none, himayah, iqamah, istithmar, munagasah, sahil]
+        default: none
       reviewed_himayah_snapshot:
         description: 'Explicitly use reviewed historical PDPL snapshot for Himayah; not a fresh source read'
         type: boolean
@@ -80,10 +85,12 @@ jobs:
           AGENT_SEMANTIC_SEARCH: '0'
           AGENT_MAX_EVIDENCE_PASSAGES: '2'
           TEAM_APP: ${{ inputs.team_app }}
+          EXCLUDE_APP: ${{ inputs.exclude_app }}
           REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
           args=(--live --output project/evidence/groq-team-actions.json)
           if [ "$TEAM_APP" != first-five ]; then args+=(--app "$TEAM_APP"); fi
+          if [ "$EXCLUDE_APP" != none ]; then args+=(--exclude-app "$EXCLUDE_APP"); fi
           if [ "$REVIEWED_HIMAYAH_SNAPSHOT" = true ]; then args+=(--reviewed-himayah-snapshot); fi
           python scripts/verify_team.py "${args[@]}"
       - name: Upload redacted verification report

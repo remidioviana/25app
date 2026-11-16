@@ -57,3 +57,14 @@ class PortfolioTests(unittest.TestCase):
         product['latest_live_graph_diagnostic_status']='passed'
         product['latest_live_graph_diagnostic_evidence']=['project/evidence/groq-first-five-strict-json-run.json']
         self.assertTrue(any('latest diagnostic status' in e for e in validate_manifest(self.manifest)))
+
+    def test_two_models_across_three_roles_do_not_prove_three_model_graph(self):
+        product=self.manifest['products'][3]
+        product['three_model_graph_diagnostic_verified']=True
+        product['three_model_graph_diagnostic_evidence']=['project/evidence/groq-munagasah-rag-verified.json']
+        self.assertTrue(any('distinct executed identities' in e for e in validate_manifest(self.manifest)))
+    def test_three_model_transport_probe_does_not_prove_a_domain_graph(self):
+        product=self.manifest['products'][0]
+        product['three_model_graph_diagnostic_verified']=True
+        product['three_model_graph_diagnostic_evidence']=['project/evidence/groq-three-model-tool-loops-verified.json']
+        self.assertTrue(any('distinct executed identities' in e for e in validate_manifest(self.manifest)))

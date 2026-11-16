@@ -61,13 +61,15 @@ def paced_roles(seconds):
     finally:provider.respond=original
 
 
-def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15):
+def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None):
+    excluded=set(excluded_apps or [])
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
             'input_kind':'repository synthetic examples, not authentic user documents',
             'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
             'reviewed_himayah_snapshot_requested':reviewed_snapshot,
-            'minimum_role_interval_seconds':min_role_interval_seconds,
+            'minimum_role_interval_seconds':min_role_interval_seconds,'excluded_apps':sorted(excluded),
             'primary_domain_workflows_verified':False,'device_verified':False,'apps':[]}
+    if not excluded<=set(FIRST_FIVE):report['error']='Excluded app must belong to the first lot.';return report,2
     if not live:return report,0
     if not provider.configured():report['error']='Protected provider credential is missing; no network request was made.';return report,2
     if len(provider._get_keys())>3:report['error']='Use no more than three protected credentials for this bounded diagnostic.';return report,2
@@ -89,7 +91,7 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
             db.DB=Path(directory)/'diagnostic.sqlite3';db.init()
             quota_stopped=False
             for agent,(source_id,query) in FIRST_FIVE.items():
-                if app and app!=agent:continue
+                if agent in excluded or app and app!=agent:continue
                 row={'app':agent,'source_id':source_id,'graph_rag_diagnostic_verified':False}
                 report['apps'].append(row)
                 if quota_stopped:
@@ -135,9 +137,10 @@ def main():
     parser.add_argument('--app',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
     parser.add_argument('--reviewed-himayah-snapshot',action='store_true',help='Explicitly use repository-reviewed historical PDPL snapshot; no fresh-fetch claim or silent fallback.')
     parser.add_argument('--min-role-interval-seconds',type=int,default=15,choices=range(0,61),metavar='0..60',help='Diagnostic-only pacing between completed role requests; production defaults are unchanged.')
+    parser.add_argument('--exclude-app',action='append',choices=list(FIRST_FIVE),default=[],help='Skip an app already verified separately; repeat for multiple exclusions.')
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
-    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds)
+    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds,args.exclude_app)
     text=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     if args.output:args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
     print(text,end='');return code

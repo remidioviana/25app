@@ -154,3 +154,7 @@ Antes de inferência, o verificador consulta o catálogo e rejeita modelo ausent
 Qwen aparece com suporte documental a JSON schema estrito; a implementação do auditor aplica o mesmo caminho de dados estruturados para esse ID. Isso é suporte de código e documentação, **não** teste ao vivo ou promoção a Production. Muse Spark Open também consta como Preview/Enterprise no card oficial e foi incluído na guarda de Preview; não é selecionado por esse perfil. O padrão de dois modelos permanece até haver evidência suficiente para uma decisão de implantação.
 
 Validação local deste perfil: 179 testes Python e parsing do YAML aprovados. Um teste novo confirma que Qwen é bloqueado sem a flag de Preview e usa schema estrito quando a avaliação está explicitamente habilitada. Nenhuma credencial é aceita como input do perfil.
+
+## Resultado da avaliação com três IDs
+
+A avaliação de ferramentas 43862526716 e o piloto RAG Munagasah 43862903821 comprovaram respostas de GPT-OSS20B, GPT-OSS120B e Qwen3.8-27B. Arquivos de prova e limites estão em `project/MUNAGASAH_DIAGNOSTICO.md`. O terceiro modelo é Preview; o padrão permanente do código continua com dois IDs de produção. Somente o Munagasah tem, nesta consolidação, prova de grafo por app com os três IDs. A presença de segredo no GitHub e essas execuções não configuram o backend de hospedagem nem publicam aplicativos.

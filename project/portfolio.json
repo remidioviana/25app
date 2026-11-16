@@ -43,7 +43,10 @@
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-strict-json-run.json"
-      ]
+      ],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 2,
@@ -89,7 +92,10 @@
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-strict-json-run.json"
-      ]
+      ],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 3,
@@ -135,7 +141,10 @@
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
         "project/evidence/groq-istithmar-rag-verified.json"
-      ]
+      ],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 4,
@@ -169,12 +178,17 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
+        "project/evidence/groq-munagasah-three-model-rag-verified.json"
       ],
-      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
-      ]
+        "project/evidence/groq-munagasah-three-model-rag-verified.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/groq-munagasah-three-model-rag-verified.json"
+      ],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 5,
@@ -213,7 +227,10 @@
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-strict-json-run.json"
-      ]
+      ],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 6,
@@ -246,7 +263,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 7,
@@ -279,7 +299,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 8,
@@ -312,7 +335,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 9,
@@ -345,7 +371,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 10,
@@ -378,7 +407,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 11,
@@ -411,7 +443,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 12,
@@ -444,7 +479,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 13,
@@ -477,7 +515,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 14,
@@ -510,7 +551,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 15,
@@ -543,7 +587,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 16,
@@ -576,7 +623,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 17,
@@ -609,7 +659,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 18,
@@ -642,7 +695,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 19,
@@ -675,7 +731,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 20,
@@ -708,7 +767,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 21,
@@ -741,7 +803,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 22,
@@ -774,7 +839,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 23,
@@ -807,7 +875,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 24,
@@ -840,7 +911,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
       "order": 25,
@@ -873,7 +947,10 @@
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": []
+      "latest_live_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": false,
+      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     }
   ]
 }

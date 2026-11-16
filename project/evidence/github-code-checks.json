@@ -1,0 +1,66 @@
+{
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43862509559",
+  "source_commit": "51875d23f5053b1c61bf6475b0055e0f58021228",
+  "status": "completed",
+  "conclusion": "success",
+  "started_at": "2026-11-16T11:59:16Z",
+  "finished_at": "2026-11-16T12:00:21Z",
+  "python_tests_passed": 188,
+  "mobile_tests_passed": 48,
+  "mobile_typecheck_passed": true,
+  "mobile_lint_passed": true,
+  "variant_configurations_passed": 25,
+  "provider_inference_performed_by_this_workflow": false,
+  "protected_provider_secrets_mapped": false,
+  "scope": "Offline code/client/backend regressions and configuration only; no signed binary or device acceptance.",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install Python verification dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Backend regressions and portfolio consistency",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install mobile verification dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Mobile typecheck, lint, regressions and 25 variant configurations",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ]
+}

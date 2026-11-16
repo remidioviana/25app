@@ -64,6 +64,20 @@ def validate_manifest(manifest,root=ROOT):
                         and re.fullmatch(r'[0-9a-f]{64}',receipt.get('text_sha256','')) is not None
                         and row.get('primary_domain_workflow_verified') is False)
             if not supported:errors.append(f'{label}: live graph diagnostic has no successful scoped RAG proof for this app.')
+        three_models=product.get('three_model_graph_diagnostic_verified',False)
+        if not isinstance(three_models,bool):errors.append(f'{label}: three-model graph diagnostic must be boolean.')
+        elif three_models:
+            supported=False
+            for path in product.get('three_model_graph_diagnostic_evidence',[]):
+                if not exists(path):continue
+                proof=json.loads((root/path).read_text())
+                for row in proof.get('apps',[]):
+                    roles=row.get('observed_role_models',{})
+                    supported=supported or (row.get('app')==label and row.get('run_status')=='completed'
+                        and row.get('graph_rag_diagnostic_verified') is True and row.get('three_distinct_models_verified') is True
+                        and set(roles)=={'planner','specialist','critic'} and len(set(roles.values()))==3
+                        and row.get('checks',{}).get('no_external_write') is True)
+            if not supported:errors.append(f'{label}: three-model graph diagnostic lacks distinct executed identities for this app.')
         latest=product.get('latest_live_graph_diagnostic_status','not_attempted')
         if latest not in ('passed','failed','not_attempted'):errors.append(f'{label}: invalid latest diagnostic status.')
         elif latest!='not_attempted':
@@ -105,6 +119,7 @@ def main():
         'browser_views':sum(p['browser_views'] for p in products),'native_overview_increments':sum(p['native_increment']=='overview' for p in products),
         'native_flows_verified':sum(p['native_flow_verified'] for p in products),'agents_verified_live':sum(p['agent_verified'] for p in products),
         'synthetic_live_graph_diagnostics_verified':sum(p.get('live_graph_diagnostic_verified',False) for p in products),
+        'three_distinct_model_graph_diagnostics_verified':sum(p.get('three_model_graph_diagnostic_verified',False) for p in products),
         'latest_synthetic_live_graph_diagnostics_passed':sum(p.get('latest_live_graph_diagnostic_status')=='passed' for p in products),
         'public_source_readers_verified':sum(p.get('public_source_read_verified',False) for p in products),
         'primary_domain_integrations_verified':sum(p['integration_verified'] for p in products),'released':sum(p['released'] for p in products),
