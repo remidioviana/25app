@@ -40,6 +40,7 @@ class State(TypedDict,total=False):
     decision:str
     source_reads:list
     verified_model_ids:dict
+    writer_attempts:int
 
 
 def role(name,schema,context,instructions):
@@ -115,13 +116,23 @@ def run(task,spec,check):
         context={'goal':task['goal'],'plan':state['plan'],'input':task['input'],'analysis':state['analysis'],
                  'evidence':state.get('evidence',[]),'retrieval_warnings':state.get('retrieval_warnings',[]),
                  'source_reads':state.get('source_reads',[]),'memory':tools['memory'].invoke({}),'critic_feedback':state.get('critique')}
-        value,updates=ask('specialist',DRAFT,context,state,spec['instructions']+' Every claim must declare its basis as input, calculation or evidence. Evidence claims require exact retrieved citation IDs. Distinguish uncertainty from facts.')
         known={x['citation'] for x in state.get('evidence',[])}
-        for claim in value['claims']:
-            if claim['basis'] not in ('input','calculation','evidence'):raise ValueError('Invalid claim basis')
-            if claim['basis']=='evidence' and not claim['citations']:raise ValueError('Evidence claim without a citation')
-            if any(c not in known for c in claim['citations']):raise ValueError('Citation was not retrieved for this app')
-        return updates|{'draft':value}
+        # Persisted role receipts also bound attempts after a failed node/restart.
+        attempts=max(state.get('writer_attempts',0),sum(e['phase']=='specialist' for e in db.get(run_id)['events']))
+        working=state.copy()
+        while attempts<3:
+            value,updates=ask('specialist',DRAFT,context,working,spec['instructions']+' Every claim must declare its basis as input, calculation or evidence. Evidence claims require exact retrieved citation IDs. Distinguish uncertainty from facts. Correct any validation_feedback; omit unsupported claims rather than invent citations.')
+            working.update(updates);attempts+=1
+            issue=None
+            for claim in value['claims']:
+                if claim['basis'] not in ('input','calculation','evidence'):issue='Invalid claim basis';break
+                if claim['basis']=='evidence' and not claim['citations']:issue='Evidence claim without a citation';break
+                if any(c not in known for c in claim['citations']):issue='Citation was not retrieved for this app';break
+            if issue is None:return updates|{'draft':value,'writer_attempts':attempts}
+            log('draft_rejected',{'attempt':attempts,'reason':issue,'draft_hash':db.digest(value)})
+            if attempts>=3:raise ValueError(issue+'; specialist attempt limit reached')
+            context['validation_feedback']={'issue':issue,'instruction':'Use only citation IDs present in supplied evidence. Input claims use input; calculations use calculation. Remove unsupported evidence claims. Return the complete corrected draft.'}
+        raise ValueError('Specialist attempt limit reached; create a new task to retry.')
     def critique(state):
         value,updates=ask('critic',CRITIC,{'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
           'draft':state['draft'],'evidence':state.get('evidence',[])},state,
@@ -131,7 +142,7 @@ def run(task,spec,check):
     def decide(state):
         checked()
         if state['critique']['verdict']=='accept':return 'finish'
-        if state['revision']>=3:return 'finish'
+        if state['revision']>=3 or state.get('writer_attempts',0)>=3:return 'finish'
         return 'retrieve_again' if state['critique']['verdict']=='needs_evidence' else 'write'
     def finish(state):
         checked()
@@ -160,6 +171,7 @@ def run(task,spec,check):
       'analysis':state['analysis'],'narrative':state['draft']['summary'],'draft':state['draft'],'plan':state['plan'],
       'critique':state['critique'],'decision':state['decision'],'evidence':state.get('evidence',[]),
       'retrieval_warnings':state.get('retrieval_warnings',[]),'usage':state.get('roles',[]),
+      'writer_attempts':state.get('writer_attempts',0),
       'source_reads':state.get('source_reads',[]),'external_reads_performed':bool(state.get('source_reads')),
       'verified_model_ids':state.get('verified_model_ids'),
       'input_hash':db.digest(task['input']),'analysis_hash':db.digest(state['analysis']),

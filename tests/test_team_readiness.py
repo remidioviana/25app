@@ -37,3 +37,21 @@ class TeamReadinessTests(unittest.TestCase):
    if change=='role':result['usage'].pop()
    else:result['usage'][0]['usage'].pop('provider_reported_model')
    with self.subTest(change=change),self.assertRaises(ValueError):assess(result,original,analysis)
+
+
+class DiagnosticPacingTests(unittest.TestCase):
+ def test_role_requests_are_spaced_and_original_transport_is_restored(self):
+  from scripts.verify_team import paced_roles
+  import model_provider as provider
+  with patch.object(provider,'respond',return_value={'controlled':True}) as original,patch('scripts.verify_team.time.monotonic',side_effect=[10,10,25]),patch('scripts.verify_team.time.sleep') as pause:
+   with paced_roles(15):
+    self.assertEqual(provider.respond([],[],role='critic'),{'controlled':True})
+    provider.respond([],[],role='specialist')
+   self.assertIs(provider.respond,original);self.assertEqual(original.call_count,2);pause.assert_called_once_with(15)
+ def test_failed_role_restores_transport_without_automatic_retry(self):
+  from scripts.verify_team import paced_roles
+  import model_provider as provider
+  with patch.object(provider,'respond',side_effect=RuntimeError('controlled quota')) as original:
+   with self.assertRaises(RuntimeError):
+    with paced_roles(15):provider.respond([],[])
+   self.assertIs(provider.respond,original);self.assertEqual(original.call_count,1)

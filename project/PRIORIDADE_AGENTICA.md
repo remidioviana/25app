@@ -48,3 +48,7 @@ A meta de cinco por dia continua organização de trabalho, não autorização p
 Os envios foram pausados para ler e incorporar os novos requisitos. A revisão em três frentes e os relatórios de teste antecedem a retomada da publicação incremental pelo coordenador. O commit-base anterior a esta rodada é `d69ec381e13bb36073d10801936964ff6773d9f7`; o envio atual deve ser confirmado pelo hash remoto, não presumido por este documento.
 
 Nenhum dos 25 produtos é declarado pronto para produção. Publicar código-fonte e evidências parciais não converte testes controlados em inferência real ou leitores públicos em fluxos primários concluídos.
+
+## Diagnóstico integrado real, separado do aceite primário
+
+O [run 43856663815](https://github.com/remidioviana/25app/actions/runs/43856663815) concluiu o grafo Munagasah com eSupply, BM25, duas citações, recomputação da ferramenta e três papéis usando dois IDs de modelo. Evidência: `project/evidence/groq-munagasah-rag-verified.json`; limites e recuperação: `project/MUNAGASAH_DIAGNOSTICO.md`. O portfólio conta esse resultado em `live_graph_diagnostic_verified`, separado de fluxo primário e release. O lote posterior 43856855111 não passou; erro de citação no Himayah e quota no Iqamah permanecem registrados. As próximas tentativas usam correção de citações limitada e espaçamento entre papéis, sem aceitar citações inválidas nem prometer quota suficiente.

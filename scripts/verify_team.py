@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -41,19 +43,40 @@ def assess(result,original_input,expected_analysis):
             'factual_correctness_verified':False,'primary_domain_workflow_verified':False}
 
 
-def verify(live=False,app=None,reviewed_snapshot=False):
+@contextmanager
+def paced_roles(seconds):
+    """Single-process diagnostic pacing; never changes production runtime defaults."""
+    if type(seconds) is not int or not 0<=seconds<=60:raise ValueError('Role request interval must be an integer from 0 to 60 seconds.')
+    original=provider.respond
+    last_finished=None
+    def call(*args,**kwargs):
+        nonlocal last_finished
+        if last_finished is not None:
+            wait=seconds-(time.monotonic()-last_finished)
+            if wait>0:time.sleep(wait)
+        try:return original(*args,**kwargs)
+        finally:last_finished=time.monotonic()
+    provider.respond=call
+    try:yield
+    finally:provider.respond=original
+
+
+def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15):
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
             'input_kind':'repository synthetic examples, not authentic user documents',
             'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
             'reviewed_himayah_snapshot_requested':reviewed_snapshot,
+            'minimum_role_interval_seconds':min_role_interval_seconds,
             'primary_domain_workflows_verified':False,'device_verified':False,'apps':[]}
     if not live:return report,0
     if not provider.configured():report['error']='Protected provider credential is missing; no network request was made.';return report,2
+    if len(provider._get_keys())>3:report['error']='Use no more than three protected credentials for this bounded diagnostic.';return report,2
     from urllib.parse import urlsplit
-    base=urlsplit(provider._base_url())
+    try:
+        base=urlsplit(provider._base_url());provider.role_models()
+    except ValueError as exc:report['error']=str(exc);return report,2
     if base.hostname!='api.groq.com' or base.port not in (None,443) or base.path!='/openai/v1':
         report['error']='Only the official Groq HTTPS API base is accepted; no credential was sent.';return report,2
-    provider.role_models()
     import advanced
     import agent_runtime as engine
     import source_tools
@@ -62,7 +85,7 @@ def verify(live=False,app=None,reviewed_snapshot=False):
     if not advanced.available():report['error']='Install requirements-agentic.txt before live verification.';return report,2
     old_db=db.DB
     try:
-        with tempfile.TemporaryDirectory(prefix='25app-team-') as directory:
+        with tempfile.TemporaryDirectory(prefix='25app-team-') as directory,paced_roles(min_role_interval_seconds):
             db.DB=Path(directory)/'diagnostic.sqlite3';db.init()
             quota_stopped=False
             for agent,(source_id,query) in FIRST_FIVE.items():
@@ -87,6 +110,7 @@ def verify(live=False,app=None,reviewed_snapshot=False):
                     run,_=db.create(agent,goal,data,'team',True,None)
                     engine.execute(run);record=db.get(run);row['run_status']=record['status']
                     role_events=[e for e in record['events'] if e['phase'] in ('planner','specialist','critic')]
+                    row['validation_rejections']=sum(e['phase']=='draft_rejected' for e in record['events'])
                     row['completed_roles']=[e['phase'] for e in role_events]
                     row['completed_role_details']=[{'role':e['phase'],'provider_reported_model':e['detail'].get('usage',{}).get('provider_reported_model'),
                         'response_contract':e['detail'].get('usage',{}).get('response_contract'),'reported_total_tokens':e['detail'].get('usage',{}).get('total_tokens',0)} for e in role_events]
@@ -109,9 +133,10 @@ def main():
     parser.add_argument('--live',action='store_true',help='Permit public source reads and potentially billable graph inference (up to seven role calls per app).')
     parser.add_argument('--app',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
     parser.add_argument('--reviewed-himayah-snapshot',action='store_true',help='Explicitly use repository-reviewed historical PDPL snapshot; no fresh-fetch claim or silent fallback.')
+    parser.add_argument('--min-role-interval-seconds',type=int,default=15,choices=range(0,61),metavar='0..60',help='Diagnostic-only pacing between completed role requests; production defaults are unchanged.')
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
-    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot)
+    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds)
     text=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     if args.output:args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
     print(text,end='');return code

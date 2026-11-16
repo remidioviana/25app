@@ -1,0 +1,95 @@
+{
+  "checked_at": "2026-11-16T11:19:28.289909+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply — Procurement portal information",
+        "started_at": "2026-11-16T11:19:29.536381+00:00",
+        "fetched_at": "2026-11-16T11:19:30.088812+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "9cbccbc1-8531-4697-9e78-0ca7ecf62a31"
+      },
+      "run_status": "completed",
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 921
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 2561
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "reported_total_tokens": 2612
+        }
+      ],
+      "reported_total_tokens": 6094,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": false,
+      "retrieved_passages": 2,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "model_review_decision": "reviewed_by_model",
+      "artifact_sha256": "1b642be5f7841904518c93c1ace355bab9f01ac17dda005a5bfe601ce16d2779",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "verified_at": "2026-11-16T11:19:34.369767+00:00",
+  "reported_total_tokens": 6094,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43856663815"
+}

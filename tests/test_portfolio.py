@@ -40,3 +40,14 @@ class PortfolioTests(unittest.TestCase):
         product['public_source_read_verified']=True
         product['public_source_read_evidence']=['project/evidence/public-source-reads.json']
         self.assertTrue(any('receipt for this app' in e for e in validate_manifest(self.manifest)))
+
+    def test_other_apps_live_graph_cannot_validate_an_untested_app(self):
+        product=self.manifest['products'][0]
+        product['live_graph_diagnostic_verified']=True
+        product['live_graph_diagnostic_evidence']=['project/evidence/groq-munagasah-rag-verified.json']
+        self.assertTrue(any('successful scoped RAG proof' in e for e in validate_manifest(self.manifest)))
+    def test_tool_transport_probe_is_not_graph_rag_proof(self):
+        product=self.manifest['products'][3]
+        product['live_graph_diagnostic_verified']=True
+        product['live_graph_diagnostic_evidence']=['project/evidence/groq-live-tool-probes.json']
+        self.assertTrue(any('successful scoped RAG proof' in e for e in validate_manifest(self.manifest)))

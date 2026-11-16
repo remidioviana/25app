@@ -1,0 +1,123 @@
+{
+  "checked_at": "2026-11-16T11:20:36.802669+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": true,
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "himayah",
+      "source_id": "uae-pdpl",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "status": "imported_reviewed_snapshot",
+        "imported_at": "2026-11-16T11:20:37.610264+00:00",
+        "original_fetched_at": "2026-11-16T11:03:31.796948+00:00",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "original_raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "characters": 44406,
+        "document_id": "92787bae-34cc-4d4b-ad68-92b63018bb4c",
+        "external_read": false,
+        "external_write": false,
+        "fresh_source_fetch_verified": false,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "warning": "Repository-reviewed historical snapshot, not a fresh HTTP retrieval or legal currency verification."
+      },
+      "run_status": "failed",
+      "completed_roles": [
+        "planner",
+        "specialist"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 1551
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 3249
+        }
+      ],
+      "reported_total_tokens": 4800,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Evidence claim without a citation"
+    },
+    {
+      "app": "iqamah",
+      "source_id": "icp-golden-residency",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "title": "ICP — Golden Residency service information",
+        "started_at": "2026-11-16T11:20:41.591300+00:00",
+        "fetched_at": "2026-11-16T11:20:44.161362+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 227422,
+        "characters": 18640,
+        "raw_sha256": "41b2d878d954aaad2983337d1fa549750c037a75fee6c876cf8b8583d879d95e",
+        "text_sha256": "0fb68274efcbe13495e623462868ecb8b62bcb8a275f651f479b023853c0ba31",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "9faf4d5c-5c44-454d-917f-c7de10660e50"
+      },
+      "run_status": "failed",
+      "completed_roles": [
+        "planner"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "tools",
+          "reported_total_tokens": 1554
+        }
+      ],
+      "reported_total_tokens": 1554,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 429. Safe provider codes: rate_limit_exceeded. Retry after 12 seconds. Check server configuration and provider access."
+    },
+    {
+      "app": "istithmar",
+      "source_id": "dmcc-charges",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    },
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    },
+    {
+      "app": "sahil",
+      "source_id": "dewa-move-in",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    }
+  ],
+  "verified_at": "2026-11-16T11:20:47.905927+00:00",
+  "reported_total_tokens": 6354,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43856855111"
+}

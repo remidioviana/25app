@@ -44,6 +44,26 @@ def validate_manifest(manifest,root=ROOT):
                     match=re.search(r'const (?:titles|screens)=(\[.*?\]);',source_path.read_text(),re.S)
                     if not match or ast.literal_eval(match[1])!=[s['title'] for s in screens]:errors.append(f'{label}: screen inventory differs from prototype.')
         elif product.get('design_unit')=='pending' and product.get('browser_views')!=0:errors.append(f'{label}: pending unit cannot claim delivered views.')
+        diagnostic=product.get('live_graph_diagnostic_verified',False)
+        if not isinstance(diagnostic,bool):errors.append(f'{label}: live graph diagnostic must be boolean.')
+        if diagnostic:
+            supported=False
+            for path in product.get('live_graph_diagnostic_evidence',[]):
+                if not exists(path):continue
+                proof=json.loads((root/path).read_text())
+                for row in proof.get('apps',[]):
+                    checks=row.get('checks',{})
+                    roles=row.get('observed_role_models',{})
+                    receipt=row.get('source_receipt',{})
+                    supported=supported or (row.get('app')==label and row.get('run_status')=='completed'
+                        and row.get('graph_rag_diagnostic_verified') is True
+                        and all(checks.get(key) is True for key in ('synthetic_input_preserved','domain_tool_recomputed','evidence_retrieved','retrieved_evidence_cited','three_roles_responded','no_external_write'))
+                        and set(roles)=={'planner','specialist','critic'} and all(isinstance(m,str) and m for m in roles.values())
+                        and row.get('retrieved_passages',0)>0 and row.get('cited_passages',0)>0
+                        and receipt.get('status') in ('retrieved','imported_reviewed_snapshot')
+                        and re.fullmatch(r'[0-9a-f]{64}',receipt.get('text_sha256','')) is not None
+                        and row.get('primary_domain_workflow_verified') is False)
+            if not supported:errors.append(f'{label}: live graph diagnostic has no successful scoped RAG proof for this app.')
         native=product.get('native_increment','none')
         if product.get('public_source_read_verified'):
             valid=False
@@ -72,6 +92,7 @@ def main():
     print(json.dumps({'products':len(products),'design_in_progress':sum(p['design_unit']=='in_progress' for p in products),'design_foundations':sum(p['design_unit']=='foundation' for p in products),
         'browser_views':sum(p['browser_views'] for p in products),'native_overview_increments':sum(p['native_increment']=='overview' for p in products),
         'native_flows_verified':sum(p['native_flow_verified'] for p in products),'agents_verified_live':sum(p['agent_verified'] for p in products),
+        'synthetic_live_graph_diagnostics_verified':sum(p.get('live_graph_diagnostic_verified',False) for p in products),
         'public_source_readers_verified':sum(p.get('public_source_read_verified',False) for p in products),
         'primary_domain_integrations_verified':sum(p['integration_verified'] for p in products),'released':sum(p['released'] for p in products),
         'note':'Artifact consistency only; local prototypes and bundles are not live/device validation.'},indent=2))

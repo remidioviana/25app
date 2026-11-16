@@ -13,8 +13,7 @@ native Evidence panel. The tool-calling and team runtimes can request permitted
 source reads, preserve provenance and exclude superseded source versions from
 current retrieval. These are partial capabilities, not completed primary agents.
 
-The default runtime has three roles and two distinct model IDs. Live model calls
-were not validated in this environment. No government submission, financial write,
+The default runtime has three roles and two distinct model IDs. Protected GitHub Actions runs verified live tool roundtrips and a synthetic Munagasah graph with official-source RAG; see [live evidence](project/evidence/groq-munagasah-rag-verified.json). These checks do not validate authentic customer cases or three distinct models. No government submission, financial write,
 booking, signed app or complete primary live-agent workflow is claimed. See the
 [integrated verification report](project/VERIFICACAO_INTEGRADA.md).
 
@@ -65,7 +64,7 @@ Set server environment variables before starting Python (the application does no
 - Planner and Specialist: `openai/gpt-oss-20b`.
 - Auditor: `openai/gpt-oss-120b`.
 
-The transport rotates the starting key on each request, tries each distinct key at most once per model pass, and sanitizes errors. Only the Auditor may downgrade to GPT-OSS20B in non-strict mode, and only after every distinct key returns HTTP 429. Authentication, mixed HTTP failures and connection failures do not trigger a model downgrade. `respond(..., model_override=...)` routes each role explicitly. Tests use fictional keys and controlled HTTP responses; no live provider verification is claimed.
+The transport rotates the starting key on each request, tries each distinct key at most once per model pass, and sanitizes errors. Only the Auditor may downgrade to GPT-OSS20B in non-strict mode, and only after every distinct key returns HTTP 429. Authentication, mixed HTTP failures and connection failures do not trigger a model downgrade. `respond(..., model_override=...)` routes each role explicitly. Unit tests use fictional keys and controlled HTTP responses. Separate live evidence is recorded explicitly; GPT-OSS reviewer decisions now use strict JSON schema while planner/specialist retain tool calling.
 
 Role IDs are configurable through `AGENT_PLANNER_MODEL`, `AGENT_SPECIALIST_MODEL`, and `AGENT_AUDITOR_MODEL`. `AGENT_REQUIRE_DISTINCT_MODELS=1` rejects duplicate configured or provider-reported identities. The defaults contain two distinct models, not three. See [secure Groq setup](project/GROQ_CONEXAO_SEGURA.md) for the protected secret and manual Actions verifier. Catalogue reading is separate from optional, potentially billable inference probes.
 
