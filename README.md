@@ -13,9 +13,13 @@ native Evidence panel. The tool-calling and team runtimes can request permitted
 source reads, preserve provenance and exclude superseded source versions from
 current retrieval. These are partial capabilities, not completed primary agents.
 
-The default runtime has three roles and two distinct model IDs. Protected GitHub Actions runs verified live tool roundtrips and synthetic Munagasah and Sahil graphs with official-source RAG; see [live evidence](project/evidence/groq-munagasah-rag-verified.json). These checks do not validate authentic customer cases or three distinct models. No government submission, financial write,
-booking, signed app or complete primary live-agent workflow is claimed. See the
-[integrated verification report](project/VERIFICACAO_INTEGRADA.md).
+The first five apps have recorded live Groq RAG diagnostics with three distinct
+provider-reported model IDs in an explicit Preview evaluation profile. Inputs were
+synthetic examples; all five results required human review. The default runtime
+still uses two Production model IDs across three roles. See the
+[first-lot evidence and remaining gates](project/PRIMEIRO_LOTE_VALIDADO.md).
+No primary customer workflow, permanent backend deployment, signed app or release
+is claimed.
 
 ## New design program — incremental delivery
 

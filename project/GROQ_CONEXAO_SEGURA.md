@@ -158,3 +158,7 @@ Validação local deste perfil: 179 testes Python e parsing do YAML aprovados. U
 ## Resultado da avaliação com três IDs
 
 A avaliação de ferramentas 43862526716 e o piloto RAG Munagasah 43862903821 comprovaram respostas de GPT-OSS20B, GPT-OSS120B e Qwen3.8-27B. Arquivos de prova e limites estão em `project/MUNAGASAH_DIAGNOSTICO.md`. O terceiro modelo é Preview; o padrão permanente do código continua com dois IDs de produção. Somente o Munagasah tem, nesta consolidação, prova de grafo por app com os três IDs. A presença de segredo no GitHub e essas execuções não configuram o backend de hospedagem nem publicam aplicativos.
+
+## Primeiro lote: resultado consolidado
+
+Himayah, Iqamah, Istithmar, Munagasah e Sahil possuem agora prova individual de grafo com os três IDs do perfil de avaliação, não apenas o probe de transporte. Todos terminaram com revisão humana. O padrão permanente continua com dois IDs de produção e Qwen continua Preview. Ver `project/PRIMEIRO_LOTE_VALIDADO.md` para fontes, runs e portões ainda pendentes; nenhuma implantação ou release é inferida desses testes.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_state": "Reviewed incremental source; primary domain workflows and live model validation remain incomplete",
+  "publication_state": "First-five synthetic RAG graph evaluations observed with three distinct model IDs including Qwen Preview; authentic primary workflows, permanent deployment and releases remain incomplete",
   "products": [
     {
       "order": 1,
@@ -89,14 +89,16 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
       ],
-      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-remaining-four-three-model-rag.json"
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
+      ],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
@@ -226,14 +228,16 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
       ],
-      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-remaining-four-three-model-rag.json"
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
+      ],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {

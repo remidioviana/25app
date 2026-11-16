@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T11:33:51.463412+00:00",
+  "checked_at": "2026-11-16T12:41:57.827797+00:00",
   "scope": "Source audit, not completed live-agent acceptance",
   "products": [
     {
@@ -32,7 +32,7 @@
         "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
-      "live_model_calls_verified": false,
+      "live_model_calls_verified": true,
       "primary_workflow_verified": false,
       "external_write_connected": false,
       "blockers": [
@@ -41,7 +41,17 @@
         "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
         "Native end-to-end and required external operation acceptance pending"
       ],
-      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
+      "live_model_calls_scope": "Synthetic Preview evaluation graph completed; requires human review; not primary acceptance or permanent deployment",
+      "live_model_calls_evidence": [
+        "project/evidence/groq-remaining-four-three-model-rag.json"
+      ],
+      "evaluation_observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-120b",
+        "critic": "qwen/qwen3.8-27b"
+      },
+      "evaluation_model_review_decision": "requires_human_review"
     },
     {
       "order": 2,
@@ -84,10 +94,16 @@
         "Native end-to-end and required external operation acceptance pending"
       ],
       "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
-      "live_model_calls_scope": "synthetic diagnostic; accepted roles: planner; failed; not primary workflow acceptance",
+      "live_model_calls_scope": "Synthetic Preview evaluation graph completed; requires human review; not primary acceptance or permanent deployment",
       "live_model_calls_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
-      ]
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
+      ],
+      "evaluation_observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-120b",
+        "critic": "qwen/qwen3.8-27b"
+      },
+      "evaluation_model_review_decision": "requires_human_review"
     },
     {
       "order": 3,
@@ -134,10 +150,16 @@
         "Native end-to-end and required external operation acceptance pending"
       ],
       "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
-      "live_model_calls_scope": "synthetic diagnostic; accepted roles: planner; failed; not primary workflow acceptance",
+      "live_model_calls_scope": "Synthetic Preview evaluation graph completed; requires human review; not primary acceptance or permanent deployment",
       "live_model_calls_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
-      ]
+        "project/evidence/groq-remaining-four-three-model-rag.json"
+      ],
+      "evaluation_observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-120b",
+        "critic": "qwen/qwen3.8-27b"
+      },
+      "evaluation_model_review_decision": "requires_human_review"
     },
     {
       "order": 4,
@@ -184,10 +206,16 @@
         "Native end-to-end and required external operation acceptance pending"
       ],
       "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
-      "live_model_calls_scope": "synthetic diagnostic; accepted roles: planner, specialist, critic; completed; not primary workflow acceptance",
+      "live_model_calls_scope": "Synthetic Preview evaluation graph completed; requires human review; not primary acceptance or permanent deployment",
       "live_model_calls_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
-      ]
+        "project/evidence/groq-munagasah-three-model-rag-verified.json"
+      ],
+      "evaluation_observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-120b",
+        "critic": "qwen/qwen3.8-27b"
+      },
+      "evaluation_model_review_decision": "requires_human_review"
     },
     {
       "order": 5,
@@ -230,10 +258,16 @@
         "Native end-to-end and required external operation acceptance pending"
       ],
       "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
-      "live_model_calls_scope": "synthetic diagnostic; accepted roles: planner, specialist, critic, specialist, critic, specialist, critic; completed; not primary workflow acceptance",
+      "live_model_calls_scope": "Synthetic Preview evaluation graph completed; requires human review; not primary acceptance or permanent deployment",
       "live_model_calls_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
-      ]
+        "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
+      ],
+      "evaluation_observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-120b",
+        "critic": "qwen/qwen3.8-27b"
+      },
+      "evaluation_model_review_decision": "requires_human_review"
     },
     {
       "order": 6,
