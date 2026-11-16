@@ -15,6 +15,10 @@ on:
         type: choice
         options: [first-five, himayah, iqamah, istithmar, munagasah, sahil]
         default: first-five
+      reviewed_himayah_snapshot:
+        description: 'Explicitly use reviewed historical PDPL snapshot for Himayah; not a fresh source read'
+        type: boolean
+        default: false
       allow_preview:
         description: 'Explicitly allow configured Preview model'
         type: boolean
@@ -69,9 +73,11 @@ jobs:
           AGENT_SEMANTIC_SEARCH: '0'
           AGENT_MAX_EVIDENCE_PASSAGES: '2'
           TEAM_APP: ${{ inputs.team_app }}
+          REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
           args=(--live --output project/evidence/groq-team-actions.json)
           if [ "$TEAM_APP" != first-five ]; then args+=(--app "$TEAM_APP"); fi
+          if [ "$REVIEWED_HIMAYAH_SNAPSHOT" = true ]; then args+=(--reviewed-himayah-snapshot); fi
           python scripts/verify_team.py "${args[@]}"
       - name: Upload redacted verification report
         if: always()

@@ -41,10 +41,11 @@ def assess(result,original_input,expected_analysis):
             'factual_correctness_verified':False,'primary_domain_workflow_verified':False}
 
 
-def verify(live=False,app=None):
+def verify(live=False,app=None,reviewed_snapshot=False):
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
             'input_kind':'repository synthetic examples, not authentic user documents',
-            'retrieval_mode':'BM25 over freshly retrieved fixed official sources; no embedding calls',
+            'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
+            'reviewed_himayah_snapshot_requested':reviewed_snapshot,
             'primary_domain_workflows_verified':False,'device_verified':False,'apps':[]}
     if not live:return report,0
     if not provider.configured():report['error']='Protected provider credential is missing; no network request was made.';return report,2
@@ -71,10 +72,14 @@ def verify(live=False,app=None):
                 if quota_stopped:
                     row['error']='Not attempted after a provider quota failure; wait before another run.';continue
                 try:
-                    source=source_tools.refresh(source_id,agent);row['source_receipt']=source['receipt']
+                    if reviewed_snapshot and agent=='himayah':
+                        from scripts.reviewed_snapshot import ingest
+                        source=ingest(source_id,agent)
+                    else:source=source_tools.refresh(source_id,agent)
+                    row['source_receipt']=source['receipt']
                     goal=('Integration diagnostic using SYNTHETIC example inputs, not an authentic customer case. '
                           'Execute domain analysis and distinguish it from current official source facts. '
-                          'The public source has already been ingested. Search for '+query+'. '
+                          'The public source has already been ingested. A title marked reviewed snapshot is historical; do not claim it was fetched now or legally current. Search for '+query+'. '
                           'Cite at least one relevant retrieved passage for a narrowly supported source claim. '
                           'Never claim legal applicability, eligibility, live prices or completed external actions. '
                           'Keep your summary and claims short. State limitations and missing information.')
@@ -101,9 +106,10 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--live',action='store_true',help='Permit public source reads and potentially billable graph inference (up to seven role calls per app).')
     parser.add_argument('--app',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
+    parser.add_argument('--reviewed-himayah-snapshot',action='store_true',help='Explicitly use repository-reviewed historical PDPL snapshot; no fresh-fetch claim or silent fallback.')
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
-    report,code=verify(args.live,args.app)
+    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot)
     text=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     if args.output:args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
     print(text,end='');return code
