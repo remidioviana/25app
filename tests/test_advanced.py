@@ -157,3 +157,14 @@ class ReviewerStructuredOutputTests(unittest.TestCase):
         for response in responses:
             with self.subTest(response=response),patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',return_value=response):
                 with self.assertRaises(ValueError):advanced.role('critic',advanced.CRITIC,{},'Audit')
+
+class PreviewReviewerContractTests(unittest.TestCase):
+    def test_preview_reviewer_requires_explicit_flag_and_uses_strict_json(self):
+        value={'verdict':'accept','issues':[],'follow_up_queries':[]}
+        with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'qwen/qwen3.8-27b','AGENT_ALLOW_PREVIEW_MODELS':'0'}),patch('model_provider.respond') as model:
+            with self.assertRaisesRegex(ValueError,'Preview'):advanced.role('critic',advanced.CRITIC,{},'Audit')
+            model.assert_not_called()
+        with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'qwen/qwen3.8-27b','AGENT_ALLOW_PREVIEW_MODELS':'1'}),patch('model_provider.respond',return_value={'output_text':json.dumps(value),'output':[],'usage':{}}) as model:
+            actual,_=advanced.role('critic',advanced.CRITIC,{},'Audit')
+            self.assertEqual(actual,value);self.assertEqual(model.call_args.args[1],[])
+            self.assertEqual(model.call_args.kwargs['response_schema'],advanced.CRITIC)

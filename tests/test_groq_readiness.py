@@ -34,9 +34,10 @@ class GroqReadinessTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'distinct'):provider.role_models(require_distinct=True)
 
     def test_preview_and_credential_shaped_model_values_fail_closed_without_leaking(self):
-        with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'qwen/qwen3.8-27b'}):
-            self.assertFalse(provider.configuration_status()['configuration_valid'])
-            with patch.dict(os.environ,{'AGENT_ALLOW_PREVIEW_MODELS':'1'}):self.assertTrue(provider.configuration_status()['configuration_valid'])
+        for model in ('qwen/qwen3.8-27b','meta-models/muse-spark-open'):
+            with self.subTest(model=model),patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':model}):
+                self.assertFalse(provider.configuration_status()['configuration_valid'])
+                with patch.dict(os.environ,{'AGENT_ALLOW_PREVIEW_MODELS':'1'}):self.assertTrue(provider.configuration_status()['configuration_valid'])
         with patch.dict(os.environ,{'AGENT_PLANNER_MODEL':'gsk_TEST'}):
             status=provider.configuration_status();self.assertFalse(status['configuration_valid']);self.assertNotIn('gsk_TEST',json.dumps(status))
 

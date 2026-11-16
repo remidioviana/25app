@@ -6,6 +6,11 @@ on:
         description: 'Run potentially billable tool roundtrips for all three roles'
         type: boolean
         default: false
+      model_profile:
+        description: 'Three-model evaluation uses Qwen Preview; requires allow_preview'
+        type: choice
+        options: [production-default, three-model-evaluation]
+        default: production-default
       team_first_five:
         description: 'Run potentially billable first-five graphs with synthetic inputs and official source RAG'
         type: boolean
@@ -47,10 +52,11 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_BASE_URL: https://api.groq.com/openai/v1
-          AGENT_PLANNER_MODEL: ${{ vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_SPECIALIST_MODEL: ${{ vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_AUDITOR_MODEL: ${{ vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
+          AGENT_PLANNER_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-20b' || vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
           AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
+          AGENT_REQUIRE_DISTINCT_MODELS: ${{ inputs.model_profile == 'three-model-evaluation' && '1' || '0' }}
           PROBE_MODELS: ${{ inputs.probe_models }}
           ALLOW_SHARED_MODELS: ${{ inputs.allow_shared_models }}
         run: |
@@ -66,10 +72,11 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_BASE_URL: https://api.groq.com/openai/v1
-          AGENT_PLANNER_MODEL: ${{ vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_SPECIALIST_MODEL: ${{ vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_AUDITOR_MODEL: ${{ vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
+          AGENT_PLANNER_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-20b' || vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
           AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
+          AGENT_REQUIRE_DISTINCT_MODELS: ${{ inputs.model_profile == 'three-model-evaluation' && '1' || '0' }}
           AGENT_SEMANTIC_SEARCH: '0'
           AGENT_MAX_EVIDENCE_PASSAGES: '2'
           TEAM_APP: ${{ inputs.team_app }}
