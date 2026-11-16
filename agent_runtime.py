@@ -13,7 +13,7 @@ import storage as db
 import model_provider
 import advanced
 import source_tools
-from domain_tools import TOOLS
+from domain_tools import TOOLS, checklist, validate_checklist
 from validation import validate
 
 ROOT=Path(__file__).resolve().parent
@@ -64,6 +64,8 @@ def _execute(run):
     task=db.get(run); agent=task['agent']; spec=SPECS[agent]
     try:
         check(run,lease); validate(task['input'],spec['schema'])
+        # Reject dossier ambiguities before any billable planner/model request.
+        if TOOLS[agent] is checklist:validate_checklist(task['input'])
         if task['mode']=='team':
             result=advanced.run(task,spec,lambda:check(run,lease))
             check(run,lease)

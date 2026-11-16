@@ -12,7 +12,10 @@ def money(n):
 
 
 def day(s):
-    return date.fromisoformat(s)
+    if not isinstance(s,str) or not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}',s):
+        raise ValueError('Use a valid calendar date in YYYY-MM-DD format')
+    try:return date.fromisoformat(s)
+    except ValueError:raise ValueError('Use a valid calendar date in YYYY-MM-DD format') from None
 
 
 def positive(n):
@@ -21,16 +24,45 @@ def positive(n):
     return n
 
 
-def checklist(d):
+def validate_checklist(d):
     as_of = day(d['as_of'])
-    records = {x['name']: x for x in d['documents']}
+    requirements = d['requirements']
+    if not requirements:
+        raise ValueError('Add at least one checklist requirement')
+    names = set()
+    for name in requirements:
+        if not isinstance(name,str) or not name.strip():
+            raise ValueError('Each checklist requirement needs a non-empty name')
+        if name in names:raise ValueError('Remove duplicate checklist requirement names')
+        names.add(name)
+    records = {}
+    for doc in d['documents']:
+        name = doc['name']
+        if not isinstance(name,str) or not name.strip():
+            raise ValueError('Each document needs a non-empty name')
+        if name in records:raise ValueError('Resolve duplicate document names before checking the dossier')
+        if doc['expires']:day(doc['expires'])
+        records[name] = doc
+    return as_of,records
+
+
+def checklist(d):
+    as_of,records = validate_checklist(d)
     rows = []
+    counts = {'missing':0, 'expired':0, 'present_unverified':0}
     for requirement in d['requirements']:
         doc = records.get(requirement)
         status = 'missing' if not doc else ('expired' if doc['expires'] and day(doc['expires']) < as_of else 'present_unverified')
-        rows.append({'requirement': requirement, 'status': status, 'reference': doc['reference'] if doc else None})
-    return {'checks': rows, 'missing': [x['requirement'] for x in rows if x['status'] != 'present_unverified'],
-            'as_of': d['as_of'], 'note': 'User-supplied checklist; document presence does not establish legal eligibility.'}
+        counts[status] += 1
+        rows.append({'requirement': requirement, 'status': status,
+                     'reference': doc['reference'] if doc else None,
+                     'expires': (doc['expires'] or None) if doc else None})
+    return {'checks': rows, 'counts':counts,
+            'missing': [x['requirement'] for x in rows if x['status'] == 'missing'],
+            'expired': [x['requirement'] for x in rows if x['status'] == 'expired'],
+            'requires_attention': [x['requirement'] for x in rows if x['status'] != 'present_unverified'],
+            'as_of': d['as_of'],
+            'note': 'User-supplied checklist. Presence and recorded expiry do not establish authenticity, visa eligibility, legal applicability or approval. Blank expiry is unknown. Names match exactly; missing and expired records remain separate.'}
 
 
 def contract(d):
