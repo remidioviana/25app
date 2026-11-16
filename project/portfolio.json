@@ -35,9 +35,15 @@
       "public_source_read_evidence": [
         "project/evidence/public-source-reads.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ]
     },
     {
       "order": 2,
@@ -75,9 +81,15 @@
       "public_source_read_evidence": [
         "project/evidence/public-source-reads.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ]
     },
     {
       "order": 3,
@@ -116,8 +128,12 @@
         "project/evidence/public-source-reads.json"
       ],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ]
     },
     {
       "order": 4,
@@ -149,9 +165,13 @@
         "project/evidence/public-source-reads.json"
       ],
       "live_graph_diagnostic_verified": true,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-paced-run.json"
+      ],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
       ]
     },
     {
@@ -184,9 +204,13 @@
         "project/evidence/public-source-reads.json"
       ],
       "live_graph_diagnostic_verified": true,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-paced-run.json"
+        "project/evidence/groq-first-five-strict-json-run.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/groq-first-five-strict-json-run.json"
       ]
     },
     {
@@ -217,8 +241,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 7,
@@ -248,8 +274,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 8,
@@ -279,8 +307,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 9,
@@ -310,8 +340,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 10,
@@ -341,8 +373,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 11,
@@ -372,8 +406,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 12,
@@ -403,8 +439,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 13,
@@ -434,8 +472,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 14,
@@ -465,8 +505,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 15,
@@ -496,8 +538,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 16,
@@ -527,8 +571,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 17,
@@ -558,8 +604,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 18,
@@ -589,8 +637,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 19,
@@ -620,8 +670,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 20,
@@ -651,8 +703,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 21,
@@ -682,8 +736,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 22,
@@ -713,8 +769,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 23,
@@ -744,8 +802,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 24,
@@ -775,8 +835,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     },
     {
       "order": 25,
@@ -806,8 +868,10 @@
       "public_source_read_verified": false,
       "public_source_read_evidence": [],
       "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "synthetic integration; not primary workflow acceptance",
-      "live_graph_diagnostic_evidence": []
+      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
+      "live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "not_attempted",
+      "latest_live_graph_diagnostic_evidence": []
     }
   ]
 }

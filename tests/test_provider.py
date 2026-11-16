@@ -117,3 +117,21 @@ class ProviderTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'no tool calls'):
     p.respond([],[{'name':'test','parameters':{}}],response_schema=schema)
    network.assert_not_called()
+
+ def test_json_generation_error_and_safe_type_are_classified_without_raw_values(self):
+  for code in ('json_validate_failed','controlled-private-code'):
+   error=HTTPError('https://api.groq.com',400,'mock',{},io.BytesIO(json.dumps({'error':{'code':code,'type':'invalid_request_error','message':'controlled-private-message','failed_generation':'controlled-private-generation'}}).encode()))
+   with self.subTest(code=code),patch.object(p,'urlopen',side_effect=error):
+    with self.assertRaises(p.ProviderFailure) as caught:self.call()
+   self.assertIn('invalid_request_error',caught.exception.codes)
+   if code=='json_validate_failed':self.assertIn(code,caught.exception.codes)
+   self.assertNotIn('controlled-private',str(caught.exception))
+
+ def test_large_failed_generation_does_not_hide_safe_error_classification(self):
+  raw={'error':{'code':'json_validate_failed','failed_generation':'controlled-private-generation '*1000}}
+  self.assertGreater(len(json.dumps(raw)),8192)
+  error=HTTPError('https://api.groq.com',400,'mock',{},io.BytesIO(json.dumps(raw).encode()))
+  with patch.object(p,'urlopen',side_effect=error):
+   with self.assertRaises(p.ProviderFailure) as caught:self.call()
+  self.assertEqual(caught.exception.codes,['json_validate_failed'])
+  self.assertNotIn('controlled-private',str(caught.exception))

@@ -51,3 +51,9 @@ class PortfolioTests(unittest.TestCase):
         product['live_graph_diagnostic_verified']=True
         product['live_graph_diagnostic_evidence']=['project/evidence/groq-live-tool-probes.json']
         self.assertTrue(any('successful scoped RAG proof' in e for e in validate_manifest(self.manifest)))
+
+    def test_historical_success_cannot_hide_latest_failed_attempt(self):
+        product=self.manifest['products'][3]
+        product['latest_live_graph_diagnostic_status']='passed'
+        product['latest_live_graph_diagnostic_evidence']=['project/evidence/groq-first-five-strict-json-run.json']
+        self.assertTrue(any('latest diagnostic status' in e for e in validate_manifest(self.manifest)))

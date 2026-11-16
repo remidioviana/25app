@@ -134,10 +134,10 @@ def _request(endpoint,payload,keys,method='POST',timeout=60):
             status=exc.code
             # Copy only fixed classifications, never raw messages or failed_generation.
             try:
-                error=json.loads(exc.read(8192)).get('error',{})
-                allowed={'tool_use_failed','invalid_request_error','model_not_found','context_length_exceeded','rate_limit_exceeded','insufficient_quota'}
-                code=error.get('code') or error.get('type')
-                if code in allowed and code not in codes:codes.append(code)
+                error=json.loads(exc.read(65_536)).get('error',{})
+                allowed={'tool_use_failed','invalid_request_error','model_not_found','context_length_exceeded','rate_limit_exceeded','insufficient_quota','json_validate_failed','invalid_json_schema','schema_validation_failed'}
+                for code in (error.get('code'),error.get('type')):
+                    if isinstance(code,str) and code in allowed and code not in codes:codes.append(code)
             except (ValueError,AttributeError,TypeError,UnicodeDecodeError):pass
             value=(exc.headers or {}).get('Retry-After','')
             if isinstance(value,str) and value.isdigit() and 0<=int(value)<=86400:retry_after=int(value)
