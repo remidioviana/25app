@@ -59,6 +59,9 @@ def run(task,spec,check):
     from langchain_tools import build_tools
     from langgraph.checkpoint.sqlite import SqliteSaver
     run_id=task['id'];agent=task['agent'];semantic=os.environ.get('AGENT_SEMANTIC_SEARCH')=='1'
+    try:evidence_limit=int(os.environ.get('AGENT_MAX_EVIDENCE_PASSAGES','6'))
+    except ValueError:raise ValueError('AGENT_MAX_EVIDENCE_PASSAGES must be an integer between 1 and 24.') from None
+    if not 1<=evidence_limit<=24:raise ValueError('AGENT_MAX_EVIDENCE_PASSAGES must be between 1 and 24.')
     tools=build_tools(spec,task['input'],semantic=semantic)
     def checked():check()
     def log(phase,value):checked();db.emit(run_id,phase,value)
@@ -90,7 +93,7 @@ def run(task,spec,check):
             checked();result=tools['search'].invoke({'query':q[:2000] or task['goal'][:2000]});warnings.extend(result['warnings'])
             for x in result['matches']:evidence[x['citation']]=x
         log('retrieving',{'citations':list(evidence),'warnings':warnings,'semantic_requested':semantic})
-        return {'evidence':list(evidence.values())[:24],'retrieval_warnings':warnings,'source_reads':source_reads}
+        return {'evidence':list(evidence.values())[:evidence_limit],'retrieval_warnings':warnings,'source_reads':source_reads}
     def analyze(state):
         checked();value=tools['analyze'].invoke({});log('acting',{'tool':spec['tool'],'output':value,'output_hash':db.digest(value)})
         return {'analysis':value}

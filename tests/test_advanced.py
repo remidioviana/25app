@@ -115,3 +115,11 @@ class LangChainBindingTests(unittest.TestCase):
         data['transactions'][0]['amount']=99999
         self.assertEqual(tools['analyze'].invoke({})['total'],450)
         with self.assertRaises(Exception):tools['analyze'].invoke({'input':{}})
+
+class EvidenceBudgetTests(unittest.TestCase):
+    @unittest.skipUnless(advanced.available(),'LangGraph is not installed')
+    def test_invalid_evidence_limit_fails_before_any_provider_call(self):
+        for limit in ('0','25','private-invalid-value'):
+            with self.subTest(limit=limit),patch.dict(os.environ,{'AGENT_MAX_EVIDENCE_PASSAGES':limit}),patch('model_provider.respond') as model:
+                with self.assertRaises(ValueError) as caught:advanced.run({'id':'test','agent':'himayah'}, {},lambda:None)
+                self.assertNotIn('private-invalid-value',str(caught.exception));model.assert_not_called()

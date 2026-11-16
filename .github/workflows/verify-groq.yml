@@ -10,6 +10,11 @@ on:
         description: 'Run potentially billable first-five graphs with synthetic inputs and official source RAG'
         type: boolean
         default: false
+      team_app:
+        description: 'Integrated diagnostic scope; single app reduces quota consumption'
+        type: choice
+        options: [first-five, himayah, iqamah, istithmar, munagasah, sahil]
+        default: first-five
       allow_preview:
         description: 'Explicitly allow configured Preview model'
         type: boolean
@@ -62,7 +67,12 @@ jobs:
           AGENT_AUDITOR_MODEL: ${{ vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
           AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
           AGENT_SEMANTIC_SEARCH: '0'
-        run: python scripts/verify_team.py --live --output project/evidence/groq-team-actions.json
+          AGENT_MAX_EVIDENCE_PASSAGES: '2'
+          TEAM_APP: ${{ inputs.team_app }}
+        run: |
+          args=(--live --output project/evidence/groq-team-actions.json)
+          if [ "$TEAM_APP" != first-five ]; then args+=(--app "$TEAM_APP"); fi
+          python scripts/verify_team.py "${args[@]}"
       - name: Upload redacted verification report
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

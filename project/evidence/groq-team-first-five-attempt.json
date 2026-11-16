@@ -1,0 +1,155 @@
+{
+  "checked_at": "2026-11-16T10:51:48.089806+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over freshly retrieved fixed official sources; no embedding calls",
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "himayah",
+      "source_id": "uae-pdpl",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Source returned HTTP 403; no authentication or redirect bypass attempted"
+    },
+    {
+      "app": "iqamah",
+      "source_id": "icp-golden-residency",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "title": "ICP — Golden Residency service information",
+        "started_at": "2026-11-16T10:51:49.760065+00:00",
+        "fetched_at": "2026-11-16T10:51:53.298583+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 227422,
+        "characters": 18640,
+        "raw_sha256": "41b2d878d954aaad2983337d1fa549750c037a75fee6c876cf8b8583d879d95e",
+        "text_sha256": "0fb68274efcbe13495e623462868ecb8b62bcb8a275f651f479b023853c0ba31",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "8389a48c-8454-4bfb-b110-4b9fcfcd6521"
+      },
+      "run_status": "failed",
+      "error": "Provider attempts failed: 400. Check server configuration and provider access."
+    },
+    {
+      "app": "istithmar",
+      "source_id": "dmcc-charges",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dmcc-charges",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "authority": "Dubai Multi Commodities Centre",
+        "title": "DMCC — Schedule of charges",
+        "started_at": "2026-11-16T10:51:58.468171+00:00",
+        "fetched_at": "2026-11-16T10:51:58.710462+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 641670,
+        "characters": 68139,
+        "raw_sha256": "1186bc866ce71153f4a2d9c06e9b8c6caaadec5bd3451d56067a983fe8ae9a07",
+        "text_sha256": "e231783da71e62883f3e954a08fd5655f83e02aab43730d59a904f6ab47d77ff",
+        "last_modified_header": "Mon, 16 Nov 2026 09:56:45 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "6693e117-e5ac-4a3e-a166-190b4ca742db"
+      },
+      "run_status": "failed",
+      "error": "Provider attempts failed: 429. Check server configuration and provider access."
+    },
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply — Procurement portal information",
+        "started_at": "2026-11-16T10:52:00.997607+00:00",
+        "fetched_at": "2026-11-16T10:52:01.470542+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "a7fcb195-0cf9-4151-bb53-7c74bc5038de"
+      },
+      "run_status": "failed",
+      "error": "Provider attempts failed: 429. Check server configuration and provider access."
+    },
+    {
+      "app": "sahil",
+      "source_id": "dewa-move-in",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dewa-move-in",
+        "url": "https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in",
+        "authority": "Dubai Electricity and Water Authority",
+        "title": "DEWA — Activation of electricity/water, Move-in",
+        "started_at": "2026-11-16T10:52:03.600189+00:00",
+        "fetched_at": "2026-11-16T10:52:05.086942+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 85842,
+        "characters": 4333,
+        "raw_sha256": "f54feb2f874b5f27a6cfa62020962eb070133724fb94d28f42cf74fc3eded1ae",
+        "text_sha256": "14b677b57f2dab10ce3aac626013a1679e32bcfa8f73896fdb9ec942a520ba22",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "615efeef-5cd8-403b-87ec-2dbcbff4eadb"
+      },
+      "run_status": "failed",
+      "error": "Provider attempts failed: 429. Check server configuration and provider access."
+    }
+  ],
+  "verified_at": "2026-11-16T10:52:07.036018+00:00",
+  "reported_total_tokens": 0,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43852570949"
+}

@@ -63,10 +63,13 @@ def verify(live=False,app=None):
     try:
         with tempfile.TemporaryDirectory(prefix='25app-team-') as directory:
             db.DB=Path(directory)/'diagnostic.sqlite3';db.init()
+            quota_stopped=False
             for agent,(source_id,query) in FIRST_FIVE.items():
                 if app and app!=agent:continue
                 row={'app':agent,'source_id':source_id,'graph_rag_diagnostic_verified':False}
                 report['apps'].append(row)
+                if quota_stopped:
+                    row['error']='Not attempted after a provider quota failure; wait before another run.';continue
                 try:
                     source=source_tools.refresh(source_id,agent);row['source_receipt']=source['receipt']
                     goal=('Integration diagnostic using SYNTHETIC example inputs, not an authentic customer case. '
@@ -78,7 +81,13 @@ def verify(live=False,app=None):
                     data=engine.SPECS[agent]['example']
                     run,_=db.create(agent,goal,data,'team',True,None)
                     engine.execute(run);record=db.get(run);row['run_status']=record['status']
-                    if record['status']!='completed':row['error']=record['error'];continue
+                    role_events=[e for e in record['events'] if e['phase'] in ('planner','specialist','critic')]
+                    row['completed_roles']=[e['phase'] for e in role_events]
+                    row['reported_total_tokens']=sum(e['detail'].get('usage',{}).get('total_tokens',0) for e in role_events)
+                    row['usage_scope']='accepted role results only; failed requests may consume additional quota'
+                    if record['status']!='completed':
+                        row['error']=record['error'];quota_stopped='Provider attempts failed: 429' in (record['error'] or '')
+                        continue
                     row.update(assess(record['result'],data,TOOLS[agent](data)))
                 except (ValueError,RuntimeError,PermissionError) as exc:
                     row['error']=str(exc)

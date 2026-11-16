@@ -118,22 +118,34 @@ def _to_chat_tools(tools):
     return [t if 'function' in t else {'type':'function','function':{'name':t['name'],'description':t.get('description',''),'parameters':t['parameters']}} for t in (tools or [])]
 
 class ProviderFailure(RuntimeError):
-    def __init__(self,statuses):
-        self.statuses=statuses
-        super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'. Check server configuration and provider access.')
+    def __init__(self,statuses,codes=None,retry_after=None):
+        self.statuses=statuses;self.codes=codes or [];self.retry_after=retry_after
+        detail=(' Safe provider codes: '+', '.join(self.codes)+'.') if self.codes else ''
+        wait=(' Retry after '+str(retry_after)+' seconds.') if retry_after is not None else ''
+        super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'.'+detail+wait+' Check server configuration and provider access.')
 
 def _request(endpoint,payload,keys,method='POST',timeout=60):
-    statuses=[]
+    statuses=[];codes=[];retry_after=None
     for key in keys:
         request=Request(_base_url()+endpoint,data=None if method=='GET' else json.dumps(payload,allow_nan=False).encode(),method=method,headers={'Authorization':'Bearer '+key,'Content-Type':'application/json','User-Agent':'MobileAgents/7.0'})
         try:
             with urlopen(request,timeout=timeout) as response:return json.load(response)
         except HTTPError as exc:
-            status=exc.code;exc.close();statuses.append(status)
-            if status not in (401,403,429,500,502,503,504):raise ProviderFailure(statuses) from None
+            status=exc.code
+            # Copy only fixed classifications, never raw messages or failed_generation.
+            try:
+                error=json.loads(exc.read(8192)).get('error',{})
+                allowed={'tool_use_failed','invalid_request_error','model_not_found','context_length_exceeded','rate_limit_exceeded','insufficient_quota'}
+                code=error.get('code') or error.get('type')
+                if code in allowed and code not in codes:codes.append(code)
+            except (ValueError,AttributeError,TypeError,UnicodeDecodeError):pass
+            value=(exc.headers or {}).get('Retry-After','')
+            if isinstance(value,str) and value.isdigit() and 0<=int(value)<=86400:retry_after=int(value)
+            exc.close();statuses.append(status)
+            if status not in (401,403,429,500,502,503,504):raise ProviderFailure(statuses,codes,retry_after) from None
         except (URLError,TimeoutError,ConnectionError,IncompleteRead,RemoteDisconnected):statuses.append('connection_error')
         except (json.JSONDecodeError,UnicodeDecodeError):raise ValueError('Provider returned invalid JSON.') from None
-    raise ProviderFailure(statuses)
+    raise ProviderFailure(statuses,codes,retry_after)
 
 def list_models():
     raw=_request('/models',None,_key_order(),method='GET',timeout=20)

@@ -83,3 +83,16 @@ class ProviderTests(unittest.TestCase):
   with patch.object(p,'urlopen',side_effect=[self.error(429),ConnectionResetError('private'),self.error(429)]) as send:
    with self.assertRaises(p.ProviderFailure) as caught:self.call()
    self.assertEqual(send.call_count,3);self.assertEqual(caught.exception.statuses,[429,'connection_error',429]);self.assertNotIn('private',str(caught.exception))
+
+ def test_provider_error_classification_never_copies_message_or_failed_generation(self):
+  raw={'error':{'code':'tool_use_failed','message':'controlled-private-message','failed_generation':'controlled-private-generation'}}
+  error=HTTPError('https://api.groq.com',400,'mock',{'Retry-After':'12'},io.BytesIO(json.dumps(raw).encode()))
+  with patch.object(p,'urlopen',side_effect=error):
+   with self.assertRaises(p.ProviderFailure) as caught:self.call()
+  self.assertEqual(caught.exception.codes,['tool_use_failed']);self.assertEqual(caught.exception.retry_after,12)
+  self.assertNotIn('controlled-private',str(caught.exception))
+ def test_unknown_provider_error_code_is_not_echoed(self):
+  error=HTTPError('https://api.groq.com',400,'mock',{},io.BytesIO(json.dumps({'error':{'code':'controlled-private-code'}}).encode()))
+  with patch.object(p,'urlopen',side_effect=error):
+   with self.assertRaises(p.ProviderFailure) as caught:self.call()
+  self.assertEqual(caught.exception.codes,[]);self.assertNotIn('controlled-private',str(caught.exception))
