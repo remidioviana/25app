@@ -9,6 +9,7 @@ Module._load=function(name,parent,isMain){
  if(name==='react-native-svg')return {__esModule:true,default:element('svg'),Circle:()=>React.createElement('circle')};
  if(name==='../src/AppState')return {spec:require(path.join(root,'agents',id,'agent.json')),useApp:()=>({draft,setDraft:()=>{}})};
  if(name==='../src/validateInput')return validator.exports;
+ if(name==='./IqamahDossier'||name==='../src/dossier'){const filename=path.join(root,name==='./IqamahDossier'?'mobile/components/IqamahDossier.tsx':'mobile/src/dossier.ts');const child=new Module(filename,module);child.filename=filename;child.paths=module.paths;child._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText,filename);return child.exports;}
  if(name==='../src/brand')return {brandId:id};
  if(name==='../src/theme')return {styles:{},colors:{accent:'#059669'}};
  if(name==='./Controls')return {Button:({title})=>React.createElement('button',{},title)};

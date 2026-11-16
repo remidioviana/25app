@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Iqamah AI mobile design: prepare a visa dossier against a supplied checklist. No eligibility determination or official submission.">
+  <title>Iqamah AI — your dossier, in order</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="engine.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="studio" aria-label="Prototype inspection controls">
+    <label for="screen">Screen reference<select id="screen"></select></label>
+    <label for="platform">Platform<select id="platform"><option value="ios">iOS intent</option><option value="android">Android intent</option></select></label>
+    <label for="theme">Appearance<select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+  </div>
+  <article class="app" id="app" aria-label="Iqamah AI mobile prototype">
+    <div class="prototype-label">DESIGN PROTOTYPE · LOCAL RECORD CHECKS</div>
+    <header>
+      <button id="back" aria-label="Back">‹</button>
+      <span class="wordmark"><svg width="20" height="24" viewBox="0 0 20 24" fill="none" aria-hidden="true"><path d="M1 8V1h7m4 0h7v7m0 8v7h-7m-4 0H1v-7M5 8h10M5 12h7M5 16h10" stroke="currentColor" stroke-width="1.4"/></svg>Iqamah<span>AI</span></span>
+      <button data-go="30" aria-label="Privacy controls">⋯</button>
+    </header>
+    <main id="content"></main>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+    <nav aria-label="Primary"><button data-go="1">Dossier</button><button data-go="6">Documents</button><button data-go="23">Next steps</button></nav>
+  </article>
+</body>
+</html>

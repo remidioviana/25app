@@ -1,8 +1,14 @@
-# Product design program — delivery 01
+# Product design program — deliveries 01–02
 
 This directory starts the 25-app design program in the order recovered from `apps/apps.json`. It is an incremental delivery, not a claim that 25 production apps or 750 screens are complete.
 
 Start with [the inventory](portfolio/INVENTORY.md), [the completion tracker](portfolio/COMPLETENESS.csv), and [Himayah's design package](himayah/DESIGN.md).
+
+Delivery 02 adds [Iqamah's independent design package](iqamah/DESIGN.md), a 34-view
+prototype at `iqamah/index.html`, and a corrected native Iqamah overview. Missing,
+expired and present/unverified documents are separated without an eligibility
+gauge or a ten-year visa promise. The browser and native overview share one
+TypeScript classifier. See [the delivery 02 checks](iqamah/VERIFICATION.md).
 
 Open `himayah/index.html` in a browser for the self-contained prototype. No installation, API key, registration or network service is needed. The screen-reference selector is a review aid outside the product interface. The 32 views share one review state and cover input, configuration, findings, evidence, a copyable packet, recovery and deletion. The prototype performs real local phrase screening; it does not run the production AI agent or verify law.
 
@@ -16,7 +22,7 @@ Open `himayah/index.html` in a browser for the self-contained prototype. No inst
 
 ## What it does not establish
 
-Native implementation of the new design, native accessibility, Arabic localization, authoritative legal retrieval, provider execution, verified external delivery, signed builds and the remaining 24 complete design packages are pending. Existing test reports under `docs/` arrived in the ZIP; only checks explicitly listed in `design/himayah/VERIFICATION.md` were executed during this delivery.
+Full native implementation of the new designs, native accessibility, Arabic localization, authoritative legal retrieval, provider execution, verified external delivery, signed builds and the remaining 23 complete design packages are pending. Existing test reports under `docs/` arrived in the ZIP; current checks are explicitly listed in each app's `VERIFICATION.md`.
 
 ## Open the prototype
 
@@ -27,6 +33,9 @@ python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080/design/himayah/`. This only serves a design prototype, not the Python application's API. GitHub Pages has not been enabled by this change.
+
+For Iqamah, visit `http://localhost:8080/design/iqamah/` or open that directory's
+`index.html` directly. Both prototypes are free, accountless and explicitly local.
 
 ## Run the browser checks
 

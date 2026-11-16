@@ -5,7 +5,7 @@ Order, identities, colors, tasks and approval boundaries are recovered from `app
 | App | Existing name | ID | Category | Existing accent | Proposed direction / signature home | Domain trust requirement |
 |---|---|---|---|---|---|---|
 | 01 | Himayah AI | `himayah` | Business | `#0B192C` | Evidence Ledger — exception list + anchored passage | legal-source provenance |
-| 02 | Iqamah AI | `iqamah` | Personal | `#D4AF37` | Dossier Index — document checklist + route criteria | document expiry and route eligibility boundary |
+| 02 | Iqamah AI | `iqamah` | Personal | `#D4AF37` | Dossier Folio — document index + explicit evidence gaps | document expiry and route eligibility boundary |
 | 03 | Istithmar AI | `istithmar` | Business | `#0D9488` | Decision Room — option comparison + explicit assumptions | dated fee and activity assumptions |
 | 04 | Munagasah AI | `munagasah` | Business | `#1D4ED8` | Bid Desk — deadline-first pipeline + requirement matrix | amendments and submission cutoff |
 | 05 | Sahil AI | `sahil` | Societal | `#0284C7` | Service Path — stepwise public-service journey | selected jurisdiction and official checklist |
@@ -29,6 +29,12 @@ Order, identities, colors, tasks and approval boundaries are recovered from `app
 | 23 | Turath AI | `turath` | Societal | `#9A3412` | Source Journey — heritage narrative + source cards | reviewed history sources and learner-data control |
 | 24 | Himam AI | `himam` | Societal | `#1E40AF` | Access Journey — route segments + uncertainty alternatives | current accessibility conditions and location control |
 | 25 | Hisad AI | `hisad` | Societal | `#CA8A04` | Handoff Board — surplus lots + recipient readiness | allergens, expiry and custody verification |
+
+## Delivered design units
+
+- APP 01: [Himayah design foundation and local prototype](../himayah/DESIGN.md).
+- APP 02: [Iqamah design foundation, local prototype and native overview correction](../iqamah/DESIGN.md).
+- APP 03–25: design packages remain pending; source context is recovered below.
 
 ## Recovered operational scope
 

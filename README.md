@@ -10,6 +10,13 @@ a claim that 25 production-ready apps or 750 native screens are complete.
 See [Himayah design and boundaries](design/himayah/DESIGN.md) and
 [checks executed for this update](design/himayah/VERIFICATION.md).
 
+Delivery 02 adds [Iqamah's 34-view design and prototype](design/iqamah/DESIGN.md)
+and a functional native-overview correction: expired, missing and unverified
+records are distinct, dates and duplicates are validated, and no visa-eligibility
+score or unsupported ten-year promise is displayed in that overview. The full
+native journeys and official integrations remain pending. See the
+[Iqamah verification report](design/iqamah/VERIFICATION.md).
+
 The primary experience is `mobile/`: 25 individual Expo Android/iOS variants. Each launches directly into its own domain workspace with Overview, Mission, Evidence and Activity tabs. There is no cross-app catalog in the mobile UI. Mizan is the default variant. The existing web operator console and Python backend remain available.
 
 ## Run
