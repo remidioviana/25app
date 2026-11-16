@@ -20,23 +20,28 @@ def now():return datetime.now(timezone.utc).isoformat()
 
 
 def tool_probe(role,model,limit,record):
-    nonce=uuid.uuid4().hex[:12];ack=f'probe-ok:{nonce}:{role}'
+    nonce=uuid.uuid4().hex[:12]
     tool={'type':'function','name':'connection_probe','description':'A nonconsequential connection test. No personal data or external operation.',
           'parameters':{'type':'object','properties':{'nonce':{'type':'string','enum':[nonce]},'role':{'type':'string','enum':[role]}},
                         'required':['nonce','role'],'additionalProperties':False}}
-    messages=[{'role':'system','content':'Connection verification only. Call connection_probe exactly once with the supplied nonce and role. After the tool result, reply with its acknowledgement text exactly. Do not invent tool results.'},
+    messages=[{'role':'system','content':'Connection verification only. Call connection_probe exactly once with the supplied nonce and role. After the tool result, return a JSON object with acknowledgement copied exactly from that actual result. Do not invent tool results.'},
               {'role':'user','content':json.dumps({'nonce':nonce,'role':role})}]
     record['logical_completion_requests']=1
-    first=provider.respond(messages,[tool],model_override=model,role=role,max_output_tokens=limit,allow_fallback=False,request_timeout=30)
+    first=provider.respond(messages,[tool],model_override=model,role=role,max_output_tokens=limit,allow_fallback=False,request_timeout=30,required_tool='connection_probe')
     record['accepted_completions']=1;record['reported_total_tokens']=first['usage']['total_tokens']
     calls=[x for x in first['output'] if x.get('type')=='function_call']
     if len(calls)!=1 or calls[0]['name']!='connection_probe':raise ValueError('The selected model did not produce the required single tool call.')
     if json.loads(calls[0]['arguments'])!={'nonce':nonce,'role':role}:raise ValueError('The model tool arguments did not match the connection probe.')
+    ack='probe-ok:'+uuid.uuid4().hex
+    acknowledgement_schema={'type':'object','properties':{'acknowledgement':{'type':'string','maxLength':96}},'required':['acknowledgement'],'additionalProperties':False}
     record['tool_call_verified']=True;record['logical_completion_requests']=2
     second=provider.respond(messages+first['output']+[{'type':'function_call_output','call_id':calls[0]['call_id'],'output':json.dumps({'acknowledgement':ack})}],
-                            [tool],model_override=model,role=role,max_output_tokens=limit,allow_fallback=False,request_timeout=30)
+                            [],model_override=model,role=role,max_output_tokens=limit,allow_fallback=False,request_timeout=30,response_schema=acknowledgement_schema)
     record['accepted_completions']=2;record['reported_total_tokens']+=second['usage']['total_tokens']
-    if any(x.get('type')=='function_call' for x in second['output']) or second['output_text'].strip()!=ack:
+    try:acknowledgement=json.loads(second['output_text'])
+    except (ValueError,TypeError):raise ValueError('The model did not return valid acknowledgement JSON; the tool roundtrip is unverified.') from None
+    if (any(x.get('type')=='function_call' for x in second['output']) or not isinstance(acknowledgement,dict)
+        or set(acknowledgement)!={'acknowledgement'} or acknowledgement['acknowledgement']!=ack):
         raise ValueError('The model did not acknowledge the actual tool result; the tool roundtrip is unverified.')
     observations=[{'role':role,'usage':first['usage']},{'role':role,'usage':second['usage']}]
     reported={x['usage'].get('provider_reported_model') for x in observations}

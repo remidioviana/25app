@@ -21,7 +21,7 @@ class GroqReadinessTests(unittest.TestCase):
         if request.get_method()=='GET':return io.BytesIO(json.dumps({'data':[{'id':m,'active':True} for m in self.models.values()]}).encode())
         payload=json.loads(request.data);messages=payload['messages'];model=payload['model']
         if messages[-1]['role']=='tool':
-            message={'content':json.loads(messages[-1]['content'])['acknowledgement']};finish='stop'
+            message={'content':json.dumps({'acknowledgement':json.loads(messages[-1]['content'])['acknowledgement']})};finish='stop'
         else:
             context=json.loads(messages[1]['content']);message={'content':None,'tool_calls':[{'id':'controlled-call','type':'function','function':{'name':'connection_probe','arguments':json.dumps(context)}}]};finish='tool_calls'
         raw={'model':self.aliases.get(model,model),'choices':[{'message':message,'finish_reason':finish}],'usage':{'total_tokens':7}}
@@ -99,3 +99,16 @@ class GroqReadinessTests(unittest.TestCase):
         with patch.dict(os.environ,{'OPENAI_BASE_URL':'https://elsewhere.invalid/openai/v1'}),patch.object(provider,'urlopen') as network:
             report,code=verify(live=True)
         self.assertEqual(code,2);network.assert_not_called();self.assertNotIn('fictional-test-key',json.dumps(report))
+
+    def test_acknowledgement_must_come_from_actual_tool_result_not_request_nonce(self):
+        def guessing_transport(request,timeout):
+            if request.get_method()=='POST':
+                payload=json.loads(request.data)
+                if payload['messages'][-1]['role']=='tool':
+                    context=json.loads(payload['messages'][1]['content'])
+                    guessed='probe-ok:'+context['nonce']+':'+context['role']
+                    return io.BytesIO(json.dumps({'model':payload['model'],'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'acknowledgement':guessed})}}],'usage':{}}).encode())
+            return self.transport(request,timeout)
+        with patch.object(provider,'urlopen',side_effect=guessing_transport):report,code=verify(live=True,probe_models=True)
+        self.assertEqual(code,2);self.assertFalse(report['model_inference_verified'])
+        self.assertTrue(report['role_checks'][0]['tool_call_verified']);self.assertFalse(report['role_checks'][0]['tool_roundtrip_verified'])

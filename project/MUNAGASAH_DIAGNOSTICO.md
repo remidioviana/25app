@@ -45,3 +45,13 @@ Somente `HTTP400 + json_validate_failed` pode gerar uma segunda requisição do 
 Os metadados informam quantidade de regenerações, teto usado e ausência de contagem de tokens da tentativa falha. Tokens reportados não representam necessariamente todo consumo cobrado. O limite de três respostas do especialista e o orçamento de tokens reportados continuam sendo limites lógicos do grafo; cada papel pode realizar uma regeneração adicional somente nesse erro específico.
 
 Três regressões novas verificam recuperação controlada, ausência de repetição para quota/auth/schema e interrupção após segunda falha. A suíte completa passou com **187 testes Python**. O funcionamento real da regeneração exige evidência posterior; estes testes usam respostas controladas.
+
+## Istithmar concluiu; avaliação do terceiro modelo permanece separada
+
+O [run 43861110631](https://github.com/remidioviana/25app/actions/runs/43861110631) concluiu o Istithmar com fonte DMCC, duas citações, sete respostas de papel e recomputação. Após três rodadas, o resultado foi `requires_human_review`. Uso reportado: 23.794 tokens. Não houve regeneração JSON nessa execução; a recuperação permanece demonstrada em testes controlados, sem alegação de ter causado esse sucesso. Evidência: `project/evidence/groq-istithmar-rag-verified.json`. Os cinco apps têm agora sucesso sintético histórico; a última tentativa por app ainda inclui a falha recente do Munagasah.
+
+A [avaliação 43861552285](https://github.com/remidioviana/25app/actions/runs/43861552285) confirmou Qwen3.8 no catálogo, mas parou no reconhecimento da ferramenta do GPT-OSS120B, antes de qualquer chamada ao Qwen. Portanto não comprovou três modelos. Registro: `project/evidence/groq-three-model-evaluation.json`.
+
+O probe passa a usar reconhecimento JSON após a função, sem combinar tools com response_format no payload. O token de reconhecimento é aleatório e nasce somente depois de validar os argumentos da função. O schema não contém o valor esperado; o modelo precisa copiá-lo do resultado real. A verificação mantém igualdade exata e rejeita valor deduzido do nonce inicial. Continuam duas chamadas lógicas por papel e nenhuma escrita externa.
+
+O workflow Code checks adiciona regressões Python, consistência do portfólio, typecheck/lint/testes mobile e configurações das 25 variantes em alterações relevantes e acionamento manual. Não recebe segredo de provedor. Os Actions foram fixados por SHA confirmado nos repositórios oficiais; ambiente Ubuntu24.04, Python3.12 e Node24. A primeira execução cloud precisa confirmar o resultado, independentemente dos **188 testes Python locais** e 48 testes mobile anteriores.

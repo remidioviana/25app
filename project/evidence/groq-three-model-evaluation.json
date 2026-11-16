@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-16T11:52:47.385363+00:00",
+  "check_mode": "live_tool_probes",
+  "configuration": {
+    "status": "configured_unverified",
+    "configured": true,
+    "configuration_valid": true,
+    "roles": {
+      "planner": "openai/gpt-oss-20b",
+      "specialist": "openai/gpt-oss-120b",
+      "critic": "qwen/qwen3.8-27b"
+    },
+    "distinct_models": 3,
+    "require_distinct": true,
+    "inference_verified": false,
+    "preview_roles": [
+      "critic"
+    ]
+  },
+  "catalogue_verified": true,
+  "model_inference_verified": false,
+  "three_distinct_models_verified": false,
+  "role_checks": [
+    {
+      "role": "planner",
+      "requested_model": "openai/gpt-oss-20b",
+      "started_at": "2026-11-16T11:52:47.510143+00:00",
+      "accepted_completions": 2,
+      "logical_completion_requests": 2,
+      "tool_call_verified": true,
+      "tool_roundtrip_verified": true,
+      "model_identity_verified": true,
+      "reported_total_tokens": 709,
+      "provider_reported_model": "openai/gpt-oss-20b",
+      "verified_at": "2026-11-16T11:52:48.244908+00:00"
+    },
+    {
+      "role": "specialist",
+      "requested_model": "openai/gpt-oss-120b",
+      "started_at": "2026-11-16T11:52:48.244932+00:00",
+      "accepted_completions": 2,
+      "logical_completion_requests": 2,
+      "tool_call_verified": true,
+      "tool_roundtrip_verified": false,
+      "model_identity_verified": false,
+      "reported_total_tokens": 545,
+      "checked_at": "2026-11-16T11:52:49.118531+00:00",
+      "error": "The model did not acknowledge the actual tool result; the tool roundtrip is unverified."
+    }
+  ],
+  "primary_application_workflow_verified": false,
+  "secret_handling": "protected server environment only; no key in report",
+  "catalogue_checked_at": "2026-11-16T11:52:47.510086+00:00",
+  "available_model_count": 11,
+  "documented_preview_candidate_availability": {
+    "meta-models/muse-spark-open": false,
+    "qwen/qwen3.8-27b": true
+  },
+  "configured_model_availability": {
+    "openai/gpt-oss-20b": true,
+    "openai/gpt-oss-120b": true,
+    "qwen/qwen3.8-27b": true
+  },
+  "error": "A role probe failed; full model verification is incomplete.",
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43861552285"
+}

@@ -127,12 +127,14 @@
       "public_source_read_evidence": [
         "project/evidence/public-source-reads.json"
       ],
-      "live_graph_diagnostic_verified": false,
+      "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "failed",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/groq-istithmar-rag-verified.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-istithmar-rag-verified.json"
       ]
     },
     {
