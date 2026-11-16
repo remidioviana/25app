@@ -15,7 +15,7 @@ Os dois documentos mais recentes do responsável substituem a prioridade de prod
 
 `model_provider.ROLE_MODELS` define três papéis: planner e specialist com `openai/gpt-oss-20b`, critic com `openai/gpt-oss-120b`. Portanto são três papéis e dois identificadores distintos no padrão atual. Rotação de chaves também não cria modelos ou agentes adicionais.
 
-Neste ambiente não foram encontradas credenciais de provedor ativas durante a verificação. Os testes controlados confirmam orquestração, seleção de ferramentas, persistência e roteamento; não comprovam três modelos distintos conectados nem chamadas reais. Não alterar isso no relatório só porque a arquitetura foi planejada assim. Preservar os papéis e registrar o modelo efetivamente observado em cada futura chamada autorizada.
+A sessão local continua sem credencial de provedor. No GitHub Actions, o segredo protegido foi disponibilizado e o teste real [43852202823](https://github.com/remidioviana/25app/actions/runs/43852202823) comprovou seis chamadas de geração com ciclo de ferramenta: GPT-OSS20B para planner/specialist e GPT-OSS120B para critic. Evidência: `project/evidence/groq-live-tool-probes.json`. São dois modelos observados, não três. O teste integrado inicial dos cinco apps encontrou bloqueio de fonte HTTP403, uma falha de inferência HTTP400 e quota HTTP429; esses resultados estão preservados em `project/evidence/groq-team-first-five-attempt.json`. A validação de transporte não conclui os fluxos principais nem configura hospedagem permanente.
 
 ## Trabalho paralelo efetivamente realizado
 

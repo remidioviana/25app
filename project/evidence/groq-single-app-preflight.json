@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-16T10:54:24.445786+00:00",
+  "check_mode": "live_catalogue_only",
+  "configuration": {
+    "status": "missing_credentials",
+    "configured": false,
+    "configuration_valid": true,
+    "roles": {
+      "planner": "openai/gpt-oss-20b",
+      "specialist": "openai/gpt-oss-20b",
+      "critic": "openai/gpt-oss-120b"
+    },
+    "distinct_models": 2,
+    "require_distinct": false,
+    "inference_verified": false,
+    "preview_roles": []
+  },
+  "catalogue_verified": false,
+  "model_inference_verified": false,
+  "three_distinct_models_verified": false,
+  "role_checks": [],
+  "primary_application_workflow_verified": false,
+  "secret_handling": "protected server environment only; no key in report",
+  "error": "Protected server credential is not configured. No network request was made.",
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43852967314"
+}
