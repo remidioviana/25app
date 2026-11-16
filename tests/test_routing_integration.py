@@ -21,6 +21,7 @@ class RoutingIntegrationTests(unittest.TestCase):
    raise HTTPError(request.full_url,status,'simulated',{},io.BytesIO(b''))
   values={'planner':{'objective':'Review supplied inputs','queries':[],'steps':['Analyze','Review'],'missing_information':[]},'specialist':{'summary':'Review the domain calculation.','claims':[],'next_steps':['Confirm source inputs']},'critic':{'verdict':'accept','issues':[],'follow_up_queries':[]}}
   raw={'choices':[{'finish_reason':'tool_calls','message':{'content':None,'tool_calls':[{'id':'call-'+str(len(self.requests)),'type':'function','function':{'name':'deliver_role_result','arguments':json.dumps(values[role])}}]}}],'usage':{'total_tokens':7}}
+  if getattr(self,'report_identity',False):raw['model']=getattr(self,'reported_alias',None) or payload['model']
   return io.BytesIO(json.dumps(raw).encode())
  def execute(self,agent):
   run,_=db.create(agent,'Review the supplied inputs',engine.SPECS[agent]['example'],'team',True,None)
@@ -42,3 +43,15 @@ class RoutingIntegrationTests(unittest.TestCase):
   self.failure='mixed';result=self.execute('mizan');self.assertEqual(result['status'],'failed')
   self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3)
   self.assertIsNone(result['result']);self.assertNotIn('test-',result['error'])
+
+ def test_strict_graph_records_three_provider_reported_models(self):
+  self.report_identity=True
+  mapping={'AGENT_PLANNER_MODEL':'planner-test','AGENT_SPECIALIST_MODEL':'specialist-test','AGENT_AUDITOR_MODEL':'critic-test','AGENT_REQUIRE_DISTINCT_MODELS':'1'}
+  with patch.dict(os.environ,mapping):result=self.execute('mizan')
+  self.assertEqual(result['status'],'completed',result['error'])
+  self.assertEqual(result['result']['verified_model_ids'],{'planner':'planner-test','specialist':'specialist-test','critic':'critic-test'})
+ def test_strict_graph_rejects_returned_alias_collapse(self):
+  self.report_identity=True;self.reported_alias='shared-test'
+  with patch.dict(os.environ,{'AGENT_PLANNER_MODEL':'planner-test','AGENT_SPECIALIST_MODEL':'specialist-test','AGENT_AUDITOR_MODEL':'critic-test','AGENT_REQUIRE_DISTINCT_MODELS':'1'}):result=self.execute('mizan')
+  self.assertEqual(result['status'],'failed');self.assertIsNone(result['result'])
+  self.assertIn('three distinct',result['error'])

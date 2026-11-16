@@ -16,8 +16,6 @@ import source_tools
 from domain_tools import TOOLS
 from validation import validate
 
-ROLE_MODELS=model_provider.ROLE_MODELS
-
 ROOT=Path(__file__).resolve().parent
 SPECS={p.parent.name:json.loads(p.read_text()) for p in sorted((ROOT/'agents').glob('*/agent.json'))}
 POOL=ThreadPoolExecutor(max_workers=2,thread_name_prefix='agent')
@@ -114,7 +112,7 @@ def _execute(run):
                   {'type':'function','name':'refresh_source','description':'Reads one permitted fixed public source into this app evidence store. No user URLs or external writes. Inspect actual receipt and source passages; retrieval does not establish legal applicability.','parameters':{'type':'object','properties':{'source_id':{'type':'string'}},'required':['source_id'],'additionalProperties':False},'strict':True}])
             messages=[{'role':'system','content':spec['instructions']}, {'role':'user','content':db.encode({'goal':task['goal'],'data':task['input'],'retrieved_evidence':evidence,'available_public_sources':source_tools.available(agent)})}]
             for turn in range(8):
-                check(run,lease); response=model_provider.respond(messages,tools,model_override=ROLE_MODELS['specialist']); check(run,lease)
+                check(run,lease); response=model_provider.respond(messages,tools,model_override=model_provider.role_models()['specialist'],role='specialist'); check(run,lease)
                 usage.append(response.get('usage',{})); messages.extend(response.get('output',[]))
                 db.emit(run,'model',{'turn':turn+1,'usage':response.get('usage',{})})
                 calls=[x for x in response.get('output',[]) if x.get('type')=='function_call']

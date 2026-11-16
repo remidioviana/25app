@@ -13,7 +13,7 @@ Os dois documentos mais recentes do responsável substituem a prioridade de prod
 
 ## O que existe nos modelos atualmente
 
-`model_provider.ROLE_MODELS` define três papéis: planner e specialist com `llama-3.3-70b-versatile`, critic com `openai/gpt-oss-120b`. Portanto são três papéis e dois identificadores distintos no padrão atual. Rotação de chaves também não cria modelos ou agentes adicionais.
+`model_provider.ROLE_MODELS` define três papéis: planner e specialist com `openai/gpt-oss-20b`, critic com `openai/gpt-oss-120b`. Portanto são três papéis e dois identificadores distintos no padrão atual. Rotação de chaves também não cria modelos ou agentes adicionais.
 
 Neste ambiente não foram encontradas credenciais de provedor ativas durante a verificação. Os testes controlados confirmam orquestração, seleção de ferramentas, persistência e roteamento; não comprovam três modelos distintos conectados nem chamadas reais. Não alterar isso no relatório só porque a arquitetura foi planejada assim. Preservar os papéis e registrar o modelo efetivamente observado em cada futura chamada autorizada.
 

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T05:38:15.720611+00:00",
+  "checked_at": "2026-11-16T06:28:04.743595+00:00",
   "scope": "Source audit, not completed live-agent acceptance",
   "products": [
     {
@@ -28,8 +28,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -70,8 +70,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -116,8 +116,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -162,8 +162,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -204,8 +204,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -245,8 +245,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -287,8 +287,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -329,8 +329,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -373,8 +373,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -420,8 +420,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -465,8 +465,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -505,8 +505,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -545,8 +545,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -589,8 +589,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -632,8 +632,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -674,8 +674,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -717,8 +717,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -759,8 +759,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -800,8 +800,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -843,8 +843,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -883,8 +883,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -924,8 +924,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -963,8 +963,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -1004,8 +1004,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,
@@ -1047,8 +1047,8 @@
       ],
       "operational_defaults": "empty/unknown; explicit provided input required; not authenticity verification",
       "models_configured_roles": {
-        "planner": "llama-3.3-70b-versatile",
-        "specialist": "llama-3.3-70b-versatile",
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
       "live_model_calls_verified": false,

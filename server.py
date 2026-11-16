@@ -19,6 +19,7 @@ import intake
 import source_tools
 from agent_runtime import SPECS, recover, submit
 from model_provider import configured
+import model_provider
 from validation import validate
 
 ROOT=Path(__file__).resolve().parent
@@ -59,7 +60,7 @@ class Handler(BaseHTTPRequestHandler):
         if (origin and urlparse(origin).netloc!=host) or self.headers.get('Sec-Fetch-Site')=='cross-site':
             return self.reply({'error':'Unauthorized origin'},403)
         if path=='/api/config' and method=='GET':
-            return self.reply({'requires_token':identity.required(TOKEN),'multiuser':bool(os.environ.get('APP_USERS_FILE')),'model_configured':configured(),'version':'5.0','langgraph_available':advanced.available(),'embedding_configured':bool(os.environ.get('OPENAI_EMBEDDING_MODEL') and os.environ.get('OPENAI_API_KEY')),'external_connectors':[]})
+            return self.reply({'requires_token':identity.required(TOKEN),'multiuser':bool(os.environ.get('APP_USERS_FILE')),'model_configured':configured(),'provider':model_provider.configuration_status(),'version':'5.0','langgraph_available':advanced.available(),'embedding_configured':bool(os.environ.get('OPENAI_EMBEDDING_MODEL') and os.environ.get('OPENAI_API_KEY')),'external_connectors':[]})
         data={}
         if method=='POST':
             if self.headers.get('Content-Type','').split(';')[0]!='application/json': return self.reply({'error':'Send application/json'},415)
@@ -96,6 +97,7 @@ class Handler(BaseHTTPRequestHandler):
                     if not isinstance(goal,str) or not goal.strip() or len(goal)>2000:raise ValueError('Invalid goal')
                     if mode not in ('local','model','team'):raise ValueError('Invalid mode')
                     if mode in ('model','team') and not configured():raise ValueError('Model is not configured')
+                    if mode in ('model','team'):model_provider.role_models()
                     if mode=='team' and not advanced.available():raise ValueError('LangGraph is not installed')
                     if not isinstance(data.get('example',False),bool):raise ValueError('example must be a boolean')
                     validate(inputs,SPECS[agent]['schema'])
@@ -109,6 +111,7 @@ class Handler(BaseHTTPRequestHandler):
                     if not isinstance(goal,str) or not goal.strip() or len(goal)>2000: raise ValueError('Goal must contain 1 to 2,000 characters')
                     if mode not in ('local','model','team'): raise ValueError('Invalid mode')
                     if mode in ('model','team') and not configured(): raise ValueError('Configure OPENAI_API_KEY before using AI')
+                    if mode in ('model','team'):model_provider.role_models()
                     if mode=='team' and not advanced.available(): raise ValueError('Install requirements-agentic.txt to use LangGraph')
                     validate(inputs,SPECS[agent]['schema'])
                     key=self.headers.get('Idempotency-Key')

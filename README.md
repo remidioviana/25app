@@ -62,10 +62,12 @@ Set server environment variables before starting Python (the application does no
 
 - `OPENAI_API_KEY`: comma-separated server-side keys.
 - `OPENAI_BASE_URL`: `https://api.groq.com/openai/v1` (default).
-- Planner and Specialist: `llama-3.3-70b-versatile`.
+- Planner and Specialist: `openai/gpt-oss-20b`.
 - Auditor: `openai/gpt-oss-120b`.
 
-The transport rotates the starting key on each request, tries each distinct key at most once per model pass, and sanitizes errors. Only the Auditor downgrades to llama, and only after every distinct key returns HTTP 429. Authentication, mixed HTTP failures and connection failures do not trigger a model downgrade. `respond(..., model_override=...)` routes each role explicitly. Tests use fictional keys and controlled HTTP responses; no live provider verification is claimed.
+The transport rotates the starting key on each request, tries each distinct key at most once per model pass, and sanitizes errors. Only the Auditor may downgrade to GPT-OSS20B in non-strict mode, and only after every distinct key returns HTTP 429. Authentication, mixed HTTP failures and connection failures do not trigger a model downgrade. `respond(..., model_override=...)` routes each role explicitly. Tests use fictional keys and controlled HTTP responses; no live provider verification is claimed.
+
+Role IDs are configurable through `AGENT_PLANNER_MODEL`, `AGENT_SPECIALIST_MODEL`, and `AGENT_AUDITOR_MODEL`. `AGENT_REQUIRE_DISTINCT_MODELS=1` rejects duplicate configured or provider-reported identities. The defaults contain two distinct models, not three. See [secure Groq setup](project/GROQ_CONEXAO_SEGURA.md) for the protected secret and manual Actions verifier. Catalogue reading is separate from optional, potentially billable inference probes.
 
 ## Build variants
 

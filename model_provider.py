@@ -1,15 +1,19 @@
 """OpenAI-compatible Groq transport with bounded, thread-safe multi-key failover."""
 import json
 import os
+import re
 from http.client import IncompleteRead, RemoteDisconnected
 from threading import Lock
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
+from urllib.request import Request, build_opener, HTTPRedirectHandler, HTTPSHandler, ProxyHandler
 from urllib.error import HTTPError, URLError
 
-FAST_MODEL='llama-3.3-70b-versatile'
+FAST_MODEL='openai/gpt-oss-20b'
 AUDIT_MODEL='openai/gpt-oss-120b'
+# Backward-compatible defaults, not a declaration of live model availability.
 ROLE_MODELS={'planner':FAST_MODEL,'specialist':FAST_MODEL,'critic':AUDIT_MODEL}
+ROLE_ENV={'planner':'AGENT_PLANNER_MODEL','specialist':'AGENT_SPECIALIST_MODEL','critic':'AGENT_AUDITOR_MODEL'}
+KNOWN_PREVIEW_MODELS={'qwen/qwen3.8-27b'}
 _LOCK=Lock()
 _KEY_INDEX=0
 _KEY_CONFIG=()
@@ -25,11 +29,69 @@ def _key_order():
     return keys[start:]+keys[:start]
 def _next_key():return _key_order()[0]
 def configured():return bool(_get_keys())
+
+def _flag(name):
+    value=os.environ.get(name,'0').strip().lower()
+    if value not in ('0','1','false','true'):raise ValueError(name+' must be 0 or 1.')
+    return value in ('1','true')
+
+def _model_name(value):
+    if (not isinstance(value,str) or not value.strip() or len(value)>160
+        or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:/-]*',value.strip())
+        or value.strip().lower().startswith(('gsk_','sk-','ghp_','ghu_','github_pat_'))):
+        raise ValueError('Invalid model identifier; model settings must never contain credentials.')
+    return value.strip()
+
+def role_models(require_distinct=None):
+    models={role:_model_name(os.environ.get(env,ROLE_MODELS[role])) for role,env in ROLE_ENV.items()}
+    strict=_flag('AGENT_REQUIRE_DISTINCT_MODELS') if require_distinct is None else require_distinct
+    if strict and len(set(models.values()))!=3:raise ValueError('Three distinct model IDs are required; configure each role separately.')
+    if set(models.values())&KNOWN_PREVIEW_MODELS and not _flag('AGENT_ALLOW_PREVIEW_MODELS'):
+        raise ValueError('A configured model is Preview; set AGENT_ALLOW_PREVIEW_MODELS=1 only after accepting that evaluation constraint.')
+    return models
+
+def configuration_status():
+    """Safe metadata only. Key presence and configured IDs never prove inference."""
+    present=configured()
+    try:
+        models=role_models();_base_url()
+        return {'status':'configured_unverified' if present else 'missing_credentials','configured':present,
+                'configuration_valid':True,'roles':models,'distinct_models':len(set(models.values())),
+                'require_distinct':_flag('AGENT_REQUIRE_DISTINCT_MODELS'),'inference_verified':False,
+                'preview_roles':[r for r,m in models.items() if m in KNOWN_PREVIEW_MODELS]}
+    except ValueError as exc:
+        return {'status':'invalid_configuration','configured':present,'configuration_valid':False,
+                'roles':{},'distinct_models':0,'inference_verified':False,'error':str(exc)}
+
+def verified_role_models(records,require_distinct=True):
+    """Validate provider-reported identity, never infer execution from configured IDs."""
+    observed={role:set() for role in ROLE_ENV}
+    for record in records:
+        role=record.get('role');usage=record.get('usage',{})
+        if role in observed:
+            if not isinstance(usage,dict) or not usage.get('provider_reported_model'):
+                raise ValueError('A role has no provider-reported model identity; distinct execution is unverified.')
+            observed[role].add(_model_name(usage['provider_reported_model']))
+    if any(len(models)!=1 for models in observed.values()):raise ValueError('Each role must have one consistent provider-reported model identity.')
+    result={role:next(iter(models)) for role,models in observed.items()}
+    if require_distinct and len(set(result.values()))!=3:raise ValueError('Provider responses did not establish three distinct models.')
+    return result
+
+class _NoProviderRedirect(HTTPRedirectHandler):
+    def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+
+def urlopen(request,timeout):
+    """Honor managed egress/TLS, but never forward provider credentials via redirects."""
+    return build_opener(ProxyHandler(),HTTPSHandler(),_NoProviderRedirect()).open(request,timeout=timeout)
 def _base_url():
     base=os.environ.get('OPENAI_BASE_URL','https://api.groq.com/openai/v1').rstrip('/')
     if base in ('https://groq.com','https://www.groq.com','https://api.groq.com'):base='https://api.groq.com/openai/v1'
-    parsed=urlparse(base)
-    if parsed.scheme!='https' or not parsed.netloc or parsed.username or parsed.password or parsed.query or parsed.fragment:
+    try:
+        parsed=urlparse(base);host=parsed.hostname;port=parsed.port
+    except ValueError:raise ValueError('OPENAI_BASE_URL is not a valid HTTPS API origin/base path.') from None
+    if (parsed.scheme!='https' or not host or not re.fullmatch(r'[A-Za-z0-9.:-]+',host)
+        or parsed.username or parsed.password or parsed.query or parsed.fragment
+        or port is not None and not 1<=port<=65535 or any(ord(c)<33 for c in base)):
         raise ValueError('OPENAI_BASE_URL must be an HTTPS API base URL without credentials or query parameters.')
     return base
 
@@ -60,12 +122,12 @@ class ProviderFailure(RuntimeError):
         self.statuses=statuses
         super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'. Check server configuration and provider access.')
 
-def _request(endpoint,payload,keys):
+def _request(endpoint,payload,keys,method='POST',timeout=60):
     statuses=[]
     for key in keys:
-        request=Request(_base_url()+endpoint,data=json.dumps(payload,allow_nan=False).encode(),headers={'Authorization':'Bearer '+key,'Content-Type':'application/json','User-Agent':'MobileAgents/6.0'})
+        request=Request(_base_url()+endpoint,data=None if method=='GET' else json.dumps(payload,allow_nan=False).encode(),method=method,headers={'Authorization':'Bearer '+key,'Content-Type':'application/json','User-Agent':'MobileAgents/7.0'})
         try:
-            with urlopen(request,timeout=60) as response:return json.load(response)
+            with urlopen(request,timeout=timeout) as response:return json.load(response)
         except HTTPError as exc:
             status=exc.code;exc.close();statuses.append(status)
             if status not in (401,403,429,500,502,503,504):raise ProviderFailure(statuses) from None
@@ -73,18 +135,35 @@ def _request(endpoint,payload,keys):
         except (json.JSONDecodeError,UnicodeDecodeError):raise ValueError('Provider returned invalid JSON.') from None
     raise ProviderFailure(statuses)
 
-def respond(messages,tools,model_override=None):
+def list_models():
+    raw=_request('/models',None,_key_order(),method='GET',timeout=20)
+    if not isinstance(raw,dict) or not isinstance(raw.get('data'),list):raise ValueError('Provider returned an invalid model catalogue.')
+    models=[]
+    for record in raw['data']:
+        if not isinstance(record,dict) or not isinstance(record.get('id'),str):raise ValueError('Provider returned invalid model metadata.')
+        model=_model_name(record['id'])
+        # Availability and access are tested separately. Do not copy arbitrary metadata.
+        if record.get('active') is not False and model not in models:models.append(model)
+    return models
+
+def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60):
     keys=_key_order();requested=model_override or os.environ.get('OPENAI_MODEL') or FAST_MODEL
-    if not isinstance(requested,str) or not requested.strip():raise ValueError('Invalid model name.')
-    payload={'model':requested,'messages':_to_chat_messages(messages),'max_tokens':2200,'temperature':0}
+    requested=_model_name(requested)
+    if role is not None and role not in ROLE_ENV:raise ValueError('Unknown AI role.')
+    if type(max_output_tokens) is not int or not 32<=max_output_tokens<=2200:raise ValueError('Output token limit must be between 32 and 2200.')
+    if type(request_timeout) not in (int,float) or not 1<=request_timeout<=60:raise ValueError('Provider request timeout must be between 1 and 60 seconds.')
+    payload={'model':requested,'messages':_to_chat_messages(messages),'max_tokens':max_output_tokens,'temperature':0}
     if tools:payload.update(tools=_to_chat_tools(tools),tool_choice='auto')
     fallback=False
-    try:raw=_request('/chat/completions',payload,keys)
+    try:raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
     except ProviderFailure as exc:
         # Only the auditor may downgrade, and only when EVERY distinct key returned 429.
-        if requested!=AUDIT_MODEL or exc.statuses!=[429]*len(keys):raise
-        payload['model']=FAST_MODEL;raw=_request('/chat/completions',payload,keys);fallback=True
+        if (not allow_fallback or _flag('AGENT_REQUIRE_DISTINCT_MODELS') or role not in (None,'critic')
+            or requested!=AUDIT_MODEL or exc.statuses!=[429]*len(keys)):raise
+        payload['model']=FAST_MODEL;raw=_request('/chat/completions',payload,keys,timeout=request_timeout);fallback=True
     if not isinstance(raw,dict):raise ValueError('Provider returned an invalid response envelope.')
+    reported=raw.get('model')
+    if reported is not None:reported=_model_name(reported)
     choices=raw.get('choices')
     if not isinstance(choices,list) or not choices or not isinstance(choices[0],dict) or not isinstance(choices[0].get('message'),dict):raise ValueError('Provider returned no assistant message.')
     choice=choices[0];message=choice['message'];output=[]
@@ -120,7 +199,9 @@ def respond(messages,tools,model_override=None):
         if type(count) is not int or count<0:raise ValueError('Provider returned invalid token counts.')
     return {'id':raw.get('id'),'output':output,'output_text':content or '',
       'usage':{'input_tokens':usage.get('prompt_tokens',0),'output_tokens':usage.get('completion_tokens',0),'total_tokens':usage.get('total_tokens',0),
-               'requested_model':requested,'model':payload['model'],'fallback':fallback,'fallback_reason':'all_keys_http_429' if fallback else None}}
+               'requested_model':requested,'model':reported or payload['model'],'request_model_after_fallback':payload['model'],
+               'provider_reported_model':reported,'model_identity_evidence':'provider_reported' if reported else 'request_only',
+               'fallback':fallback,'fallback_reason':'all_keys_http_429' if fallback else None}}
 
 def embed(texts):
     model=os.environ.get('OPENAI_EMBEDDING_MODEL')

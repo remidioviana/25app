@@ -1,0 +1,106 @@
+# Groq: configuração segura e três modelos distintos
+
+Verificação documental: 2026-11-16T06:07:03+00:00. Pesquisa em documentação oficial pública, sem usar credencial, chamar endpoint autenticado, coletar segredo ou publicar alterações. A ferramenta de pesquisa conseguiu ler as páginas; GETs diretos dessas páginas no ambiente retornaram HTTP403. Isso não prova falha da API Groq nem conexão do aplicativo com ela.
+
+## Contrato e disponibilidade
+
+A [referência oficial](https://console.groq.com/docs/api-reference#models-list) documenta `GET https://api.groq.com/openai/v1/models`, com `Authorization: Bearer` fornecido pelo backend, e lista JSON de modelos. A inferência usa `POST https://api.groq.com/openai/v1/chat/completions`. Exemplos antigos da referência não são catálogo vigente.
+
+Um GET bem-sucedido valida a requisição autenticada e o catálogo retornado naquele instante. Não demonstra inferência, tool calling ou permissão efetiva de cada modelo. [Permissões de organização/projeto](https://console.groq.com/docs/model-permissions) podem bloquear um modelo com HTTP403; as restrições da organização prevalecem. A disponibilidade real depende também de plano, quotas e condições da conta. Nenhuma delas foi inspecionada nesta pesquisa.
+
+## Roteamento proposto, configurável no servidor
+
+| Papel | ID candidato distinto | Estado documental | Preço indicativo USD por milhão de tokens de entrada / saída |
+|---|---|---|---|
+| planner | `openai/gpt-oss-20b` | Production | 0,075 / 0,30 |
+| specialist | `openai/gpt-oss-120b` | Production | 0,15 / 0,60 |
+| critic | `qwen/qwen3.8-27b` | Preview; avaliação apenas | 0,80 / 4,00 |
+
+Fontes: [catálogo](https://console.groq.com/docs/models) e [card Qwen](https://console.groq.com/docs/model/qwen/qwen3.8-27b). Os GPT-OSS têm contexto documentado de 131.072 tokens e saída máxima de 65.536; Qwen tem saída máxima de 16.384. O card e a tabela divergem ligeiramente no contexto Qwen (131.042 / 131.072): usar limite conservador, sem depender da borda. Preços e limites precisam ser reconferidos no momento da execução.
+
+Não há prova de três modelos gerais de texto **Production** acessíveis à conta. O terceiro candidato acima é Preview e não deve receber selo de produção. Se a implantação exigir três IDs de produção, manter configuração incompleta até encontrar e testar um terceiro elegível, eventualmente sob contrato enterprise. Não substituir silenciosamente o terceiro por um ID já usado, nem declarar três modelos porque existem três papéis.
+
+A configuração deve aceitar um ID por papel, exigir os três valores distintos no modo estrito e registrar modelo solicitado e modelo efetivamente retornado. As variáveis são `AGENT_PLANNER_MODEL`, `AGENT_SPECIALIST_MODEL` e `AGENT_AUDITOR_MODEL` (papel critic). `AGENT_REQUIRE_DISTINCT_MODELS=1` ativa exigência estrita no runtime; `AGENT_ALLOW_PREVIEW_MODELS=1` é necessário ao escolher o Qwen Preview conhecido. Os padrões atualizados usam GPT-OSS20B em planner e specialist e GPT-OSS120B em critic: continuam sendo somente dois IDs únicos, sem alegação de três modelos distintos. A revisão inicial encontrou três papéis usando somente dois IDs, com `llama-3.3-70b-versatile` compartilhado: esse é o problema a corrigir, não uma execução autenticada comprovada. Fallback que colapse os três IDs precisa interromper o modo estrito ou declarar degradação explícita.
+
+## Deprecações relevantes
+
+A [página oficial de deprecações](https://console.groq.com/docs/deprecations) informa:
+
+- `llama-3.1-8b-instant` e `llama-3.3-70b-versatile`: encerramento para free/developer em 16/08/2026; exceção enterprise com compromisso contratual. A tabela atual ainda os mostra como Enterprise.
+- `qwen/qwen3-32b` e Llama 4 Scout: encerramento free/developer em 17/07/2026.
+- `qwen/qwen3.6-27b`: encerramento free/developer em 14/09/2026; sucessor indicado `qwen/qwen3.8-27b`.
+- `groq/compound` e `groq/compound-mini`: encerramento em 21/09/2026.
+
+Portanto, não usar uma recomendação antiga de migração para Qwen 3.6 sem seguir também sua deprecação posterior. Checar catálogo, card, histórico e resposta autenticada conjuntamente.
+
+## Ferramentas e prova exigida
+
+A [visão de tool use](https://console.groq.com/docs/tool-use/overview) e o [guia local](https://console.groq.com/docs/tool-use/local-tool-calling) documentam definições `tools`, retorno `tool_calls` e continuação com resultado. O código da aplicação executa e valida a função; o modelo não ganha permissão de executar Python ou transações arbitrárias. Suporte documentado não é prova de que o runtime atual o exercitou com cada ID.
+
+Verificação incremental proposta:
+
+1. **Offline:** validar configuração, IDs distintos, endpoint fixo, parsing de modelos, redirecionamentos bloqueados, limites de resposta/tempo e mensagens sem segredos. Usar testes com transportes controlados; custo de inferência externa zero. Não chamar esse resultado de conexão Groq.
+2. **Catálogo, somente com `--live`:** ler exclusivamente a nova credencial do ambiente protegido do backend e fazer um GET do catálogo oficial. Não enviar contratos ou dados pessoais. Guardar timestamp UTC, status normalizado, IDs e verificações; nunca cabeçalho de autorização, chave ou corpo bruto de erro. Esse GET não gera completion nem prova permissão de inferência. Não há preço de geração a estimar para ele; não prometer ausência de qualquer contabilização de serviço.
+3. **Inferência opcional e explícita:** uma chamada limitada para cada papel, com conteúdo sintético mínimo, timeout e orçamento. Registrar sucesso individual e `usage`, sem credenciais. Listing sozinho não autoriza declarar esse teste executado. Três chamadas simples não provam colaboração.
+4. **Loop de ferramenta opcional:** solicitar uma função inofensiva registrada, validar argumentos, executar localmente e devolver resultado. Uma ida e continuação podem exigir duas chamadas por modelo, ou mais conforme o loop; limitar etapas e tokens. Nenhuma ferramenta de escrita externa nesse teste.
+5. **Equipe:** tarefa sintética comum com plano, especialidade e crítica independentes, IDs efetivos distintos e artefatos/decisões rastreáveis. Isso verifica a orquestração; os 25 fluxos reais continuam sujeitos a suas provas de domínio.
+
+HTTP401 indica falha de autenticação; HTTP403 pode indicar restrição; HTTP429 exige espera limitada e respeito a quota. Não girar credenciais para contornar rate limits. Falha não pode gerar relatório de sucesso fictício.
+
+## Comandos do verificador
+
+Executar da raiz do repositório, com Python e dependências do projeto disponíveis:
+
+```sh
+python scripts/verify_groq.py
+python scripts/verify_groq.py --live
+python scripts/verify_groq.py --live --probe-models
+```
+
+Sem flags, imprime configuração sanitizada e não acessa a rede. `--live` consulta somente o catálogo autenticado. `--probe-models` requer `--live`, faz rodadas mínimas de ferramenta e texto e pode gerar cobrança. O verificador exige três IDs distintos por padrão; `--allow-shared-models` é diagnóstico explícito e não comprova três modelos. Não há argumento CLI para segredo nem carregamento automático de `.env`. A credencial nova deve chegar ao processo como `OPENAI_API_KEY`, protegida pelo ambiente; os IDs de modelo não são segredos.
+
+Exemplo de configuração **sem credencial**, para avaliar o terceiro Preview:
+
+```sh
+export AGENT_PLANNER_MODEL=openai/gpt-oss-20b
+export AGENT_SPECIALIST_MODEL=openai/gpt-oss-120b
+export AGENT_AUDITOR_MODEL=qwen/qwen3.8-27b
+export AGENT_REQUIRE_DISTINCT_MODELS=1
+export AGENT_ALLOW_PREVIEW_MODELS=1
+```
+
+O relatório deve separar ID solicitado no payload e ID informado pelo fornecedor. Se o retorno não identifica inequivocamente o modelo, registrar a limitação; não inferir identidade apenas do papel.
+
+## Entrada protegida pelo GitHub Actions
+
+Passos aplicáveis **depois** que o workflow manual revisado estiver publicado na branch padrão; a criação local não o disponibiliza no GitHub. A documentação oficial confirma o [caminho de secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) e a [execução manual](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow):
+
+1. Revogar a chave exposta e gerar substituta no Groq. No repositório `remidioviana/25app`, abrir **Settings → Secrets and variables → Actions → Secrets → New repository secret**. Nome: `GROQ_API_KEY`; valor: somente a chave substituta. Clicar **Add secret**. Não usar variável pública nem input do workflow para esse valor.
+2. Abrir **Actions**, escolher o workflow manual de verificação Groq e **Run workflow**. Usar a branch revisada. Manter o teste de inferência desativado na primeira execução: o padrão consulta apenas catálogo. Inspecionar resultado sanitizado e disponibilidade dos modelos.
+3. Habilitar explicitamente o input de probe apenas quando aceitar o teste de inferência e, se escolhido, o uso do terceiro modelo Preview. O probe dos três papéis faz seis requisições lógicas curtas de completion (ferramenta e continuação por papel), além do catálogo; políticas de repetição podem produzir tentativas adicionais. Não executa transações de domínio nem comprova os 25 produtos.
+
+O workflow recebe o segredo por mapeamento explícito `OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}` no ambiente da etapa. Isso **não configura automaticamente** o segredo no servidor do aplicativo, hospedagem cloud ou sessão local. Cada ambiente de execução precisa de provisionamento protegido próprio. `GITHUB_TOKEN` não substitui uma credencial Groq.
+
+O disparo manual exige acesso de escrita e workflow com `workflow_dispatch` na branch padrão. Criar secrets exige permissão adequada no repositório; políticas da organização podem restringir Actions, modelos ou secrets. Sem secret configurado, a expressão retorna vazio e a verificação deve falhar com mensagem sanitizada. Secrets de ambientes e workflows reutilizáveis têm regras adicionais. Não disparar esse teste por PR externo, nem executar código de branch não revisada com a credencial. Máscara automática de logs não dispensa evitar qualquer impressão do segredo.
+
+Os exemplos oficiais consultados divergem em versões maiores de Actions: o README de setup-python apresenta v7, enquanto exemplos gerais de secrets ainda usam checkout v6. Resolver e verificar tags reais dos repositórios oficiais antes de definir a versão; não deduzir que um exemplo antigo representa o último lançamento.
+
+## Segredo e dados
+
+A credencial exposta deve ser revogada no console pelo responsável. Criar substituta somente no ambiente protegido de execução, com escopo de projeto e acesso mínimo; não colar em chat, frontend, arquivo versionado, argumento CLI ou log. O verificador lê a variável protegida, sem solicitar seu valor. Manter endpoint Groq fixo e HTTPS verificado; não aceitar base URL arbitrária junto de uma credencial real nem reenviá-la por redirecionamento. Revisar `.gitignore`, bundle, logs e histórico antes de publicar; ignorar um arquivo não remove um segredo já versionado.
+
+Os [controles de dados](https://console.groq.com/docs/your-data) distinguem metadados de uso, retidos, e conteúdo de inferência, normalmente não retido, com exceções para confiabilidade/abuso e recursos com estado. Não prometer retenção zero universal. Não enviar documentos pessoais, jurídicos, financeiros ou de saúde até definir autorização, minimização, controles de conta e política adequada; os testes iniciais podem usar texto sintético.
+
+## Recursos e custo
+
+O servidor local mantém orquestração, armazenamento, extração e ferramentas. A inferência ocorre na infraestrutura Groq; nenhum GPU local ou download de pesos é necessário para essa integração. Três papéis não significam três processos locais ou execução paralela automática. Limitar concorrência, contexto recuperado, número de ferramentas, tokens de saída e tentativas.
+
+Estimativa de geração: `Σ(tokens_entrada × tarifa_entrada + tokens_saída × tarifa_saída) / 1.000.000`, usando a tarifa específica do ID e plano, incluindo todas as chamadas e repetições. Com 1.000 tokens de entrada e 200 de saída por modelo, uma rodada dos três candidatos teria estimativa indicativa de USD 0,002005, antes de particularidades de faturamento, cache, raciocínio, ferramentas e mudanças de preço. Usar `usage` e cobrança real para reconciliar; o limite de saída não limita sozinho tokens de entrada, total de requisições ou custo global. [Rate limits](https://console.groq.com/docs/rate-limits) dependem do plano e da conta.
+
+Esta frente entregou documentação e desenho verificável. Não realizou conexão autenticada, inferência, teste com a chave exposta, revogação ou publicação.
+
+## Entrega consolidada desta iteração
+
+Implementados roteamento configurável, validação estrita de identidade no grafo, metadados conservadores no mobile e `.github/workflows/verify-groq.yml`. O workflow é exclusivamente manual, com versões de Actions fixadas por SHA verificado nos repositórios oficiais. Não foi disparado sem segredo. Relatórios de catálogo incluem somente contagem e disponibilidade dos IDs configurados, sem listar modelos privados alheios ao teste.
+
+Verificações locais: 144 testes Python e 48 testes mobile aprovados; typecheck, lint, consistência do portfólio e parsing do YAML aprovados. Dois testes de integração executam o grafo real com transporte HTTP simulado: um confirma três identidades retornadas distintas; outro rejeita três aliases que retornem uma única identidade. Esses testes não são chamadas Groq reais. O relatório offline registra ausência de credencial protegida e zero inferências verificadas.
