@@ -27,3 +27,9 @@ Nenhuma escrita governamental, submissão de proposta, aprovação, instalação
 ## Continuidade autorizada
 
 Priorizar fonte/trecho exato e documento original nas análises dos cinco; avançar nos fluxos nativos e testes de entrada ausente/falha; preparar implantação do backend sem expor chave; então repetir aceitação com um caso autêntico por domínio. Preservar o design. Não repetir inferência já aprovada sem mudança relevante ou falha nova. Os alertas recorrentes devem usar o commit, CI e evidências mais recentes, separando fatos históricos da última tentativa.
+
+## Rastreabilidade do relatório exportado
+
+O Markdown exportado inclui um índice de afirmações e seus trechos registrados, com texto exato, fonte, data fornecida e data de recuperação quando disponíveis. Referências sem passagem registrada aparecem explicitamente como ausentes. Esse vínculo não verifica suporte factual, autenticidade do documento, aplicabilidade jurídica ou atualização da fonte. Afirmações baseadas na entrada ou em cálculo mantêm a classificação original do modelo.
+
+A contingência de modelos foi publicada separadamente e validada por consulta autenticada, sem nova inferência: [relatório](evidence/groq-fallback-catalogue-verified.json). Ela preserva os papéis padrão; Qwen continua Preview com opt-in.

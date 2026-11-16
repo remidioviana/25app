@@ -42,3 +42,22 @@ class ExportProvenanceTests(unittest.TestCase):
             text=exports.export(run,'markdown').content.decode()
             self.assertNotIn('No external action was performed.',text)
             self.assertIn('External-action status:',text)
+
+    def test_claim_links_preserve_exact_passage_and_expose_missing_references(self):
+        result={'draft':{'claims':[
+            {'text':'Model assertion','basis':'evidence','citations':['doc:0','missing:1']},
+            {'text':'User statement','basis':'input','citations':[]}]},
+            'evidence':[{'citation':'doc:0','title':'Agreement clause','text':'Exact recorded clause.','source':'Uploaded agreement',
+                         'as_of':'2026-01-01','authorization':'must-not-export'}]}
+        links=exports.claim_evidence_links(result)
+        self.assertEqual(links[0]['passages'][0]['text'],'Exact recorded clause.')
+        self.assertTrue(links[0]['passages'][0]['recorded_passage_found'])
+        self.assertEqual(links[0]['passages'][1],{'citation':'missing:1','recorded_passage_found':False})
+        self.assertFalse(links[0]['factual_support_verified'])
+        self.assertEqual(links[1]['passages'],[])
+        self.assertNotIn('authorization',links[0]['passages'][0])
+        run=self.run_data();run['result'].update(result)
+        text=exports.export(run,'markdown').content.decode()
+        self.assertIn('Claim-to-passage traceability',text)
+        self.assertIn('missing:1',text)
+        self.assertNotIn('must-not-export',text)

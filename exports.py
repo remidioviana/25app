@@ -28,6 +28,25 @@ def json_section(title, value):
     while fence in text:fence+='`'
     return ['## '+title,'',fence+'json',text,fence,'']
 
+def claim_evidence_links(result):
+    """Join saved claims to saved passages, without inferring factual support."""
+    evidence={item['citation']:item for item in result.get('evidence',[])
+              if isinstance(item,dict) and isinstance(item.get('citation'),str)}
+    links=[]
+    for index,claim in enumerate((result.get('draft') or {}).get('claims',[])):
+        passages=[]
+        for citation in claim.get('citations',[]):
+            item=evidence.get(citation)
+            passage={'citation':citation,'recorded_passage_found':item is not None}
+            if item is not None:
+                passage.update({key:item[key] for key in
+                    ('title','source','as_of','retrieved_at','text') if key in item})
+            passages.append(passage)
+        links.append({'claim_index':index,'text':claim.get('text'),'basis':claim.get('basis'),
+                      'passages':passages,'factual_support_verified':False})
+    return links
+
+
 def markdown(run):
     result=run['result'];lines=[f"# {run['agent']} — report",'',f"Run: `{run['id']}`",'',
       f"Demo data: {'yes' if run['example'] else 'no'}",'', '## Goal','',run['goal'],'']
@@ -35,6 +54,8 @@ def markdown(run):
     if result.get('narrative'):lines+=['## AI synthesis','',result['narrative'],'']
     for title,key in [('Plan','plan'),('Structured claims and next steps','draft'),('Model review','critique')]:
         if result.get(key):lines+=json_section(title,result[key])
+    if result.get('draft',{}).get('claims'):
+        lines+=json_section('Claim-to-passage traceability',claim_evidence_links(result))
     if result.get('usage'):
         # Export an allowlist, never arbitrary provider metadata or credentials.
         roles=[]
