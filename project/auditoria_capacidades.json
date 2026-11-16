@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T06:28:04.743595+00:00",
+  "checked_at": "2026-11-16T10:58:32.285755+00:00",
   "scope": "Source audit, not completed live-agent acceptance",
   "products": [
     {
@@ -166,7 +166,7 @@
         "specialist": "openai/gpt-oss-20b",
         "critic": "openai/gpt-oss-120b"
       },
-      "live_model_calls_verified": false,
+      "live_model_calls_verified": true,
       "primary_workflow_verified": false,
       "external_write_connected": false,
       "blockers": [
@@ -175,7 +175,11 @@
         "Domain-specific retrieval/interpretation/validation beyond the existing pure tool",
         "Native end-to-end and required external operation acceptance pending"
       ],
-      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof."
+      "next_step": "Close the specific source/agent/UI/outcome handoff and demonstrate one authentic primary task; do not use example fixtures as proof.",
+      "live_model_calls_scope": "synthetic integration diagnostic; planner/specialist/critic responded; graph failed on invalid claim basis in revision",
+      "live_model_calls_evidence": [
+        "project/evidence/groq-munagasah-diagnostic.json"
+      ]
     },
     {
       "order": 5,
