@@ -31,6 +31,7 @@ CRITIC=obj({'verdict':{'type':'string','enum':['accept','revise','needs_evidence
 class State(TypedDict,total=False):
     plan:dict
     evidence:list
+    active_evidence:list
     retrieval_warnings:list
     analysis:dict
     draft:dict
@@ -144,19 +145,24 @@ def run(task,spec,check):
                     log('source_unavailable',{'source_id':source_id,'status':'not retrieved'})
         evidence={x['citation']:x for x in db.current_evidence(agent,list(evidence.values()))}
         queries=state.get('critique',{}).get('follow_up_queries') or state['plan']['queries'] or [task['goal']]
+        fresh={}
         for q in queries:
             checked();result=tools['search'].invoke({'query':q[:2000] or task['goal'][:2000]});warnings.extend(result['warnings'])
-            for x in result['matches']:evidence[x['citation']]=x
-        log('retrieving',{'citations':list(evidence),'warnings':warnings,'semantic_requested':semantic})
-        return {'evidence':list(evidence.values())[:evidence_limit],'retrieval_warnings':warnings,'source_reads':source_reads}
+            for x in result['matches']:fresh[x['citation']]=x
+        # Follow-up searches must displace stale context, not append behind a full cap.
+        evidence=fresh|{key:value for key,value in evidence.items() if key not in fresh}
+        pool=list(evidence.values())[:24]
+        active=pool[:evidence_limit]
+        log('retrieving',{'citations':list(evidence),'warnings':warnings,'semantic_requested':semantic,'active_citations':[x['citation'] for x in active]})
+        return {'evidence':pool,'active_evidence':active,'retrieval_warnings':warnings,'source_reads':source_reads}
     def analyze(state):
         checked();value=tools['analyze'].invoke({});log('acting',{'tool':spec['tool'],'output':value,'output_hash':db.digest(value)})
         return {'analysis':value}
     def write(state):
         context={'goal':task['goal'],'plan':state['plan'],'input':task['input'],'analysis':state['analysis'],
-                 'evidence':state.get('evidence',[]),'retrieval_warnings':state.get('retrieval_warnings',[]),
+                 'evidence':db.current_evidence(agent,state.get('active_evidence',state.get('evidence',[]))),'retrieval_warnings':state.get('retrieval_warnings',[]),
                  'source_reads':state.get('source_reads',[]),'memory':tools['memory'].invoke({}),'critic_feedback':state.get('critique')}
-        known={x['citation'] for x in state.get('evidence',[])}
+        known={x['citation'] for x in db.current_evidence(agent,state.get('evidence',[]))}
         # Persisted role receipts also bound attempts after a failed node/restart.
         attempts=max(state.get('writer_attempts',0),sum(e['phase']=='specialist' for e in db.get(run_id)['events']))
         working=state.copy()
@@ -175,8 +181,12 @@ def run(task,spec,check):
             context['validation_feedback']={'issue':issue,'instruction':'Use only citation IDs present in supplied evidence. Input claims use input; calculations use calculation. Remove unsupported evidence claims. Return the complete corrected draft.'}
         raise ValueError('Specialist attempt limit reached; create a new task to retry.')
     def critique(state):
+        cited={c for claim in state['draft']['claims'] for c in claim['citations']}
+        active={x['citation']:x for x in state.get('active_evidence',state.get('evidence',[]))}
+        active.update({x['citation']:x for x in state.get('evidence',[]) if x['citation'] in cited})
+        review_evidence=db.current_evidence(agent,list(active.values()))
         value,updates=ask('critic',CRITIC,{'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
-          'draft':state['draft'],'evidence':state.get('evidence',[])},state,
+          'draft':state['draft'],'evidence':review_evidence},state,
           'Audit the draft against inputs, calculations and sources. Reject unsupported external success. Set verdict to accept, revise or needs_evidence. List concrete issues and useful follow-up searches. Model review is not factual certification.')
         if value['verdict'] not in ('accept','revise','needs_evidence'):raise ValueError('Invalid reviewer verdict')
         return updates|{'critique':value,'revision':state.get('revision',0)+1}
