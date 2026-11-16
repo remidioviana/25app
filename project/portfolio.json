@@ -38,14 +38,16 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/groq-remaining-four-three-model-rag.json"
+      ],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
@@ -89,9 +91,9 @@
       "live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-strict-json-run.json"
       ],
-      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_status": "failed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
@@ -136,14 +138,16 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/groq-istithmar-rag-verified.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-istithmar-rag-verified.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/groq-remaining-four-three-model-rag.json"
+      ],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
     },
     {
@@ -224,9 +228,9 @@
       "live_graph_diagnostic_evidence": [
         "project/evidence/groq-first-five-strict-json-run.json"
       ],
-      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_status": "failed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-first-five-strict-json-run.json"
+        "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],

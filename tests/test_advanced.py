@@ -193,13 +193,14 @@ class StructuredGenerationRecoveryTests(unittest.TestCase):
     def value(self):return {'output_text':json.dumps({'verdict':'accept','issues':[],'follow_up_queries':[]}),'output':[],'usage':{'total_tokens':9}}
     def test_json_generation_failure_gets_one_explicit_larger_retry(self):
         import model_provider as provider
-        error=provider.ProviderFailure([400],['json_validate_failed'])
-        with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',side_effect=[error,self.value()]) as model:
-            value,usage=advanced.role('critic',advanced.CRITIC,{},'Audit')
-        self.assertEqual(value['verdict'],'accept');self.assertEqual(model.call_count,2)
-        self.assertEqual(model.call_args.kwargs['max_output_tokens'],4096);self.assertFalse(model.call_args.kwargs['allow_fallback'])
-        self.assertEqual(usage['structured_generation_retries'],1);self.assertTrue(usage['failed_attempt_usage_unavailable'])
-        self.assertEqual(usage['total_tokens'],9)
+        for code in ('json_validate_failed','tool_use_failed'):
+            error=provider.ProviderFailure([400],[code])
+            with self.subTest(code=code),patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',side_effect=[error,self.value()]) as model:
+                value,usage=advanced.role('critic',advanced.CRITIC,{},'Audit')
+            self.assertEqual(value['verdict'],'accept');self.assertEqual(model.call_count,2)
+            self.assertEqual(model.call_args.kwargs['max_output_tokens'],4096);self.assertFalse(model.call_args.kwargs['allow_fallback'])
+            self.assertEqual(usage['structured_generation_retries'],1);self.assertTrue(usage['failed_attempt_usage_unavailable'])
+            self.assertEqual(usage['structured_generation_retry_reason'],code);self.assertEqual(usage['total_tokens'],9)
     def test_quota_auth_and_invalid_schema_never_receive_generation_retry(self):
         import model_provider as provider
         for status,code in [(429,'rate_limit_exceeded'),(401,'invalid_request_error'),(400,'invalid_json_schema')]:

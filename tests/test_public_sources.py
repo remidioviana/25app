@@ -127,3 +127,17 @@ class PublicSourceTests(unittest.TestCase):
         actual=db.get(run);self.assertEqual(actual['status'],'completed',actual['error'])
         self.assertTrue(actual['result']['external_reads_performed']);self.assertEqual(len(actual['result']['source_reads']),1)
         self.assertTrue(any(e['phase']=='source_retrieved' for e in actual['events']))
+
+class CurrentEvidenceDeletionTests(unittest.TestCase):
+    def test_deleted_and_foreign_documents_cannot_remain_current_in_memory(self):
+        old=db.DB
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                db.DB=Path(directory)/'test.sqlite3';db.init()
+                own=db.ingest('himayah','Own','personal data controlled evidence','controlled fixture','')
+                db.ingest('iqamah','Foreign','personal data foreign evidence','controlled fixture','')
+                evidence=db.search('himayah','personal data');foreign=db.search('iqamah','personal data')
+                self.assertEqual(db.current_evidence('himayah',evidence+foreign),evidence)
+                db.delete_document('himayah',own['id'])
+                self.assertEqual(db.current_evidence('himayah',evidence),[])
+        finally:db.DB=old

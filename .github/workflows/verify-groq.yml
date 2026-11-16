@@ -20,6 +20,11 @@ on:
         type: choice
         options: [first-five, himayah, iqamah, istithmar, munagasah, sahil]
         default: first-five
+      additional_app:
+        description: 'Optionally add a second app when the primary scope is a single app'
+        type: choice
+        options: [none, himayah, iqamah, istithmar, munagasah, sahil]
+        default: none
       exclude_app:
         description: 'Exclude one app already verified separately from the selected scope'
         type: choice
@@ -85,11 +90,15 @@ jobs:
           AGENT_SEMANTIC_SEARCH: '0'
           AGENT_MAX_EVIDENCE_PASSAGES: '2'
           TEAM_APP: ${{ inputs.team_app }}
+          ADDITIONAL_APP: ${{ inputs.additional_app }}
           EXCLUDE_APP: ${{ inputs.exclude_app }}
           REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
           args=(--live --output project/evidence/groq-team-actions.json)
-          if [ "$TEAM_APP" != first-five ]; then args+=(--app "$TEAM_APP"); fi
+          if [ "$TEAM_APP" != first-five ]; then
+            args+=(--app "$TEAM_APP")
+            if [ "$ADDITIONAL_APP" != none ]; then args+=(--app "$ADDITIONAL_APP"); fi
+          fi
           if [ "$EXCLUDE_APP" != none ]; then args+=(--exclude-app "$EXCLUDE_APP"); fi
           if [ "$REVIEWED_HIMAYAH_SNAPSHOT" = true ]; then args+=(--reviewed-himayah-snapshot); fi
           python scripts/verify_team.py "${args[@]}"

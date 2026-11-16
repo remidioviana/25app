@@ -39,7 +39,8 @@ def assess(result,original_input,expected_analysis):
             'observed_role_models':identities,'three_distinct_models_verified':len(set(identities.values()))==3,
             'retrieved_passages':len(evidence),'cited_passages':len(cited),'role_calls':len(usage),
             'reported_total_tokens':sum(x.get('usage',{}).get('total_tokens',0) for x in usage),
-            'model_review_decision':result.get('decision'),'artifact_sha256':db.digest(result),
+            'model_review_decision':result.get('decision'),'prior_valid_draft_retained':result.get('prior_valid_draft_retained',False),
+            'unresolved_draft_validation':result.get('unresolved_draft_validation',[]),'artifact_sha256':db.digest(result),
             'factual_correctness_verified':False,'primary_domain_workflow_verified':False}
 
 
@@ -63,12 +64,14 @@ def paced_roles(seconds):
 
 def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None):
     excluded=set(excluded_apps or [])
+    selected=set(FIRST_FIVE) if app is None else {app} if isinstance(app,str) else set(app)
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
             'input_kind':'repository synthetic examples, not authentic user documents',
             'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
             'reviewed_himayah_snapshot_requested':reviewed_snapshot,
-            'minimum_role_interval_seconds':min_role_interval_seconds,'excluded_apps':sorted(excluded),
+            'minimum_role_interval_seconds':min_role_interval_seconds,'excluded_apps':sorted(excluded),'selected_apps':sorted(selected),
             'primary_domain_workflows_verified':False,'device_verified':False,'apps':[]}
+    if not selected<=set(FIRST_FIVE):report['error']='Selected apps must belong to the first lot.';return report,2
     if not excluded<=set(FIRST_FIVE):report['error']='Excluded app must belong to the first lot.';return report,2
     if not live:return report,0
     if not provider.configured():report['error']='Protected provider credential is missing; no network request was made.';return report,2
@@ -91,7 +94,7 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
             db.DB=Path(directory)/'diagnostic.sqlite3';db.init()
             quota_stopped=False
             for agent,(source_id,query) in FIRST_FIVE.items():
-                if agent in excluded or app and app!=agent:continue
+                if agent in excluded or agent not in selected:continue
                 row={'app':agent,'source_id':source_id,'graph_rag_diagnostic_verified':False}
                 report['apps'].append(row)
                 if quota_stopped:
@@ -116,7 +119,8 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
                     row['completed_roles']=[e['phase'] for e in role_events]
                     row['completed_role_details']=[{'role':e['phase'],'provider_reported_model':e['detail'].get('usage',{}).get('provider_reported_model'),
                         'response_contract':e['detail'].get('usage',{}).get('response_contract'),
-                        'structured_generation_retries':e['detail'].get('usage',{}).get('structured_generation_retries',0),'reported_total_tokens':e['detail'].get('usage',{}).get('total_tokens',0)} for e in role_events]
+                        'structured_generation_retries':e['detail'].get('usage',{}).get('structured_generation_retries',0),
+                        'structured_generation_retry_reason':e['detail'].get('usage',{}).get('structured_generation_retry_reason'),'reported_total_tokens':e['detail'].get('usage',{}).get('total_tokens',0)} for e in role_events]
                     row['reported_total_tokens']=sum(e['detail'].get('usage',{}).get('total_tokens',0) for e in role_events)
                     row['usage_scope']='accepted role results only; failed requests may consume additional quota'
                     if record['status']!='completed':
@@ -134,7 +138,7 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--live',action='store_true',help='Permit public source reads and potentially billable graph inference (up to seven role calls per app).')
-    parser.add_argument('--app',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
+    parser.add_argument('--app',action='append',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
     parser.add_argument('--reviewed-himayah-snapshot',action='store_true',help='Explicitly use repository-reviewed historical PDPL snapshot; no fresh-fetch claim or silent fallback.')
     parser.add_argument('--min-role-interval-seconds',type=int,default=15,choices=range(0,61),metavar='0..60',help='Diagnostic-only pacing between completed role requests; production defaults are unchanged.')
     parser.add_argument('--exclude-app',action='append',choices=list(FIRST_FIVE),default=[],help='Skip an app already verified separately; repeat for multiple exclusions.')

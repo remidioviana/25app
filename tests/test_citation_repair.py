@@ -46,3 +46,30 @@ class CitationRepairTests(unittest.TestCase):
   self.assertEqual(record['status'],'completed',record['error'])
   self.assertEqual(self.writes,3);self.assertEqual(len(self.calls),6)
   self.assertEqual(record['result']['decision'],'requires_human_review')
+
+ def test_invalid_final_revision_retains_only_prior_valid_draft_with_human_review(self):
+  count=0
+  def role(name,schema,context,instructions):
+   nonlocal count
+   if name=='specialist':
+    self.calls.append(name);self.writes+=1
+    citations=[] if self.writes==3 else [context['evidence'][0]['citation']]
+    return {'summary':'Validated prior version' if self.writes<3 else 'Rejected final revision','claims':[{'text':'Budget evidence','basis':'evidence','citations':citations}],'next_steps':[]},{'total_tokens':7}
+   if name=='critic':
+    self.calls.append(name);count+=1
+    return {'verdict':'accept' if count==3 else 'revise','issues':[],'follow_up_queries':[]},{'total_tokens':7}
+   return self.role(name,schema,context,instructions)
+  run,_=db.create('mizan','Controlled diagnostic',engine.SPECS['mizan']['example'],'team',True,None)
+  with patch.object(advanced,'role',side_effect=role):engine.execute(run)
+  record=db.get(run);self.assertEqual(record['status'],'completed',record['error'])
+  result=record['result'];self.assertEqual(result['decision'],'requires_human_review')
+  self.assertTrue(result['prior_valid_draft_retained']);self.assertEqual(result['draft']['summary'],'Validated prior version')
+  self.assertEqual(result['critique']['verdict'],'revise');self.assertEqual(len(self.calls),6)
+  self.assertTrue(result['draft']['claims'][0]['citations']);self.assertTrue(result['unresolved_draft_validation'])
+ def test_domain_report_policy_does_not_request_unavailable_tools(self):
+  spec=engine.SPECS['sahil'];original=spec['instructions']
+  self.assertIn('Execute the domain tool before finalizing.',original)
+  self.assertNotIn('Execute the domain tool before finalizing.',advanced.report_policy(spec))
+  self.assertIn('has already executed',advanced.report_policy(spec))
+  self.assertIn('after this planning step',advanced.report_policy(spec,planning=True))
+  self.assertEqual(spec['instructions'],original)

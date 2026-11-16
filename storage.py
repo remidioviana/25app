@@ -127,7 +127,18 @@ def search(agent,query):
         return [dict(x)|{'citation':x['doc']+':'+str(x['chunk'])} for x in rows]
 
 def current_evidence(agent,evidence):
-    """Do not reuse superseded public-source passages as current task evidence."""
+    """Retain only existing, same-app documents that have not been superseded."""
+    def document(item):
+        value=item.get('doc')
+        if isinstance(value,str) and value:return value
+        citation=item.get('citation')
+        return citation.split(':')[0] if isinstance(citation,str) else None
+    ids={document(item) for item in evidence}-{None}
+    if not ids:return []
     with connect() as c:
-        obsolete={r[0] for r in c.execute('SELECT doc FROM public_source_versions WHERE agent=? AND is_current=0',(agent,))}
-    return [x for x in evidence if x.get('doc',x.get('citation','').split(':')[0]) not in obsolete]
+        marks=','.join('?' for _ in ids)
+        valid={r[0] for r in c.execute(f'''SELECT d.id FROM documents d
+          WHERE d.agent=? AND d.id IN ({marks})
+          AND NOT EXISTS (SELECT 1 FROM public_source_versions v
+            WHERE v.agent=d.agent AND v.doc=d.id AND v.is_current=0)''',(agent,*ids))}
+    return [item for item in evidence if document(item) in valid]
