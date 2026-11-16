@@ -106,3 +106,14 @@ class ProviderTests(unittest.TestCase):
    with self.subTest(required=required),patch.object(p,'urlopen') as network:
     with self.assertRaisesRegex(ValueError,'registered function'):p.respond([],tools,required_tool=required)
     network.assert_not_called()
+
+ def test_strict_schema_output_cannot_be_combined_with_tools(self):
+  schema={'type':'object','properties':{'verdict':{'type':'string','enum':['accept']}},'required':['verdict'],'additionalProperties':False}
+  with patch.object(p,'urlopen',return_value=self.ok()) as send:p.respond([],[],response_schema=schema)
+  payload=json.loads(send.call_args.args[0].data)
+  self.assertTrue(payload['response_format']['json_schema']['strict']);self.assertEqual(payload['response_format']['json_schema']['schema'],schema)
+  self.assertNotIn('tools',payload);self.assertNotIn('tool_choice',payload)
+  with patch.object(p,'urlopen') as network:
+   with self.assertRaisesRegex(ValueError,'no tool calls'):
+    p.respond([],[{'name':'test','parameters':{}}],response_schema=schema)
+   network.assert_not_called()

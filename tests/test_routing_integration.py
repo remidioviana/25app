@@ -13,8 +13,10 @@ class RoutingIntegrationTests(unittest.TestCase):
   provider._KEY_CONFIG=();provider._KEY_INDEX=0;self.requests=[];self.auditor_attempts=0;self.failure=None
  def tearDown(self):self.env.stop();db.DB=self.old;self.temp.cleanup()
  def transport(self,request,timeout):
-  payload=json.loads(request.data);role=payload['tools'][0]['function']['description'].rsplit(' ',1)[1]
-  self.assertEqual(payload['tool_choice'],{'type':'function','function':{'name':'deliver_role_result'}})
+  payload=json.loads(request.data);role='critic' if 'response_format' in payload else payload['tools'][0]['function']['description'].rsplit(' ',1)[1]
+  if 'response_format' in payload:
+   self.assertNotIn('tools',payload);self.assertTrue(payload['response_format']['json_schema']['strict'])
+  else:self.assertEqual(payload['tool_choice'],{'type':'function','function':{'name':'deliver_role_result'}})
   self.requests.append((role,payload['model'],request.get_header('Authorization')))
   if role=='critic' and payload['model']==provider.AUDIT_MODEL and self.failure:
    self.auditor_attempts+=1
@@ -22,6 +24,7 @@ class RoutingIntegrationTests(unittest.TestCase):
    raise HTTPError(request.full_url,status,'simulated',{},io.BytesIO(b''))
   values={'planner':{'objective':'Review supplied inputs','queries':[],'steps':['Analyze','Review'],'missing_information':[]},'specialist':{'summary':'Review the domain calculation.','claims':[],'next_steps':['Confirm source inputs']},'critic':{'verdict':'accept','issues':[],'follow_up_queries':[]}}
   raw={'choices':[{'finish_reason':'tool_calls','message':{'content':None,'tool_calls':[{'id':'call-'+str(len(self.requests)),'type':'function','function':{'name':'deliver_role_result','arguments':json.dumps(values[role])}}]}}],'usage':{'total_tokens':7}}
+  if 'response_format' in payload:raw['choices']=[{'finish_reason':'stop','message':{'content':json.dumps(values[role])}}]
   if getattr(self,'report_identity',False):raw['model']=getattr(self,'reported_alias',None) or payload['model']
   return io.BytesIO(json.dumps(raw).encode())
  def execute(self,agent):

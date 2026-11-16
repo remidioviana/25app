@@ -142,3 +142,18 @@ class RoleSchemaChoiceTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'permitted choices'):advanced.role('specialist',advanced.DRAFT,{},'')
         schema=model.call_args.args[1][0]['parameters']
         self.assertEqual(schema['properties']['claims']['items']['properties']['basis']['enum'],['input','calculation','evidence'])
+
+class ReviewerStructuredOutputTests(unittest.TestCase):
+    def test_reviewer_validates_json_without_registering_a_fake_tool(self):
+        value={'verdict':'accept','issues':[],'follow_up_queries':[]}
+        with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',return_value={'output_text':json.dumps(value),'output':[],'usage':{'total_tokens':3}}) as model:
+            actual,usage=advanced.role('critic',advanced.CRITIC,{},'Audit')
+        self.assertEqual(actual,value);self.assertEqual(model.call_args.args[1],[])
+        self.assertEqual(model.call_args.kwargs['response_schema'],advanced.CRITIC)
+    def test_reviewer_rejects_invalid_json_schema_values_and_tool_calls(self):
+        responses=[{'output_text':'not JSON','output':[]},
+                   {'output_text':json.dumps({'verdict':'approved','issues':[],'follow_up_queries':[]}),'output':[]},
+                   {'output_text':json.dumps({'verdict':'accept','issues':[],'follow_up_queries':[]}),'output':[{'type':'function_call'}]}]
+        for response in responses:
+            with self.subTest(response=response),patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',return_value=response):
+                with self.assertRaises(ValueError):advanced.role('critic',advanced.CRITIC,{},'Audit')

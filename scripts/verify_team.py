@@ -88,6 +88,8 @@ def verify(live=False,app=None,reviewed_snapshot=False):
                     engine.execute(run);record=db.get(run);row['run_status']=record['status']
                     role_events=[e for e in record['events'] if e['phase'] in ('planner','specialist','critic')]
                     row['completed_roles']=[e['phase'] for e in role_events]
+                    row['completed_role_details']=[{'role':e['phase'],'provider_reported_model':e['detail'].get('usage',{}).get('provider_reported_model'),
+                        'response_contract':e['detail'].get('usage',{}).get('response_contract'),'reported_total_tokens':e['detail'].get('usage',{}).get('total_tokens',0)} for e in role_events]
                     row['reported_total_tokens']=sum(e['detail'].get('usage',{}).get('total_tokens',0) for e in role_events)
                     row['usage_scope']='accepted role results only; failed requests may consume additional quota'
                     if record['status']!='completed':

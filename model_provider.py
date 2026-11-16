@@ -158,7 +158,7 @@ def list_models():
         if record.get('active') is not False and model not in models:models.append(model)
     return models
 
-def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60,required_tool=None):
+def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,allow_fallback=True,request_timeout=60,required_tool=None,response_schema=None):
     keys=_key_order();requested=model_override or os.environ.get('OPENAI_MODEL') or FAST_MODEL
     requested=_model_name(requested)
     if role is not None and role not in ROLE_ENV:raise ValueError('Unknown AI role.')
@@ -171,6 +171,10 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
             or required_tool not in [t['function']['name'] for t in payload.get('tools',[])]):
             raise ValueError('Required tool must name a registered function.')
         payload['tool_choice']={'type':'function','function':{'name':required_tool}}
+    if response_schema is not None:
+        if tools or required_tool is not None or not isinstance(response_schema,dict) or response_schema.get('type')!='object':
+            raise ValueError('Strict structured output requires an object schema and no tool calls.')
+        payload['response_format']={'type':'json_schema','json_schema':{'name':'role_result','strict':True,'schema':response_schema}}
     fallback=False
     try:raw=_request('/chat/completions',payload,keys,timeout=request_timeout)
     except ProviderFailure as exc:
@@ -217,7 +221,7 @@ def respond(messages,tools,model_override=None,role=None,max_output_tokens=2200,
     return {'id':raw.get('id'),'output':output,'output_text':content or '',
       'usage':{'input_tokens':usage.get('prompt_tokens',0),'output_tokens':usage.get('completion_tokens',0),'total_tokens':usage.get('total_tokens',0),
                'requested_model':requested,'model':reported or payload['model'],'request_model_after_fallback':payload['model'],
-               'provider_reported_model':reported,'model_identity_evidence':'provider_reported' if reported else 'request_only',
+               'provider_reported_model':reported,'model_identity_evidence':'provider_reported' if reported else 'request_only','response_contract':'json_schema_strict' if response_schema is not None else 'tools' if tools else 'text',
                'fallback':fallback,'fallback_reason':'all_keys_http_429' if fallback else None}}
 
 def embed(texts):
