@@ -112,3 +112,10 @@ class GroqReadinessTests(unittest.TestCase):
         with patch.object(provider,'urlopen',side_effect=guessing_transport):report,code=verify(live=True,probe_models=True)
         self.assertEqual(code,2);self.assertFalse(report['model_inference_verified'])
         self.assertTrue(report['role_checks'][0]['tool_call_verified']);self.assertFalse(report['role_checks'][0]['tool_roundtrip_verified'])
+
+    def test_malformed_protected_credential_never_reaches_headers_or_error_reports(self):
+        for value in ('fictional-key\ncontrolled-private-fragment','fictional-key\rcontrolled-private-fragment','fictional-key controlled-private-fragment','x'*4097):
+            with self.subTest(length=len(value)),patch.dict(os.environ,{'OPENAI_API_KEY':value}),patch.object(provider,'urlopen') as network:
+                report,code=verify(live=True)
+                self.assertEqual(code,2);self.assertEqual(report['configuration']['status'],'invalid_configuration')
+                self.assertNotIn('controlled-private-fragment',json.dumps(report));network.assert_not_called()

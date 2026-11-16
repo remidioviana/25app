@@ -162,3 +162,9 @@ A avaliação de ferramentas 43862526716 e o piloto RAG Munagasah 43862903821 co
 ## Primeiro lote: resultado consolidado
 
 Himayah, Iqamah, Istithmar, Munagasah e Sahil possuem agora prova individual de grafo com os três IDs do perfil de avaliação, não apenas o probe de transporte. Todos terminaram com revisão humana. O padrão permanente continua com dois IDs de produção e Qwen continua Preview. Ver `project/PRIMEIRO_LOTE_VALIDADO.md` para fontes, runs e portões ainda pendentes; nenhuma implantação ou release é inferida desses testes.
+
+## Credencial atualizada: nova verificação
+
+Após o responsável atualizar os secrets, o [run 43870216530](https://github.com/remidioviana/25app/actions/runs/43870216530) repetiu somente o probe curto. Catálogo, inferência e retorno de ferramenta passaram nos três IDs distintos: GPT-OSS20B, GPT-OSS120B e Qwen3.8-27B. Evidência: `project/evidence/groq-updated-credentials-verified.json`. Essa prova vale para a configuração protegida recebida pelo job, sem revelar ou afirmar validade individual de cada eventual chave de um pool.
+
+O transporte agora rejeita credenciais com espaço/controle interno, caracteres não ASCII ou mais de 4.096 caracteres antes de formar cabeçalhos HTTP. Erros retornam texto fixo, sem copiar o valor. Listas separadas por vírgula continuam suportadas; espaços externos são normalizados como antes. A configuração inválida não se torna inferência verificada. O teste novo cobre formato inválido sem rede nem valor no relatório; suíte local completa: 194 testes Python aprovados.

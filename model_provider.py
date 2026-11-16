@@ -19,9 +19,13 @@ _KEY_INDEX=0
 _KEY_CONFIG=()
 
 def _get_keys():return list(dict.fromkeys(k.strip() for k in os.environ.get('OPENAI_API_KEY','').split(',') if k.strip()))
+def _validate_keys(keys):
+    if any(not isinstance(key,str) or len(key)>4096 or any(ord(c)<33 or ord(c)>126 for c in key) for key in keys):
+        raise ValueError('Provider credentials must be comma-separated single-line values without internal whitespace or control characters.')
+
 def _key_order():
     global _KEY_INDEX,_KEY_CONFIG
-    keys=_get_keys()
+    keys=_get_keys();_validate_keys(keys)
     if not keys:raise ValueError('Configure OPENAI_API_KEY on the server.')
     with _LOCK:
         if tuple(keys)!=_KEY_CONFIG:_KEY_CONFIG=tuple(keys);_KEY_INDEX=0
@@ -54,7 +58,7 @@ def configuration_status():
     """Safe metadata only. Key presence and configured IDs never prove inference."""
     present=configured()
     try:
-        models=role_models();_base_url()
+        _validate_keys(_get_keys());models=role_models();_base_url()
         return {'status':'configured_unverified' if present else 'missing_credentials','configured':present,
                 'configuration_valid':True,'roles':models,'distinct_models':len(set(models.values())),
                 'require_distinct':_flag('AGENT_REQUIRE_DISTINCT_MODELS'),'inference_verified':False,
@@ -125,6 +129,7 @@ class ProviderFailure(RuntimeError):
         super().__init__('Provider attempts failed: '+', '.join(str(s) for s in statuses)+'.'+detail+wait+' Check server configuration and provider access.')
 
 def _request(endpoint,payload,keys,method='POST',timeout=60):
+    _validate_keys(keys)
     statuses=[];codes=[];retry_after=None
     for key in keys:
         request=Request(_base_url()+endpoint,data=None if method=='GET' else json.dumps(payload,allow_nan=False).encode(),method=method,headers={'Authorization':'Bearer '+key,'Content-Type':'application/json','User-Agent':'MobileAgents/7.0'})
