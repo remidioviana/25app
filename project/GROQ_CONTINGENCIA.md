@@ -10,3 +10,5 @@ O catálogo autenticado consultado em 16/11/2026 retornou 11 modelos ativos, dos
 Qwen continua Preview e exige `AGENT_ALLOW_PREVIEW_MODELS=1`. O modo de prova com três identidades distintas e chamadas com `allow_fallback=False` não substituem modelos. O padrão permanente continua usando dois IDs de produção para os três papéis.
 
 O histórico registra IDs, status e códigos sanitizados, sem chaves ou corpos brutos. Os testes de contingência usam respostas HTTP controladas; não constituem evidência de recuperação durante uma indisponibilidade real. Esta alteração não comprova aceite primário dos apps, implantação permanente ou release.
+
+Validação da implementação: [catálogo 43926348131](https://github.com/remidioviana/25app/actions/runs/43926348131), três entradas ativas, nenhuma indisponível e limite de cinco respeitado; [relatório](evidence/groq-fallback-catalogue-verified.json). A consulta não executou inferência. Os 206 testes Python passaram localmente.

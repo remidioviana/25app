@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-16T18:12:26.530825+00:00",
+  "check_mode": "live_catalogue_only",
+  "configuration": {
+    "status": "configured_unverified",
+    "configured": true,
+    "configuration_valid": true,
+    "roles": {
+      "planner": "openai/gpt-oss-20b",
+      "specialist": "openai/gpt-oss-20b",
+      "critic": "openai/gpt-oss-120b"
+    },
+    "distinct_models": 2,
+    "require_distinct": false,
+    "inference_verified": false,
+    "preview_roles": []
+  },
+  "catalogue_verified": true,
+  "model_inference_verified": false,
+  "three_distinct_models_verified": false,
+  "role_checks": [],
+  "primary_application_workflow_verified": false,
+  "secret_handling": "protected server environment only; no key in report",
+  "catalogue_checked_at": "2026-11-16T18:12:26.906973+00:00",
+  "available_model_count": 11,
+  "active_general_text_model_ids": [
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b"
+  ],
+  "fallback_catalogue": {
+    "configured": [
+      "openai/gpt-oss-20b",
+      "openai/gpt-oss-120b",
+      "qwen/qwen3.8-27b"
+    ],
+    "active": [
+      "openai/gpt-oss-20b",
+      "openai/gpt-oss-120b",
+      "qwen/qwen3.8-27b"
+    ],
+    "unavailable": [],
+    "within_five_model_limit": true,
+    "inference_access_verified_by_listing": false
+  },
+  "documented_preview_candidate_availability": {
+    "meta-models/muse-spark-open": false,
+    "qwen/qwen3.8-27b": true
+  },
+  "configured_model_availability": {
+    "openai/gpt-oss-20b": true,
+    "openai/gpt-oss-120b": true
+  },
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/43926348131"
+}
