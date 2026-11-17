@@ -1,6 +1,6 @@
 # Majlis AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Welcome, discretion and quiet confidence
 
 ## 3. Logo and wordmark
 
-A low gathering arc above a single seat; generous host-like literary masthead
+Welcoming architectural wordmark with a bespoke interlocking entrance motif. Urbanist with a distinct Arabic lettering system.
 
 ## 4. Typography
 
-cormorant for the wordmark and key headlines. Wordmark 38 pt, tracking 0.4; headline 44 pt with 1.18 leading ratio. Body 18/29 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Urbanist for Latin branding and Kufam for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #291F18, ink #F9EDDD, accent #E6B77E, secondary surface #272541. Status is also expressed in words, not color alone.
+Ultramarine `#403A78`, pale porcelain `#F5EBE9`, orchid `#D5B5F1`. Spatial onboarding pathways and collaborative imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Measured page-like reveals encourage unhurried reading This describes the produc
 
 ## 10. Agentic AI experience
 
-The agent orders supplied onboarding tasks by dependencies. No invented company policies or completed onboarding actions.
+**Onboarding Coordinator:** organizes approved onboarding requirements, identifies incomplete steps, and prepares relevant communications and tasks. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

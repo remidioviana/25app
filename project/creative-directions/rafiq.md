@@ -1,6 +1,6 @@
 # Rafiq — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Clarity and everyday companionship
 
 ## 3. Logo and wordmark
 
-An off-center orbit cut by a small daylight wedge; compact humanist companion wordmark
+Warm, organic wordmark; original continuous-path symbol. Quicksand with Noto Kufi Arabic.
 
 ## 4. Typography
 
-sora for the wordmark and key headlines. Wordmark 39 pt, tracking -1.8; headline 46 pt with 1.03 leading ratio. Body 17/25 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Quicksand for Latin branding and Noto Kufi Arabic for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #141623, ink #F6F1EA, accent #FFAA72, secondary surface #272541. Status is also expressed in words, not color alone.
+Soft violet `#6D5B98`, warm white `#F9EEE8`, peach `#F4A89D`. Human-centered illustrations and gentle contextual photography. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Clock updates are quiet; scheduling changes emphasize displacement This describe
 
 ## 10. Agentic AI experience
 
-The agent places tasks around actual supplied commitments. Device time is not a connected calendar or booked appointment.
+**Daily Companion Agent:** organizes explicitly provided goals and available context, prepares useful next steps, and supports authorized personal workflows. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

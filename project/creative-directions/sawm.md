@@ -1,6 +1,6 @@
 # Sawm AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Calm without pressure
 
 ## 3. Logo and wordmark
 
-A single almond-shaped pause between asymmetric dusk curves; hushed small literary signature
+Refined astronomical-inspired logotype; abstract solar-cycle mark. Newsreader with Scheherazade New.
 
 ## 4. Typography
 
-ebgaramond for the wordmark and key headlines. Wordmark 31 pt, tracking 2.0; headline 39 pt with 1.22 leading ratio. Body 18/29 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Newsreader for Latin branding and Scheherazade New for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #221E43, ink #F8F0D7, accent #D9C282, secondary surface #272541. Status is also expressed in words, not color alone.
+Night blue `#131F4D`, candlelight `#FFE8B0`, muted gold `#D0B87C`. Elegant sky gradients and astronomical visualizations. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Slow reveals stop immediately under reduced motion This describes the product ta
 
 ## 10. Agentic AI experience
 
-The agent respects user-entered day boundaries and work constraints. No medical fasting advice or fabricated prayer timings.
+**Ramadan Planning Agent:** retrieves location-relevant schedules when permitted, helps organize personal fasting plans, and identifies timing-sensitive reminders. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

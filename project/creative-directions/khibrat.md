@@ -1,6 +1,6 @@
 # Khibrat AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Fairness and professional attention
 
 ## 3. Logo and wordmark
 
-Three offset competency tiles with one connecting notch; measured skills wordmark
+Minimal editorial monogram formed from calibrated evaluation lines. DM Sans with Harmattan.
 
 ## 4. Typography
 
-dmsans for the wordmark and key headlines. Wordmark 32 pt, tracking -0.5; headline 44 pt with 1.05 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+DM Sans for Latin branding and Harmattan for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #DFEDE5, ink #123E36, accent #16675B, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Charcoal `#34312D`, acid lime `#D9E14D`, warm stone `#F1EEE5`. Precise résumé typography and transparent evaluation graphics. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Focus moves between criterion and evidence rather than celebrating a score This 
 
 ## 10. Agentic AI experience
 
-The agent explains evidence gaps against the supplied role rubric. Avoid claims of fair hiring certification or unapproved applicant inference.
+**Talent Review Copilot:** extracts job-relevant qualifications, maps evidence to human-defined criteria, and prepares transparent assessments without autonomous hiring decisions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

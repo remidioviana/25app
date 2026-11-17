@@ -1,6 +1,6 @@
 # Amanah Eco — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Agency through honest measurement
 
 ## 3. Logo and wordmark
 
-Two broad flowing resource bands around a narrow measurement gap; observatory-style wordmark
+Environmental wordmark with an original branching energy-path symbol. Raleway with Lemonada.
 
 ## 4. Typography
 
-archivo for the wordmark and key headlines. Wordmark 28 pt, tracking 1.6; headline 40 pt with 1.02 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Raleway for Latin branding and Lemonada for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #EAF4D8, ink #274716, accent #52751B, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Forest green `#215B39`, pale citron `#F8F8DA`, lime `#BDD652`. Organic energy-flow visuals and precise environmental graphics. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ A comparison changes only when actual measurements change This describes the pro
 
 ## 10. Agentic AI experience
 
-The agent distinguishes measured rate changes from unexplained causes. No invented meter connection, tariff, emissions or weather adjustment.
+**Energy Optimization Agent:** evaluates available usage data, identifies efficiency opportunities, and prepares recommendations with explicitly stated assumptions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

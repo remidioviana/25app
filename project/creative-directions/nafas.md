@@ -1,6 +1,6 @@
 # Nafas AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Gentleness and personal agency
 
 ## 3. Logo and wordmark
 
-An airy open oval formed by two unequal strokes; softly spaced lowercase breath wordmark
+Quiet, airy typography with a custom breathing-wave emblem. Comfortaa with Markazi Text.
 
 ## 4. Typography
 
-quicksand for the wordmark and key headlines. Wordmark 46 pt, tracking 1.1; headline 45 pt with 1.2 leading ratio. Body 19/30 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Comfortaa for Latin branding and Markazi Text for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #EFF1E7, ink #3F513D, accent #4F6D43, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Eucalyptus `#4A7480`, mist `#F0F4F1`, muted sage `#AEC7BB`. Minimal atmospheric imagery and soft, nonintrusive motion. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Breath pacing honors reduced motion and stops in the background This describes t
 
 ## 10. Agentic AI experience
 
-The agent suggests a bounded routine from stated preferences. No diagnosis or claim that the pacing pattern is a clinical protocol.
+**Wellbeing Support Agent:** offers evidence-informed exercises and personalized suggestions based on information voluntarily shared, without inventing diagnoses or biometric readings. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

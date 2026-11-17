@@ -1,0 +1,355 @@
+{
+  "scope": "Actual RTL font rendering on the build host, not native Android/iOS shaping or user readability acceptance",
+  "fonts": [
+    {
+      "app": "himayah",
+      "font_sha256": "e182da172e31be5f14ddc181ffa0175e739d6b5ca1e9b287b39b11c2e3b6f54a",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        466,
+        27,
+        869,
+        68
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "iqamah",
+      "font_sha256": "5a04b27a0438fdd75b21b85d7ba74259aa351d80170a9b60ed18dda8bf6a9629",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        481,
+        28,
+        869,
+        68
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "istithmar",
+      "font_sha256": "2800d2cfb2d948c310e8a3be51f213ca37f8ae32407aff1a816de08bb6c841c7",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        395,
+        19,
+        868,
+        64
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "munagasah",
+      "font_sha256": "32a8af04e605779f7bd186c6ffc4af55cf5d985ace91ec8d7a2904466b07a36c",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        442,
+        11,
+        868,
+        47
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "sahil",
+      "font_sha256": "0852e313d93581715cd5b04d683e1c42a1ceb0599020033ce47cbe376cf9451d",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        441,
+        37,
+        869,
+        78
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "tawteen",
+      "font_sha256": "5cc5b19600687a1f62547685fba3d3e20ff133f4ea3437c6e3fc2992aa449d40",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        397,
+        22,
+        868,
+        65
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "adl",
+      "font_sha256": "f7e595620f07ae4396378d7ee7deae0330b700b2c5b7e9c33a08b076b21dc3d3",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        512,
+        29,
+        867,
+        71
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "tawassul",
+      "font_sha256": "5a7be35337dfd873662d9650f03943af57a22a7861a7ee9adbdc5c74d4b582ea",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        434,
+        27,
+        868,
+        67
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "adab",
+      "font_sha256": "473c9792cee5b1bf6c9f89d5df963ff0ce23d1e69a358abe5c948185aa9f64a4",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        580,
+        28,
+        869,
+        75
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "khidmah",
+      "font_sha256": "04512948dba2949675302fb4debfd6954b6b1a1748181ccce45d6c780fbfc177",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        437,
+        21,
+        867,
+        61
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "jomrok",
+      "font_sha256": "acf521313b5ba1c4c5d7cb11a8854ca03d91e8e7d554c8cb9192ba1fcc06d352",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        415,
+        34,
+        870,
+        76
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "khibrat",
+      "font_sha256": "3c891c66de4fa1219f0bb0ba14f0b82436282a6fb6f5ba626721af116b4a80c0",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        517,
+        34,
+        869,
+        71
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "majlis",
+      "font_sha256": "7a78ca8e9bfb5bc39f8f870542938786a2a767d026705e354e160d0ceb5de84e",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        376,
+        18,
+        869,
+        61
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "rafiq",
+      "font_sha256": "12e56847b341c6b52b2fe093037142cb73ac463fd36461259fbad492438e965a",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        400,
+        34,
+        867,
+        76
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "sawm",
+      "font_sha256": "79bda018a00356c345e9089eded17ae5eab2aec927a64ecaaae78f2596aced41",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        466,
+        36,
+        868,
+        83
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "mizan",
+      "font_sha256": "0d60ee27bd6c92b784f83ca5e697189e69b80d19e1503cc6e83b2fe13bac83bd",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        469,
+        25,
+        868,
+        61
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "thawg",
+      "font_sha256": "2823701a51b9be748fcc12d61e5a6a0987f8628d7eb54d0f7111aba2e52bf861",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        457,
+        30,
+        867,
+        68
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "manzil",
+      "font_sha256": "3acf5da596cb350ebf590d863a323afe01e13972a70922d22befa23f8e595d8f",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        448,
+        27,
+        867,
+        65
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "gurbah",
+      "font_sha256": "5ee887770073ff22c1e9a04ec0ecee7fbc12b7c8581d26e549571c134e2a72a1",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        506,
+        25,
+        869,
+        68
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "amanah-eco",
+      "font_sha256": "550d014a9b6309822cacb5bf3daf52e2dfd2c0e538a57e6d2eb74dd94b53a6d6",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        340,
+        34,
+        866,
+        85
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "nafas",
+      "font_sha256": "4064d826177b601d1d67ad5032f5a150ec569eeeeda6ec0d94d1c79e6416d62f",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        529,
+        25,
+        869,
+        58
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "tadweer",
+      "font_sha256": "8065212799eafa00699e869d7880cf1d187104116341f769e509379652ac3ae6",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        587,
+        17,
+        869,
+        46
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "turath",
+      "font_sha256": "7b9ed882f418651b3db7c7045348aa7dd7aed38ae0c39280524f2feed6b60369",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        597,
+        28,
+        869,
+        60
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "himam",
+      "font_sha256": "15be6dcf9cc05e9e8e7c8257d459158c264083ef9fff2a8c104170a574efec69",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        426,
+        39,
+        869,
+        80
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    },
+    {
+      "app": "hisad",
+      "font_sha256": "85e386e36014c40a6d274348835183a3bc31889326e00d8d91a04fdf73906158",
+      "sample": "حماية البيانات والمنزل ١٢٣",
+      "renderer": "Pillow RAQM/HarfBuzz RTL",
+      "nonempty_ink_bounds": [
+        556,
+        3,
+        868,
+        45
+      ],
+      "glyph_coverage_missing": [],
+      "device_verified": false
+    }
+  ]
+}

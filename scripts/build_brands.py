@@ -19,7 +19,7 @@ def main():
  brands=json.loads((ROOT/'brand-assets/brands.json').read_text());ids=json.loads((ROOT/'mobile/src/experience/identities.json').read_text());symbols=json.loads((ROOT/'brand-assets/identity-symbols.json').read_text());jobs=[]
  for b in brands:
   id=b['id'];d=ids[id];folder=ROOT/'mobile/assets/variants'/id
-  inner=symbols[id].format(**d);logo=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">{inner}</svg>'
+  inner=symbols[id].format(**dict(d,accent=d.get('signal',d['accent'])));logo=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">{inner}</svg>'
   (ROOT/'brand-assets/logos'/f'{id}.svg').write_text(logo+'\n');(folder/'logo.svg').write_text(logo+'\n')
   word=b['name'].replace(' AI','');paths,width,em=word_paths(id,word)
   wordmark=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {em*1.4}" role="img" aria-label="{word}"><g transform="translate(0 {em}) scale(1 -1)" fill="{d["ink"]}">{paths}</g></svg>'

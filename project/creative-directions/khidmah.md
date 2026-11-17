@@ -1,6 +1,6 @@
 # Khidmah AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Warmth, fairness and a clear path
 
 ## 3. Logo and wordmark
 
-A soft speech opening formed from two solid quarters; welcoming compact care lettering
+Rounded yet precise logotype; distinctive overlapping service-loop symbol. Nunito Sans with Almarai.
 
 ## 4. Typography
 
-outfit for the wordmark and key headlines. Wordmark 35 pt, tracking -0.7; headline 36 pt with 1.18 leading ratio. Body 18/28 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Nunito Sans for Latin branding and Almarai for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #EAFAFD, ink #123F4C, accent #087B95, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Ocean blue `#225B74`, pale yellow `#FFF5CC`, mint `#77E2C8`. Clean operational graphics and conversational flow diagrams. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Gentle expansion communicates what the agent needs next This describes the produ
 
 ## 10. Agentic AI experience
 
-A resolution distinguishes customer report, merchant policy and calculation. Do not claim a refund transaction occurred.
+**Resolution Agent:** classifies authorized requests, identifies relevant policies, proposes remedies, and executes permitted service actions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

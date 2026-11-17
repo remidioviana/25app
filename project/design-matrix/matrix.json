@@ -1,0 +1,327 @@
+{
+  "himayah": {
+    "order": 1,
+    "brand_direction": "Precision-cut H wordmark; an original negative-space document-fold emblem. IBM Plex Sans with IBM Plex Sans Arabic.",
+    "visual_direction": "Midnight indigo `#151E37`, limestone `#F4E7D5`, signal coral `#E7655A`. Forensic document imagery and clause-level annotation.",
+    "signature_experience": "Full-height document inspection canvas with expandable evidence markers instead of dashboard cards.",
+    "agentic_direction": "**Compliance X-Ray:** identifies potentially problematic clauses, retrieves authoritative regulations, presents cited findings, and prepares a reviewable remediation plan.",
+    "palette": [
+      "#151E37",
+      "#F4E7D5",
+      "#E7655A"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "iqamah": {
+    "order": 2,
+    "brand_direction": "Refined architectural wordmark; asymmetric gateway emblem. Cormorant Garamond paired with Noto Naskh Arabic.",
+    "visual_direction": "Burgundy `#502C43`, warm ivory `#F7EBD7`, antique gold `#C29A5C`. Architectural editorial photography and dossier-inspired layouts.",
+    "signature_experience": "An immersive eligibility journey resembling a beautifully crafted personal application dossier.",
+    "agentic_direction": "**Visa Dossier Builder:** evaluates available eligibility criteria, identifies missing evidence, and assembles an application checklist using current official requirements.",
+    "palette": [
+      "#502C43",
+      "#F7EBD7",
+      "#C29A5C"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "istithmar": {
+    "order": 3,
+    "brand_direction": "Modular geometric logotype inspired by interconnected economic zones. Space Grotesk with Alexandria.",
+    "visual_direction": "Deep blue `#133C67`, pale mint `#DDF8ED`, turquoise `#60C6AC`. Spatial diagrams and precise economic visualizations.",
+    "signature_experience": "Interactive zone-comparison explorer using expandable spatial layers and compact financial comparisons.",
+    "agentic_direction": "**Investment Navigator:** researches applicable zones, licensing requirements, and tax rules, then prepares sourced decision comparisons.",
+    "palette": [
+      "#133C67",
+      "#DDF8ED",
+      "#60C6AC"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "munagasah": {
+    "order": 4,
+    "brand_direction": "Bold condensed lettering; distinctive folded-bid emblem. Archivo Narrow with Tajawal.",
+    "visual_direction": "Graphite `#282A2F`, amber `#FFBE59`, porcelain `#F4F2EC`. Technical blueprints and procurement-document graphics.",
+    "signature_experience": "High-contrast tender command center organized around deadline progression, bid requirements, and decision milestones.",
+    "agentic_direction": "**Tender Strategist:** discovers published opportunities, checks qualification criteria, tracks deadlines, and drafts bid-preparation tasks.",
+    "palette": [
+      "#282A2F",
+      "#FFBE59",
+      "#F4F2EC"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "sahil": {
+    "order": 5,
+    "brand_direction": "Friendly geometric lettering with a custom open-path symbol. Plus Jakarta Sans with Cairo.",
+    "visual_direction": "Coastal teal `#176D6A`, soft white `#F8F7F1`, pale aqua `#AFD9CF`. Minimal civic diagrams and welcoming public-service imagery.",
+    "signature_experience": "A streamlined service journey that makes administrative processes feel simple and guided.",
+    "agentic_direction": "**Service Pathfinder:** identifies the appropriate government process, prepares required documentation lists, and guides permitted next steps.",
+    "palette": [
+      "#176D6A",
+      "#F8F7F1",
+      "#AFD9CF"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "tawteen": {
+    "order": 6,
+    "brand_direction": "Human-centered wordmark with interwoven pathways. Manrope with Readex Pro.",
+    "visual_direction": "Pine green `#1F4945`, terracotta `#F1CAB1`, light jade `#C0E7DD`. Workforce-flow visualizations and sophisticated organizational graphics.",
+    "signature_experience": "Workforce intelligence organized around employment goals, role requirements, and regulatory milestones.",
+    "agentic_direction": "**Workforce Planner:** examines applicable Emiratisation requirements, models supported scenarios, and recommends compliant actions.",
+    "palette": [
+      "#1F4945",
+      "#F1CAB1",
+      "#C0E7DD"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "adl": {
+    "order": 7,
+    "brand_direction": "Elegant legal-editorial wordmark; asymmetric balanced-plane emblem. Libre Baskerville with Amiri.",
+    "visual_direction": "Dark plum `#3C283B`, pale lavender `#E3D7E9`, muted rose `#BE8E9C`. Architectural linework and legal-document composition.",
+    "signature_experience": "Property-focused legal workspace with layered obligations, source references, and contextual explanations.",
+    "agentic_direction": "**Property Rights Analyst:** reviews available documents and official rules, flags legal questions, and prepares source-backed summaries for human review.",
+    "palette": [
+      "#3C283B",
+      "#E3D7E9",
+      "#BE8E9C"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "tawassul": {
+    "order": 8,
+    "brand_direction": "Interlocking bridge-like letterform, sophisticated commercial identity. Sora with Vazirmatn.",
+    "visual_direction": "Malachite `#123D32`, cream `#EDE4CD`, copper `#B67F3C`. Geometric negotiation paths and editorial business photography.",
+    "signature_experience": "Interactive negotiation map that visually connects stakeholders, objectives, offers, and decisions.",
+    "agentic_direction": "**Negotiation Architect:** evaluates stated objectives, researches public business context, prepares negotiation scenarios, and drafts correspondence for approval.",
+    "palette": [
+      "#123D32",
+      "#EDE4CD",
+      "#B67F3C"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "adab": {
+    "order": 9,
+    "brand_direction": "Expressive editorial wordmark with a bespoke bilingual typographic composition. Fraunces with Aref Ruqaa.",
+    "visual_direction": "Magenta `#782859`, blush `#F9DAE0`, lilac `#D6B0FC`. Original campaign collages and expressive typography.",
+    "signature_experience": "A mobile creative studio built around campaign concepts, cultural context, and interactive editorial storyboards.",
+    "agentic_direction": "**Cultural Campaign Director:** investigates relevant market context, evaluates messaging, and develops localized creative recommendations with explicit assumptions.",
+    "palette": [
+      "#782859",
+      "#F9DAE0",
+      "#D6B0FC"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "khidmah": {
+    "order": 10,
+    "brand_direction": "Rounded yet precise logotype; distinctive overlapping service-loop symbol. Nunito Sans with Almarai.",
+    "visual_direction": "Ocean blue `#225B74`, pale yellow `#FFF5CC`, mint `#77E2C8`. Clean operational graphics and conversational flow diagrams.",
+    "signature_experience": "Fluid service-resolution workspace organized around customer issues rather than conventional ticket tables.",
+    "agentic_direction": "**Resolution Agent:** classifies authorized requests, identifies relevant policies, proposes remedies, and executes permitted service actions.",
+    "palette": [
+      "#225B74",
+      "#FFF5CC",
+      "#77E2C8"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "jomrok": {
+    "order": 11,
+    "brand_direction": "Industrial condensed wordmark with a segmented cargo-path emblem. Barlow Condensed with Changa.",
+    "visual_direction": "Electric blue `#1645AE`, industrial white `#F4F3ED`, vivid orange `#FF8A37`. Container schematics and shipment-flow imagery.",
+    "signature_experience": "Shipment tracking represented through an interactive vertical logistics route with expandable documentation checkpoints.",
+    "agentic_direction": "**Customs Intelligence Agent:** analyzes shipment information, researches applicable requirements, identifies missing documentation, and flags classification uncertainties.",
+    "palette": [
+      "#1645AE",
+      "#F4F3ED",
+      "#FF8A37"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "khibrat": {
+    "order": 12,
+    "brand_direction": "Minimal editorial monogram formed from calibrated evaluation lines. DM Sans with Harmattan.",
+    "visual_direction": "Charcoal `#34312D`, acid lime `#D9E14D`, warm stone `#F1EEE5`. Precise r\u00e9sum\u00e9 typography and transparent evaluation graphics.",
+    "signature_experience": "Candidate review canvas focused on evidence, job-related criteria, and explainable comparisons.",
+    "agentic_direction": "**Talent Review Copilot:** extracts job-relevant qualifications, maps evidence to human-defined criteria, and prepares transparent assessments without autonomous hiring decisions.",
+    "palette": [
+      "#34312D",
+      "#D9E14D",
+      "#F1EEE5"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "majlis": {
+    "order": 13,
+    "brand_direction": "Welcoming architectural wordmark with a bespoke interlocking entrance motif. Urbanist with a distinct Arabic lettering system.",
+    "visual_direction": "Ultramarine `#403A78`, pale porcelain `#F5EBE9`, orchid `#D5B5F1`. Spatial onboarding pathways and collaborative imagery.",
+    "signature_experience": "Personalized onboarding journey that unfolds as connected milestones instead of a repetitive checklist dashboard.",
+    "agentic_direction": "**Onboarding Coordinator:** organizes approved onboarding requirements, identifies incomplete steps, and prepares relevant communications and tasks.",
+    "palette": [
+      "#403A78",
+      "#F5EBE9",
+      "#D5B5F1"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "rafiq": {
+    "order": 14,
+    "brand_direction": "Warm, organic wordmark; original continuous-path symbol. Quicksand with Noto Kufi Arabic.",
+    "visual_direction": "Soft violet `#6D5B98`, warm white `#F9EEE8`, peach `#F4A89D`. Human-centered illustrations and gentle contextual photography.",
+    "signature_experience": "Adaptive daily-life ribbon displaying relevant activities, priorities, and useful suggestions without overwhelming the screen.",
+    "agentic_direction": "**Daily Companion Agent:** organizes explicitly provided goals and available context, prepares useful next steps, and supports authorized personal workflows.",
+    "palette": [
+      "#6D5B98",
+      "#F9EEE8",
+      "#F4A89D"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "sawm": {
+    "order": 15,
+    "brand_direction": "Refined astronomical-inspired logotype; abstract solar-cycle mark. Newsreader with Scheherazade New.",
+    "visual_direction": "Night blue `#131F4D`, candlelight `#FFE8B0`, muted gold `#D0B87C`. Elegant sky gradients and astronomical visualizations.",
+    "signature_experience": "Immersive daily fasting timeline built around verified local times and the progression of the day.",
+    "agentic_direction": "**Ramadan Planning Agent:** retrieves location-relevant schedules when permitted, helps organize personal fasting plans, and identifies timing-sensitive reminders.",
+    "palette": [
+      "#131F4D",
+      "#FFE8B0",
+      "#D0B87C"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "mizan": {
+    "order": 16,
+    "brand_direction": "Financial editorial wordmark; carefully balanced parallel-line emblem. Public Sans with Mada.",
+    "visual_direction": "Evergreen `#143C32`, chalk `#EFF1E4`, sage `#9DCA9C`. Minimal financial typography and calibrated wealth diagrams.",
+    "signature_experience": "A restrained financial intelligence environment centered on balance, obligations, and evidence-based financial interpretation.",
+    "agentic_direction": "**Ethical Finance Analyst:** organizes authorized financial inputs, researches relevant principles, and prepares transparent comparisons without presenting uncertain religious rulings as definitive.",
+    "palette": [
+      "#143C32",
+      "#EFF1E4",
+      "#9DCA9C"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "thawg": {
+    "order": 17,
+    "brand_direction": "Distinctive culinary wordmark; bespoke plate-and-flavor mark. Bricolage Grotesque with Baloo Bhaijaan 2.",
+    "visual_direction": "Tomato `#D84A34`, vanilla `#FFF0D8`, Mediterranean blue `#3F80A6`. Rich original food photography and menu-centered imagery.",
+    "signature_experience": "Immersive restaurant discovery built around food imagery, dietary information, and location-aware exploration.",
+    "agentic_direction": "**Dining Discovery Agent:** searches suitable restaurants, checks published menus and available certification evidence, and distinguishes confirmed from unverified halal claims.",
+    "palette": [
+      "#D84A34",
+      "#FFF0D8",
+      "#3F80A6"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "manzil": {
+    "order": 18,
+    "brand_direction": "Domestic architectural wordmark; nested-room symbol. Outfit with El Messiri.",
+    "visual_direction": "Aubergine `#42275A`, peach cream `#FBE5D5`, dusty rose `#E5A9A0`. Tactile household diagrams and refined financial illustrations.",
+    "signature_experience": "A home-shaped financial overview where spending categories occupy meaningful, navigable household spaces.",
+    "agentic_direction": "**Household Budget Agent:** analyzes user-provided or authorized financial records, identifies patterns, and prepares actionable household budget plans.",
+    "palette": [
+      "#42275A",
+      "#FBE5D5",
+      "#E5A9A0"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "gurbah": {
+    "order": 19,
+    "brand_direction": "Directional editorial wordmark; distinctive passport-route motif. Epilogue with Reem Kufi.",
+    "visual_direction": "Slate blue `#273B63`, parchment `#FFF2DB`, vivid apricot `#F7A445`. Documentary city photography and cartographic compositions.",
+    "signature_experience": "An interactive relocation atlas that combines destination information, required documents, and an unfolding journey.",
+    "agentic_direction": "**Relocation Navigator:** researches official requirements, assembles a personalized checklist from volunteered information, and tracks available relocation tasks.",
+    "palette": [
+      "#273B63",
+      "#FFF2DB",
+      "#F7A445"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "amanah-eco": {
+    "order": 20,
+    "brand_direction": "Environmental wordmark with an original branching energy-path symbol. Raleway with Lemonada.",
+    "visual_direction": "Forest green `#215B39`, pale citron `#F8F8DA`, lime `#BDD652`. Organic energy-flow visuals and precise environmental graphics.",
+    "signature_experience": "Interactive energy-flow surface showing sourced benchmarks or authorized measurements with clear data provenance.",
+    "agentic_direction": "**Energy Optimization Agent:** evaluates available usage data, identifies efficiency opportunities, and prepares recommendations with explicitly stated assumptions.",
+    "palette": [
+      "#215B39",
+      "#F8F8DA",
+      "#BDD652"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "nafas": {
+    "order": 21,
+    "brand_direction": "Quiet, airy typography with a custom breathing-wave emblem. Comfortaa with Markazi Text.",
+    "visual_direction": "Eucalyptus `#4A7480`, mist `#F0F4F1`, muted sage `#AEC7BB`. Minimal atmospheric imagery and soft, nonintrusive motion.",
+    "signature_experience": "An immersive breathing and wellbeing interface designed around calm interaction, accessible pacing, and user-controlled activity.",
+    "agentic_direction": "**Wellbeing Support Agent:** offers evidence-informed exercises and personalized suggestions based on information voluntarily shared, without inventing diagnoses or biometric readings.",
+    "palette": [
+      "#4A7480",
+      "#F0F4F1",
+      "#AEC7BB"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "tadweer": {
+    "order": 22,
+    "brand_direction": "Angular circular-economy wordmark with a distinctive material-loop symbol. Work Sans with Jomhuria.",
+    "visual_direction": "Burnt orange `#DB5A27`, recycled-paper cream `#F7F2E3`, dark petrol `#1F3942`. Material close-ups and photographic object classification.",
+    "signature_experience": "Camera-first material identification experience with locally relevant disposal guidance when reliable sources are available.",
+    "agentic_direction": "**Recycling Identification Agent:** interprets user-submitted images, identifies probable material categories, and researches applicable disposal instructions.",
+    "palette": [
+      "#DB5A27",
+      "#F7F2E3",
+      "#1F3942"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "turath": {
+    "order": 23,
+    "brand_direction": "Heritage-inspired editorial lettering with an original archival-frame emblem. Literata with Lateef.",
+    "visual_direction": "Bronze `#776246`, archival ivory `#F6F1E7`, sandstone `#B0A385`. Museum-quality artifact photography and layered archival imagery.",
+    "signature_experience": "Immersive heritage explorer featuring sourced historical narratives, visual timelines, and artifact-focused stories.",
+    "agentic_direction": "**Heritage Research Agent:** retrieves documented cultural information, assembles provenance-aware summaries, and identifies disputed or uncertain historical interpretations.",
+    "palette": [
+      "#776246",
+      "#F6F1E7",
+      "#B0A385"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "himam": {
+    "order": 24,
+    "brand_direction": "High-legibility wordmark; a bold, open-ended navigation symbol. Atkinson Hyperlegible with an accessibility-tested Arabic companion.",
+    "visual_direction": "Royal blue `#10358C`, warm white `#FFFCE8`, sunflower `#E7C93B`. Clear high-contrast graphics without decorative barriers.",
+    "signature_experience": "Adaptive, accessible task interface supporting multiple input methods, scalable controls, and simplified task completion.",
+    "agentic_direction": "**Accessibility Assistance Agent:** helps users complete authorized tasks through suitable input and output modes, without assuming their abilities or preferences.",
+    "palette": [
+      "#10358C",
+      "#FFFCE8",
+      "#E7C93B"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  },
+  "hisad": {
+    "order": 25,
+    "brand_direction": "Distinctive harvest-inspired wordmark; custom interconnected produce-and-route emblem. Syne with Katibeh.",
+    "visual_direction": "Harvest red `#A23E3C`, warm cream `#FCF3E4`, golden yellow `#F0BB52`. Authentic food photography and redistribution logistics imagery.",
+    "signature_experience": "Food-surplus coordination journey displaying available verified opportunities, collection arrangements, and donation progress.",
+    "agentic_direction": "**Food Redistribution Coordinator:** matches available donated food with eligible participating organizations where supported, prepares pickup coordination, and observes food safety and authorization requirements.",
+    "palette": [
+      "#A23E3C",
+      "#FCF3E4",
+      "#F0BB52"
+    ],
+    "delivery_state": "implementation in progress; native/device acceptance unverified"
+  }
+}

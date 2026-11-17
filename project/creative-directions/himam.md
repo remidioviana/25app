@@ -1,6 +1,6 @@
 # Himam AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Confidence and independence
 
 ## 3. Logo and wordmark
 
-A continuous accessible turn with wide open negative space; exceptionally readable access signature
+High-legibility wordmark; a bold, open-ended navigation symbol. Atkinson Hyperlegible with an accessibility-tested Arabic companion.
 
 ## 4. Typography
 
-atkinsonhyperlegible for the wordmark and key headlines. Wordmark 37 pt, tracking -0.3; headline 41 pt with 1.16 leading ratio. Body 19/30 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Atkinson Hyperlegible for Latin branding and Noto Sans Arabic for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #E9F0FE, ink #152D5C, accent #2156B4, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Royal blue `#10358C`, warm white `#FFFCE8`, sunflower `#E7C93B`. Clear high-contrast graphics without decorative barriers. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Immediate focus transitions; no motion needed to understand the route This descr
 
 ## 10. Agentic AI experience
 
-The agent matches supplied access needs to documented route constraints. No live navigation, transport booking or safety guarantee.
+**Accessibility Assistance Agent:** helps users complete authorized tasks through suitable input and output modes, without assuming their abilities or preferences. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

@@ -1,6 +1,6 @@
 # Hisad AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Urgency with dignity
 
 ## 3. Logo and wordmark
 
-A cut grain seed joining two unequal hands through negative space; bold rescue-dispatch lettering
+Distinctive harvest-inspired wordmark; custom interconnected produce-and-route emblem. Syne with Katibeh.
 
 ## 4. Typography
 
-breeserif for the wordmark and key headlines. Wordmark 36 pt, tracking 0.3; headline 43 pt with 1.05 leading ratio. Body 18/27 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Syne for Latin branding and Katibeh for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #FFF1CB, ink #4E441D, accent #7B651F, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Harvest red `#A23E3C`, warm cream `#FCF3E4`, golden yellow `#F0BB52`. Authentic food photography and redistribution logistics imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Decisive status changes follow verified records, never a fake countdown This des
 
 ## 10. Agentic AI experience
 
-The agent exposes handling and recipient evidence before a rescue proposal. No invented donation, delivery receipt or food-safety certification.
+**Food Redistribution Coordinator:** matches available donated food with eligible participating organizations where supported, prepares pickup coordination, and observes food safety and authorization requirements. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

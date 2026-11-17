@@ -1,6 +1,6 @@
 # Manzil AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Domestic ease and control
 
 ## 3. Logo and wordmark
 
-An open ledger roof with a warm offset window; intimate handwritten-feeling book title
+Domestic architectural wordmark; nested-room symbol. Outfit with El Messiri.
 
 ## 4. Typography
 
-literata for the wordmark and key headlines. Wordmark 36 pt, tracking -0.7; headline 42 pt with 1.16 leading ratio. Body 18/28 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Outfit for Latin branding and El Messiri for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #FFF8E9, ink #344C32, accent #507447, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Aubergine `#42275A`, peach cream `#FBE5D5`, dusty rose `#E5A9A0`. Tactile household diagrams and refined financial illustrations. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Receipt insertion unfolds from its point of entry This describes the product tar
 
 ## 10. Agentic AI experience
 
-The agent separates duplicate, unverified and counted receipts. VAT overview does not establish the recoverability of a household receipt.
+**Household Budget Agent:** analyzes user-provided or authorized financial records, identifies patterns, and prepares actionable household budget plans. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

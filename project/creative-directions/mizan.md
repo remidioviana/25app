@@ -1,6 +1,6 @@
 # Mizan AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Stewardship and transparent judgment
 
 ## 3. Logo and wordmark
 
-A solid offset counterweight balanced by an open ledger line; emphatic financial monogram
+Financial editorial wordmark; carefully balanced parallel-line emblem. Public Sans with Mada.
 
 ## 4. Typography
 
-fraunces for the wordmark and key headlines. Wordmark 43 pt, tracking -1.1; headline 47 pt with 1.12 leading ratio. Body 17/27 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Public Sans for Latin branding and Mada for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #08271F, ink #F2F1DA, accent #BDE7A0, secondary surface #272541. Status is also expressed in words, not color alone.
+Evergreen `#143C32`, chalk `#EFF1E4`, sage `#9DCA9C`. Minimal financial typography and calibrated wealth diagrams. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Numeric changes resolve directly; no wealth-growth celebration This describes th
 
 ## 10. Agentic AI experience
 
-The agent reconciles supplied records before offering source-linked context. No bank access, investment promise or religious certification.
+**Ethical Finance Analyst:** organizes authorized financial inputs, researches relevant principles, and prepares transparent comparisons without presenting uncertain religious rulings as definitive. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

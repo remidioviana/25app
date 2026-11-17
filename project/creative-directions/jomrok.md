@@ -1,6 +1,6 @@
 # Jomrok AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Operational precision and readiness
 
 ## 3. Logo and wordmark
 
-A modular freight block with an unmistakable diagonal customs cut; compressed manifest label
+Industrial condensed wordmark with a segmented cargo-path emblem. Barlow Condensed with Changa.
 
 ## 4. Typography
 
-barlowcondensed for the wordmark and key headlines. Wordmark 42 pt, tracking 1.0; headline 40 pt with 1.0 leading ratio. Body 16/25 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Barlow Condensed for Latin branding and Changa for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #111E2D, ink #EDF4FF, accent #FDBB65, secondary surface #272541. Status is also expressed in words, not color alone.
+Electric blue `#1645AE`, industrial white `#F4F3ED`, vivid orange `#FF8A37`. Container schematics and shipment-flow imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Fast mechanical reveals reflect document checks, never simulated clearance This 
 
 ## 10. Agentic AI experience
 
-The agent checks shipment completeness and declared valuation. No live customs classification or border clearance claim.
+**Customs Intelligence Agent:** analyzes shipment information, researches applicable requirements, identifies missing documentation, and flags classification uncertainties. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

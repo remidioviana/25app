@@ -1,6 +1,6 @@
 # Munagasah AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Readiness, focus and disciplined momentum
 
 ## 3. Logo and wordmark
 
-Three expanding bid bars cut by a vertical registration rule; numbered monospace masthead
+Bold condensed lettering; distinctive folded-bid emblem. Archivo Narrow with Tajawal.
 
 ## 4. Typography
 
-ibmplexmono for the wordmark and key headlines. Wordmark 28 pt, tracking 1.2; headline 37 pt with 1.14 leading ratio. Body 16/24 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Archivo Narrow for Latin branding and Tajawal for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #EAF0FC, ink #132B58, accent #2451C5, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Graphite `#282A2F`, amber `#FFBE59`, porcelain `#F4F2EC`. Technical blueprints and procurement-document graphics. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Crisp sectional reveals follow evidence acquisition, not fictitious completion p
 
 ## 10. Agentic AI experience
 
-The team composes a requirement-by-requirement evidence case. A public eSupply page is not a tender and cannot establish bid fit.
+**Tender Strategist:** discovers published opportunities, checks qualification criteria, tracks deadlines, and drafts bid-preparation tasks. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

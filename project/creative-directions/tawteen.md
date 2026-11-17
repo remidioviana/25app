@@ -1,6 +1,6 @@
 # Tawteen AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Respect and accountable stewardship
 
 ## 3. Logo and wordmark
 
-Two unequal solid forms held by a shared baseline; split stacked workforce wordmark
+Human-centered wordmark with interwoven pathways. Manrope with Readex Pro.
 
 ## 4. Typography
 
-manrope for the wordmark and key headlines. Wordmark 29 pt, tracking 0.6; headline 39 pt with 1.12 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Manrope for Latin branding and Readex Pro for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F3F5E7, ink #1D382D, accent #376844, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Pine green `#1F4945`, terracotta `#F1CAB1`, light jade `#C0E7DD`. Workforce-flow visualizations and sophisticated organizational graphics. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Aggregation resolves from actual rows, with no decorative growth animation This 
 
 ## 10. Agentic AI experience
 
-Computed target gaps are tied to the supplied workforce. Policy context is not an authenticated payroll integration.
+**Workforce Planner:** examines applicable Emiratisation requirements, models supported scenarios, and recommends compliant actions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

@@ -16,12 +16,20 @@
     "headline_leading": 1.08,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "ibmplexserif",
-    "bg": "#091A29",
-    "ink": "#F4F1E8",
-    "accent": "#69E0B3",
-    "panel": "#142E39",
-    "appearance": "dark"
+    "font_family": "IBM Plex Sans",
+    "bg": "#151E37",
+    "ink": "#F4E7D5",
+    "accent": "#E7695E",
+    "panel": "#212940",
+    "appearance": "dark",
+    "arabic_font_family": "IBM Plex Sans Arabic",
+    "signal": "#E7655A",
+    "matrix_palette": [
+      "#151E37",
+      "#F4E7D5",
+      "#E7655A"
+    ],
+    "arabic_input_size": 19
   },
   "iqamah": {
     "philosophy": "Make a life decision legible",
@@ -40,12 +48,20 @@
     "headline_leading": 1.16,
     "body_size": 17,
     "body_leading": 27,
-    "font_family": "cormorantgaramond",
-    "bg": "#F7F0E2",
-    "ink": "#282318",
-    "accent": "#7B5D14",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Cormorant Garamond",
+    "bg": "#F7EBD7",
+    "ink": "#502C43",
+    "accent": "#825C4E",
+    "panel": "#EEE0CF",
+    "appearance": "light",
+    "arabic_font_family": "Noto Naskh Arabic",
+    "signal": "#C29A5C",
+    "matrix_palette": [
+      "#502C43",
+      "#F7EBD7",
+      "#C29A5C"
+    ],
+    "arabic_input_size": 19
   },
   "istithmar": {
     "philosophy": "Make alternatives comparable",
@@ -64,12 +80,20 @@
     "headline_leading": 1.04,
     "body_size": 16,
     "body_leading": 25,
-    "font_family": "spacegrotesk",
-    "bg": "#073D3B",
-    "ink": "#F1F6EA",
-    "accent": "#8AE3CF",
-    "panel": "#164B45",
-    "appearance": "dark"
+    "font_family": "Space Grotesk",
+    "bg": "#133C67",
+    "ink": "#DDF8ED",
+    "accent": "#60C6AC",
+    "panel": "#1E466E",
+    "appearance": "dark",
+    "arabic_font_family": "Alexandria",
+    "signal": "#60C6AC",
+    "matrix_palette": [
+      "#133C67",
+      "#DDF8ED",
+      "#60C6AC"
+    ],
+    "arabic_input_size": 19
   },
   "munagasah": {
     "philosophy": "A bid is an evidence argument",
@@ -88,12 +112,20 @@
     "headline_leading": 1.14,
     "body_size": 16,
     "body_leading": 24,
-    "font_family": "ibmplexmono",
-    "bg": "#EAF0FC",
-    "ink": "#132B58",
-    "accent": "#2451C5",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Archivo Narrow",
+    "bg": "#282A2F",
+    "ink": "#FFBE59",
+    "accent": "#F4F2EC",
+    "panel": "#343231",
+    "appearance": "dark",
+    "arabic_font_family": "Tajawal",
+    "signal": "#F4F2EC",
+    "matrix_palette": [
+      "#282A2F",
+      "#FFBE59",
+      "#F4F2EC"
+    ],
+    "arabic_input_size": 19
   },
   "sahil": {
     "philosophy": "One understandable next step",
@@ -112,12 +144,20 @@
     "headline_leading": 1.15,
     "body_size": 18,
     "body_leading": 28,
-    "font_family": "nunito",
-    "bg": "#F2F8FE",
-    "ink": "#163F59",
-    "accent": "#096A9B",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Plus Jakarta Sans",
+    "bg": "#F8F7F1",
+    "ink": "#166360",
+    "accent": "#307773",
+    "panel": "#ECEFE9",
+    "appearance": "light",
+    "arabic_font_family": "Cairo",
+    "signal": "#AFD9CF",
+    "matrix_palette": [
+      "#176D6A",
+      "#F8F7F1",
+      "#AFD9CF"
+    ],
+    "arabic_input_size": 19
   },
   "tawteen": {
     "philosophy": "People before compliance percentages",
@@ -136,12 +176,20 @@
     "headline_leading": 1.12,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "manrope",
-    "bg": "#F3F5E7",
-    "ink": "#1D382D",
-    "accent": "#376844",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Manrope",
+    "bg": "#F1CAB1",
+    "ink": "#1F4945",
+    "accent": "#325C57",
+    "panel": "#E5C3AB",
+    "appearance": "light",
+    "arabic_font_family": "Readex Pro",
+    "signal": "#C0E7DD",
+    "matrix_palette": [
+      "#1F4945",
+      "#F1CAB1",
+      "#C0E7DD"
+    ],
+    "arabic_input_size": 19
   },
   "adl": {
     "philosophy": "Let chronology carry the dispute",
@@ -160,12 +208,20 @@
     "headline_leading": 1.18,
     "body_size": 17,
     "body_leading": 28,
-    "font_family": "librebaskerville",
-    "bg": "#F0E6DD",
-    "ink": "#493024",
-    "accent": "#984C29",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Libre Baskerville",
+    "bg": "#E3D7E9",
+    "ink": "#3C283B",
+    "accent": "#705162",
+    "panel": "#DACDDF",
+    "appearance": "light",
+    "arabic_font_family": "Amiri",
+    "signal": "#BE8E9C",
+    "matrix_palette": [
+      "#3C283B",
+      "#E3D7E9",
+      "#BE8E9C"
+    ],
+    "arabic_input_size": 19
   },
   "tawassul": {
     "philosophy": "Earn the introduction",
@@ -184,12 +240,20 @@
     "headline_leading": 1.12,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "lora",
-    "bg": "#191832",
-    "ink": "#F2EFE9",
-    "accent": "#C4B8FF",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Sora",
+    "bg": "#123D32",
+    "ink": "#EDE4CD",
+    "accent": "#CAA370",
+    "panel": "#1E463B",
+    "appearance": "dark",
+    "arabic_font_family": "Vazirmatn",
+    "signal": "#B67F3C",
+    "matrix_palette": [
+      "#123D32",
+      "#EDE4CD",
+      "#B67F3C"
+    ],
+    "arabic_input_size": 19
   },
   "adab": {
     "philosophy": "Meaning has a local voice",
@@ -208,12 +272,20 @@
     "headline_leading": 0.98,
     "body_size": 17,
     "body_leading": 27,
-    "font_family": "bodonimoda",
-    "bg": "#2B142E",
-    "ink": "#FFF1EA",
-    "accent": "#FFAC91",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Fraunces",
+    "bg": "#782859",
+    "ink": "#F9DAE0",
+    "accent": "#D6B0FC",
+    "panel": "#7F3260",
+    "appearance": "dark",
+    "arabic_font_family": "Aref Ruqaa",
+    "signal": "#D6B0FC",
+    "matrix_palette": [
+      "#782859",
+      "#F9DAE0",
+      "#D6B0FC"
+    ],
+    "arabic_input_size": 19
   },
   "khidmah": {
     "philosophy": "A customer deserves resolution",
@@ -232,12 +304,20 @@
     "headline_leading": 1.18,
     "body_size": 18,
     "body_leading": 28,
-    "font_family": "outfit",
-    "bg": "#EAFAFD",
-    "ink": "#123F4C",
-    "accent": "#087B95",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Nunito Sans",
+    "bg": "#FFF5CC",
+    "ink": "#225B74",
+    "accent": "#317383",
+    "panel": "#F3EDC7",
+    "appearance": "light",
+    "arabic_font_family": "Almarai",
+    "signal": "#77E2C8",
+    "matrix_palette": [
+      "#225B74",
+      "#FFF5CC",
+      "#77E2C8"
+    ],
+    "arabic_input_size": 19
   },
   "jomrok": {
     "philosophy": "Documents before the border",
@@ -256,12 +336,20 @@
     "headline_leading": 1.0,
     "body_size": 16,
     "body_leading": 25,
-    "font_family": "barlowcondensed",
-    "bg": "#111E2D",
-    "ink": "#EDF4FF",
-    "accent": "#FDBB65",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Barlow Condensed",
+    "bg": "#F4F3ED",
+    "ink": "#1645AE",
+    "accent": "#78627C",
+    "panel": "#E8E9EA",
+    "appearance": "light",
+    "arabic_font_family": "Changa",
+    "signal": "#FF8A37",
+    "matrix_palette": [
+      "#1645AE",
+      "#F4F3ED",
+      "#FF8A37"
+    ],
+    "arabic_input_size": 19
   },
   "khibrat": {
     "philosophy": "Evidence earns the match",
@@ -280,12 +368,20 @@
     "headline_leading": 1.05,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "dmsans",
-    "bg": "#DFEDE5",
-    "ink": "#123E36",
-    "accent": "#16675B",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "DM Sans",
+    "bg": "#34312D",
+    "ink": "#D9E14D",
+    "accent": "#F1EEE5",
+    "panel": "#3D3B2F",
+    "appearance": "dark",
+    "arabic_font_family": "Harmattan",
+    "signal": "#F1EEE5",
+    "matrix_palette": [
+      "#34312D",
+      "#D9E14D",
+      "#F1EEE5"
+    ],
+    "arabic_input_size": 21
   },
   "majlis": {
     "philosophy": "An informed arrival",
@@ -304,12 +400,20 @@
     "headline_leading": 1.18,
     "body_size": 18,
     "body_leading": 29,
-    "font_family": "cormorant",
-    "bg": "#291F18",
-    "ink": "#F9EDDD",
-    "accent": "#E6B77E",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Urbanist",
+    "bg": "#F5EBE9",
+    "ink": "#403A78",
+    "accent": "#6A5C9A",
+    "panel": "#EBE1E3",
+    "appearance": "light",
+    "arabic_font_family": "Kufam",
+    "signal": "#D5B5F1",
+    "matrix_palette": [
+      "#403A78",
+      "#F5EBE9",
+      "#D5B5F1"
+    ],
+    "arabic_input_size": 19
   },
   "rafiq": {
     "philosophy": "Make room for what matters",
@@ -328,12 +432,20 @@
     "headline_leading": 1.03,
     "body_size": 17,
     "body_leading": 25,
-    "font_family": "sora",
-    "bg": "#141623",
-    "ink": "#F6F1EA",
-    "accent": "#FFAA72",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Quicksand",
+    "bg": "#F9EEE8",
+    "ink": "#5C4D7E",
+    "accent": "#795E84",
+    "panel": "#F0E5E2",
+    "appearance": "light",
+    "arabic_font_family": "Noto Kufi Arabic",
+    "signal": "#F4A89D",
+    "matrix_palette": [
+      "#6D5B98",
+      "#F9EEE8",
+      "#F4A89D"
+    ],
+    "arabic_input_size": 19
   },
   "sawm": {
     "philosophy": "A rhythm of intention and rest",
@@ -352,12 +464,20 @@
     "headline_leading": 1.22,
     "body_size": 18,
     "body_leading": 29,
-    "font_family": "ebgaramond",
-    "bg": "#221E43",
-    "ink": "#F8F0D7",
-    "accent": "#D9C282",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Newsreader",
+    "bg": "#131F4D",
+    "ink": "#FFE8B0",
+    "accent": "#D0B87C",
+    "panel": "#202A52",
+    "appearance": "dark",
+    "arabic_font_family": "Scheherazade New",
+    "signal": "#D0B87C",
+    "matrix_palette": [
+      "#131F4D",
+      "#FFE8B0",
+      "#D0B87C"
+    ],
+    "arabic_input_size": 19
   },
   "mizan": {
     "philosophy": "Values require a clear ledger",
@@ -376,12 +496,20 @@
     "headline_leading": 1.12,
     "body_size": 17,
     "body_leading": 27,
-    "font_family": "fraunces",
-    "bg": "#08271F",
-    "ink": "#F2F1DA",
-    "accent": "#BDE7A0",
-    "panel": "#272541",
-    "appearance": "dark"
+    "font_family": "Public Sans",
+    "bg": "#143C32",
+    "ink": "#EFF1E4",
+    "accent": "#9DCA9C",
+    "panel": "#20463C",
+    "appearance": "dark",
+    "arabic_font_family": "Mada",
+    "signal": "#9DCA9C",
+    "matrix_palette": [
+      "#143C32",
+      "#EFF1E4",
+      "#9DCA9C"
+    ],
+    "arabic_input_size": 19
   },
   "thawg": {
     "philosophy": "A considered table",
@@ -400,12 +528,20 @@
     "headline_leading": 1.1,
     "body_size": 18,
     "body_leading": 28,
-    "font_family": "dmserifdisplay",
-    "bg": "#F7EDE4",
-    "ink": "#4C1C2B",
-    "accent": "#9D3751",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Bricolage Grotesque",
+    "bg": "#FFF0D8",
+    "ink": "#963728",
+    "accent": "#596A80",
+    "panel": "#F9E6CE",
+    "appearance": "light",
+    "arabic_font_family": "Baloo Bhaijaan 2",
+    "signal": "#3F80A6",
+    "matrix_palette": [
+      "#D84A34",
+      "#FFF0D8",
+      "#3F80A6"
+    ],
+    "arabic_input_size": 19
   },
   "manzil": {
     "philosophy": "The household deserves a readable book",
@@ -424,12 +560,20 @@
     "headline_leading": 1.16,
     "body_size": 18,
     "body_leading": 28,
-    "font_family": "literata",
-    "bg": "#FFF8E9",
-    "ink": "#344C32",
-    "accent": "#507447",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Outfit",
+    "bg": "#FBE5D5",
+    "ink": "#42275A",
+    "accent": "#7E5774",
+    "panel": "#F1DBCE",
+    "appearance": "light",
+    "arabic_font_family": "El Messiri",
+    "signal": "#E5A9A0",
+    "matrix_palette": [
+      "#42275A",
+      "#FBE5D5",
+      "#E5A9A0"
+    ],
+    "arabic_input_size": 19
   },
   "gurbah": {
     "philosophy": "A move is a dependency map",
@@ -448,12 +592,20 @@
     "headline_leading": 1.06,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "urbanist",
-    "bg": "#EDF6F2",
-    "ink": "#163E40",
-    "accent": "#177C7A",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Epilogue",
+    "bg": "#FFF2DB",
+    "ink": "#273B63",
+    "accent": "#7A6557",
+    "panel": "#F3E8D4",
+    "appearance": "light",
+    "arabic_font_family": "Reem Kufi",
+    "signal": "#F7A445",
+    "matrix_palette": [
+      "#273B63",
+      "#FFF2DB",
+      "#F7A445"
+    ],
+    "arabic_input_size": 19
   },
   "amanah-eco": {
     "philosophy": "Compare periods before calling it savings",
@@ -472,12 +624,20 @@
     "headline_leading": 1.02,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "archivo",
-    "bg": "#EAF4D8",
-    "ink": "#274716",
-    "accent": "#52751B",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Raleway",
+    "bg": "#F8F8DA",
+    "ink": "#215B39",
+    "accent": "#43763E",
+    "panel": "#ECEFD1",
+    "appearance": "light",
+    "arabic_font_family": "Lemonada",
+    "signal": "#BDD652",
+    "matrix_palette": [
+      "#215B39",
+      "#F8F8DA",
+      "#BDD652"
+    ],
+    "arabic_input_size": 19
   },
   "nafas": {
     "philosophy": "A little room to breathe",
@@ -496,12 +656,20 @@
     "headline_leading": 1.2,
     "body_size": 19,
     "body_leading": 30,
-    "font_family": "quicksand",
-    "bg": "#EFF1E7",
-    "ink": "#3F513D",
-    "accent": "#4F6D43",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Comfortaa",
+    "bg": "#F0F4F1",
+    "ink": "#3C5B64",
+    "accent": "#516E74",
+    "panel": "#E6ECE9",
+    "appearance": "light",
+    "arabic_font_family": "Markazi Text",
+    "signal": "#AEC7BB",
+    "matrix_palette": [
+      "#4A7480",
+      "#F0F4F1",
+      "#AEC7BB"
+    ],
+    "arabic_input_size": 22
   },
   "tadweer": {
     "philosophy": "Give a material its next route",
@@ -520,12 +688,20 @@
     "headline_leading": 1.08,
     "body_size": 17,
     "body_leading": 26,
-    "font_family": "spacemono",
-    "bg": "#F1E9DB",
-    "ink": "#314531",
-    "accent": "#327047",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Work Sans",
+    "bg": "#F7F2E3",
+    "ink": "#8E3E1F",
+    "accent": "#1F3942",
+    "panel": "#F1E8D8",
+    "appearance": "light",
+    "arabic_font_family": "Jomhuria",
+    "signal": "#1F3942",
+    "matrix_palette": [
+      "#DB5A27",
+      "#F7F2E3",
+      "#1F3942"
+    ],
+    "arabic_input_size": 28
   },
   "turath": {
     "philosophy": "A source opens a story",
@@ -544,12 +720,20 @@
     "headline_leading": 1.15,
     "body_size": 18,
     "body_leading": 30,
-    "font_family": "spectral",
-    "bg": "#F4E2CA",
-    "ink": "#603821",
-    "accent": "#914B24",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Literata",
+    "bg": "#F6F1E7",
+    "ink": "#65533C",
+    "accent": "#77664E",
+    "panel": "#EEE8DE",
+    "appearance": "light",
+    "arabic_font_family": "Lateef",
+    "signal": "#B0A385",
+    "matrix_palette": [
+      "#776246",
+      "#F6F1E7",
+      "#B0A385"
+    ],
+    "arabic_input_size": 21
   },
   "himam": {
     "philosophy": "Access evidence before routing",
@@ -568,12 +752,20 @@
     "headline_leading": 1.16,
     "body_size": 19,
     "body_leading": 30,
-    "font_family": "atkinsonhyperlegible",
-    "bg": "#E9F0FE",
-    "ink": "#152D5C",
-    "accent": "#2156B4",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Atkinson Hyperlegible",
+    "bg": "#FFFCE8",
+    "ink": "#10358C",
+    "accent": "#66706C",
+    "panel": "#F2F1E3",
+    "appearance": "light",
+    "arabic_font_family": "Noto Sans Arabic",
+    "signal": "#E7C93B",
+    "matrix_palette": [
+      "#10358C",
+      "#FFFCE8",
+      "#E7C93B"
+    ],
+    "arabic_input_size": 19
   },
   "hisad": {
     "philosophy": "Food rescue is a clock and a match",
@@ -592,11 +784,19 @@
     "headline_leading": 1.05,
     "body_size": 18,
     "body_leading": 27,
-    "font_family": "breeserif",
-    "bg": "#FFF1CB",
-    "ink": "#4E441D",
-    "accent": "#7B651F",
-    "panel": "#FFFFFF",
-    "appearance": "light"
+    "font_family": "Syne",
+    "bg": "#FCF3E4",
+    "ink": "#943A38",
+    "accent": "#A5533D",
+    "panel": "#F6E9DB",
+    "appearance": "light",
+    "arabic_font_family": "Katibeh",
+    "signal": "#F0BB52",
+    "matrix_palette": [
+      "#A23E3C",
+      "#FCF3E4",
+      "#F0BB52"
+    ],
+    "arabic_input_size": 19
   }
 }

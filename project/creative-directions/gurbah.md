@@ -1,6 +1,6 @@
 # Gurbah AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Belonging through orientation
 
 ## 3. Logo and wordmark
 
-A stepping route that becomes an open arrival arch; tall map-like relocation signature
+Directional editorial wordmark; distinctive passport-route motif. Epilogue with Reem Kufi.
 
 ## 4. Typography
 
-urbanist for the wordmark and key headlines. Wordmark 35 pt, tracking -1.2; headline 43 pt with 1.06 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Epilogue for Latin branding and Reem Kufi for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #EDF6F2, ink #163E40, accent #177C7A, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Slate blue `#273B63`, parchment `#FFF2DB`, vivid apricot `#F7A445`. Documentary city photography and cartographic compositions. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Progressive path reveals reflect recorded dependencies only This describes the p
 
 ## 10. Agentic AI experience
 
-The agent orders supplied relocation tasks and highlights blockers. No invented immigration status or external service completion.
+**Relocation Navigator:** researches official requirements, assembles a personalized checklist from volunteered information, and tracks available relocation tasks. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

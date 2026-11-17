@@ -1,6 +1,6 @@
 # Tadweer AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Practical optimism and responsibility
 
 ## 3. Logo and wordmark
 
-A folded material strip with one visible return edge, without recycling-arrow cliché
+Angular circular-economy wordmark with a distinctive material-loop symbol. Work Sans with Jomhuria.
 
 ## 4. Typography
 
-spacemono for the wordmark and key headlines. Wordmark 32 pt, tracking 0.8; headline 42 pt with 1.08 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Work Sans for Latin branding and Jomhuria for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F1E9DB, ink #314531, accent #327047, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Burnt orange `#DB5A27`, recycled-paper cream `#F7F2E3`, dark petrol `#1F3942`. Material close-ups and photographic object classification. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ A folded edge opens to explain the selected route This describes the product tar
 
 ## 10. Agentic AI experience
 
-The agent uses actual supplied route capabilities and hazard constraints. No booked pickup or fabricated local collection capacity.
+**Recycling Identification Agent:** interprets user-submitted images, identifies probable material categories, and researches applicable disposal instructions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

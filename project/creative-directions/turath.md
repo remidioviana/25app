@@ -1,6 +1,6 @@
 # Turath AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Curiosity, continuity and respect
 
 ## 3. Logo and wordmark
 
-A fragmented archaeological rubbing with one restored accent; scholarly archive wordmark
+Heritage-inspired editorial lettering with an original archival-frame emblem. Literata with Lateef.
 
 ## 4. Typography
 
-spectral for the wordmark and key headlines. Wordmark 40 pt, tracking -0.4; headline 46 pt with 1.15 leading ratio. Body 18/30 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Literata for Latin branding and Lateef for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F4E2CA, ink #603821, accent #914B24, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Bronze `#776246`, archival ivory `#F6F1E7`, sandstone `#B0A385`. Museum-quality artifact photography and layered archival imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Folio reveals favor attentive reading rather than artificial age effects This de
 
 ## 10. Agentic AI experience
 
-The agent teaches with distinguishable source-backed statements. No invented heritage facts or copied museum imagery.
+**Heritage Research Agent:** retrieves documented cultural information, assembles provenance-aware summaries, and identifies disputed or uncertain historical interpretations. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

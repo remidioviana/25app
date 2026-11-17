@@ -1,6 +1,6 @@
 # Sahil AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Relief from administrative complexity
 
 ## 3. Logo and wordmark
 
-One continuous coastal ribbon with an open exit; friendly sentence-case signature
+Friendly geometric lettering with a custom open-path symbol. Plus Jakarta Sans with Cairo.
 
 ## 4. Typography
 
-nunito for the wordmark and key headlines. Wordmark 32 pt, tracking -0.4; headline 35 pt with 1.15 leading ratio. Body 18/28 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Plus Jakarta Sans for Latin branding and Cairo for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F2F8FE, ink #163F59, accent #096A9B, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Coastal teal `#176D6A`, soft white `#F8F7F1`, pale aqua `#AFD9CF`. Minimal civic diagrams and welcoming public-service imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ A calm short transition exposes the next prerequisite This describes the product
 
 ## 10. Agentic AI experience
 
-Public guidance explains the dependency before asking for personal documents. Never imply a DEWA move-in has been submitted.
+**Service Pathfinder:** identifies the appropriate government process, prepares required documentation lists, and guides permitted next steps. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

@@ -1,6 +1,6 @@
 # Himayah AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Reassurance through traceable precision
 
 ## 3. Logo and wordmark
 
-An open margin bracket enclosing one decisive dot; a quiet lowercase legal wordmark
+Precision-cut H wordmark; an original negative-space document-fold emblem. IBM Plex Sans with IBM Plex Sans Arabic.
 
 ## 4. Typography
 
-ibmplexserif for the wordmark and key headlines. Wordmark 34 pt, tracking -1.1; headline 46 pt with 1.08 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+IBM Plex Sans for Latin branding and IBM Plex Sans Arabic for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #091A29, ink #F4F1E8, accent #69E0B3, secondary surface #142E39. Status is also expressed in words, not color alone.
+Midnight indigo `#151E37`, limestone `#F4E7D5`, signal coral `#E7655A`. Forensic document imagery and clause-level annotation. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ A narrow margin unfolds; no dramatic approval flourish This describes the produc
 
 ## 10. Agentic AI experience
 
-Obligation, severity and evidence remain adjacent to the original clause. Never turn a model opinion into legal certification.
+**Compliance X-Ray:** identifies potentially problematic clauses, retrieves authoritative regulations, presents cited findings, and prepares a reviewable remediation plan. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

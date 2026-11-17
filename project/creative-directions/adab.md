@@ -1,6 +1,6 @@
 # Adab AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Editorial curiosity and cultural care
 
 ## 3. Logo and wordmark
 
-A bold cut punctuation stroke above a widely tracked editorial wordmark
+Expressive editorial wordmark with a bespoke bilingual typographic composition. Fraunces with Aref Ruqaa.
 
 ## 4. Typography
 
-bodonimoda for the wordmark and key headlines. Wordmark 48 pt, tracking 3.0; headline 55 pt with 0.98 leading ratio. Body 17/27 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Fraunces for Latin branding and Aref Ruqaa for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #2B142E, ink #FFF1EA, accent #FFAC91, secondary surface #272541. Status is also expressed in words, not color alone.
+Magenta `#782859`, blush `#F9DAE0`, lilac `#D6B0FC`. Original campaign collages and expressive typography. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Precise replacement emphasis, with reduced-motion static highlights This describ
 
 ## 10. Agentic AI experience
 
-The agent adapts language while preserving factual approval boundaries. Cultural adaptation is not permission to invent product claims.
+**Cultural Campaign Director:** investigates relevant market context, evaluates messaging, and develops localized creative recommendations with explicit assumptions. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

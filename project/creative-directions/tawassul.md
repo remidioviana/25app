@@ -1,6 +1,6 @@
 # Tawassul B2B — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Confidence without inflated promises
 
 ## 3. Logo and wordmark
 
-Two crossing ribbons that meet without a star or enclosing badge; asymmetric B2B wordmark
+Interlocking bridge-like letterform, sophisticated commercial identity. Sora with Vazirmatn.
 
 ## 4. Typography
 
-lora for the wordmark and key headlines. Wordmark 33 pt, tracking -1.0; headline 41 pt with 1.12 leading ratio. Body 17/26 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Sora for Latin branding and Vazirmatn for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #191832, ink #F2EFE9, accent #C4B8FF, secondary surface #272541. Status is also expressed in words, not color alone.
+Malachite `#123D32`, cream `#EDE4CD`, copper `#B67F3C`. Geometric negotiation paths and editorial business photography. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ A restrained letter reveal favors reading over spectacle This describes the prod
 
 ## 10. Agentic AI experience
 
-The agent drafts from approved product facts and declared needs. No fabricated customer research or sent outreach.
+**Negotiation Architect:** evaluates stated objectives, researches public business context, prepares negotiation scenarios, and drafts correspondence for approval. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

@@ -1,0 +1,230 @@
+{
+  "himayah": {
+    "title": "Compliance X-Ray",
+    "tab": "Rule lens",
+    "purpose": "A clause, its screening phrases and the source basis belong together.",
+    "fields": [
+      "text",
+      "rules"
+    ]
+  },
+  "iqamah": {
+    "title": "Dossier evidence desk",
+    "tab": "Expiry desk",
+    "purpose": "Separate missing documents from recorded expiry and unverified presence.",
+    "fields": [
+      "as_of",
+      "documents"
+    ]
+  },
+  "istithmar": {
+    "title": "Zone cost explorer",
+    "tab": "Cost horizon",
+    "purpose": "Compare supplied jurisdiction options over an explicit business horizon.",
+    "fields": [
+      "years",
+      "visas"
+    ]
+  },
+  "munagasah": {
+    "title": "Bid qualification matrix",
+    "tab": "Bid fit",
+    "purpose": "Inspect requirement coverage against the capabilities actually supplied.",
+    "fields": [
+      "requirements",
+      "capabilities"
+    ]
+  },
+  "sahil": {
+    "title": "Service document checkpoint",
+    "tab": "Next step",
+    "purpose": "Work through a selected service checklist one prerequisite at a time.",
+    "fields": [
+      "requirements",
+      "documents"
+    ]
+  },
+  "tawteen": {
+    "title": "Workforce scenario desk",
+    "tab": "Scenarios",
+    "purpose": "Examine a stated target against actual entered workforce records.",
+    "fields": [
+      "target_percent",
+      "employees"
+    ]
+  },
+  "adl": {
+    "title": "Property claim chronology",
+    "tab": "Chronology",
+    "purpose": "Inspect dated events and distinguish claimed amounts from established entitlement.",
+    "fields": [
+      "events",
+      "claims"
+    ]
+  },
+  "tawassul": {
+    "title": "Negotiation fact map",
+    "tab": "Fact map",
+    "purpose": "Map stated needs to approved product facts before preparing correspondence.",
+    "fields": [
+      "needs",
+      "products"
+    ]
+  },
+  "adab": {
+    "title": "Cultural claim storyboard",
+    "tab": "Storyboard",
+    "purpose": "Inspect exact claim approval and editorial boundaries in the original copy.",
+    "fields": [
+      "copy",
+      "claims",
+      "approved_claims"
+    ]
+  },
+  "khidmah": {
+    "title": "Policy resolution desk",
+    "tab": "Resolution",
+    "purpose": "Check the stated policy window and delegated amount against the reported situation.",
+    "fields": [
+      "purchase_date",
+      "as_of",
+      "reason"
+    ]
+  },
+  "jomrok": {
+    "title": "Shipment documentation route",
+    "tab": "Cargo route",
+    "purpose": "Locate documentation gaps before interpreting a declared customs-value scenario.",
+    "fields": [
+      "shipment",
+      "required_fields"
+    ]
+  },
+  "khibrat": {
+    "title": "Candidate evidence canvas",
+    "tab": "Criterion lens",
+    "purpose": "Connect a human-defined job criterion with its supplied evidence reference.",
+    "fields": [
+      "criteria",
+      "evidence"
+    ]
+  },
+  "majlis": {
+    "title": "Onboarding milestone map",
+    "tab": "Task map",
+    "purpose": "Inspect approved tasks and their dependencies instead of assuming onboarding is complete.",
+    "fields": [
+      "tasks"
+    ]
+  },
+  "rafiq": {
+    "title": "Daily-life planning ribbon",
+    "tab": "Day ribbon",
+    "purpose": "Place entered priorities around the commitments and buffers you provide.",
+    "fields": [
+      "busy",
+      "tasks"
+    ]
+  },
+  "sawm": {
+    "title": "Intention and rest timeline",
+    "tab": "Day rhythm",
+    "purpose": "Preserve entered rest boundaries while planning the day; verified local fasting schedules are not connected.",
+    "fields": [
+      "start",
+      "end",
+      "busy"
+    ]
+  },
+  "mizan": {
+    "title": "Values-led ledger audit",
+    "tab": "Ledger audit",
+    "purpose": "Inspect recorded spending separately from religious interpretation and source context.",
+    "fields": [
+      "currency",
+      "transactions"
+    ]
+  },
+  "thawg": {
+    "title": "Dietary shortlist explorer",
+    "tab": "Food checks",
+    "purpose": "Compare supplied dining options, reported seats and declared dietary needs; live discovery is not connected.",
+    "fields": [
+      "required_tags",
+      "restaurants"
+    ]
+  },
+  "manzil": {
+    "title": "Household receipt reconciler",
+    "tab": "Reconcile",
+    "purpose": "Inspect duplicate identifiers and unverified receipts before reconciling family spending.",
+    "fields": [
+      "transactions",
+      "budgets"
+    ]
+  },
+  "gurbah": {
+    "title": "Relocation dependency atlas",
+    "tab": "Move atlas",
+    "purpose": "Follow recorded prerequisites and identify what can actually be prepared next.",
+    "fields": [
+      "tasks"
+    ]
+  },
+  "amanah-eco": {
+    "title": "Normalized energy comparison",
+    "tab": "Energy flow",
+    "purpose": "Compare actual entered measurements by period length, without inventing a meter connection.",
+    "fields": [
+      "previous_usage",
+      "previous_days",
+      "current_usage",
+      "current_days"
+    ]
+  },
+  "nafas": {
+    "title": "Breathing and reflection room",
+    "tab": "Breathing",
+    "purpose": "Start a local pacing exercise immediately; a preferred routine can use volunteered context.",
+    "fields": [
+      "preferred_activities"
+    ]
+  },
+  "tadweer": {
+    "title": "Material acceptance finder",
+    "tab": "Materials",
+    "purpose": "Match a declared material to supplied operator capabilities; camera identification is not implemented.",
+    "fields": [
+      "material",
+      "hazardous",
+      "routes"
+    ]
+  },
+  "turath": {
+    "title": "Heritage source folios",
+    "tab": "Source folios",
+    "purpose": "Open an actual source excerpt and ask what it establishes about the chosen topic.",
+    "fields": [
+      "topics",
+      "sources"
+    ]
+  },
+  "himam": {
+    "title": "Access barrier inspector",
+    "tab": "Barriers",
+    "purpose": "Keep confirmed barriers and unknown access conditions visible before selecting a route.",
+    "fields": [
+      "needs",
+      "routes"
+    ]
+  },
+  "hisad": {
+    "title": "Food rescue capacity match",
+    "tab": "Capacity",
+    "purpose": "Inspect recorded handling conditions, expiry and recipient capacity without implying a confirmed handoff.",
+    "fields": [
+      "lot",
+      "recipients"
+    ]
+  }
+}

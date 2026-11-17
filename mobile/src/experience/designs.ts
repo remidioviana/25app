@@ -3,12 +3,12 @@ export type ExperienceDesign={layout:string;bg:string;ink:string;accent:string;p
 export const designs:Record<keyof typeof brands,ExperienceDesign>={
   "himayah": {
     "layout": "docket",
-    "bg": "#091A29",
-    "ink": "#F4F1E8",
-    "accent": "#69E0B3",
-    "panel": "#142E39",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#151E37",
+    "ink": "#F4E7D5",
+    "accent": "#E7695E",
+    "panel": "#212940",
+    "muted": "#C7BFB5",
+    "line": "#585A66",
     "dark": true,
     "kicker": "THE PRIVACY DESK",
     "headline": "Consent needs\na way back.",
@@ -17,7 +17,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Docket",
       "Clauses",
       "Authorities",
-      "Trail"
+      "Trail",
+      "Rule lens"
     ],
     "steps": [
       "Import agreement",
@@ -32,12 +33,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "iqamah": {
     "layout": "passport",
-    "bg": "#F7F0E2",
-    "ink": "#282318",
-    "accent": "#7B5D14",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F7EBD7",
+    "ink": "#502C43",
+    "accent": "#825C4E",
+    "panel": "#EEE0CF",
+    "muted": "#715261",
+    "line": "#C5B2AB",
     "dark": false,
     "kicker": "YOUR UAE CHAPTER",
     "headline": "Eligibility before\nthe long-term plan.",
@@ -46,7 +47,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Passport",
       "Dossier",
       "Criteria",
-      "Journey"
+      "Journey",
+      "Expiry desk"
     ],
     "steps": [
       "Choose a route",
@@ -61,21 +63,22 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "istithmar": {
     "layout": "decision",
-    "bg": "#073D3B",
-    "ink": "#F1F6EA",
-    "accent": "#8AE3CF",
-    "panel": "#164B45",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#133C67",
+    "ink": "#DDF8ED",
+    "accent": "#60C6AC",
+    "panel": "#1E466E",
+    "muted": "#B5D2D2",
+    "line": "#50748F",
     "dark": true,
-    "kicker": "THE FOUNDER’S DESK",
+    "kicker": "THE FOUNDER\u2019S DESK",
     "headline": "An activity changes\nthe cost picture.",
     "action": "Compare my setup options",
     "tabs": [
       "Desk",
       "Compare",
       "Rulebook",
-      "Decisions"
+      "Decisions",
+      "Cost horizon"
     ],
     "steps": [
       "Define activity",
@@ -90,13 +93,13 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "munagasah": {
     "layout": "blueprint",
-    "bg": "#EAF0FC",
-    "ink": "#132B58",
-    "accent": "#2451C5",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
-    "dark": false,
+    "bg": "#282A2F",
+    "ink": "#FFBE59",
+    "accent": "#F4F2EC",
+    "panel": "#343231",
+    "muted": "#D4A051",
+    "line": "#68563C",
+    "dark": true,
     "kicker": "BID INTELLIGENCE",
     "headline": "A bid begins\nwith evidence.",
     "action": "Open a tender review",
@@ -104,7 +107,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Bid room",
       "Proposal",
       "RFP library",
-      "Pipeline"
+      "Pipeline",
+      "Bid fit"
     ],
     "steps": [
       "Read requirements",
@@ -119,12 +123,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "sahil": {
     "layout": "concierge",
-    "bg": "#F2F8FE",
-    "ink": "#163F59",
-    "accent": "#096A9B",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F8F7F1",
+    "ink": "#166360",
+    "accent": "#307773",
+    "panel": "#ECEFE9",
+    "muted": "#337673",
+    "line": "#B4CBC6",
     "dark": false,
     "kicker": "ONE CLEAR NEXT STEP",
     "headline": "Start with the\nservice dependency.",
@@ -133,7 +137,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Guide",
       "My request",
       "Service desk",
-      "Progress"
+      "Progress",
+      "Next step"
     ],
     "steps": [
       "Identify service",
@@ -148,12 +153,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "tawteen": {
     "layout": "workforce",
-    "bg": "#F3F5E7",
-    "ink": "#1D382D",
-    "accent": "#376844",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F1CAB1",
+    "ink": "#1F4945",
+    "accent": "#325C57",
+    "panel": "#E5C3AB",
+    "muted": "#3C5B54",
+    "line": "#B2A391",
     "dark": false,
     "kicker": "WORKFORCE OPERATIONS",
     "headline": "Scope the team.\nThen the target.",
@@ -162,7 +167,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Workforce",
       "Plan",
       "Policy",
-      "Changes"
+      "Changes",
+      "Scenarios"
     ],
     "steps": [
       "Load workforce",
@@ -177,12 +183,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "adl": {
     "layout": "casefile",
-    "bg": "#F0E6DD",
-    "ink": "#493024",
-    "accent": "#984C29",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#E3D7E9",
+    "ink": "#3C283B",
+    "accent": "#705162",
+    "panel": "#DACDDF",
+    "muted": "#5D4B5E",
+    "line": "#B1A2B5",
     "dark": false,
     "kicker": "THE TENANCY FILE",
     "headline": "A clear case\nstarts with dates.",
@@ -191,7 +197,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Case file",
       "Timeline",
       "RDC desk",
-      "Case trail"
+      "Case trail",
+      "Chronology"
     ],
     "steps": [
       "Build timeline",
@@ -206,12 +213,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "tawassul": {
     "layout": "correspondence",
-    "bg": "#191832",
-    "ink": "#F2EFE9",
-    "accent": "#C4B8FF",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#123D32",
+    "ink": "#EDE4CD",
+    "accent": "#CAA370",
+    "panel": "#1E463B",
+    "muted": "#C1C3AE",
+    "line": "#546F60",
     "dark": true,
     "kicker": "GCC BUSINESS RELATIONS",
     "headline": "Origin belongs\nnext to the invoice.",
@@ -220,7 +227,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Briefing",
       "Pitch",
       "Trade desk",
-      "Outreach"
+      "Outreach",
+      "Fact map"
     ],
     "steps": [
       "Understand account",
@@ -228,19 +236,19 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Draft a proposal"
     ],
     "radius": 14,
-    "serif": true,
+    "serif": false,
     "navigation": "segmented",
     "motion_ms": 280,
-    "case_intro": "The account’s needs and product facts you are authorized to use."
+    "case_intro": "The account\u2019s needs and product facts you are authorized to use."
   },
   "adab": {
     "layout": "editorial",
-    "bg": "#2B142E",
-    "ink": "#FFF1EA",
-    "accent": "#FFAC91",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#782859",
+    "ink": "#F9DAE0",
+    "accent": "#D6B0FC",
+    "panel": "#7F3260",
+    "muted": "#DFB6C5",
+    "line": "#9F5D82",
     "dark": true,
     "kicker": "THE CULTURAL EDITOR",
     "headline": "Privacy is part\nof cultural fit.",
@@ -249,7 +257,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Studio",
       "Copy desk",
       "Standards",
-      "Versions"
+      "Versions",
+      "Storyboard"
     ],
     "steps": [
       "Inspect claims",
@@ -257,19 +266,19 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resolve flags"
     ],
     "radius": 4,
-    "serif": false,
+    "serif": true,
     "navigation": "segmented",
     "motion_ms": 280,
     "case_intro": "The original copy, approved claims and channel boundaries."
   },
   "khidmah": {
     "layout": "service",
-    "bg": "#EAFAFD",
-    "ink": "#123F4C",
-    "accent": "#087B95",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FFF5CC",
+    "ink": "#225B74",
+    "accent": "#317383",
+    "panel": "#F3EDC7",
+    "muted": "#417180",
+    "line": "#BDC7B2",
     "dark": false,
     "kicker": "CUSTOMER CARE OPERATIONS",
     "headline": "Rights first.\nThe actual case next.",
@@ -278,7 +287,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Care desk",
       "Resolve",
       "Rights",
-      "Cases"
+      "Cases",
+      "Resolution"
     ],
     "steps": [
       "Understand issue",
@@ -293,13 +303,13 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "jomrok": {
     "layout": "manifest",
-    "bg": "#111E2D",
-    "ink": "#EDF4FF",
-    "accent": "#FDBB65",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
-    "dark": true,
+    "bg": "#F4F3ED",
+    "ink": "#1645AE",
+    "accent": "#78627C",
+    "panel": "#E8E9EA",
+    "muted": "#4066BA",
+    "line": "#B1BFDA",
+    "dark": false,
     "kicker": "CROSS-BORDER CONTROL",
     "headline": "The declaration\nchanges the basis.",
     "action": "Review my shipment documents",
@@ -307,7 +317,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Manifest",
       "Clearance",
       "Customs",
-      "Shipment log"
+      "Shipment log",
+      "Cargo route"
     ],
     "steps": [
       "Read shipment",
@@ -322,21 +333,22 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "khibrat": {
     "layout": "competency",
-    "bg": "#DFEDE5",
-    "ink": "#123E36",
-    "accent": "#16675B",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
-    "dark": false,
-    "kicker": "PEOPLE • EVIDENCE • FIT",
+    "bg": "#34312D",
+    "ink": "#D9E14D",
+    "accent": "#F1EEE5",
+    "panel": "#3D3B2F",
+    "muted": "#B8BE47",
+    "line": "#666637",
+    "dark": true,
+    "kicker": "PEOPLE \u2022 EVIDENCE \u2022 FIT",
     "headline": "A contract is not\ncompetency evidence.",
     "action": "Map competency evidence",
     "tabs": [
       "Talent desk",
       "Evidence map",
       "Work rules",
-      "Assessments"
+      "Assessments",
+      "Criterion lens"
     ],
     "steps": [
       "Define rubric",
@@ -351,13 +363,13 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "majlis": {
     "layout": "protocol",
-    "bg": "#291F18",
-    "ink": "#F9EDDD",
-    "accent": "#E6B77E",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
-    "dark": true,
+    "bg": "#F5EBE9",
+    "ink": "#403A78",
+    "accent": "#6A5C9A",
+    "panel": "#EBE1E3",
+    "muted": "#645D8F",
+    "line": "#BFB6C7",
+    "dark": false,
     "kicker": "YOUR EXECUTIVE ARRIVAL",
     "headline": "Arrival is\na sequence.",
     "action": "Build my onboarding path",
@@ -365,7 +377,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Welcome",
       "Protocol",
       "Handbook",
-      "Milestones"
+      "Milestones",
+      "Task map"
     ],
     "steps": [
       "Map stakeholders",
@@ -373,20 +386,20 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resolve dependencies"
     ],
     "radius": 14,
-    "serif": true,
+    "serif": false,
     "navigation": "drawer",
     "motion_ms": 180,
     "case_intro": "Onboarding tasks, owners, due dates and dependencies."
   },
   "rafiq": {
     "layout": "orbit",
-    "bg": "#141623",
-    "ink": "#F6F1EA",
-    "accent": "#FFAA72",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
-    "dark": true,
+    "bg": "#F9EEE8",
+    "ink": "#5C4D7E",
+    "accent": "#795E84",
+    "panel": "#F0E5E2",
+    "muted": "#6F608B",
+    "line": "#CABEC8",
+    "dark": false,
     "kicker": "A DAY, WELL ARRANGED",
     "headline": "One event.\nSeveral local clocks.",
     "action": "Arrange my day",
@@ -394,7 +407,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Today",
       "Rhythm",
       "Time desk",
-      "Agenda"
+      "Agenda",
+      "Day ribbon"
     ],
     "steps": [
       "Set priorities",
@@ -409,12 +423,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "sawm": {
     "layout": "ritual",
-    "bg": "#221E43",
-    "ink": "#F8F0D7",
-    "accent": "#D9C282",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#131F4D",
+    "ink": "#FFE8B0",
+    "accent": "#D0B87C",
+    "panel": "#202A52",
+    "muted": "#D0C09C",
+    "line": "#5A5B6B",
     "dark": true,
     "kicker": "THE RAMADAN RHYTHM",
     "headline": "A rhythm needs\nreliable anchors.",
@@ -423,7 +437,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Rhythm",
       "Routine",
       "Guidance",
-      "Reflections"
+      "Reflections",
+      "Day rhythm"
     ],
     "steps": [
       "Choose work windows",
@@ -438,12 +453,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "mizan": {
     "layout": "balance",
-    "bg": "#08271F",
-    "ink": "#F2F1DA",
-    "accent": "#BDE7A0",
-    "panel": "#272541",
-    "muted": "#C4CDC7",
-    "line": "#47584F",
+    "bg": "#143C32",
+    "ink": "#EFF1E4",
+    "accent": "#9DCA9C",
+    "panel": "#20463C",
+    "muted": "#C3CDC0",
+    "line": "#567267",
     "dark": true,
     "kicker": "WEALTH WITH INTENTION",
     "headline": "Values begin\nwith a clear ledger.",
@@ -452,7 +467,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Balance",
       "My ledger",
       "Finance desk",
-      "Decisions"
+      "Decisions",
+      "Ledger audit"
     ],
     "steps": [
       "Bring transactions",
@@ -467,12 +483,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "thawg": {
     "layout": "menu",
-    "bg": "#F7EDE4",
-    "ink": "#4C1C2B",
-    "accent": "#9D3751",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FFF0D8",
+    "ink": "#963728",
+    "accent": "#596A80",
+    "panel": "#F9E6CE",
+    "muted": "#A44F3F",
+    "line": "#E0B8A3",
     "dark": false,
     "kicker": "THE DINING EDITION",
     "headline": "Ask about allergens\nbefore the table.",
@@ -481,7 +497,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "The edit",
       "Shortlist",
       "Food desk",
-      "Saved tables"
+      "Saved tables",
+      "Food checks"
     ],
     "steps": [
       "Set preferences",
@@ -489,19 +506,19 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Check dietary evidence"
     ],
     "radius": 14,
-    "serif": true,
+    "serif": false,
     "navigation": "segmented",
     "motion_ms": 280,
     "case_intro": "Your preferences, party size and the options to compare."
   },
   "manzil": {
     "layout": "receipt",
-    "bg": "#FFF8E9",
-    "ink": "#344C32",
-    "accent": "#507447",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FBE5D5",
+    "ink": "#42275A",
+    "accent": "#7E5774",
+    "panel": "#F1DBCE",
+    "muted": "#674D73",
+    "line": "#C4ACB0",
     "dark": false,
     "kicker": "THE HOUSEHOLD BOOK",
     "headline": "Household totals.\nTax questions apart.",
@@ -510,7 +527,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Home book",
       "Receipts",
       "Tax desk",
-      "Monthly trail"
+      "Monthly trail",
+      "Reconcile"
     ],
     "steps": [
       "Bring receipts",
@@ -525,12 +543,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "gurbah": {
     "layout": "journey",
-    "bg": "#EDF6F2",
-    "ink": "#163E40",
-    "accent": "#177C7A",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FFF2DB",
+    "ink": "#273B63",
+    "accent": "#7A6557",
+    "panel": "#F3E8D4",
+    "muted": "#52607B",
+    "line": "#BEBBB7",
     "dark": false,
     "kicker": "YOUR RELOCATION ATLAS",
     "headline": "Your move has\na dependency map.",
@@ -539,7 +557,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Atlas",
       "Move plan",
       "Local desk",
-      "Milestones"
+      "Milestones",
+      "Move atlas"
     ],
     "steps": [
       "Map requirements",
@@ -554,12 +573,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "amanah-eco": {
     "layout": "resource",
-    "bg": "#EAF4D8",
-    "ink": "#274716",
-    "accent": "#52751B",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F8F8DA",
+    "ink": "#215B39",
+    "accent": "#43763E",
+    "panel": "#ECEFD1",
+    "muted": "#437453",
+    "line": "#B8C9AA",
     "dark": false,
     "kicker": "THE RESOURCE OBSERVATORY",
     "headline": "Compare periods.\nThen call it savings.",
@@ -568,7 +587,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resources",
       "Usage",
       "Conservation",
-      "Trends"
+      "Trends",
+      "Energy flow"
     ],
     "steps": [
       "Add readings",
@@ -583,12 +603,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "nafas": {
     "layout": "breathing",
-    "bg": "#EFF1E7",
-    "ink": "#3F513D",
-    "accent": "#4F6D43",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F0F4F1",
+    "ink": "#3C5B64",
+    "accent": "#516E74",
+    "panel": "#E6ECE9",
+    "muted": "#526D75",
+    "line": "#BAC6C7",
     "dark": false,
     "kicker": "A LITTLE SPACE FOR YOU",
     "headline": "A few minutes\ncan be a start.",
@@ -597,7 +617,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Pause",
       "Practice",
       "Field guide",
-      "Reflections"
+      "Reflections",
+      "Breathing"
     ],
     "steps": [
       "Name the moment",
@@ -612,12 +633,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "tadweer": {
     "layout": "circular",
-    "bg": "#F1E9DB",
-    "ink": "#314531",
-    "accent": "#327047",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F7F2E3",
+    "ink": "#8E3E1F",
+    "accent": "#1F3942",
+    "panel": "#F1E8D8",
+    "muted": "#9C5538",
+    "line": "#D7BCA8",
     "dark": false,
     "kicker": "THE CIRCULAR ROUTE",
     "headline": "Sorting comes\nbefore routing.",
@@ -626,7 +647,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "The loop",
       "Sort",
       "Local guidance",
-      "Collections"
+      "Collections",
+      "Materials"
     ],
     "steps": [
       "Identify material",
@@ -641,12 +663,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "turath": {
     "layout": "story",
-    "bg": "#F4E2CA",
-    "ink": "#603821",
-    "accent": "#914B24",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#F6F1E7",
+    "ink": "#65533C",
+    "accent": "#77664E",
+    "panel": "#EEE8DE",
+    "muted": "#766651",
+    "line": "#CAC2B4",
     "dark": false,
     "kicker": "THE LIVING HERITAGE JOURNAL",
     "headline": "Pearling shaped\na way of life.",
@@ -655,7 +677,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Journal",
       "Explore",
       "Archive",
-      "Learning trail"
+      "Learning trail",
+      "Source folios"
     ],
     "steps": [
       "Choose a subject",
@@ -670,12 +693,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "himam": {
     "layout": "wayfinding",
-    "bg": "#E9F0FE",
-    "ink": "#152D5C",
-    "accent": "#2156B4",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FFFCE8",
+    "ink": "#10358C",
+    "accent": "#66706C",
+    "panel": "#F2F1E3",
+    "muted": "#405D9E",
+    "line": "#B7C0CC",
     "dark": false,
     "kicker": "ACCESS COMES FIRST",
     "headline": "Access needs\ncome first.",
@@ -684,7 +707,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Explore",
       "My route",
       "Access desk",
-      "Journeys"
+      "Journeys",
+      "Barriers"
     ],
     "steps": [
       "Define access needs",
@@ -699,12 +723,12 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
   },
   "hisad": {
     "layout": "harvest",
-    "bg": "#FFF1CB",
-    "ink": "#4E441D",
-    "accent": "#7B651F",
-    "panel": "#FFFFFF",
-    "muted": "#5A685C",
-    "line": "#D3D9CE",
+    "bg": "#FCF3E4",
+    "ink": "#943A38",
+    "accent": "#A5533D",
+    "panel": "#F6E9DB",
+    "muted": "#A2524E",
+    "line": "#DDBCB0",
     "dark": false,
     "kicker": "THE SURPLUS TABLE",
     "headline": "Surplus needs\na working handoff.",
@@ -713,7 +737,8 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "The table",
       "Match",
       "Food bank",
-      "Handoffs"
+      "Handoffs",
+      "Capacity"
     ],
     "steps": [
       "Describe surplus",
@@ -721,7 +746,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare a recipient match"
     ],
     "radius": 28,
-    "serif": true,
+    "serif": false,
     "navigation": "compact",
     "motion_ms": 180,
     "case_intro": "The food, handling conditions and recipient capacity available."

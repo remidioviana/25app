@@ -1,6 +1,6 @@
 # Istithmar AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Ambition grounded in explicit costs
 
 ## 3. Logo and wordmark
 
-Two offset investment planes with an ascending cut; compact architectural lowercase
+Modular geometric logotype inspired by interconnected economic zones. Space Grotesk with Alexandria.
 
 ## 4. Typography
 
-spacegrotesk for the wordmark and key headlines. Wordmark 31 pt, tracking -1.6; headline 42 pt with 1.04 leading ratio. Body 16/25 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Space Grotesk for Latin branding and Alexandria for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #073D3B, ink #F1F6EA, accent #8AE3CF, secondary surface #164B45. Status is also expressed in words, not color alone.
+Deep blue `#133C67`, pale mint `#DDF8ED`, turquoise `#60C6AC`. Spatial diagrams and precise economic visualizations. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Short horizontal shifts connect a changed assumption to its affected column This
 
 ## 10. Agentic AI experience
 
-A recommendation is a comparison with its assumptions attached. Do not invent current fees or silently favor the cheapest unsupported option.
+**Investment Navigator:** researches applicable zones, licensing requirements, and tax rules, then prepares sourced decision comparisons. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

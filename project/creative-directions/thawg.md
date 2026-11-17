@@ -1,6 +1,6 @@
 # Thawg AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Anticipation and editorial discernment
 
 ## 3. Logo and wordmark
 
-A sculpted wedge on a fine plate line; oversized dining-publication lettering
+Distinctive culinary wordmark; bespoke plate-and-flavor mark. Bricolage Grotesque with Baloo Bhaijaan 2.
 
 ## 4. Typography
 
-dmserifdisplay for the wordmark and key headlines. Wordmark 47 pt, tracking -1.4; headline 48 pt with 1.1 leading ratio. Body 18/28 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Bricolage Grotesque for Latin branding and Baloo Bhaijaan 2 for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F7EDE4, ink #4C1C2B, accent #9D3751, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Tomato `#D84A34`, vanilla `#FFF0D8`, Mediterranean blue `#3F80A6`. Rich original food photography and menu-centered imagery. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Measured editorial reveals; no fake live availability shimmer This describes the
 
 ## 10. Agentic AI experience
 
-The agent filters budget, party size and required tags visibly. A shortlist is not a halal certificate or a reservation.
+**Dining Discovery Agent:** searches suitable restaurants, checks published menus and available certification evidence, and distinguishes confirmed from unverified halal claims. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

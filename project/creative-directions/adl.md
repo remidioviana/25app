@@ -1,6 +1,6 @@
 # Adl AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Composure in a stressful situation
 
 ## 3. Logo and wordmark
 
-An interrupted vertical pillar bridged by one horizontal stone; restrained case inscription
+Elegant legal-editorial wordmark; asymmetric balanced-plane emblem. Libre Baskerville with Amiri.
 
 ## 4. Typography
 
-librebaskerville for the wordmark and key headlines. Wordmark 36 pt, tracking -0.3; headline 43 pt with 1.18 leading ratio. Body 17/28 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Libre Baskerville for Latin branding and Amiri for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F0E6DD, ink #493024, accent #984C29, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Dark plum `#3C283B`, pale lavender `#E3D7E9`, muted rose `#BE8E9C`. Architectural linework and legal-document composition. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ The chronology extends vertically as evidence is added This describes the produc
 
 ## 10. Agentic AI experience
 
-Findings stay anchored to a dated event or a stated claim. Do not present a model opinion as an RDC ruling.
+**Property Rights Analyst:** reviews available documents and official rules, flags legal questions, and prepares source-backed summaries for human review. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

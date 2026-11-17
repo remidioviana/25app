@@ -1,6 +1,6 @@
 # Iqamah AI — independent creative direction
 
-Status: authored direction; implementation evidence and acceptance tracked separately.
+Status: aligned to the mandatory user matrix; implementation scope and native acceptance remain separate.
 
 ## 1. Brand philosophy
 
@@ -12,15 +12,15 @@ Dignity, patience and possibility
 
 ## 3. Logo and wordmark
 
-A tall open doorway in a solid field; centered high-contrast residency lettering
+Refined architectural wordmark; asymmetric gateway emblem. Cormorant Garamond paired with Noto Naskh Arabic.
 
 ## 4. Typography
 
-cormorantgaramond for the wordmark and key headlines. Wordmark 40 pt, tracking -0.8; headline 48 pt with 1.16 leading ratio. Body 17/27 using the platform reading face. Preserve system scaling, multiline content and readable fallback; never shrink body text to fit.
+Cormorant Garamond for Latin branding and Noto Naskh Arabic for Arabic input. Both are bundled under retained OFL notices. Coverage and shaping evidence is separate from native screen-reader and font-scaling acceptance.
 
 ## 5. Color system
 
-Paper #F7F0E2, ink #282318, accent #7B5D14, secondary surface #FFFFFF. Status is also expressed in words, not color alone.
+Burgundy `#502C43`, warm ivory `#F7EBD7`, antique gold `#C29A5C`. Architectural editorial photography and dossier-inspired layouts. Accessible text/action tones are recorded separately; the requested signal colors remain the art-direction basis.
 
 ## 6. Visual language
 
@@ -40,7 +40,7 @@ Page-edge reveals establish progression without implying a government decision T
 
 ## 10. Agentic AI experience
 
-Dossier gaps, expiry and verification status are distinct. Avoid gold badges that resemble government endorsement.
+**Visa Dossier Builder:** evaluates available eligibility criteria, identifies missing evidence, and assembles an application checklist using current official requirements. This is the target specification. Implemented scope and unavailable integrations are listed in the design-matrix delivery ledger.
 
 ## 11. Signature experience
 

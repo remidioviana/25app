@@ -1,0 +1,532 @@
+{
+  "scope": "Mandatory matrix implementation ledger; target descriptions do not establish capability or acceptance",
+  "implemented_route_surfaces": 125,
+  "screen_review_verified": false,
+  "products": [
+    {
+      "app": "himayah",
+      "order": 1,
+      "matrix_target": "**Compliance X-Ray:** identifies potentially problematic clauses, retrieves authoritative regulations, presents cited findings, and prepares a reviewable remediation plan.",
+      "implemented_scope": "Phrase-based clause screening and exact recorded passages",
+      "limitations": "Authentic contract applicability and remediation effectiveness remain unaccepted.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Compliance X-Ray",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "iqamah",
+      "order": 2,
+      "matrix_target": "**Visa Dossier Builder:** evaluates available eligibility criteria, identifies missing evidence, and assembles an application checklist using current official requirements.",
+      "implemented_scope": "Entered checklist, document presence and recorded expiry assessment",
+      "limitations": "No automatic verified eligibility determination or application submission.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Dossier evidence desk",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "istithmar",
+      "order": 3,
+      "matrix_target": "**Investment Navigator:** researches applicable zones, licensing requirements, and tax rules, then prepares sourced decision comparisons.",
+      "implemented_scope": "Exact-decimal comparison of supplied jurisdiction fees and activity lists",
+      "limitations": "Live discovery of zones, current fees and applicable tax treatment is not implemented.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Zone cost explorer",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "munagasah",
+      "order": 4,
+      "matrix_target": "**Tender Strategist:** discovers published opportunities, checks qualification criteria, tracks deadlines, and drafts bid-preparation tasks.",
+      "implemented_scope": "Entered requirements/capability matrix, recorded deadline and bid outline",
+      "limitations": "No live opportunity discovery, tender-pack acquisition or bid submission.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Bid qualification matrix",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "sahil",
+      "order": 5,
+      "matrix_target": "**Service Pathfinder:** identifies the appropriate government process, prepares required documentation lists, and guides permitted next steps.",
+      "implemented_scope": "Entered service prerequisites and document checklist",
+      "limitations": "Current official DEWA context is available; no general cross-government service search or application submission.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Service document checkpoint",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "tawteen",
+      "order": 6,
+      "matrix_target": "**Workforce Planner:** examines applicable Emiratisation requirements, models supported scenarios, and recommends compliant actions.",
+      "implemented_scope": "Entered workforce aggregation and an explicit target scenario",
+      "limitations": "Applicable regulatory target selection is not automatically determined.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Workforce scenario desk",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "adl",
+      "order": 7,
+      "matrix_target": "**Property Rights Analyst:** reviews available documents and official rules, flags legal questions, and prepares source-backed summaries for human review.",
+      "implemented_scope": "Entered event chronology and claimed amounts",
+      "limitations": "A source-backed summary is not an authoritative legal ruling or authentic-case acceptance.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Property claim chronology",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "tawassul",
+      "order": 8,
+      "matrix_target": "**Negotiation Architect:** evaluates stated objectives, researches public business context, prepares negotiation scenarios, and drafts correspondence for approval.",
+      "implemented_scope": "Entered account needs matched to approved product facts and correspondence preparation",
+      "limitations": "No live stakeholder research, negotiation execution or sent correspondence.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Negotiation fact map",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "adab",
+      "order": 9,
+      "matrix_target": "**Cultural Campaign Director:** investigates relevant market context, evaluates messaging, and develops localized creative recommendations with explicit assumptions.",
+      "implemented_scope": "Exact approved-claim checks, prohibited terms and editorial boundaries",
+      "limitations": "Model recommendations do not establish campaign performance or cultural approval.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Cultural claim storyboard",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "khidmah",
+      "order": 10,
+      "matrix_target": "**Resolution Agent:** classifies authorized requests, identifies relevant policies, proposes remedies, and executes permitted service actions.",
+      "implemented_scope": "Entered policy-window and delegated-amount checks, response draft",
+      "limitations": "No live service system integration or issued refund.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Policy resolution desk",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "jomrok",
+      "order": 11,
+      "matrix_target": "**Customs Intelligence Agent:** analyzes shipment information, researches applicable requirements, identifies missing documentation, and flags classification uncertainties.",
+      "implemented_scope": "Required-field inspection and a supplied-rate duty scenario",
+      "limitations": "No authoritative HS classification, live shipment tracking or customs clearance.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Shipment documentation route",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "khibrat",
+      "order": 12,
+      "matrix_target": "**Talent Review Copilot:** extracts job-relevant qualifications, maps evidence to human-defined criteria, and prepares transparent assessments without autonomous hiring decisions.",
+      "implemented_scope": "Human-defined criteria mapped to entered evidence",
+      "limitations": "No autonomous hiring, protected-attribute inference or validated hiring fairness certification.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Candidate evidence canvas",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "majlis",
+      "order": 13,
+      "matrix_target": "**Onboarding Coordinator:** organizes approved onboarding requirements, identifies incomplete steps, and prepares relevant communications and tasks.",
+      "implemented_scope": "Entered onboarding tasks, dependencies and completion declarations",
+      "limitations": "No company-system synchronization or automatically sent communication.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Onboarding milestone map",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "rafiq",
+      "order": 14,
+      "matrix_target": "**Daily Companion Agent:** organizes explicitly provided goals and available context, prepares useful next steps, and supports authorized personal workflows.",
+      "implemented_scope": "Actual device time and planning around supplied commitments",
+      "limitations": "No connected calendar, booking or live personal-data feed.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Daily-life planning ribbon",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "sawm",
+      "order": 15,
+      "matrix_target": "**Ramadan Planning Agent:** retrieves location-relevant schedules when permitted, helps organize personal fasting plans, and identifies timing-sensitive reminders.",
+      "implemented_scope": "Planning within entered day and rest boundaries",
+      "limitations": "Location-specific fasting schedules and verified prayer-time retrieval are not connected.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Intention and rest timeline",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "mizan",
+      "order": 16,
+      "matrix_target": "**Ethical Finance Analyst:** organizes authorized financial inputs, researches relevant principles, and prepares transparent comparisons without presenting uncertain religious rulings as definitive.",
+      "implemented_scope": "Duplicate-safe decimal ledger, explicit budget basis and optional entered assumptions",
+      "limitations": "No bank connection, investment guarantee or definitive religious ruling.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Values-led ledger audit",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "thawg",
+      "order": 17,
+      "matrix_target": "**Dining Discovery Agent:** searches suitable restaurants, checks published menus and available certification evidence, and distinguishes confirmed from unverified halal claims.",
+      "implemented_scope": "Supplied dining candidates filtered by price, seats and all required tags",
+      "limitations": "Live restaurant/menu discovery, current availability and halal certification checks are not connected.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Dietary shortlist explorer",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "manzil",
+      "order": 18,
+      "matrix_target": "**Household Budget Agent:** analyzes user-provided or authorized financial records, identifies patterns, and prepares actionable household budget plans.",
+      "implemented_scope": "Duplicate-safe receipt reconciliation and user-entered household budgets",
+      "limitations": "No receipt OCR, bank import or VAT-recovery determination.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Household receipt reconciler",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "gurbah",
+      "order": 19,
+      "matrix_target": "**Relocation Navigator:** researches official requirements, assembles a personalized checklist from volunteered information, and tracks available relocation tasks.",
+      "implemented_scope": "Entered relocation task dependency review with official public context",
+      "limitations": "No automatic immigration verification, appointment or official submission.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Relocation dependency atlas",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "amanah-eco",
+      "order": 20,
+      "matrix_target": "**Energy Optimization Agent:** evaluates available usage data, identifies efficiency opportunities, and prepares recommendations with explicitly stated assumptions.",
+      "implemented_scope": "Entered usage normalized by actual period length",
+      "limitations": "No live meter integration or verified emissions, tariff or reward account.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Normalized energy comparison",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "nafas",
+      "order": 21,
+      "matrix_target": "**Wellbeing Support Agent:** offers evidence-informed exercises and personalized suggestions based on information voluntarily shared, without inventing diagnoses or biometric readings.",
+      "implemented_scope": "Local breathing pacing and volunteered self-care preferences",
+      "limitations": "No biometric measurement, diagnosis or treatment; physical device pacing/accessibility remains unaccepted.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Breathing and reflection room",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "tadweer",
+      "order": 22,
+      "matrix_target": "**Recycling Identification Agent:** interprets user-submitted images, identifies probable material categories, and researches applicable disposal instructions.",
+      "implemented_scope": "Declared-material matching to supplied operator capabilities",
+      "limitations": "Camera-first image identification and live local disposal search are not implemented.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Material acceptance finder",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "turath",
+      "order": 23,
+      "matrix_target": "**Heritage Research Agent:** retrieves documented cultural information, assembles provenance-aware summaries, and identifies disputed or uncertain historical interpretations.",
+      "implemented_scope": "Entered source excerpts and topic matching with citations",
+      "limitations": "Source authenticity and historical interpretation are not established by a model or a text fingerprint.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Heritage source folios",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "himam",
+      "order": 24,
+      "matrix_target": "**Accessibility Assistance Agent:** helps users complete authorized tasks through suitable input and output modes, without assuming their abilities or preferences.",
+      "implemented_scope": "Entered access needs reviewed against reported route segments",
+      "limitations": "No live lift telemetry, voice-system integration or safety guarantee.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Access barrier inspector",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    },
+    {
+      "app": "hisad",
+      "order": 25,
+      "matrix_target": "**Food Redistribution Coordinator:** matches available donated food with eligible participating organizations where supported, prepares pickup coordination, and observes food safety and authorization requirements.",
+      "implemented_scope": "Entered food conditions, expiry and recipient capacity screening",
+      "limitations": "No participating-organization network, actual pickup coordination or confirmed handoff.",
+      "primary_screen_routes": [
+        "/",
+        "/mission",
+        "/evidence",
+        "/activity",
+        "/workbench"
+      ],
+      "fifth_screen_title": "Food rescue capacity match",
+      "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
+      "brand_distinction_accepted": false,
+      "experience_distinction_accepted": false,
+      "visual_originality_accepted": false,
+      "agentic_primary_workflow_accepted": false,
+      "mobile_excellence_accepted": false
+    }
+  ]
+}

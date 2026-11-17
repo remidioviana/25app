@@ -1,0 +1,305 @@
+{
+  "scope": "sRGB contrast for specified palettes and derived text tones; physical-device appearance is not verified",
+  "apps": [
+    {
+      "app": "himayah",
+      "requested_palette": [
+        "#151E37",
+        "#F4E7D5",
+        "#E7655A"
+      ],
+      "accessible_action_tone": "#E7695E",
+      "minimum_accent_contrast": 4.52,
+      "minimum_body_contrast": 11.84,
+      "minimum_secondary_contrast": 7.932
+    },
+    {
+      "app": "iqamah",
+      "requested_palette": [
+        "#502C43",
+        "#F7EBD7",
+        "#C29A5C"
+      ],
+      "accessible_action_tone": "#825C4E",
+      "minimum_accent_contrast": 4.512,
+      "minimum_body_contrast": 9.088,
+      "minimum_secondary_contrast": 5.256
+    },
+    {
+      "app": "istithmar",
+      "requested_palette": [
+        "#133C67",
+        "#DDF8ED",
+        "#60C6AC"
+      ],
+      "accessible_action_tone": "#60C6AC",
+      "minimum_accent_contrast": 4.716,
+      "minimum_body_contrast": 8.683,
+      "minimum_secondary_contrast": 6.081
+    },
+    {
+      "app": "munagasah",
+      "requested_palette": [
+        "#282A2F",
+        "#FFBE59",
+        "#F4F2EC"
+      ],
+      "accessible_action_tone": "#F4F2EC",
+      "minimum_accent_contrast": 11.392,
+      "minimum_body_contrast": 7.75,
+      "minimum_secondary_contrast": 5.433
+    },
+    {
+      "app": "sahil",
+      "requested_palette": [
+        "#176D6A",
+        "#F8F7F1",
+        "#AFD9CF"
+      ],
+      "accessible_action_tone": "#307773",
+      "minimum_accent_contrast": 4.509,
+      "minimum_body_contrast": 6.055,
+      "minimum_secondary_contrast": 4.546
+    },
+    {
+      "app": "tawteen",
+      "requested_palette": [
+        "#1F4945",
+        "#F1CAB1",
+        "#C0E7DD"
+      ],
+      "accessible_action_tone": "#325C57",
+      "minimum_accent_contrast": 4.538,
+      "minimum_body_contrast": 6.068,
+      "minimum_secondary_contrast": 4.518
+    },
+    {
+      "app": "adl",
+      "requested_palette": [
+        "#3C283B",
+        "#E3D7E9",
+        "#BE8E9C"
+      ],
+      "accessible_action_tone": "#705162",
+      "minimum_accent_contrast": 4.529,
+      "minimum_body_contrast": 8.84,
+      "minimum_secondary_contrast": 5.232
+    },
+    {
+      "app": "tawassul",
+      "requested_palette": [
+        "#123D32",
+        "#EDE4CD",
+        "#B67F3C"
+      ],
+      "accessible_action_tone": "#CAA370",
+      "minimum_accent_contrast": 4.505,
+      "minimum_body_contrast": 8.313,
+      "minimum_secondary_contrast": 5.859
+    },
+    {
+      "app": "adab",
+      "requested_palette": [
+        "#782859",
+        "#F9DAE0",
+        "#D6B0FC"
+      ],
+      "accessible_action_tone": "#D6B0FC",
+      "minimum_accent_contrast": 4.54,
+      "minimum_body_contrast": 6.383,
+      "minimum_secondary_contrast": 4.603
+    },
+    {
+      "app": "khidmah",
+      "requested_palette": [
+        "#225B74",
+        "#FFF5CC",
+        "#77E2C8"
+      ],
+      "accessible_action_tone": "#317383",
+      "minimum_accent_contrast": 4.539,
+      "minimum_body_contrast": 6.302,
+      "minimum_secondary_contrast": 4.553
+    },
+    {
+      "app": "jomrok",
+      "requested_palette": [
+        "#1645AE",
+        "#F4F3ED",
+        "#FF8A37"
+      ],
+      "accessible_action_tone": "#78627C",
+      "minimum_accent_contrast": 4.502,
+      "minimum_body_contrast": 6.919,
+      "minimum_secondary_contrast": 4.513
+    },
+    {
+      "app": "khibrat",
+      "requested_palette": [
+        "#34312D",
+        "#D9E14D",
+        "#F1EEE5"
+      ],
+      "accessible_action_tone": "#F1EEE5",
+      "minimum_accent_contrast": 9.706,
+      "minimum_body_contrast": 7.95,
+      "minimum_secondary_contrast": 5.627
+    },
+    {
+      "app": "majlis",
+      "requested_palette": [
+        "#403A78",
+        "#F5EBE9",
+        "#D5B5F1"
+      ],
+      "accessible_action_tone": "#6A5C9A",
+      "minimum_accent_contrast": 4.546,
+      "minimum_body_contrast": 7.836,
+      "minimum_secondary_contrast": 4.683
+    },
+    {
+      "app": "rafiq",
+      "requested_palette": [
+        "#6D5B98",
+        "#F9EEE8",
+        "#F4A89D"
+      ],
+      "accessible_action_tone": "#795E84",
+      "minimum_accent_contrast": 4.54,
+      "minimum_body_contrast": 6.037,
+      "minimum_secondary_contrast": 4.571
+    },
+    {
+      "app": "sawm",
+      "requested_palette": [
+        "#131F4D",
+        "#FFE8B0",
+        "#D0B87C"
+      ],
+      "accessible_action_tone": "#D0B87C",
+      "minimum_accent_contrast": 7.151,
+      "minimum_body_contrast": 11.504,
+      "minimum_secondary_contrast": 7.727
+    },
+    {
+      "app": "mizan",
+      "requested_palette": [
+        "#143C32",
+        "#EFF1E4",
+        "#9DCA9C"
+      ],
+      "accessible_action_tone": "#9DCA9C",
+      "minimum_accent_contrast": 5.673,
+      "minimum_body_contrast": 9.174,
+      "minimum_secondary_contrast": 6.398
+    },
+    {
+      "app": "thawg",
+      "requested_palette": [
+        "#D84A34",
+        "#FFF0D8",
+        "#3F80A6"
+      ],
+      "accessible_action_tone": "#596A80",
+      "minimum_accent_contrast": 4.539,
+      "minimum_body_contrast": 5.998,
+      "minimum_secondary_contrast": 4.574
+    },
+    {
+      "app": "manzil",
+      "requested_palette": [
+        "#42275A",
+        "#FBE5D5",
+        "#E5A9A0"
+      ],
+      "accessible_action_tone": "#7E5774",
+      "minimum_accent_contrast": 4.501,
+      "minimum_body_contrast": 9.442,
+      "minimum_secondary_contrast": 5.463
+    },
+    {
+      "app": "gurbah",
+      "requested_palette": [
+        "#273B63",
+        "#FFF2DB",
+        "#F7A445"
+      ],
+      "accessible_action_tone": "#7A6557",
+      "minimum_accent_contrast": 4.522,
+      "minimum_body_contrast": 9.146,
+      "minimum_secondary_contrast": 5.215
+    },
+    {
+      "app": "amanah-eco",
+      "requested_palette": [
+        "#215B39",
+        "#F8F8DA",
+        "#BDD652"
+      ],
+      "accessible_action_tone": "#43763E",
+      "minimum_accent_contrast": 4.573,
+      "minimum_body_contrast": 6.806,
+      "minimum_secondary_contrast": 4.618
+    },
+    {
+      "app": "nafas",
+      "requested_palette": [
+        "#4A7480",
+        "#F0F4F1",
+        "#AEC7BB"
+      ],
+      "accessible_action_tone": "#516E74",
+      "minimum_accent_contrast": 4.577,
+      "minimum_body_contrast": 6.106,
+      "minimum_secondary_contrast": 4.612
+    },
+    {
+      "app": "tadweer",
+      "requested_palette": [
+        "#DB5A27",
+        "#F7F2E3",
+        "#1F3942"
+      ],
+      "accessible_action_tone": "#1F3942",
+      "minimum_accent_contrast": 10.031,
+      "minimum_body_contrast": 6.042,
+      "minimum_secondary_contrast": 4.582
+    },
+    {
+      "app": "turath",
+      "requested_palette": [
+        "#776246",
+        "#F6F1E7",
+        "#B0A385"
+      ],
+      "accessible_action_tone": "#77664E",
+      "minimum_accent_contrast": 4.541,
+      "minimum_body_contrast": 6.034,
+      "minimum_secondary_contrast": 4.547
+    },
+    {
+      "app": "himam",
+      "requested_palette": [
+        "#10358C",
+        "#FFFCE8",
+        "#E7C93B"
+      ],
+      "accessible_action_tone": "#66706C",
+      "minimum_accent_contrast": 4.505,
+      "minimum_body_contrast": 9.669,
+      "minimum_secondary_contrast": 5.634
+    },
+    {
+      "app": "hisad",
+      "requested_palette": [
+        "#A23E3C",
+        "#FCF3E4",
+        "#F0BB52"
+      ],
+      "accessible_action_tone": "#A5533D",
+      "minimum_accent_contrast": 4.507,
+      "minimum_body_contrast": 6.023,
+      "minimum_secondary_contrast": 4.567
+    }
+  ]
+}

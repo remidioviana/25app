@@ -3,12 +3,12 @@ import {View,Text,Platform,type TextStyle} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import {brand,brandId,brandAssets} from '../src/brand';
 import {experience as d} from '../src/theme';
-import {useHeadlineFont} from '../src/experience/TypefaceProvider';
+import {useHeadlineFont,useScriptFont} from '../src/experience/TypefaceProvider';
 import identities from '../src/experience/identities.json';
 import {decorativeSvgProps} from '../src/experience/svgAccessibility';
 /** Each case owns its visual grammar. Text stays native and scales with the OS. */
 export function BrandSignature(){
- const family=useHeadlineFont(),id=identities[brandId];
+ const family=useHeadlineFont(),arabic=useScriptFont('أدب'),id=identities[brandId];
  const mark=(size:number)=><SvgXml xml={brandAssets.logo} width={size} height={size} {...decorativeSvgProps(Platform.OS)}/>;
  const word=(text:string,style:TextStyle={})=><Text style={[{fontFamily:family,fontWeight:family?'400':'600',fontSize:id.word_size,letterSpacing:id.tracking,color:d.ink,flexShrink:1},style]}>{text}</Text>;
  const label=(text:string)=><Text style={{fontSize:11,lineHeight:17,letterSpacing:1.5,color:d.muted}}>{text}</Text>;
@@ -22,7 +22,7 @@ export function BrandSignature(){
  case 'tawteen':content=<View style={{flexDirection:'row',gap:15,alignItems:'center'}}>{mark(48)}<View>{word('TAW',{fontSize:25})}{word('TEEN',{fontSize:25})}</View><View style={{flex:1,alignItems:'flex-end'}}>{label('PEOPLE\n& POLICY')}</View></View>;break;
  case 'adl':content=<View style={{flexDirection:'row',borderBottomWidth:1,borderColor:d.ink,paddingBottom:16,alignItems:'center',gap:18}}>{word('adl',{fontSize:55})}<View style={{width:1,height:38,backgroundColor:d.accent}}/>{label('THE CASE\nCHRONICLE')}</View>;break;
  case 'tawassul':content=<View style={{gap:8}}><View style={{alignItems:'flex-end'}}>{label('GCC / BUSINESS CORRESPONDENCE')}</View><View style={{flexDirection:'row',alignItems:'center',gap:10}}>{word('tawassul')}{mark(35)}{label('B2B')}</View></View>;break;
- case 'adab':content=<View style={{alignItems:'center',borderBottomWidth:4,borderColor:d.accent,paddingBottom:10}}>{word('ADAB')}{label('LANGUAGE, CONSIDERED.')}</View>;break;
+ case 'adab':content=<View style={{alignItems:'center',borderBottomWidth:4,borderColor:d.accent,paddingBottom:10}}>{word('ADAB')}<Text style={{fontFamily:arabic,fontSize:30,lineHeight:44,color:d.accent,writingDirection:'rtl'}}>أدب</Text>{label('LANGUAGE, CONSIDERED.')}</View>;break;
  case 'khidmah':content=<View style={{flexDirection:'row',alignItems:'center',gap:13,padding:16,borderTopLeftRadius:28,borderBottomRightRadius:28,backgroundColor:d.panel}}>{mark(43)}<View style={{flex:1}}>{word('khidmah')}{label('A HUMAN KIND OF CARE')}</View></View>;break;
  case 'jomrok':content=<View style={{borderWidth:2,borderColor:d.ink,padding:12,gap:5}}>{word('JOMROK')}{label('CROSS-BORDER / DOCUMENT CONTROL')}<View style={{height:5,backgroundColor:d.accent,marginTop:5}}/></View>;break;
  case 'khibrat':content=<View style={{flexDirection:'row',gap:14,alignItems:'center'}}><View style={{flex:1}}>{word('khibrat')}{label('EVIDENCE EARNS THE MATCH')}</View>{mark(56)}</View>;break;

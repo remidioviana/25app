@@ -1,0 +1,239 @@
+{
+  "checked_at": "2026-11-17T14:29:37.006050+00:00",
+  "scope": "Controlled browser transport and synthetic inputs, not native-device, factual/legal or real-provider acceptance",
+  "apps": [
+    {
+      "app": "himayah",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "d7f5d51ecf3c338368479b787a5bff3bbbef6315afde61e4cad020b6736d71fd",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "iqamah",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "2bfcb3a6065c8456d83fb3899d659551c42e598cbefec78528babb753c2e7f83",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "istithmar",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "38654ca255dd91fba21e4ac508b13c3c96f152e1971ff51d8329109a9c01df63",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "munagasah",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "70126494e086bb3155541eef6dbc93395d419b75b6f44282c2050d4e0dc9bebb",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "sahil",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "6a17c3fe6db31e6b15027b5fcb8dee0198eeb9aee69db16016f476c89b949055",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "tawteen",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "2499b378370af9c57482a25a67e03fd27eacf6fbc5832d6fa53aae444b7edb3c",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "adl",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "42d9f9d2cd0f195a859b311d1d83c9fb6165aa40a6d6a6fdd58d3bb018cb9e2b",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "tawassul",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "328d7901df96c8ca8c9ad5bb4d84801c7087f47d6b6bd9bd0c377b4c00ecdad8",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "adab",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "c0b9ef55296ebeba4b52133fed65089f65625e1838a479b40dabb6d7364c5196",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "khidmah",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "176764b325b3bc8db39586adc1462a02045381de24ac034eec620b5baf1494e8",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "jomrok",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "98e2b2960363d1401ab15e4f437dee7766c08e810aabd0239cb7279ada29bb1a",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "khibrat",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "f62f88ef0051f3866ee6a3083b0d817081d9651e4925b6886452ee26c12c1745",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "majlis",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "867ffdc481341494d14a532055a06aec6042b9c63c5f7c49b2db4f2575d1fb91",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "rafiq",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "17db27c754700f043d934e9d3b9500d2a734334118f3bd105a6fdecdb4725fbe",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "sawm",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "4507c9f9dfe169b56302644942b7d7bcbe88dfb3682790768599070828b8d4a0",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "mizan",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "c23ba8809e32c3a4a5b43ab64a93cda0c634004a8e0ea6d0dab3081021a304db",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "thawg",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "b97de21787a523e3bec73406e41c8f4cefc9003ea3c8af0f12bcd0abad641368",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "manzil",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "f6f4017d7cf2b7e49309c69edaad9313241c54dd1b886eeb25238c4ca89981c6",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "gurbah",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "3124e2907ce2847359460cfe17fd0f06920e2478707464cd31e3484d7460cb3d",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "amanah-eco",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "1aebb0ecb5c812d6232c61355c0694c81886999e06b7465482ccccab91043545",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "nafas",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "a94d5e1ea4d2e42b254b964ec52ed0dec386822a3cb45649d8ac1f38828e0d59",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "tadweer",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "38bf620726e0764ba42c41f549efd0e33494d4d051d14c182ac5fc998d5bebe7",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "turath",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "7c8ad89e4c8c28c3bca7784e234eeb8235c503fedcef45721d8ce36eb9ffaee8",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "himam",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "81b7f4a18ffcf455962d34d49d451af2983b2413555c2944d5cdcf0fbfe61261",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "hisad",
+      "status": "passed",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport",
+      "case_input_sha256": "5f4da7c9b7866130fdcd2f25a812ef17e650baf2a1383bf1274b6a73e7247c6a",
+      "provider_calls": 0,
+      "external_actions": 0,
+      "console_warnings_and_errors": []
+    }
+  ],
+  "tested_source_sha256": {
+    "mobile/components/DomainExperience.tsx": "46c9797a412889de38e1e96674967da57f7f66b5434cd18531ae18ae224a9346",
+    "mobile/components/BrandSignature.tsx": "0706d0d66bfaa2607ded3401373bde855820e3b507c6eb3a771488c39b1b9cb1",
+    "mobile/components/DataForm.tsx": "5f7eb96482cf6c6c47ef39ef44dfbd9203dc04bfccc7500cc606af832b4ed533",
+    "mobile/src/app/(tabs)/workbench.tsx": "d960b10faa1703207699e694eb97ac51e4ab7d1af62e3b352621a1fba3649826",
+    "mobile/src/experience/designs.ts": "4c982fa1ac16b6c483039524c526be1785683c7092c0f698f34997dc9c3f3431",
+    "mobile/src/experience/identities.json": "2706819f7cbc1c649ece6befeea9addb51465069e9ef153384b3ef05bb1b0541"
+  }
+}

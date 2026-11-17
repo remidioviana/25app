@@ -11,6 +11,6 @@ export default ({config}:ConfigContext):ExpoConfig=>{
  return {...config,name:brand.name,slug:'25app',owner:'remidiovianas-team',version:'6.0.0',orientation:'portrait',userInterfaceStyle:identity.appearance,scheme:id+'-mobile',
  ios:{supportsTablet:false,bundleIdentifier:prefix+'.'+id.replaceAll('-','')},
  android:{package:prefix+'.'+id.replaceAll('-',''),adaptiveIcon:{foregroundImage:`./assets/variants/${id}/icon.png`,backgroundColor:identity.bg}},
- plugins:[['expo-font',{fonts:[`./assets/typefaces/${id}.ttf`]}],'expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:`./assets/variants/${id}/splash.png`,imageWidth:390,resizeMode:'contain',backgroundColor:identity.bg}]],
+ plugins:[['expo-font',{fonts:[`./assets/typefaces/${id}.ttf`,`./assets/typefaces/${id}-arabic.ttf`]}],'expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:`./assets/variants/${id}/splash.png`,imageWidth:390,resizeMode:'contain',backgroundColor:identity.bg}]],
  extra:{agentId:id,standalone:true,eas:{projectId:'b2d48b85-5e43-4a6f-8cdb-826487e7b03e'}},icon:`./assets/variants/${id}/icon.png`,web:{bundler:'metro',output:'single',favicon:`./assets/variants/${id}/icon.png`}};
 };
