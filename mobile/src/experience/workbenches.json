@@ -9,9 +9,9 @@
     ]
   },
   "iqamah": {
-    "title": "Dossier evidence desk",
-    "tab": "Expiry desk",
-    "purpose": "Separate missing documents from recorded expiry and unverified presence.",
+    "title": "Dossier preparation folio",
+    "tab": "Folio",
+    "purpose": "Inspect, edit and export the evidence records behind your selected checklist.",
     "fields": [
       "as_of",
       "documents"

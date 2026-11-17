@@ -32,3 +32,12 @@ Finish each product's exact primary compositions and substantive signature, then
 Reproduction: `mobile/scripts/signature-checks/README.md` documents the isolated HTTP/browser runner. The updated `mobile/scripts/check-matrix-browser.py` covers all 25 variants with the specialized Himayah and Nafas routes, and writes a separate report rather than overwriting historical matrix evidence.
 
 Actual UI captures are published in `project/ui-signatures/index.html`, with source revision and scope in `manifest.json`. These ten initial screens and two tested interaction states supplement, rather than replace, the historical 125-screen wall. Reproduce the initial states with `python project/ui-signatures/capture.py` using the same audit server and Chromium settings.
+
+
+## Iqamah folio increment — 2026-11-17
+
+Replaced the older hardcoded dossier card with a theme-aligned editorial folio, numbered evidence pathway, expandable record editor and real editable JSON export (Web download / native sharing implementation). Requirement matching and review dates use the existing deterministic assessor. A saved record never becomes authenticated evidence or an eligibility decision. A record editor is tied to its draft snapshot, preventing stale values from being applied after other dossier changes. Reduced motion skips the reveal, and preference changes stop it.
+
+251 Python and 83 mobile tests passed; typecheck, lint and 25 variant checks passed. The dedicated browser report records controlled synthetic intake, actual UI edits/download and motion conditions. Native sharing is implemented but remains unverified on a physical device. This does not mark the entire Iqamah product or the portfolio complete.
+
+Previous native export runs 44138306978 and 44138312340 both completed successfully at source revision 51b9df0 (before this Iqamah increment): all 25 Android/iOS JavaScript/assets exports, not signed binaries or device acceptance.

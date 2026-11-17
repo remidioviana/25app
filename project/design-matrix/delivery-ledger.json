@@ -28,8 +28,8 @@
       "app": "iqamah",
       "order": 2,
       "matrix_target": "**Visa Dossier Builder:** evaluates available eligibility criteria, identifies missing evidence, and assembles an application checklist using current official requirements.",
-      "implemented_scope": "Entered checklist, document presence and recorded expiry assessment",
-      "limitations": "No automatic verified eligibility determination or application submission.",
+      "implemented_scope": "Editable dossier folio: supplied checklist assessment, exact record matching, missing/expired/unverified states, references and expiry editing, deletion, JSON export and reduced-motion-aware evidence reveal.",
+      "limitations": "Browser checked with controlled synthetic intake. No verified route eligibility, current-rule applicability, official submission, complete five-screen redesign or physical-device acceptance.",
       "primary_screen_routes": [
         "/",
         "/mission",
@@ -37,7 +37,7 @@
         "/activity",
         "/workbench"
       ],
-      "fifth_screen_title": "Dossier evidence desk",
+      "fifth_screen_title": "Dossier preparation folio",
       "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
       "brand_distinction_accepted": false,
       "experience_distinction_accepted": false,

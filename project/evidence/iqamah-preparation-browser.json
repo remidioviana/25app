@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-17T17:48:34.263019+00:00",
+  "scope": "Actual Expo web UI, existing repository synthetic example via controlled intake transport. No provider inference, official eligibility decision, submission or physical device validation.",
+  "source_files_sha256": {
+    "mobile/components/IqamahDossier.tsx": "2640e693384abf8bd390a1178079016addeb47816a30b130b2f2c74583a72afa",
+    "mobile/src/experience/dossierPreparation.ts": "ae31c62ab26c5afb7a4776714d792bff7eb058696f170701fb225ef5e9448dcc"
+  },
+  "motion_mid_reveal_opacity": 0.350911,
+  "live_reduced_motion_change_finishes_reveal": true,
+  "invalid_leap_date_rejected": true,
+  "reference_and_unknown_expiry_saved": true,
+  "download_contains_current_editable_input": true,
+  "removed_record_becomes_missing": true,
+  "reduced_motion_final_opacity": "1",
+  "reduced_motion_transform": "matrix(1, 0, 0, 1, 0, 0)",
+  "console_warnings_and_errors": [],
+  "provider_inference_calls": 0,
+  "requests": [
+    "/api/config",
+    "/api/me",
+    "/api/agents",
+    "/api/agents/iqamah/intake"
+  ]
+}

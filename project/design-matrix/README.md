@@ -15,3 +15,8 @@ Live restaurant discovery, verified local fasting schedules, camera material rec
 [Visual wall](visual-wall.html) · [125 captured route surfaces](../ui-matrix/index.html) · [Whole-portfolio audit](../evidence/matrix-originality-audit.json). The capture manifest preserves exact baseline and targeted-update commits.
 
 All 25 workbenches rendered with the existing repository synthetic examples through controlled browser intake transport, with no provider calls or console warnings/errors. The Mizan Arabic case also preserved entered categories and normalized Arabic numerals. These are test fixtures, not authentic customer-case acceptance.
+
+
+## Matrix reconfirmed — 2026-11-17
+
+The newly supplied Section 15 document is byte-identical to USER_SPECIFICATION.md (SHA-256 `4fbc03ebff2b96e427f8e1a24ecb8bd0839b5305338c0cd7b4ea114be99bc28b`). Its five independent acceptance gates remain mandatory. Existing 125 route surfaces are not equivalent to 125 fully accepted purpose-built compositions. The Iqamah folio increment and its remaining scope are recorded in `project/signature-execution/products/iqamah.md`; all acceptance booleans remain unchanged.

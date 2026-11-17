@@ -82,6 +82,16 @@
     {
       "file": "nafas-private-reflections.png",
       "state": "After virtual-time timer completion and local reflection deletion; see signature-nafas-browser.json"
+    },
+    {
+      "file": "iqamah-preparation.png",
+      "state": "Synthetic checklist after record edit, export and removal; expanded evidence editor. Separate increment from the original Himayah/Nafas captures.",
+      "checked_at": "2026-11-17T17:48:34.263019+00:00",
+      "source_files_sha256": {
+        "mobile/components/IqamahDossier.tsx": "2640e693384abf8bd390a1178079016addeb47816a30b130b2f2c74583a72afa",
+        "mobile/src/experience/dossierPreparation.ts": "ae31c62ab26c5afb7a4776714d792bff7eb058696f170701fb225ef5e9448dcc"
+      },
+      "evidence": "../evidence/iqamah-preparation-browser.json"
     }
   ]
 }

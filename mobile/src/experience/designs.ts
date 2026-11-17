@@ -48,7 +48,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Dossier",
       "Criteria",
       "Journey",
-      "Expiry desk"
+      "Folio"
     ],
     "steps": [
       "Choose a route",
