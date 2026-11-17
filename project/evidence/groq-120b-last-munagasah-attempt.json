@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-11-17T03:03:59.980883+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_role_interval_seconds": 15,
+  "excluded_apps": [],
+  "selected_apps": [
+    "munagasah"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "dubai-esupply",
+        "url": "https://esupply.dubai.gov.ae/web/",
+        "authority": "Dubai eSupply procurement portal",
+        "title": "Dubai eSupply \u2014 Procurement portal information",
+        "started_at": "2026-11-17T03:04:01.104463+00:00",
+        "fetched_at": "2026-11-17T03:04:01.411452+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 29393,
+        "characters": 3083,
+        "raw_sha256": "9647fe01f658963f8c9531709badca9d076950c376a6c6f67dfb5be4b079951a",
+        "text_sha256": "4150dfd5ee1aed16a0f4f197a3b1b3aa92f99ba749ee6356acf51bfab5927cdf",
+        "last_modified_header": "Sat, 28 Jan 2023 01:08:55 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "8755ff3d-82e1-4c40-8f51-e1426d87b32c"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [],
+      "completed_role_details": [],
+      "reported_total_tokens": 0,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 401, 400. Safe provider codes: invalid_request_error, json_validate_failed. Check server configuration and provider access."
+    }
+  ],
+  "verified_at": "2026-11-17T03:04:03.218078+00:00",
+  "reported_total_tokens": 0,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44007434045"
+}
