@@ -1,0 +1,14 @@
+{
+  "schema_url": "https://render.com/schema/render.yaml.json",
+  "render_yaml_sha256": "3cd4e3daa7fa638e8471e2f6bf18b5c586fc0c5a0fbca56c0e50eaa386de4c7e",
+  "schema_validation_passed": true,
+  "plan": "free",
+  "secret_values_committed": false,
+  "persistent_disk_configured": false,
+  "data_durability_verified": false,
+  "deployment_performed": false,
+  "expo_owner": "remidiovianas-team",
+  "expo_project_slug": "25app",
+  "expo_project_id": "b2d48b85-5e43-4a6f-8cdb-826487e7b03e",
+  "expo_account_access_verified": false
+}

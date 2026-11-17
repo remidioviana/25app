@@ -26,6 +26,11 @@ ROOT=Path(__file__).resolve().parent
 TOKEN=os.environ.get('APP_TOKEN','')
 STATIC={'/':'index.html','/index.html':'index.html','/public/app.js':'public/app.js','/public/styles.css':'public/styles.css','/public/icon.svg':'public/icon.svg','/sw.js':'sw.js'}
 
+def public_hostnames():
+    """Render supplies its public hostname; explicit custom domains remain supported."""
+    return {value.strip() for name in ('APP_HOSTNAME','RENDER_EXTERNAL_HOSTNAME')
+            if (value:=os.environ.get(name,'' )).strip()}
+
 class Handler(BaseHTTPRequestHandler):
     server_version='AgentSuite/5.0'
     def log_message(self,fmt,*args): pass
@@ -54,7 +59,7 @@ class Handler(BaseHTTPRequestHandler):
     def route(self,method):
         path=unquote(urlparse(self.path).path); host=self.headers.get('Host','')
         allowed={f'localhost:{self.server.server_port}',f'127.0.0.1:{self.server.server_port}'}
-        if os.environ.get('APP_HOSTNAME'): allowed.add(os.environ['APP_HOSTNAME'])
+        allowed.update(public_hostnames())
         if host not in allowed: return self.reply({'error':'Unauthorized host'},403)
         origin=self.headers.get('Origin')
         if (origin and urlparse(origin).netloc!=host) or self.headers.get('Sec-Fetch-Site')=='cross-site':
@@ -191,8 +196,8 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     host=os.environ.get('HOST','127.0.0.1'); port=int(os.environ.get('PORT','8000'))
-    if host not in ('127.0.0.1','localhost') and (not identity.required(TOKEN) or not os.environ.get('APP_HOSTNAME')):
-        raise SystemExit('Network access requires APP_TOKEN or APP_USERS_FILE and APP_HOSTNAME (host:port). Use TLS for real data.')
+    if host not in ('127.0.0.1','localhost') and (not identity.required(TOKEN) or not public_hostnames()):
+        raise SystemExit('Network access requires APP_TOKEN or APP_USERS_FILE and APP_HOSTNAME or RENDER_EXTERNAL_HOSTNAME (host:port). Use TLS for real data.')
     for user in identity.scopes():
         with db.scope(user):db.init();recover()
     scheduler=scheduling.Scheduler().start()

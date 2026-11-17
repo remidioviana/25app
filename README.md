@@ -105,3 +105,5 @@ See `docs/IMPLEMENTATION_STATUS.md` and adjacent test reports for results and pe
 Preparação operacional: [implantação permanente do backend](project/IMPLANTACAO_BACKEND.md), incluindo identidade, persistência, TLS e critérios de aceite. O roteiro não representa um serviço já implantado.
 
 [Resposta autônoma com o 120B na decisão final](project/RESPOSTA_AUTONOMA.md): sequência atual de avaliação, resultados incompletos explícitos e limites da validação.
+
+[Configuração do Expo/EAS e preview gratuito no Render](project/EXPO_RENDER_CONFIGURACAO.md): vínculo do projeto existente, comandos APK e variáveis protegidas.

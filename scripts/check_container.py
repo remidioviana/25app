@@ -27,8 +27,9 @@ def main():
         docker('volume','create',volume)
         with tempfile.NamedTemporaryFile(mode='w',prefix='25app-test-env-') as envfile:
             envfile.write('APP_HOSTNAME=25app.test\nAPP_TOKEN='+token+'\n');envfile.flush()
-            def start():
-                container=docker('run','-d','--env-file',envfile.name,'-p','127.0.0.1::8000','-v',volume+':/data',image)
+            def start(render_host=False):
+                host_flags=['--env','APP_HOSTNAME=','--env','RENDER_EXTERNAL_HOSTNAME=25app.test'] if render_host else []
+                container=docker('run','-d','--env-file',envfile.name,*host_flags,'-p','127.0.0.1::8000','-v',volume+':/data',image)
                 containers.append(container);port=docker('port',container,'8000/tcp').split(':')[-1];base='http://127.0.0.1:'+port
                 for _ in range(100):
                     try:config=request(base,'/api/config');break
@@ -53,7 +54,8 @@ def main():
                 assert run['status']=='completed',app+' local run failed'
                 report['apps'].append({'id':app,'local_run_completed':True})
             docker('stop',container);docker('rm',container);containers.remove(container)
-            _,base=start()
+            _,base=start(render_host=True)
+            report['render_hostname_verified']=True
             assert any(row['id']==imported['id'] for row in request(base,'/api/agents/himayah/documents')['documents'])
             report['volume_survives_container_replacement']=True
         target=ROOT/'project/evidence/backend-container-check.json'

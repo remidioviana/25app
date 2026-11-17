@@ -51,3 +51,7 @@ docker run -d --name 25app-backend --restart unless-stopped --env-file /secure/b
 O arquivo protegido de ambiente precisa definir `APP_HOSTNAME` e `APP_TOKEN` (ou arquivo de identidades montado), além da configuração de provedor quando necessário. O bind local serve ao proxy TLS no mesmo host; não cria um domínio ou servidor externo. O healthcheck usa `/api/config` e não comprova inferência. Em rede com CA corporativa, o build aceita `--secret id=build_ca,src=/path/to/organization-ca-bundle.pem`, sem desativar a validação TLS ou gravar o certificado de build na imagem. A confiança de rede do runtime é configuração separada.
 
 Depois do build, `python scripts/check_container.py` verifica cinco análises locais com entradas controladas, autenticação, usuário sem root e persistência após substituir o contêiner. Cria e remove somente seu volume temporário e seus contêineres. [Resultado local](evidence/backend-container-check.json). Isso é preparação de implantação, sem alegação de backend público ativo.
+
+## Destino informado: Render Free
+
+O destino escolhido para o preview é o Render, com `render.yaml` na raiz e variáveis preenchidas no painel. A API reconhece `RENDER_EXTERNAL_HOSTNAME` automaticamente. Esse plano não tem disco persistente e perde os bancos locais em restart, redeploy e suspensão; o teste de volume Docker local não comprova durabilidade no Render Free. [Passos e limitações](EXPO_RENDER_CONFIGURACAO.md). Nenhum serviço foi criado por esta configuração.

@@ -1,0 +1,35 @@
+# Free preview only: local SQLite/checkpoints are lost on restart, redeploy or sleep.
+services:
+  - type: web
+    name: 25app-backend
+    runtime: docker
+    repo: https://github.com/remidioviana/25app
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/config
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: '10000'
+      - key: AGENT_DATA_DIR
+        value: /tmp/25app-data
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_BASE_URL
+        sync: false
+      - key: APP_TOKEN
+        sync: false
+      - key: AGENT_PLANNER_MODEL
+        value: openai/gpt-oss-20b
+      - key: AGENT_SPECIALIST_MODEL
+        value: qwen/qwen3.8-27b
+      - key: AGENT_AUDITOR_MODEL
+        value: openai/gpt-oss-120b
+      - key: AGENT_REQUIRE_DISTINCT_MODELS
+        value: '1'
+      - key: AGENT_ALLOW_PREVIEW_MODELS
+        value: '1'

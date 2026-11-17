@@ -7,9 +7,9 @@ export default ({config}:ConfigContext):ExpoConfig=>{
  const brand=brands.find((item:{id:string})=>item.id===id);if(!brand)throw Error('Unknown AGENT_ID');
  const prefix=process.env.APP_ID_PREFIX||'com.agenticmobile';
  if(!/^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)+$/.test(prefix))throw Error('Invalid APP_ID_PREFIX');
- return {...config,name:brand.name,slug:id+'-mobile',version:'6.0.0',orientation:'portrait',userInterfaceStyle:'light',scheme:id+'-mobile',
+ return {...config,name:brand.name,slug:'25app',owner:'remidiovianas-team',version:'6.0.0',orientation:'portrait',userInterfaceStyle:'light',scheme:id+'-mobile',
  ios:{supportsTablet:false,bundleIdentifier:prefix+'.'+id.replaceAll('-','')},
  android:{package:prefix+'.'+id.replaceAll('-',''),adaptiveIcon:{foregroundImage:`./assets/variants/${id}/icon.png`,backgroundColor:'#F8FAF9'}},
  plugins:['expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:`./assets/variants/${id}/splash.png`,imageWidth:390,resizeMode:'contain',backgroundColor:id==='himayah'?'#0B192C':'#F8FAF9'}]],
- extra:{agentId:id,standalone:true},icon:`./assets/variants/${id}/icon.png`,web:{bundler:'metro',output:'single',favicon:`./assets/variants/${id}/icon.png`}};
+ extra:{agentId:id,standalone:true,eas:{projectId:'b2d48b85-5e43-4a6f-8cdb-826487e7b03e'}},icon:`./assets/variants/${id}/icon.png`,web:{bundler:'metro',output:'single',favicon:`./assets/variants/${id}/icon.png`}};
 };
