@@ -713,15 +713,17 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/mizan-official-finance-groq-retry.json"
+        "project/evidence/mizan-official-finance-groq-retry.json",
+        "project/evidence/lot-4-mizan-current-retry.json"
       ],
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/mizan-official-finance-groq-retry.json"
+        "project/evidence/lot-4-mizan-current-retry.json"
       ],
       "three_model_graph_diagnostic_verified": true,
       "three_model_graph_diagnostic_evidence": [
-        "project/evidence/mizan-official-finance-groq-retry.json"
+        "project/evidence/mizan-official-finance-groq-retry.json",
+        "project/evidence/lot-4-mizan-current-retry.json"
       ],
       "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
     },
@@ -802,15 +804,17 @@
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",
       "live_graph_diagnostic_evidence": [
-        "project/evidence/lot-4-financial-groq-retry.json"
+        "project/evidence/lot-4-financial-groq-retry.json",
+        "project/evidence/lot-4-finance-current-retest.json"
       ],
       "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/lot-4-financial-groq-retry.json"
+        "project/evidence/lot-4-finance-current-retest.json"
       ],
       "three_model_graph_diagnostic_verified": true,
       "three_model_graph_diagnostic_evidence": [
-        "project/evidence/lot-4-financial-groq-retry.json"
+        "project/evidence/lot-4-financial-groq-retry.json",
+        "project/evidence/lot-4-finance-current-retest.json"
       ],
       "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
     },

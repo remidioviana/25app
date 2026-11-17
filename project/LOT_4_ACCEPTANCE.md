@@ -64,3 +64,15 @@ The [targeted GitHub runner source check](https://github.com/remidioviana/25app/
 [Run 44034448316](https://github.com/remidioviana/25app/actions/runs/44034448316) retried only Mizan after the new transport failure. It passed with the official UAE Government banking page, two valid source citations and three distinct returned model IDs. No quota stop occurred. Manzil and the other three successful Lot 4 apps were not repeated.
 
 All five Lot 4 apps now have successful synthetic graph/RAG milestones. Earlier failures remain archived. This is not authentic primary-case, device or production-release acceptance.
+
+## Current-code two-app revalidation
+
+The source correction commit `fe63ca3` is included in `ffd28b05b0956e27e69aa7de50137c4d67dd8186`. The current selected sources are the UAE Government banking page for Mizan and the Ministry of Finance VAT overview for Manzil. The FTA invoice guidance remains complementary; historical FTA results above retain their original source scope.
+
+[Run 44089340437](https://github.com/remidioviana/25app/actions/runs/44089340437) was explicitly requested for only Mizan and Manzil, with 20-second role pacing and 30-second app pacing. [The archived report](evidence/lot-4-finance-current-retest.json) records Manzil passing with the Ministry of Finance VAT overview and three provider-reported model IDs. Mizan failed HTTPS transport before model execution. No quota stop occurred. A single targeted Mizan retry follows this new transport failure; Manzil is not repeated. Previous successful milestones are preserved independently of this new attempt.
+
+## Current-code Mizan retry and portfolio result
+
+[Run 44089778189](https://github.com/remidioviana/25app/actions/runs/44089778189) retried only Mizan after the new transport failure. It passed official-source retrieval, domain recomputation, cited evidence and all three roles with distinct provider-reported model IDs, ending with GPT-OSS120B. [Archived report](evidence/lot-4-mizan-current-retry.json). Manzil was not repeated.
+
+Together with the Ministry of Finance Manzil result above, the portfolio again records **25/25 historical successful synthetic live RAG milestones and 25/25 latest recorded synthetic diagnostics passed**. This count spans recorded runs and does not assert that every app was rerun on the latest code. Authentic primary workflows, factual applicability, device acceptance and release remain unaccepted. The failed two-app attempt remains archived separately.

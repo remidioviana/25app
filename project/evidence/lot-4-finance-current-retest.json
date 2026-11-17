@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-11-17T13:06:21.221133+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_app_interval_seconds": 30,
+  "minimum_role_interval_seconds": 20,
+  "excluded_apps": [],
+  "selected_apps": [
+    "manzil",
+    "mizan"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "in_progress": false,
+  "requested_lot": 4,
+  "apps": [
+    {
+      "app": "mizan",
+      "source_id": "uae-islamic-banking",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Source HTTPS transport failed; no content was verified"
+    },
+    {
+      "app": "manzil",
+      "source_id": "mof-vat-overview",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "mof-vat-overview",
+        "url": "https://mof.gov.ae/en/public-finance/tax/value-added-tax-vat/",
+        "authority": "UAE Ministry of Finance",
+        "title": "UAE Ministry of Finance VAT overview",
+        "source_scope": "General VAT context; exceptions and applicability require current source text and transaction facts. No receipt authentication, VAT recovery or tax submission is inferred.",
+        "started_at": "2026-11-17T13:07:13.751698+00:00",
+        "fetched_at": "2026-11-17T13:07:16.476647+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 289973,
+        "characters": 8562,
+        "raw_sha256": "fcd67b01ab0b58c50b40c7ac2328255adf347978b0d1cc95e2cd476fc3660a6e",
+        "text_sha256": "1768155a42cd45e831f6a153a281c491b6eb3acada2227f5a60517a668a22739",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "3bd09b9a-6adf-446e-9b2c-b0e877f9f4ac"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2670
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3252
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3591
+        }
+      ],
+      "reported_total_tokens": 9513,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 10,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "de44b04639a474568eab531422b3997f4a6d2a663c14b334776548a9fbee0660",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "quota_exhausted": false,
+  "verified_at": "2026-11-17T13:08:02.315861+00:00",
+  "reported_total_tokens": 9513,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44089340437",
+  "source_commit": "ffd28b05b0956e27e69aa7de50137c4d67dd8186"
+}

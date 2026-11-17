@@ -1,0 +1,31 @@
+{
+  "scope": "Mechanical portfolio-wide identity inventory, not creative jury acceptance",
+  "source_commit": "ffd28b05b0956e27e69aa7de50137c4d67dd8186",
+  "products": 25,
+  "current_browser_screens": 100,
+  "unique_artwork_sha256": 25,
+  "independent_headline_font_families": 25,
+  "case_form_family_counts": {
+    "editor": 4,
+    "journey": 5,
+    "comparison": 5,
+    "board": 4,
+    "timeline": 2,
+    "notebook": 4,
+    "ledger": 2
+  },
+  "shared_navigation_families": 5,
+  "shared_controls": [
+    "accessible buttons",
+    "schema leaf inputs",
+    "source provenance reader"
+  ],
+  "remaining_gates": [
+    "cross-screen creative jury review",
+    "physical iOS and Android interactions",
+    "system appearance adaptation",
+    "signed distribution and hosted operation"
+  ],
+  "final_originality_accepted": false,
+  "native_device_accepted": false
+}

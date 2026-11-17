@@ -1,0 +1,120 @@
+{
+  "checked_at": "2026-11-17T13:08:52.155504+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_app_interval_seconds": 30,
+  "minimum_role_interval_seconds": 20,
+  "excluded_apps": [],
+  "selected_apps": [
+    "mizan"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "in_progress": false,
+  "requested_lot": 4,
+  "apps": [
+    {
+      "app": "mizan",
+      "source_id": "uae-islamic-banking",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "uae-islamic-banking",
+        "url": "https://u.ae/en/information-and-services/finance-and-investment/banking-in-uae",
+        "authority": "Official UAE Government Platform",
+        "title": "UAE Government banking and Islamic finance overview",
+        "source_scope": "Published banking and Islamic-finance context only; not transaction authentication, personalized investment advice or Sharia certification of a user ledger.",
+        "started_at": "2026-11-17T13:08:53.158371+00:00",
+        "fetched_at": "2026-11-17T13:08:56.920332+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 81812,
+        "characters": 7304,
+        "raw_sha256": "4fea31e756e1dc29f845ffe70ff60c499a351a3d1162a97b20237b9f3451ceb6",
+        "text_sha256": "0b5cff478ab12a2be3df3e3503eeb90b31887bcda34ad50b4be721a8cc87fc46",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "06cda736-9d5a-4289-8780-48ac6e585a84"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2751
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2596
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3104
+        }
+      ],
+      "reported_total_tokens": 8451,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 7,
+      "cited_passages": 1,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "d9139e557f291d72fb79d5b9ab13983d0835cb59d9195429f6a958284cb31e12",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "quota_exhausted": false,
+  "verified_at": "2026-11-17T13:09:43.790995+00:00",
+  "reported_total_tokens": 8451,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44089778189",
+  "source_commit": "fb8af0b5c6451de2c70e09d1f4dd7d4917766b21"
+}
