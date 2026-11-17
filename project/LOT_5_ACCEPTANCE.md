@@ -21,4 +21,18 @@ The shared workflow covers structured input, app-scoped official-source retrieva
 - Final responses distinguish completed, information-needed and inconclusive outcomes; optional user feedback does not gate analysis.
 - Authentic primary cases, full device interaction and release remain unaccepted. The operator will handle Expo authentication and Render deployment later.
 
-Live inference for this lot will start only after the preceding lot completes without a quota stop. No model execution is inferred from the shared implementation.
+Live inference ran after the preceding lot completed without a quota stop. Results are recorded below.
+
+## Latest completed live diagnostic
+
+[Protected workflow](https://github.com/remidioviana/25app/actions/runs/44030572739): 20-second role and 30-second app pacing; no quota stop.
+
+| App | RAG diagnostic | Outcome |
+|---|---|---|
+| nafas | passed | inconclusive |
+| tadweer | failed: no source citation | reviewed_by_model |
+| turath | passed | reviewed_by_model |
+| himam | passed | reviewed_by_model |
+| hisad | passed | reviewed_by_model |
+
+Four successful synthetic RAG milestones are preserved. This does not establish authentic primary-case, device or release acceptance. Tadweer remains unaccepted by the RAG diagnostic despite its completed model review.

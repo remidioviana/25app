@@ -21,7 +21,7 @@ The shared workflow covers structured input, app-scoped official-source retrieva
 - Final responses distinguish completed, information-needed and inconclusive outcomes; optional user feedback does not gate analysis.
 - Authentic primary cases, full device interaction and release remain unaccepted. The operator will handle Expo authentication and Render deployment later.
 
-Live inference for this lot will start only after the preceding lot completes without a quota stop. No model execution is inferred from the shared implementation.
+Live inference was run after the preceding lot completed without a quota stop. The completed workflow results are recorded below; no model execution is inferred from the shared implementation.
 
 ## Latest completed live diagnostic
 

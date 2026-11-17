@@ -1,0 +1,537 @@
+{
+  "checked_at": "2026-11-17T06:21:35.111277+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_app_interval_seconds": 30,
+  "minimum_role_interval_seconds": 20,
+  "excluded_apps": [],
+  "selected_apps": [
+    "himam",
+    "hisad",
+    "nafas",
+    "tadweer",
+    "turath"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "in_progress": false,
+  "requested_lot": 5,
+  "apps": [
+    {
+      "app": "nafas",
+      "source_id": "who-stress-guide",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "who-stress-guide",
+        "url": "https://www.who.int/publications/i/item/9789240003927/",
+        "authority": "World Health Organization",
+        "title": "Doing What Matters in Times of Stress",
+        "source_scope": "General self-help guidance; not diagnosis, treatment, emergency monitoring or an outreach service.",
+        "started_at": "2026-11-17T06:21:36.098562+00:00",
+        "fetched_at": "2026-11-17T06:21:38.429809+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 106172,
+        "characters": 4818,
+        "raw_sha256": "091ac5d960f275014db7afa87c5621884b54fab41615ae5014df849f7ecde656",
+        "text_sha256": "c06910ef536c1d7bf1d0a23383f285d423aba05b648265adeee8727ad0f55aaa",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "2746d4f4-047d-4353-b5ae-0d25b5a2656c"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 1,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": "json_validate_failed",
+          "reported_total_tokens": 1332
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2756
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3018
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 5469
+        }
+      ],
+      "reported_total_tokens": 12575,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 5,
+      "cited_passages": 1,
+      "role_calls": 4,
+      "final_response_outcome": "inconclusive",
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "inconclusive",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "22932f5c8c534c4d5f3513059badfcaff799a7d7a1a6edea08fa11c87d262989",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "tadweer",
+      "source_id": "uae-waste-management",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "uae-waste-management",
+        "url": "https://u.ae/en/information-and-services/environment-and-energy/waste-management",
+        "authority": "Official UAE Government Platform",
+        "title": "Waste management",
+        "source_scope": "General waste-management context; local collection acceptance, hazardous-item rules and opening hours need specific confirmation.",
+        "started_at": "2026-11-17T06:23:36.429391+00:00",
+        "fetched_at": "2026-11-17T06:23:42.927743+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 84398,
+        "characters": 8866,
+        "raw_sha256": "058be0e5a705b882a74e651d29c81032f7a8c6bf43c649b276edb0ccbbcebee3",
+        "text_sha256": "2459a1dadc67603de8054627aa7289ac4ec4ad362f9c1218e025d8f2faa2da48",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "e19be15d-1b7f-4d13-8e9c-c446248acd02"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1563
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2132
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2450
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2490
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2324
+        }
+      ],
+      "reported_total_tokens": 10959,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": false,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 7,
+      "cited_passages": 0,
+      "role_calls": 5,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "704ebe9fabf5c4c60fe2da73241ffef67104df2d0c3bae30df2c82e15dcc3029",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "turath",
+      "source_id": "uae-history",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "uae-history",
+        "url": "https://www.mofa.gov.ae/en/the-uae/history",
+        "authority": "UAE Ministry of Foreign Affairs",
+        "title": "History of the UAE: official overview",
+        "source_scope": "Official historical overview including pearling and Dubai; not a comprehensive chronology or certification of learning outcomes.",
+        "started_at": "2026-11-17T06:25:38.328840+00:00",
+        "fetched_at": "2026-11-17T06:25:42.322231+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 190717,
+        "characters": 3302,
+        "raw_sha256": "811217d0a631cbb7fe9da8c239b5edca76733fe49e34fe5021b9959b62e7eada",
+        "text_sha256": "0ad86159d62e5575922bb0124bb90120db5380e8b14af88c9d4c663f1c51beb0",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "cad6171d-2d43-43e2-8ff1-02a55595c551"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2272
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2618
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2912
+        }
+      ],
+      "reported_total_tokens": 7802,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 4,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "77cf8b7bb89b272e1444e4d420e8552bc39fcd8a724e22537bc121d806239250",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "himam",
+      "source_id": "rta-accessibility",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "rta-accessibility",
+        "url": "https://www.rta.ae/wps/portal/rta/ae/home/people-of-determination",
+        "authority": "Dubai Roads and Transport Authority",
+        "title": "RTA People of Determination",
+        "source_scope": "Published accessibility facilities; not live elevator status, obstacle-free route certification or a booking.",
+        "started_at": "2026-11-17T06:26:57.478595+00:00",
+        "fetched_at": "2026-11-17T06:27:07.206508+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 97542,
+        "characters": 12577,
+        "raw_sha256": "e26b6ec122756e293ea029bf82ac671839690871de3e880a9a48a47c467a3397",
+        "text_sha256": "b7846e3089a82a4f6f5751c5dcbeb545520b83d6a50896df3d239292765310ad",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "7e8a78c3-2948-4231-a5dd-9cb4155179d5"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1926
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2481
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2989
+        }
+      ],
+      "reported_total_tokens": 7396,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 12,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "8fce8851f7dd6f998fefe96ceb50886fda8bb90d6cf582bb7a6b42d87d466516",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "hisad",
+      "source_id": "dubai-food-bank",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "dubai-food-bank",
+        "url": "https://www.dm.gov.ae/foodbank/about-food-bank/",
+        "authority": "Dubai Municipality / UAE Food Bank",
+        "title": "About UAE Food Bank",
+        "source_scope": "Donation-program context; no acceptance, food-safety clearance, recipient capacity or handoff confirmation is inferred.",
+        "started_at": "2026-11-17T06:28:22.010201+00:00",
+        "fetched_at": "2026-11-17T06:28:25.767241+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 64230,
+        "characters": 1061,
+        "raw_sha256": "1d2f8beec59b33f9e1df0c1b33744773cd26f0ddde43d44257ff68ffdbc05649",
+        "text_sha256": "c04c70f463048be655afddb4199a55238c70cbdef5627374ac9c6ee53c1a46e0",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "5351dcae-ec49-410b-9a19-0ddd3a642c0f"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 1,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": "json_validate_failed",
+          "reported_total_tokens": 1517
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2596
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3059
+        }
+      ],
+      "reported_total_tokens": 7172,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 2,
+      "cited_passages": 1,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "51a20d46f4b32b1914eb9d9ce0e68a4139e386b63c143d706804a28b930d5be7",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "quota_exhausted": false,
+  "verified_at": "2026-11-17T06:29:32.050651+00:00",
+  "reported_total_tokens": 45904,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44030572739"
+}
