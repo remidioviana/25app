@@ -74,3 +74,17 @@ class PortfolioLotSelectionTests(unittest.TestCase):
   self.assertTrue(quota_failure('Provider attempts failed: connection_error, 429.'))
   self.assertFalse(quota_failure('Source returned HTTP 429'))
   self.assertFalse(quota_failure('Provider attempts failed: 401, 400.'))
+
+
+class AppSpacingTests(unittest.TestCase):
+ def test_app_pause_respects_elapsed_time_and_skips_first_app(self):
+  from scripts.verify_team import pause_between_apps
+  with patch('scripts.verify_team.time.sleep') as pause,patch('scripts.verify_team.time.monotonic',return_value=105):
+   pause_between_apps(None,30);pause.assert_not_called()
+   pause_between_apps(100,30);pause.assert_called_once_with(25)
+  with patch('scripts.verify_team.time.sleep') as pause,patch('scripts.verify_team.time.monotonic',return_value=140):
+   pause_between_apps(100,30);pause.assert_not_called()
+ def test_invalid_interval_is_rejected_before_provider_access(self):
+  for interval in (-1,61,True):
+   with patch('model_provider.urlopen') as network:
+    _,code=verify(min_app_interval_seconds=interval);self.assertEqual(code,2);network.assert_not_called()

@@ -100,7 +100,7 @@ jobs:
           EXCLUDE_APP: ${{ inputs.exclude_app }}
           REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
-          args=(--live --lot "$PORTFOLIO_LOT" --output project/evidence/groq-team-actions.json)
+          args=(--live --lot "$PORTFOLIO_LOT" --min-role-interval-seconds 20 --min-app-interval-seconds 30 --output project/evidence/groq-team-actions.json)
           if [ "$TEAM_APP" != first-five ]; then
             args+=(--app "$TEAM_APP")
             if [ "$ADDITIONAL_APP" != none ]; then args+=(--app "$ADDITIONAL_APP"); fi
