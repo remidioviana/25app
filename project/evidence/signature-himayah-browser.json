@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-17T17:32:52.925970+00:00",
+  "scope": "Actual Expo web UI and real authenticated Python HTTP API with an existing repository synthetic text in a valid PDF file; not an authentic customer contract or native-device acceptance",
+  "pdf_sha256": "e5edb099cee7ad63304e68e3d32d0bb8cf8b15c0eba1f665dabd18983b44f3e0",
+  "actual_pdf_extraction_and_saved_receipt": true,
+  "web_cross_origin_connection_with_auth": true,
+  "literal_clause_selection_and_user_annotation": true,
+  "markdown_download_contains_raw_hash_and_user_note": true,
+  "console_warnings_and_errors": [],
+  "provider_inference_calls": 0,
+  "authentic_primary_case_verified": false,
+  "physical_device_verified": false
+}

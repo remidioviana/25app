@@ -1,0 +1,1432 @@
+{
+  "scope": "Project-defined criteria; no score or acceptance without corresponding evidence",
+  "target_weighted_score": 90,
+  "minimum_dimension_score": 8,
+  "products": [
+    {
+      "app": "himayah",
+      "order": 1,
+      "primary_screens": [
+        "Compliance Intelligence",
+        "Document Inspector",
+        "Findings Explorer",
+        "Regulatory Comparison",
+        "Remediation Workspace"
+      ],
+      "signature_interaction": "Touch-responsive legal clause inspection with contextual evidence overlays.",
+      "completion_criterion": "A genuine PDF can be inspected, analyzed, annotated, and exported with traceable findings.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "iqamah",
+      "order": 2,
+      "primary_screens": [
+        "Visa Intelligence",
+        "Eligibility Explorer",
+        "Qualification Assessment",
+        "Application Dossier",
+        "Submission Preparation"
+      ],
+      "signature_interaction": "An animated eligibility pathway that evolves into a structured application dossier.",
+      "completion_criterion": "The user can generate an evidence-based, editable visa preparation dossier without simulated eligibility results.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "istithmar",
+      "order": 3,
+      "primary_screens": [
+        "Investment Intelligence",
+        "Free Zone Explorer",
+        "Business Model Analyzer",
+        "Tax Scenario Laboratory",
+        "Decision Report"
+      ],
+      "signature_interaction": "Live scenario manipulation with synchronized cost, tax, and free-zone comparisons.",
+      "completion_criterion": "Changing an input recalculates the applicable values and updates the visual analysis accurately.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "munagasah",
+      "order": 4,
+      "primary_screens": [
+        "Tender Intelligence",
+        "Opportunity Discovery",
+        "Qualification Analysis",
+        "Bid Preparation",
+        "Submission Tracking"
+      ],
+      "signature_interaction": "A dynamic bid-preparation timeline with real task dependencies and deadline states.",
+      "completion_criterion": "A real published tender can progress through a supported preparation workflow with accurate status tracking.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "sahil",
+      "order": 5,
+      "primary_screens": [
+        "Service Discovery",
+        "Intelligent Search",
+        "Eligibility Guide",
+        "Guided Workflow",
+        "Preparation Status"
+      ],
+      "signature_interaction": "A guided administrative workflow that reveals only the information necessary for the current step.",
+      "completion_criterion": "Users can identify a legitimate service and complete the available preparation steps without unnecessary onboarding.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "tawteen",
+      "order": 6,
+      "primary_screens": [
+        "Workforce Intelligence",
+        "Workforce Overview",
+        "Requirements Explorer",
+        "Scenario Planner",
+        "Compliance Roadmap"
+      ],
+      "signature_interaction": "Interactive workforce scenario modeling with responsive, calculated organizational visualizations.",
+      "completion_criterion": "Changes to workforce assumptions update the relevant calculations and planning recommendations.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "adl",
+      "order": 7,
+      "primary_screens": [
+        "Property Intelligence",
+        "Contract Inspector",
+        "Rights Explorer",
+        "Obligation Comparison",
+        "Legal Review"
+      ],
+      "signature_interaction": "An interactive property rights map linking contractual language to relevant obligations and legal references.",
+      "completion_criterion": "Users can explore a real document and trace supported findings to source evidence.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "tawassul",
+      "order": 8,
+      "primary_screens": [
+        "Opportunity Intelligence",
+        "Negotiation Preparation",
+        "Stakeholder Map",
+        "Scenario Explorer",
+        "Agreement Workspace"
+      ],
+      "signature_interaction": "An interactive branching negotiation map that allows users to compare alternative strategies and their assumptions.",
+      "completion_criterion": "Changing a business objective produces a meaningfully revised strategy and actionable preparation materials.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "adab",
+      "order": 9,
+      "primary_screens": [
+        "Cultural Intelligence",
+        "Audience Explorer",
+        "Campaign Studio",
+        "Localization Laboratory",
+        "Creative Production Board"
+      ],
+      "signature_interaction": "A responsive campaign storyboard where users directly edit messaging and explore visual alternatives.",
+      "completion_criterion": "A user can produce, refine, review, and export a functional campaign concept.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "khidmah",
+      "order": 10,
+      "primary_screens": [
+        "Service Intelligence",
+        "Issue Inbox",
+        "Case Workspace",
+        "Resolution Explorer",
+        "Service History"
+      ],
+      "signature_interaction": "A visually continuous case journey that reacts to real progress and resolution events.",
+      "completion_criterion": "A genuine test case advances from intake to a verified resolution or transparent escalation.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "jomrok",
+      "order": 11,
+      "primary_screens": [
+        "Customs Intelligence",
+        "Shipment Workspace",
+        "Requirements",
+        "Document Inspector",
+        "Shipment Journey"
+      ],
+      "signature_interaction": "A touch-responsive shipment path showing verified milestones, documentation requirements, and checkpoints.",
+      "completion_criterion": "The interface accurately represents real imported shipment information or explicitly labeled user-provided milestones.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "khibrat",
+      "order": 12,
+      "primary_screens": [
+        "Recruitment Intelligence",
+        "Job Requirements",
+        "Candidate Review",
+        "Qualification Comparison",
+        "Interview Preparation"
+      ],
+      "signature_interaction": "Interactive qualification evidence mapping.",
+      "completion_criterion": "Users can trace substantive assessments to supplied candidate information, with human oversight of employment decisions.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "majlis",
+      "order": 13,
+      "primary_screens": [
+        "Welcome",
+        "Onboarding Journey",
+        "Document Preparation",
+        "Team Orientation",
+        "Progress"
+      ],
+      "signature_interaction": "An interactive onboarding pathway that changes naturally as real milestones are completed.",
+      "completion_criterion": "A legitimate onboarding workflow can be completed and its progress accurately tracked.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "rafiq",
+      "order": 14,
+      "primary_screens": [
+        "Personal Intelligence",
+        "Daily Timeline",
+        "Goals",
+        "Task Workspace",
+        "Progress"
+      ],
+      "signature_interaction": "A dynamic daily timeline that reorganizes according to user-provided priorities and authorized information.",
+      "completion_criterion": "Users can create genuine goals, manage activities, and track meaningful progress.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "sawm",
+      "order": 15,
+      "primary_screens": [
+        "Daily Experience",
+        "Fasting Schedule",
+        "Day Progress",
+        "Planning",
+        "Calendar"
+      ],
+      "signature_interaction": "A time-responsive visual timeline that reflects the actual progression of the day.",
+      "completion_criterion": "The interface displays accurate sourced schedules and updates its temporal presentation correctly.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "mizan",
+      "order": 16,
+      "primary_screens": [
+        "Financial Intelligence",
+        "Financial Position",
+        "Wealth Analysis",
+        "Ethical Finance Research",
+        "Scenarios"
+      ],
+      "signature_interaction": "An interactive financial balance visualization connected to actual calculations.",
+      "completion_criterion": "Real financial inputs produce accurate, transparent calculations and understandable visual outcomes.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "thawg",
+      "order": 17,
+      "primary_screens": [
+        "Culinary Discovery",
+        "Restaurant Explorer",
+        "Restaurant Detail",
+        "Dietary Verification",
+        "Dining Plan"
+      ],
+      "signature_interaction": "Fluid image-centered restaurant exploration integrated with relevant geographic navigation.",
+      "completion_criterion": "Users can discover real dining options and take a supported next action.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "manzil",
+      "order": 18,
+      "primary_screens": [
+        "Household Overview",
+        "Expenses",
+        "Budget Studio",
+        "Scenario Simulator",
+        "Financial Roadmap"
+      ],
+      "signature_interaction": "A visual household budget map with directly adjustable, calculated allocations.",
+      "completion_criterion": "Changing genuine inputs updates the displayed calculations and budget recommendations.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "gurbah",
+      "order": 19,
+      "primary_screens": [
+        "Destination Intelligence",
+        "Relocation Atlas",
+        "Documentation",
+        "Planning Timeline",
+        "Settlement Roadmap"
+      ],
+      "signature_interaction": "An interactive destination and relocation journey connecting places, official requirements, and preparation milestones.",
+      "completion_criterion": "A user can explore a destination and complete a usable, source-backed relocation preparation plan.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "amanah-eco",
+      "order": 20,
+      "primary_screens": [
+        "Energy Intelligence",
+        "Consumption Explorer",
+        "Efficiency Analysis",
+        "Scenario Simulator",
+        "Action Roadmap"
+      ],
+      "signature_interaction": "An interactive energy-flow visualization driven by real data or clearly labeled estimates.",
+      "completion_criterion": "Supported changes in energy inputs produce consistent calculations and actionable recommendations.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "nafas",
+      "order": 21,
+      "primary_screens": [
+        "Wellbeing Home",
+        "Breathing Experience",
+        "Activities",
+        "Reflections",
+        "Planning"
+      ],
+      "signature_interaction": "A user-controlled breathing environment with smooth visual feedback and accessible reduced-motion alternatives.",
+      "completion_criterion": "Users can customize, start, pause, and complete real wellbeing activities.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "tadweer",
+      "order": 22,
+      "primary_screens": [
+        "Recycling Intelligence",
+        "Camera Identification",
+        "Material Explorer",
+        "Disposal Guidance",
+        "Recycling Learning"
+      ],
+      "signature_interaction": "Image-based material recognition with responsive classification results.",
+      "completion_criterion": "Real images produce useful supported classifications or transparent uncertainty reporting.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "turath",
+      "order": 23,
+      "primary_screens": [
+        "Heritage Discovery",
+        "Historical Timeline",
+        "Artifact Explorer",
+        "Cultural Stories",
+        "Research Collections"
+      ],
+      "signature_interaction": "A navigable historical narrative connecting documented artifacts, periods, and source information.",
+      "completion_criterion": "Users can explore documented subjects through meaningful interactions and traceable references.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "himam",
+      "order": 24,
+      "primary_screens": [
+        "Accessible Home",
+        "Interaction Preferences",
+        "Task Workspace",
+        "Assisted Actions",
+        "Completed Tasks"
+      ],
+      "signature_interaction": "An interface that adapts to explicit accessibility preferences while retaining complete functional access.",
+      "completion_criterion": "Primary functions remain usable with relevant assistive technologies and without mandatory complex gestures.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    },
+    {
+      "app": "hisad",
+      "order": 25,
+      "primary_screens": [
+        "Food Intelligence",
+        "Donation Explorer",
+        "Donation Preparation",
+        "Collection Coordination",
+        "Verified Activity"
+      ],
+      "signature_interaction": "A responsive food redistribution process that reflects genuine preparation, acceptance, collection, and completion states.",
+      "completion_criterion": "A real supported donation workflow can progress through verified states without fabricated availability or impact statistics.",
+      "core_workflow_verified": false,
+      "native_ios_verified": false,
+      "native_android_verified": false,
+      "performance_measured": false,
+      "dimensions": {
+        "interaction": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "visuals": {
+          "weight": 20,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "innovation": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "delight": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "inclusivity": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        },
+        "benefit": {
+          "weight": 15,
+          "score_out_of_10": null,
+          "evidence": [],
+          "status": "not assessed"
+        }
+      },
+      "weighted_score_out_of_100": null,
+      "accepted": false
+    }
+  ]
+}

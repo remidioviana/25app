@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useRef} from 'react';
-import {View,Text,TextInput} from 'react-native';
+import {View,Text,TextInput,Platform} from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import {File} from 'expo-file-system';
 import {AgentAPI} from '../src/api';
@@ -7,6 +7,7 @@ import type {Document,ImportFile} from '../src/types';
 import {styles as s,colors} from '../src/theme';
 import {EvidenceSearch} from './EvidenceSearch';
 import {Button,Notice} from './Controls';
+import {pickedFileBase64} from '../src/experience/pickedFile';
 type DocumentProps={api:AgentAPI;agent:string;onError:(v:string)=>void;refreshVersion?:number};
 export function Documents(props:DocumentProps){
  const [identity,setIdentity]=useState({api:props.api,agent:props.agent,key:0});
@@ -32,11 +33,10 @@ function DocumentForm({api,agent,onError,refreshVersion=0}:DocumentProps){
  async function pick(){
   const current=scope.current;setBusy(true);
   try{
-   const result=await DocumentPicker.getDocumentAsync({type:['text/plain','text/markdown','text/csv','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],copyToCacheDirectory:true,multiple:false});
+   const result=await DocumentPicker.getDocumentAsync({type:['text/plain','text/markdown','text/csv','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],copyToCacheDirectory:true,multiple:false,base64:true});
    if(scope.current!==current||result.canceled)return;
-   const asset=result.assets[0],file=new File(asset.uri);
-   if((asset.size??file.size)>2_000_000)throw new Error('File exceeds 2 MB');
-   const content=await file.base64();if(scope.current!==current)return;
+   const asset=result.assets[0];
+   const content=await pickedFileBase64(asset,Platform.OS,uri=>new File(uri).base64());if(scope.current!==current)return;
    const extracted=await api.preview(asset.name,content);if(scope.current!==current)return;
    setImportFile({filename:asset.name,base64:content});setTitle(asset.name);setText(extracted.text);setSource('');setAsOf('');setWarnings(extracted.warnings);
   }catch(e){if(scope.current===current)errorHandler.current(e instanceof Error?e.message:'Import failed')}

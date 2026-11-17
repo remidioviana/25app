@@ -1,7 +1,7 @@
 {
   "himayah": {
-    "title": "Compliance X-Ray",
-    "tab": "Rule lens",
+    "title": "Document Inspector",
+    "tab": "Inspector",
     "purpose": "A clause, its screening phrases and the source basis belong together.",
     "fields": [
       "text",

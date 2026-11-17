@@ -29,7 +29,7 @@ export class AgentAPI {
   action(id:string,action:'cancel'|'retry'){return this.request<Run>(`/api/runs/${encodeURIComponent(id)}/${action}`,'POST',{})}
   review(run:Run,decision:'accepted'|'rejected'){return this.request<Run>(`/api/runs/${encodeURIComponent(run.id)}/review`,'POST',{decision,artifact_hash:run.artifact_hash})}
   intake(agent:string,request:string){return this.request<Intake>(`/api/agents/${encodeURIComponent(agent)}/intake`,'POST',{request})}
-  documents(agent:string){return this.request<{documents:Document[]}>(`/api/agents/${encodeURIComponent(agent)}/documents`)}
+  documents(agent:string,signal?:AbortSignal){return this.request<{documents:Document[]}>(`/api/agents/${encodeURIComponent(agent)}/documents`,'GET',undefined,{},signal)}
   publicSources(agent:string,signal?:AbortSignal){return this.request<PublicSourcesResult>(`/api/agents/${encodeURIComponent(agent)}/sources`,'GET',undefined,{},signal)}
   refreshPublicSource(agent:string,sourceId:string,signal?:AbortSignal){
     if(!/^[a-z0-9][a-z0-9-]{0,63}$/.test(sourceId))return Promise.reject(new Error('Choose an approved source identifier.'));
@@ -40,8 +40,8 @@ export class AgentAPI {
     if(!normalized||normalized.length>2000)return Promise.reject(new Error('Enter a search query of 1 to 2,000 characters.'));
     return this.request<EvidenceSearchResult>(`/api/agents/${encodeURIComponent(agent)}/search`,'POST',{query:normalized,semantic:false},{},signal);
   }
-  preview(filename:string,base64:string){return this.request<{text:string;warnings:string[]}>('/api/import/preview','POST',{filename,base64})}
-  addDocument(agent:string,title:string,text:string,source:string,as_of:string,importFile?:ImportFile){return this.request<{id:string}>(`/api/agents/${encodeURIComponent(agent)}/documents`,'POST',{title,text,source,as_of,...(importFile?{import_file:importFile}:{})})}
+  preview(filename:string,base64:string,signal?:AbortSignal){return this.request<{text:string;warnings:string[]}>('/api/import/preview','POST',{filename,base64},{},signal)}
+  addDocument(agent:string,title:string,text:string,source:string,as_of:string,importFile?:ImportFile,signal?:AbortSignal){return this.request<{id:string}>(`/api/agents/${encodeURIComponent(agent)}/documents`,'POST',{title,text,source,as_of,...(importFile?{import_file:importFile}:{})},{},signal)}
   schedules(agent:string){return this.request<{schedules:Schedule[]}>(`/api/agents/${encodeURIComponent(agent)}/schedules`)}
   schedule(agent:string,data:unknown){return this.request(`/api/agents/${encodeURIComponent(agent)}/schedules`,'POST',data)}
   disableSchedule(id:string){return this.request(`/api/schedules/${encodeURIComponent(id)}/disable`,'POST',{})}

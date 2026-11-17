@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-17T17:33:12.436021+00:00",
+  "scope": "Actual Expo web UI, two real isolated authenticated HTTP backends and controlled response delays; synthetic case data, no provider inference or physical device",
+  "newer_edits_survive_pdf_import_completion": true,
+  "initial_connection_preserves_goal_and_draft": true,
+  "workspace_switch_clears_private_form_state": true,
+  "late_previous_workspace_run_is_not_displayed": true,
+  "page_errors": []
+}

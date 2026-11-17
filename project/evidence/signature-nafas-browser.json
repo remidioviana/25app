@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-17T17:32:57.798709+00:00",
+  "scope": "Actual Expo web interaction with Playwright virtual time, not measured native performance or a real breathing measurement",
+  "configuration": {
+    "duration_seconds": 60,
+    "inhale_seconds": 3,
+    "exhale_seconds": 5
+  },
+  "pause_excludes_two_minutes_of_virtual_wait": true,
+  "resume_completes_once": true,
+  "reduced_motion_outline_static": true,
+  "local_activity_choices_and_leap_day_routine": true,
+  "reflection_save_delete_without_api_request": true,
+  "api_requests": [],
+  "console_warnings_and_errors": [],
+  "native_haptics_verified": false,
+  "physical_device_verified": false
+}

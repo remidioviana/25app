@@ -1,0 +1,9 @@
+{
+  "scope": "Actual browser style changes with virtual time, not native FPS, GPU timing or device haptics",
+  "normal_motion_mid_inhale_transform": "matrix(1.08209, 0, 0, 1.08209, 0, 0)",
+  "reduced_motion_transform": "matrix(1, 0, 0, 1, 0, 0)",
+  "live_preference_change_stops_motion_without_stopping_the_clock": true,
+  "stoppable_exercise": true,
+  "page_errors": [],
+  "physical_device_verified": false
+}

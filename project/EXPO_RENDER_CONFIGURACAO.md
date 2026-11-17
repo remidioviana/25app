@@ -42,3 +42,8 @@ A persistência demonstrada pelo teste Docker usa volume local; isso não se tra
 O perfil informado no Render é 20B → Qwen Preview → 120B, com opt-in de Preview e três identidades exigidas. Catálogo, quota e inferência no destino precisam ser verificados após o serviço existir; os diagnósticos históricos do GitHub não provam implantação no Render.
 
 Referências: [Blueprint](https://render.com/docs/blueprint-spec), [limites Free](https://render.com/docs/free), [variantes EAS](https://docs.expo.dev/build-reference/variants/).
+
+
+## Expo Web origins
+
+For a separately hosted Expo Web frontend, set `APP_ALLOWED_WEB_ORIGINS` on the backend to its exact HTTPS origin (comma-separated for multiple frontends). Leave it unset for same-origin clients. Never use `*`, paths, embedded credentials or provider keys. Local HTTP localhost, loopback and private-network origins are accepted for development only. Approved preflights do not bypass authentication: API requests still require the workspace access token. Native clients do not need browser CORS. Public intelligence has its separate existing public policy.

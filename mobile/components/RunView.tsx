@@ -16,17 +16,17 @@ function Values({value}:{value:Json}){
  if(value!==null&&typeof value==='object')return <View>{Object.entries(value).map(([k,v])=><View key={k} style={{marginVertical:5}}><Text style={s.label}>{inputLabel(k)}</Text><Values value={v}/></View>)}</View>;
  return <Text selectable style={s.text}>{value===null?'Not provided':typeof value==='boolean'?(value?'Yes':'No'):String(value)}</Text>;
 }
-export function RunView({api,initial,onError}:{api:AgentAPI;initial:Run;onError:(s:string)=>void}){
+export function RunView({api,initial,onError,onUpdate}:{api:AgentAPI;initial:Run;onError:(s:string)=>void;onUpdate?:(r:Run)=>void}){
  const [run,setRun]=useState(initial),[busy,setBusy]=useState(false),[details,setDetails]=useState(false),[foreground,setForeground]=useState(AppState.currentState==='active');
  useEffect(()=>{const sub=AppState.addEventListener('change',state=>setForeground(state==='active'));return ()=>sub.remove()},[]);
  useEffect(()=>{
   if(!foreground||!['queued','running'].includes(run.status))return;
   const controller=new AbortController();let stopped=false;let timer:ReturnType<typeof setTimeout>;
-  async function poll(){try{const next=await api.run(run.id,controller.signal);if(!stopped)setRun(next)}catch(e){if(!stopped)onError(e instanceof Error?e.message:'Connection failed')}finally{if(!stopped)timer=setTimeout(poll,2000)}}
+  async function poll(){try{const next=await api.run(run.id,controller.signal);if(!stopped){setRun(next);onUpdate?.(next)}}catch(e){if(!stopped)onError(e instanceof Error?e.message:'Connection failed')}finally{if(!stopped)timer=setTimeout(poll,2000)}}
   timer=setTimeout(poll,500);return ()=>{stopped=true;clearTimeout(timer);controller.abort()};
- },[api,run.id,run.status,foreground,onError]);
+ },[api,run.id,run.status,foreground,onError,onUpdate]);
  async function action(name:'cancel'|'retry'|'accepted'|'rejected'){
-  setBusy(true);try{setRun(name==='cancel'||name==='retry'?await api.action(run.id,name):await api.review(run,name))}catch(e){onError(e instanceof Error?e.message:'Action failed')}finally{setBusy(false)}
+  setBusy(true);try{const next=name==='cancel'||name==='retry'?await api.action(run.id,name):await api.review(run,name);setRun(next);onUpdate?.(next)}catch(e){onError(e instanceof Error?e.message:'Action failed')}finally{setBusy(false)}
  }
  async function share(){
   setBusy(true);let file:File|undefined;

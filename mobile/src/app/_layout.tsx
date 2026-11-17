@@ -6,4 +6,5 @@ import {AppProvider} from '../AppState';
 import {experience} from '../theme';
 import {MotionProvider} from '../experience/useReducedMotion';
 import {TypefaceProvider} from '../experience/TypefaceProvider';
-export default function Layout(){return <MotionProvider><TypefaceProvider><SafeAreaProvider><AppProvider><StatusBar style={experience.dark?"light":"dark"}/><Stack screenOptions={{headerShown:false}}><Stack.Screen name="(tabs)"/><Stack.Screen name="connect" options={{presentation:'modal',headerShown:true,title:'Connection'}}/></Stack></AppProvider></SafeAreaProvider></TypefaceProvider></MotionProvider>}
+import {NafasProvider} from '../experience/NafasState';
+export default function Layout(){return <MotionProvider><TypefaceProvider><SafeAreaProvider><AppProvider><NafasProvider><StatusBar style={experience.dark?"light":"dark"}/><Stack screenOptions={{headerShown:false}}><Stack.Screen name="(tabs)"/><Stack.Screen name="connect" options={{presentation:'modal',headerShown:true,title:'Connection'}}/></Stack></NafasProvider></AppProvider></SafeAreaProvider></TypefaceProvider></MotionProvider>}

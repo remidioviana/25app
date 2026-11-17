@@ -20,7 +20,7 @@ export function replaceAt(root:Json,path:(string|number)[],value:Json):Json {
  throw new Error('Invalid form path');
 }
 export function validateGoal(goal:string){if(!goal.trim()||goal.length>2000)throw new Error('Describe the goal in up to 2,000 characters.');return goal.trim()}
-export function inputLabel(key:string){return ({as_of:'Reference date',currency:'Currency',amount:'Amount',transactions:'Transactions',budgets:'Budgets',category:'Category',verified:'Verified',title:'Title',name:'Name',start:'Start',end:'End',goal:'Goal',text:'Text',requirements:'Requirements',documents:'Documents',reference:'Reference',expires:'Expiry',days:'Days',date:'Date',description:'Description',tasks:'Tasks',rules:'Rules',quantity:'Quantity',allergens:'Allergens',recipients:'Recipients'} as Record<string,string>)[key]||key.replaceAll('_',' ')}
+export function inputLabel(key:string){return ({label:'Rule label',phrase:'Screening phrase',required:'Phrase required',as_of:'Reference date',currency:'Currency',amount:'Amount',transactions:'Transactions',budgets:'Budgets',category:'Category',verified:'Verified',title:'Title',name:'Name',start:'Start',end:'End',goal:'Goal',text:'Text',requirements:'Requirements',documents:'Documents',reference:'Reference',expires:'Expiry',days:'Days',date:'Date',description:'Description',tasks:'Tasks',rules:'Rules',quantity:'Quantity',allergens:'Allergens',recipients:'Recipients'} as Record<string,string>)[key]||key.replaceAll('_',' ')}
 export function addMapEntry(value:Record<string,Json>,rawKey:string,schema:Schema):Record<string,Json> {
  const key=rawKey.trim();
  if(!key||key.length>80||['__proto__','constructor','prototype'].includes(key))throw new Error('Use a category name of 1–80 characters.');

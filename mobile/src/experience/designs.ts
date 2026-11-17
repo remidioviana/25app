@@ -18,7 +18,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Clauses",
       "Authorities",
       "Trail",
-      "Rule lens"
+      "Inspector"
     ],
     "steps": [
       "Import agreement",
@@ -615,9 +615,9 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "action": "Explore my wellbeing practice",
     "tabs": [
       "Pause",
-      "Practice",
-      "Field guide",
+      "Activities",
       "Reflections",
+      "Planning",
       "Breathing"
     ],
     "steps": [

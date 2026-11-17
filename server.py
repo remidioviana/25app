@@ -1,5 +1,6 @@
 """Single-user local HTTP API + mobile PWA. Public deployment needs TLS and identity."""
 import hmac
+import ipaddress
 import json
 import mimetypes
 import os
@@ -31,6 +32,25 @@ def public_hostnames():
     return {value.strip() for name in ('APP_HOSTNAME','RENDER_EXTERNAL_HOSTNAME')
             if (value:=os.environ.get(name,'' )).strip()}
 
+def allowed_web_origins():
+    """Exact operator-approved browser origins; never wildcard or credentialed URLs."""
+    result=set()
+    for raw in os.environ.get('APP_ALLOWED_WEB_ORIGINS','').split(','):
+        value=raw.strip().rstrip('/')
+        try:
+            url=urlparse(value)
+            if not url.hostname or url.username is not None or url.password is not None or url.path or url.query or url.fragment:continue
+            if url.port is not None and not 1<=url.port<=65535:continue
+            local=url.hostname in ('localhost','127.0.0.1','::1')
+            try:
+                address=ipaddress.ip_address(url.hostname)
+                local=local or any(address in ipaddress.ip_network(block) for block in ('10.0.0.0/8','172.16.0.0/12','192.168.0.0/16'))
+            except ValueError:pass
+            if url.scheme=='https' or (url.scheme=='http' and local):
+                if value==url.scheme+'://'+url.netloc:result.add(value)
+        except ValueError:continue
+    return result
+
 class Handler(BaseHTTPRequestHandler):
     server_version='AgentSuite/5.0'
     def log_message(self,fmt,*args): pass
@@ -40,6 +60,12 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Content-Type',content_type); self.send_header('Content-Length',str(len(raw)))
         self.send_header('Cache-Control','public, max-age=300' if urlparse(self.path).path=='/public/intelligence.json' else 'no-store');
         if urlparse(self.path).path=='/public/intelligence.json':self.send_header('Access-Control-Allow-Origin','*')
+        elif urlparse(self.path).path.startswith('/api/') and self.headers.get('Origin') in allowed_web_origins():
+            self.send_header('Access-Control-Allow-Origin',self.headers['Origin']);self.send_header('Vary','Origin')
+            if self.command=='OPTIONS':
+                self.send_header('Access-Control-Allow-Methods','GET, POST, DELETE, OPTIONS')
+                self.send_header('Access-Control-Allow-Headers','Authorization, Content-Type, Idempotency-Key, Accept')
+                self.send_header('Access-Control-Max-Age','300')
         self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Referrer-Policy','no-referrer')
         self.send_header('Content-Security-Policy',"default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
@@ -48,9 +74,11 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self): self.handle_request('GET')
     def do_POST(self): self.handle_request('POST')
     def do_DELETE(self): self.handle_request('DELETE')
+    def do_OPTIONS(self): self.handle_request('OPTIONS')
     def handle_request(self,method):
         try:
             path=unquote(urlparse(self.path).path)
+            if method=='OPTIONS':return self.preflight()
             user=identity.authenticate(self.headers.get('Authorization',''),TOKEN) if path.startswith('/api/') and path!='/api/config' else 'default'
             with db.scope(user):
                 if path.startswith('/api/') and path!='/api/config':db.init()
@@ -58,6 +86,15 @@ class Handler(BaseHTTPRequestHandler):
         except PermissionError as e:self.reply({'error':str(e)},401)
         except ValueError as e: self.reply({'error':str(e)},400)
         except Exception: self.reply({'error':'Internal error. Check server configuration and tests.'},500)
+    def preflight(self):
+        host=self.headers.get('Host','')
+        if host not in {f'localhost:{self.server.server_port}',f'127.0.0.1:{self.server.server_port}'}|public_hostnames():return self.reply({'error':'Unauthorized host'},403)
+        if not unquote(urlparse(self.path).path).startswith('/api/'):return self.reply({'error':'Unsupported preflight'},405)
+        if self.headers.get('Origin') not in allowed_web_origins():return self.reply({'error':'Unauthorized origin'},403)
+        if self.headers.get('Access-Control-Request-Method') not in ('GET','POST','DELETE'):return self.reply({'error':'Unsupported request method'},403)
+        headers={x.strip().lower() for x in self.headers.get('Access-Control-Request-Headers','').split(',') if x.strip()}
+        if not headers <= {'authorization','content-type','idempotency-key','accept'}:return self.reply({'error':'Unsupported request headers'},403)
+        return self.reply(b'',204)
     def route(self,method):
         path=unquote(urlparse(self.path).path); host=self.headers.get('Host','')
         allowed={f'localhost:{self.server.server_port}',f'127.0.0.1:{self.server.server_port}'}
@@ -67,7 +104,8 @@ class Handler(BaseHTTPRequestHandler):
             if method!='GET':return self.reply({'error':'Read-only public intelligence feed'},405)
             return self.reply((ROOT/'public/intelligence.json').read_bytes(),content_type='application/json; charset=utf-8')
         origin=self.headers.get('Origin')
-        if (origin and urlparse(origin).netloc!=host) or self.headers.get('Sec-Fetch-Site')=='cross-site':
+        approved=origin in allowed_web_origins()
+        if (origin and urlparse(origin).netloc!=host and not approved) or (self.headers.get('Sec-Fetch-Site')=='cross-site' and not approved):
             return self.reply({'error':'Unauthorized origin'},403)
         if path=='/api/config' and method=='GET':
             return self.reply({'requires_token':identity.required(TOKEN),'multiuser':bool(os.environ.get('APP_USERS_FILE')),'model_configured':configured(),'provider':model_provider.configuration_status(),'version':'5.0','langgraph_available':advanced.available(),'embedding_configured':bool(os.environ.get('OPENAI_EMBEDDING_MODEL') and os.environ.get('OPENAI_API_KEY')),'external_connectors':[]})
@@ -205,9 +243,9 @@ def main():
         raise SystemExit('Network access requires APP_TOKEN or APP_USERS_FILE and APP_HOSTNAME or RENDER_EXTERNAL_HOSTNAME (host:port). Use TLS for real data.')
     for user in identity.scopes():
         with db.scope(user):db.init();recover()
-    scheduler=scheduling.Scheduler().start()
-    print(f'25 Agent Studio: http://{host}:{port}',flush=True)
     http=ThreadingHTTPServer((host,port),Handler)
+    scheduler=scheduling.Scheduler().start()
+    print(f'25 Agent Studio: http://{host}:{http.server_port}',flush=True)
     try:http.serve_forever()
     finally:scheduler.close();http.server_close()
 

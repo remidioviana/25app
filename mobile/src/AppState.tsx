@@ -1,19 +1,23 @@
-import React,{createContext,useContext,useEffect,useState,useRef} from 'react';
+import React,{createContext,useContext,useEffect,useState,useRef,useCallback} from 'react';
 import {AgentAPI,serverURL} from './api';
 import type {Config,Json,Run} from './types';
 import {brandId} from './brand';
 import {catalog} from './catalog';
 import {loadConnection,saveConnection,clearConnection} from './session';
 import {emptyWorkspace} from './forms';
-type State={api:AgentAPI|null;config:Config|null;draft:Record<string,Json>;setDraft:React.Dispatch<React.SetStateAction<Record<string,Json>>>;hasInputs:boolean;run:Run|null;setRun:React.Dispatch<React.SetStateAction<Run|null>>;example:boolean;setExample:(x:boolean)=>void;connect:(url:string,token:string,remember:boolean)=>Promise<void>;disconnect:()=>Promise<void>;connectionError:string};
+type State={workspaceEpoch:number;api:AgentAPI|null;config:Config|null;draft:Record<string,Json>;setDraft:React.Dispatch<React.SetStateAction<Record<string,Json>>>;hasInputs:boolean;commitDraft:(expected:Record<string,Json>,next:Record<string,Json>)=>boolean;run:Run|null;setRun:React.Dispatch<React.SetStateAction<Run|null>>;example:boolean;setExample:(x:boolean)=>void;connect:(url:string,token:string,remember:boolean)=>Promise<void>;disconnect:()=>Promise<void>;connectionError:string};
 const Context=createContext<State|null>(null);
 export const spec=catalog[brandId];
 export function AppProvider({children}:{children:React.ReactNode}){
- const [api,setApi]=useState<AgentAPI|null>(null),[config,setConfig]=useState<Config|null>(null),[draft,setDraftValue]=useState<Record<string,Json>>(()=>emptyWorkspace(spec.schema).draft),[hasInputs,setHasInputs]=useState(false),[run,setRun]=useState<Run|null>(null),[example,setExample]=useState(false),[connectionError,setConnectionError]=useState('');
+ const [api,setApi]=useState<AgentAPI|null>(null),[config,setConfig]=useState<Config|null>(null),[draft,setDraftValue]=useState<Record<string,Json>>(()=>emptyWorkspace(spec.schema).draft),[hasInputs,setHasInputs]=useState(false),[run,setRunValue]=useState<Run|null>(null),[example,setExample]=useState(false),[connectionError,setConnectionError]=useState('');
+ const draftRef=useRef(draft),activeApi=useRef<AgentAPI|null>(null);
+ const [workspaceEpoch,setWorkspaceEpoch]=useState(0);
+ const setRun=useCallback((value:React.SetStateAction<Run|null>)=>{if(activeApi.current===api)setRunValue(value)},[api]);
  const revision=useRef(0),writes=useRef<Promise<void>>(Promise.resolve());
  // hasInputs means a draft was explicitly edited/applied, never that it is authentic.
- function setDraft(value:React.SetStateAction<Record<string,Json>>){setDraftValue(value);setHasInputs(true)}
- function reset(){setApi(null);setConfig(null);setRun(null);setDraftValue(emptyWorkspace(spec.schema).draft);setHasInputs(false);setExample(false);setConnectionError('')}
+ function setDraft(value:React.SetStateAction<Record<string,Json>>){const next=typeof value==='function'?value(draftRef.current):value;draftRef.current=next;setDraftValue(next);setHasInputs(true)}
+ function commitDraft(expected:Record<string,Json>,next:Record<string,Json>){if(draftRef.current!==expected)return false;setDraft(next);return true}
+ function reset(){activeApi.current=null;setApi(null);setConfig(null);setRunValue(null);draftRef.current=emptyWorkspace(spec.schema).draft;setDraftValue(draftRef.current);setHasInputs(false);setExample(false);setConnectionError('')}
  function persist(id:number,write:()=>Promise<void>){
   const next=writes.current.catch(()=>{}).then(async()=>{if(revision.current===id)await write()});
   writes.current=next;return next;
@@ -31,11 +35,11 @@ export function AppProvider({children}:{children:React.ReactNode}){
    if(id!==revision.current)return;
    await persist(id,()=>remember?saveConnection({url:client.origin,token}):clearConnection());
    if(id!==revision.current)return;
-   if(hadConnection)reset();else{setRun(null);setConnectionError('')}setApi(client);setConfig(cfg);
+   if(hadConnection){setWorkspaceEpoch(n=>n+1);reset()}else{setRunValue(null);setConnectionError('')}activeApi.current=client;setApi(client);setConfig(cfg);
   }catch(e){if(id===revision.current)throw e}
  }
  async function disconnect(){
-  const id=++revision.current;reset();
+  const id=++revision.current;setWorkspaceEpoch(n=>n+1);reset();
   try{await persist(id,clearConnection)}catch(e){if(id===revision.current){setConnectionError('Could not remove the saved connection.');throw e}}
  }
  useEffect(()=>{
@@ -43,10 +47,10 @@ export function AppProvider({children}:{children:React.ReactNode}){
   loadConnection().then(async saved=>{
    if(!saved||revision.current!==id)return;
    const client=new AgentAPI(saved.url,saved.token,__DEV__),cfg=await validateClient(client);
-   if(revision.current===id){setApi(client);setConfig(cfg)}
+   if(revision.current===id){activeApi.current=client;setApi(client);setConfig(cfg)}
   }).catch(e=>{if(revision.current===id)setConnectionError(e instanceof Error?e.message:'Connection failed')});
   return()=>{lifecycle.current++};
  },[]);
- return <Context.Provider value={{api,config,draft,setDraft,hasInputs,run,setRun,example,setExample,connect,disconnect,connectionError}}>{children}</Context.Provider>;
+ return <Context.Provider value={{workspaceEpoch,api,config,draft,setDraft,hasInputs,commitDraft,run,setRun,example,setExample,connect,disconnect,connectionError}}>{children}</Context.Provider>;
 }
 export function useApp(){const value=useContext(Context);if(!value)throw Error('App state is unavailable');return value}
