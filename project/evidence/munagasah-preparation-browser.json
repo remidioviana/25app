@@ -1,14 +1,15 @@
 {
-  "checked_at": "2026-11-17T18:13:01.236317+00:00",
+  "checked_at": "2026-11-17T18:16:04.659948+00:00",
   "scope": "Actual Expo Web UI using the existing repository synthetic tender example through controlled intake transport. Not an authentic published tender, live countdown, provider inference or physical-device verification.",
   "source_files_sha256": {
     "mobile/components/MunagasahDesk.tsx": "86695b119b42ba5ddcda9e2b70b0bbe06c49c403f914af7becfdc4cb62b9b626",
-    "mobile/src/experience/tenderPreparation.ts": "af7087fb8cea399d7231239a41969ebcd6da7df4686b42ae328e3241f7c5a8e1"
+    "mobile/src/experience/tenderPreparation.ts": "af7087fb8cea399d7231239a41969ebcd6da7df4686b42ae328e3241f7c5a8e1",
+    "mobile/src/app/(tabs)/workbench.tsx": "8b5a77a636d605eee9024b422465957bcd463fcaf36dfb01440d3584cdf5fc74"
   },
   "calendar_distance_matches_supplied_dates": true,
   "gap_filter_and_live_capability_edits": true,
   "download_reflects_saved_case_and_open_dependencies": true,
-  "normal_motion_opacity": 0.662858,
+  "normal_motion_opacity": 0.990027,
   "live_reduced_motion_change_stops_transition": true,
   "console_warnings_and_errors": [],
   "provider_inference_calls": 0,
