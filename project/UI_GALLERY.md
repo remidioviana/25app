@@ -1,9 +1,11 @@
 # Current app UI gallery
 
-[Open the redesigned 100-screen gallery](ui-redesign/index.html). It includes home, personal case, official sources and research history for all 25 apps, captured from source commit `ffd28b05b0956e27e69aa7de50137c4d67dd8186`.
+[Open the independent-identity gallery](ui-identity/index.html): 100 actual Expo React Native Web captures, covering home, case, public research and history for all 25 apps.
 
-The captures use Expo React Native Web at 390 × 844. No provider inference or private customer records were used to create the gallery. Dated official research and archived actual AI analysis retain their separate provenance. Browser captures are not physical iOS/Android acceptance.
+The [manifest](ui-identity/manifest.json) identifies source commit `d054e6a3c2f1b64f5f50bdb1acf6bb3308f47a7b`, viewport 390 × 844, zero page/console errors and no horizontal overflow. The subsequent SVG-accessibility fix changes semantics, not these visual captures. [Compact-width checks](evidence/creative-compact-viewports.json) cover all 25 homes at 320 × 740.
 
-[Capture manifest](ui-redesign/manifest.json) · [Design scope and remaining gates](DESIGN_RESET.md).
+[Earlier 100-screen baseline](ui-redesign/index.html) · [Official design research](APPLE_DESIGN_RESEARCH.md) · [25 creative directions](creative-directions/README.md) · [Mechanical similarity audit](evidence/creative-identity-audit.json).
 
-The earlier `ui-gallery` folder is retained as historical evidence; its repeated template predates this redesign.
+The gallery uses dated public-source research and archived actual AI analysis with separate provenance. It performs no provider inference. Browser captures do not establish device interactions, Dynamic Type acceptance, signed distribution, award-level quality or deployment.
+
+The earlier `ui-gallery` and `ui-redesign` folders remain historical evidence. Shared history structures, navigation primitives and motion still require portfolio-level review; the directive is not declared fully accepted.

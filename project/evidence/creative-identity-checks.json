@@ -1,0 +1,52 @@
+{
+  "python_tests": 248,
+  "mobile_tests_after_svg_regression": 65,
+  "typecheck": "passed",
+  "lint": "passed",
+  "variant_configurations": 25,
+  "browser_screens": 100,
+  "compact_home_viewports": 25,
+  "controlled_transaction_flow": "passed with no console warnings or errors",
+  "provider_inference_calls_for_redesign": 0,
+  "github_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 44096081161,
+      "headSha": "ce95e2be0f23ec74441c7a15fd6bd6a968e1398b",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44096081161",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44096421424,
+      "headSha": "d054e6a3c2f1b64f5f50bdb1acf6bb3308f47a7b",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44096421424",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44096095683,
+      "headSha": "ce95e2be0f23ec74441c7a15fd6bd6a968e1398b",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44096095683",
+      "workflowName": "Export first-five mobile bundles"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44096102419,
+      "headSha": "ce95e2be0f23ec74441c7a15fd6bd6a968e1398b",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44096102419",
+      "workflowName": "Export mobile portfolio lots"
+    }
+  ],
+  "scope": "Native JavaScript/asset exports, not signed binaries or actual-device acceptance",
+  "remaining_acceptance": [
+    "private history differentiation",
+    "purposeful domain motion",
+    "full native-device workflows",
+    "independent final creative review"
+  ]
+}
