@@ -49,3 +49,9 @@ A resposta foi aceita pelo 120B na primeira auditoria; o ramo adicional de resol
 O cliente mobile conserva o arquivo selecionado até salvar e o servidor reextrai os bytes recebidos para calcular o recibo, sem confiar em hashes declarados pelo cliente. O documento salvo registra hashes do arquivo, texto extraído e texto salvo, além de indicar edição após extração. O recibo acompanha buscas BM25/semânticas e relatórios Markdown; é removido com o documento e isolado por identidade. Os bytes originais não são guardados.
 
 O teste do cliente mobile contra o backend autenticado percorre importação, salvamento, recuperação, execução local e exportação separadamente para Himayah, Iqamah, Istithmar, Munagasah e Sahil. São documentos controlados e execução local, sem nova inferência; isso não equivale a validação em aparelho, documento autêntico ou aceite primário. A UI foi mantida, acrescentando apenas a indicação de edição/importação. O objetivo de entrega continua sendo esses cinco apps, não cinco modelos adicionais.
+
+## Artefatos de execução do lote
+
+`npm run export:first-five`, em `mobile/`, gera bundles Hermes e assets Android/iOS para os cinco apps em `mobile/dist/first-five`, incluindo identidade da variante e hashes. [Verificação local](evidence/first-five-native-exports.json). O workflow manual `Export first-five mobile bundles` disponibiliza esse diretório como artefato, sem credenciais de provedor e sem carregar `.env`. São dez bundles de plataforma, não APKs/IPAs assinados ou prova de instalação.
+
+O backend também passou no contêiner com os cinco fluxos locais, autenticação, execução sem root e dados preservados após recriação. [Verificação](evidence/backend-container-check.json). Para chegar a versões instaláveis e serviço público, faltam projeto Expo/EAS/assinatura, destino de hospedagem/TLS e verificação de dispositivo e casos autênticos. Esses portões permanecem pendentes no portfólio.

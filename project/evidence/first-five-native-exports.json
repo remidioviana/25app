@@ -1,0 +1,103 @@
+{
+  "scope": "Android/iOS JavaScript and assets export only; not APK/IPA, device acceptance or release",
+  "signed_binary": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "id": "himayah",
+      "name": "Himayah AI",
+      "android_package": "com.agenticmobile.himayah",
+      "ios_bundle_identifier": "com.agenticmobile.himayah",
+      "orientation": "portrait",
+      "bundles": {
+        "android": {
+          "path": "_expo/static/js/android/entry-7cfbd689a36192ce702365c9d16c8fd5.hbc",
+          "bytes": 2923662,
+          "sha256": "ab1565d2612d66990398814d26290a8c059948d1653d2f02532da94ce29a506c"
+        },
+        "ios": {
+          "path": "_expo/static/js/ios/entry-ca8928354a103aa8489e74de9bfd069e.hbc",
+          "bytes": 2936238,
+          "sha256": "abe843e34ab4fd2c70e3c48deb1d022d8c70b6bbf97fdebf744dd22cf9b46172"
+        }
+      }
+    },
+    {
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "android_package": "com.agenticmobile.iqamah",
+      "ios_bundle_identifier": "com.agenticmobile.iqamah",
+      "orientation": "portrait",
+      "bundles": {
+        "android": {
+          "path": "_expo/static/js/android/entry-6513f782755d12b6c7abba3a07b02ced.hbc",
+          "bytes": 2923652,
+          "sha256": "2d338d1d64a914a2a9ffbc9880eca75756de51dd86c7c0e15b709d0997bbf2a6"
+        },
+        "ios": {
+          "path": "_expo/static/js/ios/entry-7ba7292a6d392bb0ea4546bdeca7608c.hbc",
+          "bytes": 2936256,
+          "sha256": "3e305aaac3a3897c41d86d2b61a2917e030083631a93a4f107dced45308f2ec8"
+        }
+      }
+    },
+    {
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "android_package": "com.agenticmobile.istithmar",
+      "ios_bundle_identifier": "com.agenticmobile.istithmar",
+      "orientation": "portrait",
+      "bundles": {
+        "android": {
+          "path": "_expo/static/js/android/entry-6513f782755d12b6c7abba3a07b02ced.hbc",
+          "bytes": 2923652,
+          "sha256": "eec06d7dcd85a81f2b287a845716882df85168051374029ea7033e53af60257e"
+        },
+        "ios": {
+          "path": "_expo/static/js/ios/entry-7ba7292a6d392bb0ea4546bdeca7608c.hbc",
+          "bytes": 2936255,
+          "sha256": "0de6aa3bc12b84c78474e420704cd168d9bef1c9cc0656dc9e0116b96dc75225"
+        }
+      }
+    },
+    {
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "android_package": "com.agenticmobile.munagasah",
+      "ios_bundle_identifier": "com.agenticmobile.munagasah",
+      "orientation": "portrait",
+      "bundles": {
+        "android": {
+          "path": "_expo/static/js/android/entry-6513f782755d12b6c7abba3a07b02ced.hbc",
+          "bytes": 2923652,
+          "sha256": "8db19a45c694f8eb6dd62040a553a7c4daa010e099642000243444a90aec4119"
+        },
+        "ios": {
+          "path": "_expo/static/js/ios/entry-7ba7292a6d392bb0ea4546bdeca7608c.hbc",
+          "bytes": 2936256,
+          "sha256": "1075f2dba200b5487a02205478fcaeb80a4db5def0837f706f96401e7b7996b6"
+        }
+      }
+    },
+    {
+      "id": "sahil",
+      "name": "Sahil AI",
+      "android_package": "com.agenticmobile.sahil",
+      "ios_bundle_identifier": "com.agenticmobile.sahil",
+      "orientation": "portrait",
+      "bundles": {
+        "android": {
+          "path": "_expo/static/js/android/entry-6513f782755d12b6c7abba3a07b02ced.hbc",
+          "bytes": 2923651,
+          "sha256": "063b8faf9c734aa26517ea0b8f1b2167869211595e99d74bea637bb391daabf6"
+        },
+        "ios": {
+          "path": "_expo/static/js/ios/entry-7ba7292a6d392bb0ea4546bdeca7608c.hbc",
+          "bytes": 2936255,
+          "sha256": "2c36f180ce92a3e6f44e24681f277f60a98910dbb58664fa998f0ef7a00be88a"
+        }
+      }
+    }
+  ],
+  "base_source_commit": "aa8a698595f1bbbfcb034bb80e3a7429b579bc59"
+}

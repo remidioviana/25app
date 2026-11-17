@@ -1,0 +1,34 @@
+name: Backend container checks
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - '*.py'
+      - 'requirements*.txt'
+      - 'agents/**'
+      - 'public/**'
+      - index.html
+      - sw.js
+      - scripts/check_container.py
+      - .github/workflows/backend-container.yml
+permissions:
+  contents: read
+jobs:
+  container:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - run: docker build -t 25app-backend:local .
+      - run: python3 scripts/check_container.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: backend-container-verification
+          path: project/evidence/backend-container-check.json
+          if-no-files-found: error
+          retention-days: 7

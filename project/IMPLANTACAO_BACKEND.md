@@ -37,3 +37,17 @@ Persistir o diretório inteiro de `AGENT_DATA_DIR`: banco principal `agents-v2.s
 6. Executar um fluxo primário de cada app com documento autêntico e permissão de uso, registrando versão, trechos, limitações e resultado. Não transformar entrada sintética em aceite primário.
 
 Só registrar implantação após URL acessível e verificações do destino. Só registrar release após distribuição efetivamente confirmada. Nenhuma submissão governamental ou ação externa é autorizada pelo simples término de uma análise.
+
+## Contêiner executável
+
+O `Dockerfile` usa imagem Python 3.12 fixada por digest, dependências declaradas, usuário 10001 e volume `/data`. O contexto de build usa lista permitida: não inclui `.env`, bancos locais, `.git` ou o cliente mobile. Nenhuma chave é inserida na imagem.
+
+```sh
+docker build -t 25app-backend:local .
+docker volume create 25app-data
+docker run -d --name 25app-backend --restart unless-stopped --env-file /secure/backend.env -v 25app-data:/data -p 127.0.0.1:8000:8000 25app-backend:local
+```
+
+O arquivo protegido de ambiente precisa definir `APP_HOSTNAME` e `APP_TOKEN` (ou arquivo de identidades montado), além da configuração de provedor quando necessário. O bind local serve ao proxy TLS no mesmo host; não cria um domínio ou servidor externo. O healthcheck usa `/api/config` e não comprova inferência. Em rede com CA corporativa, o build aceita `--secret id=build_ca,src=/path/to/organization-ca-bundle.pem`, sem desativar a validação TLS ou gravar o certificado de build na imagem. A confiança de rede do runtime é configuração separada.
+
+Depois do build, `python scripts/check_container.py` verifica cinco análises locais com entradas controladas, autenticação, usuário sem root e persistência após substituir o contêiner. Cria e remove somente seu volume temporário e seus contêineres. [Resultado local](evidence/backend-container-check.json). Isso é preparação de implantação, sem alegação de backend público ativo.

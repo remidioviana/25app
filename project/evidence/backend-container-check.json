@@ -1,0 +1,31 @@
+{
+  "scope": "Disposable local container, controlled inputs, no provider inference; not hosted deployment or device acceptance",
+  "base_source_commit": "aa8a698595f1bbbfcb034bb80e3a7429b579bc59",
+  "dockerfile_sha256": "aac7ab80850fceac75c6337db29db359e01186bce79856f460c78749ae28790b",
+  "image_id": "sha256:085452af03e54c68264ed61751291c3c173e901c3a86a50c3ab3ca3668bb2f8f",
+  "apps": [
+    {
+      "id": "himayah",
+      "local_run_completed": true
+    },
+    {
+      "id": "iqamah",
+      "local_run_completed": true
+    },
+    {
+      "id": "istithmar",
+      "local_run_completed": true
+    },
+    {
+      "id": "munagasah",
+      "local_run_completed": true
+    },
+    {
+      "id": "sahil",
+      "local_run_completed": true
+    }
+  ],
+  "nonroot_user_verified": true,
+  "authentication_verified": true,
+  "volume_survives_container_replacement": true
+}

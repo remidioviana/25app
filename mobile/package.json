@@ -40,7 +40,8 @@
     "check:variants": "node scripts/check-variants.cjs",
     "variant": "node scripts/variant.cjs",
     "export:native": "expo export --platform android --platform ios",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "export:first-five": "node scripts/export-first-five.cjs"
   },
   "private": true
 }

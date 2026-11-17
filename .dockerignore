@@ -1,0 +1,11 @@
+**
+!Dockerfile
+!requirements-agentic.txt
+!requirements-documents.txt
+!*.py
+!index.html
+!sw.js
+!agents/
+!agents/**
+!public/
+!public/**
