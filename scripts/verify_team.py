@@ -153,6 +153,7 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
                     row['completed_role_details']=[{'role':e['phase'],'provider_reported_model':e['detail'].get('usage',{}).get('provider_reported_model'),
                         'response_contract':e['detail'].get('usage',{}).get('response_contract'),
                         'structured_generation_retries':e['detail'].get('usage',{}).get('structured_generation_retries',0),
+                        'structured_delivery_recovery':e['detail'].get('usage',{}).get('structured_delivery_recovery',False),
                         'structured_generation_retry_reason':e['detail'].get('usage',{}).get('structured_generation_retry_reason'),'reported_total_tokens':e['detail'].get('usage',{}).get('total_tokens',0)} for e in role_events]
                     row['reported_total_tokens']=sum(e['detail'].get('usage',{}).get('total_tokens',0) for e in role_events)
                     row['usage_scope']='accepted role results only; failed requests may consume additional quota'

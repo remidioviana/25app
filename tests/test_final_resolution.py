@@ -85,3 +85,38 @@ class FinalTransportTests(unittest.TestCase):
   response=self.response();response['usage']['provider_reported_model']=provider.FAST_MODEL
   with patch.object(provider,'respond',return_value=response):
    with self.assertRaisesRegex(ValueError,'not produced'):advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')
+
+class FinalDeliveryRecoveryTests(unittest.TestCase):
+ def json_failure(self):return provider.ProviderFailure([400],['json_validate_failed'])
+ def tool_response(self,name='deliver_role_result'):
+  value={'outcome':'inconclusive','draft':{'summary':'Bounded final answer','claims':[],'next_steps':[]},'questions':[],'limitations':['Missing evidence']}
+  return {'output':[{'type':'function_call','name':name,'arguments':json.dumps(value)}],
+          'usage':{'provider_reported_model':provider.AUDIT_MODEL,'total_tokens':7,'response_contract':'tools'}}
+ def test_same_final_model_can_recover_delivery_without_relaxing_validation(self):
+  with patch.object(provider,'respond',side_effect=[self.json_failure(),self.json_failure(),self.tool_response()]) as calls,patch('advanced.time.sleep') as pause:
+   value,usage=advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')
+  self.assertEqual(value['outcome'],'inconclusive');self.assertEqual(calls.call_count,3)
+  self.assertTrue(all(c.kwargs['model_override']==provider.AUDIT_MODEL and c.kwargs['allow_fallback'] is False for c in calls.call_args_list))
+  self.assertEqual(calls.call_args.kwargs['required_tool'],'deliver_role_result')
+  self.assertNotIn('No tools are available',calls.call_args.args[0][0]['content'])
+  self.assertTrue(usage['structured_delivery_recovery']);self.assertEqual(usage['structured_generation_retries'],2)
+  self.assertEqual(sum(c.args[0] for c in pause.call_args_list),60)
+ def test_quota_stops_recovery_before_any_alternative_delivery(self):
+  with patch.object(provider,'respond',side_effect=[self.json_failure(),provider.ProviderFailure([401,429],['rate_limit_exceeded'])]) as calls,patch('advanced.time.sleep') as pause:
+   with self.assertRaises(provider.ProviderFailure):advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')
+  self.assertEqual(calls.call_count,2);pause.assert_not_called()
+ def test_unauthorized_delivery_function_is_rejected(self):
+  with patch.object(provider,'respond',side_effect=[self.json_failure(),self.json_failure(),self.tool_response('unauthorized_action')]),patch('advanced.time.sleep'):
+   with self.assertRaisesRegex(ValueError,'Invalid structured response'):advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')
+ def test_cancellation_during_cooldown_prevents_another_provider_call(self):
+  check=unittest.mock.Mock(side_effect=[None,RuntimeError('controlled cancellation')]);token=advanced.ROLE_CHECK.set(check)
+  try:
+   with patch.object(provider,'respond',side_effect=[self.json_failure(),self.json_failure()]) as calls,patch('advanced.time.sleep'):
+    with self.assertRaisesRegex(RuntimeError,'controlled cancellation'):advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')
+   self.assertEqual(calls.call_count,2)
+  finally:advanced.ROLE_CHECK.reset(token)
+
+ def test_alternative_delivery_still_rejects_an_invalid_final_schema(self):
+  response=self.tool_response();value=json.loads(response['output'][0]['arguments']);value['outcome']='approved';response['output'][0]['arguments']=json.dumps(value)
+  with patch.object(provider,'respond',side_effect=[self.json_failure(),self.json_failure(),response]),patch('advanced.time.sleep'):
+   with self.assertRaises(ValueError):advanced.role('critic',advanced.FINAL_RESPONSE,{},'Finalize')

@@ -5,13 +5,17 @@ Each role is a separate bounded model call, not an unrestricted external-action 
 import json
 import copy
 import os
+import time
 from typing import TypedDict
+from contextvars import ContextVar
 import storage as db
 import retrieval
 import source_tools
 import model_provider
 from domain_tools import TOOLS
 from validation import validate
+
+ROLE_CHECK=ContextVar('role_check',default=lambda:None)
 
 
 def available():
@@ -76,6 +80,20 @@ def report_policy(spec,planning=False):
     return spec['instructions'].replace('Execute the domain tool before finalizing.',replacement)
 
 
+def generation_error_code(error):
+    if (not error.statuses or error.statuses[-1]!=400
+        or any(status not in (401,403,400) for status in error.statuses)):
+        return None
+    return next((code for code in ('json_validate_failed','tool_use_failed') if code in error.codes),None)
+
+
+def delivered_role_value(response,name):
+    calls=[x for x in response.get('output',[]) if x.get('type')=='function_call']
+    if len(calls)!=1 or calls[0].get('name')!='deliver_role_result':
+        raise ValueError('Invalid structured response for role '+name)
+    return json.loads(calls[0]['arguments'])
+
+
 def role(name,schema,context,instructions):
     terminal=schema is FINAL_RESPONSE
     model=model_provider.AUDIT_MODEL if terminal else model_provider.role_models()[name]
@@ -89,33 +107,48 @@ def role(name,schema,context,instructions):
     generation_retries=0
     retry_reason=None
     initial_statuses=[]
+    delivery_recovery=False
     if structured:
         try:response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,allow_fallback=name!='critic')
         except model_provider.ProviderFailure as exc:
-            retryable=next((code for code in ('json_validate_failed','tool_use_failed') if code in exc.codes),None)
+            retryable=generation_error_code(exc)
             # A terminal 400 belongs to a reached model request even if a previous
             # key was denied. Never regenerate after quota or availability failures.
-            if (not exc.statuses or exc.statuses[-1]!=400 or retryable is None
-                or any(status not in (401,403,400) for status in exc.statuses)):raise
+            if retryable is None:raise
             initial_statuses=list(exc.statuses)
             retry_reason=retryable
             # One explicit report regeneration, never acceptance/execution of failed_generation.
-            response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,max_output_tokens=4096,allow_fallback=False)
             generation_retries=1
-        try:value=json.loads(response['output_text'])
-        except (ValueError,KeyError,TypeError):raise ValueError('Role returned invalid structured JSON.') from None
-        if any(x.get('type')=='function_call' for x in response.get('output',[])):
-            raise ValueError('Role structured output must not contain tool calls.')
+            try:
+                ROLE_CHECK.get()()
+                response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,max_output_tokens=4096,allow_fallback=False)
+            except model_provider.ProviderFailure as second:
+                if not terminal or generation_error_code(second) is None:raise
+                # Same final model, same locally validated schema, one alternative
+                # reporting contract after a full token-window cooldown. No action tool.
+                for _ in range(12):
+                    time.sleep(5)
+                    ROLE_CHECK.get()()
+                tool_messages=[dict(message) for message in messages]
+                tool_messages[0]['content']=messages[0]['content'].replace(suffix,'Return only deliver_role_result; do not attempt other functions.')
+                response=model_provider.respond(tool_messages,
+                    [{'type':'function','name':'deliver_role_result','description':'Structured result for role '+name,'parameters':schema,'strict':False}],
+                    model_override=model,role=name,required_tool='deliver_role_result',max_output_tokens=4096,allow_fallback=False)
+                generation_retries=2;delivery_recovery=True
+        if delivery_recovery:value=delivered_role_value(response,name)
+        else:
+            try:value=json.loads(response['output_text'])
+            except (ValueError,KeyError,TypeError):raise ValueError('Role returned invalid structured JSON.') from None
+            if any(x.get('type')=='function_call' for x in response.get('output',[])):
+                raise ValueError('Role structured output must not contain tool calls.')
     else:
         response=model_provider.respond(messages,
           [{'type':'function','name':'deliver_role_result','description':'Structured result for role '+name,'parameters':schema,'strict':False}],
           model_override=model,role=name,required_tool='deliver_role_result',allow_fallback=name!='critic')
-        calls=[x for x in response.get('output',[]) if x.get('type')=='function_call']
-        if len(calls)!=1 or calls[0].get('name')!='deliver_role_result':raise ValueError('Invalid structured response for role '+name)
-        value=json.loads(calls[0]['arguments'])
+        value=delivered_role_value(response,name)
     validate(value,schema)
     usage=dict(response.get('usage',{}))
-    if structured:usage.update(structured_generation_retries=generation_retries,output_token_limit=4096 if generation_retries else 2200,structured_generation_retry_reason=retry_reason,structured_generation_initial_statuses=initial_statuses,failed_attempt_usage_unavailable=bool(generation_retries))
+    if structured:usage.update(structured_generation_retries=generation_retries,structured_delivery_recovery=delivery_recovery,output_token_limit=4096 if generation_retries else 2200,structured_generation_retry_reason=retry_reason,structured_generation_initial_statuses=initial_statuses,failed_attempt_usage_unavailable=bool(generation_retries))
     if terminal and usage.get('provider_reported_model') not in (None,model_provider.AUDIT_MODEL):
         raise ValueError('Final response was not produced by the requested GPT-OSS120B model.')
     return value,usage
@@ -136,7 +169,9 @@ def run(task,spec,check):
     def ask(name,schema,context,state,instruction):
         checked()
         if state.get('tokens',0)>=30000:raise ValueError('Reported token budget of 30,000 reached')
-        value,usage=role(name,schema,context,instruction)
+        role_token=ROLE_CHECK.set(checked)
+        try:value,usage=role(name,schema,context,instruction)
+        finally:ROLE_CHECK.reset(role_token)
         checked();log(name,{'output':value,'usage':usage})
         return value,{'roles':state.get('roles',[])+[{'role':name,'usage':usage}],
                       'tokens':state.get('tokens',0)+usage.get('total_tokens',0)}
