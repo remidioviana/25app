@@ -265,13 +265,17 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-2-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-live-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
@@ -301,13 +305,17 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-2-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-live-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
@@ -337,8 +345,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-2-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -373,8 +383,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-2-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -409,8 +421,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-2-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
