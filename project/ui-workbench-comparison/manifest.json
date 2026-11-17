@@ -1,0 +1,187 @@
+{
+  "source_commit": "3278b4b3c1f22faf8121fbc1fb7056f015028a73",
+  "checked_at": "2026-11-17T18:02:52.590309+00:00",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "reduced_motion": true,
+  "scope": "Actual Expo Web workbench screens with controlled repository synthetic intake, except the local Nafas screen. No provider inference, current factual/legal acceptance, expert originality approval, physical-device test or release.",
+  "screens": [
+    {
+      "app": "himayah",
+      "file": "himayah.png",
+      "sha256": "dd4253d28e7c0c16dcb3eacffa768c47c2c970188f0b9d7a16ccabd605c42bae",
+      "input_sha256": "d7f5d51ecf3c338368479b787a5bff3bbbef6315afde61e4cad020b6736d71fd",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "iqamah",
+      "file": "iqamah.png",
+      "sha256": "668427ebf8b8b8e9ed89055ec362cb1796f1a1ba27f860f9a319b34851fdcf99",
+      "input_sha256": "2bfcb3a6065c8456d83fb3899d659551c42e598cbefec78528babb753c2e7f83",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "istithmar",
+      "file": "istithmar.png",
+      "sha256": "58369c3b840b36a0ee59da3d0f942068d34c1189aea9c901a0a7b26c6873d961",
+      "input_sha256": "38654ca255dd91fba21e4ac508b13c3c96f152e1971ff51d8329109a9c01df63",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "munagasah",
+      "file": "munagasah.png",
+      "sha256": "1f86a89182fa21b17abe6e9fde6b609ddc54ca80927d0edd8cbb272d4845a574",
+      "input_sha256": "70126494e086bb3155541eef6dbc93395d419b75b6f44282c2050d4e0dc9bebb",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "sahil",
+      "file": "sahil.png",
+      "sha256": "6d4b1f1c7f532d678912d7e2683b306d8ca8d8b03e67588a86954effe0dbefff",
+      "input_sha256": "6a17c3fe6db31e6b15027b5fcb8dee0198eeb9aee69db16016f476c89b949055",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "tawteen",
+      "file": "tawteen.png",
+      "sha256": "7ef8814aff7f10aaba0940305b88df3ba695851418bfab0403e9cd063d079d21",
+      "input_sha256": "2499b378370af9c57482a25a67e03fd27eacf6fbc5832d6fa53aae444b7edb3c",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "adl",
+      "file": "adl.png",
+      "sha256": "4549768e2e79856b0983cae5cc5c7baf92a5380b1af9521405cb78902e05eaf1",
+      "input_sha256": "42d9f9d2cd0f195a859b311d1d83c9fb6165aa40a6d6a6fdd58d3bb018cb9e2b",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "tawassul",
+      "file": "tawassul.png",
+      "sha256": "2904eba5af08ecbba78dbfca8591aed346cbcf242357ad844a88105d0c8c3dc3",
+      "input_sha256": "328d7901df96c8ca8c9ad5bb4d84801c7087f47d6b6bd9bd0c377b4c00ecdad8",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "adab",
+      "file": "adab.png",
+      "sha256": "457c3abe5b755bd30ad1f16a0b1145681cc4acedd825f99d901a8fb302b9c067",
+      "input_sha256": "c0b9ef55296ebeba4b52133fed65089f65625e1838a479b40dabb6d7364c5196",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "khidmah",
+      "file": "khidmah.png",
+      "sha256": "9d38dcca754ffa18b84bf90f70dd8d925c6f93866b8ef3ec016b889f5c552200",
+      "input_sha256": "176764b325b3bc8db39586adc1462a02045381de24ac034eec620b5baf1494e8",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "jomrok",
+      "file": "jomrok.png",
+      "sha256": "799f270d2306a9abd7c3238fec9d611ea89a09b4295ae9717dd731e1e099062c",
+      "input_sha256": "98e2b2960363d1401ab15e4f437dee7766c08e810aabd0239cb7279ada29bb1a",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "khibrat",
+      "file": "khibrat.png",
+      "sha256": "e363ebe3afdca345652bea9c0cd2131c391e22b21ecc41eefc5b1cf073a00238",
+      "input_sha256": "f62f88ef0051f3866ee6a3083b0d817081d9651e4925b6886452ee26c12c1745",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "majlis",
+      "file": "majlis.png",
+      "sha256": "2dc5e1c7a6098faf57fd5602fb3911b47156e42d4a3e591c601a6f541e7be330",
+      "input_sha256": "867ffdc481341494d14a532055a06aec6042b9c63c5f7c49b2db4f2575d1fb91",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "rafiq",
+      "file": "rafiq.png",
+      "sha256": "c7f8a96bf043e221082d1c8ac4e3d2a4c45f45aa12411d02f50c407969943245",
+      "input_sha256": "17db27c754700f043d934e9d3b9500d2a734334118f3bd105a6fdecdb4725fbe",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "sawm",
+      "file": "sawm.png",
+      "sha256": "323ea658b785c43398f28315be3ba165b08ae672b9a487cf1c5807dc9d619a50",
+      "input_sha256": "4507c9f9dfe169b56302644942b7d7bcbe88dfb3682790768599070828b8d4a0",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "mizan",
+      "file": "mizan.png",
+      "sha256": "5e8d3e6448f0d359e574ef410d6bdc5729adecd2fbd69f96a6753f78f786060d",
+      "input_sha256": "c23ba8809e32c3a4a5b43ab64a93cda0c634004a8e0ea6d0dab3081021a304db",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "thawg",
+      "file": "thawg.png",
+      "sha256": "1111e82927a6f18472206eb71178679a217e240f09a330ce98e1d585e5b8a6fc",
+      "input_sha256": "b97de21787a523e3bec73406e41c8f4cefc9003ea3c8af0f12bcd0abad641368",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "manzil",
+      "file": "manzil.png",
+      "sha256": "b30b6e8f12b8ab779a7c70c5de1dcc6c8e6ec4e5baf77d0ee470afb4dfb77bba",
+      "input_sha256": "f6f4017d7cf2b7e49309c69edaad9313241c54dd1b886eeb25238c4ca89981c6",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "gurbah",
+      "file": "gurbah.png",
+      "sha256": "75a55879d7ae899c795addaffe8945cb713eac5eb41ca1f3e5a0630454e38b84",
+      "input_sha256": "3124e2907ce2847359460cfe17fd0f06920e2478707464cd31e3484d7460cb3d",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "amanah-eco",
+      "file": "amanah-eco.png",
+      "sha256": "8693460a8fdf37181715834f0d21f4d6063a678fe8e7a5938f3304b2b4827616",
+      "input_sha256": "1aebb0ecb5c812d6232c61355c0694c81886999e06b7465482ccccab91043545",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "nafas",
+      "file": "nafas.png",
+      "sha256": "812634841ab4e29b301bd470431705ff19cc417603cee84636ab915b90715d44",
+      "input_sha256": null,
+      "scope": "Local breathing screen; detailed interaction evidence is signature-nafas-browser.json"
+    },
+    {
+      "app": "tadweer",
+      "file": "tadweer.png",
+      "sha256": "c43a4118db31347ccf8f0a8a3b135c5ddf0f3421c4c6ea4694feabf6c86d89f5",
+      "input_sha256": "38bf620726e0764ba42c41f549efd0e33494d4d051d14c182ac5fc998d5bebe7",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "turath",
+      "file": "turath.png",
+      "sha256": "3914e5b4f65cec4d23da50952301ed22bf28752ae47c317813ec4f58ad4a3b93",
+      "input_sha256": "7c8ad89e4c8c28c3bca7784e234eeb8235c503fedcef45721d8ce36eb9ffaee8",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "himam",
+      "file": "himam.png",
+      "sha256": "8f18212fde56651c072da1b2c732e06954d646b3773987cc7429360c68029753",
+      "input_sha256": "81b7f4a18ffcf455962d34d49d451af2983b2413555c2944d5cdcf0fbfe61261",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    },
+    {
+      "app": "hisad",
+      "file": "hisad.png",
+      "sha256": "59fb9d3035b94408d5e134fd94d54fcc80e4a19209d4fcf019d2e30ec21f200e",
+      "input_sha256": "5f4da7c9b7866130fdcd2f25a812ef17e650baf2a1383bf1274b6a73e7247c6a",
+      "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
+    }
+  ]
+}

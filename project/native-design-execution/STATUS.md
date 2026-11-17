@@ -17,3 +17,7 @@ All 25 final acceptance gates remain open for the full requested standard. Nativ
 ## Verification
 
 251 Python tests and 86 mobile tests passed, including new exact-ratio overflow, changed ranking, zero-horizon, invalid visa input, explicit-zero tax and export tests. TypeScript typecheck, ESLint and all 25 variant configurations passed. The dedicated actual-browser test verifies horizon changes, chart point selection, Arabic digits, invalid input, scenario saving, separate tax input, downloaded JSON, normal crossfade and live reduced-motion changes, with no console warnings/errors. No provider inference or physical-device measurement was performed.
+
+The new 25-app comparison is `project/ui-workbench-comparison/index.html`, captured at source revision `3278b4b3c1f22faf8121fbc1fb7056f015028a73`. Its manifest records identical 390 × 844 dimensions, reduced motion, individual screenshot hashes and synthetic case provenance. The running browser audit passed all 25. The wall exposes the current workbenches, including repetition that still needs redesign; it is not an approval of the portfolio.
+
+GitHub Code checks passed for this code revision: https://github.com/remidioviana/25app/actions/runs/44143436345 . The prior Iqamah first-five native export also passed (run 44141188730); the new Istithmar export is tracked separately as run 44143462960.

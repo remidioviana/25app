@@ -1,5 +1,11 @@
 {
-  "checked_at": "2026-11-17T17:50:48.338480+00:00",
+  "checked_at": "2026-11-17T18:02:52.590309+00:00",
+  "source_commit": "3278b4b3c1f22faf8121fbc1fb7056f015028a73",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "reduced_motion": true,
   "scope": "Controlled browser transport and synthetic inputs, not native-device, factual/legal or real-provider acceptance",
   "apps": [
     {
@@ -225,6 +231,5 @@
       "external_actions": 0,
       "console_warnings_and_errors": []
     }
-  ],
-  "source_commit": "73c5a2c047b3098fb24d31564b15fc4ad0415f3f"
+  ]
 }
