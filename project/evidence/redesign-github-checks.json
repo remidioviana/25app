@@ -1,0 +1,37 @@
+{
+  "scope": "Code/container checks and Android/iOS JavaScript+asset exports for all 25 variants; not signed binaries, device acceptance or deployment",
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 44089234333,
+      "headSha": "ffd28b05b0956e27e69aa7de50137c4d67dd8186",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44089234333",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44089234279,
+      "headSha": "ffd28b05b0956e27e69aa7de50137c4d67dd8186",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44089234279",
+      "workflowName": "Backend container checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44089276589,
+      "headSha": "ffd28b05b0956e27e69aa7de50137c4d67dd8186",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44089276589",
+      "workflowName": "Export first-five mobile bundles"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44089269386,
+      "headSha": "ffd28b05b0956e27e69aa7de50137c4d67dd8186",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44089269386",
+      "workflowName": "Export mobile portfolio lots"
+    }
+  ]
+}
