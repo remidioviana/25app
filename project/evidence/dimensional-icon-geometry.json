@@ -1,0 +1,105 @@
+{
+  "scope": "PNG alpha, dimensions, provenance hashes and core-silhouette geometry only. Not physical launcher inspection, small-size expert approval, Icon Composer layering or a signed build.",
+  "apps": [
+    {
+      "app": "himayah",
+      "files": {
+        "icon": {
+          "sha256": "1e90986c0731e24200dc092c1b0529d23397659df26828f839d9796cfd5be2d6",
+          "width": 1254,
+          "height": 1254
+        },
+        "android_foreground": {
+          "sha256": "93af3a48922de20e01dc225a50c994e6d13b71ca6178b0d96609e18bee16a1a2",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 1,
+          "core_pixels": 234688,
+          "fraction_inside_66dp": 1,
+          "fraction_inside_72dp": 1,
+          "maximum_core_radius_fraction": 0.28220258572120277
+        }
+      }
+    },
+    {
+      "app": "iqamah",
+      "files": {
+        "icon": {
+          "sha256": "d8a5ea59799a92b8c847e999cae1f99fe3f2de06158f184f97c388d7b7f64717",
+          "width": 1254,
+          "height": 1254
+        },
+        "android_foreground": {
+          "sha256": "0040dc3b25f4ef0b35ae8ce0a81c1e856773653e37afaadeba2d6ac1fb020c85",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 0,
+          "core_pixels": 167924,
+          "fraction_inside_66dp": 1,
+          "fraction_inside_72dp": 1,
+          "maximum_core_radius_fraction": 0.30506587779978095
+        }
+      }
+    },
+    {
+      "app": "istithmar",
+      "files": {
+        "icon": {
+          "sha256": "3cbd311238f5006d7f7984cd6401fee980ce8c31e5a416a41242e528508d44c9",
+          "width": 1254,
+          "height": 1254
+        },
+        "android_foreground": {
+          "sha256": "10ac4d7a10e965ff89a3facddf90e38c1024fbdafca20fd7e765621b65fdfcfe",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 0,
+          "core_pixels": 202929,
+          "fraction_inside_66dp": 1,
+          "fraction_inside_72dp": 1,
+          "maximum_core_radius_fraction": 0.2691461396588912
+        }
+      }
+    },
+    {
+      "app": "munagasah",
+      "files": {
+        "icon": {
+          "sha256": "450870bb28b8b9f2d5d2e18c1181e066342d5f58d8a0dff46eb8dd73bbb95949",
+          "width": 1254,
+          "height": 1254
+        },
+        "android_foreground": {
+          "sha256": "e23574d1dd4b99545f9c4b4a45fe12cdc13d42d47cb6b9d9753862c378a7f01e",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 0,
+          "core_pixels": 279453,
+          "fraction_inside_66dp": 0.9995992170418639,
+          "fraction_inside_72dp": 1,
+          "maximum_core_radius_fraction": 0.3090916703279009
+        }
+      }
+    },
+    {
+      "app": "sahil",
+      "files": {
+        "icon": {
+          "sha256": "132ece976f876d9c98b470f1dea85b4d92d6eb8288fa107406cd507d35cd9c4a",
+          "width": 1254,
+          "height": 1254
+        },
+        "android_foreground": {
+          "sha256": "13c6ab15872c6392714f5efa67943e52878702afcf9eae46f280a58a475d004a",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 1,
+          "core_pixels": 87165,
+          "fraction_inside_66dp": 1,
+          "fraction_inside_72dp": 1,
+          "maximum_core_radius_fraction": 0.27049660425374994
+        }
+      }
+    }
+  ]
+}

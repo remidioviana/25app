@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-17T19:02:30.818857+00:00",
+  "scope": "Actual Web solid fallback with five drawer navigation families; not native Liquid Glass, Android elevation, installed icons or a physical-device accessibility test.",
+  "apps": [
+    {
+      "app": "himayah",
+      "tab_count": 5,
+      "computed_solid_background": "rgb(33, 41, 64)",
+      "can_navigate_and_close": true,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "munagasah",
+      "tab_count": 5,
+      "computed_solid_background": "rgb(52, 50, 49)",
+      "can_navigate_and_close": true,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "jomrok",
+      "tab_count": 5,
+      "computed_solid_background": "rgb(232, 233, 234)",
+      "can_navigate_and_close": true,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "majlis",
+      "tab_count": 5,
+      "computed_solid_background": "rgb(235, 225, 227)",
+      "can_navigate_and_close": true,
+      "console_warnings_and_errors": []
+    },
+    {
+      "app": "turath",
+      "tab_count": 5,
+      "computed_solid_background": "rgb(238, 232, 222)",
+      "can_navigate_and_close": true,
+      "console_warnings_and_errors": []
+    }
+  ]
+}

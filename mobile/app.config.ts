@@ -6,11 +6,14 @@ export default ({config}:ConfigContext):ExpoConfig=>{
  const brands=JSON.parse(fs.readFileSync(path.join(__dirname,'../brand-assets/brands.json'),'utf8'));
  const brand=brands.find((item:{id:string})=>item.id===id);if(!brand)throw Error('Unknown AGENT_ID');
  const identity=JSON.parse(fs.readFileSync(path.join(__dirname,'src/experience/identities.json'),'utf8'))[id];
+ const dimensional=JSON.parse(fs.readFileSync(path.join(__dirname,'../brand-assets/dimensional-icons.json'),'utf8')).icons[id];
+ const icon=dimensional?`./assets/variants/${id}/dimensional-icon.png`:`./assets/variants/${id}/icon.png`;
+ const foreground=dimensional?`./assets/variants/${id}/adaptive-foreground.png`:icon;
  const prefix=process.env.APP_ID_PREFIX||'com.agenticmobile';
  if(!/^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)+$/.test(prefix))throw Error('Invalid APP_ID_PREFIX');
  return {...config,name:brand.name,slug:'25app',owner:'remidiovianas-team',version:'6.0.0',orientation:'portrait',userInterfaceStyle:identity.appearance,scheme:id+'-mobile',
  ios:{supportsTablet:false,bundleIdentifier:prefix+'.'+id.replaceAll('-','')},
- android:{package:prefix+'.'+id.replaceAll('-',''),adaptiveIcon:{foregroundImage:`./assets/variants/${id}/icon.png`,backgroundColor:identity.bg}},
+ android:{package:prefix+'.'+id.replaceAll('-',''),adaptiveIcon:{foregroundImage:foreground,backgroundColor:identity.bg}},
  plugins:[['expo-font',{fonts:[`./assets/typefaces/${id}.ttf`,`./assets/typefaces/${id}-arabic.ttf`]}],'expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:`./assets/variants/${id}/splash.png`,imageWidth:390,resizeMode:'contain',backgroundColor:identity.bg}]],
- extra:{agentId:id,standalone:true,eas:{projectId:'b2d48b85-5e43-4a6f-8cdb-826487e7b03e'}},icon:`./assets/variants/${id}/icon.png`,web:{bundler:'metro',output:'single',favicon:`./assets/variants/${id}/icon.png`}};
+ extra:{agentId:id,standalone:true,eas:{projectId:'b2d48b85-5e43-4a6f-8cdb-826487e7b03e'}},icon,web:{bundler:'metro',output:'single',favicon:icon}};
 };
