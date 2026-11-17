@@ -1,0 +1,18 @@
+{
+  "validated_source_commit": "5248511c4d846b3c5c973d36b9948a2a0194b470",
+  "branch": "main",
+  "python_tests_passed": 210,
+  "portfolio_consistency_passed": true,
+  "mobile_tests_passed": 48,
+  "mobile_typecheck_passed": true,
+  "mobile_lint_passed": true,
+  "variant_configurations_passed": 25,
+  "tracked_credential_pattern_scan": "passed; values never printed",
+  "provider_inference_performed": false,
+  "included_changes": {
+    "automatic_review": "Bounded critic revision and follow-up retrieval; unresolved outcomes still require review. Qwen Preview evaluation is opt-in; default production roles remain unchanged.",
+    "groq_contingency": "Catalogue-eligible pool with quota/unavailability routing and preserved response contracts. Strict identity proof disables substitution.",
+    "documentation": "Deployment prerequisites, synthetic evidence limits, import and export traceability."
+  },
+  "scope": "Local regression verification; not primary acceptance, device verification, deployment or release."
+}
