@@ -26,6 +26,29 @@ test('native API client completes all 25 agents against actual authenticated Pyt
   const found=await api.searchEvidence('himayah','Evidence');assert.equal(found.matches.length,1);assert.equal(found.matches[0].text,'Evidence for mobile');assert.equal(found.matches[0].source,'test');assert.match(found.matches[0].citation,/:0$/);
   assert.equal((await api.searchEvidence('mizan','Evidence')).matches.length,0);
   assert.equal((await api.searchEvidence('himayah','nonexistentterm')).matches.length,0);
+  for(const id of ['himayah','iqamah','istithmar','munagasah','sahil']){
+   const bytes=Buffer.from('Controlled imported document for '+id+' receipttrace');
+   const original=bytes.toString();const text=id==='iqamah'?original+' edited':original;
+   const saved=await api.addDocument(id,'Controlled document',text,'controlled fixture','',{filename:'input.txt',base64:bytes.toString('base64')});
+   const document=(await api.documents(id)).documents.find(x=>x.id===saved.id);
+   assert.ok(document?.import_provenance,id+' import receipt missing');
+   const proof=document.import_provenance;
+   assert.equal(proof.raw_sha256,createHash('sha256').update(bytes).digest('hex'));
+   assert.equal(proof.saved_text_sha256,createHash('sha256').update(text).digest('hex'));
+   assert.equal(proof.text_edited,id==='iqamah');assert.equal(proof.authenticity_verified,false);
+   const matches=(await api.searchEvidence(id,'receipttrace')).matches;
+   assert.ok(matches.some(x=>x.doc===saved.id),id+' imported document not retrieved');
+   const agent=agents.find(x=>x.id===id)!;
+   let run=await api.start(id,'receipttrace',agent.example,'local',true,'import-trace-'+id);
+   for(let attempt=0;attempt<100&&['queued','running'].includes(run.status);attempt++){await wait(20);run=await api.run(run.id)}
+   assert.equal(run.status,'completed',run.error||id);
+   const report=await api.exportMarkdown(run.id);
+   assert.ok(report.includes(proof.raw_sha256),id+' receipt missing from export');
+   assert.ok(report.includes('"authenticity_verified": false'));
+  }
+  const before=(await api.documents('himayah')).documents.length;
+  await assert.rejects(api.addDocument('himayah','Invalid','text','controlled','',{filename:'bad.txt',base64:'!'}),e=>e instanceof ApiError&&e.status===400);
+  assert.equal((await api.documents('himayah')).documents.length,before);
   const invalid=new AgentAPI(`http://127.0.0.1:${port}`,'wrong-token',true);await assert.rejects(invalid.agents(),e=>e instanceof ApiError&&e.status===401);
  }finally{child.kill();await new Promise(resolve=>child.once('exit',resolve));fs.rmSync(temp,{recursive:true,force:true})}
 });

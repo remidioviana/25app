@@ -65,7 +65,7 @@ class Handler(BaseHTTPRequestHandler):
         if method=='POST':
             if self.headers.get('Content-Type','').split(';')[0]!='application/json': return self.reply({'error':'Send application/json'},415)
             n=int(self.headers.get('Content-Length','0'))
-            maximum=2_900_000 if path=='/api/import/preview' else (900000 if path.endswith('/documents') else 400000)
+            maximum=3_800_000 if path.endswith('/documents') else (2_900_000 if path=='/api/import/preview' else 400000)
             if not 0<n<=maximum: return self.reply({'error':'Empty body or route size limit exceeded'},413)
             try: data=json.loads(self.rfile.read(n),parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Invalid JSON number')))
             except (json.JSONDecodeError,UnicodeDecodeError): raise ValueError('Invalid JSON')
@@ -130,7 +130,17 @@ class Handler(BaseHTTPRequestHandler):
                     if data['as_of']:
                         from datetime import date
                         date.fromisoformat(data['as_of'])
-                    return self.reply(db.ingest(agent,**{k:data[k] for k in ('title','text','source','as_of')}),201)
+                    receipt=None
+                    if 'import_file' in data:
+                        upload=data['import_file']
+                        if not isinstance(upload,dict):raise ValueError('Invalid import file')
+                        extracted=document_import.extract(upload.get('filename'),upload.get('base64'))
+                        import hashlib
+                        receipt=extracted['provenance']|{'filename':upload['filename'],
+                            'saved_text_sha256':hashlib.sha256(data['text'].encode('utf-8')).hexdigest(),
+                            'text_edited':data['text']!=extracted['text'],'warnings':extracted['warnings'],
+                            'scope':'Saved import receipt; original bytes are not retained.'}
+                    return self.reply(db.ingest(agent,**{k:data[k] for k in ('title','text','source','as_of')},import_receipt=receipt),201)
             if action=='index' and method=='POST':
                 return self.reply(retrieval.index(agent))
             if action=='search' and method=='POST':

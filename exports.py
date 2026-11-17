@@ -40,7 +40,7 @@ def claim_evidence_links(result):
             passage={'citation':citation,'recorded_passage_found':item is not None}
             if item is not None:
                 passage.update({key:item[key] for key in
-                    ('doc','chunk','title','source','as_of','retrieved_at','text') if key in item})
+                    ('doc','chunk','title','source','as_of','retrieved_at','text','import_provenance') if key in item})
             if item is not None and isinstance(item.get('text'),str):
                 passage['passage_sha256']=hashlib.sha256(item['text'].encode('utf-8')).hexdigest()
             passages.append(passage)
@@ -78,7 +78,9 @@ def markdown(run):
     lines+=json_section('Review status',{'model_decision':result.get('decision','not_recorded'),
       'human_review':run.get('review','not_recorded')})
     lines+=['Model review is not factual certification. Citation IDs link recorded evidence; they do not establish support or freshness.','', '## Evidence','']
-    for e in result.get('evidence',[]):lines += [f"### {e['title']}",f"Reference: {e['citation']} | Source: {e['source']} | Supplied publication date: {e['as_of'] or 'not recorded'} | Retrieved: {e.get('retrieved_at') or 'not recorded'}",'',e['text'],'']
+    for e in result.get('evidence',[]):
+        lines += [f"### {e['title']}",f"Reference: {e['citation']} | Source: {e['source']} | Supplied publication date: {e['as_of'] or 'not recorded'} | Retrieved: {e.get('retrieved_at') or 'not recorded'}",'',e['text'],'']
+        if e.get('import_provenance'):lines+=json_section('Recorded import receipt',e['import_provenance'])
     lines+=['## Limits','',*['- '+x for x in result.get('limits',[])],'']
     if result.get('external_actions_performed') is False:
         lines+=['External public sources were read; no external write was performed.' if result.get('external_reads_performed') else 'No external action was performed.','']

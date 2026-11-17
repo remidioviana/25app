@@ -44,6 +44,7 @@ def init():
           at TEXT NOT NULL,phase TEXT NOT NULL,detail TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS documents(id TEXT PRIMARY KEY,agent TEXT NOT NULL,title TEXT NOT NULL,
           source TEXT NOT NULL,as_of TEXT NOT NULL,created TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS document_imports(doc TEXT PRIMARY KEY REFERENCES documents(id) ON DELETE CASCADE,receipt TEXT NOT NULL);
         CREATE VIRTUAL TABLE IF NOT EXISTS chunks USING fts5(doc UNINDEXED,agent UNINDEXED,chunk UNINDEXED,text,tokenize='unicode61 remove_diacritics 2');
         CREATE TABLE IF NOT EXISTS public_source_versions(agent TEXT NOT NULL,source_id TEXT NOT NULL,
           doc TEXT NOT NULL REFERENCES documents(id) ON DELETE CASCADE,text_hash TEXT NOT NULL,
@@ -89,20 +90,26 @@ def memory(agent):
     with connect() as c:
         return [dict(x)|{'result':json.loads(x['result'])} for x in c.execute("SELECT id,goal,result FROM runs WHERE agent=? AND status='completed' AND review='accepted' AND example=0 ORDER BY created DESC LIMIT 3",(agent,))]
 
-def ingest(agent,title,text,source,as_of):
+def ingest(agent,title,text,source,as_of,import_receipt=None):
     doc=str(uuid.uuid4()); chunks=[]
     # Fixed windows with overlap; stable citation IDs. No parsing executable formats.
     for start in range(0,len(text),1000): chunks.append(text[start:start+1200])
     with connect() as c:
         c.execute('INSERT INTO documents VALUES(?,?,?,?,?,?)',(doc,agent,title,source,as_of,now()))
+        if import_receipt is not None:c.execute('INSERT INTO document_imports VALUES(?,?)',(doc,encode(import_receipt)))
         c.executemany('INSERT INTO chunks(doc,agent,chunk,text) VALUES(?,?,?,?)',[(doc,agent,i,t) for i,t in enumerate(chunks)])
     return {'id':doc,'chunks':len(chunks),'title':title}
 
+def decode_import_receipt(item):
+    receipt=item.pop('_import_receipt',None)
+    if receipt is not None:item['import_provenance']=json.loads(receipt)
+    return item
+
 def documents(agent):
     with connect() as c:
-        return [dict(x) for x in c.execute('''SELECT documents.*,
+        return [decode_import_receipt(dict(x)) for x in c.execute('''SELECT documents.*,i.receipt AS _import_receipt,
           CASE WHEN v.is_current=1 THEN 'current' WHEN v.is_current=0 THEN 'superseded' ELSE NULL END AS source_version_state
-          FROM documents LEFT JOIN public_source_versions v ON v.doc=documents.id AND v.agent=documents.agent
+          FROM documents LEFT JOIN document_imports i ON i.doc=documents.id LEFT JOIN public_source_versions v ON v.doc=documents.id AND v.agent=documents.agent
           WHERE documents.agent=? ORDER BY created DESC''',(agent,))]
 
 def delete_document(agent,doc):
@@ -118,13 +125,14 @@ def search(agent,query):
     expression=' OR '.join('"'+t.replace('"','""')+'"' for t in tokens)
     with connect() as c:
         rows=c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text,documents.title,documents.source,documents.as_of,
-        v.fetched_at AS retrieved_at,bm25(chunks) AS rank
+        v.fetched_at AS retrieved_at,i.receipt AS _import_receipt,bm25(chunks) AS rank
         FROM chunks JOIN documents ON documents.id=chunks.doc
+        LEFT JOIN document_imports i ON i.doc=chunks.doc
         LEFT JOIN public_source_versions v ON v.doc=chunks.doc AND v.agent=chunks.agent
         WHERE chunks MATCH ? AND chunks.agent=?
         AND NOT EXISTS (SELECT 1 FROM public_source_versions v WHERE v.doc=chunks.doc AND v.agent=chunks.agent AND v.is_current=0)
         ORDER BY rank LIMIT 6''',(expression,agent))
-        return [dict(x)|{'citation':x['doc']+':'+str(x['chunk'])} for x in rows]
+        return [decode_import_receipt(dict(x))|{'citation':x['doc']+':'+str(x['chunk'])} for x in rows]
 
 def current_evidence(agent,evidence):
     """Retain only existing, same-app documents that have not been superseded."""

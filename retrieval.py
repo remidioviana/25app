@@ -48,9 +48,9 @@ def search(agent,query,semantic=False):
     init();model=os.environ.get('OPENAI_EMBEDDING_MODEL')
     if not model: raise ValueError('Semantic search requires an embedding model')
     with db.connect() as c:
-        rows=[dict(x) for x in c.execute('''SELECT e.vector,e.text_hash,e.doc,e.chunk,c.text,d.title,d.source,d.as_of,v.fetched_at AS retrieved_at
+        rows=[db.decode_import_receipt(dict(x)) for x in c.execute('''SELECT e.vector,e.text_hash,e.doc,e.chunk,c.text,d.title,d.source,d.as_of,v.fetched_at AS retrieved_at,i.receipt AS _import_receipt
           FROM embeddings e JOIN chunks c ON c.doc=e.doc AND c.chunk=e.chunk
-          JOIN documents d ON d.id=e.doc LEFT JOIN public_source_versions v ON v.doc=e.doc AND v.agent=e.agent
+          JOIN documents d ON d.id=e.doc LEFT JOIN document_imports i ON i.doc=e.doc LEFT JOIN public_source_versions v ON v.doc=e.doc AND v.agent=e.agent
           WHERE e.agent=? AND c.agent=? AND d.agent=? AND e.model=?
           AND NOT EXISTS (SELECT 1 FROM public_source_versions old WHERE old.doc=e.doc AND old.agent=e.agent AND old.is_current=0)
           LIMIT 10000''',(agent,agent,agent,model))]

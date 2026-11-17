@@ -36,10 +36,16 @@ A contingência de modelos foi publicada separadamente e validada por consulta a
 
 O índice exportado preserva `doc` e `chunk` quando registrados e inclui SHA-256 do texto UTF-8 exato de cada passagem. O hash identifica o trecho exportado; não certifica o documento original nem sua autenticidade. O registro [de CI](evidence/github-code-checks.json) foi atualizado para a execução 43935644962, no commit 3500354 (207 testes Python), anterior a esta ampliação.
 
-A prévia de importação também retorna hashes SHA-256 separados dos bytes recebidos e do texto extraído, tamanho original e autenticidade não verificada. Esse recibo pertence à prévia: o endpoint não guarda o arquivo original e o recibo ainda não é anexado automaticamente ao documento salvo pelo cliente. Não constitui aceite com documento autêntico.
+A prévia de importação também retorna hashes SHA-256 separados dos bytes recebidos e do texto extraído, tamanho original e autenticidade não verificada. O endpoint de prévia não guarda o arquivo original. Ao salvar pelo cliente mobile, o servidor agora recalcula o recibo e o anexa ao documento, conforme o incremento descrito abaixo. Não constitui aceite com documento autêntico.
 
 ## Nova ordem verificada no Munagasah
 
 O [run 44007989450](https://github.com/remidioviana/25app/actions/runs/44007989450), commit 2ccd295, concluiu o diagnóstico sintético com planner GPT-OSS20B, specialist Qwen3.8-27B Preview e critic GPT-OSS120B, todos identificados pelo provedor. Foram três chamadas, 6.304 tokens reportados, quatro passagens recuperadas e uma citada; cálculo recomputado e nenhuma escrita externa. O resultado foi `reviewed_by_model`, sem `requires_human_review`. [Evidência](evidence/groq-120b-last-munagasah-verified.json).
 
 A resposta foi aceita pelo 120B na primeira auditoria; o ramo adicional de resolução de pendências foi testado com transporte/modelos controlados, não exercitado neste run live. Os outros quatro apps ainda têm evidências da ordem anterior. O caso é sintético e usa a página informativa eSupply, sem demonstrar aceite de edital autêntico, dispositivo, implantação ou release. A tentativa 44007434045 com 401/400 continua preservada como falha anterior.
+
+## Importação salva e exportação: incremento comum aos cinco
+
+O cliente mobile conserva o arquivo selecionado até salvar e o servidor reextrai os bytes recebidos para calcular o recibo, sem confiar em hashes declarados pelo cliente. O documento salvo registra hashes do arquivo, texto extraído e texto salvo, além de indicar edição após extração. O recibo acompanha buscas BM25/semânticas e relatórios Markdown; é removido com o documento e isolado por identidade. Os bytes originais não são guardados.
+
+O teste do cliente mobile contra o backend autenticado percorre importação, salvamento, recuperação, execução local e exportação separadamente para Himayah, Iqamah, Istithmar, Munagasah e Sahil. São documentos controlados e execução local, sem nova inferência; isso não equivale a validação em aparelho, documento autêntico ou aceite primário. A UI foi mantida, acrescentando apenas a indicação de edição/importação. O objetivo de entrega continua sendo esses cinco apps, não cinco modelos adicionais.

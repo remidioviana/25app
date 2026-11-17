@@ -1,4 +1,4 @@
-import type {Agent,Config,Run,RunSummary,Document,Schedule,Intake,Mode,Json,EvidenceSearchResult,PublicSourcesResult,PublicSourceRefresh} from './types';
+import type {Agent,Config,Run,RunSummary,Document,ImportFile,Schedule,Intake,Mode,Json,EvidenceSearchResult,PublicSourcesResult,PublicSourceRefresh} from './types';
 
 export class ApiError extends Error {constructor(message:string,public status:number){super(message);this.name='ApiError'}}
 export function serverURL(raw:string,allowLocalHttp=false):string {
@@ -41,7 +41,7 @@ export class AgentAPI {
     return this.request<EvidenceSearchResult>(`/api/agents/${encodeURIComponent(agent)}/search`,'POST',{query:normalized,semantic:false},{},signal);
   }
   preview(filename:string,base64:string){return this.request<{text:string;warnings:string[]}>('/api/import/preview','POST',{filename,base64})}
-  addDocument(agent:string,title:string,text:string,source:string,as_of:string){return this.request<{id:string}>(`/api/agents/${encodeURIComponent(agent)}/documents`,'POST',{title,text,source,as_of})}
+  addDocument(agent:string,title:string,text:string,source:string,as_of:string,importFile?:ImportFile){return this.request<{id:string}>(`/api/agents/${encodeURIComponent(agent)}/documents`,'POST',{title,text,source,as_of,...(importFile?{import_file:importFile}:{})})}
   schedules(agent:string){return this.request<{schedules:Schedule[]}>(`/api/agents/${encodeURIComponent(agent)}/schedules`)}
   schedule(agent:string,data:unknown){return this.request(`/api/agents/${encodeURIComponent(agent)}/schedules`,'POST',data)}
   disableSchedule(id:string){return this.request(`/api/schedules/${encodeURIComponent(id)}/disable`,'POST',{})}
