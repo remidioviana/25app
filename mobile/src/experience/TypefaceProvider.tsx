@@ -4,7 +4,8 @@ import {useFonts} from 'expo-font';
 import {brandId} from '../brand';
 import {typefaces} from './typefaces';
 import {styles as s} from '../theme';
+import identities from './identities.json';
 const Context=createContext<string|undefined>(undefined);
 export function TypefaceProvider({children}:{children:React.ReactNode}){const family='ExperienceDisplay_'+brandId.replaceAll('-','_');const [loaded]=useFonts({[family]:typefaces[brandId]});return <Context.Provider value={loaded?family:undefined}>{children}</Context.Provider>}
 export function useHeadlineFont(){return useContext(Context)}
-export function ExperienceTitle({style,...props}:TextProps){const family=useHeadlineFont();return <Text accessibilityRole="header" {...props} style={[s.title,style,family&&{fontFamily:family,fontWeight:'400'}]}/>}
+export function ExperienceTitle({style,...props}:TextProps){const family=useHeadlineFont();return <Text accessibilityRole="header" {...props} style={[s.title,{fontSize:identities[brandId].headline_size,lineHeight:Math.round(identities[brandId].headline_size*identities[brandId].headline_leading)},style,family&&{fontFamily:family,fontWeight:'400'}]}/>}

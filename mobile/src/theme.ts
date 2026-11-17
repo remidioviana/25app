@@ -1,6 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {brandId} from './brand';
 import {designs} from './experience/designs';
+import identities from './experience/identities.json';
+const typography=identities[brandId];
 export const experience=designs[brandId];
 export const screenEdges:('top'|'bottom')[]=experience.navigation==='drawer'||experience.navigation==='segmented'?[]:['top'];
 export const colors={bg:experience.bg,panel:experience.panel,line:experience.line,accent:experience.accent,text:experience.ink,muted:experience.muted,error:experience.dark?'#FFB4A7':'#B42318'};
@@ -10,7 +12,7 @@ export const styles=StyleSheet.create({
  screen:{flex:1,backgroundColor:colors.bg},scroll:{padding:20,paddingBottom:32,gap:14},row:{flexDirection:'row',alignItems:'center',gap:10,flexWrap:'wrap'},
  top:{paddingHorizontal:20,paddingVertical:16,borderBottomWidth:1,borderColor:colors.line,flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
  title:{fontSize:30,lineHeight:35,fontWeight:'800',color:colors.text,letterSpacing:-.7},h2:{fontSize:21,fontWeight:'700',color:colors.text},h3:{fontSize:16,fontWeight:'700',color:colors.text},
- text:{color:colors.text,fontSize:15,lineHeight:23},muted:{color:colors.muted,fontSize:13,lineHeight:20},label:{color:colors.muted,fontSize:13,marginTop:10,marginBottom:6},
+ text:{color:colors.text,fontSize:typography.body_size,lineHeight:typography.body_leading},muted:{color:colors.muted,fontSize:Math.max(14,typography.body_size-2),lineHeight:typography.body_leading-3},label:{color:colors.muted,fontSize:13,marginTop:10,marginBottom:6},
  card:{borderWidth:1,borderColor:colors.line,backgroundColor:colors.panel,borderRadius:experience.radius,padding:18,marginVertical:5,gap:12},
  input:{backgroundColor:colors.panel,borderWidth:1,borderColor:colors.line,borderRadius:12,padding:13,color:colors.text,fontSize:16,minHeight:48},
  button:{backgroundColor:colors.accent,borderRadius:experience.radius,paddingHorizontal:17,paddingVertical:14,minHeight:48,alignItems:'center',justifyContent:'center'},buttonText:{color:luminance>.179?'#101B16':'#FFFFFF',fontWeight:'700',fontSize:14},

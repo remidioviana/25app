@@ -1,0 +1,503 @@
+{
+  "baseline_commit": "307c7b7a3e9e95c7514c6595f2df642776d056c7",
+  "baseline_findings": [
+    "25 identical masthead symbol/name structures",
+    "one common 16-point bold wordmark treatment",
+    "shared heading size rules despite 25 font files",
+    "seven case-form families and five navigation families",
+    "repeated source and history structures",
+    "one shared press-scale motion with duration variations"
+  ],
+  "baseline_screen_comparisons": [
+    {
+      "screen": "home",
+      "method": "16x16 grayscale difference hash; differences in text length, art, contrast and scroll can confound this; not a layout or aesthetic verdict",
+      "most_similar_pairs": [
+        {
+          "distance_bits": 80,
+          "a": "19-gurbah-home.jpg",
+          "b": "21-nafas-home.jpg"
+        },
+        {
+          "distance_bits": 86,
+          "a": "03-istithmar-home.jpg",
+          "b": "09-adab-home.jpg"
+        },
+        {
+          "distance_bits": 87,
+          "a": "13-majlis-home.jpg",
+          "b": "11-jomrok-home.jpg"
+        },
+        {
+          "distance_bits": 88,
+          "a": "20-amanah-eco-home.jpg",
+          "b": "10-khidmah-home.jpg"
+        },
+        {
+          "distance_bits": 90,
+          "a": "16-mizan-home.jpg",
+          "b": "11-jomrok-home.jpg"
+        },
+        {
+          "distance_bits": 90,
+          "a": "19-gurbah-home.jpg",
+          "b": "25-hisad-home.jpg"
+        },
+        {
+          "distance_bits": 90,
+          "a": "20-amanah-eco-home.jpg",
+          "b": "06-tawteen-home.jpg"
+        },
+        {
+          "distance_bits": 90,
+          "a": "20-amanah-eco-home.jpg",
+          "b": "07-adl-home.jpg"
+        },
+        {
+          "distance_bits": 91,
+          "a": "19-gurbah-home.jpg",
+          "b": "20-amanah-eco-home.jpg"
+        },
+        {
+          "distance_bits": 92,
+          "a": "19-gurbah-home.jpg",
+          "b": "23-turath-home.jpg"
+        }
+      ]
+    },
+    {
+      "screen": "mission",
+      "method": "16x16 grayscale difference hash; differences in text length, art, contrast and scroll can confound this; not a layout or aesthetic verdict",
+      "most_similar_pairs": [
+        {
+          "distance_bits": 53,
+          "a": "02-iqamah-mission.jpg",
+          "b": "05-sahil-mission.jpg"
+        },
+        {
+          "distance_bits": 55,
+          "a": "19-gurbah-mission.jpg",
+          "b": "05-sahil-mission.jpg"
+        },
+        {
+          "distance_bits": 56,
+          "a": "20-amanah-eco-mission.jpg",
+          "b": "10-khidmah-mission.jpg"
+        },
+        {
+          "distance_bits": 60,
+          "a": "23-turath-mission.jpg",
+          "b": "12-khibrat-mission.jpg"
+        },
+        {
+          "distance_bits": 63,
+          "a": "18-manzil-mission.jpg",
+          "b": "17-thawg-mission.jpg"
+        },
+        {
+          "distance_bits": 64,
+          "a": "01-himayah-mission.jpg",
+          "b": "11-jomrok-mission.jpg"
+        },
+        {
+          "distance_bits": 64,
+          "a": "22-tadweer-mission.jpg",
+          "b": "06-tawteen-mission.jpg"
+        },
+        {
+          "distance_bits": 67,
+          "a": "08-tawassul-mission.jpg",
+          "b": "01-himayah-mission.jpg"
+        },
+        {
+          "distance_bits": 70,
+          "a": "13-majlis-mission.jpg",
+          "b": "01-himayah-mission.jpg"
+        },
+        {
+          "distance_bits": 70,
+          "a": "13-majlis-mission.jpg",
+          "b": "11-jomrok-mission.jpg"
+        }
+      ]
+    },
+    {
+      "screen": "evidence",
+      "method": "16x16 grayscale difference hash; differences in text length, art, contrast and scroll can confound this; not a layout or aesthetic verdict",
+      "most_similar_pairs": [
+        {
+          "distance_bits": 61,
+          "a": "20-amanah-eco-evidence.jpg",
+          "b": "10-khidmah-evidence.jpg"
+        },
+        {
+          "distance_bits": 62,
+          "a": "17-thawg-evidence.jpg",
+          "b": "18-manzil-evidence.jpg"
+        },
+        {
+          "distance_bits": 63,
+          "a": "25-hisad-evidence.jpg",
+          "b": "24-himam-evidence.jpg"
+        },
+        {
+          "distance_bits": 64,
+          "a": "10-khidmah-evidence.jpg",
+          "b": "06-tawteen-evidence.jpg"
+        },
+        {
+          "distance_bits": 65,
+          "a": "05-sahil-evidence.jpg",
+          "b": "19-gurbah-evidence.jpg"
+        },
+        {
+          "distance_bits": 65,
+          "a": "05-sahil-evidence.jpg",
+          "b": "24-himam-evidence.jpg"
+        },
+        {
+          "distance_bits": 65,
+          "a": "20-amanah-eco-evidence.jpg",
+          "b": "06-tawteen-evidence.jpg"
+        },
+        {
+          "distance_bits": 66,
+          "a": "06-tawteen-evidence.jpg",
+          "b": "24-himam-evidence.jpg"
+        },
+        {
+          "distance_bits": 66,
+          "a": "23-turath-evidence.jpg",
+          "b": "04-munagasah-evidence.jpg"
+        },
+        {
+          "distance_bits": 67,
+          "a": "05-sahil-evidence.jpg",
+          "b": "04-munagasah-evidence.jpg"
+        }
+      ]
+    },
+    {
+      "screen": "activity",
+      "method": "16x16 grayscale difference hash; differences in text length, art, contrast and scroll can confound this; not a layout or aesthetic verdict",
+      "most_similar_pairs": [
+        {
+          "distance_bits": 23,
+          "a": "19-gurbah-activity.jpg",
+          "b": "05-sahil-activity.jpg"
+        },
+        {
+          "distance_bits": 32,
+          "a": "09-adab-activity.jpg",
+          "b": "03-istithmar-activity.jpg"
+        },
+        {
+          "distance_bits": 34,
+          "a": "22-tadweer-activity.jpg",
+          "b": "25-hisad-activity.jpg"
+        },
+        {
+          "distance_bits": 34,
+          "a": "25-hisad-activity.jpg",
+          "b": "10-khidmah-activity.jpg"
+        },
+        {
+          "distance_bits": 36,
+          "a": "10-khidmah-activity.jpg",
+          "b": "07-adl-activity.jpg"
+        },
+        {
+          "distance_bits": 36,
+          "a": "20-amanah-eco-activity.jpg",
+          "b": "22-tadweer-activity.jpg"
+        },
+        {
+          "distance_bits": 37,
+          "a": "20-amanah-eco-activity.jpg",
+          "b": "06-tawteen-activity.jpg"
+        },
+        {
+          "distance_bits": 39,
+          "a": "19-gurbah-activity.jpg",
+          "b": "22-tadweer-activity.jpg"
+        },
+        {
+          "distance_bits": 40,
+          "a": "24-himam-activity.jpg",
+          "b": "07-adl-activity.jpg"
+        },
+        {
+          "distance_bits": 40,
+          "a": "24-himam-activity.jpg",
+          "b": "10-khidmah-activity.jpg"
+        }
+      ]
+    }
+  ],
+  "current_brand_assets": [
+    {
+      "app": "himayah",
+      "logo_sha256": "842ee1239606c7fae7978a7cce89060993a4d281b6bf8a60493e80d7d147b236",
+      "wordmark_sha256": "6669f7023e01bdb09970234a2ddb02c83aa8bdd61eb8bd0d1c06c0305569da80",
+      "icon_sha256": "26c931cc6444de4cba85f869271ff42e2c726b4569c415fdfb9a440a7bd28b8d",
+      "lockup": "docket",
+      "type_family": "ibmplexserif"
+    },
+    {
+      "app": "iqamah",
+      "logo_sha256": "13e53a82e94a24d49a0aebe6ed2c846dbc4f9ea793420c8e54d83e227c4c3fa0",
+      "wordmark_sha256": "2d893be1f5bcc0534b2fbe0f4e8f353d6d66542bdcbc7ef667255826e8f42448",
+      "icon_sha256": "5c9b59299f810aebb6f1633b2e812007fb868e49c944e639aafee84c0e886f0d",
+      "lockup": "passport",
+      "type_family": "cormorantgaramond"
+    },
+    {
+      "app": "istithmar",
+      "logo_sha256": "4fa1e2097a9d35378e232430c4a6be082f6b606a78e338a4ee6c6668aa9a8b70",
+      "wordmark_sha256": "f90dcea1cf0e33b1d501123bcc11540192903dac46b7b6135c921c22c8f5c5df",
+      "icon_sha256": "384cbb0874583c5eb6a2a63603d8cba1af8ed8c24a952d784a174c307e452ccc",
+      "lockup": "exchange",
+      "type_family": "spacegrotesk"
+    },
+    {
+      "app": "munagasah",
+      "logo_sha256": "040f65bc86949fde2b0adfca0d165e61194c222ee99f4032977cfe1a459fe09e",
+      "wordmark_sha256": "45ca17edaae9219af0270a639fcf4295cf1f1b73f434cafb05e8603da5ce8f50",
+      "icon_sha256": "20a3627503b34ff0e62d9509879375d9f47073b5a38672f354401a74846d6cee",
+      "lockup": "bidroom",
+      "type_family": "ibmplexmono"
+    },
+    {
+      "app": "sahil",
+      "logo_sha256": "49720f43957c8b9c8165d311f540b03b29a7a4e4947f7daaa0977f2c5c2b90b8",
+      "wordmark_sha256": "3b1af370823bd6ed5fc7f8a03ef01497b36723d227c4add7e9686404308a0510",
+      "icon_sha256": "7ed583cefe9be6895e56597f5deeb494548b886aeff735d8b285f590e06a4f24",
+      "lockup": "wayfinding",
+      "type_family": "nunito"
+    },
+    {
+      "app": "tawteen",
+      "logo_sha256": "25bf6ac3296a9fbf81e1927fe98b909da39aa2ce8bbce1f066718c1246820ed8",
+      "wordmark_sha256": "a79edaedb3bc5c340f61c824faa48b6e4c785d271132dd1164e6e994e12000ce",
+      "icon_sha256": "1faf9e0116bdee80c357867be5bbcc657226c63925a529ccb9f0a5dcea1f05e4",
+      "lockup": "workforce",
+      "type_family": "manrope"
+    },
+    {
+      "app": "adl",
+      "logo_sha256": "22bbf03bea7072f53209e73d268d0819fe8c0175b14e9cd09d4a0b7ccbf4d035",
+      "wordmark_sha256": "17a44fefd3c8041c5da3b3f7ef9045f2a5aeaba724bb7c05a464cd5360632b74",
+      "icon_sha256": "8ba38208bc2b1a4b68ef9cd0549c192c46aa41846bbf9d2b6659d3400b489f09",
+      "lockup": "chronicle",
+      "type_family": "librebaskerville"
+    },
+    {
+      "app": "tawassul",
+      "logo_sha256": "c979855d09df5d9bedb41618bd5e1df87311265f55b2d00cf10d45476ca60788",
+      "wordmark_sha256": "214e34c6b75b400870cf569650698d8726dcf64b03c664fb669be1fa142ad3b6",
+      "icon_sha256": "186c5e5b038d3e6761a0efc63727d60d326ea08c080253b8cc23604e2bc189e5",
+      "lockup": "correspondence",
+      "type_family": "lora"
+    },
+    {
+      "app": "adab",
+      "logo_sha256": "59d2b0ec18a07826fb79a82ff72c959ad9f215ebfa4928b16e17b4ff16fc3645",
+      "wordmark_sha256": "846c5b7f5ea6036bf606d2d9f41f836a336db840a8a3e158751fc26a21a0b386",
+      "icon_sha256": "ebce2626ce689785447780dd386464bada553dbf47825bd9e310731a70ed3796",
+      "lockup": "imprint",
+      "type_family": "bodonimoda"
+    },
+    {
+      "app": "khidmah",
+      "logo_sha256": "2b4a9de0e4a7ed05c2dc678492b1f3780cca0095e6642676ba80f1860905615e",
+      "wordmark_sha256": "4d97196e4de454f302a7ff2aaa9f2c221db3c8f9fa78e8c33dc05bb8b8ac16ac",
+      "icon_sha256": "e4086cef129c1282b0949f83a7cdc8c32e5f2764626039835af8eaee99979d97",
+      "lockup": "care",
+      "type_family": "outfit"
+    },
+    {
+      "app": "jomrok",
+      "logo_sha256": "5fc9d43b81b5ba4e6aafe8620e3b60a2fcdab8ce5633bc36fc8deb92feda7489",
+      "wordmark_sha256": "38cc192998a38ec0901ca9d7e84d1586f0ce379b42f04d812047cbbb4d86bdc1",
+      "icon_sha256": "255c2d30b184b47c03daca21d94be6480192fae337d2871e0a6e71c4fb7ede81",
+      "lockup": "manifest",
+      "type_family": "barlowcondensed"
+    },
+    {
+      "app": "khibrat",
+      "logo_sha256": "aa211ccea38973102119f73929e529d1694891f9c23fb020c9cb5b4b38862ec1",
+      "wordmark_sha256": "5961953e0f110583f053581a2ab4ae77d1666737aaa7a8211fd61b7f768ff181",
+      "icon_sha256": "7d106196bb76facf8415444bdf6aa264bbf5bd97b2a24a68497458bc602bccb6",
+      "lockup": "competency",
+      "type_family": "dmsans"
+    },
+    {
+      "app": "majlis",
+      "logo_sha256": "351c0ffb0f8b72a1797b52b0bf5cadbe6394464b16d7bcc4020ad7cd2903e794",
+      "wordmark_sha256": "2144f69fae25d32d1ef8063f610ba3c1fb075e0f5b46bfd27147bfa3666eaca2",
+      "icon_sha256": "8f0dacf2827415cd95692ccb16fb222befbfea055d16731d498ff4e046b52d0e",
+      "lockup": "invitation",
+      "type_family": "cormorant"
+    },
+    {
+      "app": "rafiq",
+      "logo_sha256": "647d58225efceed309c72f0bedb3bd481093889d0cde4c59c475dc5c58aa1e1b",
+      "wordmark_sha256": "9a75e1bfcd215c339483e639f04c5de7938fd3a3bd961a64b7fd9ce86da0762a",
+      "icon_sha256": "d9e8d1dff2e53fdf21555a0ab6af8e03d095f0d3c96407d7b9ee91cc97a8afc1",
+      "lockup": "orbit",
+      "type_family": "sora"
+    },
+    {
+      "app": "sawm",
+      "logo_sha256": "8455879349515842220a32d5c0d126e69a8403d8f0712419813a225c7aa52475",
+      "wordmark_sha256": "a8343ba4a1c8cdecb41d0da9b2e92f44d922d0c99a5fd57e4763ed130de5a39e",
+      "icon_sha256": "31e99c00fdc719a9d57b6c5408140dbadf260e9fb7397f596358777c1257ae06",
+      "lockup": "dusk",
+      "type_family": "ebgaramond"
+    },
+    {
+      "app": "mizan",
+      "logo_sha256": "c90dc6c6eb4b12282dc02a96f0dbc9c3f7f1b58eb9dc1890e712f9d19775dd5a",
+      "wordmark_sha256": "ca84e785b34859a51c8739b313f70f5c878d69d30b08fdede79d737cfa022084",
+      "icon_sha256": "c0d5a39ac6cfed51f1f6a078d733e087828f0e198d0f2012dd21f89eb4379842",
+      "lockup": "counterweight",
+      "type_family": "fraunces"
+    },
+    {
+      "app": "thawg",
+      "logo_sha256": "f31eed571741a00ba30abbe442886aea1b67560d4917fae52d67520f9775182a",
+      "wordmark_sha256": "5119d23ee80b979e7173a50ba671a3b775d00ed10cad4a1ac431fe78b0a6f005",
+      "icon_sha256": "4f4c223711ae5ae61a5716f2424798e5662202ad7d5d9032f2e6ed16a824e3f5",
+      "lockup": "edition",
+      "type_family": "dmserifdisplay"
+    },
+    {
+      "app": "manzil",
+      "logo_sha256": "8095a79f6fa0307c79096fa797c9485e60896413732f7c1b30feeb540c196570",
+      "wordmark_sha256": "5372185079e6acd3f8644826ce9df81050b51e9892e6797889136ddf35d682f8",
+      "icon_sha256": "f430df22acc8ee9f3201f44ae049d5c931ba69fe76d6e216513b6a1f54b5f3e6",
+      "lockup": "housebook",
+      "type_family": "literata"
+    },
+    {
+      "app": "gurbah",
+      "logo_sha256": "4cbce2af849bcddd43fb9cb336d57ad0589c5145207937cabed93756ec96f858",
+      "wordmark_sha256": "7c19e784986c1ab72f5a30a858d2ee8f04783778b4f7bcd586eda3481379a1c1",
+      "icon_sha256": "374d6e187c1e967293b33eb2d8b8420a8a70231f9a127edfa9e019075ec1ee88",
+      "lockup": "atlas",
+      "type_family": "urbanist"
+    },
+    {
+      "app": "amanah-eco",
+      "logo_sha256": "6a6bf4e98aa0b58ebbef2450afe48a8776bd5c658b8e7f0b15f387fddacf5957",
+      "wordmark_sha256": "881974a7568fe2211d6b66120440ff1044c39852df0c4c8e27b8b12db893f749",
+      "icon_sha256": "6154ed6bd0b88127f4bf8480585c6fbfdf4f29fe6b137f1b863b94f7aa0f871b",
+      "lockup": "observatory",
+      "type_family": "archivo"
+    },
+    {
+      "app": "nafas",
+      "logo_sha256": "9e65d3aaf18ddf74ae2421e07ba26045b9a089605ce57a573aa0ee5bb898b6e4",
+      "wordmark_sha256": "2e3eb967e8b6dbfc9709f0fb316d5e8ca3d631f0598f150c90bd2b7d3398aab6",
+      "icon_sha256": "42d2649544b748bdfa50c00dd50b4d557373ab034313f751056bf25fa91a1b61",
+      "lockup": "breath",
+      "type_family": "quicksand"
+    },
+    {
+      "app": "tadweer",
+      "logo_sha256": "26cf274b3893210140ffb8363cef8e7bc9e4bd30b8c9fff9883171ebab800df0",
+      "wordmark_sha256": "4ea205e1042dffb35516d30f0b615e7981488a10975a31714536a141d2f22f84",
+      "icon_sha256": "4bc2cc907e7d2b37c879728308dd13f2056a20ee64465cc60a2f97180e8a7077",
+      "lockup": "material",
+      "type_family": "spacemono"
+    },
+    {
+      "app": "turath",
+      "logo_sha256": "5448e2028b7a39df8a3d996491e2556f5300abc22583b2d7c07467eded1a2969",
+      "wordmark_sha256": "7aa0d7a4f2742e73ac0df9297c7d32b5acc421445293a90b4825c92c2aa6a8fd",
+      "icon_sha256": "9eadb7ab379426ede579278dae4fd78635640aa7b6b1f00ff066faaee04afd62",
+      "lockup": "archive",
+      "type_family": "spectral"
+    },
+    {
+      "app": "himam",
+      "logo_sha256": "089ac48a5a0e81eabf8f916e647d96d14264c3eeb0b4d1ba053eb703863c38b0",
+      "wordmark_sha256": "a9b4b7b0e2b0bf9014ee134ad3cca61aa217845c7b5dac1e47a84993a6baee58",
+      "icon_sha256": "12ea5b72c352256533b5f5545d7a96c63609dbcf6c4185029c5409b294e6df14",
+      "lockup": "access",
+      "type_family": "atkinsonhyperlegible"
+    },
+    {
+      "app": "hisad",
+      "logo_sha256": "06f88751baf027c91c0f1d7f8c70bc7160069ba70b52ae11ab82f31b36b9773e",
+      "wordmark_sha256": "0bbc88d8b7b715281d069c0db9d5ad485665b31de1d6603fb0b718bd8cd77cea",
+      "icon_sha256": "f091c8824d38a571d46b0c1ef5e6f333b72f769dd061a008f06566cd66fb3399",
+      "lockup": "dispatch",
+      "type_family": "breeserif"
+    }
+  ],
+  "unique_symbol_hashes": 25,
+  "unique_wordmark_hashes": 25,
+  "unique_lockups": 25,
+  "creative_direction_text_overlap_candidates": [
+    {
+      "ratio": 0.51,
+      "a": "iqamah",
+      "b": "sahil"
+    },
+    {
+      "ratio": 0.481,
+      "a": "rafiq",
+      "b": "sawm"
+    },
+    {
+      "ratio": 0.477,
+      "a": "rafiq",
+      "b": "hisad"
+    },
+    {
+      "ratio": 0.475,
+      "a": "iqamah",
+      "b": "jomrok"
+    },
+    {
+      "ratio": 0.474,
+      "a": "munagasah",
+      "b": "himam"
+    },
+    {
+      "ratio": 0.462,
+      "a": "iqamah",
+      "b": "himam"
+    },
+    {
+      "ratio": 0.461,
+      "a": "iqamah",
+      "b": "munagasah"
+    },
+    {
+      "ratio": 0.456,
+      "a": "tawteen",
+      "b": "khidmah"
+    },
+    {
+      "ratio": 0.456,
+      "a": "mizan",
+      "b": "tadweer"
+    },
+    {
+      "ratio": 0.455,
+      "a": "adab",
+      "b": "manzil"
+    }
+  ],
+  "interpretation": "Hashes and text distance are mechanical checks only. Highest-ranked pairs require visual/interaction inspection. Baseline captures predate the new identity code.",
+  "creative_jury_acceptance": false,
+  "native_device_acceptance": false,
+  "remaining_review": [
+    "wordmark legibility at small phone widths and large text",
+    "case/source/history equivalence across all 25",
+    "purposeful motion beyond shared press-scale",
+    "native iOS and Android primary interactions"
+  ]
+}

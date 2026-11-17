@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scope": "controlled browser transport, not real provider inference or a device test",
+  "case_preserved_on_initial_connection": true,
+  "domain_category_editing": true,
+  "autonomous_team_start_requests": 1,
+  "source_read_requests": 1,
+  "provider_calls": 0,
+  "verified_at": "2026-11-17T13:45:30.574418+00:00",
+  "case_ui": "Domain-specific Mizan ledger panes with actual category/transaction fields"
+}
