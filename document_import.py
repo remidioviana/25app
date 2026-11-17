@@ -17,15 +17,15 @@ MAX_TEXT=200_000
 PARSER_SLOTS=BoundedSemaphore(2)
 
 def parse(raw,suffix):
-    if not raw or len(raw)>MAX_BYTES:raise ValueError('Arquivo vazio ou maior que 2 MB')
+    if not raw or len(raw)>MAX_BYTES:raise ValueError('File is empty or exceeds 2 MB')
     warnings=[]
     if suffix in ('.txt','.md','.csv'):
         try:text=raw.decode('utf-8-sig')
-        except UnicodeDecodeError:raise ValueError('Text precisa estar em UTF-8') from None
+        except UnicodeDecodeError:raise ValueError('Text must use UTF-8 encoding') from None
         if '\x00' in text:raise ValueError('Binary content is not allowed as text')
         if suffix=='.csv':
             rows=list(csv.reader(io.StringIO(text)))
-            if len(rows)>5000:raise ValueError('CSV excede 5000 linhas')
+            if len(rows)>5000:raise ValueError('CSV exceeds 5,000 rows')
             text='\n'.join(' | '.join(row) for row in rows)
     elif suffix=='.pdf':
         if not raw.startswith(b'%PDF-'):raise ValueError('Invalid PDF signature')
@@ -39,14 +39,14 @@ def parse(raw,suffix):
             content=page.extract_text() or ''
             if not content.strip():warnings.append(f'Page {i}: no extractable text; OCR is not implemented')
             chunk=f'[Page {i}]\n{content}';total+=len(chunk)
-            if total>MAX_TEXT:raise ValueError('Extracted text excede 200 mil caracteres')
+            if total>MAX_TEXT:raise ValueError('Extracted text exceeds 200,000 characters')
             parts.append(chunk)
         if len(warnings)==len(reader.pages):raise ValueError('PDF has no extractable text; supply a transcript or OCR text')
         text='\n\n'.join(parts)
     elif suffix=='.docx':
         with zipfile.ZipFile(io.BytesIO(raw)) as archive:
             members=archive.infolist()
-            if len(members)>1000 or sum(x.file_size for x in members)>20_000_000:raise ValueError('DOCX excede limite descompactado')
+            if len(members)>1000 or sum(x.file_size for x in members)>20_000_000:raise ValueError('DOCX exceeds the uncompressed size limit')
             if 'word/document.xml' not in archive.namelist():raise ValueError('Invalid DOCX document')
             xml=archive.read('word/document.xml')
             if b'<!DOCTYPE' in xml or b'<!ENTITY' in xml:raise ValueError('XML entities are not allowed')
@@ -55,7 +55,7 @@ def parse(raw,suffix):
         warnings.append('Body text extracted; notes, headers, images and formatting are not preserved')
     else:raise ValueError('Formato aceito: TXT, MD, CSV, PDF ou DOCX')
     if not text.strip():raise ValueError('No text extracted')
-    if len(text)>MAX_TEXT:raise ValueError('Extracted text excede 200 mil caracteres')
+    if len(text)>MAX_TEXT:raise ValueError('Extracted text exceeds 200,000 characters')
     return {'text':text,'warnings':warnings,'format':suffix,'characters':len(text)}
 
 def extract(filename,encoded):
@@ -67,7 +67,7 @@ def _extract(filename,encoded):
     if not isinstance(filename,str) or len(filename)>200 or not isinstance(encoded,str) or len(encoded)>2_700_000:raise ValueError('Invalid upload')
     try:raw=base64.b64decode(encoded,validate=True)
     except Exception:raise ValueError('Invalid base64 content') from None
-    if not raw or len(raw)>MAX_BYTES:raise ValueError('Arquivo vazio ou maior que 2 MB')
+    if not raw or len(raw)>MAX_BYTES:raise ValueError('File is empty or exceeds 2 MB')
     suffix=Path(filename).suffix.lower()
     try:
         safe_env={k:v for k,v in os.environ.items() if k in ('PATH','SYSTEMROOT','WINDIR','PYTHONPATH','PYTHONHOME','LANG','LC_ALL','TMP','TEMP')}

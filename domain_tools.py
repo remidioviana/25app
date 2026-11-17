@@ -136,7 +136,7 @@ def case(d):
 def proposal(d):
     matches = [x for x in d['products'] if set(x['tags']) & set(d['needs'])]
     return {'account': d['account'], 'matches': matches, 'uncovered_needs': sorted(set(d['needs'])-{t for x in matches for t in x['tags']}),
-            'draft': '\n'.join([f"Proposta para {d['account']}"] + [f"• {x['name']}: {x['approved_fact']}" for x in matches]), 'sent': False}
+            'draft': '\n'.join([f"Proposal for {d['account']}"] + [f"• {x['name']}: {x['approved_fact']}" for x in matches]), 'sent': False}
 
 
 def campaign(d):

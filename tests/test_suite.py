@@ -34,6 +34,15 @@ class Suite(unittest.TestCase):
                 self.assertEqual(run['result']['analysis'],TOOLS[a](spec['example']))
                 self.assertEqual(run['result']['analysis_hash'],db.digest(run['result']['analysis']))
                 self.assertTrue(any(e['phase']=='verifying' for e in run['events']))
+    def test_tawassul_proposal_uses_approved_matching_facts_in_english(self):
+        data={'account':'Controlled customer','needs':['logistics','reporting'],'products':[
+            {'name':'Operations','tags':['logistics'],'approved_fact':'Organizes approved tasks.'},
+            {'name':'Unmatched','tags':['billing'],'approved_fact':'Must not enter this proposal.'}]}
+        result=TOOLS['tawassul'](data)
+        self.assertTrue(result['draft'].startswith('Proposal for Controlled customer'))
+        self.assertIn('Organizes approved tasks.',result['draft'])
+        self.assertNotIn('Must not enter this proposal.',result['draft'])
+        self.assertEqual(result['uncovered_needs'],['reporting']);self.assertFalse(result['sent'])
     def test_contract_offsets_and_missing_clause(self):
         d=self.example('himayah');r=TOOLS['himayah'](d);self.assertEqual(r['flag_count'],2)
         d['text']+=' The retention period is 30 days.';self.assertEqual(TOOLS['himayah'](d)['flag_count'],1)

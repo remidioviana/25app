@@ -64,9 +64,9 @@ def fetch_json(cfg):
         if response.status!=200:raise ValueError('Connector returned HTTP '+str(response.status)+'; redirects are not followed')
         if 'application/json' not in response.getheader('Content-Type','').lower():raise ValueError('Connector did not return JSON')
         raw=response.read(MAX_BYTES+1)
-        if len(raw)>MAX_BYTES:raise ValueError('Resposta do conector excede 2 MB')
+        if len(raw)>MAX_BYTES:raise ValueError('Connector response exceeds 2 MB')
         return json.loads(raw,parse_constant=lambda _:(_ for _ in ()).throw(ValueError('Non-finite JSON')))
-    except (OSError,http.client.HTTPException):raise ValueError('Falha de transporte na leitura HTTPS do conector') from None
+    except (OSError,http.client.HTTPException):raise ValueError('HTTPS connector read failed') from None
     finally:connection.close()
 
 def pointer(value,path):
