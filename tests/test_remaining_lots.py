@@ -24,6 +24,16 @@ class RemainingLotTests(unittest.TestCase):
   return next((x for x in choices if agent=='gurbah' and x['id']=='dewa-move-in'),choices[0])
  def fixture(self,cfg):
   anchors=cfg.get('anchors',['move-in','activation'])
+  if cfg['kind']=='pdf':
+   from io import BytesIO
+   from pypdf import PdfWriter
+   from pypdf.generic import DictionaryObject,NameObject,DecodedStreamObject
+   writer=PdfWriter();page=writer.add_blank_page(width=612,height=792)
+   font=DictionaryObject({NameObject('/Type'):NameObject('/Font'),NameObject('/Subtype'):NameObject('/Type1'),NameObject('/BaseFont'):NameObject('/Helvetica')})
+   page[NameObject('/Resources')]=DictionaryObject({NameObject('/Font'):DictionaryObject({NameObject('/F1'):font})})
+   stream=DecodedStreamObject();stream.set_data(('BT /F1 12 Tf 20 700 Td ('+(' '.join(anchors)+' controlled transport fixture. ')*15+') Tj ET').encode())
+   page[NameObject('/Contents')]=stream;output=BytesIO();writer.write(output)
+   return output.getvalue(),{'charset':'utf-8','http_status':200,'content_type':'application/pdf','last_modified_header':None}
   raw=('<main><h1>Controlled fixture</h1><p>'+(' '.join(anchors)+' controlled official-source transport fixture. ')*15+'</p></main>').encode()
   return raw,{'charset':'utf-8','http_status':200,'content_type':'text/html','last_modified_header':None}
  def test_all_twenty_sources_graphs_final_resolution_and_exports(self):

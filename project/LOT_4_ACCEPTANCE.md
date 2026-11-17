@@ -46,3 +46,9 @@ The separately catalogued [CBUAE consumer overview](https://centralbank.ae/en/co
 [Run 44032273178](https://github.com/remidioviana/25app/actions/runs/44032273178) retried only Mizan, Manzil and Amanah Eco. Amanah Eco passed the synthetic RAG checks with one valid source citation and three distinct returned model IDs. Mizan and Manzil remained blocked by HTTP 403 on the separately catalogued CBUAE overview in the GitHub runner; local HTTP success did not establish runner availability. No model calls were made for those two blocked source reads, and no quota stop occurred. Thawg and Gurbah were not repeated.
 
 The portfolio now records three successful Lot 4 synthetic RAG milestones. Authentic primary-case, device and release gates remain separate. A readable official financial source must be validated in the runner before Mizan and Manzil can pass.
+
+## App-specific official source replacements
+
+CBUAE HTTP 403 failures remain archived. Mizan now selects the official UAE Government banking page, including Islamic-finance context; this does not certify a supplied ledger as Sharia compliant. Manzil selects the FTA tax-invoice guidance PDF; this does not authenticate receipts, establish VAT recoverability or submit a tax return. Ministry of Finance VAT and saving/budgeting pages complement the catalogue with separately stated scopes.
+
+[Local HTTPS and controlled graph receipts](evidence/lot-4-financial-topic-controls.json) passed for both selected sources. [Budgeting source controls](evidence/lot-4-mof-budget-controls.json) are additional local checks. Neither report uses real model inference or proves GitHub runner access; a targeted runner source check precedes any model retry.

@@ -7,6 +7,10 @@ on:
         description: 'Live public HTTP plus controlled model roles; no provider calls'
         options: ['2', '3', '4', '5', remaining]
         default: remaining
+      financial_pair_only:
+        type: boolean
+        description: 'Check only Mizan and Manzil in lot 4; no provider inference'
+        default: false
 permissions:
   contents: read
 jobs:
@@ -23,7 +27,14 @@ jobs:
       - run: python -m pip install -r requirements-agentic.txt -r requirements-documents.txt
       - env:
           PORTFOLIO_BATCH: ${{ inputs.batch }}
-        run: python scripts/verify_remaining_portfolio.py --live-sources --batch "$PORTFOLIO_BATCH" --output project/evidence/portfolio-source-actions.json
+          FINANCIAL_PAIR_ONLY: ${{ inputs.financial_pair_only }}
+        run: |
+          args=(--live-sources --batch "$PORTFOLIO_BATCH" --output project/evidence/portfolio-source-actions.json)
+          if [ "$FINANCIAL_PAIR_ONLY" = true ]; then
+            if [ "$PORTFOLIO_BATCH" != 4 ]; then echo "Financial pair requires lot 4."; exit 2; fi
+            args+=(--app mizan --app manzil)
+          fi
+          python scripts/verify_remaining_portfolio.py "${args[@]}"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
