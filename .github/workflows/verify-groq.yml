@@ -23,17 +23,17 @@ on:
       team_app:
         description: 'Integrated diagnostic scope; single app reduces quota consumption'
         type: choice
-        options: [first-five, himayah, iqamah, istithmar, munagasah, sahil]
+        options: [first-five, himayah, iqamah, istithmar, munagasah, sahil, tawteen, adl, tawassul, adab, khidmah, jomrok, khibrat, majlis, rafiq, sawm, mizan, thawg, manzil, gurbah, amanah-eco, nafas, tadweer, turath, himam, hisad]
         default: first-five
       additional_app:
         description: 'Optionally add a second app when the primary scope is a single app'
         type: choice
-        options: [none, himayah, iqamah, istithmar, munagasah, sahil]
+        options: [none, himayah, iqamah, istithmar, munagasah, sahil, tawteen, adl, tawassul, adab, khidmah, jomrok, khibrat, majlis, rafiq, sawm, mizan, thawg, manzil, gurbah, amanah-eco, nafas, tadweer, turath, himam, hisad]
         default: none
       exclude_app:
         description: 'Exclude one app already verified separately from the selected scope'
         type: choice
-        options: [none, himayah, iqamah, istithmar, munagasah, sahil]
+        options: [none, himayah, iqamah, istithmar, munagasah, sahil, tawteen, adl, tawassul, adab, khidmah, jomrok, khibrat, majlis, rafiq, sawm, mizan, thawg, manzil, gurbah, amanah-eco, nafas, tadweer, turath, himam, hisad]
         default: none
       reviewed_himayah_snapshot:
         description: 'Explicitly use reviewed historical PDPL snapshot for Himayah; not a fresh source read'

@@ -264,12 +264,20 @@ def run(task,spec,check):
                  'draft':state['draft'],'critique':state['critique'],'evidence':evidence,'source_reads':state.get('source_reads',[]),
                  'missing_information':state['plan'].get('missing_information',[]),
                  'validation_issues':state.get('unresolved_draft_validation',[])}
-        value,updates=ask('critic',FINAL_RESPONSE,context,state,
-            report_policy(spec)+' You are the final responder, GPT-OSS120B. Correct the draft yourself; do not refer it for routine human review. '
+        instruction=(report_policy(spec)+' You are the final responder, GPT-OSS120B. Correct the draft yourself; do not refer it for routine human review. '
             'Return answered only if the supplied inputs, calculations and passages support the answer. Otherwise return needs_information '
             'with concrete indispensable questions, or inconclusive with explicit limitations and a useful bounded answer. '
             'Respect the stated source scope. Do not approve unresolved claims, invent missing facts or claim external actions. Evidence claims require exact supplied citation IDs. '
             'For incomplete answers omit unsupported claims and explain what cannot be concluded. All outcomes must include the complete final draft.')
+        value,updates=ask('critic',FINAL_RESPONSE,context,state,instruction)
+        issue=draft_issue(value['draft'],{x['citation'] for x in evidence})
+        if issue:
+            # One bounded correction by the final model, preserving the evidence boundary.
+            # Provider failures (including quota) propagate without a regeneration loop.
+            context=dict(context,invalid_final_response=value,validation_feedback=issue,
+                         allowed_citation_ids=[x['citation'] for x in evidence])
+            value,updates=ask('critic',FINAL_RESPONSE,context,state|updates,
+                instruction+' Correct the validation_feedback. Use only allowed_citation_ids; omit claims that the supplied evidence cannot support.')
         validate(value,FINAL_RESPONSE)
         if value['outcome']=='answered' and (value['questions'] or value['limitations']):
             # Conservative resolution of contradictory metadata, without a new model call.

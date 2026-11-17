@@ -7,3 +7,7 @@ This function reports data and performs no external action. The exact same respo
 Quota, authentication-only, invalid-schema and availability failures do not authorize this recovery. No extra request is made after a quota response. Cancellation is checked before regeneration and during the cooldown. Other roles keep their existing bounded generation policy.
 
 This addresses an observed final-delivery failure in the Lot 2 diagnostic. Offline regression tests cover valid recovery, quota interruption, cancellation, unsupported functions and invalid final objects. A live success is recorded only after a corresponding protected workflow actually completes; a code change does not retroactively repair an earlier failed run.
+
+## Invalid final citations
+
+A final draft that cites a passage outside the app’s retrieved evidence receives at most one correction by GPT-OSS120B, with explicit validation feedback and the allowed citation IDs. The corrected draft must pass the same citation checks. Persistent invalid citations fail the run; quota and other provider failures propagate without another correction. Offline tests cover successful correction, persistent failure and quota interruption. No historical failed run is relabeled as passed.

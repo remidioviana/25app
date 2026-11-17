@@ -58,6 +58,33 @@ class FinalResolutionTests(unittest.TestCase):
   self.assertEqual(run['status'],'failed');self.assertIsNone(run['result'])
   self.assertIn('Final response validation failed',run['error'])
 
+ def test_invalid_final_citation_gets_one_same_role_correction(self):
+  self.bad_citation=True
+  original=self.role
+  def correct(name,schema,context,instructions):
+   if schema is advanced.FINAL_RESPONSE and 'validation_feedback' in context:
+    self.assertEqual(context['allowed_citation_ids'],[])
+    self.assertIn('Citation was not retrieved',context['validation_feedback'])
+    self.bad_citation=False
+   return original(name,schema,context,instructions)
+  self.role=correct;run=self.run_graph()
+  self.assertEqual(run['status'],'completed',run['error'])
+  self.assertEqual(sum(schema is advanced.FINAL_RESPONSE for _,schema in self.calls),2)
+  self.assertEqual(run['result']['draft']['claims'],[])
+ def test_persistent_invalid_citation_stops_after_one_correction(self):
+  self.bad_citation=True;run=self.run_graph()
+  self.assertEqual(run['status'],'failed')
+  self.assertEqual(sum(schema is advanced.FINAL_RESPONSE for _,schema in self.calls),2)
+ def test_quota_during_final_citation_correction_stops(self):
+  self.bad_citation=True;original=self.role
+  def quota(name,schema,context,instructions):
+   if schema is advanced.FINAL_RESPONSE and 'validation_feedback' in context:
+    raise provider.ProviderFailure([429],['rate_limit_exceeded'])
+   return original(name,schema,context,instructions)
+  self.role=quota;run=self.run_graph()
+  self.assertEqual(run['status'],'failed')
+  self.assertEqual(sum(schema is advanced.FINAL_RESPONSE for _,schema in self.calls),1)
+
  def test_answered_with_limitations_is_delivered_as_inconclusive_without_new_calls(self):
   self.outcome='answered';self.contradictory_limits=True;run=self.run_graph()
   self.assertEqual(run['status'],'completed',run['error'])
