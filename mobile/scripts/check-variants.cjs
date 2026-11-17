@@ -7,3 +7,4 @@ for(const brand of brands){process.env.AGENT_ID=brand.id;const {exp}=getConfig(r
 delete process.env.AGENT_ID;assert.equal(getConfig(root).exp.extra.agentId,'mizan');assert.equal(brands.length,25);for(const values of [packages,bundles,icons,splashes])assert.equal(values.size,25);process.env.AGENT_ID='unknown';assert.throws(()=>getConfig(root));delete process.env.AGENT_ID;
 console.log('PASS: 25 standalone portrait variants; unique names/IDs/icons/splashes, logos and EAS profiles; Mizan default; invalid variants rejected. No signed binary/device validation claimed.');
 require('./check-dimensional-icons.cjs');
+require('./check-dimensional-logos.cjs');

@@ -32,3 +32,4 @@ for(const [id,item]of Object.entries(registry.icons)){
 assert(rows.length>0&&rows.length<=brandIds.size);
 if(process.argv.includes('--report'))fs.writeFileSync(path.join(root,'project/evidence/dimensional-icon-geometry.json'),JSON.stringify({scope:'PNG alpha, dimensions, provenance hashes and core-silhouette geometry only. Not physical launcher inspection, small-size expert approval, Icon Composer layering or a signed build.',apps:rows},null,2)+'\n');
 console.log(`PASS: ${rows.length} opaque launcher artworks and ${rows.length} separate adaptive foregrounds; hashes, transparency and circular-mask geometry. No device acceptance claimed.`);
+module.exports={png};

@@ -1,0 +1,406 @@
+{
+  "scope": "File integrity, unique symbols, transparent PNG frames, exact-name vector paths and self-contained compositions. Not a physical-device or trademark review.",
+  "count": 25,
+  "products": [
+    {
+      "id": "himayah",
+      "symbol_sha256": "7bd4382a0a53218daa401f0b3de70b3590df1bb8165c410404b227f9d56ed018",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        30,
+        1218,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "iqamah",
+      "symbol_sha256": "8d13b3f331cec530b13d86647ac90dabe0ab5965413d21918b0e67ff5126b4e6",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        19,
+        1240,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "istithmar",
+      "symbol_sha256": "d0d6a0f20b7696558f8da54f7f91f8183e1b3dd2160b390e432964191def26d5",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        13,
+        1226,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "munagasah",
+      "symbol_sha256": "747feaf51e09de36aad70a378e6bb4488c5d75defec2184b2c47b2f5272fedf0",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        18,
+        1234,
+        1230
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "sahil",
+      "symbol_sha256": "43d156f49444e4b796c13d214519c45ecfca55f638a7fe00319d8fdee90e878a",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 0,
+      "alpha_bounds": [
+        23,
+        19,
+        1232,
+        1190
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "tawteen",
+      "symbol_sha256": "94d6052a3f0bee6ab66b4213cbe01a31acf5f1bdf350b873b1fc2c4768af1868",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        19,
+        1253,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "adl",
+      "symbol_sha256": "51a0b2a2607b8b12db6dd5523ab2ce83dc1d2c5d6281c258912d715fbd5d047a",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        37,
+        1235,
+        1212
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "tawassul",
+      "symbol_sha256": "32d1f19d8f5a0100ca2627ae1cf78487cc42b83095460963aedda5aacf490f95",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 0,
+      "alpha_bounds": [
+        23,
+        37,
+        1238,
+        1230
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "adab",
+      "symbol_sha256": "7f9ab0bd7ce5d158eb54da6d624fa9883a8d2898f52663eaa22492f6692b3b80",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        23,
+        1234,
+        1222
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "khidmah",
+      "symbol_sha256": "063cda76daa7a2200dd5fa33eef9b036c7ef20aafcafa01484067ef3efe06324",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        25,
+        23,
+        1230,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "jomrok",
+      "symbol_sha256": "d5d7d55da405668ed8d24a46cb11185bb93180f0154ed25490949d60ac5aacc8",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        29,
+        1236,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "khibrat",
+      "symbol_sha256": "405a7a5066b078c2079cc8a9dc5b2df680764d67a4d5c494d73f50a860305347",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        17,
+        1220,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "majlis",
+      "symbol_sha256": "2587b67ff9cf4bcacf38bd6bf75227e67ca16d885aedec6e63447bd6d01db525",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        29,
+        1226,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "rafiq",
+      "symbol_sha256": "6fba26b71d2ff8499b89e24829d8a003e54c629f3394687b9c644f49d8c5b841",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        9,
+        1224,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "sawm",
+      "symbol_sha256": "ba10aec0d03ec3917264add3582adc6179a4e4b573d55a9337efe8367a112b34",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        19,
+        1246,
+        1238
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "mizan",
+      "symbol_sha256": "13affb6e8a53181dd3de41b2d372ef63f30b40963ff434947923a0ef164ef2a9",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        14,
+        1224,
+        1229
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "thawg",
+      "symbol_sha256": "ecf36034cf57d75814f6d603cbf5082d1c3055b6cccebedbe88bebf5eeb84693",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        17,
+        1240,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "manzil",
+      "symbol_sha256": "d3a24bf68095ce1a454465c525cd94270016aa82a8c477acace28368325a84ac",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        39,
+        1234,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "gurbah",
+      "symbol_sha256": "3fc8b4a2d0e78e473def5c14ed2d9d66d655d1bb717c23aa09864708655a1fbc",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        21,
+        1230,
+        1244
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "amanah-eco",
+      "symbol_sha256": "6e46a7bbf166c19465a403b7b1383cbef868bb5bbf51afc4dbcbfd62a58a7532",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        49,
+        20,
+        1236,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "nafas",
+      "symbol_sha256": "732c05129b65b82e846c34d5829e1c1b14504ab75f097a2c8aa22b7ae4eee84a",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        10,
+        1253,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "tadweer",
+      "symbol_sha256": "e6f1ef5b5a2065d2732199c71c91681df06c8cfcbc21fd0390bbad4310d36cf3",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        21,
+        1186,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "turath",
+      "symbol_sha256": "89277125b3c7a093b509f13f7b4559ab612f0fcf4d73ca679fcedaa5a8885c7c",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        31,
+        1212,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "himam",
+      "symbol_sha256": "3c07685b970e1ccde8dd25910de143a4960a2beabdd0c7cdd17ac35ebed5d2f8",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        22,
+        1234,
+        1254
+      ],
+      "exact_name_vector_files": 4
+    },
+    {
+      "id": "hisad",
+      "symbol_sha256": "b043d85d3316fd4e5c5f399c0ee0403cdf330f4efe4c489b9d5d653cfa54457b",
+      "size": [
+        1254,
+        1254
+      ],
+      "edge_alpha_max": 1,
+      "alpha_bounds": [
+        0,
+        39,
+        1244,
+        1230
+      ],
+      "exact_name_vector_files": 4
+    }
+  ]
+}

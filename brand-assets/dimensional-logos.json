@@ -1,0 +1,1380 @@
+{
+  "scope": "25 isolated transparent symbols, exact-name outlined wordmarks and self-contained logo compositions. This is branding asset production, not app completion or native-device acceptance.",
+  "products": {
+    "himayah": {
+      "name": "Himayah AI",
+      "concept": "Forensic document layers",
+      "brief": "Preserve the established smoked-indigo glass document leaves with titanium edges and coral inspection marker.",
+      "symbol": {
+        "path": "mobile/assets/variants/himayah/dimensional-logo.png",
+        "sha256": "7bd4382a0a53218daa401f0b3de70b3590df1bb8165c410404b227f9d56ed018",
+        "bytes": 956824,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-f8ae0dca-5b11-4da7-a373-331ee1663bca.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/himayah.ttf",
+          "sha256": "bfd81ae5003e6e885b6862b6776430ce0aec8fe3bccee354b6163b193b0a0eb1",
+          "bytes": 218136
+        },
+        "family": "ExperienceDisplay_himayah",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Himayah AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/himayah/wordmark-on-light.svg",
+          "sha256": "fd4823e78f1e496b1561476b350ba555bfe7fec6fafcc74181db21e79d140222",
+          "bytes": 2634
+        },
+        "logo_light": {
+          "path": "brand-assets/production/himayah/logo-on-light.svg",
+          "sha256": "ad5c13168029198521aa78bede252e37e04f1e7195c92b5b236543136fe4c209",
+          "bytes": 1278571
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/himayah/wordmark-on-dark.svg",
+          "sha256": "83318908f99b769da66db0e1f9d73b87f865479b0e7bb83f5895c584b4d91320",
+          "bytes": 2634
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/himayah/logo-on-dark.svg",
+          "sha256": "ccd05791ea0741050c7790dd970c1d47c14319e30a6b9571e101e06ca41eca69",
+          "bytes": 1278571
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#151E37",
+        "dark": "#F4E7D5"
+      },
+      "font_license": "mobile/assets/typefaces/himayah-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "iqamah": {
+      "name": "Iqamah AI",
+      "concept": "Architectural belonging",
+      "brief": "Preserve the user-approved ivory travertine gateway, burgundy glass door and thin antique-gold threshold. Remove only the white backdrop for this isolated symbol; the launcher icon stays white.",
+      "symbol": {
+        "path": "mobile/assets/variants/iqamah/dimensional-logo.png",
+        "sha256": "8d13b3f331cec530b13d86647ac90dabe0ab5965413d21918b0e67ff5126b4e6",
+        "bytes": 770616,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-09e4ede4-ccfe-437f-ac1c-41dc56318290.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/iqamah.ttf",
+          "sha256": "751830cb2143895a1989f1f20984d5091691db0057ab7b71eff711bee32fb87a",
+          "bytes": 773952
+        },
+        "family": "ExperienceDisplay_iqamah",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Iqamah AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/iqamah/wordmark-on-light.svg",
+          "sha256": "6348f4ead4517171486d7321e4f83f7dac675a61e639dc7182da853432c665c4",
+          "bytes": 5679
+        },
+        "logo_light": {
+          "path": "brand-assets/production/iqamah/logo-on-light.svg",
+          "sha256": "3409c40abb8cef9670b8133d3191b420c88782b83914396a3cbbf1c51c7c07e9",
+          "bytes": 1033351
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/iqamah/wordmark-on-dark.svg",
+          "sha256": "a8e0e05e9513949716ae26b929ca6db3455334a9e73b7659fbd4286ede74d0f7",
+          "bytes": 5679
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/iqamah/logo-on-dark.svg",
+          "sha256": "5a84f75491efb53ffff4b5d090bf3f30822bda889e166ff00f1a7ab70942ddd6",
+          "bytes": 1033351
+        }
+      },
+      "composition": "stacked",
+      "wordmark_colors": {
+        "light": "#502C43",
+        "dark": "#F7EBD7"
+      },
+      "font_license": "mobile/assets/typefaces/iqamah-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "istithmar": {
+      "name": "Istithmar AI",
+      "concept": "Spatial economic zones",
+      "brief": "Preserve the established interlocking pale-mint economic-zone volumes with the turquoise connector and deep-blue foundation.",
+      "symbol": {
+        "path": "mobile/assets/variants/istithmar/dimensional-logo.png",
+        "sha256": "d0d6a0f20b7696558f8da54f7f91f8183e1b3dd2160b390e432964191def26d5",
+        "bytes": 582356,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-e6670a1d-9f45-4026-b1a9-7cb1a9450f37.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/istithmar.ttf",
+          "sha256": "bde97895dcc99db8c6846ed10a4a71d16ce8684667646203d87a654cc92612f3",
+          "bytes": 88168
+        },
+        "family": "ExperienceDisplay_istithmar",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 12,
+        "text": "Istithmar AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/istithmar/wordmark-on-light.svg",
+          "sha256": "ec63087d0bd220054fbde8ffd085815bc007558caf10f1098bea4d68f9bc91af",
+          "bytes": 2844
+        },
+        "logo_light": {
+          "path": "brand-assets/production/istithmar/logo-on-light.svg",
+          "sha256": "7c50fd23e7726f4955386a3f6f1809fa326f80ff9e8934248487dbfbc86fb02f",
+          "bytes": 779501
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/istithmar/wordmark-on-dark.svg",
+          "sha256": "dc8bad99a972297f9cbe8b4fff712a78811d3ebc24b1ad5bb7a6cf0b78842989",
+          "bytes": 2844
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/istithmar/logo-on-dark.svg",
+          "sha256": "9cb4c8237af2a7c567016550cf9ac79512f5668416dbf72217b80dcb96556114",
+          "bytes": 779501
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#133C67",
+        "dark": "#DDF8ED"
+      },
+      "font_license": "mobile/assets/typefaces/istithmar-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "munagasah": {
+      "name": "Munagasah AI",
+      "concept": "Approved institutional proposal folio",
+      "brief": "User-approved ivory folio, graphite spine and plain amber seal.",
+      "symbol": {
+        "path": "mobile/assets/variants/munagasah/dimensional-logo.png",
+        "sha256": "747feaf51e09de36aad70a378e6bb4488c5d75defec2184b2c47b2f5272fedf0",
+        "bytes": 1199894,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-8d1ef593-59cc-42cf-9de0-fe6684bbe00f.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/munagasah.ttf",
+          "sha256": "c2deb87ae411a70704bc193c2874e90b48d24ea21d3d0ab3f1c83a81d175cb24",
+          "bytes": 64068
+        },
+        "family": "ExperienceDisplay_munagasah",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 12,
+        "text": "Munagasah AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/munagasah/wordmark-on-light.svg",
+          "sha256": "eece9bfd6d2316b03a8037f3af3f4f70bf2e10b796bf6c252abd556016dc9f28",
+          "bytes": 5285
+        },
+        "logo_light": {
+          "path": "brand-assets/production/munagasah/logo-on-light.svg",
+          "sha256": "3da0125ceedd11b0a7744e3db5cb8ca9b8c3cd6ccece5c575c1cb609efd5f355",
+          "bytes": 1605314
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/munagasah/wordmark-on-dark.svg",
+          "sha256": "a04d6a9fdca025db16ed4436153c63e04398a5e9018f8d362e1237a147d5fb1c",
+          "bytes": 5285
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/munagasah/logo-on-dark.svg",
+          "sha256": "c2671ce7c42ba338e94fa7ff44dc18ed1753d601b2a38e15715906d50d067f0b",
+          "bytes": 1605314
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#282A2F",
+        "dark": "#FFBE59"
+      },
+      "font_license": "mobile/assets/typefaces/munagasah-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "sahil": {
+      "name": "Sahil AI",
+      "concept": "Open civic path",
+      "brief": "Preserve the established pale-aqua ceramic civic-path ribbon and coastal-teal translucent endpoint.",
+      "symbol": {
+        "path": "mobile/assets/variants/sahil/dimensional-logo.png",
+        "sha256": "43d156f49444e4b796c13d214519c45ecfca55f638a7fe00319d8fdee90e878a",
+        "bytes": 495730,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-fd817080-19dd-46e3-87db-24166fc3cce7.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/sahil.ttf",
+          "sha256": "4b801e735d5d1bee2f3ab8ba8a5dd618a64e650f833ae08d381f6c3b67d71f16",
+          "bytes": 96480
+        },
+        "family": "ExperienceDisplay_sahil",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Sahil AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/sahil/wordmark-on-light.svg",
+          "sha256": "822c497bc27eddad03856192cdc7fc3cb58d956582c629750e7a346126574452",
+          "bytes": 1951
+        },
+        "logo_light": {
+          "path": "brand-assets/production/sahil/logo-on-light.svg",
+          "sha256": "028d63c583946ccc1f935564131a352b96c9b000f9de06f9e2feb2f0ffed6b2a",
+          "bytes": 663096
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/sahil/wordmark-on-dark.svg",
+          "sha256": "7cddbe022142f0e59f10cd9bb6082346607ab49184cf8af4bb846caaf78231b5",
+          "bytes": 1951
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/sahil/logo-on-dark.svg",
+          "sha256": "e234d3da39ea6ea3d23d89b43ce296a3ed191f997507e4fad1f1b2d5333e6b99",
+          "bytes": 663096
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#166360",
+        "dark": "#F8F7F1"
+      },
+      "font_license": "mobile/assets/typefaces/sahil-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "tawteen": {
+      "name": "Tawteen AI",
+      "concept": "Interwoven workforce paths",
+      "brief": "Three pine-green satin ribbons interweave into a clear branching workforce-path symbol, with one terracotta connector and light-jade edge. Organic organizational geometry, not a corporate bar chart or generic people silhouettes.",
+      "symbol": {
+        "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
+        "sha256": "94d6052a3f0bee6ab66b4213cbe01a31acf5f1bdf350b873b1fc2c4768af1868",
+        "bytes": 792199,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-cad62f4c-3b56-4f21-bc49-91ee7fa3c4e7.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/tawteen.ttf",
+          "sha256": "52198f61a36193330af58d92818ed7472170be3628122fba502f6ce96406b220",
+          "bytes": 97592
+        },
+        "family": "ExperienceDisplay_tawteen",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Tawteen AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/tawteen/wordmark-on-light.svg",
+          "sha256": "fcb44d6e73409ff3dc4296dd1f8c48e7dced45147f736b913791f90ef1e60483",
+          "bytes": 2863
+        },
+        "logo_light": {
+          "path": "brand-assets/production/tawteen/logo-on-light.svg",
+          "sha256": "f5866c6f9ab7c07274c80d3135847f177496926aa4f2aba62912eee2ce0dbba7",
+          "bytes": 1059312
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
+          "sha256": "b0938cf551270ace025008cbb937ee9aede0a12dfe6ee82c6b092b0ce721a864",
+          "bytes": 2863
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/tawteen/logo-on-dark.svg",
+          "sha256": "ebed483d172f97cc2cdcc277e3b58c797d53ae1d15b2aa115c96c9199e433dbf",
+          "bytes": 1059312
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#1F4945",
+        "dark": "#F1CAB1"
+      },
+      "font_license": "mobile/assets/typefaces/tawteen-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "adl": {
+      "name": "Adl AI",
+      "concept": "Property rights architecture",
+      "brief": "An elegant dark-plum architectural corner balanced on two pale-lavender stone planes, with one muted-rose precision seam. Strong rectangular property silhouette, legal-editorial restraint. No arches, gavel, shield or justice scales.",
+      "symbol": {
+        "path": "mobile/assets/variants/adl/dimensional-logo.png",
+        "sha256": "51a0b2a2607b8b12db6dd5523ab2ce83dc1d2c5d6281c258912d715fbd5d047a",
+        "bytes": 641723,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-ad085f1c-0bfc-4e56-9b9c-2c879075c81a.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/adl.ttf",
+          "sha256": "28918ce0862fa86367b7048c4d623829510ca7f204c708527d87e4690f872699",
+          "bytes": 111576
+        },
+        "family": "ExperienceDisplay_adl",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 6,
+        "text": "Adl AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/adl/wordmark-on-light.svg",
+          "sha256": "cbf08844c0e1d7df91d6b860766e5b1493dd39a97f9dbc68763353b57d2f1fd7",
+          "bytes": 2038
+        },
+        "logo_light": {
+          "path": "brand-assets/production/adl/logo-on-light.svg",
+          "sha256": "4e4941d85635ee1954271c370e0268dcde6721b72fc2f87a6e9fc179fd6dcaf2",
+          "bytes": 857840
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/adl/wordmark-on-dark.svg",
+          "sha256": "ed46fc8156896c808878f501c59793e00cb0a991336ab215b98c0c5d87e691cf",
+          "bytes": 2038
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/adl/logo-on-dark.svg",
+          "sha256": "124379f9add35458a7d9be26f60cf4128e08b94756fe38654aacb86fb1182204",
+          "bytes": 857840
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#3C283B",
+        "dark": "#E3D7E9"
+      },
+      "font_license": "mobile/assets/typefaces/adl-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "tawassul": {
+      "name": "Tawassul B2B",
+      "concept": "Commercial bridge",
+      "brief": "A single refined copper bridge link spanning two malachite geometric anchors, with a cream inset that creates a clear connection. Strategic commercial confidence, sculptural but simple. No envelope, handshake or generic chain links.",
+      "symbol": {
+        "path": "mobile/assets/variants/tawassul/dimensional-logo.png",
+        "sha256": "32d1f19d8f5a0100ca2627ae1cf78487cc42b83095460963aedda5aacf490f95",
+        "bytes": 626854,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-1261caa7-1520-4b92-b12a-12f1403411b9.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/tawassul.ttf",
+          "sha256": "603cd78078826c6bb5477206c1344c0d69507a2e1e16f5d63e614450b448f575",
+          "bytes": 58600
+        },
+        "family": "ExperienceDisplay_tawassul",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 12,
+        "text": "Tawassul B2B"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/tawassul/wordmark-on-light.svg",
+          "sha256": "5bc14632a255635bc5d7f82ad2762be7848d66ed07d0ffe092201c2cc9664307",
+          "bytes": 4360
+        },
+        "logo_light": {
+          "path": "brand-assets/production/tawassul/logo-on-light.svg",
+          "sha256": "985c07e980418033946dfe68f3a9611d51810e9154188ae92a4bc9af4918c1f4",
+          "bytes": 840346
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/tawassul/wordmark-on-dark.svg",
+          "sha256": "a99f8bae99e1e9c3c4bb733fa075ed25227b17eacd07c18398ab453d413289aa",
+          "bytes": 4360
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/tawassul/logo-on-dark.svg",
+          "sha256": "3cbc008ad15086fb999decf3441d81529486a02ef06c6062ea199cbcc259d17b",
+          "bytes": 840346
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#123D32",
+        "dark": "#EDE4CD"
+      },
+      "font_license": "mobile/assets/typefaces/tawassul-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "adab": {
+      "name": "Adab AI",
+      "concept": "Editorial campaign bloom",
+      "brief": "An expressive magenta and blush folded-paper composition opening into three lilac editorial petals with asymmetric rhythm. Rich creative-studio identity, tactile paper, sophisticated color blocking. No text-like glyphs, document stack, chat bubble or generic flower.",
+      "symbol": {
+        "path": "mobile/assets/variants/adab/dimensional-logo.png",
+        "sha256": "7f9ab0bd7ce5d158eb54da6d624fa9883a8d2898f52663eaa22492f6692b3b80",
+        "bytes": 755697,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-c8704d98-768b-4492-b1a0-fb4df1f1a54b.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/adab.ttf",
+          "sha256": "bb5f55f22ea0b3fb7ea09b628c1c746ec33c7868ba0ec1ba2d996ae9675f26e5",
+          "bytes": 72920
+        },
+        "family": "ExperienceDisplay_adab",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 7,
+        "text": "Adab AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/adab/wordmark-on-light.svg",
+          "sha256": "f2f3de69c9fd0d9c2c3ff5a0755bb43ef061fbd0d4f23b3fe7133e46a51e8504",
+          "bytes": 4670
+        },
+        "logo_light": {
+          "path": "brand-assets/production/adab/logo-on-light.svg",
+          "sha256": "73d8a509a4e56bc814f384e4cd53d5bbc8f3403521b22b5523b9153014d3c855",
+          "bytes": 1012435
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/adab/wordmark-on-dark.svg",
+          "sha256": "3403a60b8c0b59857bf7cf6a157ad87e4067556108de6aa9d55f59f602c11b63",
+          "bytes": 4670
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/adab/logo-on-dark.svg",
+          "sha256": "616b32c241cc654cd1f8139890d31a53601867b1b4635de0ba9588cd2f80c243",
+          "bytes": 1012435
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#782859",
+        "dark": "#F9DAE0"
+      },
+      "font_license": "mobile/assets/typefaces/adab-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "khidmah": {
+      "name": "Khidmah AI",
+      "concept": "Responsive service loop",
+      "brief": "Two precisely interlocking ocean-blue ceramic service loops with a mint inner path and pale-yellow joint. Rounded, welcoming, fluid but highly readable. No speech bubbles, headset, robot or infinity-symbol cliche.",
+      "symbol": {
+        "path": "mobile/assets/variants/khidmah/dimensional-logo.png",
+        "sha256": "063cda76daa7a2200dd5fa33eef9b036c7ef20aafcafa01484067ef3efe06324",
+        "bytes": 639340,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-14192ebb-14db-40b5-89fb-dde6492f2130.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/khidmah.ttf",
+          "sha256": "e1aa18a35e4642435153f74a88716b77468d28c84c5c30969f91b87c3c393ade",
+          "bytes": 113520
+        },
+        "family": "ExperienceDisplay_khidmah",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Khidmah AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/khidmah/wordmark-on-light.svg",
+          "sha256": "43e0c30610830e8e02bbb1252046f76e03a18ffe451f807ce81119b17df6315e",
+          "bytes": 2580
+        },
+        "logo_light": {
+          "path": "brand-assets/production/khidmah/logo-on-light.svg",
+          "sha256": "cc76a6391ee71c66fa00ff4e4b345d7d7f9643da72c9afb196180550d3518044",
+          "bytes": 855217
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/khidmah/wordmark-on-dark.svg",
+          "sha256": "28de7c9a65fbb8ad7de07f2d5866feb9f08c792df5c54af07dbf3e925d4848f6",
+          "bytes": 2580
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/khidmah/logo-on-dark.svg",
+          "sha256": "e0bb8caaeb8b92ec4745a12f1e2f6872d841831352ece3ae8c5b10402aa3adc9",
+          "bytes": 855217
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#225B74",
+        "dark": "#FFF5CC"
+      },
+      "font_license": "mobile/assets/typefaces/khidmah-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "jomrok": {
+      "name": "Jomrok AI",
+      "concept": "Cargo route checkpoint",
+      "brief": "Two miniature industrial-white and electric-blue cargo blocks held in a vivid-orange L-shaped shipment route. Bold ribbed container surfaces, precise logistics geometry, restrained industrial lighting. No globe, flag, ship, letters or tiny labels.",
+      "symbol": {
+        "path": "mobile/assets/variants/jomrok/dimensional-logo.png",
+        "sha256": "d5d7d55da405668ed8d24a46cb11185bb93180f0154ed25490949d60ac5aacc8",
+        "bytes": 915935,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-39c60cf6-95ec-4fc5-85df-3871631f7ce3.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/jomrok.ttf",
+          "sha256": "7164e5658bb9330106b6989df3433a52425804f6594dc54f2929c13c944bba63",
+          "bytes": 109200
+        },
+        "family": "ExperienceDisplay_jomrok",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Jomrok AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/jomrok/wordmark-on-light.svg",
+          "sha256": "ec5502fdf6021f36cde14785a1ed14e56c0043e3ed391177810b556af52ba33e",
+          "bytes": 3158
+        },
+        "logo_light": {
+          "path": "brand-assets/production/jomrok/logo-on-light.svg",
+          "sha256": "5df73453e2681652698e3755d7869bda30141b41a869a7280ef801eb0491c578",
+          "bytes": 1224575
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/jomrok/wordmark-on-dark.svg",
+          "sha256": "a5e32a83e3ad912448baddbae91217f3a0072dbb64c99f7bd0a00cfeafa70645",
+          "bytes": 3158
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/jomrok/logo-on-dark.svg",
+          "sha256": "7f0eed5fc450c59a297b052fcf2c709bd4f521e70111ed17d376e66cf35c50cf",
+          "bytes": 1224575
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#1645AE",
+        "dark": "#F4F3ED"
+      },
+      "font_license": "mobile/assets/typefaces/jomrok-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "khibrat": {
+      "name": "Khibrat AI",
+      "concept": "Evidence calibration",
+      "brief": "A refined charcoal evaluation frame around three warm-stone qualification tabs, aligned by one acid-lime precision cursor. Analytical and transparent, clear large shapes. No resume lettering, person silhouette, checkmark, magnifier or bar chart.",
+      "symbol": {
+        "path": "mobile/assets/variants/khibrat/dimensional-logo.png",
+        "sha256": "405a7a5066b078c2079cc8a9dc5b2df680764d67a4d5c494d73f50a860305347",
+        "bytes": 827649,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-2f95421b-4066-48f1-b2fb-50f9706a9322.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/khibrat.ttf",
+          "sha256": "24d2a00474b56be85e1a137cf5f6bb144e9f93693103b31ba32d6351ce0149b1",
+          "bytes": 56736
+        },
+        "family": "ExperienceDisplay_khibrat",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Khibrat AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/khibrat/wordmark-on-light.svg",
+          "sha256": "6582e33b8b698c545e3bda486cf6a509c3a64ac352224851a74b292c4b298ea1",
+          "bytes": 2474
+        },
+        "logo_light": {
+          "path": "brand-assets/production/khibrat/logo-on-light.svg",
+          "sha256": "33021fca79e7ba418e8536e44940d44aa7c0084d3a9aaa690af2607e0aeacfa2",
+          "bytes": 1106175
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/khibrat/wordmark-on-dark.svg",
+          "sha256": "07f0eb6144ada2618a09922c0f46e0022d2fcab8c92c14eae40161a6d2a6ee81",
+          "bytes": 2474
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/khibrat/logo-on-dark.svg",
+          "sha256": "77dc0c0b34b371ee75a97f4e944a9c870a92f569ae554b3f3604ccae52efe3c7",
+          "bytes": 1106175
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#34312D",
+        "dark": "#D9E14D"
+      },
+      "font_license": "mobile/assets/typefaces/khibrat-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "majlis": {
+      "name": "Majlis AI",
+      "concept": "Welcoming courtyard",
+      "brief": "A small open ultramarine architectural courtyard made of softly stepped porcelain planes with one orchid central welcome space. Warm, human, spatial onboarding. No arch, doorway, chair, people or generic house silhouette.",
+      "symbol": {
+        "path": "mobile/assets/variants/majlis/dimensional-logo.png",
+        "sha256": "2587b67ff9cf4bcacf38bd6bf75227e67ca16d885aedec6e63447bd6d01db525",
+        "bytes": 918498,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-8cc82b16-1c21-4bfd-89ca-42da70b81d64.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/majlis.ttf",
+          "sha256": "50f1683b63a9c7ca53181dcd2fc5d708972aafcea92b9a1d31db146dafbf203d",
+          "bytes": 43296
+        },
+        "family": "ExperienceDisplay_majlis",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Majlis AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/majlis/wordmark-on-light.svg",
+          "sha256": "f91b9df985d6f7779c23e46892f5a2cb7e520c23e1f83d158afc3d43646a5940",
+          "bytes": 2375
+        },
+        "logo_light": {
+          "path": "brand-assets/production/majlis/logo-on-light.svg",
+          "sha256": "bcf071877018a5703e56a3bd655da8f1068d4ed2d3af6d406c4037204ad2cb08",
+          "bytes": 1227221
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/majlis/wordmark-on-dark.svg",
+          "sha256": "a3f87b1831241b7416b270541fe651413cbf7618764228acacf027a1411cab83",
+          "bytes": 2375
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/majlis/logo-on-dark.svg",
+          "sha256": "bb3d3f879b10dcb29f2a039e80df86dbac14dca4507f30e32e193af6b58429d3",
+          "bytes": 1227221
+        }
+      },
+      "composition": "stacked",
+      "wordmark_colors": {
+        "light": "#403A78",
+        "dark": "#F5EBE9"
+      },
+      "font_license": "mobile/assets/typefaces/majlis-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "rafiq": {
+      "name": "Rafiq",
+      "concept": "Companion support",
+      "brief": "A warm peach pebble gently supported by an organic soft-violet continuous cradle with a warm-white inner edge. Comforting tactile matte resin, balanced asymmetry, very clear silhouette. No heart, medical symbol, robot or chat bubble.",
+      "symbol": {
+        "path": "mobile/assets/variants/rafiq/dimensional-logo.png",
+        "sha256": "6fba26b71d2ff8499b89e24829d8a003e54c629f3394687b9c644f49d8c5b841",
+        "bytes": 899997,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-ffefbf4d-2ace-440f-a747-c83ac3f16c3f.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/rafiq.ttf",
+          "sha256": "b324f604ad602dfda7e35e2b8f127ab68b3d868cdfe64cef6c8c4e7cf25ed310",
+          "bytes": 78784
+        },
+        "family": "ExperienceDisplay_rafiq",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 4,
+        "text": "Rafiq"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/rafiq/wordmark-on-light.svg",
+          "sha256": "27b5f6dd7af150d169c071a73a6caa134c4d03e09cd8b74ccd909f794eca8671",
+          "bytes": 3095
+        },
+        "logo_light": {
+          "path": "brand-assets/production/rafiq/logo-on-light.svg",
+          "sha256": "7da4011bc189abfacf8c002e2b1d93ca8b374ccdab85dfe03d4c5c0f1e385047",
+          "bytes": 1203260
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/rafiq/wordmark-on-dark.svg",
+          "sha256": "920e97a78e99ead6537385795e3ffb808140549dd97398802efb309dd2123639",
+          "bytes": 3095
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/rafiq/logo-on-dark.svg",
+          "sha256": "ced005973b624dc9d3cdc4ce9253a5f9dd35e984bc1b16337990254cf8d2c926",
+          "bytes": 1203260
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#5C4D7E",
+        "dark": "#F9EEE8"
+      },
+      "font_license": "mobile/assets/typefaces/rafiq-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "sawm": {
+      "name": "Sawm AI",
+      "concept": "Solar-cycle intention",
+      "brief": "A night-blue glazed solar disk with a candlelight inner arc and a carefully interrupted muted-gold orbital rim. Contemplative astronomical identity, a simple memorable silhouette. No moon-and-star religious emblem, cloud, clock numbers or borrowed weather icon.",
+      "symbol": {
+        "path": "mobile/assets/variants/sawm/dimensional-logo.png",
+        "sha256": "ba10aec0d03ec3917264add3582adc6179a4e4b573d55a9337efe8367a112b34",
+        "bytes": 951197,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-9115cf1f-7687-4b18-bf99-3ae09802493a.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/sawm.ttf",
+          "sha256": "54c90d4eb308fbf98d931cb936de5edf59336426d9b2752c7c45a9ee950923e1",
+          "bytes": 118972
+        },
+        "family": "ExperienceDisplay_sawm",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 7,
+        "text": "Sawm AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/sawm/wordmark-on-light.svg",
+          "sha256": "69f4768536520c8715ca4a7b07c2ee1e50ca1f562e713f4ecc0b9f16f60130ce",
+          "bytes": 3049
+        },
+        "logo_light": {
+          "path": "brand-assets/production/sawm/logo-on-light.svg",
+          "sha256": "528bd3be1a53a2ab5a824602203c93659a64a0ce594c5344e9e0841eb9acb8d7",
+          "bytes": 1271494
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/sawm/wordmark-on-dark.svg",
+          "sha256": "3d818505e1e62d7baed4f5345e2cb141c0ff9b2a22556e9384fa9002e5f6b85f",
+          "bytes": 3049
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/sawm/logo-on-dark.svg",
+          "sha256": "3a652de7069b815790f5c84d7fe0a91e3344307182d09d51ce7da127e8d782d4",
+          "bytes": 1271494
+        }
+      },
+      "composition": "stacked",
+      "wordmark_colors": {
+        "light": "#131F4D",
+        "dark": "#FFE8B0"
+      },
+      "font_license": "mobile/assets/typefaces/sawm-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "mizan": {
+      "name": "Mizan AI",
+      "concept": "Values in balance",
+      "brief": "Two parallel evergreen precision beams supporting a single sage stone orb in a poised balanced composition, with chalk inner faces. Restrained financial editorial sculpture. No money, coins, religious seal, scales of justice or upward arrow.",
+      "symbol": {
+        "path": "mobile/assets/variants/mizan/dimensional-logo.png",
+        "sha256": "13affb6e8a53181dd3de41b2d372ef63f30b40963ff434947923a0ef164ef2a9",
+        "bytes": 712136,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-edab0afc-3139-440c-a915-bc26fe84dadc.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/mizan.ttf",
+          "sha256": "3bcdb1104925fa8689f04aac939f5fb09edd35b726493e978d25cf0785291ec7",
+          "bytes": 61232
+        },
+        "family": "ExperienceDisplay_mizan",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Mizan AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/mizan/wordmark-on-light.svg",
+          "sha256": "c4a7e27b3138a85649b9fe23c7c5f0f81eccee9187fb48159f54f10d1ec85140",
+          "bytes": 1515
+        },
+        "logo_light": {
+          "path": "brand-assets/production/mizan/logo-on-light.svg",
+          "sha256": "f3d9ac7e8971e4a04ea2ba5b1aa6cc2ca21609887ab8906b1abd288d068b9264",
+          "bytes": 951200
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/mizan/wordmark-on-dark.svg",
+          "sha256": "3236de3dd5de97575054606e609310f35db600b587f4d2eeba94fa1804111315",
+          "bytes": 1515
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/mizan/logo-on-dark.svg",
+          "sha256": "34110cb9cea81f30e6280fc64041b9b90aa46f5425f718d527213e25085de716",
+          "bytes": 951200
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#143C32",
+        "dark": "#EFF1E4"
+      },
+      "font_license": "mobile/assets/typefaces/mizan-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "thawg": {
+      "name": "Thawg AI",
+      "concept": "Culinary signature",
+      "brief": "A tactile shallow terracotta plate with a Mediterranean-blue rim, holding one beautifully formed vanilla-colored culinary curl and a small green herb accent. Sensory premium food identity with simplified forms. No cutlery, lettering, certification stamp, menu or restaurant scene.",
+      "symbol": {
+        "path": "mobile/assets/variants/thawg/dimensional-logo.png",
+        "sha256": "ecf36034cf57d75814f6d603cbf5082d1c3055b6cccebedbe88bebf5eeb84693",
+        "bytes": 1007931,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-f867520b-7d80-4183-a7d4-b8ea31adbf8e.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/thawg.ttf",
+          "sha256": "74f2b55010147c8cf987bddd07cefda06c6a94124ed1962b74aa1c0359a44552",
+          "bytes": 90740
+        },
+        "family": "ExperienceDisplay_thawg",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Thawg AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/thawg/wordmark-on-light.svg",
+          "sha256": "25b41c9c60cf06d3d89ca3b9f1f407bba01aa938075d73a49062f718945b24ac",
+          "bytes": 2829
+        },
+        "logo_light": {
+          "path": "brand-assets/production/thawg/logo-on-light.svg",
+          "sha256": "f54fd45cca1b4172cd24cdd9826e7d025f8ea82bce30038cd1de2807975a2bbb",
+          "bytes": 1346906
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/thawg/wordmark-on-dark.svg",
+          "sha256": "01a82beb33e22cce9d171be1ebcbcc8da11d3104fbca232e898ec7e033cddf3c",
+          "bytes": 2829
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/thawg/logo-on-dark.svg",
+          "sha256": "94bd503d7e15eb5b4fc5919c52af5db2c9bc9008b20e4df8c946e0c2ac526423",
+          "bytes": 1346906
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#963728",
+        "dark": "#FFF0D8"
+      },
+      "font_license": "mobile/assets/typefaces/thawg-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "manzil": {
+      "name": "Manzil AI",
+      "concept": "Household rooms",
+      "brief": "A warm ivory house cross-section with a precise aubergine roof and three nested peach-cream interior rooms, one dusty-rose room accent. Domestic ceramic architectural object, intimate and clear. No financial chart, coin, gateway or generic flat house pictogram.",
+      "symbol": {
+        "path": "mobile/assets/variants/manzil/dimensional-logo.png",
+        "sha256": "d3a24bf68095ce1a454465c525cd94270016aa82a8c477acace28368325a84ac",
+        "bytes": 1242605,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-b97df89a-98db-4cf8-a546-7553e1b92ff5.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/manzil.ttf",
+          "sha256": "b7f1abd04f9cc2d165ea281dc78cd8ee8112c0f8280e0a654c66556d719b42ea",
+          "bytes": 55388
+        },
+        "family": "ExperienceDisplay_manzil",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Manzil AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/manzil/wordmark-on-light.svg",
+          "sha256": "bb0bf02846b5c158e79297178a561da9cc14c42aaae5491e650ed6f2bb1dca6b",
+          "bytes": 1662
+        },
+        "logo_light": {
+          "path": "brand-assets/production/manzil/logo-on-light.svg",
+          "sha256": "8916bb27a918cb3046535937334b57ed34d11ea91052e0a19217efd587f94b32",
+          "bytes": 1658639
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/manzil/wordmark-on-dark.svg",
+          "sha256": "eab964e82f11f09abb9eef4890d302ac2c667f0c332713ed653eb18254a9990e",
+          "bytes": 1662
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/manzil/logo-on-dark.svg",
+          "sha256": "e593aead3a5df4b861f3c9b7a54f24d7ed29eaa983136e4934a0435fb7346af6",
+          "bytes": 1658639
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#42275A",
+        "dark": "#FBE5D5"
+      },
+      "font_license": "mobile/assets/typefaces/manzil-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "gurbah": {
+      "name": "Gurbah AI",
+      "concept": "Relocation atlas",
+      "brief": "A small parchment folded-map sculpture with slate-blue cartographic planes and one vivid-apricot route crossing a fold. Exploratory editorial identity, readable folded silhouette. No actual country outline, invented geographic labels, flag, passport or location pin.",
+      "symbol": {
+        "path": "mobile/assets/variants/gurbah/dimensional-logo.png",
+        "sha256": "3fc8b4a2d0e78e473def5c14ed2d9d66d655d1bb717c23aa09864708655a1fbc",
+        "bytes": 1073623,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-3e3eec74-2e43-4192-a246-8f4380e79d96.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/gurbah.ttf",
+          "sha256": "be824137989210c8c043f24b264c234018fb3d92b1acf1b751616f39bd1b02e5",
+          "bytes": 105188
+        },
+        "family": "ExperienceDisplay_gurbah",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Gurbah AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/gurbah/wordmark-on-light.svg",
+          "sha256": "b7beec84132429085e87676e6186bade7317eb61bb7fdf2b507afee1e89127b9",
+          "bytes": 3621
+        },
+        "logo_light": {
+          "path": "brand-assets/production/gurbah/logo-on-light.svg",
+          "sha256": "16bd177d473160f6da4e16596a0569adefdc2a668ef7a0ec7b5f404a25e18b3c",
+          "bytes": 1435290
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/gurbah/wordmark-on-dark.svg",
+          "sha256": "dc5b4397197ba695233d11cd5d68e3680d326a4bedcfb34886e08537bd73befe",
+          "bytes": 3621
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/gurbah/logo-on-dark.svg",
+          "sha256": "f8516d1e60b15852dc0cac7384fcb1b9e9d067a088b881a29b1d3c5ae7b9912b",
+          "bytes": 1435290
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#273B63",
+        "dark": "#FFF2DB"
+      },
+      "font_license": "mobile/assets/typefaces/gurbah-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "amanah-eco": {
+      "name": "Amanah Eco",
+      "concept": "Branching energy flow",
+      "brief": "A forest-green sculptural energy channel branching into three pale-citron flow tips around one lime reservoir. Organic measurable flow geometry, frosted recycled resin. No generic leaf, bulb, recycling arrows, electricity bolt or globe.",
+      "symbol": {
+        "path": "mobile/assets/variants/amanah-eco/dimensional-logo.png",
+        "sha256": "6e46a7bbf166c19465a403b7b1383cbef868bb5bbf51afc4dbcbfd62a58a7532",
+        "bytes": 561406,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-43c593ab-31c0-48ab-9459-45f09375e473.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/amanah-eco.ttf",
+          "sha256": "7fc68f2fe9e1b1d04ca86d6184b2881e2362525f7b961a5ae350f4dca9be4150",
+          "bytes": 164528
+        },
+        "family": "ExperienceDisplay_amanah_eco",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Amanah Eco"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/amanah-eco/wordmark-on-light.svg",
+          "sha256": "beb3005215ae55a6af25dc675e7e5e721e00e8635cf1d8ddf15bf494903d5a15",
+          "bytes": 3805
+        },
+        "logo_light": {
+          "path": "brand-assets/production/amanah-eco/logo-on-light.svg",
+          "sha256": "e8140658defee4d99f15fee8d11b49250c2eb8759820cca42e5d7ec308ac2f87",
+          "bytes": 752529
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/amanah-eco/wordmark-on-dark.svg",
+          "sha256": "28b8939f181b7dd6d707b89d87196ba3e8afba92db9a8babe6dac09a8b6c40b7",
+          "bytes": 3805
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/amanah-eco/logo-on-dark.svg",
+          "sha256": "4dca1b669545dc5e6f2f79c1db3f790eaaa7fd51d6eeff858af67583e76f5298",
+          "bytes": 752529
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#215B39",
+        "dark": "#F8F8DA"
+      },
+      "font_license": "mobile/assets/typefaces/amanah-eco-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "nafas": {
+      "name": "Nafas AI",
+      "concept": "Breathing membrane",
+      "brief": "One softly inflated eucalyptus translucent membrane forming a calm open oval with two delicate mist-colored breathing folds and a muted-sage inner rim. Quiet atmospheric glass, very restrained highlights. No path ribbon, infinity knot, heart, lungs or medical readings.",
+      "symbol": {
+        "path": "mobile/assets/variants/nafas/dimensional-logo.png",
+        "sha256": "732c05129b65b82e846c34d5829e1c1b14504ab75f097a2c8aa22b7ae4eee84a",
+        "bytes": 1029039,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-aa10b69b-bc09-440d-8277-2c11cd95b9f3.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/nafas.ttf",
+          "sha256": "166898996b6d411d897f5a252fcc2228b074388786de10b882740d2ad946a289",
+          "bytes": 111528
+        },
+        "family": "ExperienceDisplay_nafas",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Nafas AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/nafas/wordmark-on-light.svg",
+          "sha256": "55adc9ad1bd659fb3fab3242e2db34329ac7bad22158eaf46c0aba382bdad169",
+          "bytes": 3267
+        },
+        "logo_light": {
+          "path": "brand-assets/production/nafas/logo-on-light.svg",
+          "sha256": "f308eb6557376261a99828a46fd57dd6b40d1ba7f5ab04e1c4be7e79ef612055",
+          "bytes": 1375501
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/nafas/wordmark-on-dark.svg",
+          "sha256": "f0d37a4de51dbaa90805ecfac9fbeb7a7cd7021c1c2d1769d03fe4ecce4f5d3c",
+          "bytes": 3267
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/nafas/logo-on-dark.svg",
+          "sha256": "d528ff222e6a75ad0b517e7c56acd2a5551eda3173373b3c085ecebfae9b964f",
+          "bytes": 1375501
+        }
+      },
+      "composition": "stacked",
+      "wordmark_colors": {
+        "light": "#3C5B64",
+        "dark": "#F0F4F1"
+      },
+      "font_license": "mobile/assets/typefaces/nafas-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "tadweer": {
+      "name": "Tadweer AI",
+      "concept": "Material renewal",
+      "brief": "A single angular burnt-orange material loop with a recycled-paper cream laminated edge and one dark-petrol cut surface. Tactile fibers and clear circular-economy silhouette. No standard three-arrow recycling symbol, globe, leaf or trash bin.",
+      "symbol": {
+        "path": "mobile/assets/variants/tadweer/dimensional-logo.png",
+        "sha256": "e6f1ef5b5a2065d2732199c71c91681df06c8cfcbc21fd0390bbad4310d36cf3",
+        "bytes": 1057037,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-05e6aec4-48ee-4bf3-b7a8-e76e87d22768.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/tadweer.ttf",
+          "sha256": "e0962648f328c7ee87109ee01278994626f84662cfd586bb1ce87f569dabef7c",
+          "bytes": 193192
+        },
+        "family": "ExperienceDisplay_tadweer",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 10,
+        "text": "Tadweer AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/tadweer/wordmark-on-light.svg",
+          "sha256": "55b2dccdc86c67dcfab209a7e0a7d2127b96a9e61831751573f4196b595e5b0e",
+          "bytes": 2912
+        },
+        "logo_light": {
+          "path": "brand-assets/production/tadweer/logo-on-light.svg",
+          "sha256": "31b489108c91e75fd8fd3d40abc825515e07cab1e8d05f3fb0872033b9bb60ba",
+          "bytes": 1412477
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/tadweer/wordmark-on-dark.svg",
+          "sha256": "7ebb883c52542a669e81ef2e8e3a740a6c98e94ad9fe5e9ae3a833fe855254e7",
+          "bytes": 2912
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/tadweer/logo-on-dark.svg",
+          "sha256": "657ebed0bd0ebcca175ff99c0bf42ef7481b6998694b85d1c93a21317e4b3f6c",
+          "bytes": 1412477
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#8E3E1F",
+        "dark": "#F7F2E3"
+      },
+      "font_license": "mobile/assets/typefaces/tadweer-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "turath": {
+      "name": "Turath AI",
+      "concept": "Archival fragment",
+      "brief": "A refined bronze archival frame holding one sandstone pottery fragment with a sparse incised geometric line. Museum-quality tactile material, rich but restrained, clear at small sizes. An original conceptual heritage symbol, not a real attributed artifact. No text, national emblem or copied museum object.",
+      "symbol": {
+        "path": "mobile/assets/variants/turath/dimensional-logo.png",
+        "sha256": "89277125b3c7a093b509f13f7b4559ab612f0fcf4d73ca679fcedaa5a8885c7c",
+        "bytes": 1092442,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-e0a3b65a-2adc-4fbd-8e8a-c63e9936ce6d.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/turath.ttf",
+          "sha256": "0ab70dfeeda244437cdf0b90a6895f9729ba8f12161c0015fdb1fc24e990122f",
+          "bytes": 271452
+        },
+        "family": "ExperienceDisplay_turath",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 9,
+        "text": "Turath AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/turath/wordmark-on-light.svg",
+          "sha256": "58f9b782518ea78e8e67ff7eca1d9ff3b86d0e67f6f52f9355e19255d5b96c5b",
+          "bytes": 3625
+        },
+        "logo_light": {
+          "path": "brand-assets/production/turath/logo-on-light.svg",
+          "sha256": "5dafb18a7a6b185038a42fb60186c922e8560dbcc9270f597a10724e6dd452c8",
+          "bytes": 1460385
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/turath/wordmark-on-dark.svg",
+          "sha256": "14971abb6872391e27f3d80218acf98ba296fc00dd5a3516200ddd8b9cde879e",
+          "bytes": 3625
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/turath/logo-on-dark.svg",
+          "sha256": "d0c07580c3a4e88e5c9994277d812a1802fb59db36c1d03d776e690a1f3957cc",
+          "bytes": 1460385
+        }
+      },
+      "composition": "stacked",
+      "wordmark_colors": {
+        "light": "#65533C",
+        "dark": "#F6F1E7"
+      },
+      "font_license": "mobile/assets/typefaces/turath-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "himam": {
+      "name": "Himam AI",
+      "concept": "Open accessible route",
+      "brief": "A bold royal-blue open-ended ramp-like navigation form with a warm-white passage and one sunflower tactile raised point. High legibility, restrained dimensional depth, empowering simplicity. No wheelchair symbol, person silhouette, medical sign or tiny details.",
+      "symbol": {
+        "path": "mobile/assets/variants/himam/dimensional-logo.png",
+        "sha256": "3c07685b970e1ccde8dd25910de143a4960a2beabdd0c7cdd17ac35ebed5d2f8",
+        "bytes": 621572,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-889dfd2a-7385-4694-b3ca-eb6e4fdf12d3.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/himam.ttf",
+          "sha256": "ae8c3fc849a8a24cbdfe1bd29ed9c7c3e1610a949310fc811df8e2f202c4ad3a",
+          "bytes": 54236
+        },
+        "family": "ExperienceDisplay_himam",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Himam AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/himam/wordmark-on-light.svg",
+          "sha256": "ee3153e57fcea16bc7018868d63a4abfe34d5e808d855d568cd6b9cbf72f4992",
+          "bytes": 2046
+        },
+        "logo_light": {
+          "path": "brand-assets/production/himam/logo-on-light.svg",
+          "sha256": "dbc10b9b5650203e48b85996e085b0c42cbb7c6cdeb70381cd6895d8d8acf7b6",
+          "bytes": 830978
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/himam/wordmark-on-dark.svg",
+          "sha256": "c9f59b2b7416a342755d40b419f5bae3024d1092cd8560d6b841e04554836818",
+          "bytes": 2046
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/himam/logo-on-dark.svg",
+          "sha256": "8a30d2c550a7125f7aa9cc4f10f6c78bb97c84f2bcf00b21569971818ae38115",
+          "bytes": 830978
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#10358C",
+        "dark": "#FFFCE8"
+      },
+      "font_license": "mobile/assets/typefaces/himam-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    },
+    "hisad": {
+      "name": "Hisad AI",
+      "concept": "Shared harvest",
+      "brief": "Two distinctive harvest-red produce forms sharing one golden stem-path, one warm-cream cut face showing a few large sculpted seeds. Action-oriented food redistribution identity, tactile and generous. No plate, heart, handshake, grocery basket, lettering or certification badge.",
+      "symbol": {
+        "path": "mobile/assets/variants/hisad/dimensional-logo.png",
+        "sha256": "b043d85d3316fd4e5c5f399c0ee0403cdf330f4efe4c489b9d5d653cfa54457b",
+        "bytes": 1072600,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "generated_original": "exec-cc9fc117-f84b-4bde-9e42-7fab735c947a.png"
+      },
+      "typography": {
+        "font": {
+          "path": "mobile/assets/typefaces/hisad.ttf",
+          "sha256": "ffa55ce07a4b3746e214f03887c05859a02e4ce17b4a5b90c9197ba7fb5740ea",
+          "bytes": 70056
+        },
+        "family": "ExperienceDisplay_hisad",
+        "shaping": "HarfBuzz with kerning and ligatures; glyph outlines from the licensed font",
+        "glyph_count": 8,
+        "text": "Hisad AI"
+      },
+      "files": {
+        "wordmark_light": {
+          "path": "brand-assets/production/hisad/wordmark-on-light.svg",
+          "sha256": "fe84ac2e8809668fe81ace0c85b20d979e63822e98b90363c9bd2b73bdc8a4e3",
+          "bytes": 2396
+        },
+        "logo_light": {
+          "path": "brand-assets/production/hisad/logo-on-light.svg",
+          "sha256": "e9c1b2c36ef3ecf38e9c7aa0a2d2383f6fb6dac5f1da75124d9e822a0f5c4d50",
+          "bytes": 1432701
+        },
+        "wordmark_dark": {
+          "path": "brand-assets/production/hisad/wordmark-on-dark.svg",
+          "sha256": "c8a7ea46a8ecae01daf3ad193b949f26079e09eca0e6721c4a1fec13cddfa13a",
+          "bytes": 2396
+        },
+        "logo_dark": {
+          "path": "brand-assets/production/hisad/logo-on-dark.svg",
+          "sha256": "f3f7341223ea225baee711d0531aefe0e37724993c38a039fdaa82c6bee4c54f",
+          "bytes": 1432701
+        }
+      },
+      "composition": "horizontal",
+      "wordmark_colors": {
+        "light": "#943A38",
+        "dark": "#FCF3E4"
+      },
+      "font_license": "mobile/assets/typefaces/hisad-OFL.txt",
+      "physical_device_verified": false,
+      "expert_originality_review": "not certified"
+    }
+  }
+}

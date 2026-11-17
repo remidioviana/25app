@@ -40,8 +40,8 @@ def main():
   icon_name='dimensional-icon.png' if id in json.loads((ROOT/'brand-assets/dimensional-icons.json').read_text())['icons'] else 'icon.png'
   logo=(ROOT/'brand-assets/logos'/f'{id}.svg').read_text()
   assets='../assets/variants/'+id+'/'
-  metadata=json.loads((ROOT/'brand-assets/dimensional-icons.json').read_text())['icons'].get(id,{})
-  symbol='symbol:require('+json.dumps(assets+'dimensional-logo.png')+'),' if metadata.get('brand_logo') else ''
+  metadata=json.loads((ROOT/'brand-assets/dimensional-logos.json').read_text())['products'].get(id,{})
+  symbol='symbol:require('+json.dumps(assets+'dimensional-logo.png')+'),' if metadata.get('symbol') else ''
   lines.append(json.dumps(id)+':{'+symbol+'icon:require('+json.dumps(assets+icon_name)+'),splash:require('+json.dumps(assets+'splash.png')+'),hero:require('+json.dumps(assets+'hero.png')+'),logo:'+json.dumps(logo)+'},')
  lines.append('};');(ROOT/'mobile/src/brands.ts').write_text('\n'.join(lines)+'\n')
  print('Rendered 25 independent marks, outlined wordmarks and 75 native assets without changing product specifications.')
