@@ -1,6 +1,6 @@
 {
-  "source_commit": "3278b4b3c1f22faf8121fbc1fb7056f015028a73",
-  "checked_at": "2026-11-17T18:02:52.590309+00:00",
+  "source_commit": "0173ee1d69b02a714c09f02d995229dd3bef51b5",
+  "checked_at": "2026-11-17T18:17:13.613837+00:00",
   "viewport": {
     "width": 390,
     "height": 844
@@ -32,7 +32,7 @@
     {
       "app": "munagasah",
       "file": "munagasah.png",
-      "sha256": "1f86a89182fa21b17abe6e9fde6b609ddc54ca80927d0edd8cbb272d4845a574",
+      "sha256": "324b5a76983ceb86633849149887118389d922261ca32213b77092f11260e807",
       "input_sha256": "70126494e086bb3155541eef6dbc93395d419b75b6f44282c2050d4e0dc9bebb",
       "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
     },
@@ -102,7 +102,7 @@
     {
       "app": "rafiq",
       "file": "rafiq.png",
-      "sha256": "c7f8a96bf043e221082d1c8ac4e3d2a4c45f45aa12411d02f50c407969943245",
+      "sha256": "8b2c5993af44511e9dcfb4d56e24a1f7dd29bd2ce956c242c9269141b6dde140",
       "input_sha256": "17db27c754700f043d934e9d3b9500d2a734334118f3bd105a6fdecdb4725fbe",
       "scope": "Actual browser rendering and local tool interaction using the existing repository synthetic example through controlled intake transport"
     },
