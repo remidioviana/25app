@@ -35,3 +35,5 @@ O Markdown exportado inclui um índice de afirmações e seus trechos registrado
 A contingência de modelos foi publicada separadamente e validada por consulta autenticada, sem nova inferência: [relatório](evidence/groq-fallback-catalogue-verified.json). Ela preserva os papéis padrão; Qwen continua Preview com opt-in.
 
 O índice exportado preserva `doc` e `chunk` quando registrados e inclui SHA-256 do texto UTF-8 exato de cada passagem. O hash identifica o trecho exportado; não certifica o documento original nem sua autenticidade. O registro [de CI](evidence/github-code-checks.json) foi atualizado para a execução 43935644962, no commit 3500354 (207 testes Python), anterior a esta ampliação.
+
+A prévia de importação também retorna hashes SHA-256 separados dos bytes recebidos e do texto extraído, tamanho original e autenticidade não verificada. Esse recibo pertence à prévia: o endpoint não guarda o arquivo original e o recibo ainda não é anexado automaticamente ao documento salvo pelo cliente. Não constitui aceite com documento autêntico.

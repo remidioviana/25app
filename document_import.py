@@ -1,6 +1,7 @@
 """Bounded text extraction. PDF/office parsers never run in the HTTP worker process."""
 import base64
 import csv
+import hashlib
 import io
 import json
 import os
@@ -76,6 +77,10 @@ def _extract(filename,encoded):
     try:result=json.loads(process.stdout)
     except (ValueError,UnicodeDecodeError):raise ValueError('Isolated extraction failed: invalid format or resource limit') from None
     if process.returncode or 'error' in result:raise ValueError(result.get('error','Extraction failed'))
+    result['provenance']={'raw_sha256':hashlib.sha256(raw).hexdigest(),
+        'extracted_text_sha256':hashlib.sha256(result['text'].encode('utf-8')).hexdigest(),
+        'raw_bytes':len(raw),'authenticity_verified':False,
+        'scope':'Import preview only; original file is not retained by this extraction endpoint.'}
     return result
 
 if __name__=='__main__' and len(sys.argv)==3 and sys.argv[1]=='--worker':
