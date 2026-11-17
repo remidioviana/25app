@@ -23,7 +23,7 @@ The shared workflow covers structured input, app-scoped official-source retrieva
 
 The [first live attempt](evidence/lot-2-groq-live-attempt.json) failed on contradictory final metadata in Tawteen and quota in Adl. Other apps were skipped after quota. The final-metadata behavior was corrected conservatively and tested offline. A paced rerun was explicitly authorized after the operator reported renewed TPM capacity.
 
-## Latest completed live diagnostic
+## Initial paced live diagnostic
 
 [Protected workflow](https://github.com/remidioviana/25app/actions/runs/44021219513). Minimum spacing: 20 seconds between model calls and 30 seconds between apps. No quota stop occurred in this run.
 
@@ -36,3 +36,9 @@ The [first live attempt](evidence/lot-2-groq-live-attempt.json) failed on contra
 | Khidmah AI | completed | passed | reviewed_by_model |
 
 Passed rows complete the synthetic graph/RAG milestone only. Authentic primary cases and device/release gates remain separate. Incomplete answers are not promoted to completed customer outcomes.
+
+## Targeted recovery completed
+
+[Run 44031741577](https://github.com/remidioviana/25app/actions/runs/44031741577) retried only Tawteen and Adab after code changes. Both passed the unchanged synthetic RAG checks, with three distinct returned model IDs, valid source citations and no quota stop. Tawteen ended reviewed_by_model; Adab ended inconclusive with a bounded cited answer. The three previously passed apps were not repeated.
+
+Together with the preceding report, all five Lot 2 apps have successful synthetic graph/RAG milestones. This is not authentic primary-case, device or release acceptance. Earlier failures remain archived.
