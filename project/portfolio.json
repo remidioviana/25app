@@ -839,8 +839,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-5-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -875,8 +877,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-5-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -911,8 +915,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-5-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -947,8 +953,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-5-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
@@ -983,8 +991,10 @@
       "released": false,
       "release_evidence": [],
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
-      "public_source_read_verified": false,
-      "public_source_read_evidence": [],
+      "public_source_read_verified": true,
+      "public_source_read_evidence": [
+        "project/evidence/lot-5-official-source-controls.json"
+      ],
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
