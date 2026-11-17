@@ -214,3 +214,23 @@ class StructuredGenerationRecoveryTests(unittest.TestCase):
         with patch.dict(os.environ,{'AGENT_AUDITOR_MODEL':'openai/gpt-oss-120b'}),patch('model_provider.respond',side_effect=provider.ProviderFailure([400],['json_validate_failed'])) as model:
             with self.assertRaises(provider.ProviderFailure):advanced.role('critic',advanced.CRITIC,{},'Audit')
             self.assertEqual(model.call_count,2)
+
+
+class MixedKeyGenerationRecoveryTests(unittest.TestCase):
+    def test_terminal_json_failure_after_denied_key_receives_one_recorded_regeneration(self):
+        import model_provider as provider
+        success={'output_text':json.dumps({'verdict':'accept','issues':[],'follow_up_queries':[]}),
+                 'output':[],'usage':{'total_tokens':5}}
+        with patch.object(provider,'respond',side_effect=[provider.ProviderFailure([401,400],['invalid_request_error','json_validate_failed']),success]) as model:
+            _,usage=advanced.role('critic',advanced.CRITIC,{},'Audit')
+        self.assertEqual(model.call_count,2)
+        self.assertEqual(usage['structured_generation_initial_statuses'],[401,400])
+        self.assertEqual(usage['structured_generation_retries'],1)
+        self.assertFalse(model.call_args.kwargs['allow_fallback'])
+
+    def test_mixed_quota_and_json_failure_must_not_regenerate(self):
+        import model_provider as provider
+        for statuses in ([429,400],[503,400],[401,429,400],[401,401]):
+            with self.subTest(statuses=statuses),patch.object(provider,'respond',side_effect=provider.ProviderFailure(statuses,['json_validate_failed'])) as model:
+                with self.assertRaises(provider.ProviderFailure):advanced.role('critic',advanced.CRITIC,{},'Audit')
+                self.assertEqual(model.call_count,1)

@@ -87,11 +87,16 @@ def role(name,schema,context,instructions):
               {'role':'user','content':db.encode(context)}]
     generation_retries=0
     retry_reason=None
+    initial_statuses=[]
     if structured:
         try:response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,allow_fallback=name!='critic')
         except model_provider.ProviderFailure as exc:
             retryable=next((code for code in ('json_validate_failed','tool_use_failed') if code in exc.codes),None)
-            if exc.statuses!=[400] or retryable is None:raise
+            # A terminal 400 belongs to a reached model request even if a previous
+            # key was denied. Never regenerate after quota or availability failures.
+            if (not exc.statuses or exc.statuses[-1]!=400 or retryable is None
+                or any(status not in (401,403,400) for status in exc.statuses)):raise
+            initial_statuses=list(exc.statuses)
             retry_reason=retryable
             # One explicit report regeneration, never acceptance/execution of failed_generation.
             response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,max_output_tokens=4096,allow_fallback=False)
@@ -109,7 +114,7 @@ def role(name,schema,context,instructions):
         value=json.loads(calls[0]['arguments'])
     validate(value,schema)
     usage=dict(response.get('usage',{}))
-    if structured:usage.update(structured_generation_retries=generation_retries,output_token_limit=4096 if generation_retries else 2200,structured_generation_retry_reason=retry_reason,failed_attempt_usage_unavailable=bool(generation_retries))
+    if structured:usage.update(structured_generation_retries=generation_retries,output_token_limit=4096 if generation_retries else 2200,structured_generation_retry_reason=retry_reason,structured_generation_initial_statuses=initial_statuses,failed_attempt_usage_unavailable=bool(generation_retries))
     if terminal and usage.get('provider_reported_model') not in (None,model_provider.AUDIT_MODEL):
         raise ValueError('Final response was not produced by the requested GPT-OSS120B model.')
     return value,usage
