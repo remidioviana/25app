@@ -1,0 +1,9 @@
+# Resposta final com GPT-OSS120B
+
+Sequência solicitada no perfil `three-model-evaluation`: GPT-OSS20B planeja, Qwen3.8-27B redige a análise inicial e GPT-OSS120B audita. Qwen permanece Preview, com opt-in. Os defaults de produção continuam com dois IDs; configurar o servidor protegido conforme `config/provider.env.example` para ativar a sequência de três. O workflow foi atualizado nas duas etapas; isso não altera um servidor já hospedado.
+
+Quando o 120B aceita o rascunho, esse é o resultado revisado pelo modelo. Se as três tentativas do especialista não resolverem a revisão ou a validação final, uma chamada final adicional ao 120B recebe entrada, cálculo, trechos, rascunho e problemas. Ele corrige o texto e retorna `answered`, `needs_information` com perguntas concretas, ou `inconclusive` com limitações explícitas. Os dois últimos não recebem aprovação. A resposta limitada substitui o rascunho pendente, com perguntas/limitações visíveis na síntese e no Markdown exportado.
+
+O runtime novo não produz `requires_human_review` como saída genérica. Registros históricos conservam seus estados. Nenhum status resolve autenticação, quota, indisponibilidade, JSON inválido ou citação inventada: essas falhas permanecem técnicas. O papel crítico e a resolução final não usam fallback para outro modelo; isso preserva a decisão final designada. Os demais papéis mantêm contingência. Não há nova inferência após quota.
+
+Citações são validadas contra trechos recuperados; isso não certifica suporte factual ou autenticidade. A revisão do modelo não é certificação jurídica. Autorizações para ações externas continuam separadas: o motor não submete documentos nem executa escritas governamentais. Esta mudança não é implantação permanente, aceite primário ou release. Provas live anteriores usavam a ordem antiga e não validam esta sequência nova.

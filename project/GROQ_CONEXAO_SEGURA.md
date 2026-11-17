@@ -13,8 +13,8 @@ Um GET bem-sucedido valida a requisição autenticada e o catálogo retornado na
 | Papel | ID candidato distinto | Estado documental | Preço indicativo USD por milhão de tokens de entrada / saída |
 |---|---|---|---|
 | planner | `openai/gpt-oss-20b` | Production | 0,075 / 0,30 |
-| specialist | `openai/gpt-oss-120b` | Production | 0,15 / 0,60 |
-| critic | `qwen/qwen3.8-27b` | Preview; avaliação apenas | 0,80 / 4,00 |
+| specialist | `qwen/qwen3.8-27b` | Preview; avaliação apenas | 0,80 / 4,00 |
+| critic/finalizador | `openai/gpt-oss-120b` | Production | 0,15 / 0,60 |
 
 Fontes: [catálogo](https://console.groq.com/docs/models) e [card Qwen](https://console.groq.com/docs/model/qwen/qwen3.8-27b). Os GPT-OSS têm contexto documentado de 131.072 tokens e saída máxima de 65.536; Qwen tem saída máxima de 16.384. O card e a tabela divergem ligeiramente no contexto Qwen (131.042 / 131.072): usar limite conservador, sem depender da borda. Preços e limites precisam ser reconferidos no momento da execução.
 
@@ -63,8 +63,8 @@ Exemplo de configuração **sem credencial**, para avaliar o terceiro Preview:
 
 ```sh
 export AGENT_PLANNER_MODEL=openai/gpt-oss-20b
-export AGENT_SPECIALIST_MODEL=openai/gpt-oss-120b
-export AGENT_AUDITOR_MODEL=qwen/qwen3.8-27b
+export AGENT_SPECIALIST_MODEL=qwen/qwen3.8-27b
+export AGENT_AUDITOR_MODEL=openai/gpt-oss-120b
 export AGENT_REQUIRE_DISTINCT_MODELS=1
 export AGENT_ALLOW_PREVIEW_MODELS=1
 ```
@@ -147,7 +147,7 @@ A cópia permite testar RAG/geração quando o runner não consegue baixar a fon
 
 ## Perfil manual para avaliar três modelos distintos
 
-O workflow oferece `model_profile=three-model-evaluation`, sem alterar os padrões do runtime ou a configuração permanente de hospedagem. O perfil escolhe planner GPT-OSS20B, specialist GPT-OSS120B e critic Qwen3.8-27B. Exige `allow_preview=true`; sem esse opt-in a validação rejeita o modelo Preview. Exige três IDs distintos configurados e devolvidos pelo provedor. A configuração padrão do menu continua `production-default`, com dois IDs.
+O workflow oferece `model_profile=three-model-evaluation`, sem alterar os padrões do runtime ou a configuração permanente de hospedagem. O perfil escolhe planner GPT-OSS20B, specialist Qwen3.8-27B e critic/finalizador GPT-OSS120B. Exige `allow_preview=true`; sem esse opt-in a validação rejeita o modelo Preview. Exige três IDs distintos configurados e devolvidos pelo provedor. A configuração padrão do menu continua `production-default`, com dois IDs.
 
 Antes de inferência, o verificador consulta o catálogo e rejeita modelo ausente. O relatório publica apenas disponibilidade dos IDs configurados e de candidatos Preview públicos documentados, não a lista completa de modelos privados da conta. `probe_models=true` continua uma escolha independente e potencialmente cobrada: testa funções inofensivas e retorno de resultado, sem dados pessoais ou operação externa. Catálogo sozinho não comprova permissão de inferência.
 

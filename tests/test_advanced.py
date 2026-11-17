@@ -38,12 +38,14 @@ class AdvancedTests(unittest.TestCase):
     @unittest.skipUnless(advanced.available(),'LangGraph is not installed')
     def test_critic_revision_bound(self):
         def f(name,*args):
+            if args[0] is advanced.FINAL_RESPONSE:
+                return {'outcome':'inconclusive','draft':{'summary':'No supported conclusion','claims':[],'next_steps':[]},'questions':[],'limitations':['Revision limit reached with unresolved issues.']},{'total_tokens':10}
             if name=='critic':return {'verdict':'revise','issues':['Needs human review'],'follow_up_queries':[]},{'total_tokens':10}
             return mock_role(name,*args)
         with patch('advanced.role',side_effect=f):
             run=self.newrun();engine.execute(run);r=db.get(run)
-        self.assertEqual(r['status'],'completed',r['error']);self.assertEqual(r['result']['decision'],'requires_human_review')
-        self.assertEqual(sum(x['role']=='critic' for x in r['result']['usage']),3)
+        self.assertEqual(r['status'],'completed',r['error']);self.assertEqual(r['result']['decision'],'inconclusive')
+        self.assertEqual(sum(x['role']=='critic' for x in r['result']['usage']),4)
     @unittest.skipUnless(advanced.available(),'LangGraph is not installed')
     def test_resume_does_not_replay_successful_roles(self):
         calls=[]

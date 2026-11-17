@@ -16,6 +16,8 @@ class CitationRepairTests(unittest.TestCase):
   self.calls=[];self.writes=0;self.always_invalid=False;self.revise=False;self.feedback=[]
  def role(self,name,schema,context,instructions):
   self.calls.append(name)
+  if schema is advanced.FINAL_RESPONSE:
+   return {'outcome':'inconclusive','draft':{'summary':'Final bounded response','claims':[],'next_steps':[]},'questions':[],'limitations':['Evidence is insufficient for the requested conclusion.']},{'total_tokens':7}
   if name=='planner':value={'objective':'Controlled diagnostic','queries':['budget'],'steps':['Analyze'],'missing_information':[]}
   elif name=='specialist':
    self.writes+=1;self.feedback.append(context.get('validation_feedback'))
@@ -44,13 +46,14 @@ class CitationRepairTests(unittest.TestCase):
  def test_repair_and_critic_revision_share_the_same_three_write_limit(self):
   self.revise=True;_,record=self.execute()
   self.assertEqual(record['status'],'completed',record['error'])
-  self.assertEqual(self.writes,3);self.assertEqual(len(self.calls),6)
-  self.assertEqual(record['result']['decision'],'requires_human_review')
+  self.assertEqual(self.writes,3);self.assertEqual(len(self.calls),7)
+  self.assertEqual(record['result']['decision'],'inconclusive')
 
- def test_invalid_final_revision_retains_only_prior_valid_draft_with_human_review(self):
+ def test_invalid_final_revision_is_resolved_by_final_model(self):
   count=0
   def role(name,schema,context,instructions):
    nonlocal count
+   if schema is advanced.FINAL_RESPONSE:return self.role(name,schema,context,instructions)
    if name=='specialist':
     self.calls.append(name);self.writes+=1
     citations=[] if self.writes==3 else [context['evidence'][0]['citation']]
@@ -62,10 +65,10 @@ class CitationRepairTests(unittest.TestCase):
   run,_=db.create('mizan','Controlled diagnostic',engine.SPECS['mizan']['example'],'team',True,None)
   with patch.object(advanced,'role',side_effect=role):engine.execute(run)
   record=db.get(run);self.assertEqual(record['status'],'completed',record['error'])
-  result=record['result'];self.assertEqual(result['decision'],'requires_human_review')
-  self.assertTrue(result['prior_valid_draft_retained']);self.assertEqual(result['draft']['summary'],'Validated prior version')
-  self.assertEqual(result['critique']['verdict'],'revise');self.assertEqual(len(self.calls),6)
-  self.assertTrue(result['draft']['claims'][0]['citations']);self.assertTrue(result['unresolved_draft_validation'])
+  result=record['result'];self.assertEqual(result['decision'],'inconclusive')
+  self.assertFalse(result['prior_valid_draft_retained']);self.assertTrue(result['draft']['summary'].startswith('Final bounded response'))
+  self.assertEqual(result['critique']['verdict'],'revise');self.assertEqual(len(self.calls),7)
+  self.assertEqual(result['draft']['claims'],[]);self.assertTrue(result['unresolved_draft_validation'])
  def test_domain_report_policy_does_not_request_unavailable_tools(self):
   spec=engine.SPECS['sahil'];original=spec['instructions']
   self.assertIn('Execute the domain tool before finalizing.',original)

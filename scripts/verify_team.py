@@ -39,6 +39,8 @@ def assess(result,original_input,expected_analysis):
             'observed_role_models':identities,'three_distinct_models_verified':len(set(identities.values()))==3,
             'retrieved_passages':len(evidence),'cited_passages':len(cited),'role_calls':len(usage),
             'reported_total_tokens':sum(x.get('usage',{}).get('total_tokens',0) for x in usage),
+            'final_response_outcome':(result.get('final_response') or {}).get('outcome'),
+            'final_role_reported_model':usage[-1].get('usage',{}).get('provider_reported_model') if usage else None,
             'model_review_decision':result.get('decision'),'prior_valid_draft_retained':result.get('prior_valid_draft_retained',False),
             'unresolved_draft_validation':result.get('unresolved_draft_validation',[]),'artifact_sha256':db.digest(result),
             'factual_correctness_verified':False,'primary_domain_workflow_verified':False}

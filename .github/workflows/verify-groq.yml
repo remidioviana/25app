@@ -63,8 +63,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_BASE_URL: https://api.groq.com/openai/v1
           AGENT_PLANNER_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-20b' || vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
+          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
           AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
           AGENT_REQUIRE_DISTINCT_MODELS: ${{ inputs.model_profile == 'three-model-evaluation' && '1' || '0' }}
           PROBE_MODELS: ${{ inputs.probe_models }}
@@ -83,8 +83,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_BASE_URL: https://api.groq.com/openai/v1
           AGENT_PLANNER_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-20b' || vars.AGENT_PLANNER_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
-          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
+          AGENT_SPECIALIST_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'qwen/qwen3.8-27b' || vars.AGENT_SPECIALIST_MODEL || 'openai/gpt-oss-20b' }}
+          AGENT_AUDITOR_MODEL: ${{ inputs.model_profile == 'three-model-evaluation' && 'openai/gpt-oss-120b' || vars.AGENT_AUDITOR_MODEL || 'openai/gpt-oss-120b' }}
           AGENT_ALLOW_PREVIEW_MODELS: ${{ inputs.allow_preview && '1' || '0' }}
           AGENT_REQUIRE_DISTINCT_MODELS: ${{ inputs.model_profile == 'three-model-evaluation' && '1' || '0' }}
           AGENT_SEMANTIC_SEARCH: '0'

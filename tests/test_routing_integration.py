@@ -40,15 +40,14 @@ class RoutingIntegrationTests(unittest.TestCase):
     self.assertEqual([(r,m) for r,m,k in self.requests],[('planner',provider.FAST_MODEL),('specialist',provider.FAST_MODEL),('critic',provider.AUDIT_MODEL)])
     self.assertEqual(len({k for r,m,k in self.requests}),3)
     self.assertTrue(all(not x['usage']['fallback'] for x in result['result']['usage']))
- def test_auditor_fallback_persisted_in_graph_result(self):
-  self.failure='all429';result=self.execute('mizan');self.assertEqual(result['status'],'completed',result['error'])
-  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3+[provider.FAST_MODEL])
-  usage=result['result']['usage'][-1]['usage'];self.assertTrue(usage['fallback']);self.assertEqual(usage['fallback_reason'],'all_keys_http_429');self.assertEqual(usage['requested_model'],provider.AUDIT_MODEL)
- def test_quota_and_unavailability_fallback_is_recorded_in_graph(self):
-  self.failure='mixed';result=self.execute('mizan');self.assertEqual(result['status'],'completed',result['error'])
-  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3+[provider.FAST_MODEL])
-  usage=result['result']['usage'][-1]['usage'];self.assertTrue(usage['fallback']);self.assertEqual(usage['fallback_reason'],'provider_unavailable')
-  self.assertEqual(usage['fallback_history'][0]['statuses'],[429,500,429])
+ def test_final_auditor_quota_cannot_be_masked_by_a_weaker_model(self):
+  self.failure='all429';result=self.execute('mizan')
+  self.assertEqual(result['status'],'failed');self.assertIsNone(result['result'])
+  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3)
+ def test_final_auditor_unavailability_stops_without_repeating_inference(self):
+  self.failure='mixed';result=self.execute('mizan')
+  self.assertEqual(result['status'],'failed');self.assertIsNone(result['result'])
+  self.assertEqual([m for r,m,k in self.requests if r=='critic'],[provider.AUDIT_MODEL]*3)
 
  def test_strict_graph_records_three_provider_reported_models(self):
   self.report_identity=True

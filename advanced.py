@@ -28,7 +28,10 @@ PLAN['properties']['source_ids']=arr({'type':'string','maxLength':64},5)
 DRAFT=obj({'summary':STR,'claims':arr(obj({'text':STR,'basis':{'type':'string','enum':['input','calculation','evidence']},'citations':arr(STR,6)}),12),'next_steps':arr(STR,8)})
 CRITIC=obj({'verdict':{'type':'string','enum':['accept','revise','needs_evidence']},'issues':arr(STR,10),'follow_up_queries':arr(STR,2)})
 
+FINAL_RESPONSE=obj({'outcome':{'type':'string','enum':['answered','needs_information','inconclusive']},'draft':DRAFT,'questions':arr(STR,8),'limitations':arr(STR,10)})
+
 class State(TypedDict,total=False):
+    final_response:dict
     plan:dict
     evidence:list
     active_evidence:list
@@ -73,7 +76,8 @@ def report_policy(spec,planning=False):
 
 
 def role(name,schema,context,instructions):
-    model=model_provider.role_models()[name]
+    terminal=schema is FINAL_RESPONSE
+    model=model_provider.AUDIT_MODEL if terminal else model_provider.role_models()[name]
     # Role reports are data. Tool decisions from the plan are executed by the graph.
     # Constrained JSON avoids confusing delivery of role data with a tool action.
     structured=model in ('openai/gpt-oss-20b','openai/gpt-oss-120b','qwen/qwen3.8-27b')
@@ -84,7 +88,7 @@ def role(name,schema,context,instructions):
     generation_retries=0
     retry_reason=None
     if structured:
-        try:response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema)
+        try:response=model_provider.respond(messages,[],model_override=model,role=name,response_schema=schema,allow_fallback=name!='critic')
         except model_provider.ProviderFailure as exc:
             retryable=next((code for code in ('json_validate_failed','tool_use_failed') if code in exc.codes),None)
             if exc.statuses!=[400] or retryable is None:raise
@@ -99,13 +103,15 @@ def role(name,schema,context,instructions):
     else:
         response=model_provider.respond(messages,
           [{'type':'function','name':'deliver_role_result','description':'Structured result for role '+name,'parameters':schema,'strict':False}],
-          model_override=model,role=name,required_tool='deliver_role_result')
+          model_override=model,role=name,required_tool='deliver_role_result',allow_fallback=name!='critic')
         calls=[x for x in response.get('output',[]) if x.get('type')=='function_call']
         if len(calls)!=1 or calls[0].get('name')!='deliver_role_result':raise ValueError('Invalid structured response for role '+name)
         value=json.loads(calls[0]['arguments'])
     validate(value,schema)
     usage=dict(response.get('usage',{}))
     if structured:usage.update(structured_generation_retries=generation_retries,output_token_limit=4096 if generation_retries else 2200,structured_generation_retry_reason=retry_reason,failed_attempt_usage_unavailable=bool(generation_retries))
+    if terminal and usage.get('provider_reported_model') not in (None,model_provider.AUDIT_MODEL):
+        raise ValueError('Final response was not produced by the requested GPT-OSS120B model.')
     return value,usage
 
 
@@ -175,7 +181,7 @@ def run(task,spec,check):
             if attempts>=3:
                 prior=state.get('draft')
                 if prior and draft_issue(prior,known) is None:
-                    log('prior_draft_retained',{'reason':issue,'draft_hash':db.digest(prior),'requires_human_review':True})
+                    log('prior_draft_retained',{'reason':issue,'draft_hash':db.digest(prior),'final_resolution_pending':True})
                     return updates|{'draft':prior,'writer_attempts':attempts,'unresolved_draft_validation':[issue]}
                 raise ValueError(issue+'; specialist attempt limit reached')
             context['validation_feedback']={'issue':issue,'instruction':'Use only citation IDs present in supplied evidence. Input claims use input; calculations use calculation. Remove unsupported evidence claims. Return the complete corrected draft.'}
@@ -195,22 +201,58 @@ def run(task,spec,check):
         if state['critique']['verdict']=='accept':return 'finish'
         if state['revision']>=3 or state.get('writer_attempts',0)>=3:return 'finish'
         return 'retrieve_again' if state['critique']['verdict']=='needs_evidence' else 'write'
+    def resolve(state):
+        # Accepted drafts already have the critic's final decision. A fallback reviewer
+        # cannot replace the designated final model for an unresolved response.
+        last=state.get('roles',[])[-1].get('usage',{}) if state.get('roles') else {}
+        if state['critique']['verdict']=='accept' and not state.get('unresolved_draft_validation') and not last.get('fallback'):
+            return {}
+        evidence=db.current_evidence(agent,state.get('evidence',[]))
+        context={'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
+                 'draft':state['draft'],'critique':state['critique'],'evidence':evidence,
+                 'missing_information':state['plan'].get('missing_information',[]),
+                 'validation_issues':state.get('unresolved_draft_validation',[])}
+        value,updates=ask('critic',FINAL_RESPONSE,context,state,
+            report_policy(spec)+' You are the final responder, GPT-OSS120B. Correct the draft yourself; do not refer it for routine human review. '
+            'Return answered only if the supplied inputs, calculations and passages support the answer. Otherwise return needs_information '
+            'with concrete indispensable questions, or inconclusive with explicit limitations and a useful bounded answer. '
+            'Do not approve unresolved claims, invent missing facts or claim external actions. Evidence claims require exact supplied citation IDs. '
+            'For incomplete answers omit unsupported claims and explain what cannot be concluded. All outcomes must include the complete final draft.')
+        validate(value,FINAL_RESPONSE)
+        if not value['draft']['summary'].strip():raise ValueError('Final response requires a nonempty summary.')
+        issue=draft_issue(value['draft'],{x['citation'] for x in evidence})
+        if issue:raise ValueError('Final response validation failed: '+issue)
+        if value['outcome']=='needs_information' and not any(q.strip() for q in value['questions']):
+            raise ValueError('Missing-information response requires a concrete question.')
+        if value['outcome']=='inconclusive' and not any(x.strip() for x in value['limitations']):
+            raise ValueError('Inconclusive response requires an explicit limitation.')
+        if value['outcome']=='answered' and (value['questions'] or value['limitations']):
+            raise ValueError('An answered response must not hide unresolved questions or limitations.')
+        additions=[]
+        if value['limitations']:additions.append('Limitations: '+'; '.join(value['limitations']))
+        if value['questions']:additions.append('Information needed: '+'; '.join(value['questions']))
+        if additions:value['draft']['summary']+='\n\n'+'\n'.join(additions)
+        return updates|{'draft':value['draft'],'final_response':value}
+
     def finish(state):
         checked()
         if len(db.current_evidence(agent,state.get('evidence',[])))!=len(state.get('evidence',[])):raise ValueError('A public source version changed during this task; rerun with current evidence')
         if db.digest(TOOLS[agent](task['input']))!=db.digest(state['analysis']):raise ValueError('Recomputation mismatch')
-        decision='reviewed_by_model' if state['critique']['verdict']=='accept' and not state.get('unresolved_draft_validation') else 'requires_human_review'
+        resolution=state.get('final_response')
+        if resolution is None and (state['critique']['verdict']!='accept' or state.get('unresolved_draft_validation')):
+            raise ValueError('Unresolved checkpoint has no final response; create a new task for final resolution.')
+        decision=({'answered':'reviewed_by_model','needs_information':'needs_information','inconclusive':'inconclusive'}[resolution['outcome']] if resolution else 'reviewed_by_model')
         log('verifying',{'recomputed':True,'decision':decision,'critic_rounds':state['revision']})
         result={'decision':decision}
         if os.environ.get('AGENT_REQUIRE_DISTINCT_MODELS','0').strip().lower() in ('1','true'):
             result['verified_model_ids']=model_provider.verified_role_models(state.get('roles',[]))
         return result
     builder=StateGraph(State)
-    for name,fn in [('plan',plan),('retrieve',retrieve),('analyze',analyze),('write',write),('critique',critique),('retrieve_again',retrieve),('finish',finish)]:builder.add_node(name,fn)
+    for name,fn in [('plan',plan),('retrieve',retrieve),('analyze',analyze),('write',write),('critique',critique),('retrieve_again',retrieve),('resolve',resolve),('finish',finish)]:builder.add_node(name,fn)
     builder.add_edge(START,'plan');builder.add_edge('plan','retrieve');builder.add_edge('retrieve','analyze');builder.add_edge('analyze','write')
-    builder.add_conditional_edges('write',lambda state:'finish' if state.get('unresolved_draft_validation') else 'critique',{'finish':'finish','critique':'critique'})
-    builder.add_conditional_edges('critique',decide,{'finish':'finish','retrieve_again':'retrieve_again','write':'write'})
-    builder.add_edge('retrieve_again','write');builder.add_edge('finish',END)
+    builder.add_conditional_edges('write',lambda state:'finish' if state.get('unresolved_draft_validation') else 'critique',{'finish':'resolve','critique':'critique'})
+    builder.add_conditional_edges('critique',decide,{'finish':'resolve','retrieve_again':'retrieve_again','write':'write'})
+    builder.add_edge('retrieve_again','write');builder.add_edge('resolve','finish');builder.add_edge('finish',END)
     db_path=str(db.database_path().parent/'langgraph-checkpoints.sqlite3')
     with SqliteSaver.from_conn_string(db_path) as saver:
         graph=builder.compile(checkpointer=saver)
@@ -221,12 +263,12 @@ def run(task,spec,check):
     checked()
     return {'agent':agent,'goal':task['goal'],'mode':'team','example':bool(task['example']),
       'analysis':state['analysis'],'narrative':state['draft']['summary'],'draft':state['draft'],'plan':state['plan'],
-      'critique':state['critique'],'decision':state['decision'],'evidence':state.get('evidence',[]),
+      'final_response':state.get('final_response'),'critique':state['critique'],'decision':state['decision'],'evidence':state.get('evidence',[]),
       'retrieval_warnings':state.get('retrieval_warnings',[]),'usage':state.get('roles',[]),
       'writer_attempts':state.get('writer_attempts',0),
       'unresolved_draft_validation':state.get('unresolved_draft_validation',[]),
-      'prior_valid_draft_retained':bool(state.get('unresolved_draft_validation')),
+      'prior_valid_draft_retained':bool(state.get('unresolved_draft_validation')) and not bool(state.get('final_response')),
       'source_reads':state.get('source_reads',[]),'external_reads_performed':bool(state.get('source_reads')),
       'verified_model_ids':state.get('verified_model_ids'),
       'input_hash':db.digest(task['input']),'analysis_hash':db.digest(state['analysis']),
-      'external_actions_performed':False,'limits':['Model review is not factual certification.','Supplied sources; freshness is not automatically verified.']+(['A prior valid draft is retained because the final revision failed validation. Human review is required.'] if state.get('unresolved_draft_validation') else [])}
+      'external_actions_performed':False,'limits':['Model review is not factual certification.','Supplied sources; freshness is not automatically verified.']+(state.get('final_response') or {}).get('limitations',[])}

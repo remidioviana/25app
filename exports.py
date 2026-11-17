@@ -54,7 +54,7 @@ def markdown(run):
       f"Demo data: {'yes' if run['example'] else 'no'}",'', '## Goal','',run['goal'],'']
     lines+=json_section('Verifiable analysis',result['analysis'])
     if result.get('narrative'):lines+=['## AI synthesis','',result['narrative'],'']
-    for title,key in [('Plan','plan'),('Structured claims and next steps','draft'),('Model review','critique')]:
+    for title,key in [('Plan','plan'),('Structured claims and next steps','draft'),('Model review','critique'),('Final response resolution','final_response')]:
         if result.get(key):lines+=json_section(title,result[key])
     if result.get('draft',{}).get('claims'):
         lines+=json_section('Claim-to-passage traceability',claim_evidence_links(result))
