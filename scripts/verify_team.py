@@ -84,7 +84,15 @@ def pause_between_apps(last_finished,seconds):
     if wait>0:time.sleep(wait)
 
 
-def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None,lot=1,min_app_interval_seconds=30):
+def save_checkpoint(report,path):
+    if path is None:return
+    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
+    temporary=path.with_name(path.name+'.tmp')
+    temporary.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    temporary.replace(path)
+
+
+def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None,lot=1,min_app_interval_seconds=30,checkpoint_path=None):
     excluded=set(excluded_apps or [])
     selected=set(list(APP_SOURCES)[(lot-1)*5:lot*5]) if app is None else {app} if isinstance(app,str) else set(app)
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
@@ -92,7 +100,7 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
             'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
             'reviewed_himayah_snapshot_requested':reviewed_snapshot,
             'minimum_app_interval_seconds':min_app_interval_seconds,'minimum_role_interval_seconds':min_role_interval_seconds,'excluded_apps':sorted(excluded),'selected_apps':sorted(selected),
-            'primary_domain_workflows_verified':False,'device_verified':False,'requested_lot':lot,'apps':[]}
+            'primary_domain_workflows_verified':False,'device_verified':False,'in_progress':True,'requested_lot':lot,'apps':[]}
     if lot not in range(1,6) or not selected or len(selected)>5 or not selected<=set(APP_SOURCES):report['error']='Select one portfolio lot or up to five known apps.';return report,2
     if not excluded<=set(APP_SOURCES):report['error']='Unknown excluded app.';return report,2
     if type(min_app_interval_seconds) is not int or not 0<=min_app_interval_seconds<=60:
@@ -154,9 +162,15 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
                     row.update(assess(record['result'],data,TOOLS[agent](data)))
                 except (ValueError,RuntimeError,PermissionError) as exc:
                     row['error']=str(exc)
-                finally:last_app_finished=time.monotonic()
+                finally:
+                    last_app_finished=time.monotonic()
+                    report['quota_exhausted']=quota_stopped
+                    if checkpoint_path is not None:
+                        save_checkpoint(report,checkpoint_path)
+                        print('APP_PROGRESS '+json.dumps(row,ensure_ascii=False),flush=True)
     finally:db.DB=old_db
     report['quota_exhausted']=quota_stopped
+    report['in_progress']=False
     report['verified_at']=datetime.now(timezone.utc).isoformat()
     report['reported_total_tokens']=sum(x.get('reported_total_tokens',0) for x in report['apps'])
     return report,0 if report['apps'] and all(x['graph_rag_diagnostic_verified'] for x in report['apps']) else 2
@@ -173,9 +187,9 @@ def main():
     parser.add_argument('--lot',type=int,choices=range(1,6),default=1)
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
-    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds,args.exclude_app,args.lot,args.min_app_interval_seconds)
+    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds,args.exclude_app,args.lot,args.min_app_interval_seconds,args.output)
     text=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
-    if args.output:args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
+    if args.output:save_checkpoint(report,args.output)
     print(text,end='');return code
 
 

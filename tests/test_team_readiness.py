@@ -88,3 +88,15 @@ class AppSpacingTests(unittest.TestCase):
   for interval in (-1,61,True):
    with patch('model_provider.urlopen') as network:
     _,code=verify(min_app_interval_seconds=interval);self.assertEqual(code,2);network.assert_not_called()
+
+
+class DiagnosticCheckpointTests(unittest.TestCase):
+ def test_failed_replace_keeps_previous_complete_report(self):
+  from pathlib import Path
+  import tempfile,json
+  from scripts.verify_team import save_checkpoint
+  with tempfile.TemporaryDirectory() as directory:
+   target=Path(directory)/'report.json';save_checkpoint({'apps':[{'app':'completed'}]},target)
+   with patch.object(Path,'replace',side_effect=OSError('controlled interrupted publication')):
+    with self.assertRaises(OSError):save_checkpoint({'apps':[{'app':'unfinished'}]},target)
+   self.assertEqual(json.loads(target.read_text())['apps'][0]['app'],'completed')
