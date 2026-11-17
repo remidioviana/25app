@@ -70,8 +70,8 @@
       "app": "munagasah",
       "order": 4,
       "matrix_target": "**Tender Strategist:** discovers published opportunities, checks qualification criteria, tracks deadlines, and drafts bid-preparation tasks.",
-      "implemented_scope": "Entered requirements/capability matrix, recorded deadline and bid outline",
-      "limitations": "No live opportunity discovery, tender-pack acquisition or bid submission.",
+      "implemented_scope": "Bid-control desk with recorded calendar interval, exact capability matching, filtered requirements, editable declarations, preparation dependencies and JSON pack export.",
+      "limitations": "Browser verified with synthetic tender input. No authentic opportunity ingestion, document authenticity, official qualification, price commitment, submission or device acceptance.",
       "primary_screen_routes": [
         "/",
         "/mission",
@@ -79,7 +79,7 @@
         "/activity",
         "/workbench"
       ],
-      "fifth_screen_title": "Bid qualification matrix",
+      "fifth_screen_title": "Bid preparation control",
       "first_open_public_info": "Dated official excerpt and assistant-prepared source guide; runtime three-role startup analysis exists only where separately archived",
       "brand_distinction_accepted": false,
       "experience_distinction_accepted": false,

@@ -21,3 +21,10 @@ All 25 final acceptance gates remain open for the full requested standard. Nativ
 The new 25-app comparison is `project/ui-workbench-comparison/index.html`, captured at source revision `3278b4b3c1f22faf8121fbc1fb7056f015028a73`. Its manifest records identical 390 × 844 dimensions, reduced motion, individual screenshot hashes and synthetic case provenance. The running browser audit passed all 25. The wall exposes the current workbenches, including repetition that still needs redesign; it is not an approval of the portfolio.
 
 GitHub Code checks passed for this code revision: https://github.com/remidioviana/25app/actions/runs/44143436345 . The prior Iqamah first-five native export also passed (run 44141188730); the new Istithmar export is tracked separately as run 44143462960.
+
+
+## Munagasah refinement — 17 November 2026
+
+Replaced generic percentage/outline cards with a technical preparation desk. The workflow connects each supplied requirement to a recorded capability, exposes gaps and preparation dependencies, and exports the current saved case. Deadline status is a calendar-date comparison against the recorded review date, not a live countdown or a verified closing-time claim. Duplicate names and invalid dates stop assessment. Unrelated capability records survive edits; no evidence is silently authenticated.
+
+90 mobile tests, typecheck, lint and 25 variant checks passed. The dedicated browser test covers actual record edits, gap filtering, downloaded JSON and motion preferences using explicitly controlled synthetic intake. Expo 58 file-system/sharing and React Native Animated documentation were consulted; no dependency was added. Native sharing and physical-device usability are still unverified. The previous Istithmar first-five export (44143462960) completed successfully before these changes.

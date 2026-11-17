@@ -238,7 +238,11 @@
         }
       },
       "weighted_score_out_of_100": null,
-      "accepted": false
+      "accepted": false,
+      "implementation_evidence": [
+        "project/evidence/munagasah-preparation-browser.json"
+      ],
+      "implementation_scope": "Editable preparation map and dated dependency states with local export. Authentic published tender, complete primary architecture and device acceptance remain pending."
     },
     {
       "app": "sahil",

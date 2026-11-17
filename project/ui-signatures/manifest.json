@@ -102,6 +102,16 @@
         "mobile/src/experience/setupExplorer.ts": "030eba35885fc6e423976ab26d5b4ae76f2c540ba33c5bfd690bcd9833b9e393"
       },
       "evidence": "../evidence/istithmar-explorer-browser.json"
+    },
+    {
+      "file": "munagasah-bid-control.png",
+      "state": "Actual synthetic tender preparation after capability edits; no authenticated qualification or submission.",
+      "checked_at": "2026-11-17T18:13:01.236317+00:00",
+      "source_files_sha256": {
+        "mobile/components/MunagasahDesk.tsx": "86695b119b42ba5ddcda9e2b70b0bbe06c49c403f914af7becfdc4cb62b9b626",
+        "mobile/src/experience/tenderPreparation.ts": "af7087fb8cea399d7231239a41969ebcd6da7df4686b42ae328e3241f7c5a8e1"
+      },
+      "evidence": "../evidence/munagasah-preparation-browser.json"
     }
   ]
 }

@@ -108,7 +108,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Proposal",
       "RFP library",
       "Pipeline",
-      "Bid fit"
+      "Bid control"
     ],
     "steps": [
       "Read requirements",

@@ -1,0 +1,31 @@
+"""Actual Expo Web tender UI with explicit synthetic intake transport; no inference."""
+import asyncio,json,pathlib,datetime,os,hashlib
+from playwright.async_api import async_playwright
+ROOT=pathlib.Path(__file__).resolve().parents[2]
+async def main():
+ agent=json.loads((ROOT/'agents/munagasah/agent.json').read_text());requests=[];errors=[]
+ async with async_playwright()as p:
+  browser=await p.chromium.launch(executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE'),args=['--no-sandbox']);context=await browser.new_context(viewport={'width':390,'height':844},reduced_motion='reduce',accept_downloads=True);page=await context.new_page();page.set_default_timeout(15000);page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:errors.append(m.text)if m.type in('error','warning')else None)
+  async def transport(route):
+   req=route.request;path=req.url.split('controlled-workspace.example')[-1];headers={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*','Access-Control-Allow-Methods':'GET,POST,OPTIONS'}
+   if req.method=='OPTIONS':await route.fulfill(status=204,headers=headers);return
+   requests.append(path)
+   if path=='/api/config':data={'requires_token':True,'model_configured':True,'langgraph_available':True,'provider':{'status':'configured_unverified','configured':True,'configuration_valid':True,'inference_verified':False,'distinct_models':2,'roles':{'planner':'openai/gpt-oss-20b','specialist':'openai/gpt-oss-20b','critic':'openai/gpt-oss-120b'}}}
+   elif path=='/api/me':data={'user':'controlled-ui-test'}
+   elif path=='/api/agents':data={'agents':[agent]}
+   elif path=='/api/agents/munagasah/intake':data={'status':'ready_for_review','input':agent['example']}
+   else:raise RuntimeError('Unexpected request '+path)
+   await route.fulfill(json=data,headers=headers)
+  await page.route('https://controlled-workspace.example/**',transport)
+  await page.goto(os.environ.get('EXPO_AUDIT_ORIGIN','http://127.0.0.1:8091')+'/mission?variant=munagasah',wait_until='networkidle');await page.get_by_role('button',name='Connect for ',exact=False).click();await page.get_by_label('HTTPS server',exact=True).fill('https://controlled-workspace.example');await page.get_by_label('Workspace access token, not provider API key',exact=True).fill('ui-test-only');await page.get_by_role('button',name='Connect workspace',exact=True).click();await page.get_by_role('button',name='Prepare the case',exact=True).click();await page.get_by_role('button',name='Use these proposed inputs',exact=True).click()
+  nav=page.get_by_role('button',name='Open navigation',exact=True)
+  if await nav.count()and await nav.is_visible():await nav.click()
+  await page.get_by_role('tab',name='Bid control',exact=True).click();await page.get_by_text('MUNAGASAH / BID CONTROL',exact=True).wait_for();assert await page.get_by_test_id('tender-gap-count').inner_text()=='1 capability gap';assert '17 calendar days' in await page.get_by_test_id('tender-deadline-distance').inner_text()
+  await page.get_by_role('button',name='Gaps only',exact=True).click();assert await page.get_by_role('checkbox').count()==1;await page.get_by_role('checkbox',name='Capability recorded for ISO9001',exact=True).click();assert await page.get_by_test_id('tender-gap-count').inner_text()=='0 capability gaps';await page.get_by_text('No requirements in this view.',exact=True).wait_for()
+  await page.get_by_role('button',name='Recorded matches',exact=True).click();assert await page.get_by_role('checkbox').count()==3;await page.get_by_role('checkbox',name='Capability recorded for ISO9001',exact=True).click();assert await page.get_by_test_id('tender-gap-count').inner_text()=='1 capability gap'
+  async with page.expect_download()as download:await page.get_by_role('button',name='Export bid preparation pack',exact=True).click()
+  report=json.loads(pathlib.Path(await(await download.value).path()).read_text());assert report['plan']['gaps']==1;assert report['plan']['calendar_days_between_dates']==17;assert report['input']==agent['example'];assert not report['official_qualification_verified'];assert report['submission_status']=='not_submitted'
+  assert await page.get_by_test_id('tender-gap-signal').evaluate('(e)=>getComputedStyle(e).opacity')=='1';await page.emulate_media(reduced_motion='no-preference');await page.wait_for_timeout(100);await page.clock.install();await page.get_by_role('button',name='All requirements',exact=True).click();await page.get_by_role('checkbox',name='Capability recorded for ISO9001',exact=True).click();await page.clock.run_for(50);opacity=float(await page.get_by_test_id('tender-gap-signal').evaluate('(e)=>getComputedStyle(e).opacity'));assert .5<opacity<1,opacity;await page.emulate_media(reduced_motion='reduce');await page.clock.run_for(100);assert await page.get_by_test_id('tender-gap-signal').evaluate('(e)=>getComputedStyle(e).opacity')=='1';assert not errors,errors;assert not any('/runs'in x for x in requests),requests
+  await page.get_by_test_id('tender-gap-count').scroll_into_view_if_needed();await page.screenshot(path=str(ROOT/'project/ui-signatures/munagasah-bid-control.png'))
+  (ROOT/'project/evidence/munagasah-preparation-browser.json').write_text(json.dumps({'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Actual Expo Web UI using the existing repository synthetic tender example through controlled intake transport. Not an authentic published tender, live countdown, provider inference or physical-device verification.','source_files_sha256':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest()for f in ('mobile/components/MunagasahDesk.tsx','mobile/src/experience/tenderPreparation.ts')},'calendar_distance_matches_supplied_dates':True,'gap_filter_and_live_capability_edits':True,'download_reflects_saved_case_and_open_dependencies':True,'normal_motion_opacity':opacity,'live_reduced_motion_change_stops_transition':True,'console_warnings_and_errors':errors,'provider_inference_calls':0,'requests':requests},indent=2)+'\n');await browser.close();print('Passed date basis, gap filtering, capability edits, actual JSON download and reduced motion.')
+asyncio.run(main())

@@ -27,9 +27,9 @@
     ]
   },
   "munagasah": {
-    "title": "Bid qualification matrix",
-    "tab": "Bid fit",
-    "purpose": "Inspect requirement coverage against the capabilities actually supplied.",
+    "title": "Bid preparation control",
+    "tab": "Bid control",
+    "purpose": "Connect recorded deadlines, capability gaps and the preparation steps that depend on them.",
     "fields": [
       "requirements",
       "capabilities"
