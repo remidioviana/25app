@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Platform,type TextStyle} from 'react-native';
+import {View,Text,Platform,Image,type TextStyle} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import {brand,brandId,brandAssets} from '../src/brand';
 import {experience as d} from '../src/theme';
@@ -9,7 +9,7 @@ import {decorativeSvgProps} from '../src/experience/svgAccessibility';
 /** Each case owns its visual grammar. Text stays native and scales with the OS. */
 export function BrandSignature(){
  const family=useHeadlineFont(),arabic=useScriptFont('أدب'),id=identities[brandId];
- const mark=(size:number)=><SvgXml xml={brandAssets.logo} width={size} height={size} {...decorativeSvgProps(Platform.OS)}/>;
+ const mark=(size:number)=>brandAssets.symbol?<Image source={brandAssets.symbol} style={{width:size,height:size}} resizeMode="contain" accessible={false}/>:<SvgXml xml={brandAssets.logo} width={size} height={size} {...decorativeSvgProps(Platform.OS)}/>;
  const word=(text:string,style:TextStyle={})=><Text style={[{fontFamily:family,fontWeight:family?'400':'600',fontSize:id.word_size,letterSpacing:id.tracking,color:d.ink,flexShrink:1},style]}>{text}</Text>;
  const label=(text:string)=><Text style={{fontSize:11,lineHeight:17,letterSpacing:1.5,color:d.muted}}>{text}</Text>;
  let content:React.ReactNode;
@@ -17,7 +17,7 @@ export function BrandSignature(){
  case 'himayah':content=<View style={{borderLeftWidth:3,borderColor:d.accent,paddingLeft:16,gap:4}}>{word('himayah')}{label('THE PRIVACY DOCKET')}</View>;break;
  case 'iqamah':content=<View style={{alignItems:'center',gap:8}}>{mark(43)}{word('Iqamah')}{label('A PLACE TO BELONG')}</View>;break;
  case 'istithmar':content=<View style={{flexDirection:'row',alignItems:'flex-end',gap:10}}>{mark(48)}<View style={{flex:1}}>{label('CAPITAL / CHOICES')}{word('istithmar')}</View></View>;break;
- case 'munagasah':content=<View style={{borderTopWidth:5,borderColor:d.accent,paddingTop:11,gap:5}}><View style={{flexDirection:'row',justifyContent:'space-between'}}>{label('M / PROCUREMENT')}{mark(25)}</View>{word('MUNAGASAH',{fontSize:24,letterSpacing:1})}</View>;break;
+ case 'munagasah':content=<View style={{flexDirection:'row',alignItems:'center',gap:16,borderBottomWidth:1,borderColor:d.line,paddingBottom:16}}>{mark(70)}<View style={{flex:1,gap:6}}>{label('PROCUREMENT / BID PREPARATION')}{word('MUNAGASAH',{fontSize:26,letterSpacing:.8})}</View></View>;break;
  case 'sahil':content=<View style={{flexDirection:'row',alignItems:'center',gap:14}}>{word('sahil',{fontSize:39})}<View style={{flex:1}}>{mark(60)}</View>{label('A CLEAR\nNEXT STEP')}</View>;break;
  case 'tawteen':content=<View style={{flexDirection:'row',gap:15,alignItems:'center'}}>{mark(48)}<View>{word('TAW',{fontSize:25})}{word('TEEN',{fontSize:25})}</View><View style={{flex:1,alignItems:'flex-end'}}>{label('PEOPLE\n& POLICY')}</View></View>;break;
  case 'adl':content=<View style={{flexDirection:'row',borderBottomWidth:1,borderColor:d.ink,paddingBottom:16,alignItems:'center',gap:18}}>{word('adl',{fontSize:55})}<View style={{width:1,height:38,backgroundColor:d.accent}}/>{label('THE CASE\nCHRONICLE')}</View>;break;

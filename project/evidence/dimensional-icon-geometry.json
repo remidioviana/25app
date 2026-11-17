@@ -17,7 +17,8 @@
           "core_pixels": 234688,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.28220258572120277
+          "maximum_core_radius_fraction": 0.28220258572120277,
+          "mask_geometry_checked": true
         }
       }
     },
@@ -25,7 +26,7 @@
       "app": "iqamah",
       "files": {
         "icon": {
-          "sha256": "d8a5ea59799a92b8c847e999cae1f99fe3f2de06158f184f97c388d7b7f64717",
+          "sha256": "39a8c61226803cb6f95e79ee0f4dd5d1125454ce7890428f47000e3c76fa2a6c",
           "width": 1254,
           "height": 1254
         },
@@ -37,7 +38,8 @@
           "core_pixels": 167924,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.30506587779978095
+          "maximum_core_radius_fraction": 0.30506587779978095,
+          "mask_geometry_checked": true
         }
       }
     },
@@ -57,7 +59,8 @@
           "core_pixels": 202929,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.2691461396588912
+          "maximum_core_radius_fraction": 0.2691461396588912,
+          "mask_geometry_checked": true
         }
       }
     },
@@ -65,19 +68,31 @@
       "app": "munagasah",
       "files": {
         "icon": {
-          "sha256": "450870bb28b8b9f2d5d2e18c1181e066342d5f58d8a0dff46eb8dd73bbb95949",
+          "sha256": "9e9f049940ede5951f6cfbdbb089aca943c7d70bad115c4f3c3c129c44a37ecb",
           "width": 1254,
           "height": 1254
         },
         "android_foreground": {
-          "sha256": "e23574d1dd4b99545f9c4b4a45fe12cdc13d42d47cb6b9d9753862c378a7f01e",
+          "sha256": "04ddc693b6cff8807a45a6d30296dccc6bcde4ccf11a5dc1912051647c02c2ce",
           "width": 1254,
           "height": 1254,
-          "edge_alpha_max": 0,
-          "core_pixels": 279453,
-          "fraction_inside_66dp": 0.9995992170418639,
+          "edge_alpha_max": 1,
+          "core_pixels": 127218,
+          "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.3090916703279009
+          "maximum_core_radius_fraction": 0.2173020645708987,
+          "mask_geometry_checked": true
+        },
+        "brand_logo": {
+          "sha256": "747feaf51e09de36aad70a378e6bb4488c5d75defec2184b2c47b2f5272fedf0",
+          "width": 1254,
+          "height": 1254,
+          "edge_alpha_max": 1,
+          "core_pixels": 746308,
+          "fraction_inside_66dp": 0.6177663913558478,
+          "fraction_inside_72dp": 0.715599993568339,
+          "maximum_core_radius_fraction": 0.4879877828794546,
+          "mask_geometry_checked": false
         }
       }
     },
@@ -97,7 +112,8 @@
           "core_pixels": 87165,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.27049660425374994
+          "maximum_core_radius_fraction": 0.27049660425374994,
+          "mask_geometry_checked": true
         }
       }
     }

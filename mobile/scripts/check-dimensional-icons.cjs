@@ -2,7 +2,7 @@
 const {Buffer}=require('node:buffer');
 const fs=require('fs'),path=require('path'),zlib=require('zlib'),crypto=require('crypto'),assert=require('assert/strict');
 const root=path.resolve(__dirname,'../..'),registry=require('../../brand-assets/dimensional-icons.json');
-function png(file,rgba=false){
+function png(file,rgba=false,maskGeometry=true){
  const b=fs.readFileSync(file);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
  const width=b.readUInt32BE(16),height=b.readUInt32BE(20);assert.equal(width,height);assert(width>=1024&&width<=4096);assert.equal(b[24],8);assert.equal(b[28],0);
  if(!rgba){assert.equal(b[25],2,'Launcher artwork must be opaque RGB.');return {width,height}}
@@ -17,8 +17,8 @@ function png(file,rgba=false){
   for(let x=0;x<width;x++){const alpha=row[x*4+3];if(x===0||x===width-1||y===0||y===height-1)edgeAlpha=Math.max(edgeAlpha,alpha);if(alpha>=128){opaque++;const r=Math.hypot(x+.5-width/2,y+.5-height/2)/width;maxRadius=Math.max(maxRadius,r);if(r<=33/108)insideSafe++;if(r<=36/108)insideVisible++}}
   previous=row;
  }
- assert(opaque>0);assert(edgeAlpha<=8,'Foreground frame must be transparent.');assert.equal(insideVisible,opaque,'Visible silhouette crosses the default 72dp circle.');assert(insideSafe/opaque>=.999,'At least 99.9% of the core silhouette must fit the 66dp safe circle.');
- return {width,height,edge_alpha_max:edgeAlpha,core_pixels:opaque,fraction_inside_66dp:insideSafe/opaque,fraction_inside_72dp:insideVisible/opaque,maximum_core_radius_fraction:maxRadius};
+ assert(opaque>0);assert(edgeAlpha<=8,'Foreground frame must be transparent.');if(maskGeometry){assert.equal(insideVisible,opaque,'Visible silhouette crosses the default 72dp circle.');assert(insideSafe/opaque>=.999,'At least 99.9% of the core silhouette must fit the 66dp safe circle.');}
+ return {width,height,edge_alpha_max:edgeAlpha,core_pixels:opaque,fraction_inside_66dp:insideSafe/opaque,fraction_inside_72dp:insideVisible/opaque,maximum_core_radius_fraction:maxRadius,mask_geometry_checked:maskGeometry};
 }
 const brandIds=new Set(require('../../brand-assets/brands.json').map(item=>item.id));
 const rows=[];
@@ -26,6 +26,7 @@ for(const [id,item]of Object.entries(registry.icons)){
  assert(brandIds.has(id),'Dimensional artwork must belong to a registered app.');
  const row={app:id,files:{}};
  for(const [key,rgba]of [['icon',false],['android_foreground',true]]){const asset=item[key],file=path.resolve(root,asset.path);assert(file.startsWith(path.join(root,'mobile/assets/variants',id)+path.sep));const sha=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');assert.equal(sha,asset.sha256);row.files[key]={sha256:sha,...png(file,rgba)}}
+ if(item.brand_logo){const asset=item.brand_logo,file=path.resolve(root,asset.path);assert(file.startsWith(path.join(root,'mobile/assets/variants',id)+path.sep));const sha=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');assert.equal(sha,asset.sha256);row.files.brand_logo={sha256:sha,...png(file,true,false)}}
  assert.notEqual(row.files.icon.sha256,row.files.android_foreground.sha256);rows.push(row);
 }
 assert(rows.length>0&&rows.length<=brandIds.size);
