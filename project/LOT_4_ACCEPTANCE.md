@@ -36,3 +36,7 @@ Live inference for this lot will start only after the preceding lot completes wi
 | Amanah Eco | Failed: final response cited a passage not retrieved for this app |
 
 These results do not establish authentic primary-case, device or release acceptance. Citation validation rejected the unsupported reference.
+
+## Source recovery preparation
+
+The separately catalogued [CBUAE consumer overview](https://centralbank.ae/en/consumer) returned HTTP 200 and passed controlled graph tests for Mizan and Manzil: [receipts and controls](evidence/lot-4-cbuae-overview-controls.json). Its scope is general consumer education and complaints context, not the full Consumer Protection Standards. The original standards URL and its failed live receipts remain preserved. Protected runner inference must still pass before either app receives a successful live diagnostic milestone.

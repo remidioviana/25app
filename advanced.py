@@ -242,7 +242,7 @@ def run(task,spec,check):
         review_evidence=db.current_evidence(agent,list(active.values()))
         value,updates=ask('critic',CRITIC,{'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
           'draft':state['draft'],'evidence':review_evidence,'source_reads':state.get('source_reads',[])},state,
-          'Audit the draft against inputs, calculations and sources. Reject unsupported external success. Set verdict to accept, revise or needs_evidence. List concrete issues and useful follow-up searches. Respect the source scope in each read receipt. Model review is not factual certification.')
+          'Audit the draft against inputs, calculations, sources and the requested goal. If the goal asks for a source-grounded claim, an input-only answer does not fulfill it; request a supported claim rather than inventing a citation. Reject unsupported external success. Set verdict to accept, revise or needs_evidence. List concrete issues and useful follow-up searches. Respect the source scope in each read receipt. Model review is not factual certification.')
         if value['verdict'] not in ('accept','revise','needs_evidence'):raise ValueError('Invalid reviewer verdict')
         return updates|{'critique':value,'revision':state.get('revision',0)+1}
     def decide(state):

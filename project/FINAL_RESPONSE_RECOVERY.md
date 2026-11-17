@@ -11,3 +11,5 @@ This addresses an observed final-delivery failure in the Lot 2 diagnostic. Offli
 ## Invalid final citations
 
 A final draft that cites a passage outside the app’s retrieved evidence receives at most one correction by GPT-OSS120B, with explicit validation feedback and the allowed citation IDs. The corrected draft must pass the same citation checks. Persistent invalid citations fail the run; quota and other provider failures propagate without another correction. Offline tests cover successful correction, persistent failure and quota interruption. No historical failed run is relabeled as passed.
+
+The reviewer now explicitly checks whether a requested source-grounded claim was actually supplied. The synthetic diagnostic requests a distinct source-context claim, separate from input facts and computations; retrieval alone cannot pass its unchanged citation check.

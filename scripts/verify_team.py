@@ -141,7 +141,8 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
                     goal=('Integration diagnostic using SYNTHETIC example inputs, not an authentic customer case. '
                           'Execute domain analysis and distinguish it from current official source facts. '
                           'The public source has already been ingested. A title marked reviewed snapshot is historical; do not claim it was fetched now or legally current. Search for '+query+'. '
-                          'Cite at least one relevant retrieved passage for a narrowly supported source claim. '
+                          'Include a separate, narrowly supported source-context claim stating what the official page actually says, with at least one exact retrieved citation ID. '
+                          'Keep that source-context claim distinct from synthetic input facts and calculations; it must not certify them. '
                           'Never claim legal applicability, eligibility, live prices or completed external actions. '
                           'Keep your summary and claims short. State limitations and missing information.')
                     data=engine.SPECS[agent]['example']
