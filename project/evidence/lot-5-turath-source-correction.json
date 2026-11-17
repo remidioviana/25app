@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-17T04:28:35.790311+00:00",
+  "batch": "remaining",
+  "input_kind": "repository synthetic examples",
+  "source_transport": "live fixed official HTTPS URLs",
+  "model_roles": "controlled test callbacks; no provider inference",
+  "provider_inference_performed": false,
+  "primary_workflows_verified": false,
+  "device_verified": false,
+  "apps": [
+    {
+      "app": "turath",
+      "order": 23,
+      "public_source_read_verified": true,
+      "controlled_graph_verified": true,
+      "source_id": "uae-history",
+      "source_receipt": {
+        "source_id": "uae-history",
+        "url": "https://www.mofa.gov.ae/en/the-uae/history",
+        "authority": "UAE Ministry of Foreign Affairs",
+        "title": "History of the UAE: official overview",
+        "source_scope": "Official historical overview including pearling and Dubai; not a comprehensive chronology or certification of learning outcomes.",
+        "started_at": "2026-11-17T04:28:35.797807+00:00",
+        "fetched_at": "2026-11-17T04:28:44.105863+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 190717,
+        "characters": 3302,
+        "raw_sha256": "811217d0a631cbb7fe9da8c239b5edca76733fe49e34fe5021b9959b62e7eada",
+        "text_sha256": "0ad86159d62e5575922bb0124bb90120db5380e8b14af88c9d4c663f1c51beb0",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "0f5ccf2b-6bfb-4015-9b8c-8a902724f3d0"
+      },
+      "retrieved_passages": 3,
+      "controlled_engine_decision": "inconclusive",
+      "controlled_role_calls": 8,
+      "artifact_sha256": "8decad133a7701646742d4b8a3504a2b60a8e5abbb2564f96355418ad9c6202c",
+      "markdown_sha256": "536e3f35c38e39210c523af04c72b9e519cca6feec787f0a331209c60047008c",
+      "manual_review_requested": false
+    }
+  ],
+  "public_source_reads_passed": 1,
+  "controlled_graphs_passed": 1
+}

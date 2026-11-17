@@ -1,0 +1,211 @@
+{
+  "checked_at": "2026-11-17T04:37:32.278130+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_role_interval_seconds": 15,
+  "excluded_apps": [],
+  "selected_apps": [
+    "adab",
+    "adl",
+    "khidmah",
+    "tawassul",
+    "tawteen"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "requested_lot": 2,
+  "apps": [
+    {
+      "app": "tawteen",
+      "source_id": "uae-emiratisation",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "uae-emiratisation",
+        "url": "https://www.dubai.ae/en/web/dubai.ae/living/jobs-employment/emiratization",
+        "authority": "Digital Dubai / Government of Dubai",
+        "title": "Dubai Government Emiratization information",
+        "source_scope": "Published policy context; company scope, current thresholds and workforce records must be established separately.",
+        "started_at": "2026-11-17T04:37:33.370717+00:00",
+        "fetched_at": "2026-11-17T04:37:35.679439+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 178809,
+        "characters": 3487,
+        "raw_sha256": "b9f0ff46d2f5b254c72a610e7440581df3646f1c65bf3796b27548126bf4a663",
+        "text_sha256": "8ce77847c7933704ffc897d61719807cc35668672cb0f5f9a1b1d601ec15694b",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "397eb3f9-07ed-4f4b-a94c-cf8ac37b81d3"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "specialist",
+        "critic",
+        "specialist",
+        "critic",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1628
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2773
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3688
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2505
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2636
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2606
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2945
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 1,
+          "structured_generation_retry_reason": "json_validate_failed",
+          "reported_total_tokens": 5493
+        }
+      ],
+      "reported_total_tokens": 24274,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "An answered response must not hide unresolved questions or limitations."
+    },
+    {
+      "app": "adl",
+      "source_id": "rdc-rental-cases",
+      "graph_rag_diagnostic_verified": false,
+      "source_receipt": {
+        "source_id": "rdc-rental-cases",
+        "url": "https://rdc.gov.ae/en/frequently-asked-questions/",
+        "authority": "Dubai Rental Disputes Center",
+        "title": "RDC rental case frequently asked questions",
+        "source_scope": "Procedural context, not assessment of a specific tenancy case or confirmation of filing.",
+        "started_at": "2026-11-17T04:40:00.803094+00:00",
+        "fetched_at": "2026-11-17T04:40:03.184255+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 215677,
+        "characters": 38563,
+        "raw_sha256": "1679cbce724ca2767476d74b023db4168299723e212d2612b5881e58e8d71838",
+        "text_sha256": "3f439934dfc03d94f77ebb781714dbc13e276dbb17c6a6557c99bc8bb2031508",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "f7614056-72ae-4d49-912c-598f10ac52fa"
+      },
+      "run_status": "failed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1720
+        }
+      ],
+      "reported_total_tokens": 1720,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "error": "Provider attempts failed: 429, 429, 401. Safe provider codes: rate_limit_exceeded, invalid_request_error. Check server configuration and provider access."
+    },
+    {
+      "app": "tawassul",
+      "source_id": "dubai-origin-certificate",
+      "graph_rag_diagnostic_verified": false,
+      "skipped_after_quota": true,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    },
+    {
+      "app": "adab",
+      "source_id": "uae-media-standards",
+      "graph_rag_diagnostic_verified": false,
+      "skipped_after_quota": true,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    },
+    {
+      "app": "khidmah",
+      "source_id": "uae-consumer-rights",
+      "graph_rag_diagnostic_verified": false,
+      "skipped_after_quota": true,
+      "error": "Not attempted after a provider quota failure; wait before another run."
+    }
+  ],
+  "quota_exhausted": true,
+  "verified_at": "2026-11-17T04:40:32.758187+00:00",
+  "reported_total_tokens": 25994,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44018441162"
+}
