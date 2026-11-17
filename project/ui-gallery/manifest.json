@@ -1,0 +1,217 @@
+{
+  "captured_at": "2026-11-17T07:04:00.989786+00:00",
+  "commit": "ec59157d0e918437661be875ba7aee5a2cb008e5",
+  "rendering": "Current Expo React Native Web code, development visual-audit variant selector; not device screenshots",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "device_scale_factor": 2
+  },
+  "screenshots": 50,
+  "page_errors": [],
+  "horizontal_overflow": false,
+  "provider_calls": 0,
+  "apps": [
+    {
+      "order": 1,
+      "id": "himayah",
+      "name": "Himayah AI",
+      "home": "01-himayah-home.png",
+      "mission": "01-himayah-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 2,
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "home": "02-iqamah-home.png",
+      "mission": "02-iqamah-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 3,
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "home": "03-istithmar-home.png",
+      "mission": "03-istithmar-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 4,
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "home": "04-munagasah-home.png",
+      "mission": "04-munagasah-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 5,
+      "id": "sahil",
+      "name": "Sahil AI",
+      "home": "05-sahil-home.png",
+      "mission": "05-sahil-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 6,
+      "id": "tawteen",
+      "name": "Tawteen AI",
+      "home": "06-tawteen-home.png",
+      "mission": "06-tawteen-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 7,
+      "id": "adl",
+      "name": "Adl AI",
+      "home": "07-adl-home.png",
+      "mission": "07-adl-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 8,
+      "id": "tawassul",
+      "name": "Tawassul B2B",
+      "home": "08-tawassul-home.png",
+      "mission": "08-tawassul-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 9,
+      "id": "adab",
+      "name": "Adab AI",
+      "home": "09-adab-home.png",
+      "mission": "09-adab-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 10,
+      "id": "khidmah",
+      "name": "Khidmah AI",
+      "home": "10-khidmah-home.png",
+      "mission": "10-khidmah-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 11,
+      "id": "jomrok",
+      "name": "Jomrok AI",
+      "home": "11-jomrok-home.png",
+      "mission": "11-jomrok-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 12,
+      "id": "khibrat",
+      "name": "Khibrat AI",
+      "home": "12-khibrat-home.png",
+      "mission": "12-khibrat-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 13,
+      "id": "majlis",
+      "name": "Majlis AI",
+      "home": "13-majlis-home.png",
+      "mission": "13-majlis-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 14,
+      "id": "rafiq",
+      "name": "Rafiq",
+      "home": "14-rafiq-home.png",
+      "mission": "14-rafiq-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 15,
+      "id": "sawm",
+      "name": "Sawm AI",
+      "home": "15-sawm-home.png",
+      "mission": "15-sawm-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 16,
+      "id": "mizan",
+      "name": "Mizan AI",
+      "home": "16-mizan-home.png",
+      "mission": "16-mizan-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 17,
+      "id": "thawg",
+      "name": "Thawg AI",
+      "home": "17-thawg-home.png",
+      "mission": "17-thawg-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 18,
+      "id": "manzil",
+      "name": "Manzil AI",
+      "home": "18-manzil-home.png",
+      "mission": "18-manzil-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 19,
+      "id": "gurbah",
+      "name": "Gurbah AI",
+      "home": "19-gurbah-home.png",
+      "mission": "19-gurbah-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 20,
+      "id": "amanah-eco",
+      "name": "Amanah Eco",
+      "home": "20-amanah-eco-home.png",
+      "mission": "20-amanah-eco-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 21,
+      "id": "nafas",
+      "name": "Nafas AI",
+      "home": "21-nafas-home.png",
+      "mission": "21-nafas-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 22,
+      "id": "tadweer",
+      "name": "Tadweer AI",
+      "home": "22-tadweer-home.png",
+      "mission": "22-tadweer-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 23,
+      "id": "turath",
+      "name": "Turath AI",
+      "home": "23-turath-home.png",
+      "mission": "23-turath-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 24,
+      "id": "himam",
+      "name": "Himam AI",
+      "home": "24-himam-home.png",
+      "mission": "24-himam-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    },
+    {
+      "order": 25,
+      "id": "hisad",
+      "name": "Hisad AI",
+      "home": "25-hisad-home.png",
+      "mission": "25-hisad-mission.png",
+      "state": "Empty workspace; input editor expanded; no provider calls or inserted results"
+    }
+  ],
+  "console_errors": []
+}
