@@ -41,3 +41,5 @@ Replaced the older hardcoded dossier card with a theme-aligned editorial folio, 
 251 Python and 83 mobile tests passed; typecheck, lint and 25 variant checks passed. The dedicated browser report records controlled synthetic intake, actual UI edits/download and motion conditions. Native sharing is implemented but remains unverified on a physical device. This does not mark the entire Iqamah product or the portfolio complete.
 
 Previous native export runs 44138306978 and 44138312340 both completed successfully at source revision 51b9df0 (before this Iqamah increment): all 25 Android/iOS JavaScript/assets exports, not signed binaries or device acceptance.
+
+The updated 25-variant controlled browser audit passed at source commit `73c5a2c047b3098fb24d31564b15fc4ad0415f3f`. GitHub Code checks also passed: https://github.com/remidioviana/25app/actions/runs/44141179081 . This includes the current Folio navigation and does not broaden synthetic evidence into authentic primary acceptance.

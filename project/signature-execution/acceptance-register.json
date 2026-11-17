@@ -115,7 +115,12 @@
         }
       },
       "weighted_score_out_of_100": null,
-      "accepted": false
+      "accepted": false,
+      "implementation_evidence": [
+        "project/evidence/iqamah-preparation-browser.json",
+        "project/evidence/signature-portfolio-browser-checks.json"
+      ],
+      "implementation_scope": "Editable preparation folio with actual Web JSON download, local checklist assessment and reduced-motion-aware record reveal; remaining primary compositions and device acceptance pending."
     },
     {
       "app": "istithmar",
