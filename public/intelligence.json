@@ -1,0 +1,50 @@
+{
+  "himayah": {
+    "generated_at": "2026-11-17T07:37:49.711771+00:00",
+    "analysis": {
+      "outcome": "inconclusive",
+      "draft": {
+        "summary": "This public‑information briefing notes that the UAE Federal Decree Law No. 45 of 2021 on Personal Data Protection gives data subjects the explicit right to withdraw their consent for personal data processing at any time. This right provides individuals with direct control over how their personal information is used.",
+        "claims": [
+          {
+            "text": "The UAE Personal Data Protection Decree allows a data subject to withdraw consent to the processing of personal data at any time.",
+            "basis": "evidence",
+            "citations": [
+              "uae-pdpl:public-0"
+            ]
+          }
+        ],
+        "next_steps": [
+          "Review the full official decree to identify any additional data‑subject rights and controller obligations.",
+          "Check the decree for the specific enforcement mechanisms and penalties that apply to non‑compliance."
+        ]
+      },
+      "questions": [],
+      "limitations": [
+        "The briefing is limited to the single right to withdraw consent, as that is the only provision supported by the supplied source.",
+        "No other obligations, rights, or enforcement details are included because they were not present in the provided excerpt."
+      ]
+    },
+    "source": {
+      "source_id": "uae-pdpl",
+      "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+      "authority": "UAE Legislation",
+      "fetched_at": "2026-11-17T07:10:57.635719+00:00",
+      "raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+      "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+      "scope": "",
+      "quote": "The Data Subject may, at any time, withdraw their consent to the processing of Personal Data.",
+      "mode": "previously_captured_official_excerpt",
+      "fresh_read_verified": false,
+      "latest_read_error": "Source returned HTTP 403; no authentication or redirect bypass attempted"
+    },
+    "model_roles": {
+      "planner": "openai/gpt-oss-20b",
+      "specialist": "qwen/qwen3.8-27b",
+      "critic": "openai/gpt-oss-120b"
+    },
+    "kind": "actual_model_analysis",
+    "factual_certification": false,
+    "run_url": "https://github.com/remidioviana/25app/actions/runs/44040058725"
+  }
+}

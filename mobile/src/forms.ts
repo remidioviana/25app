@@ -21,3 +21,10 @@ export function replaceAt(root:Json,path:(string|number)[],value:Json):Json {
 }
 export function validateGoal(goal:string){if(!goal.trim()||goal.length>2000)throw new Error('Describe the goal in up to 2,000 characters.');return goal.trim()}
 export function inputLabel(key:string){return ({as_of:'Reference date',currency:'Currency',amount:'Amount',transactions:'Transactions',budgets:'Budgets',category:'Category',verified:'Verified',title:'Title',name:'Name',start:'Start',end:'End',goal:'Goal',text:'Text',requirements:'Requirements',documents:'Documents',reference:'Reference',expires:'Expiry',days:'Days',date:'Date',description:'Description',tasks:'Tasks',rules:'Rules',quantity:'Quantity',allergens:'Allergens',recipients:'Recipients'} as Record<string,string>)[key]||key.replaceAll('_',' ')}
+export function addMapEntry(value:Record<string,Json>,rawKey:string,schema:Schema):Record<string,Json> {
+ const key=rawKey.trim();
+ if(!key||key.length>80||['__proto__','constructor','prototype'].includes(key))throw new Error('Use a category name of 1–80 characters.');
+ if(Object.prototype.hasOwnProperty.call(value,key))throw new Error('That category already exists.');
+ return {...value,[key]:blank(schema)};
+}
+export function removeMapEntry(value:Record<string,Json>,key:string):Record<string,Json>{return Object.fromEntries(Object.entries(value).filter(([name])=>name!==key))}

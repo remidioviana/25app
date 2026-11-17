@@ -8,6 +8,7 @@ import {styles as s,colors} from '../src/theme';
 import {inputLabel} from '../src/forms';
 import {ClaimEvidence} from './ClaimEvidence';
 import {AgentReview} from './AgentReview';
+import {ExecutionMap} from './ExecutionMap';
 import {Button,Notice} from './Controls';
 const status:Record<Run['status'],string>={queued:'Queued',running:'Running',completed:'Completed',failed:'Failed',cancelled:'Cancelled'};
 function Values({value}:{value:Json}){
@@ -36,8 +37,8 @@ export function RunView({api,initial,onError}:{api:AgentAPI;initial:Run;onError:
   }catch(e){onError(e instanceof Error?e.message:'Export failed')}finally{if(file?.exists)file.delete();setBusy(false)}
  }
  return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}
- {run.result&&<><AgentReview result={run.result}/><ClaimEvidence result={run.result}/><Text style={s.h3}>Tool analysis</Text>{run.result.decision==='requires_human_review'&&<Notice><Text style={s.text}>The reviewer found unresolved issues. Review before use.</Text></Notice>}<Values value={run.result.analysis}/>{run.result.narrative&&<><Text style={s.h3}>AI synthesis</Text><Text selectable style={s.text}>{run.result.narrative}</Text></>}
- <Text style={s.muted}>No external change was executed. Optional feedback: {run.review}.</Text>{run.review==='pending'&&<View style={s.row}><Button disabled={busy} title="Mark useful" onPress={()=>action('accepted')}/><Button secondary disabled={busy} title="Not useful" onPress={()=>action('rejected')}/></View>}<Button secondary busy={busy} title="Share report" onPress={share}/>
+ <ExecutionMap run={run}/>{run.result&&<><AgentReview result={run.result}/><ClaimEvidence result={run.result}/><Text style={s.h3}>Tool analysis</Text>{run.result.decision==='requires_human_review'&&<Notice><Text style={s.text}>The reviewer found unresolved issues. Review before use.</Text></Notice>}<Values value={run.result.analysis}/>{run.result.narrative&&<><Text style={s.h3}>AI synthesis</Text><Text selectable style={s.text}>{run.result.narrative}</Text></>}
+ <Text style={s.muted}>External actions: {run.result.external_actions_performed?'recorded in this run':'none'}. Feedback: {run.review}.</Text>{run.review==='pending'&&<View style={s.row}><Button disabled={busy} title="Mark useful" onPress={()=>action('accepted')}/><Button secondary disabled={busy} title="Not useful" onPress={()=>action('rejected')}/></View>}<Button secondary busy={busy} title="Share report" onPress={share}/>
  {run.result.evidence.length>0&&<><Text style={s.h3}>Evidence</Text>{run.result.evidence.map(e=><View key={e.citation} style={s.group}><Text style={s.h3}>{e.title}</Text><Text selectable style={s.text}>{e.text}</Text><Text style={s.muted}>{e.source} · {e.as_of||'undated'}</Text><Text selectable style={s.code}>{e.citation}</Text></View>)}</>}
  </>}
  {['queued','running'].includes(run.status)&&<Button secondary disabled={busy} title="Cancel run" onPress={()=>action('cancel')}/>}{['failed','cancelled'].includes(run.status)&&<Button disabled={busy} title="Resume run" onPress={()=>action('retry')}/>}

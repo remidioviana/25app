@@ -10,7 +10,7 @@ export function serverURL(raw:string,allowLocalHttp=false):string {
 }
 export class AgentAPI {
   readonly origin:string;
-  constructor(origin:string,private token:string,allowLocalHttp=false,private transport:typeof fetch=fetch){this.origin=serverURL(origin,allowLocalHttp)}
+  constructor(origin:string,private token:string,allowLocalHttp=false,private transport:typeof fetch=(input,init)=>globalThis.fetch(input,init)){this.origin=serverURL(origin,allowLocalHttp)}
   async request<T>(path:string,method='GET',body?:unknown,extra:Record<string,string>={},signal?:AbortSignal):Promise<T>{
     if(!path.startsWith('/api/')||path.includes('://'))throw new Error('Invalid API path');
     const controller=new AbortController();const cancel=()=>controller.abort();signal?.addEventListener('abort',cancel,{once:true});

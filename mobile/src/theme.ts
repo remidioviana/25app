@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {brandId} from './brand';
 import {designs} from './experience/designs';
 export const experience=designs[brandId];
+export const screenEdges:('top'|'bottom')[]=experience.navigation==='drawer'||experience.navigation==='segmented'?[]:['top'];
 export const colors={bg:experience.bg,panel:experience.panel,line:experience.line,accent:experience.accent,text:experience.ink,muted:experience.muted,error:experience.dark?'#FFB4A7':'#B42318'};
 const rgb=experience.accent.slice(1).match(/../g)!.map(x=>parseInt(x,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);
 const luminance=.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];

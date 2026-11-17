@@ -25,13 +25,13 @@ export function AppProvider({children}:{children:React.ReactNode}){
   return cfg;
  }
  async function connect(url:string,token:string,remember:boolean){
-  const id=++revision.current;
+  const id=++revision.current,hadConnection=api!==null;
   try{
    const client=new AgentAPI(serverURL(url,__DEV__),token,__DEV__),cfg=await validateClient(client);
    if(id!==revision.current)return;
    await persist(id,()=>remember?saveConnection({url:client.origin,token}):clearConnection());
    if(id!==revision.current)return;
-   reset();setApi(client);setConfig(cfg);
+   if(hadConnection)reset();else{setRun(null);setConnectionError('')}setApi(client);setConfig(cfg);
   }catch(e){if(id===revision.current)throw e}
  }
  async function disconnect(){

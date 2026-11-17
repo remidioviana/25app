@@ -1,5 +1,5 @@
 import type {brands} from "../brands";
-export type ExperienceDesign={layout:string;bg:string;ink:string;accent:string;panel:string;muted:string;line:string;dark:boolean;kicker:string;headline:string;action:string;tabs:string[];steps:string[];radius:number;serif:boolean};
+export type ExperienceDesign={layout:string;bg:string;ink:string;accent:string;panel:string;muted:string;line:string;dark:boolean;kicker:string;headline:string;action:string;tabs:string[];steps:string[];radius:number;serif:boolean;navigation:"drawer"|"floating"|"segmented"|"journey"|"compact";motion_ms:number;case_intro:string};
 export const designs:Record<keyof typeof brands,ExperienceDesign>={
   "himayah": {
     "layout": "docket",
@@ -11,7 +11,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "THE PRIVACY DESK",
-    "headline": "Every clause.\nAccounted for.",
+    "headline": "Consent needs\na way back.",
     "action": "Review an agreement",
     "tabs": [
       "Docket",
@@ -25,7 +25,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resolve findings"
     ],
     "radius": 4,
-    "serif": false
+    "serif": false,
+    "navigation": "drawer",
+    "motion_ms": 180,
+    "case_intro": "Agreement text and clause rules form the case file."
   },
   "iqamah": {
     "layout": "passport",
@@ -37,7 +40,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "YOUR UAE CHAPTER",
-    "headline": "A longer horizon.",
+    "headline": "Eligibility before\nthe long-term plan.",
     "action": "Build my residency dossier",
     "tabs": [
       "Passport",
@@ -51,7 +54,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare dossier"
     ],
     "radius": 28,
-    "serif": true
+    "serif": true,
+    "navigation": "floating",
+    "motion_ms": 280,
+    "case_intro": "A selected route, a dated checklist and the documents you hold."
   },
   "istithmar": {
     "layout": "decision",
@@ -63,7 +69,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "THE FOUNDER’S DESK",
-    "headline": "Build here.\nChoose wisely.",
+    "headline": "An activity changes\nthe cost picture.",
     "action": "Compare my setup options",
     "tabs": [
       "Desk",
@@ -77,7 +83,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Map setup costs"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "Business activity, jurisdiction options and documented costs."
   },
   "munagasah": {
     "layout": "blueprint",
@@ -89,7 +98,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "BID INTELLIGENCE",
-    "headline": "The winning bid\nstarts with fit.",
+    "headline": "A bid begins\nwith evidence.",
     "action": "Open a tender review",
     "tabs": [
       "Bid room",
@@ -103,7 +112,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Build proposal"
     ],
     "radius": 4,
-    "serif": false
+    "serif": false,
+    "navigation": "drawer",
+    "motion_ms": 180,
+    "case_intro": "Tender requirements and your supporting capability statements."
   },
   "sahil": {
     "layout": "concierge",
@@ -115,7 +127,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "ONE CLEAR NEXT STEP",
-    "headline": "Government,\nmade navigable.",
+    "headline": "Start with the\nservice dependency.",
     "action": "Find my next service step",
     "tabs": [
       "Guide",
@@ -129,7 +141,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare next step"
     ],
     "radius": 28,
-    "serif": false
+    "serif": false,
+    "navigation": "journey",
+    "motion_ms": 240,
+    "case_intro": "The service you need and the documents already available."
   },
   "tawteen": {
     "layout": "workforce",
@@ -141,7 +156,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "WORKFORCE OPERATIONS",
-    "headline": "Grow the team.\nSee the obligations.",
+    "headline": "Scope the team.\nThen the target.",
     "action": "Review my workforce plan",
     "tabs": [
       "Workforce",
@@ -155,7 +170,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Model hiring options"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "Active workforce records and the target you want evaluated."
   },
   "adl": {
     "layout": "casefile",
@@ -167,7 +185,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE TENANCY FILE",
-    "headline": "Turn a dispute\ninto a clear case.",
+    "headline": "A clear case\nstarts with dates.",
     "action": "Organize my tenancy evidence",
     "tabs": [
       "Case file",
@@ -181,7 +199,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Find evidence gaps"
     ],
     "radius": 4,
-    "serif": true
+    "serif": true,
+    "navigation": "journey",
+    "motion_ms": 240,
+    "case_intro": "A dated sequence of tenancy events, amounts and references."
   },
   "tawassul": {
     "layout": "correspondence",
@@ -193,7 +214,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "GCC BUSINESS RELATIONS",
-    "headline": "A better first\nconversation.",
+    "headline": "Origin belongs\nnext to the invoice.",
     "action": "Prepare my account brief",
     "tabs": [
       "Briefing",
@@ -207,7 +228,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Draft a proposal"
     ],
     "radius": 14,
-    "serif": true
+    "serif": true,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "The account’s needs and product facts you are authorized to use."
   },
   "adab": {
     "layout": "editorial",
@@ -219,7 +243,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "THE CULTURAL EDITOR",
-    "headline": "Make every\nword belong.",
+    "headline": "Privacy is part\nof cultural fit.",
     "action": "Review my campaign copy",
     "tabs": [
       "Studio",
@@ -233,7 +257,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resolve flags"
     ],
     "radius": 4,
-    "serif": false
+    "serif": false,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "The original copy, approved claims and channel boundaries."
   },
   "khidmah": {
     "layout": "service",
@@ -245,7 +272,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "CUSTOMER CARE OPERATIONS",
-    "headline": "Care that moves\nthe case forward.",
+    "headline": "Rights first.\nThe actual case next.",
     "action": "Open a customer resolution",
     "tabs": [
       "Care desk",
@@ -259,7 +286,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare resolution"
     ],
     "radius": 28,
-    "serif": false
+    "serif": false,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "The transaction, customer issue, policy and resolution authority."
   },
   "jomrok": {
     "layout": "manifest",
@@ -271,7 +301,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "CROSS-BORDER CONTROL",
-    "headline": "Know what\ncrosses next.",
+    "headline": "The declaration\nchanges the basis.",
     "action": "Review my shipment documents",
     "tabs": [
       "Manifest",
@@ -285,7 +315,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Identify missing records"
     ],
     "radius": 4,
-    "serif": false
+    "serif": false,
+    "navigation": "drawer",
+    "motion_ms": 180,
+    "case_intro": "Shipment facts, document references and supplied rates."
   },
   "khibrat": {
     "layout": "competency",
@@ -297,7 +330,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "PEOPLE • EVIDENCE • FIT",
-    "headline": "Look beyond\nthe résumé.",
+    "headline": "A contract is not\ncompetency evidence.",
     "action": "Map competency evidence",
     "tabs": [
       "Talent desk",
@@ -311,7 +344,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Expose skill gaps"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "A role rubric and candidate evidence linked to actual records."
   },
   "majlis": {
     "layout": "protocol",
@@ -323,7 +359,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "YOUR EXECUTIVE ARRIVAL",
-    "headline": "Belong from\nday one.",
+    "headline": "Arrival is\na sequence.",
     "action": "Build my onboarding path",
     "tabs": [
       "Welcome",
@@ -337,7 +373,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Resolve dependencies"
     ],
     "radius": 14,
-    "serif": true
+    "serif": true,
+    "navigation": "drawer",
+    "motion_ms": 180,
+    "case_intro": "Onboarding tasks, owners, due dates and dependencies."
   },
   "rafiq": {
     "layout": "orbit",
@@ -349,7 +388,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "A DAY, WELL ARRANGED",
-    "headline": "Make room\nfor what matters.",
+    "headline": "One event.\nSeveral local clocks.",
     "action": "Arrange my day",
     "tabs": [
       "Today",
@@ -363,7 +402,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Keep breathing room"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "floating",
+    "motion_ms": 280,
+    "case_intro": "Your commitments, timezone, priorities and available window."
   },
   "sawm": {
     "layout": "ritual",
@@ -375,7 +417,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "THE RAMADAN RHYTHM",
-    "headline": "Work with\nyour energy.",
+    "headline": "A rhythm needs\nreliable anchors.",
     "action": "Shape my Ramadan routine",
     "tabs": [
       "Rhythm",
@@ -389,7 +431,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Balance commitments"
     ],
     "radius": 28,
-    "serif": true
+    "serif": true,
+    "navigation": "floating",
+    "motion_ms": 280,
+    "case_intro": "Work periods, rest preferences and the limits of your day."
   },
   "mizan": {
     "layout": "balance",
@@ -401,7 +446,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#47584F",
     "dark": true,
     "kicker": "WEALTH WITH INTENTION",
-    "headline": "Let your money\nreflect your values.",
+    "headline": "Values begin\nwith a clear ledger.",
     "action": "Review my financial picture",
     "tabs": [
       "Balance",
@@ -415,7 +460,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Explore next steps"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "Transactions, categories and the budgets you want reconciled."
   },
   "thawg": {
     "layout": "menu",
@@ -427,7 +475,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE DINING EDITION",
-    "headline": "Good taste.\nBetter questions.",
+    "headline": "Ask about allergens\nbefore the table.",
     "action": "Build my dining shortlist",
     "tabs": [
       "The edit",
@@ -441,7 +489,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Check dietary evidence"
     ],
     "radius": 14,
-    "serif": true
+    "serif": true,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "Your preferences, party size and the options to compare."
   },
   "manzil": {
     "layout": "receipt",
@@ -453,7 +504,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE HOUSEHOLD BOOK",
-    "headline": "A home in order.\nA clearer ledger.",
+    "headline": "Household totals.\nTax questions apart.",
     "action": "Reconcile my household receipts",
     "tabs": [
       "Home book",
@@ -467,7 +518,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Reconcile totals"
     ],
     "radius": 4,
-    "serif": false
+    "serif": false,
+    "navigation": "segmented",
+    "motion_ms": 280,
+    "case_intro": "Receipt identifiers, amounts, categories and verification state."
   },
   "gurbah": {
     "layout": "journey",
@@ -479,7 +533,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "YOUR RELOCATION ATLAS",
-    "headline": "New city.\nA clear way in.",
+    "headline": "Your move has\na dependency map.",
     "action": "Build my relocation plan",
     "tabs": [
       "Atlas",
@@ -493,7 +547,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare arrival"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "journey",
+    "motion_ms": 240,
+    "case_intro": "Your move date, required tasks and what depends on what."
   },
   "amanah-eco": {
     "layout": "resource",
@@ -505,7 +562,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE RESOURCE OBSERVATORY",
-    "headline": "Less waste.\nMore possibility.",
+    "headline": "Compare periods.\nThen call it savings.",
     "action": "Understand my resource use",
     "tabs": [
       "Resources",
@@ -519,7 +576,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Find practical savings"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "Meter readings and the dates that define each comparison period."
   },
   "nafas": {
     "layout": "breathing",
@@ -531,7 +591,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "A LITTLE SPACE FOR YOU",
-    "headline": "Come back\nto this moment.",
+    "headline": "A few minutes\ncan be a start.",
     "action": "Explore my wellbeing practice",
     "tabs": [
       "Pause",
@@ -545,7 +605,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Make space to reflect"
     ],
     "radius": 28,
-    "serif": false
+    "serif": false,
+    "navigation": "floating",
+    "motion_ms": 280,
+    "case_intro": "The context you choose to share and the practice you want to explore."
   },
   "tadweer": {
     "layout": "circular",
@@ -557,7 +620,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE CIRCULAR ROUTE",
-    "headline": "This is not\nthe end of it.",
+    "headline": "Sorting comes\nbefore routing.",
     "action": "Find my material route",
     "tabs": [
       "The loop",
@@ -571,7 +634,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Plan the next handoff"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "Materials, handling risks and the collection rules you know."
   },
   "turath": {
     "layout": "story",
@@ -583,7 +649,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE LIVING HERITAGE JOURNAL",
-    "headline": "Every place\nholds a story.",
+    "headline": "Pearling shaped\na way of life.",
     "action": "Explore a heritage question",
     "tabs": [
       "Journal",
@@ -597,7 +663,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Connect the stories"
     ],
     "radius": 4,
-    "serif": true
+    "serif": true,
+    "navigation": "drawer",
+    "motion_ms": 180,
+    "case_intro": "The place, period or cultural question you want to understand."
   },
   "himam": {
     "layout": "wayfinding",
@@ -609,7 +678,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "ACCESS COMES FIRST",
-    "headline": "The city should\nopen for everyone.",
+    "headline": "Access needs\ncome first.",
     "action": "Plan my accessible journey",
     "tabs": [
       "Explore",
@@ -623,7 +692,10 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Check unresolved barriers"
     ],
     "radius": 14,
-    "serif": false
+    "serif": false,
+    "navigation": "journey",
+    "motion_ms": 240,
+    "case_intro": "Your access requirements and the route evidence available."
   },
   "hisad": {
     "layout": "harvest",
@@ -635,7 +707,7 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
     "line": "#D3D9CE",
     "dark": false,
     "kicker": "THE SURPLUS TABLE",
-    "headline": "Good food\ndeserves a next chapter.",
+    "headline": "Surplus needs\na working handoff.",
     "action": "Prepare a food redistribution",
     "tabs": [
       "The table",
@@ -649,6 +721,9 @@ export const designs:Record<keyof typeof brands,ExperienceDesign>={
       "Prepare a recipient match"
     ],
     "radius": 28,
-    "serif": true
+    "serif": true,
+    "navigation": "compact",
+    "motion_ms": 180,
+    "case_intro": "The food, handling conditions and recipient capacity available."
   }
 };

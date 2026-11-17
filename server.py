@@ -24,7 +24,7 @@ from validation import validate
 
 ROOT=Path(__file__).resolve().parent
 TOKEN=os.environ.get('APP_TOKEN','')
-STATIC={'/':'index.html','/index.html':'index.html','/public/app.js':'public/app.js','/public/styles.css':'public/styles.css','/public/icon.svg':'public/icon.svg','/sw.js':'sw.js'}
+STATIC={'/':'index.html','/index.html':'index.html','/public/app.js':'public/app.js','/public/styles.css':'public/styles.css','/public/icon.svg':'public/icon.svg','/sw.js':'sw.js','/public/intelligence.json':'public/intelligence.json'}
 
 def public_hostnames():
     """Render supplies its public hostname; explicit custom domains remain supported."""
@@ -38,7 +38,9 @@ class Handler(BaseHTTPRequestHandler):
         raw=value if isinstance(value,bytes) else json.dumps(value,ensure_ascii=False,allow_nan=False).encode()
         self.send_response(status)
         self.send_header('Content-Type',content_type); self.send_header('Content-Length',str(len(raw)))
-        self.send_header('Cache-Control','no-store'); self.send_header('X-Content-Type-Options','nosniff')
+        self.send_header('Cache-Control','public, max-age=300' if urlparse(self.path).path=='/public/intelligence.json' else 'no-store');
+        if urlparse(self.path).path=='/public/intelligence.json':self.send_header('Access-Control-Allow-Origin','*')
+        self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Referrer-Policy','no-referrer')
         self.send_header('Content-Security-Policy',"default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
         if download: self.send_header('Content-Disposition','attachment; filename="'+(download if isinstance(download,str) else 'agent-result.json')+'"')
@@ -61,6 +63,9 @@ class Handler(BaseHTTPRequestHandler):
         allowed={f'localhost:{self.server.server_port}',f'127.0.0.1:{self.server.server_port}'}
         allowed.update(public_hostnames())
         if host not in allowed: return self.reply({'error':'Unauthorized host'},403)
+        if path=='/public/intelligence.json':
+            if method!='GET':return self.reply({'error':'Read-only public intelligence feed'},405)
+            return self.reply((ROOT/'public/intelligence.json').read_bytes(),content_type='application/json; charset=utf-8')
         origin=self.headers.get('Origin')
         if (origin and urlparse(origin).netloc!=host) or self.headers.get('Sec-Fetch-Site')=='cross-site':
             return self.reply({'error':'Unauthorized origin'},403)

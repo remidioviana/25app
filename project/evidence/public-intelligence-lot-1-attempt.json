@@ -1,0 +1,176 @@
+{
+  "kind": "public-source AI analysis, not a customer case",
+  "lot": 1,
+  "apps": [
+    {
+      "app": "himayah",
+      "source_id": "uae-pdpl",
+      "status": "passed",
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "source_receipt": {
+        "source_id": "uae-pdpl",
+        "url": "https://www.uaelegislation.gov.ae/en/legislations/1972/download",
+        "authority": "UAE Legislation",
+        "fetched_at": "2026-11-17T07:10:57.635719+00:00",
+        "raw_sha256": "d5d5f9e93bd6c0dc2afe79776f3101bcd599e4400a67309bc0b378b2812bcf3a",
+        "text_sha256": "c6c3d55526589aa2d7313dcc7b787282373d0cdc1d894e2ca142aa3b4c49739c",
+        "scope": "",
+        "quote": "The Data Subject may, at any time, withdraw their consent to the processing of Personal Data.",
+        "mode": "previously_captured_official_excerpt",
+        "fresh_read_verified": false,
+        "latest_read_error": "Source returned HTTP 403; no authentication or redirect bypass attempted"
+      },
+      "analysis": {
+        "outcome": "inconclusive",
+        "draft": {
+          "summary": "This public‑information briefing notes that the UAE Federal Decree Law No. 45 of 2021 on Personal Data Protection gives data subjects the explicit right to withdraw their consent for personal data processing at any time. This right provides individuals with direct control over how their personal information is used.",
+          "claims": [
+            {
+              "text": "The UAE Personal Data Protection Decree allows a data subject to withdraw consent to the processing of personal data at any time.",
+              "basis": "evidence",
+              "citations": [
+                "uae-pdpl:public-0"
+              ]
+            }
+          ],
+          "next_steps": [
+            "Review the full official decree to identify any additional data‑subject rights and controller obligations.",
+            "Check the decree for the specific enforcement mechanisms and penalties that apply to non‑compliance."
+          ]
+        },
+        "questions": [],
+        "limitations": [
+          "The briefing is limited to the single right to withdraw consent, as that is the only provision supported by the supplied source.",
+          "No other obligations, rights, or enforcement details are included because they were not present in the provided excerpt."
+        ]
+      },
+      "roles": [
+        {
+          "role": "planner",
+          "usage": {
+            "input_tokens": 564,
+            "output_tokens": 808,
+            "total_tokens": 1372,
+            "requested_model": "openai/gpt-oss-20b",
+            "model": "openai/gpt-oss-20b",
+            "request_model_after_fallback": "openai/gpt-oss-20b",
+            "provider_reported_model": "openai/gpt-oss-20b",
+            "model_identity_evidence": "provider_reported",
+            "response_contract": "json_schema_strict",
+            "fallback": false,
+            "fallback_reason": null,
+            "fallback_history": [],
+            "structured_generation_retries": 0,
+            "structured_delivery_recovery": false,
+            "output_token_limit": 2200,
+            "structured_generation_retry_reason": null,
+            "structured_generation_initial_statuses": [],
+            "failed_attempt_usage_unavailable": false
+          }
+        },
+        {
+          "role": "specialist",
+          "usage": {
+            "input_tokens": 591,
+            "output_tokens": 162,
+            "total_tokens": 753,
+            "requested_model": "qwen/qwen3.8-27b",
+            "model": "qwen/qwen3.8-27b",
+            "request_model_after_fallback": "qwen/qwen3.8-27b",
+            "provider_reported_model": "qwen/qwen3.8-27b",
+            "model_identity_evidence": "provider_reported",
+            "response_contract": "json_schema_strict",
+            "fallback": false,
+            "fallback_reason": null,
+            "fallback_history": [],
+            "structured_generation_retries": 0,
+            "structured_delivery_recovery": false,
+            "output_token_limit": 2200,
+            "structured_generation_retry_reason": null,
+            "structured_generation_initial_statuses": [],
+            "failed_attempt_usage_unavailable": false
+          }
+        },
+        {
+          "role": "critic",
+          "usage": {
+            "input_tokens": 1139,
+            "output_tokens": 817,
+            "total_tokens": 1956,
+            "requested_model": "openai/gpt-oss-120b",
+            "model": "openai/gpt-oss-120b",
+            "request_model_after_fallback": "openai/gpt-oss-120b",
+            "provider_reported_model": "openai/gpt-oss-120b",
+            "model_identity_evidence": "provider_reported",
+            "response_contract": "json_schema_strict",
+            "fallback": false,
+            "fallback_reason": null,
+            "fallback_history": [],
+            "structured_generation_retries": 0,
+            "structured_delivery_recovery": false,
+            "output_token_limit": 2200,
+            "structured_generation_retry_reason": null,
+            "structured_generation_initial_statuses": [],
+            "failed_attempt_usage_unavailable": false
+          }
+        }
+      ],
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "reported_total_tokens": 4081,
+      "generated_at": "2026-11-17T07:37:49.711771+00:00",
+      "factual_certification": false
+    },
+    {
+      "app": "iqamah",
+      "source_id": "icp-golden-residency",
+      "status": "failed",
+      "completed_roles": [
+        "planner"
+      ],
+      "source_receipt": {
+        "source_id": "icp-golden-residency",
+        "url": "https://icp.gov.ae/en/services/uae-golden-residency/",
+        "authority": "Federal Authority for Identity, Citizenship, Customs and Port Security",
+        "http_status": 200,
+        "fetched_at": "2026-11-17T07:38:23.998149+00:00",
+        "raw_sha256": "41b2d878d954aaad2983337d1fa549750c037a75fee6c876cf8b8583d879d95e",
+        "text_sha256": "0fb68274efcbe13495e623462868ecb8b62bcb8a275f651f479b023853c0ba31",
+        "scope": "Published source context; applicability is not established",
+        "quote": "s on the automated translation service provided by Google. Accordingly, the Federal Authority for Identity, Citizenship, Customs and Port Security bears no responsibility for the accuracy of the translated content. Home Services Golden Residency Guide Golden Residency Guide What is the UAE Golden Residency? The Golden Residency is one of the flagship initiatives of the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP). It enables eligible individuals to obtain long-term residency in the United Arab Emirates for a period of ten years, with automatic renewal, without the need for a sponsor. Carefully designed to support the UAE’s economic and professional landscape, the Golden Residency programme allows residents and their families to live, work, study and invest in the UAE while enjoying the full range of benefits offered under the Golden Residency programme, thereby enhancing their long-term stability and quality of life. Strategic Objectives of the Golden Residency To attract investors, entrepreneurs and exceptional talent in order to support economic growth and strengthen the nation’s skills base. To support economic enterprises and foster innovation and entrepreneurship, creating a dynamic and sustainable business environment. To enable individuals and their families to reside in the UAE on a long-term basis without the need for a sponsor. To strengthen the UAE’s position as a global hub for knowledge, investment and employment, making it an attractive environment for long-term settlement and professional and personal growth. Key Benefits Long-term residency without the need for a sponsor, providing peace of mind and continued stability. The ability to obtain residence permits for spouses and children, regardless of their age, as well as for parents, ensuring the stability of the entire family. The freedom to live, work, study and invest, while enjoying all the benefits available to residents of the UAE. The ability to sponsor domestic workers in accordance with the applicable regulations and procedures in the UAE. Eligible applicants for Golden Residency who are outside the UAE are granted a six-month, multiple-entry entry visa, renewable for an additional six months, to complete the procedures for obtaining Golden Residency. In the event of the death of the sponsor holding Golden Residency, sponsored family members may remain in the UAE for the duration of the validity of the residence permits granted to them. Target Categories Investors in Public Investments or Real Estate Residency Duration 10 years for investors in public investments within the UAE. 10 years for investors in the UAE’s real estate sector. The Entrepreneurs Residency Duration 10 years for entrepreneurs with established businesses or successful business plans, whether based inside or outside the UAE. The First Line of Defence Residency Duration 10 years for professionals working on the front lines of defence. Scientists and Specialists Residency Duration 10 years for scientists and researchers with significant achievements and high impact. 10 years for leading scientists and religious scholars with significant contributions and high impact. 10 years for leading specialists in the fields of industry and the Fourth Industrial Revolution. 10 years for leading specialists in healthcare. 10 years for leading specialists in education. 10 years for skilled professionals in senior occupational levels. Humanitarian Pioneers Residency Duration 10 years for members of, or individuals working for, international or regional organisations. 10 years for members of, or individuals working for, public-benefit associations and non-profit organisations. 10 years for recipients of prestigious awards in the field of humanitarian work. 10 years for outstanding volunteers in the field of humanitarian work. 10 years for financial supporters of humanitarian work. Outstanding Students Residency Duration 10 years for top-performing secondary school students, or their equivalent, graduating from schools in the UAE. 10 years for top-performing bachelor’s degree graduates from accredited universities in the UAE. 10 years for top-performing master’s and d",
+        "mode": "live_official_read"
+      },
+      "error": "Provider attempts failed: 429, 429, 401. Safe provider codes: rate_limit_exceeded, invalid_request_error. Check server configuration and provider access."
+    },
+    {
+      "app": "istithmar",
+      "source_id": "dmcc-charges",
+      "status": "skipped_after_quota",
+      "completed_roles": []
+    },
+    {
+      "app": "munagasah",
+      "source_id": "dubai-esupply",
+      "status": "skipped_after_quota",
+      "completed_roles": []
+    },
+    {
+      "app": "sahil",
+      "source_id": "dewa-move-in",
+      "status": "skipped_after_quota",
+      "completed_roles": []
+    }
+  ],
+  "quota_exhausted": true,
+  "in_progress": false,
+  "external_actions_performed": false,
+  "finished_at": "2026-11-17T07:38:41.691506+00:00",
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44040058725"
+}

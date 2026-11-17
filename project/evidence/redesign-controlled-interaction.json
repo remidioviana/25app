@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "scope": "controlled browser transport, not real provider inference or a device test",
+  "case_preserved_on_initial_connection": true,
+  "domain_category_editing": true,
+  "autonomous_team_start_requests": 1,
+  "source_read_requests": 1,
+  "provider_calls": 0,
+  "verified_at": "2026-11-17T13:04:55.623028+00:00",
+  "navigation_api": "Expo Router SDK 58 navigateToTab(route.key)",
+  "native_device_verified": false
+}
