@@ -43,13 +43,13 @@ class CitationRepairTests(unittest.TestCase):
   with db.connect() as c:c.execute("UPDATE runs SET status='queued' WHERE id=?",(run,))
   with patch.object(advanced,'role') as model:engine.execute(run);model.assert_not_called()
   self.assertEqual(db.get(run)['status'],'failed')
- def test_repair_and_critic_revision_share_the_same_three_write_limit(self):
+ def test_citation_repair_is_followed_by_final_auditor_without_repeated_rewrites(self):
   self.revise=True;_,record=self.execute()
   self.assertEqual(record['status'],'completed',record['error'])
-  self.assertEqual(self.writes,3);self.assertEqual(len(self.calls),7)
+  self.assertEqual(self.writes,2);self.assertEqual(len(self.calls),5)
   self.assertEqual(record['result']['decision'],'inconclusive')
 
- def test_invalid_final_revision_is_resolved_by_final_model(self):
+ def test_revision_feedback_goes_directly_to_final_model(self):
   count=0
   def role(name,schema,context,instructions):
    nonlocal count
@@ -67,8 +67,9 @@ class CitationRepairTests(unittest.TestCase):
   record=db.get(run);self.assertEqual(record['status'],'completed',record['error'])
   result=record['result'];self.assertEqual(result['decision'],'inconclusive')
   self.assertFalse(result['prior_valid_draft_retained']);self.assertTrue(result['draft']['summary'].startswith('Final bounded response'))
-  self.assertEqual(result['critique']['verdict'],'revise');self.assertEqual(len(self.calls),7)
-  self.assertEqual(result['draft']['claims'],[]);self.assertTrue(result['unresolved_draft_validation'])
+  self.assertEqual(result['critique']['verdict'],'revise');self.assertEqual(len(self.calls),4)
+  self.assertEqual(self.writes,1)
+  self.assertEqual(result['draft']['claims'],[]);self.assertFalse(result['unresolved_draft_validation'])
  def test_domain_report_policy_does_not_request_unavailable_tools(self):
   spec=engine.SPECS['sahil'];original=spec['instructions']
   self.assertIn('Execute the domain tool before finalizing.',original)

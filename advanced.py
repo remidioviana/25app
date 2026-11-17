@@ -213,8 +213,11 @@ def run(task,spec,check):
     def decide(state):
         checked()
         if state['critique']['verdict']=='accept':return 'finish'
-        if state['revision']>=3 or state.get('writer_attempts',0)>=3:return 'finish'
-        return 'retrieve_again' if state['critique']['verdict']=='needs_evidence' else 'write'
+        # The final 120B responder performs content corrections itself.
+        # Allow one targeted retrieval cycle; avoid repeated Qwen rewrites.
+        if (state['critique']['verdict']=='needs_evidence' and state['revision']<2
+            and state.get('writer_attempts',0)<3):return 'retrieve_again'
+        return 'finish'
     def resolve(state):
         # Accepted drafts already have the critic's final decision. A fallback reviewer
         # cannot replace the designated final model for an unresolved response.
@@ -233,6 +236,13 @@ def run(task,spec,check):
             'Respect the stated source scope. Do not approve unresolved claims, invent missing facts or claim external actions. Evidence claims require exact supplied citation IDs. '
             'For incomplete answers omit unsupported claims and explain what cannot be concluded. All outcomes must include the complete final draft.')
         validate(value,FINAL_RESPONSE)
+        if value['outcome']=='answered' and (value['questions'] or value['limitations']):
+            # Conservative resolution of contradictory metadata, without a new model call.
+            # Never discard limitations or convert an incomplete answer to approval.
+            value=copy.deepcopy(value)
+            value['reported_outcome']='answered'
+            value['outcome']='needs_information' if value['questions'] else 'inconclusive'
+            value['normalization_reason']='answered_with_unresolved_questions' if value['questions'] else 'answered_with_limitations'
         if not value['draft']['summary'].strip():raise ValueError('Final response requires a nonempty summary.')
         issue=draft_issue(value['draft'],{x['citation'] for x in evidence})
         if issue:raise ValueError('Final response validation failed: '+issue)
@@ -240,8 +250,6 @@ def run(task,spec,check):
             raise ValueError('Missing-information response requires a concrete question.')
         if value['outcome']=='inconclusive' and not any(x.strip() for x in value['limitations']):
             raise ValueError('Inconclusive response requires an explicit limitation.')
-        if value['outcome']=='answered' and (value['questions'] or value['limitations']):
-            raise ValueError('An answered response must not hide unresolved questions or limitations.')
         additions=[]
         if value['limitations']:additions.append('Limitations: '+'; '.join(value['limitations']))
         if value['questions']:additions.append('Information needed: '+'; '.join(value['questions']))

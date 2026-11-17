@@ -45,7 +45,8 @@ class AdvancedTests(unittest.TestCase):
         with patch('advanced.role',side_effect=f):
             run=self.newrun();engine.execute(run);r=db.get(run)
         self.assertEqual(r['status'],'completed',r['error']);self.assertEqual(r['result']['decision'],'inconclusive')
-        self.assertEqual(sum(x['role']=='critic' for x in r['result']['usage']),4)
+        self.assertEqual(sum(x['role']=='critic' for x in r['result']['usage']),2)
+        self.assertEqual(r['result']['writer_attempts'],1)
     @unittest.skipUnless(advanced.available(),'LangGraph is not installed')
     def test_resume_does_not_replay_successful_roles(self):
         calls=[]

@@ -44,7 +44,7 @@ class RemainingLotTests(unittest.TestCase):
     self.assertFalse(saved['result']['external_actions_performed'])
     self.assertFalse(saved['result']['external_reads_performed'])
     self.assertTrue(all(x['fetched_in_this_run'] is False for x in saved['result']['source_reads']))
-    self.assertEqual(len(saved['result']['usage']),8)
+    self.assertEqual(len(saved['result']['usage']),4)
     self.assertTrue(all(c['source_reads'][0]['source_scope']==receipt['source_scope'] for c in contexts))
     report=exports.export(saved,'markdown').content.decode()
     self.assertIn(receipt['raw_sha256'],report);self.assertIn(receipt['source_scope'],report)

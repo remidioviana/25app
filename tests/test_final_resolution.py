@@ -17,13 +17,15 @@ class FinalResolutionTests(unittest.TestCase):
   self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
   self.old=db.DB;self.addCleanup(setattr,db,'DB',self.old)
   db.DB=Path(self.temp.name)/'db.sqlite3';db.init()
-  self.outcome='inconclusive';self.bad_citation=False;self.calls=[]
+  self.outcome='inconclusive';self.bad_citation=False;self.calls=[];self.contradictory_limits=False;self.contradictory_questions=False
  def role(self,name,schema,context,instructions):
   self.calls.append((name,schema))
   if schema is advanced.FINAL_RESPONSE:
    value={'outcome':self.outcome,'draft':{'summary':'120B final answer','claims':[], 'next_steps':[]},
      'questions':['Supply the contract clause.'] if self.outcome=='needs_information' else [],
      'limitations':['The supplied sources do not establish this conclusion.'] if self.outcome=='inconclusive' else []}
+   if self.contradictory_limits:value['limitations']=['Missing current applicability evidence.']
+   if self.contradictory_questions:value['questions']=['Which compliance period?']
    if self.bad_citation:value['draft']['claims']=[{'text':'Unsupported','basis':'evidence','citations':['invented:0']}]
   elif name=='planner':value={'objective':'Analyze','queries':[],'steps':[],'missing_information':[]}
   elif name=='specialist':value={'summary':'Unresolved initial draft','claims':[],'next_steps':[]}
@@ -55,6 +57,20 @@ class FinalResolutionTests(unittest.TestCase):
   self.bad_citation=True;run=self.run_graph()
   self.assertEqual(run['status'],'failed');self.assertIsNone(run['result'])
   self.assertIn('Final response validation failed',run['error'])
+
+ def test_answered_with_limitations_is_delivered_as_inconclusive_without_new_calls(self):
+  self.outcome='answered';self.contradictory_limits=True;run=self.run_graph()
+  self.assertEqual(run['status'],'completed',run['error'])
+  result=run['result'];self.assertEqual(result['decision'],'inconclusive')
+  self.assertEqual(result['final_response']['reported_outcome'],'answered')
+  self.assertEqual(result['final_response']['normalization_reason'],'answered_with_limitations')
+  self.assertIn('Missing current applicability evidence.',result['narrative'])
+  self.assertEqual(sum(schema is advanced.FINAL_RESPONSE for _,schema in self.calls),1)
+ def test_answered_with_questions_preserves_the_question_without_approval(self):
+  self.outcome='answered';self.contradictory_questions=True;run=self.run_graph()
+  self.assertEqual(run['status'],'completed',run['error'])
+  self.assertEqual(run['result']['decision'],'needs_information')
+  self.assertIn('Which compliance period?',run['result']['narrative'])
 
 class FinalTransportTests(unittest.TestCase):
  def response(self):
