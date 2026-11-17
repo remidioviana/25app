@@ -50,3 +50,12 @@ Iqamah refinement: the user selected white for the launcher background. Both the
 Munagasah selection: the user rejected the envelope and abstract metallic emblem and approved the institutional folio with ivory cover, graphite spine and amber seal. Its transparent `dimensional-logo.png` is now used by the in-app brand signature. The separate adaptive foreground has additional padding; the opaque launcher artwork keeps the graphite background. Concept approval is recorded separately from technical and physical-device acceptance.
 
 Approved-branding checkpoint: 92 mobile and 251 Python tests passed after applying the Munagasah folio to the interface and launcher assets. Typecheck, lint, all 25 configurations, PNG geometry and the five Web navigation cases also passed. The new transparent brand logo is validated separately from its padded adaptive foreground.
+
+Publication evidence for approved branding, source `9a2685f7c250dad475f945d1366eb60f591f3aa9`:
+
+- All 25 controlled Web variant checks passed at that source revision.
+- GitHub Code checks passed: https://github.com/remidioviana/25app/actions/runs/44158497197 .
+- First-five Android/iOS JavaScript/assets exports passed: https://github.com/remidioviana/25app/actions/runs/44158529383 .
+- Lots 2–5 previously exported successfully at the material-layer implementation revision `abebda1`: https://github.com/remidioviana/25app/actions/runs/44154932121 .
+
+These results do not establish signed binaries, installed launcher appearance, physical accessibility testing or product release. The approved transparent Munagasah logo is visible in `munagasah-approved-home.png`; the Iqamah icon background remains white as selected.
