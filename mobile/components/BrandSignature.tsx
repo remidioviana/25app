@@ -1,14 +1,15 @@
 import React from 'react';
-import {View,Text,type TextStyle} from 'react-native';
+import {View,Text,Platform,type TextStyle} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import {brand,brandId,brandAssets} from '../src/brand';
 import {experience as d} from '../src/theme';
 import {useHeadlineFont} from '../src/experience/TypefaceProvider';
 import identities from '../src/experience/identities.json';
+import {decorativeSvgProps} from '../src/experience/svgAccessibility';
 /** Each case owns its visual grammar. Text stays native and scales with the OS. */
 export function BrandSignature(){
  const family=useHeadlineFont(),id=identities[brandId];
- const mark=(size:number)=><SvgXml xml={brandAssets.logo} width={size} height={size}/>;
+ const mark=(size:number)=><SvgXml xml={brandAssets.logo} width={size} height={size} {...decorativeSvgProps(Platform.OS)}/>;
  const word=(text:string,style:TextStyle={})=><Text style={[{fontFamily:family,fontWeight:family?'400':'600',fontSize:id.word_size,letterSpacing:id.tracking,color:d.ink,flexShrink:1},style]}>{text}</Text>;
  const label=(text:string)=><Text style={{fontSize:11,lineHeight:17,letterSpacing:1.5,color:d.muted}}>{text}</Text>;
  let content:React.ReactNode;

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scope": "controlled browser transport, not real provider inference or a device test",
+  "case_preserved_on_initial_connection": true,
+  "domain_category_editing": true,
+  "autonomous_team_start_requests": 1,
+  "source_read_requests": 1,
+  "provider_calls": 0,
+  "console_warnings_and_errors": [],
+  "fix": "Native accessible=false is omitted on raw web SVG; valid aria-hidden=true replaces it on web only.",
+  "checks": {
+    "typecheck": "passed",
+    "mobile_tests": 65,
+    "variant_configurations": 25,
+    "lint": "passed"
+  }
+}
