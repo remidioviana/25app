@@ -1,0 +1,300 @@
+{
+  "source_commit": "62537fbcce97cda8979da54734ac61d95618afa0",
+  "captured_at": "2026-11-17T14:39:07.154961+00:00",
+  "scope": "Five initial route surfaces per app, Expo React Native Web; no fabricated private records, inference or native/device acceptance",
+  "screenshots": 125,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "page_errors": [],
+  "horizontal_overflow": false,
+  "provider_calls": 0,
+  "apps": [
+    {
+      "id": "himayah",
+      "name": "Himayah AI",
+      "screens": {
+        "home": "01-himayah-home.jpg",
+        "mission": "01-himayah-mission.jpg",
+        "evidence": "01-himayah-evidence.jpg",
+        "activity": "01-himayah-activity.jpg",
+        "workbench": "01-himayah-workbench.jpg"
+      }
+    },
+    {
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "screens": {
+        "home": "02-iqamah-home.jpg",
+        "mission": "02-iqamah-mission.jpg",
+        "evidence": "02-iqamah-evidence.jpg",
+        "activity": "02-iqamah-activity.jpg",
+        "workbench": "02-iqamah-workbench.jpg"
+      }
+    },
+    {
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "screens": {
+        "home": "03-istithmar-home.jpg",
+        "mission": "03-istithmar-mission.jpg",
+        "evidence": "03-istithmar-evidence.jpg",
+        "activity": "03-istithmar-activity.jpg",
+        "workbench": "03-istithmar-workbench.jpg"
+      }
+    },
+    {
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "screens": {
+        "home": "04-munagasah-home.jpg",
+        "mission": "04-munagasah-mission.jpg",
+        "evidence": "04-munagasah-evidence.jpg",
+        "activity": "04-munagasah-activity.jpg",
+        "workbench": "04-munagasah-workbench.jpg"
+      }
+    },
+    {
+      "id": "sahil",
+      "name": "Sahil AI",
+      "screens": {
+        "home": "05-sahil-home.jpg",
+        "mission": "05-sahil-mission.jpg",
+        "evidence": "05-sahil-evidence.jpg",
+        "activity": "05-sahil-activity.jpg",
+        "workbench": "05-sahil-workbench.jpg"
+      }
+    },
+    {
+      "id": "tawteen",
+      "name": "Tawteen AI",
+      "screens": {
+        "home": "06-tawteen-home.jpg",
+        "mission": "06-tawteen-mission.jpg",
+        "evidence": "06-tawteen-evidence.jpg",
+        "activity": "06-tawteen-activity.jpg",
+        "workbench": "06-tawteen-workbench.jpg"
+      }
+    },
+    {
+      "id": "adl",
+      "name": "Adl AI",
+      "screens": {
+        "home": "07-adl-home.jpg",
+        "mission": "07-adl-mission.jpg",
+        "evidence": "07-adl-evidence.jpg",
+        "activity": "07-adl-activity.jpg",
+        "workbench": "07-adl-workbench.jpg"
+      }
+    },
+    {
+      "id": "tawassul",
+      "name": "Tawassul B2B",
+      "screens": {
+        "home": "08-tawassul-home.jpg",
+        "mission": "08-tawassul-mission.jpg",
+        "evidence": "08-tawassul-evidence.jpg",
+        "activity": "08-tawassul-activity.jpg",
+        "workbench": "08-tawassul-workbench.jpg"
+      }
+    },
+    {
+      "id": "adab",
+      "name": "Adab AI",
+      "screens": {
+        "home": "09-adab-home.jpg",
+        "mission": "09-adab-mission.jpg",
+        "evidence": "09-adab-evidence.jpg",
+        "activity": "09-adab-activity.jpg",
+        "workbench": "09-adab-workbench.jpg"
+      }
+    },
+    {
+      "id": "khidmah",
+      "name": "Khidmah AI",
+      "screens": {
+        "home": "10-khidmah-home.jpg",
+        "mission": "10-khidmah-mission.jpg",
+        "evidence": "10-khidmah-evidence.jpg",
+        "activity": "10-khidmah-activity.jpg",
+        "workbench": "10-khidmah-workbench.jpg"
+      }
+    },
+    {
+      "id": "jomrok",
+      "name": "Jomrok AI",
+      "screens": {
+        "home": "11-jomrok-home.jpg",
+        "mission": "11-jomrok-mission.jpg",
+        "evidence": "11-jomrok-evidence.jpg",
+        "activity": "11-jomrok-activity.jpg",
+        "workbench": "11-jomrok-workbench.jpg"
+      }
+    },
+    {
+      "id": "khibrat",
+      "name": "Khibrat AI",
+      "screens": {
+        "home": "12-khibrat-home.jpg",
+        "mission": "12-khibrat-mission.jpg",
+        "evidence": "12-khibrat-evidence.jpg",
+        "activity": "12-khibrat-activity.jpg",
+        "workbench": "12-khibrat-workbench.jpg"
+      }
+    },
+    {
+      "id": "majlis",
+      "name": "Majlis AI",
+      "screens": {
+        "home": "13-majlis-home.jpg",
+        "mission": "13-majlis-mission.jpg",
+        "evidence": "13-majlis-evidence.jpg",
+        "activity": "13-majlis-activity.jpg",
+        "workbench": "13-majlis-workbench.jpg"
+      }
+    },
+    {
+      "id": "rafiq",
+      "name": "Rafiq",
+      "screens": {
+        "home": "14-rafiq-home.jpg",
+        "mission": "14-rafiq-mission.jpg",
+        "evidence": "14-rafiq-evidence.jpg",
+        "activity": "14-rafiq-activity.jpg",
+        "workbench": "14-rafiq-workbench.jpg"
+      }
+    },
+    {
+      "id": "sawm",
+      "name": "Sawm AI",
+      "screens": {
+        "home": "15-sawm-home.jpg",
+        "mission": "15-sawm-mission.jpg",
+        "evidence": "15-sawm-evidence.jpg",
+        "activity": "15-sawm-activity.jpg",
+        "workbench": "15-sawm-workbench.jpg"
+      }
+    },
+    {
+      "id": "mizan",
+      "name": "Mizan AI",
+      "screens": {
+        "home": "16-mizan-home.jpg",
+        "mission": "16-mizan-mission.jpg",
+        "evidence": "16-mizan-evidence.jpg",
+        "activity": "16-mizan-activity.jpg",
+        "workbench": "16-mizan-workbench.jpg"
+      }
+    },
+    {
+      "id": "thawg",
+      "name": "Thawg AI",
+      "screens": {
+        "home": "17-thawg-home.jpg",
+        "mission": "17-thawg-mission.jpg",
+        "evidence": "17-thawg-evidence.jpg",
+        "activity": "17-thawg-activity.jpg",
+        "workbench": "17-thawg-workbench.jpg"
+      }
+    },
+    {
+      "id": "manzil",
+      "name": "Manzil AI",
+      "screens": {
+        "home": "18-manzil-home.jpg",
+        "mission": "18-manzil-mission.jpg",
+        "evidence": "18-manzil-evidence.jpg",
+        "activity": "18-manzil-activity.jpg",
+        "workbench": "18-manzil-workbench.jpg"
+      }
+    },
+    {
+      "id": "gurbah",
+      "name": "Gurbah AI",
+      "screens": {
+        "home": "19-gurbah-home.jpg",
+        "mission": "19-gurbah-mission.jpg",
+        "evidence": "19-gurbah-evidence.jpg",
+        "activity": "19-gurbah-activity.jpg",
+        "workbench": "19-gurbah-workbench.jpg"
+      }
+    },
+    {
+      "id": "amanah-eco",
+      "name": "Amanah Eco",
+      "screens": {
+        "home": "20-amanah-eco-home.jpg",
+        "mission": "20-amanah-eco-mission.jpg",
+        "evidence": "20-amanah-eco-evidence.jpg",
+        "activity": "20-amanah-eco-activity.jpg",
+        "workbench": "20-amanah-eco-workbench.jpg"
+      }
+    },
+    {
+      "id": "nafas",
+      "name": "Nafas AI",
+      "screens": {
+        "home": "21-nafas-home.jpg",
+        "mission": "21-nafas-mission.jpg",
+        "evidence": "21-nafas-evidence.jpg",
+        "activity": "21-nafas-activity.jpg",
+        "workbench": "21-nafas-workbench.jpg"
+      }
+    },
+    {
+      "id": "tadweer",
+      "name": "Tadweer AI",
+      "screens": {
+        "home": "22-tadweer-home.jpg",
+        "mission": "22-tadweer-mission.jpg",
+        "evidence": "22-tadweer-evidence.jpg",
+        "activity": "22-tadweer-activity.jpg",
+        "workbench": "22-tadweer-workbench.jpg"
+      }
+    },
+    {
+      "id": "turath",
+      "name": "Turath AI",
+      "screens": {
+        "home": "23-turath-home.jpg",
+        "mission": "23-turath-mission.jpg",
+        "evidence": "23-turath-evidence.jpg",
+        "activity": "23-turath-activity.jpg",
+        "workbench": "23-turath-workbench.jpg"
+      }
+    },
+    {
+      "id": "himam",
+      "name": "Himam AI",
+      "screens": {
+        "home": "24-himam-home.jpg",
+        "mission": "24-himam-mission.jpg",
+        "evidence": "24-himam-evidence.jpg",
+        "activity": "24-himam-activity.jpg",
+        "workbench": "24-himam-workbench.jpg"
+      }
+    },
+    {
+      "id": "hisad",
+      "name": "Hisad AI",
+      "screens": {
+        "home": "25-hisad-home.jpg",
+        "mission": "25-hisad-mission.jpg",
+        "evidence": "25-hisad-evidence.jpg",
+        "activity": "25-hisad-activity.jpg",
+        "workbench": "25-hisad-workbench.jpg"
+      }
+    }
+  ],
+  "targeted_capture_updates": [
+    {
+      "app": "tawassul",
+      "screen": "home",
+      "source_commit": "a9674004bea1b169a19091ba6d0b5552db49773a",
+      "captured_at": "2026-11-17T14:42:57.563010+00:00",
+      "reason": "Render intended line breaks instead of literal backslash characters",
+      "page_errors": []
+    }
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "capture_source_commit": "62537fbcce97cda8979da54734ac61d95618afa0",
+  "screen_captures": 125,
+  "current_assets": [
+    {
+      "app": "himayah",
+      "symbol_sha256": "9c3460a605091ab50b18dc397ad5a8ca42b93f8485b98478e7ace8e922438432",
+      "wordmark_sha256": "3e7bcc78b11ddd4af0956d67b555b74f431b0d5b330dd48a2c6775f76a404881",
+      "icon_sha256": "91e6f5257226a89cc9928796318da984a3e7db193254c81fbfc05c8ec714149d",
+      "hero_sha256": "3149e9a16f60873aaa0a04adb43daf73a93b930adf5c9b779b8841050ffc6b27",
+      "latin_family": "IBM Plex Sans",
+      "arabic_family": "IBM Plex Sans Arabic",
+      "matrix_palette": [
+        "#151E37",
+        "#F4E7D5",
+        "#E7655A"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "iqamah",
+      "symbol_sha256": "dbc651d4702505b6770fba4750c3ed70f19668c258f541dce06b4b319356e06d",
+      "wordmark_sha256": "89cb6eb5541020a837388f2b6e234dadbedadf0fb58848b1a679edfee2ff9dae",
+      "icon_sha256": "d94a80568051c749d3bff1a71f24d5812e6184ce36b662a175ad42129e1e27ac",
+      "hero_sha256": "fc2941116ffe4b6a26afc5e77f76360b4898be8b96e539ecebda4f050f770e07",
+      "latin_family": "Cormorant Garamond",
+      "arabic_family": "Noto Naskh Arabic",
+      "matrix_palette": [
+        "#502C43",
+        "#F7EBD7",
+        "#C29A5C"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "istithmar",
+      "symbol_sha256": "599a36a74eb9dd4f7c654cfaf801501d7e66bcf921ab92d527377c289288d8f9",
+      "wordmark_sha256": "ce3868e0f832a732dd6abcb10592462389bed76455b018ddac95c9ea52c17a70",
+      "icon_sha256": "3e658e75767f23fde187dd99042130fee741251dcf2321b2fd9e3b409faecff5",
+      "hero_sha256": "af78bf56c8d32d784c88a2bf5872a3d0ec54e479941aa7b9f22e7261ebddfdea",
+      "latin_family": "Space Grotesk",
+      "arabic_family": "Alexandria",
+      "matrix_palette": [
+        "#133C67",
+        "#DDF8ED",
+        "#60C6AC"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "munagasah",
+      "symbol_sha256": "ff13c187592d0638180137499e2901cf24d907ff2453907dc0698fe47dec49f2",
+      "wordmark_sha256": "edaa203ca36f9a5607ef8f975169b3668b18adb83f0796891d320333c41b23d1",
+      "icon_sha256": "61e64553202777f3dc24d1a258e6e47d4bd9354e692007250ed2c9cdfa523692",
+      "hero_sha256": "9549d163e90eeece03ee2e791b82750da2084b4f512fdaf64b4de61970cc709c",
+      "latin_family": "Archivo Narrow",
+      "arabic_family": "Tajawal",
+      "matrix_palette": [
+        "#282A2F",
+        "#FFBE59",
+        "#F4F2EC"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "sahil",
+      "symbol_sha256": "462ddaf10dced322a8fceaba3b554982eddeef957c1583a726952ac85d03fd19",
+      "wordmark_sha256": "a4cd2aa902c14819c94259f0b4fa72aad02cb57720b12d87f9b0c9c486bad8b9",
+      "icon_sha256": "165a328ff6c0c6ad29654a00fb09eb8a6797b202219735266308b8ce614212ca",
+      "hero_sha256": "b45a13e1e1c99c589b1d458a2a1a9ee291bbbc77ea3f61b6e57fe16b0aa3b96a",
+      "latin_family": "Plus Jakarta Sans",
+      "arabic_family": "Cairo",
+      "matrix_palette": [
+        "#176D6A",
+        "#F8F7F1",
+        "#AFD9CF"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "tawteen",
+      "symbol_sha256": "dbf36d4511923d1705f6c0d4e9d291041da983307d56843d0fad2584832828d6",
+      "wordmark_sha256": "3536a7ff791eb2f6939b3f1c8d8399e3de92839589eecece1e5c28e2e224eedf",
+      "icon_sha256": "77e55f5327d65720c48c4eee7b4b45beb6b730c95a8badd37e551c18c696c029",
+      "hero_sha256": "fca4106e471677333000eb5a23ec090bd74e6d9ab296be2eb2cab7dfa049eb7a",
+      "latin_family": "Manrope",
+      "arabic_family": "Readex Pro",
+      "matrix_palette": [
+        "#1F4945",
+        "#F1CAB1",
+        "#C0E7DD"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "adl",
+      "symbol_sha256": "9600d53af468bdaccf891a1a882c8c37fd1452943cd8b89cde951478a04e5378",
+      "wordmark_sha256": "2e67b4a33cc5d67b9c543e18ee368d22fca30a0220e2124923eb171472180139",
+      "icon_sha256": "2d65ad36cf14c95c0c92e0eab8a16215b7172a9b1e802942e6735f0ade924fed",
+      "hero_sha256": "c2d9f6d09cb216a66cdb6660dbeaebc4b32a8d01705f649c8ebd8aef0287c7f9",
+      "latin_family": "Libre Baskerville",
+      "arabic_family": "Amiri",
+      "matrix_palette": [
+        "#3C283B",
+        "#E3D7E9",
+        "#BE8E9C"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "tawassul",
+      "symbol_sha256": "d27d217a4a4ed3bf18f7aac4dfbb1bd599d98f7dca823bd006a744e52dbd2c52",
+      "wordmark_sha256": "4608bf4aa5b1ac8488c45d06606e2d38c477d163728de861c0f1f2723616fab5",
+      "icon_sha256": "24bef7673d0af5a967c00c46d52d841f0377e6543907f00b28287d33b7517530",
+      "hero_sha256": "d37b19c0906e5c831c3003b555c7d92c359855281ceff6877ab8aca5b82028ad",
+      "latin_family": "Sora",
+      "arabic_family": "Vazirmatn",
+      "matrix_palette": [
+        "#123D32",
+        "#EDE4CD",
+        "#B67F3C"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "adab",
+      "symbol_sha256": "c8d468340929d3311451fa0f6626d1765b8c5d00c6600624e450de5c33635553",
+      "wordmark_sha256": "e6fde0c4a2b5abdf850013159f568655bed890565aa4ef87ffdc28a61732be0f",
+      "icon_sha256": "97fd636462453db586331b41efcd718816ed047b0236eefd1c34876feee4642e",
+      "hero_sha256": "6126593f23063d4c4cf9ae4051a0e3cc31b901078e50d33dd5898a924cb5f17d",
+      "latin_family": "Fraunces",
+      "arabic_family": "Aref Ruqaa",
+      "matrix_palette": [
+        "#782859",
+        "#F9DAE0",
+        "#D6B0FC"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "khidmah",
+      "symbol_sha256": "c52abbe8cdea069cd46de5a416f690f9b4f6b9707c03e530559c89673b86d78d",
+      "wordmark_sha256": "e9ef944a85bb658749aae2a4ac44ec8b97088df3a21407863fb3ee55b7ae7cef",
+      "icon_sha256": "03a9c7b31d54ed9f4d224962187ea29c0eca9d78760a18e506c4df8bbfd9cdd0",
+      "hero_sha256": "eb9e7678eee91f2646ebd29e4201fb38799846289c522866ddd7e0f3120b3a8a",
+      "latin_family": "Nunito Sans",
+      "arabic_family": "Almarai",
+      "matrix_palette": [
+        "#225B74",
+        "#FFF5CC",
+        "#77E2C8"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "jomrok",
+      "symbol_sha256": "2876717049d8a1726bf5d69bdb2b3cbaafdaa76059162a385b1838e731c74b1f",
+      "wordmark_sha256": "c9a9379287aa46c6a5c72fa8c404c2de1cfdba94827c3c8a0a7c925ec2a91f0a",
+      "icon_sha256": "e31d5ae706761ff225ac597696f25a1a9ac5bdf4c972ad8096d046f1ba8ba32a",
+      "hero_sha256": "c80629e57f75a7aeeac8775179e090f0dc37c5293d7d944180bda66aa59a0a12",
+      "latin_family": "Barlow Condensed",
+      "arabic_family": "Changa",
+      "matrix_palette": [
+        "#1645AE",
+        "#F4F3ED",
+        "#FF8A37"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "khibrat",
+      "symbol_sha256": "448bece939bacc2ba9439f9bd23b69bc2e13d1f7f39e7ae76822254decc31f82",
+      "wordmark_sha256": "4d7517394b3749158dd7e436263fc9e9c261a1d60c8d91428ef779b2eb15e806",
+      "icon_sha256": "2a69492c806293462a4b661f8d1c2c63136edb4e32f1b05f6545580f43e8a9fa",
+      "hero_sha256": "6c8d8aa5af32c639226ac3e872d15fac2fdaf25fee7c96261aee137a0ec85445",
+      "latin_family": "DM Sans",
+      "arabic_family": "Harmattan",
+      "matrix_palette": [
+        "#34312D",
+        "#D9E14D",
+        "#F1EEE5"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "majlis",
+      "symbol_sha256": "9aba94aab2fe68461ab08c58454dfcde89abe12a981fb39c3c99d50d2ca0ae5b",
+      "wordmark_sha256": "3caaa460829f6573443a8211b95a4dc2f37e431e0f1b25fbc8a0a1b4c5761b3d",
+      "icon_sha256": "ea20ebab060c1795cf8c383b35ed486f8d07b8782e35ae9845ed402599d28edb",
+      "hero_sha256": "0d694e8fae590a77e3cc22bef6ce681fdea88d1e005e0e2f811816536c95e7d0",
+      "latin_family": "Urbanist",
+      "arabic_family": "Kufam",
+      "matrix_palette": [
+        "#403A78",
+        "#F5EBE9",
+        "#D5B5F1"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "rafiq",
+      "symbol_sha256": "e078233a9a0b021fbf666e31cbe51e7175bede5c66ac4758bfca9462da724344",
+      "wordmark_sha256": "782d5b0fcb9d518b2234305572602b0554fba742bde32a99ea12e6a14c6ad9d1",
+      "icon_sha256": "81c16f4b7dfa8f0b181747de8804eed58bf6abbab93f635ba8553c85c5ad32f4",
+      "hero_sha256": "121f51e9547ccf9faf3f33d6fd5659810580e68fb78db375bfc086c6164772b2",
+      "latin_family": "Quicksand",
+      "arabic_family": "Noto Kufi Arabic",
+      "matrix_palette": [
+        "#6D5B98",
+        "#F9EEE8",
+        "#F4A89D"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "sawm",
+      "symbol_sha256": "e45bf9f1cdce874bd4e71403f5f280a5f99b271b077ba1848dab9a4600ca7a69",
+      "wordmark_sha256": "7272f27e51a1f1c7de55f6a5a2e4bd944e7d2e2821a5411b2d2b73f0023e367a",
+      "icon_sha256": "551867b88c367193af2a68156dfadbf33fcb3f5ce6829f47561c0d6a640f8970",
+      "hero_sha256": "80c75a2e018eddd88990601c848426428416d66d07a7bc6afa1e76ecd067d21f",
+      "latin_family": "Newsreader",
+      "arabic_family": "Scheherazade New",
+      "matrix_palette": [
+        "#131F4D",
+        "#FFE8B0",
+        "#D0B87C"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "mizan",
+      "symbol_sha256": "28d1b27e77c7ddde5bc40e354ed183fccce158d4564dc14cb7e95795137756f7",
+      "wordmark_sha256": "3e8651e0688c38192c1a259fa77b8b2a2251e5f090d12d591176fc58a822f780",
+      "icon_sha256": "a3390cacc1b481e393e2d8368fa2de6ae442eb0d9f46e6413811fe594aae61af",
+      "hero_sha256": "0e9ed1d1854530caa4c2bb4eada8b83a6a2c0f27e3dbf64b7bfca2c64cd3d7b6",
+      "latin_family": "Public Sans",
+      "arabic_family": "Mada",
+      "matrix_palette": [
+        "#143C32",
+        "#EFF1E4",
+        "#9DCA9C"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "thawg",
+      "symbol_sha256": "a4672ede902b91ca8a8db5fd6858615164e0ee71f82023e6dc9df425d8a91f02",
+      "wordmark_sha256": "a6c04c43ebd937a206fc2eee22f8aafd2984fd55bc3501cca884ef9011289b14",
+      "icon_sha256": "648062da64c480976c999f45206b12585527d21115107b868c8af55944771694",
+      "hero_sha256": "d5c2ec79a368798e4ded29986a14f7002bf3bc0e632348fb9a3d6ed9061bc8e1",
+      "latin_family": "Bricolage Grotesque",
+      "arabic_family": "Baloo Bhaijaan 2",
+      "matrix_palette": [
+        "#D84A34",
+        "#FFF0D8",
+        "#3F80A6"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "manzil",
+      "symbol_sha256": "14e3d63c1e0bea5fa1fd5768ce6bb1af728b8ba848afb090e49004e549b6aedd",
+      "wordmark_sha256": "1fe196f8a666cd59154ec14803a1e175f3395e83f9417492c7425f19a6a0a6ee",
+      "icon_sha256": "959d9d34a9c4b20af3007ee579faa61cef294cec79dda886c11258e5f7cac9d5",
+      "hero_sha256": "f91910846ea70660cda415ccba59fdaa61c55f8b9d1bc60c181f3bf5608e4797",
+      "latin_family": "Outfit",
+      "arabic_family": "El Messiri",
+      "matrix_palette": [
+        "#42275A",
+        "#FBE5D5",
+        "#E5A9A0"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "gurbah",
+      "symbol_sha256": "61b04db2f5e4bdb0bbf32a2fe8fa62aa862ce6edea511cb5b53ff34812de94b1",
+      "wordmark_sha256": "54049aeebf3fc717ecdf9809c0f4287ac639e7eba048864301a37203cf50035c",
+      "icon_sha256": "624fb9e07ffa72a958a9095e52c58e78acbaad5fd3cff6932441ca008d468f4d",
+      "hero_sha256": "4f7455127b1e79395fd99b45f295438a0baa6e1335c9a9a9efc96a3a54edf160",
+      "latin_family": "Epilogue",
+      "arabic_family": "Reem Kufi",
+      "matrix_palette": [
+        "#273B63",
+        "#FFF2DB",
+        "#F7A445"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "amanah-eco",
+      "symbol_sha256": "9ec7edce32b5e230e1669ca437602d1bf5dd8cd84ed3484e3302763f5dbf7e2b",
+      "wordmark_sha256": "d8c34d7a9930d35f5e9677454f8b3ee30e73cbf9e0761a5193588a9023f79931",
+      "icon_sha256": "e553b4e47016a2147d04a141e550731fc00c4d22a0b92b241d1fee6fe6c55c16",
+      "hero_sha256": "a4e5af25a2ede6ec3259256a9941e57a65c6bb337f077bae3f5d5090606ce692",
+      "latin_family": "Raleway",
+      "arabic_family": "Lemonada",
+      "matrix_palette": [
+        "#215B39",
+        "#F8F8DA",
+        "#BDD652"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "nafas",
+      "symbol_sha256": "f3a1be88cefdbdb69ac776ca13c81a3190a62057eef98adad6fcfec11632fd77",
+      "wordmark_sha256": "c92814ed684c237a80ca8d2c6758c7fc4b83c56dc67fc6ba7c8b090beb50b933",
+      "icon_sha256": "406ee99c70f84d4a22826e4017835cf02f7d39e3441620e8dead226f34631ef8",
+      "hero_sha256": "baeeb1321d74c8c4515577aec7164f59ac35445cc5860d01b9b28ea1e124a70e",
+      "latin_family": "Comfortaa",
+      "arabic_family": "Markazi Text",
+      "matrix_palette": [
+        "#4A7480",
+        "#F0F4F1",
+        "#AEC7BB"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "tadweer",
+      "symbol_sha256": "3d9865ed636ab0251ea500490be810f411b55d973abe134c18a7ecd3093d9d86",
+      "wordmark_sha256": "6b602c327f668f9814676ec40321b988f67eeb2c656c4bc5aa3a1edb5d834999",
+      "icon_sha256": "4093812179bbf8a0f7f48dee9d1624a63176197233fcf2c847651a088357d08e",
+      "hero_sha256": "88ed4d3723cfb96534381be4360b3a329983d07bbab6dccb61dbdab5d5d8e010",
+      "latin_family": "Work Sans",
+      "arabic_family": "Jomhuria",
+      "matrix_palette": [
+        "#DB5A27",
+        "#F7F2E3",
+        "#1F3942"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "turath",
+      "symbol_sha256": "10f94c753b5d8875052c49e188d643ab7b846f48e529def855cabce5801c9c5a",
+      "wordmark_sha256": "3ff2ee4e40be3efe303c50247e88e0f1476266947eb38800da9be38213e38095",
+      "icon_sha256": "109c9086ec99dce6adb841c8aeacbbbaf6e251a3dbcb4f94654dbcf4dbe4556c",
+      "hero_sha256": "1f804b45d09974d5463a5141a2d908ad3877bb2261a52b90b279e4c52f991749",
+      "latin_family": "Literata",
+      "arabic_family": "Lateef",
+      "matrix_palette": [
+        "#776246",
+        "#F6F1E7",
+        "#B0A385"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "himam",
+      "symbol_sha256": "73c4743660a560887fa3bc2620ced5e4b6937f7797a78aa44349a73091e80886",
+      "wordmark_sha256": "28f8553561d83ec6b9c894d480537d94725a8f3b428f13acb4a7e7ddef4403dd",
+      "icon_sha256": "9ea67302ad155a7a65d9e2dd9a24da84f2306e751f32b18ab1e64e000ae55f1b",
+      "hero_sha256": "82661e076358d9a2dffed0c4100d9cec5c0bf26407fd107044ddb908ec2058bb",
+      "latin_family": "Atkinson Hyperlegible",
+      "arabic_family": "Noto Sans Arabic",
+      "matrix_palette": [
+        "#10358C",
+        "#FFFCE8",
+        "#E7C93B"
+      ],
+      "native_acceptance": false
+    },
+    {
+      "app": "hisad",
+      "symbol_sha256": "a3db9e19ec866d44e79bb4e4d658497a7b64753644dad944d3f1b36a3ca2a122",
+      "wordmark_sha256": "c11a1c44e16c5c69abb4b12db7664aa28d4807264d01d225cc8d3eaaf1dd0e2d",
+      "icon_sha256": "67180d52205de7385c44ae313d9cf0ad5be784e6b040255a793199c9fd0b0eb4",
+      "hero_sha256": "b4772fb833b297572ecc104aa4ec8437f6d83bf0aea92719fbf9f7f83df38994",
+      "latin_family": "Syne",
+      "arabic_family": "Katibeh",
+      "matrix_palette": [
+        "#A23E3C",
+        "#FCF3E4",
+        "#F0BB52"
+      ],
+      "native_acceptance": false
+    }
+  ],
+  "perceptual_screen_comparisons": [
+    {
+      "screen": "home",
+      "comparisons": 300,
+      "method": "256-bit grayscale difference hash; text length and scroll position confound layout similarity",
+      "closest_pairs": [
+        {
+          "distance_bits": 77,
+          "a": "adl",
+          "b": "khidmah"
+        },
+        {
+          "distance_bits": 79,
+          "a": "rafiq",
+          "b": "nafas"
+        },
+        {
+          "distance_bits": 80,
+          "a": "iqamah",
+          "b": "majlis"
+        },
+        {
+          "distance_bits": 84,
+          "a": "thawg",
+          "b": "manzil"
+        },
+        {
+          "distance_bits": 86,
+          "a": "jomrok",
+          "b": "manzil"
+        },
+        {
+          "distance_bits": 86,
+          "a": "khidmah",
+          "b": "amanah-eco"
+        },
+        {
+          "distance_bits": 88,
+          "a": "thawg",
+          "b": "nafas"
+        },
+        {
+          "distance_bits": 90,
+          "a": "rafiq",
+          "b": "amanah-eco"
+        }
+      ]
+    },
+    {
+      "screen": "mission",
+      "comparisons": 300,
+      "method": "256-bit grayscale difference hash; text length and scroll position confound layout similarity",
+      "closest_pairs": [
+        {
+          "distance_bits": 48,
+          "a": "khidmah",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 51,
+          "a": "tawteen",
+          "b": "tadweer"
+        },
+        {
+          "distance_bits": 58,
+          "a": "tawteen",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 59,
+          "a": "iqamah",
+          "b": "khidmah"
+        },
+        {
+          "distance_bits": 60,
+          "a": "khidmah",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 61,
+          "a": "sahil",
+          "b": "rafiq"
+        },
+        {
+          "distance_bits": 62,
+          "a": "iqamah",
+          "b": "nafas"
+        },
+        {
+          "distance_bits": 62,
+          "a": "khidmah",
+          "b": "manzil"
+        }
+      ]
+    },
+    {
+      "screen": "evidence",
+      "comparisons": 300,
+      "method": "256-bit grayscale difference hash; text length and scroll position confound layout similarity",
+      "closest_pairs": [
+        {
+          "distance_bits": 66,
+          "a": "gurbah",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 66,
+          "a": "rafiq",
+          "b": "gurbah"
+        },
+        {
+          "distance_bits": 70,
+          "a": "tawteen",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 73,
+          "a": "amanah-eco",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 75,
+          "a": "khidmah",
+          "b": "manzil"
+        },
+        {
+          "distance_bits": 75,
+          "a": "rafiq",
+          "b": "tadweer"
+        },
+        {
+          "distance_bits": 75,
+          "a": "tawteen",
+          "b": "rafiq"
+        },
+        {
+          "distance_bits": 76,
+          "a": "adl",
+          "b": "manzil"
+        }
+      ]
+    },
+    {
+      "screen": "activity",
+      "comparisons": 300,
+      "method": "256-bit grayscale difference hash; text length and scroll position confound layout similarity",
+      "closest_pairs": [
+        {
+          "distance_bits": 50,
+          "a": "adl",
+          "b": "khidmah"
+        },
+        {
+          "distance_bits": 51,
+          "a": "amanah-eco",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 53,
+          "a": "tawteen",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 59,
+          "a": "khidmah",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 59,
+          "a": "sahil",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 60,
+          "a": "tawteen",
+          "b": "tadweer"
+        },
+        {
+          "distance_bits": 62,
+          "a": "adl",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 62,
+          "a": "tadweer",
+          "b": "himam"
+        }
+      ]
+    },
+    {
+      "screen": "workbench",
+      "comparisons": 300,
+      "method": "256-bit grayscale difference hash; text length and scroll position confound layout similarity",
+      "closest_pairs": [
+        {
+          "distance_bits": 55,
+          "a": "adl",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 62,
+          "a": "tawassul",
+          "b": "khibrat"
+        },
+        {
+          "distance_bits": 64,
+          "a": "iqamah",
+          "b": "adl"
+        },
+        {
+          "distance_bits": 64,
+          "a": "khidmah",
+          "b": "amanah-eco"
+        },
+        {
+          "distance_bits": 64,
+          "a": "nafas",
+          "b": "himam"
+        },
+        {
+          "distance_bits": 67,
+          "a": "amanah-eco",
+          "b": "hisad"
+        },
+        {
+          "distance_bits": 68,
+          "a": "gurbah",
+          "b": "tadweer"
+        },
+        {
+          "distance_bits": 68,
+          "a": "sahil",
+          "b": "tadweer"
+        }
+      ]
+    }
+  ],
+  "review_scope": "Mechanical whole-portfolio comparison and assistant visual review; not an independent jury or physical-device acceptance",
+  "findings": [
+    "Twenty-five distinct symbol geometries, outlined wordmark files, Latin families and Arabic companions are present.",
+    "The previous hardcoded light-blue tender panel was corrected after visual review.",
+    "Five common route shells, shared history structures and five navigation families still require experience-level distinction review.",
+    "Existing individual original imagery remains in use; compliance with every new photographic direction is not asserted.",
+    "The five acceptance gates remain open; similarity numbers cannot establish creative quality."
+  ],
+  "five_acceptance_gates_passed": false,
+  "targeted_capture_updates": [
+    {
+      "app": "tawassul",
+      "screen": "home",
+      "source_commit": "a9674004bea1b169a19091ba6d0b5552db49773a",
+      "captured_at": "2026-11-17T14:42:57.563010+00:00",
+      "reason": "Render intended line breaks instead of literal backslash characters",
+      "page_errors": []
+    }
+  ]
+}

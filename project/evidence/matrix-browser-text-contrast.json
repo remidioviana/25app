@@ -1,0 +1,155 @@
+{
+  "scope": "Computed visible HTML text/nearest opaque ancestor contrast on fresh home screens; excludes hidden/disabled content. Not native rendering, full alpha compositing, image contrast or WCAG certification.",
+  "apps": [
+    {
+      "app": "himayah",
+      "checked": 30,
+      "minimum_ratio": 5.17,
+      "failures": []
+    },
+    {
+      "app": "iqamah",
+      "checked": 26,
+      "minimum_ratio": 4.512,
+      "failures": []
+    },
+    {
+      "app": "istithmar",
+      "checked": 27,
+      "minimum_ratio": 4.716,
+      "failures": []
+    },
+    {
+      "app": "munagasah",
+      "checked": 21,
+      "minimum_ratio": 5.433,
+      "failures": []
+    },
+    {
+      "app": "sahil",
+      "checked": 25,
+      "minimum_ratio": 4.509,
+      "failures": []
+    },
+    {
+      "app": "tawteen",
+      "checked": 30,
+      "minimum_ratio": 4.518,
+      "failures": []
+    },
+    {
+      "app": "adl",
+      "checked": 31,
+      "minimum_ratio": 4.529,
+      "failures": []
+    },
+    {
+      "app": "tawassul",
+      "checked": 24,
+      "minimum_ratio": 4.505,
+      "failures": []
+    },
+    {
+      "app": "adab",
+      "checked": 28,
+      "minimum_ratio": 5.108,
+      "failures": []
+    },
+    {
+      "app": "khidmah",
+      "checked": 27,
+      "minimum_ratio": 4.539,
+      "failures": []
+    },
+    {
+      "app": "jomrok",
+      "checked": 22,
+      "minimum_ratio": 4.923,
+      "failures": []
+    },
+    {
+      "app": "khibrat",
+      "checked": 22,
+      "minimum_ratio": 5.627,
+      "failures": []
+    },
+    {
+      "app": "majlis",
+      "checked": 21,
+      "minimum_ratio": 4.97,
+      "failures": []
+    },
+    {
+      "app": "rafiq",
+      "checked": 30,
+      "minimum_ratio": 4.54,
+      "failures": []
+    },
+    {
+      "app": "sawm",
+      "checked": 27,
+      "minimum_ratio": 7.151,
+      "failures": []
+    },
+    {
+      "app": "mizan",
+      "checked": 27,
+      "minimum_ratio": 6.598,
+      "failures": []
+    },
+    {
+      "app": "thawg",
+      "checked": 21,
+      "minimum_ratio": 4.926,
+      "failures": []
+    },
+    {
+      "app": "manzil",
+      "checked": 25,
+      "minimum_ratio": 4.501,
+      "failures": []
+    },
+    {
+      "app": "gurbah",
+      "checked": 33,
+      "minimum_ratio": 4.522,
+      "failures": []
+    },
+    {
+      "app": "amanah-eco",
+      "checked": 30,
+      "minimum_ratio": 4.573,
+      "failures": []
+    },
+    {
+      "app": "nafas",
+      "checked": 22,
+      "minimum_ratio": 4.577,
+      "failures": []
+    },
+    {
+      "app": "tadweer",
+      "checked": 22,
+      "minimum_ratio": 4.977,
+      "failures": []
+    },
+    {
+      "app": "turath",
+      "checked": 16,
+      "minimum_ratio": 4.916,
+      "failures": []
+    },
+    {
+      "app": "himam",
+      "checked": 31,
+      "minimum_ratio": 4.962,
+      "failures": []
+    },
+    {
+      "app": "hisad",
+      "checked": 24,
+      "minimum_ratio": 4.507,
+      "failures": []
+    }
+  ]
+}

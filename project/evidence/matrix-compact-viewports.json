@@ -1,0 +1,111 @@
+{
+  "viewport": {
+    "width": 320,
+    "height": 740
+  },
+  "scope": "Browser compact-width check, not OS text scaling or physical device acceptance",
+  "apps": [
+    {
+      "app": "himayah",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "iqamah",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "istithmar",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "munagasah",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "sahil",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "tawteen",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "adl",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "tawassul",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "adab",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "khidmah",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "jomrok",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "khibrat",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "majlis",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "rafiq",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "sawm",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "mizan",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "thawg",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "manzil",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "gurbah",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "amanah-eco",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "nafas",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "tadweer",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "turath",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "himam",
+      "horizontal_overflow": false
+    },
+    {
+      "app": "hisad",
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "provider_calls": 0
+}

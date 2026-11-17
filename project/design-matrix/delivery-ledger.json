@@ -528,5 +528,8 @@
       "agentic_primary_workflow_accepted": false,
       "mobile_excellence_accepted": false
     }
-  ]
+  ],
+  "browser_review_baseline_captured": true,
+  "screen_capture_manifest": "project/ui-matrix/manifest.json",
+  "physical_device_verified": false
 }

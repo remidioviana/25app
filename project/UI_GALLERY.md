@@ -1,11 +1,11 @@
-# Current app UI gallery
+# Mandatory matrix review gallery
 
-[Open the independent-identity gallery](ui-identity/index.html): 100 actual Expo React Native Web captures, covering home, case, public research and history for all 25 apps.
+[Open all 125 actual screen captures](ui-matrix/index.html) — five initial route surfaces for each app. [Compare all 25 icons, wordmarks, Latin/Arabic fonts, palettes and agent scopes](design-matrix/visual-wall.html).
 
-The [manifest](ui-identity/manifest.json) identifies source commit `d054e6a3c2f1b64f5f50bdb1acf6bb3308f47a7b`, viewport 390 × 844, zero page/console errors and no horizontal overflow. The subsequent SVG-accessibility fix changes semantics, not these visual captures. [Compact-width checks](evidence/creative-compact-viewports.json) cover all 25 homes at 320 × 740.
+The [manifest](ui-matrix/manifest.json) records baseline source commit `62537fbcce97cda8979da54734ac61d95618afa0` and the targeted Tawassul home recapture after its literal line-break correction. Captures use 390 × 844; no private case records or model results were fabricated. Existing archived actual AI output remains separately labeled.
 
-[Earlier 100-screen baseline](ui-redesign/index.html) · [Official design research](APPLE_DESIGN_RESEARCH.md) · [25 creative directions](creative-directions/README.md) · [Mechanical similarity audit](evidence/creative-identity-audit.json).
+[25 compact home checks](evidence/matrix-compact-viewports.json) · [642 computed text-contrast checks](evidence/matrix-browser-text-contrast.json) · [25 controlled workbench checks](evidence/matrix-workbench-browser-checks.json) · [Arabic entry check](evidence/matrix-arabic-browser-check.json). Browser checks do not establish native rendering, full WCAG compliance or actual-device usability.
 
-The gallery uses dated public-source research and archived actual AI analysis with separate provenance. It performs no provider inference. Browser captures do not establish device interactions, Dynamic Type acceptance, signed distribution, award-level quality or deployment.
+[Implemented capabilities and missing integrations](design-matrix/delivery-ledger.json) · [Whole-portfolio originality audit](evidence/matrix-originality-audit.json). The 125 screens are a review baseline, not final creative acceptance or production release. Shared route shells, history patterns and navigation still require experience-level review.
 
-The earlier `ui-gallery` and `ui-redesign` folders remain historical evidence. Shared history structures, navigation primitives and motion still require portfolio-level review; the directive is not declared fully accepted.
+Historical captures remain in `ui-gallery`, `ui-redesign` and `ui-identity`.

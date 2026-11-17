@@ -1,0 +1,62 @@
+{
+  "scope": "Matrix implementation and browser review, not completed products or actual-device acceptance",
+  "python_tests": 248,
+  "mobile_tests": 69,
+  "typecheck": "passed",
+  "lint": "passed",
+  "variant_configurations": 25,
+  "controlled_workbench_browser_tests": 25,
+  "arabic_font_families_with_coverage_and_host_shaping": 25,
+  "arabic_form_entry": "passed in a controlled browser case",
+  "initial_screen_captures": 125,
+  "compact_home_viewports": 25,
+  "computed_home_text_contrast_checks": 642,
+  "gallery_smoke_check": "25 products; five screen selectors; search; all referenced images and fonts loaded; zero browser errors",
+  "model_inference_calls_for_matrix_work": 0,
+  "github_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 44104120402,
+      "headSha": "df1b40c9444f3d6a6e09e707a5579d1044574ec9",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44104120402",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44104977786,
+      "headSha": "62537fbcce97cda8979da54734ac61d95618afa0",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44104977786",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44105958556,
+      "headSha": "a9674004bea1b169a19091ba6d0b5552db49773a",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44105958556",
+      "workflowName": "Code checks"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44104175605,
+      "headSha": "df1b40c9444f3d6a6e09e707a5579d1044574ec9",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44104175605",
+      "workflowName": "Export first-five mobile bundles"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44104182354,
+      "headSha": "df1b40c9444f3d6a6e09e707a5579d1044574ec9",
+      "status": "completed",
+      "url": "https://github.com/remidioviana/25app/actions/runs/44104182354",
+      "workflowName": "Export mobile portfolio lots"
+    }
+  ],
+  "native_export_scope": "25 Android/iOS JavaScript and asset exports at df1b40c; subsequent contrast, metadata-size and Tawassul-copy fixes have Code checks, not new device acceptance",
+  "native_device_verified": false,
+  "primary_real_case_verified": false,
+  "five_design_gates_accepted": false
+}

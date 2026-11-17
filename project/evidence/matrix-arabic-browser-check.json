@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Controlled browser intake/connection, Arabic category and numeric input, and on-device tool display; no provider inference or physical-device verification",
+  "case_preserved_on_initial_connection": true,
+  "domain_category_editing": true,
+  "autonomous_team_start_requests": 1,
+  "source_read_requests": 1,
+  "provider_calls": 0,
+  "console_warnings_and_errors": [],
+  "fifth_screen_local_ledger": true,
+  "no_prefilled_zakat_rate": true,
+  "arabic_category_and_numeric_entry": true
+}

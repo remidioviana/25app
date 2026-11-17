@@ -9,3 +9,9 @@ Each app has five route surfaces: its home, case, public research, history and a
 [Palette contrast](../evidence/matrix-palette-contrast.json) · [Arabic font licenses and coverage](../evidence/arabic-typeface-inventory.json) · [Actual host RTL shaping](../evidence/arabic-shaping-checks.json). Host rendering does not prove native shaping, screen-reader performance or large-text acceptance.
 
 Live restaurant discovery, verified local fasting schedules, camera material recognition, bank/meter integrations, official submissions and food-bank coordination remain unavailable where specified in the ledger. No such capabilities are inferred from attractive screens.
+
+## Current review artifacts
+
+[Visual wall](visual-wall.html) · [125 captured route surfaces](../ui-matrix/index.html) · [Whole-portfolio audit](../evidence/matrix-originality-audit.json). The capture manifest preserves exact baseline and targeted-update commits.
+
+All 25 workbenches rendered with the existing repository synthetic examples through controlled browser intake transport, with no provider calls or console warnings/errors. The Mizan Arabic case also preserved entered categories and normalized Arabic numerals. These are test fixtures, not authentic customer-case acceptance.
