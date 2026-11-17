@@ -54,3 +54,7 @@ CBUAE HTTP 403 failures remain archived. Mizan now selects the official UAE Gove
 [Local HTTPS and controlled graph receipts](evidence/lot-4-financial-topic-controls.json) passed for both selected sources. [Budgeting source controls](evidence/lot-4-mof-budget-controls.json) are additional local checks. Neither report uses real model inference or proves GitHub runner access; a targeted runner source check precedes any model retry.
 
 The [targeted GitHub runner source check](https://github.com/remidioviana/25app/actions/runs/44033949295) passed both official HTTPS reads and controlled graphs: [archived runner receipts](evidence/lot-4-financial-runner-controls.json). Mizan used the UAE Government banking page and Manzil used the FTA invoice PDF. This check performed no provider inference. The subsequent protected two-app inference run is tracked separately.
+
+## Financial-source inference result
+
+[Run 44034097716](https://github.com/remidioviana/25app/actions/runs/44034097716) passed Manzil with the FTA invoice PDF, two valid source citations and three distinct returned model IDs. Mizan encountered a source HTTPS transport failure before any model call, despite its preceding successful runner source check. No quota stop occurred. Manzil is preserved as a completed synthetic RAG milestone; Mizan remains pending. Only Mizan is eligible for the next targeted retry.

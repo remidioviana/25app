@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-11-17T06:50:05.766014+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_app_interval_seconds": 30,
+  "minimum_role_interval_seconds": 20,
+  "excluded_apps": [],
+  "selected_apps": [
+    "manzil",
+    "mizan"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "in_progress": false,
+  "requested_lot": 4,
+  "apps": [
+    {
+      "app": "mizan",
+      "source_id": "uae-islamic-banking",
+      "graph_rag_diagnostic_verified": false,
+      "error": "Source HTTPS transport failed; no content was verified"
+    },
+    {
+      "app": "manzil",
+      "source_id": "fta-tax-invoices",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "fta-tax-invoices",
+        "url": "https://tax.gov.ae/DataFolder/Files/Pdf/06-Tax-Invoices.pdf",
+        "authority": "UAE Federal Tax Authority",
+        "title": "FTA tax invoice guidance",
+        "source_scope": "Published VAT invoice guidance; not authentication of user receipts, proof of supplier registration or a determination of VAT recoverability or tax filing obligations.",
+        "started_at": "2026-11-17T06:50:57.478776+00:00",
+        "fetched_at": "2026-11-17T06:51:03.158785+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 914235,
+        "characters": 12973,
+        "raw_sha256": "88c04fbca862c659df0f68c2cd2749dce9b9bb1ab55596a3843da8f9c2855b3c",
+        "text_sha256": "370a691bcb2b10e8edff1fa809e8f738ad68766e0a2d2843b16caa0f1d3bb97c",
+        "last_modified_header": "Sun, 14 Nov 2021 08:10:18 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "b7a64628-b8d5-4cea-97e0-5bd768af1ca1"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2052
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3037
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_delivery_recovery": false,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3591
+        }
+      ],
+      "reported_total_tokens": 8680,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 10,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "0a7c1076c6622da9472fd19fcee9396ff7b6811bdcae094692913f0b7842388d",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "quota_exhausted": false,
+  "verified_at": "2026-11-17T06:51:48.369904+00:00",
+  "reported_total_tokens": 8680,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44034097716"
+}
