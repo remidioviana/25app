@@ -22,3 +22,17 @@ The shared workflow covers structured input, app-scoped official-source retrieva
 - Authentic primary cases, full device interaction and release remain unaccepted. The operator will handle Expo authentication and Render deployment later.
 
 Live inference for this lot will start only after the preceding lot completes without a quota stop. No model execution is inferred from the shared implementation.
+
+## Latest completed live diagnostic
+
+[Run 44029691355](https://github.com/remidioviana/25app/actions/runs/44029691355) used 20-second role pacing and 30-second app pacing. No quota stop occurred.
+
+| App | Result |
+|---|---|
+| Mizan | Blocked: official source HTTP 403 |
+| Thawg | Synthetic RAG diagnostic passed |
+| Manzil | Blocked: official source HTTP 403 |
+| Gurbah | Synthetic RAG diagnostic passed |
+| Amanah Eco | Failed: final response cited a passage not retrieved for this app |
+
+These results do not establish authentic primary-case, device or release acceptance. Citation validation rejected the unsupported reference.

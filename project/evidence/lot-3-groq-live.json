@@ -1,0 +1,519 @@
+{
+  "checked_at": "2026-11-17T05:15:02.627146+00:00",
+  "live_requested": true,
+  "input_kind": "repository synthetic examples, not authentic user documents",
+  "retrieval_mode": "BM25 over fixed official sources; no embedding calls",
+  "reviewed_himayah_snapshot_requested": false,
+  "minimum_app_interval_seconds": 30,
+  "minimum_role_interval_seconds": 20,
+  "excluded_apps": [],
+  "selected_apps": [
+    "jomrok",
+    "khibrat",
+    "majlis",
+    "rafiq",
+    "sawm"
+  ],
+  "primary_domain_workflows_verified": false,
+  "device_verified": false,
+  "in_progress": false,
+  "requested_lot": 3,
+  "apps": [
+    {
+      "app": "jomrok",
+      "source_id": "dubai-customs-clearance",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "dubai-customs-clearance",
+        "url": "https://www.dubaicustoms.gov.ae/en/mobile/Pages/ServiceDescription.aspx?serviceid=18",
+        "authority": "Dubai Customs",
+        "title": "Dubai Customs clearance service",
+        "source_scope": "Published process information; not a tariff classification, binding rate, clearance or shipment tracking result.",
+        "started_at": "2026-11-17T05:15:04.112731+00:00",
+        "fetched_at": "2026-11-17T05:15:13.377545+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 105460,
+        "characters": 3438,
+        "raw_sha256": "f927f3f6a17fb9ed0722809f09579fc42177c045fd9889f3608816d48edc6640",
+        "text_sha256": "7b54be5c598c95642cf8d158eceda82829b9ab55af9ed57067534b2b3fd6dbf8",
+        "last_modified_header": "Tue, 17 Nov 2026 05:15:11 GMT",
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "bbead49f-234f-429e-90dc-abdb24ec3294"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1638
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2520
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2983
+        }
+      ],
+      "reported_total_tokens": 7141,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 4,
+      "cited_passages": 1,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "a9951c5b3556594d06d760147189cb07f0d3fe1024cb38c10046bab5c9798e2a",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "khibrat",
+      "source_id": "uae-preparing-work",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "uae-preparing-work",
+        "url": "https://www.dubai.ae/web/dubai.ae/living/jobs-employment/employment-contract",
+        "authority": "Digital Dubai / Government of Dubai",
+        "title": "Dubai Government employment-contract information",
+        "source_scope": "Employment-process context; candidate evidence, approved role rubric and employer onboarding tasks are user supplied.",
+        "started_at": "2026-11-17T05:16:28.123692+00:00",
+        "fetched_at": "2026-11-17T05:16:31.069481+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 168111,
+        "characters": 2191,
+        "raw_sha256": "a29708b9a6d8329ff98f07c238b290b8887ec04667fe11f7eecd24cddcd8add9",
+        "text_sha256": "5408354f45e264595bae332788c05765f3ae0e378b986966b8f4a1e2ec6ea32e",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "c16456a4-513d-4fd7-93d9-278fbe9f0aa3"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1565
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2407
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3052
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3768
+        }
+      ],
+      "reported_total_tokens": 10792,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 2,
+      "cited_passages": 2,
+      "role_calls": 4,
+      "final_response_outcome": "inconclusive",
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "inconclusive",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "41606b60c55c4d6c8772a0e78bd43c8a9fdc20e5c9aeb8b0a20f713c99382a18",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "majlis",
+      "source_id": "uae-preparing-work",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "uae-preparing-work",
+        "url": "https://www.dubai.ae/web/dubai.ae/living/jobs-employment/employment-contract",
+        "authority": "Digital Dubai / Government of Dubai",
+        "title": "Dubai Government employment-contract information",
+        "source_scope": "Employment-process context; candidate evidence, approved role rubric and employer onboarding tasks are user supplied.",
+        "started_at": "2026-11-17T05:18:08.500712+00:00",
+        "fetched_at": "2026-11-17T05:18:08.659139+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 168116,
+        "characters": 2191,
+        "raw_sha256": "8f9cd6882be4d5d19e510abadd31ddf248ded2691354561e92944153c12562b3",
+        "text_sha256": "5408354f45e264595bae332788c05765f3ae0e378b986966b8f4a1e2ec6ea32e",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "110e329a-8957-45c1-be55-c33430ee6746"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1340
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2428
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2612
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3411
+        }
+      ],
+      "reported_total_tokens": 9791,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 2,
+      "cited_passages": 2,
+      "role_calls": 4,
+      "final_response_outcome": "inconclusive",
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "inconclusive",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "0ffa59a544696ffc5cf114badbc5d1a739f2470f73d67ec9ef8c1405d829c812",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "rafiq",
+      "source_id": "google-calendar-timezones",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "google-calendar-timezones",
+        "url": "https://support.google.com/calendar/answer/37064?hl=en",
+        "authority": "Google Calendar Help",
+        "title": "Use Google Calendar in different time zones",
+        "source_scope": "Calendar semantics only; no calendar connection, live traffic, booking or event mutation.",
+        "started_at": "2026-11-17T05:19:45.349090+00:00",
+        "fetched_at": "2026-11-17T05:19:45.961293+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 1639228,
+        "characters": 5686,
+        "raw_sha256": "619c025d7a444aebcaafb4c28c921bebb99fa3373be2ef52e0616d054aba99b8",
+        "text_sha256": "109926a175dfaf701413e101777c7ec78da01a800bad857eef8294f955223889",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "c797268a-b3a5-4483-9fa1-82a1160dfc6d"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1377
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2652
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 1,
+          "structured_generation_retry_reason": "json_validate_failed",
+          "reported_total_tokens": 2997
+        }
+      ],
+      "reported_total_tokens": 7026,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 6,
+      "cited_passages": 2,
+      "role_calls": 3,
+      "final_response_outcome": null,
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "reviewed_by_model",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "fc9a8d34b778a2a5737cf7968c8eba02a26fe24eb2324f0af9eebd14843e6845",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    },
+    {
+      "app": "sawm",
+      "source_id": "uae-working-hours",
+      "graph_rag_diagnostic_verified": true,
+      "source_receipt": {
+        "source_id": "uae-working-hours",
+        "url": "https://www.dubai.ae/religious-affairs",
+        "authority": "Digital Dubai / Government of Dubai",
+        "title": "Dubai Government religious affairs and services",
+        "source_scope": "Published religious-service context only; exact prayer times and religious decisions are not inferred from this page.",
+        "started_at": "2026-11-17T05:21:26.483115+00:00",
+        "fetched_at": "2026-11-17T05:21:29.595491+00:00",
+        "http_status": 200,
+        "content_type": "text/html",
+        "bytes": 214482,
+        "characters": 10005,
+        "raw_sha256": "0ccf3b1ad0a9dfa53241d9a1657b9131c035716814c2038ae40d1518a9a8d057",
+        "text_sha256": "a45cc85245923e7d0e41ab3dc31fbdc02c274545bd0ecb72e41cbcdaea13da25",
+        "last_modified_header": null,
+        "publication_date_verified": false,
+        "legal_applicability_verified": false,
+        "status": "retrieved",
+        "external_read": true,
+        "external_write": false,
+        "transport": "verified HTTPS; fixed URL; redirects denied; platform egress proxy honored",
+        "dns_validation": "public addresses validated by local resolver",
+        "warnings": [
+          "HTML text extraction omits scripts/layout and may include navigation; figures, tables and applicability still require source review.",
+          "Fetch time and Last-Modified do not establish legal currency, applicability or live service state."
+        ],
+        "document_id": "ab2bc930-a79a-4f4e-bb63-8e2620c8c5b7"
+      },
+      "run_status": "completed",
+      "validation_rejections": 0,
+      "completed_roles": [
+        "planner",
+        "specialist",
+        "critic",
+        "critic"
+      ],
+      "completed_role_details": [
+        {
+          "role": "planner",
+          "provider_reported_model": "openai/gpt-oss-20b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 1767
+        },
+        {
+          "role": "specialist",
+          "provider_reported_model": "qwen/qwen3.8-27b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 2359
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 3092
+        },
+        {
+          "role": "critic",
+          "provider_reported_model": "openai/gpt-oss-120b",
+          "response_contract": "json_schema_strict",
+          "structured_generation_retries": 0,
+          "structured_generation_retry_reason": null,
+          "reported_total_tokens": 5555
+        }
+      ],
+      "reported_total_tokens": 12773,
+      "usage_scope": "accepted role results only; failed requests may consume additional quota",
+      "checks": {
+        "synthetic_input_preserved": true,
+        "domain_tool_recomputed": true,
+        "evidence_retrieved": true,
+        "retrieved_evidence_cited": true,
+        "three_roles_responded": true,
+        "no_external_write": true
+      },
+      "observed_role_models": {
+        "planner": "openai/gpt-oss-20b",
+        "specialist": "qwen/qwen3.8-27b",
+        "critic": "openai/gpt-oss-120b"
+      },
+      "three_distinct_models_verified": true,
+      "retrieved_passages": 7,
+      "cited_passages": 1,
+      "role_calls": 4,
+      "final_response_outcome": "needs_information",
+      "final_role_reported_model": "openai/gpt-oss-120b",
+      "model_review_decision": "needs_information",
+      "prior_valid_draft_retained": false,
+      "unresolved_draft_validation": [],
+      "artifact_sha256": "5e6818094dfb5bd51ef65c9af94907b827d5ebb1e18f6fc39300245d4ba0ac0c",
+      "factual_correctness_verified": false,
+      "primary_domain_workflow_verified": false
+    }
+  ],
+  "quota_exhausted": false,
+  "verified_at": "2026-11-17T05:22:37.267906+00:00",
+  "reported_total_tokens": 47523,
+  "github_run_url": "https://github.com/remidioviana/25app/actions/runs/44022717271"
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_state": "First-five synthetic RAG graph evaluations observed with three distinct model IDs including Qwen Preview; authentic primary workflows, permanent deployment and releases remain incomplete",
+  "publication_state": "Historical synthetic RAG milestones preserved; latest per-app evidence tracked separately from authentic primary workflows, device acceptance and releases",
   "products": [
     {
       "order": 1,
@@ -274,7 +274,7 @@
       "live_graph_diagnostic_evidence": [],
       "latest_live_graph_diagnostic_status": "failed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/lot-2-groq-live-attempt.json"
+        "project/evidence/lot-2-groq-paced-attempt.json"
       ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
@@ -309,16 +309,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-2-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "failed",
-      "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/lot-2-groq-live-attempt.json"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 8,
@@ -349,14 +353,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-2-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 9,
@@ -390,8 +400,10 @@
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
@@ -425,14 +437,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-2-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-2-groq-paced-attempt.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 11,
@@ -463,14 +481,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-3-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 12,
@@ -501,14 +525,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-3-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 13,
@@ -539,14 +569,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-3-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 14,
@@ -577,14 +613,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-3-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 15,
@@ -615,14 +657,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-3-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Successful synthetic graph diagnostic with protected provider inference; not primary case, device or release acceptance.",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-3-groq-live.json"
+      ],
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
     },
     {
       "order": 16,
@@ -656,8 +704,10 @@
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
@@ -691,14 +741,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-4-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
     },
     {
       "order": 18,
@@ -732,8 +788,10 @@
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
@@ -767,14 +825,20 @@
       "public_source_read_evidence": [
         "project/evidence/lot-4-official-source-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
     },
     {
       "order": 20,
@@ -808,8 +872,10 @@
       "live_graph_diagnostic_verified": false,
       "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
       "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "not_attempted",
-      "latest_live_graph_diagnostic_evidence": [],
+      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_evidence": [
+        "project/evidence/lot-4-groq-live-attempt.json"
+      ],
       "three_model_graph_diagnostic_verified": false,
       "three_model_graph_diagnostic_evidence": [],
       "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"

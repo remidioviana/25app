@@ -22,3 +22,17 @@ The shared workflow covers structured input, app-scoped official-source retrieva
 - Authentic primary cases, full device interaction and release remain unaccepted. The operator will handle Expo authentication and Render deployment later.
 
 Live inference for this lot will start only after the preceding lot completes without a quota stop. No model execution is inferred from the shared implementation.
+
+## Latest completed live diagnostic
+
+[Protected workflow](https://github.com/remidioviana/25app/actions/runs/44022717271). Minimum spacing: 20 seconds between model calls and 30 seconds between apps. No quota stop occurred in this run.
+
+| App | Execution | RAG diagnostic | Final outcome |
+|---|---|---|---|
+| Jomrok AI | completed | passed | reviewed_by_model |
+| Khibrat AI | completed | passed | inconclusive |
+| Majlis AI | completed | passed | inconclusive |
+| Rafiq | completed | passed | reviewed_by_model |
+| Sawm AI | completed | passed | needs_information |
+
+Passed rows complete the synthetic graph/RAG milestone only. Authentic primary cases and device/release gates remain separate. Incomplete answers are not promoted to completed customer outcomes.

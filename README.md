@@ -102,8 +102,8 @@ npm run export:native
 
 See `docs/IMPLEMENTATION_STATUS.md` and adjacent test reports for results and pending checks. The examples are fictional, executed locally and explicitly marked as demonstration data. Legal rules, fees, availability, certifications and route status require supplied evidence. The UI does not fabricate government datasets or perform external submissions. On-device inference, voice, operating-system automation and advanced cryptography are not implemented by this release.
 
-Preparação operacional: [implantação permanente do backend](project/IMPLANTACAO_BACKEND.md), incluindo identidade, persistência, TLS e critérios de aceite. O roteiro não representa um serviço já implantado.
+Operational preparation: [backend deployment](project/IMPLANTACAO_BACKEND.md), including identity, persistence, TLS and acceptance criteria. The runbook is not evidence of a deployed service.
 
-[Resposta autônoma com o 120B na decisão final](project/RESPOSTA_AUTONOMA.md): sequência atual de avaliação, resultados incompletos explícitos e limites da validação.
+[Autonomous responses with the 120B as final responder](project/RESPOSTA_AUTONOMA.md): evaluation order, explicit incomplete outcomes and validation limits.
 
-[Configuração do Expo/EAS e preview gratuito no Render](project/EXPO_RENDER_CONFIGURACAO.md): vínculo do projeto existente, comandos APK e variáveis protegidas.
+[Expo/EAS and Render preview configuration](project/EXPO_RENDER_CONFIGURACAO.md): existing-project linkage, APK commands and protected environment settings.
