@@ -8,16 +8,18 @@ Start with the [structural plan](PLANO_ESTRUTURAL.md),
 [real integration/source matrix](project/INTEGRACOES_REAIS.md).
 
 Operational apps now start with empty/unknown data instead of preloaded fictional
-records. Five reviewed public-source readers have actual retrieval receipts and a
+records. Public-source readers preserve actual retrieval receipts and expose a
 native Evidence panel. The tool-calling and team runtimes can request permitted
 source reads, preserve provenance and exclude superseded source versions from
 current retrieval. These are partial capabilities, not completed primary agents.
 
-The first five apps have recorded live Groq RAG diagnostics with three distinct
+All 25 apps have recorded successful live Groq RAG diagnostics with three distinct
 provider-reported model IDs in an explicit Preview evaluation profile. Inputs were
-synthetic examples; all five results required human review. The default runtime
-still uses two Production model IDs across three roles. See the
-[first-lot evidence and remaining gates](project/PRIMEIRO_LOTE_VALIDADO.md).
+synthetic examples. See the [25-app diagnostic evidence index](project/PORTFOLIO_RAG_VALIDATED.md)
+and [first-lot history](project/PRIMEIRO_LOTE_VALIDADO.md). Earlier failures and review
+outcomes remain preserved; bounded autonomous final responses distinguish completed,
+information-needed and inconclusive answers. The default runtime still uses two
+production model IDs across three roles.
 No primary customer workflow, permanent backend deployment, signed app or release
 is claimed.
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_state": "Historical synthetic RAG milestones preserved; latest per-app evidence tracked separately from authentic primary workflows, device acceptance and releases",
+  "publication_state": "All 25 apps have recorded successful synthetic live RAG diagnostics with three distinct model IDs including Qwen Preview; authentic primary workflows, device acceptance, permanent deployment and releases remain unaccepted",
   "products": [
     {
       "order": 1,
@@ -707,18 +707,23 @@
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
       "public_source_read_verified": true,
       "public_source_read_evidence": [
-        "project/evidence/lot-4-official-source-controls.json"
+        "project/evidence/lot-4-official-source-controls.json",
+        "project/evidence/lot-4-financial-runner-controls.json"
       ],
-      "live_graph_diagnostic_verified": false,
-      "live_graph_diagnostic_scope": "historical successful synthetic integration; not latest-code or primary acceptance",
-      "live_graph_diagnostic_evidence": [],
-      "latest_live_graph_diagnostic_status": "failed",
+      "live_graph_diagnostic_verified": true,
+      "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",
+      "live_graph_diagnostic_evidence": [
+        "project/evidence/mizan-official-finance-groq-retry.json"
+      ],
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/lot-4-financial-groq-retry.json"
+        "project/evidence/mizan-official-finance-groq-retry.json"
       ],
-      "three_model_graph_diagnostic_verified": false,
-      "three_model_graph_diagnostic_evidence": [],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "three_model_graph_diagnostic_verified": true,
+      "three_model_graph_diagnostic_evidence": [
+        "project/evidence/mizan-official-finance-groq-retry.json"
+      ],
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
     },
     {
       "order": 17,
@@ -791,7 +796,8 @@
       "integration_verified_scope": "primary domain workflow, not a public page/PDF reader",
       "public_source_read_verified": true,
       "public_source_read_evidence": [
-        "project/evidence/lot-4-official-source-controls.json"
+        "project/evidence/lot-4-official-source-controls.json",
+        "project/evidence/lot-4-financial-runner-controls.json"
       ],
       "live_graph_diagnostic_verified": true,
       "live_graph_diagnostic_scope": "Synthetic inputs with live official-source RAG; not authentic primary acceptance",

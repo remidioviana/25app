@@ -58,3 +58,9 @@ The [targeted GitHub runner source check](https://github.com/remidioviana/25app/
 ## Financial-source inference result
 
 [Run 44034097716](https://github.com/remidioviana/25app/actions/runs/44034097716) passed Manzil with the FTA invoice PDF, two valid source citations and three distinct returned model IDs. Mizan encountered a source HTTPS transport failure before any model call, despite its preceding successful runner source check. No quota stop occurred. Manzil is preserved as a completed synthetic RAG milestone; Mizan remains pending. Only Mizan is eligible for the next targeted retry.
+
+## Mizan recovery completed
+
+[Run 44034448316](https://github.com/remidioviana/25app/actions/runs/44034448316) retried only Mizan after the new transport failure. It passed with the official UAE Government banking page, two valid source citations and three distinct returned model IDs. No quota stop occurred. Manzil and the other three successful Lot 4 apps were not repeated.
+
+All five Lot 4 apps now have successful synthetic graph/RAG milestones. Earlier failures remain archived. This is not authentic primary-case, device or production-release acceptance.
