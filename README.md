@@ -101,3 +101,5 @@ npm run export:native
 ```
 
 See `docs/IMPLEMENTATION_STATUS.md` and adjacent test reports for results and pending checks. The examples are fictional, executed locally and explicitly marked as demonstration data. Legal rules, fees, availability, certifications and route status require supplied evidence. The UI does not fabricate government datasets or perform external submissions. On-device inference, voice, operating-system automation and advanced cryptography are not implemented by this release.
+
+Preparação operacional: [implantação permanente do backend](project/IMPLANTACAO_BACKEND.md), incluindo identidade, persistência, TLS e critérios de aceite. O roteiro não representa um serviço já implantado.
