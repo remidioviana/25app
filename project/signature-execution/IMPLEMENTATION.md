@@ -30,3 +30,5 @@ Apple HIG Motion and Gestures were available in this iteration: https://develope
 Finish each product's exact primary compositions and substantive signature, then obtain authentic authorized cases, actual iOS/Android interaction and accessibility evidence, and measured performance. Remaining 23 products retain their existing differentiated foundations and historical diagnostics; they are not newly accepted under this directive. No dimension is assigned an invented score.
 
 Reproduction: `mobile/scripts/signature-checks/README.md` documents the isolated HTTP/browser runner. The updated `mobile/scripts/check-matrix-browser.py` covers all 25 variants with the specialized Himayah and Nafas routes, and writes a separate report rather than overwriting historical matrix evidence.
+
+Actual UI captures are published in `project/ui-signatures/index.html`, with source revision and scope in `manifest.json`. These ten initial screens and two tested interaction states supplement, rather than replace, the historical 125-screen wall. Reproduce the initial states with `python project/ui-signatures/capture.py` using the same audit server and Chromium settings.

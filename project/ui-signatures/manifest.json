@@ -1,0 +1,87 @@
+{
+  "captured_at": "2026-11-17T17:34:07.567961+00:00",
+  "source_commit": "51b9df06e788625c7a6fafdf4526ce75547f9a25",
+  "scope": "Actual Expo Web screenshots at 390 x 844 with reduced motion; initial local screens, not physical devices or full primary acceptance",
+  "screens": [
+    {
+      "app": "himayah",
+      "route": "/",
+      "file": "himayah-home.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "himayah",
+      "route": "/mission",
+      "file": "himayah-mission.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "himayah",
+      "route": "/evidence",
+      "file": "himayah-evidence.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "himayah",
+      "route": "/activity",
+      "file": "himayah-activity.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "himayah",
+      "route": "/workbench",
+      "file": "himayah-workbench.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "nafas",
+      "route": "/",
+      "file": "nafas-home.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "nafas",
+      "route": "/mission",
+      "file": "nafas-mission.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "nafas",
+      "route": "/evidence",
+      "file": "nafas-evidence.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "nafas",
+      "route": "/activity",
+      "file": "nafas-activity.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    },
+    {
+      "app": "nafas",
+      "route": "/workbench",
+      "file": "nafas-workbench.png",
+      "state": "Initial local screen; no invented customer records or agent results",
+      "page_errors": []
+    }
+  ],
+  "additional_interaction_captures": [
+    {
+      "file": "himayah-document-inspector.png",
+      "state": "Synthetic PDF imported through real authenticated backend, user annotation saved; see signature-himayah-browser.json"
+    },
+    {
+      "file": "nafas-private-reflections.png",
+      "state": "After virtual-time timer completion and local reflection deletion; see signature-nafas-browser.json"
+    }
+  ]
+}
