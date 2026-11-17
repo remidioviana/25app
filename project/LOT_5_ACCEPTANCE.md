@@ -36,3 +36,9 @@ Live inference ran after the preceding lot completed without a quota stop. Resul
 | hisad | passed | reviewed_by_model |
 
 Four successful synthetic RAG milestones are preserved. This does not establish authentic primary-case, device or release acceptance. Tadweer remains unaccepted by the RAG diagnostic despite its completed model review.
+
+## Targeted recovery completed
+
+[Run 44032613763](https://github.com/remidioviana/25app/actions/runs/44032613763) retried only Tadweer after the source-context instruction change. It passed the unchanged synthetic RAG checks with two valid source citations, three distinct returned model IDs and no quota stop. Its bounded final answer remained inconclusive. The four previously passed apps were not repeated.
+
+All five Lot 5 apps now have successful synthetic graph/RAG milestones. Authentic primary-case, device and release acceptance remain separate. The earlier missing-citation result remains archived.

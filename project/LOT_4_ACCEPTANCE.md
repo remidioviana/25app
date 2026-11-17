@@ -40,3 +40,9 @@ These results do not establish authentic primary-case, device or release accepta
 ## Source recovery preparation
 
 The separately catalogued [CBUAE consumer overview](https://centralbank.ae/en/consumer) returned HTTP 200 and passed controlled graph tests for Mizan and Manzil: [receipts and controls](evidence/lot-4-cbuae-overview-controls.json). Its scope is general consumer education and complaints context, not the full Consumer Protection Standards. The original standards URL and its failed live receipts remain preserved. Protected runner inference must still pass before either app receives a successful live diagnostic milestone.
+
+## Targeted recovery result
+
+[Run 44032273178](https://github.com/remidioviana/25app/actions/runs/44032273178) retried only Mizan, Manzil and Amanah Eco. Amanah Eco passed the synthetic RAG checks with one valid source citation and three distinct returned model IDs. Mizan and Manzil remained blocked by HTTP 403 on the separately catalogued CBUAE overview in the GitHub runner; local HTTP success did not establish runner availability. No model calls were made for those two blocked source reads, and no quota stop occurred. Thawg and Gurbah were not repeated.
+
+The portfolio now records three successful Lot 4 synthetic RAG milestones. Authentic primary-case, device and release gates remain separate. A readable official financial source must be validated in the runner before Mizan and Manzil can pass.
