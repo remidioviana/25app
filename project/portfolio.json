@@ -186,9 +186,9 @@
       "live_graph_diagnostic_evidence": [
         "project/evidence/groq-munagasah-three-model-rag-verified.json"
       ],
-      "latest_live_graph_diagnostic_status": "failed",
+      "latest_live_graph_diagnostic_status": "passed",
       "latest_live_graph_diagnostic_evidence": [
-        "project/evidence/groq-120b-last-munagasah-attempt.json"
+        "project/evidence/groq-120b-last-munagasah-verified.json"
       ],
       "three_model_graph_diagnostic_verified": true,
       "three_model_graph_diagnostic_evidence": [

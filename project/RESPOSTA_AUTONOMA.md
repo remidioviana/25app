@@ -11,3 +11,9 @@ Citações são validadas contra trechos recuperados; isso não certifica suport
 ## Verificação da alteração
 
 216 testes Python, 48 testes mobile, typecheck, lint e 25 variantes passaram localmente. O [CI 44007410424](https://github.com/remidioviana/25app/actions/runs/44007410424) aprovou o commit 8e5efec. O [run live 44007434045](https://github.com/remidioviana/25app/actions/runs/44007434045) confirmou o catálogo com somente três modelos gerais de texto elegíveis, mas a inferência do Munagasah falhou antes de concluir o planner, com status 401 e 400 (`json_validate_failed`). Não houve 429 e não foi repetida a inferência. Esta tentativa não valida a ordem nova ao vivo. [Catálogo](evidence/groq-120b-last-catalogue.json) e [tentativa](evidence/groq-120b-last-munagasah-attempt.json) foram preservados; o portfólio mantém o sucesso sintético histórico e registra a última tentativa como falha.
+
+## Nova ordem verificada no Munagasah
+
+O [run 44007989450](https://github.com/remidioviana/25app/actions/runs/44007989450), commit 2ccd295, concluiu o diagnóstico sintético com planner GPT-OSS20B, specialist Qwen3.8-27B Preview e critic GPT-OSS120B, todos identificados pelo provedor. Foram três chamadas, 6.304 tokens reportados, quatro passagens recuperadas e uma citada; cálculo recomputado e nenhuma escrita externa. O resultado foi `reviewed_by_model`, sem `requires_human_review`. [Evidência](evidence/groq-120b-last-munagasah-verified.json).
+
+A resposta foi aceita pelo 120B na primeira auditoria; o ramo adicional de resolução de pendências foi testado com transporte/modelos controlados, não exercitado neste run live. Os outros quatro apps ainda têm evidências da ordem anterior. O caso é sintético e usa a página informativa eSupply, sem demonstrar aceite de edital autêntico, dispositivo, implantação ou release. A tentativa 44007434045 com 401/400 continua preservada como falha anterior.

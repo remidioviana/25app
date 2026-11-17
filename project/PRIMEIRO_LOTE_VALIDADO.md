@@ -1,6 +1,6 @@
 # Primeiro lote: RAG e três modelos em avaliação
 
-Os cinco apps abaixo concluíram ao menos um diagnóstico integrado com inferência Groq real, ferramentas locais, recuperação BM25 e três IDs distintos informados pelo provedor. Os inputs eram exemplos sintéticos do repositório; as fontes eram oficiais ou snapshot oficial explicitamente selecionado. Todos os resultados do perfil de três modelos terminaram com `requires_human_review`.
+Os cinco apps abaixo concluíram ao menos um diagnóstico integrado com inferência Groq real, ferramentas locais, recuperação BM25 e três IDs distintos informados pelo provedor. Os inputs eram exemplos sintéticos do repositório; as fontes eram oficiais ou snapshot oficial explicitamente selecionado. Os resultados históricos da ordem anterior terminaram com `requires_human_review`; o novo diagnóstico do Munagasah descrito ao final terminou com `reviewed_by_model`.
 
 | App | Fonte | Prova de grafo com três modelos |
 |---|---|---|
@@ -37,3 +37,9 @@ A contingência de modelos foi publicada separadamente e validada por consulta a
 O índice exportado preserva `doc` e `chunk` quando registrados e inclui SHA-256 do texto UTF-8 exato de cada passagem. O hash identifica o trecho exportado; não certifica o documento original nem sua autenticidade. O registro [de CI](evidence/github-code-checks.json) foi atualizado para a execução 43935644962, no commit 3500354 (207 testes Python), anterior a esta ampliação.
 
 A prévia de importação também retorna hashes SHA-256 separados dos bytes recebidos e do texto extraído, tamanho original e autenticidade não verificada. Esse recibo pertence à prévia: o endpoint não guarda o arquivo original e o recibo ainda não é anexado automaticamente ao documento salvo pelo cliente. Não constitui aceite com documento autêntico.
+
+## Nova ordem verificada no Munagasah
+
+O [run 44007989450](https://github.com/remidioviana/25app/actions/runs/44007989450), commit 2ccd295, concluiu o diagnóstico sintético com planner GPT-OSS20B, specialist Qwen3.8-27B Preview e critic GPT-OSS120B, todos identificados pelo provedor. Foram três chamadas, 6.304 tokens reportados, quatro passagens recuperadas e uma citada; cálculo recomputado e nenhuma escrita externa. O resultado foi `reviewed_by_model`, sem `requires_human_review`. [Evidência](evidence/groq-120b-last-munagasah-verified.json).
+
+A resposta foi aceita pelo 120B na primeira auditoria; o ramo adicional de resolução de pendências foi testado com transporte/modelos controlados, não exercitado neste run live. Os outros quatro apps ainda têm evidências da ordem anterior. O caso é sintético e usa a página informativa eSupply, sem demonstrar aceite de edital autêntico, dispositivo, implantação ou release. A tentativa 44007434045 com 401/400 continua preservada como falha anterior.
