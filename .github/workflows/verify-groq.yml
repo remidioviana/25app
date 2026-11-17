@@ -21,9 +21,9 @@ on:
         options: ['1', '2', '3', '4', '5']
         default: '1'
       team_app:
-        description: 'Integrated diagnostic scope; single app reduces quota consumption'
+        description: 'Single app or latest-failed in selected lot avoids repeating passed diagnostics'
         type: choice
-        options: [first-five, himayah, iqamah, istithmar, munagasah, sahil, tawteen, adl, tawassul, adab, khidmah, jomrok, khibrat, majlis, rafiq, sawm, mizan, thawg, manzil, gurbah, amanah-eco, nafas, tadweer, turath, himam, hisad]
+        options: [first-five, latest-failed, himayah, iqamah, istithmar, munagasah, sahil, tawteen, adl, tawassul, adab, khidmah, jomrok, khibrat, majlis, rafiq, sawm, mizan, thawg, manzil, gurbah, amanah-eco, nafas, tadweer, turath, himam, hisad]
         default: first-five
       additional_app:
         description: 'Optionally add a second app when the primary scope is a single app'
@@ -102,7 +102,14 @@ jobs:
           REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
           args=(--live --lot "$PORTFOLIO_LOT" --min-role-interval-seconds 20 --min-app-interval-seconds 30 --output project/evidence/groq-team-actions.json)
-          if [ "$TEAM_APP" != first-five ]; then
+          if [ "$TEAM_APP" = latest-failed ]; then
+            mapfile -t failed_apps < <(python -c 'import json,os; lot=int(os.environ["PORTFOLIO_LOT"]); products=json.load(open("project/portfolio.json"))["products"][(lot-1)*5:lot*5]; print("\n".join(p["id"] for p in products if p.get("latest_live_graph_diagnostic_status")=="failed"))')
+            if [ "${#failed_apps[@]}" -eq 0 ] || [ -z "${failed_apps[0]}" ]; then
+              echo "No recorded failed apps in the selected lot; no inference requested."
+              exit 2
+            fi
+            for app in "${failed_apps[@]}"; do args+=(--app "$app"); done
+          elif [ "$TEAM_APP" != first-five ]; then
             args+=(--app "$TEAM_APP")
             if [ "$ADDITIONAL_APP" != none ]; then args+=(--app "$ADDITIONAL_APP"); fi
           fi
