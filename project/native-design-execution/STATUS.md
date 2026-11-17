@@ -1,0 +1,19 @@
+# Execution status
+
+The new directive extends the mandatory matrix; it does not replace domain evidence, privacy or native acceptance requirements. The directive is preserved verbatim in USER_DIRECTIVE.md.
+
+## Concrete change in this increment
+
+Istithmar now has a theme-aligned decision surface, live horizon/visa controls, an inspectable cost curve, synchronized option ranking and explicit cost components. Inputs may use Arabic digits; blanks and fractional visa counts suppress results instead of becoming defaults. The cost curve has no invented geographic position or current official fee. Saving applies valid scenario parameters to the case; exporting records the current scenario and separately entered tax inputs as editable JSON. Partial tax input prevents export. Tax inputs are scoped to the case snapshot and do not silently follow a different case.
+
+The interaction differs from Himayah's document canvas, Iqamah's evidence folio and Nafas's breathing clock. This is an actual coded workflow, not a static mockup. It is still not the complete five-screen Istithmar redesign, a verified quotation, an official licensing determination or a tax filing.
+
+## Portfolio review and gates
+
+The existing 25 brand directions, licensed typefaces and artwork registry are preserved. The earlier 125-route wall is historical baseline evidence. A fresh side-by-side comparison uses running Web screens with controlled synthetic intake, identical 390 × 844 viewports and explicitly recorded source revision. Repetition still visible there is an open redesign issue, not automatic creative approval.
+
+All 25 final acceptance gates remain open for the full requested standard. Native JavaScript/assets export is distinct from an installed signed binary, VoiceOver/TalkBack evaluation, gesture testing, actual haptics or measured performance. None of those device tests can be inferred from this browser environment.
+
+## Verification
+
+251 Python tests and 86 mobile tests passed, including new exact-ratio overflow, changed ranking, zero-horizon, invalid visa input, explicit-zero tax and export tests. TypeScript typecheck, ESLint and all 25 variant configurations passed. The dedicated actual-browser test verifies horizon changes, chart point selection, Arabic digits, invalid input, scenario saving, separate tax input, downloaded JSON, normal crossfade and live reduced-motion changes, with no console warnings/errors. No provider inference or physical-device measurement was performed.

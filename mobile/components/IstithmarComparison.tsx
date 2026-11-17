@@ -1,53 +1,46 @@
-import React,{useState} from 'react';
-import {View,Text,TextInput,Pressable} from 'react-native';
-import {compareSetup,setupIssue,formatCost,taxScenario} from '../src/setupComparison';
-import {styles as s} from '../src/theme';
+import React,{useEffect,useState} from 'react';
+import {View,Text,TextInput,Pressable,Animated,Platform} from 'react-native';
+import Svg,{Polyline,Line} from 'react-native-svg';
+import {File,Paths} from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
+import {setupIssue,formatCost,type SetupInput} from '../src/setupComparison';
+import {setupPreview,setupHorizon,costFraction,setupTax,setupReport} from '../src/experience/setupExplorer';
+import {decorativeSvgProps} from '../src/experience/svgAccessibility';
+import {useReducedMotion} from '../src/experience/useReducedMotion';
+import {useHeadlineFont} from '../src/experience/TypefaceProvider';
+import {styles as s,experience as d} from '../src/theme';
+import {Button} from './Controls';
 
-export function IstithmarComparison({input}:{input:unknown}){
-  const [query,setQuery]=useState(''),[selected,setSelected]=useState<string|null>(null);
-  const [income,setIncome]=useState(''),[threshold,setThreshold]=useState(''),[rate,setRate]=useState('');
-  const issue=setupIssue(input);
-  if(issue)return <View style={s.notice}><Text style={s.h2}>Complete your comparison inputs</Text><Text accessibilityRole="alert" style={s.error}>{issue}</Text><Text style={s.muted}>Open Mission to correct the supplied data. No cost ranking has been calculated.</Text></View>;
-  const result=compareSetup(input),rows=result.comparison.filter(o=>o.name.toLowerCase().includes(query.trim().toLowerCase()));
-  let tax:string|null=null,taxError='';
-  if([income,threshold,rate].every(v=>v.trim()!=='')){
-    if([income,threshold,rate].some(v=>!/^\d+(?:\.\d+)?$/.test(v.trim())))taxError='Use non-negative decimal values for all three assumptions.';
-    else try{tax=taxScenario(Number(income),Number(threshold),Number(rate)).tax;}catch(e){taxError=e instanceof Error?e.message:'Check the scenario assumptions.';}
-  }
-  return <View style={{gap:20}}>
-    <View style={{backgroundColor:'#EAF5F2',padding:22,borderRadius:8,gap:12}}>
-      <Text style={{color:'#09675E',fontSize:12,fontWeight:'700',letterSpacing:1.1}}>THE BUSINESS SETUP DECISION ROOM</Text>
-      <Text style={{color:'#172E34',fontSize:30,lineHeight:36,fontWeight:'600'}}>Compare the cost.{ '\n'}Expose the assumptions.</Text>
-      <Text style={{color:'#435C63',fontSize:15,lineHeight:23}}>{result.activity} · {result.years} years · {result.visas} visas · {result.currency}</Text>
-      <Text style={{color:'#435C63',fontSize:14,lineHeight:21}}>Activity matches come from supplied lists, not a verified permit decision. Costs use a two-decimal planning model.</Text>
-    </View>
-    <View style={{gap:8}}>
-      <Text style={s.h2}>Supplied options</Text>
-      <Text style={s.label}>Filter option names</Text>
-      <TextInput accessibilityLabel="Filter setup option names" style={s.input} value={query} onChangeText={setQuery}/>
-      {rows.length===0&&<Text style={s.muted}>No supplied option matches this filter.</Text>}
-      {rows.map(o=><Pressable key={o.name} accessibilityRole="button" accessibilityLabel={`${o.name}, ${formatCost(o.total)} ${result.currency}. Show cost breakdown`} accessibilityState={{expanded:selected===o.name}} onPress={()=>setSelected(selected===o.name?null:o.name)} style={{paddingVertical:18,borderBottomWidth:1,borderColor:'#B9D1CE',gap:7,minHeight:64}}>
-        <Text style={[s.h3,{color:'#172E34'}]}>{o.name}</Text>
-        <Text style={{fontSize:24,lineHeight:30,color:'#09675E',fontWeight:'600'}}>{formatCost(o.total)} {result.currency}</Text>
-        <Text style={{fontSize:14,lineHeight:21,color:'#435C63'}}>{o.activity_match?'Activity is listed in the supplied option':'Activity is not listed in the supplied option'}</Text>
-        {selected===o.name&&<View style={{gap:6,paddingTop:6}}>
-          <Text style={s.text}>One-time setup: {formatCost(o.breakdown.setup)}</Text>
-          <Text style={s.text}>Recurring fees × {result.years}: {formatCost(o.breakdown.recurring)}</Text>
-          <Text style={s.text}>Visa fees × {result.visas}: {formatCost(o.breakdown.visas)}</Text>
-          <Text style={s.muted}>Supplied activities: {o.activities.join(', ')||'None supplied'}. Omitted costs and source dates still require review.</Text>
-        </View>}
-      </Pressable>)}
-      <Text style={s.muted}>{result.assumptions}</Text>
-    </View>
-    <View style={{gap:8}}>
-      <Text style={s.h2}>Tax scenario · your assumptions</Text>
-      <Text style={s.muted}>A single-bracket illustration only. Enter your own assessed base, threshold and rate; no current UAE tax rule is preselected.</Text>
-      <Text style={s.label}>Assumed taxable income</Text><TextInput accessibilityLabel="Assumed taxable income" keyboardType="decimal-pad" style={s.input} value={income} onChangeText={setIncome}/>
-      <Text style={s.label}>Assumed threshold</Text><TextInput accessibilityLabel="Assumed threshold" keyboardType="decimal-pad" style={s.input} value={threshold} onChangeText={setThreshold}/>
-      <Text style={s.label}>Assumed rate (%)</Text><TextInput accessibilityLabel="Assumed rate percent" keyboardType="decimal-pad" style={s.input} value={rate} onChangeText={setRate}/>
-      {tax!==null&&<Text style={s.h2}>Scenario result: {formatCost(tax)} {result.currency}</Text>}
-      {!!taxError&&<Text accessibilityRole="alert" style={s.error}>{taxError}</Text>}
-      <Text style={s.muted}>Not a filing calculation. No application, payment or tax return has been submitted.</Text>
-    </View>
-  </View>;
+function CostHorizon({input,name,onYear}:{input:SetupInput;name:string;onYear:(year:number)=>void}){
+ const [width,setWidth]=useState(300),[opacity]=useState(()=>new Animated.Value(1)),reduced=useReducedMotion();
+ const key=JSON.stringify([input.years,input.visas,name,input.options.find(o=>o.name===name)]);
+ useEffect(()=>{opacity.stopAnimation();if(reduced){opacity.setValue(1);return}opacity.setValue(.65);const animation=Animated.timing(opacity,{toValue:1,duration:160,useNativeDriver:Platform.OS!=='web'});animation.start();return()=>animation.stop()},[key,reduced,opacity]);
+ const points=setupHorizon(input,name),maximum=points.at(-1)!.total_minor,w=Math.max(width,100),coordinates=points.map(point=>({point,x:24+(input.years?point.years/input.years:0)*(w-48),y:20+(1-costFraction(point.total_minor,maximum))*150}));
+ return <View style={{gap:12}}><Text style={s.tag}>COST THROUGH TIME / {input.currency}</Text><Text style={s.muted}>Tap a point to use its horizon. Setup and visa charges are included at year zero.</Text><Animated.View testID="istithmar-cost-plot" onLayout={e=>setWidth(e.nativeEvent.layout.width)} style={{height:224,opacity}}>
+  <Svg width="100%" height={200} {...decorativeSvgProps(Platform.OS)}><Line x1={24} y1={170} x2={w-24} y2={170} stroke={d.line}/><Line x1={24} y1={20} x2={24} y2={170} stroke={d.line}/><Polyline points={coordinates.map(p=>p.x+','+p.y).join(' ')} stroke={d.accent} strokeWidth={3} fill="none"/></Svg>
+  {coordinates.map(({point,x,y})=><React.Fragment key={point.years}><Pressable accessibilityRole="button" accessibilityLabel={`Use ${point.years} ${point.years===1?'year':'years'}: ${formatCost(point.total)} ${input.currency} for ${name}`} onPress={()=>onYear(point.years)} style={{position:'absolute',left:x-22,top:y-22,width:44,height:44,alignItems:'center',justifyContent:'center'}}><View style={{width:12,height:12,borderRadius:6,borderWidth:2,borderColor:d.bg,backgroundColor:d.accent}}/></Pressable><Text numberOfLines={1} style={{position:'absolute',left:Math.max(0,Math.min(w-62,x-31)),top:194,width:62,textAlign:'center',color:d.muted,fontSize:12}}>{point.years.toLocaleString('en-GB',{maximumSignificantDigits:3})}y</Text></React.Fragment>)}
+ </Animated.View><Text style={s.muted}>Zero-based cost axis · 0–{formatCost(points.at(-1)!.total)} {input.currency}. Year-zero cost · {formatCost(points[0].total)} {input.currency}.</Text></View>;
+}
+export function IstithmarComparison({input,onChange}:{input:unknown;onChange?:(next:SetupInput)=>void}){
+ const [edits,setEdits]=useState<{base:unknown;years:string;visas:string}|null>(null),[query,setQuery]=useState(''),[selected,setSelected]=useState<string|null>(null),[limit,setLimit]=useState(25),[taxFields,setTaxFields]=useState<{base:unknown;income:string;threshold:string;rate:string}|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false);const font=useHeadlineFont();
+ const taxCurrent=taxFields&&taxFields.base===input?taxFields:null,income=taxCurrent?.income||'',threshold=taxCurrent?.threshold||'',rate=taxCurrent?.rate||'';
+ const setIncome=(income:string)=>setTaxFields({base:input,income,threshold,rate}),setThreshold=(threshold:string)=>setTaxFields({base:input,income,threshold,rate}),setRate=(rate:string)=>setTaxFields({base:input,income,threshold,rate});
+ const issue=setupIssue(input);
+ if(issue)return <View style={s.notice}><Text style={s.h2}>Complete your comparison inputs</Text><Text role="alert" style={s.error}>{issue}</Text><Text style={s.muted}>Open Compare to add activity, options and documented costs.</Text></View>;
+ const saved=input as SetupInput,years=edits&&edits.base===input?edits.years:String(saved.years),visas=edits&&edits.base===input?edits.visas:String(saved.visas);
+ let preview:ReturnType<typeof setupPreview>|null=null,previewError='',tax:ReturnType<typeof setupTax>=null,taxError='';
+ try{preview=setupPreview(input,years,visas)}catch(e){previewError=e instanceof Error?e.message:'Check the scenario.'}
+ try{tax=setupTax(income,threshold,rate)}catch(e){taxError=e instanceof Error?e.message:'Check the tax inputs.'}
+ const result=preview?.result,rows=result?.comparison.filter(o=>o.name.toLowerCase().includes(query.trim().toLowerCase()))||[],active=rows.find(o=>o.name===selected)||rows[0],maximum=result?.comparison.reduce((max,o)=>BigInt(o.total_minor)>BigInt(max)?o.total_minor:max,'0')||'0';
+ function change(next:{years?:string;visas?:string}){setEdits({base:input,years:next.years??years,visas:next.visas??visas});setError('')}
+ async function exportFile(){if(!preview||taxError||busy)return;setBusy(true);setError('');let file:File|undefined;try{const content=setupReport(preview.input,tax);if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([content],{type:'application/json;charset=utf-8'}));const link=document.createElement('a');link.href=uri;link.download='istithmar-comparison.json';link.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=new File(Paths.cache,'istithmar-comparison.json');file.create({overwrite:true});file.write(content);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'application/json',dialogTitle:'Export setup comparison'})}}catch(e){setError(e instanceof Error?e.message:'Comparison export failed.')}finally{if(file?.exists)try{file.delete()}catch{}setBusy(false)}}
+ return <View style={{gap:26}}>
+  <View style={{borderLeftWidth:4,borderColor:d.accent,paddingLeft:18,gap:12}}><Text style={s.tag}>ISTITHMAR / DECISION SURFACE</Text><Text accessibilityRole="header" style={{fontFamily:font,fontSize:32,lineHeight:38,color:d.ink}}>Move the horizon. See what changes.</Text><Text style={s.text}>{saved.activity} · {saved.currency} · supplied option data</Text></View>
+  <View style={{gap:12}}><Text style={s.h2}>Comparison horizon</Text><View style={s.row}>{[1,3,5,10].map(year=><Button key={year} title={year+(year===1?' year':' years')} secondary={years!==String(year)} onPress={()=>change({years:String(year)})}/>)}</View><Text style={s.label}>Years</Text><TextInput accessibilityLabel="Comparison horizon years" keyboardType="decimal-pad" value={years} onChangeText={value=>change({years:value})} style={s.input}/><Text style={s.label}>Visa count</Text><TextInput accessibilityLabel="Comparison visa count" keyboardType="number-pad" value={visas} onChangeText={value=>change({visas:value})} style={s.input}/>{!!previewError&&<Text role="alert" style={s.error}>{previewError}</Text>}</View>
+  {result&&preview&&<><Text style={s.muted}>Live local preview. Saving applies these parameters to your case; existing fees and activity lists stay intact.</Text>{onChange&&<Button secondary title="Save scenario to my case" onPress={()=>{onChange(preview!.input);setError('')}}/>}<Text style={s.label}>Find an option</Text><TextInput accessibilityLabel="Filter setup option names" value={query} onChangeText={setQuery} style={s.input}/>{!rows.length&&<Text style={s.text}>No supplied option matches this filter.</Text>}
+   {active&&<><Text accessibilityRole="header" style={s.h2}>{active.name}</Text><Text testID="istithmar-selected-total" style={{fontFamily:font,fontSize:34,lineHeight:42,color:d.accent}}>{formatCost(active.total)} {result.currency}</Text><CostHorizon input={preview.input} name={active.name} onYear={value=>change({years:String(value)})}/><View style={{borderTopWidth:1,borderBottomWidth:1,borderColor:d.line,paddingVertical:18,gap:10}}><Text style={s.text}>Setup · {formatCost(active.breakdown.setup)}</Text><Text style={s.text}>Recurring × {result.years}y · {formatCost(active.breakdown.recurring)}</Text><Text style={s.text}>Visa charges × {result.visas} · {formatCost(active.breakdown.visas)}</Text><Text style={s.muted}>{active.activity_match?'Activity appears in this supplied list.':'Activity is absent from this supplied list.'} This does not verify a permit.</Text></View></>}
+   <Text style={s.h2}>Option comparison</Text><Text style={s.muted}>Listed activity matches first, then total cost. Bar lengths share one zero-based scale across all options.</Text>{rows.slice(0,limit).map(o=><Pressable key={o.name} accessibilityRole="button" accessibilityLabel={`Select ${o.name}, ${formatCost(o.total)} ${result.currency}`} accessibilityState={{selected:active?.name===o.name}} onPress={()=>setSelected(o.name)} style={{gap:10,paddingVertical:18,borderBottomWidth:1,borderColor:d.line,minHeight:72}}><Text style={s.h3} numberOfLines={2}>{active?.name===o.name?'● ':''}{o.name}</Text><View style={{height:5,backgroundColor:d.line}}><View style={{height:5,width:`${costFraction(o.total_minor,maximum)*100}%`,backgroundColor:d.accent}}/></View><Text style={s.text}>{formatCost(o.total)} {result.currency}</Text><Text style={s.muted}>{o.activity_match?'Listed activity match':'No listed activity match'}</Text></Pressable>)}{rows.length>limit&&<Button secondary title="Show more setup options" onPress={()=>setLimit(n=>n+25)}/>}</>}
+  <View style={{gap:14,paddingTop:20,borderTopWidth:2,borderColor:d.accent}}><Text style={s.tag}>TAX LAB / SEPARATE FROM SETUP FEES</Text><Text style={s.muted}>Supply a taxable base, threshold and percentage for a single-bracket scenario. Open Rulebook for official tax context; no legal rate is preselected.</Text>{[{label:'Assumed taxable income',value:income,set:setIncome},{label:'Assumed threshold',value:threshold,set:setThreshold},{label:'Assumed rate percent',value:rate,set:setRate}].map(field=><View key={field.label} style={{gap:8}}><Text style={s.label}>{field.label}</Text><TextInput accessibilityLabel={field.label} keyboardType="decimal-pad" value={field.value} onChangeText={field.set} style={s.input}/></View>)}{tax&&<Text testID="istithmar-tax-total" style={s.h2}>Scenario tax · {formatCost(tax.tax)} {saved.currency}</Text>}{!!taxError&&<Text role="alert" style={s.error}>{taxError}</Text>}</View>
+  {!!error&&<Text role="alert" style={s.error}>{error}</Text>}<Button title="Export this decision report" disabled={!preview||!!taxError} busy={busy} onPress={exportFile}/><Text style={s.muted}>Exports current costs, parameters and tax inputs with their calculation basis. Supplied fees are not verified quotations; no license application, filing or payment is performed.</Text>
+ </View>;
 }

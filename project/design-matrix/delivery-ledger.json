@@ -49,8 +49,8 @@
       "app": "istithmar",
       "order": 3,
       "matrix_target": "**Investment Navigator:** researches applicable zones, licensing requirements, and tax rules, then prepares sourced decision comparisons.",
-      "implemented_scope": "Exact-decimal comparison of supplied jurisdiction fees and activity lists",
-      "limitations": "Live discovery of zones, current fees and applicable tax treatment is not implemented.",
+      "implemented_scope": "Live supplied-cost scenario surface with horizon/visa controls, selectable exact cost curve, synchronized option ranking, explicit tax inputs, case parameter saving and editable JSON report.",
+      "limitations": "No current official fee verification, licensing eligibility determination, full five-screen redesign or physical-device acceptance.",
       "primary_screen_routes": [
         "/",
         "/mission",

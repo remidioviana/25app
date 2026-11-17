@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-17T18:00:55.729291+00:00",
+  "scope": "Actual Expo Web UI, repository synthetic option data via controlled intake transport. Not current official fees, legal eligibility, model inference or physical-device performance.",
+  "source_files_sha256": {
+    "mobile/components/IstithmarComparison.tsx": "a6f841e4b29038fecbf0f9f5dae92ad69cc67e2375c4840e062b5b65f61a21b6",
+    "mobile/src/experience/setupExplorer.ts": "030eba35885fc6e423976ab26d5b4ae76f2c540ba33c5bfd690bcd9833b9e393"
+  },
+  "horizon_updates_cost_and_ranking": true,
+  "chart_point_selects_zero_year_horizon": true,
+  "blank_visas_removes_results": true,
+  "arabic_digits_recalculate_and_save": true,
+  "partial_tax_inputs_disable_export": true,
+  "download_contains_current_scenario_and_separate_tax_inputs": true,
+  "motion_mid_transition_opacity": 0.722489,
+  "live_reduced_motion_change_finishes_transition": true,
+  "console_warnings_and_errors": [],
+  "provider_inference_calls": 0,
+  "requests": [
+    "/api/config",
+    "/api/me",
+    "/api/agents",
+    "/api/agents/istithmar/intake"
+  ]
+}

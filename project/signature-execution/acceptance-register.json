@@ -177,7 +177,11 @@
         }
       },
       "weighted_score_out_of_100": null,
-      "accepted": false
+      "accepted": false,
+      "implementation_evidence": [
+        "project/evidence/istithmar-explorer-browser.json"
+      ],
+      "implementation_scope": "Live local scenario manipulation and exact cost/tax reporting, browser tested with supplied synthetic options. Authentic primary case and native acceptance remain pending."
     },
     {
       "app": "munagasah",

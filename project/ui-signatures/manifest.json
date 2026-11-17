@@ -92,6 +92,16 @@
         "mobile/src/experience/dossierPreparation.ts": "ae31c62ab26c5afb7a4776714d792bff7eb058696f170701fb225ef5e9448dcc"
       },
       "evidence": "../evidence/iqamah-preparation-browser.json"
+    },
+    {
+      "file": "istithmar-cost-horizon.png",
+      "state": "Actual selected synthetic option at three years and three visas after interactive scenario testing; no current official quotation. Separate increment from original captures.",
+      "checked_at": "2026-11-17T18:00:55.729291+00:00",
+      "source_files_sha256": {
+        "mobile/components/IstithmarComparison.tsx": "a6f841e4b29038fecbf0f9f5dae92ad69cc67e2375c4840e062b5b65f61a21b6",
+        "mobile/src/experience/setupExplorer.ts": "030eba35885fc6e423976ab26d5b4ae76f2c540ba33c5bfd690bcd9833b9e393"
+      },
+      "evidence": "../evidence/istithmar-explorer-browser.json"
     }
   ]
 }
