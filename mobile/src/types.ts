@@ -17,11 +17,11 @@ export interface EvidenceMatch {citation:string;title:string;text:string;source:
 export interface EvidenceSearchResult {matches:EvidenceMatch[];method:string;warnings:string[]}
 
 export interface PublicSource {
- id:string;title:string;url:string;authority:string;kind:'pdf'|'html';read_only:true;status:string;
+ id:string;title:string;url:string;authority:string;source_scope?:string;kind:'pdf'|'html';read_only:true;status:string;
 }
 export interface PublicSourceRead {
- source_id:string;url:string;status:'retrieved'|'failed';started_at:string;external_write:false;
- fetched_at?:string;finished_at?:string;title?:string;authority?:string;http_status?:number;
+ source_id:string;url:string;source_scope?:string;status:'retrieved'|'failed';started_at:string;external_write:false;
+ fetched_in_this_run?:boolean;fetched_at?:string;finished_at?:string;title?:string;authority?:string;http_status?:number;
  raw_sha256?:string;text_sha256?:string;bytes?:number;characters?:number;document_id?:string;
  publication_date_verified?:boolean;legal_applicability_verified?:boolean;warnings?:string[];error?:string;
  last_modified_header?:string|null;transport?:string;

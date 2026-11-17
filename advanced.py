@@ -8,6 +8,7 @@ import os
 from typing import TypedDict
 import storage as db
 import retrieval
+import source_tools
 import model_provider
 from domain_tools import TOOLS
 from validation import validate
@@ -149,7 +150,7 @@ def run(task,spec,check):
             for source_id in dict.fromkeys(state['plan'].get('source_ids',[])):
                 checked()
                 try:
-                    value=tools['refresh'].invoke({'source_id':source_id});checked();source_reads.append(value['receipt'])
+                    value=tools['refresh'].invoke({'source_id':source_id});checked();source_reads.append(value['receipt']|{'fetched_in_this_run':True})
                     log('source_retrieved',value['receipt'])
                 except (ValueError,PermissionError):
                     warnings.append('Requested public source '+source_id+' was not retrieved; do not infer current source-backed conclusions.')
@@ -164,6 +165,14 @@ def run(task,spec,check):
         evidence=fresh|{key:value for key,value in evidence.items() if key not in fresh}
         pool=list(evidence.values())[:24]
         active=pool[:evidence_limit]
+        # Previously imported official text keeps its original read receipt and scope.
+        # Reusing the receipt is not a fresh network read in this graph.
+        docs={item['doc'] for item in pool}
+        seen={(item.get('source_id'),item.get('document_id')) for item in source_reads}
+        for receipt in source_tools.receipts(agent,limit=100):
+            key=(receipt.get('source_id'),receipt.get('document_id'))
+            if receipt.get('status')=='retrieved' and receipt.get('document_id') in docs and key not in seen:
+                source_reads.append(receipt|{'fetched_in_this_run':False});seen.add(key)
         log('retrieving',{'citations':list(evidence),'warnings':warnings,'semantic_requested':semantic,'active_citations':[x['citation'] for x in active]})
         return {'evidence':pool,'active_evidence':active,'retrieval_warnings':warnings,'source_reads':source_reads}
     def analyze(state):
@@ -197,8 +206,8 @@ def run(task,spec,check):
         active.update({x['citation']:x for x in state.get('evidence',[]) if x['citation'] in cited})
         review_evidence=db.current_evidence(agent,list(active.values()))
         value,updates=ask('critic',CRITIC,{'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
-          'draft':state['draft'],'evidence':review_evidence},state,
-          'Audit the draft against inputs, calculations and sources. Reject unsupported external success. Set verdict to accept, revise or needs_evidence. List concrete issues and useful follow-up searches. Model review is not factual certification.')
+          'draft':state['draft'],'evidence':review_evidence,'source_reads':state.get('source_reads',[])},state,
+          'Audit the draft against inputs, calculations and sources. Reject unsupported external success. Set verdict to accept, revise or needs_evidence. List concrete issues and useful follow-up searches. Respect the source scope in each read receipt. Model review is not factual certification.')
         if value['verdict'] not in ('accept','revise','needs_evidence'):raise ValueError('Invalid reviewer verdict')
         return updates|{'critique':value,'revision':state.get('revision',0)+1}
     def decide(state):
@@ -214,14 +223,14 @@ def run(task,spec,check):
             return {}
         evidence=db.current_evidence(agent,state.get('evidence',[]))
         context={'goal':task['goal'],'input':task['input'],'analysis':state['analysis'],
-                 'draft':state['draft'],'critique':state['critique'],'evidence':evidence,
+                 'draft':state['draft'],'critique':state['critique'],'evidence':evidence,'source_reads':state.get('source_reads',[]),
                  'missing_information':state['plan'].get('missing_information',[]),
                  'validation_issues':state.get('unresolved_draft_validation',[])}
         value,updates=ask('critic',FINAL_RESPONSE,context,state,
             report_policy(spec)+' You are the final responder, GPT-OSS120B. Correct the draft yourself; do not refer it for routine human review. '
             'Return answered only if the supplied inputs, calculations and passages support the answer. Otherwise return needs_information '
             'with concrete indispensable questions, or inconclusive with explicit limitations and a useful bounded answer. '
-            'Do not approve unresolved claims, invent missing facts or claim external actions. Evidence claims require exact supplied citation IDs. '
+            'Respect the stated source scope. Do not approve unresolved claims, invent missing facts or claim external actions. Evidence claims require exact supplied citation IDs. '
             'For incomplete answers omit unsupported claims and explain what cannot be concluded. All outcomes must include the complete final draft.')
         validate(value,FINAL_RESPONSE)
         if not value['draft']['summary'].strip():raise ValueError('Final response requires a nonempty summary.')
@@ -273,7 +282,7 @@ def run(task,spec,check):
       'writer_attempts':state.get('writer_attempts',0),
       'unresolved_draft_validation':state.get('unresolved_draft_validation',[]),
       'prior_valid_draft_retained':bool(state.get('unresolved_draft_validation')) and not bool(state.get('final_response')),
-      'source_reads':state.get('source_reads',[]),'external_reads_performed':bool(state.get('source_reads')),
+      'source_reads':state.get('source_reads',[]),'external_reads_performed':any(item.get('fetched_in_this_run',True) for item in state.get('source_reads',[])),
       'verified_model_ids':state.get('verified_model_ids'),
       'input_hash':db.digest(task['input']),'analysis_hash':db.digest(state['analysis']),
       'external_actions_performed':False,'limits':['Model review is not factual certification.','Supplied sources; freshness is not automatically verified.']+(state.get('final_response') or {}).get('limitations',[])}

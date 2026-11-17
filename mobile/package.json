@@ -41,7 +41,8 @@
     "variant": "node scripts/variant.cjs",
     "export:native": "expo export --platform android --platform ios",
     "lint": "eslint .",
-    "export:first-five": "node scripts/export-first-five.cjs"
+    "export:first-five": "node scripts/export-first-five.cjs",
+    "export:batch": "node scripts/export-batch.cjs"
   },
   "private": true
 }

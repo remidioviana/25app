@@ -1,9 +1,10 @@
-"""Opt-in live first-lot graph/RAG diagnostic with synthetic inputs and public sources.
+"""Opt-in live per-lot graph/RAG diagnostic with synthetic inputs and public sources.
 
 No live request without --live. This is not primary-domain or device acceptance.
 """
 import argparse
 import json
+import re
 from pathlib import Path
 import sys
 import tempfile
@@ -20,6 +21,19 @@ FIRST_FIVE={'himayah':('uae-pdpl','personal data'),
             'istithmar':('dmcc-charges','charges'),
             'munagasah':('dubai-esupply','supplier'),
             'sahil':('dewa-move-in','activation')}
+
+from source_catalog import ADDITIONAL_SOURCES
+APP_SOURCES=dict(FIRST_FIVE)
+for entry in json.loads((ROOT/'apps/apps.json').read_text())[5:]:
+    agent=entry['id']
+    if agent=='gurbah':APP_SOURCES[agent]=('dewa-move-in','activation')
+    else:
+        source_id,cfg=next((key,cfg) for key,cfg in ADDITIONAL_SOURCES.items() if agent in cfg['agents'])
+        APP_SOURCES[agent]=(source_id,' '.join(cfg['anchors']))
+
+
+def quota_failure(error):
+    return bool(re.search(r'Provider attempts failed: [^.]*\b429\b',error or ''))
 
 
 def assess(result,original_input,expected_analysis):
@@ -64,17 +78,17 @@ def paced_roles(seconds):
     finally:provider.respond=original
 
 
-def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None):
+def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds=15,excluded_apps=None,lot=1):
     excluded=set(excluded_apps or [])
-    selected=set(FIRST_FIVE) if app is None else {app} if isinstance(app,str) else set(app)
+    selected=set(list(APP_SOURCES)[(lot-1)*5:lot*5]) if app is None else {app} if isinstance(app,str) else set(app)
     report={'checked_at':datetime.now(timezone.utc).isoformat(),'live_requested':live,
             'input_kind':'repository synthetic examples, not authentic user documents',
             'retrieval_mode':'BM25 over fixed official sources; no embedding calls',
             'reviewed_himayah_snapshot_requested':reviewed_snapshot,
             'minimum_role_interval_seconds':min_role_interval_seconds,'excluded_apps':sorted(excluded),'selected_apps':sorted(selected),
-            'primary_domain_workflows_verified':False,'device_verified':False,'apps':[]}
-    if not selected<=set(FIRST_FIVE):report['error']='Selected apps must belong to the first lot.';return report,2
-    if not excluded<=set(FIRST_FIVE):report['error']='Excluded app must belong to the first lot.';return report,2
+            'primary_domain_workflows_verified':False,'device_verified':False,'requested_lot':lot,'apps':[]}
+    if lot not in range(1,6) or not selected or len(selected)>5 or not selected<=set(APP_SOURCES):report['error']='Select one portfolio lot or up to five known apps.';return report,2
+    if not excluded<=set(APP_SOURCES):report['error']='Unknown excluded app.';return report,2
     if not live:return report,0
     if not provider.configured():report['error']='Protected provider credential is missing; no network request was made.';return report,2
     if len(provider._get_keys())>3:report['error']='Use no more than three protected credentials for this bounded diagnostic.';return report,2
@@ -95,12 +109,12 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
         with tempfile.TemporaryDirectory(prefix='25app-team-') as directory,paced_roles(min_role_interval_seconds):
             db.DB=Path(directory)/'diagnostic.sqlite3';db.init()
             quota_stopped=False
-            for agent,(source_id,query) in FIRST_FIVE.items():
+            for agent,(source_id,query) in APP_SOURCES.items():
                 if agent in excluded or agent not in selected:continue
                 row={'app':agent,'source_id':source_id,'graph_rag_diagnostic_verified':False}
                 report['apps'].append(row)
                 if quota_stopped:
-                    row['error']='Not attempted after a provider quota failure; wait before another run.';continue
+                    row['skipped_after_quota']=True;row['error']='Not attempted after a provider quota failure; wait before another run.';continue
                 try:
                     if reviewed_snapshot and agent=='himayah':
                         from scripts.reviewed_snapshot import ingest
@@ -126,12 +140,13 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
                     row['reported_total_tokens']=sum(e['detail'].get('usage',{}).get('total_tokens',0) for e in role_events)
                     row['usage_scope']='accepted role results only; failed requests may consume additional quota'
                     if record['status']!='completed':
-                        row['error']=record['error'];quota_stopped='Provider attempts failed: 429' in (record['error'] or '')
+                        row['error']=record['error'];quota_stopped=quota_failure(record['error'])
                         continue
                     row.update(assess(record['result'],data,TOOLS[agent](data)))
                 except (ValueError,RuntimeError,PermissionError) as exc:
                     row['error']=str(exc)
     finally:db.DB=old_db
+    report['quota_exhausted']=quota_stopped
     report['verified_at']=datetime.now(timezone.utc).isoformat()
     report['reported_total_tokens']=sum(x.get('reported_total_tokens',0) for x in report['apps'])
     return report,0 if report['apps'] and all(x['graph_rag_diagnostic_verified'] for x in report['apps']) else 2
@@ -139,14 +154,15 @@ def verify(live=False,app=None,reviewed_snapshot=False,min_role_interval_seconds
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--live',action='store_true',help='Permit public source reads and potentially billable graph inference (up to seven role calls per app).')
-    parser.add_argument('--app',action='append',choices=list(FIRST_FIVE),help='Limit to a single first-lot app; default is all five.')
+    parser.add_argument('--live',action='store_true',help='Permit public source reads and potentially billable graph inference (bounded role calls per app with separate JSON-generation recovery).')
+    parser.add_argument('--app',action='append',choices=list(APP_SOURCES),help='Select up to five apps; otherwise use --lot.')
     parser.add_argument('--reviewed-himayah-snapshot',action='store_true',help='Explicitly use repository-reviewed historical PDPL snapshot; no fresh-fetch claim or silent fallback.')
     parser.add_argument('--min-role-interval-seconds',type=int,default=15,choices=range(0,61),metavar='0..60',help='Diagnostic-only pacing between completed role requests; production defaults are unchanged.')
-    parser.add_argument('--exclude-app',action='append',choices=list(FIRST_FIVE),default=[],help='Skip an app already verified separately; repeat for multiple exclusions.')
+    parser.add_argument('--exclude-app',action='append',choices=list(APP_SOURCES),default=[],help='Skip an app already verified separately; repeat for multiple exclusions.')
+    parser.add_argument('--lot',type=int,choices=range(1,6),default=1)
     parser.add_argument('--output',type=Path)
     args=parser.parse_args()
-    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds,args.exclude_app)
+    report,code=verify(args.live,args.app,args.reviewed_himayah_snapshot,args.min_role_interval_seconds,args.exclude_app,args.lot)
     text=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     if args.output:args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
     print(text,end='');return code

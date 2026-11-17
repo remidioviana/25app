@@ -54,7 +54,7 @@ function SourcePanel({api,agent,onRetrieved}:Props){
   {api&&!loading&&!sources.length&&!error&&<Text style={s.muted}>No reviewed source is configured for this app. No live-source capability is implied.</Text>}
   {api&&<Button secondary title="Reload source history" disabled={busy!==null||loading} onPress={reload}/>}
   {sources.map(source=><View key={source.id} style={s.group}>
-   <Text style={s.h3}>{source.title}</Text><Text style={s.muted}>{source.authority} · read-only source</Text><Text selectable style={s.code}>{source.url}</Text>
+   <Text style={s.h3}>{source.title}</Text>{source.source_scope&&<Text style={s.muted}>{source.source_scope}</Text>}<Text style={s.muted}>{source.authority} · read-only source</Text><Text selectable style={s.code}>{source.url}</Text>
    <Text style={s.muted}>Available to attempt. This is not a successful connection or freshness assertion.</Text>
    <Button secondary title={'Read source: '+source.title} disabled={busy!==null} busy={busy===source.id} onPress={()=>refresh(source)}/>
   </View>)}

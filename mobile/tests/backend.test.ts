@@ -16,6 +16,10 @@ test('native API client completes all 25 agents against actual authenticated Pyt
   const api=new AgentAPI(`http://127.0.0.1:${port}`,'test-token',true);
   assert.equal((await api.me()).user,'mobile');const {agents}=await api.agents();assert.equal(agents.length,25);
   for(const agent of agents){
+   const countBefore=(await api.runs(agent.id)).runs.length;
+   await assert.rejects(api.start(agent.id,'Missing required inputs',{},'local',false,'invalid-'+agent.id),e=>e instanceof ApiError&&e.status===400);
+   assert.equal((await api.runs(agent.id)).runs.length,countBefore);
+   assert.ok((await api.publicSources(agent.id)).sources.length>0,agent.id+' has no official source catalogue');
    let run=await api.start(agent.id,agent.goal,agent.example,'local',true,'native-'+agent.id);
    for(let attempt=0;attempt<100&&['queued','running'].includes(run.status);attempt++){await wait(20);run=await api.run(run.id)}
    assert.equal(run.status,'completed',agent.id+': '+run.error);assert.ok(run.result?.analysis);assert.equal(run.result?.external_actions_performed,false);
@@ -26,7 +30,7 @@ test('native API client completes all 25 agents against actual authenticated Pyt
   const found=await api.searchEvidence('himayah','Evidence');assert.equal(found.matches.length,1);assert.equal(found.matches[0].text,'Evidence for mobile');assert.equal(found.matches[0].source,'test');assert.match(found.matches[0].citation,/:0$/);
   assert.equal((await api.searchEvidence('mizan','Evidence')).matches.length,0);
   assert.equal((await api.searchEvidence('himayah','nonexistentterm')).matches.length,0);
-  for(const id of ['himayah','iqamah','istithmar','munagasah','sahil']){
+  for(const id of agents.map(agent=>agent.id)){
    const bytes=Buffer.from('Controlled imported document for '+id+' receipttrace');
    const original=bytes.toString();const text=id==='iqamah'?original+' edited':original;
    const saved=await api.addDocument(id,'Controlled document',text,'controlled fixture','',{filename:'input.txt',base64:bytes.toString('base64')});

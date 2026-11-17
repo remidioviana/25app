@@ -70,8 +70,8 @@ def markdown(run):
         lines+=json_section('Recorded model routing',roles)
     if result.get('retrieval_warnings'):lines+=json_section('Retrieval warnings',result['retrieval_warnings'])
     if result.get('source_reads'):
-        fields=('source_id','url','authority','fetched_at','http_status','content_type','raw_sha256','text_sha256',
-                'publication_date_verified','legal_applicability_verified','status','document_id','warnings')
+        fields=('source_id','url','source_scope','authority','fetched_at','http_status','content_type','raw_sha256','text_sha256',
+                'publication_date_verified','legal_applicability_verified','fetched_in_this_run','status','document_id','warnings')
         lines+=json_section('Public-source read receipts',[
             {key:item[key] for key in fields if key in item}
             for item in result['source_reads'] if isinstance(item,dict)])

@@ -12,9 +12,14 @@ on:
         options: [production-default, three-model-evaluation]
         default: production-default
       team_first_five:
-        description: 'Run potentially billable first-five graphs with synthetic inputs and official source RAG'
+        description: 'Run potentially billable selected-lot graphs with synthetic inputs and official RAG'
         type: boolean
         default: false
+      portfolio_lot:
+        description: 'Lot used when team_app is first-five (legacy field name)'
+        type: choice
+        options: ['1', '2', '3', '4', '5']
+        default: '1'
       team_app:
         description: 'Integrated diagnostic scope; single app reduces quota consumption'
         type: choice
@@ -50,7 +55,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -77,7 +82,7 @@ jobs:
       - name: Install graph and public PDF dependencies
         if: ${{ inputs.team_first_five }}
         run: python -m pip install -r requirements-agentic.txt -r requirements-documents.txt
-      - name: Verify first-five graphs with live RAG and synthetic domain inputs
+      - name: Verify selected portfolio lot with live RAG and synthetic domain inputs
         if: ${{ inputs.team_first_five }}
         env:
           OPENAI_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -90,11 +95,12 @@ jobs:
           AGENT_SEMANTIC_SEARCH: '0'
           AGENT_MAX_EVIDENCE_PASSAGES: '2'
           TEAM_APP: ${{ inputs.team_app }}
+          PORTFOLIO_LOT: ${{ inputs.portfolio_lot }}
           ADDITIONAL_APP: ${{ inputs.additional_app }}
           EXCLUDE_APP: ${{ inputs.exclude_app }}
           REVIEWED_HIMAYAH_SNAPSHOT: ${{ inputs.reviewed_himayah_snapshot }}
         run: |
-          args=(--live --output project/evidence/groq-team-actions.json)
+          args=(--live --lot "$PORTFOLIO_LOT" --output project/evidence/groq-team-actions.json)
           if [ "$TEAM_APP" != first-five ]; then
             args+=(--app "$TEAM_APP")
             if [ "$ADDITIONAL_APP" != none ]; then args+=(--app "$ADDITIONAL_APP"); fi

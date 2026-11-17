@@ -1,0 +1,45 @@
+name: Export mobile portfolio lots
+on:
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: 'Export one lot or all remaining lots; no signed binaries'
+        type: choice
+        options: ['1', '2', '3', '4', '5', remaining]
+        default: remaining
+permissions:
+  contents: read
+concurrency:
+  group: mobile-portfolio-lots-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  export:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        batch: ${{ fromJSON(inputs.batch == 'remaining' && '[2,3,4,5]' || format('[{0}]', inputs.batch)) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      EXPO_NO_TELEMETRY: '1'
+      EXPO_NO_DOTENV: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - run: npm ci
+        working-directory: mobile
+      - run: npm run export:batch -- ${{ matrix.batch }}
+        working-directory: mobile
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lot-${{ matrix.batch }}-android-ios-bundles
+          path: ${{ matrix.batch == 1 && 'mobile/dist/first-five/' || format('mobile/dist/batch-{0}/', matrix.batch) }}
+          if-no-files-found: error
+          retention-days: 7

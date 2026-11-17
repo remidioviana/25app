@@ -55,3 +55,22 @@ class DiagnosticPacingTests(unittest.TestCase):
    with self.assertRaises(RuntimeError):
     with paced_roles(15):provider.respond([],[])
    self.assertIs(provider.respond,original);self.assertEqual(original.call_count,1)
+
+
+class PortfolioLotSelectionTests(unittest.TestCase):
+ def test_each_new_lot_is_bounded_and_offline_does_not_call_provider(self):
+  for lot in (2,3,4,5):
+   with self.subTest(lot=lot),patch('model_provider.urlopen') as network:
+    report,code=verify(lot=lot)
+    self.assertEqual(code,0);self.assertEqual(len(report['selected_apps']),5);network.assert_not_called()
+ def test_unknown_or_oversized_selection_is_rejected_before_network(self):
+  from scripts.verify_team import APP_SOURCES
+  for app in (['unknown'],list(APP_SOURCES)[:6]):
+   with patch('model_provider.urlopen') as network:
+    _,code=verify(app=app);self.assertEqual(code,2);network.assert_not_called()
+ def test_quota_in_a_mixed_key_failure_still_stops_the_lot(self):
+  from scripts.verify_team import quota_failure
+  self.assertTrue(quota_failure('Provider attempts failed: 401, 429.'))
+  self.assertTrue(quota_failure('Provider attempts failed: connection_error, 429.'))
+  self.assertFalse(quota_failure('Source returned HTTP 429'))
+  self.assertFalse(quota_failure('Provider attempts failed: 401, 400.'))

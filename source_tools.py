@@ -28,10 +28,13 @@ CATALOG={
   'dewa-move-in':{'title':'DEWA — Activation of electricity/water, Move-in','url':'https://dewa.gov.ae/en/about-us/service-guide/consumer-services/move-in','kind':'html','agents':['sahil','gurbah'],'authority':'Dubai Electricity and Water Authority'},
 }
 
+from source_catalog import ADDITIONAL_SOURCES
+CATALOG.update(ADDITIONAL_SOURCES)
+
 
 def available(agent):
     return [{'id':name,'title':cfg['title'],'url':cfg['url'],'authority':cfg['authority'],
-             'kind':cfg['kind'],'read_only':True,'status':'available_to_attempt; not a successful-read assertion'}
+             'kind':cfg['kind'],'source_scope':cfg.get('scope','Official source context; applicability and currentness are not automatically verified.'),'read_only':True,'status':'available_to_attempt; not a successful-read assertion'}
             for name,cfg in CATALOG.items() if agent in cfg['agents']]
 
 
@@ -115,7 +118,9 @@ def refresh(source_id,agent):
         anchors={'uae-pdpl':['personal data'],'icp-golden-residency':['golden residency','requirements'],
                  'dmcc-charges':['schedule','charges'],'dubai-esupply':['esupply','supplier'],
                  'dewa-move-in':['move-in','activation']}
-        if any(anchor not in text.lower() for anchor in anchors[source_id]):raise ValueError('Retrieved text does not contain the reviewed source-specific content anchors; source is unverified')
+        required=cfg.get('anchors',anchors.get(source_id))
+        if not required:raise ValueError('Reviewed source content anchors are missing')
+        if any(anchor not in text.lower() for anchor in required):raise ValueError('Retrieved text does not contain the reviewed source-specific content anchors; source is unverified')
     except ValueError as e:
         failure={'source_id':source_id,'url':cfg['url'],'started_at':started,'finished_at':db.now(),
                  'status':'failed','error':str(e),'external_write':False}
@@ -124,6 +129,7 @@ def refresh(source_id,agent):
         raise
     raw_hash=hashlib.sha256(raw).hexdigest();text_hash=hashlib.sha256(text.encode()).hexdigest()
     receipt={'source_id':source_id,'url':cfg['url'],'authority':cfg['authority'],'title':cfg['title'],
+             'source_scope':cfg.get('scope','Official source context; applicability and currentness are not automatically verified.'),
              'started_at':started,'fetched_at':db.now(),'http_status':metadata['http_status'],'content_type':metadata['content_type'],
              'bytes':len(raw),'characters':len(text),'raw_sha256':raw_hash,'text_sha256':text_hash,
              'last_modified_header':metadata.get('last_modified_header'),'publication_date_verified':False,
