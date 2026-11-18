@@ -18,7 +18,13 @@ def init():
 def timestamp(value):
     parsed=datetime.fromisoformat(value)
     if parsed.tzinfo is None:raise ValueError('Provide a timestamp with timezone')
-    return parsed.timestamp()
+    try:
+        at=parsed.timestamp()
+        # Listing uses the persisted UTC timestamp, which must remain representable.
+        datetime.fromtimestamp(at,timezone.utc)
+    except (OverflowError,OSError,ValueError) as exc:
+        raise ValueError('Choose a timestamp within UTC years 1 to 9999') from exc
+    return at
 
 def create(agent,goal,data,mode,example,first_at,every_seconds=0,max_runs=1):
     at=timestamp(first_at)

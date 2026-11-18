@@ -8,6 +8,7 @@ export function scheduleInput(first:string,interval:number,count:string){
  if(y<1||calendar.getUTCFullYear()!==y||calendar.getUTCMonth()!==m-1||calendar.getUTCDate()!==d||h>23||min>59||sec>59)throw new Error('Enter a valid calendar date and time.');
  if(zone!=='Z'&&(Number(zone.slice(1,3))>23||Number(zone.slice(4))>59))throw new Error('Enter a valid timezone offset.');
  const at=new Date(first.trim());if(!Number.isFinite(at.getTime()))throw new Error('Enter a valid calendar date and time.');
+ if(at.getUTCFullYear()<1||at.getUTCFullYear()>9999)throw new Error('Choose a timestamp within UTC years 1 to 9999.');
  if(![0,3600,86400].includes(interval))throw new Error('Choose Once, Hourly or 24 hours.');
  if(!/^\d+$/.test(count.trim())||Number(count)<1||Number(count)>100)throw new Error('Choose a whole number from 1 to 100 runs.');
  const runs=Number(count);

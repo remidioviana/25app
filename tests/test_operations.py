@@ -95,6 +95,14 @@ class ScheduleTests(StoreCase):
         with db.scope('alice'):db.init();schedule=self.new()
         with db.scope('bob'):db.init();self.assertFalse(scheduling.disable(schedule))
         with db.scope('alice'):self.assertTrue(scheduling.disable(schedule));self.assertEqual(scheduling.tick(self.at,submit=engine.execute),[])
+    def test_utc_calendar_bounds_rejected_before_persistence(self):
+        for value in ['0001-01-01T00:00:00+01:00','9999-12-31T23:59:00-01:00']:
+            with self.subTest(value=value),self.assertRaisesRegex(ValueError,'UTC years'):
+                scheduling.create('mizan','Scheduled',self.data(),'local',True,value)
+        self.assertEqual(scheduling.list_schedules('mizan'),[])
+        for value in ['0001-01-01T01:00:00+01:00','9999-12-31T22:00:00-01:00']:
+            scheduling.create('mizan','Scheduled',self.data(),'local',True,value)
+        self.assertEqual(len(scheduling.list_schedules('mizan')),2)
     def test_timezone_and_limits(self):
         with self.assertRaises(ValueError):scheduling.timestamp('2026-11-14T15:00:00')
         for every,count in [(1,1),(0,2),(60,101),(True,1)]:

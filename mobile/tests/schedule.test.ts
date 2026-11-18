@@ -16,3 +16,9 @@ test('one-time count and interval selection are validated',()=>{
  assert.throws(()=>scheduleInput(date,0,'2'));assert.throws(()=>scheduleInput(date,60,'1'));
  assert.equal(scheduleInput(date,0,'1').max_runs,1);
 });
+
+test('timezone conversion cannot produce a timestamp outside the backend calendar',()=>{
+ for(const value of ['0001-01-01T00:00:00+01:00','9999-12-31T23:59:00-01:00'])assert.throws(()=>scheduleInput(value,0,'1'),/UTC years/);
+ assert.equal(scheduleInput('0001-01-01T01:00:00+01:00',0,'1').first_at,'0001-01-01T00:00:00.000Z');
+ assert.equal(scheduleInput('9999-12-31T22:00:00-01:00',0,'1').first_at,'9999-12-31T23:00:00.000Z');
+});
