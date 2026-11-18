@@ -95,6 +95,17 @@ class ScheduleTests(StoreCase):
         with db.scope('alice'):db.init();schedule=self.new()
         with db.scope('bob'):db.init();self.assertFalse(scheduling.disable(schedule))
         with db.scope('alice'):self.assertTrue(scheduling.disable(schedule));self.assertEqual(scheduling.tick(self.at,submit=engine.execute),[])
+    def test_final_recurring_occurrence_keeps_a_listable_timestamp(self):
+        value='9999-12-31T23:30:00+00:00'
+        at=scheduling.timestamp(value)
+        scheduling.create('mizan','Scheduled',self.data(),'local',True,value,3600,1)
+        created=scheduling.tick(at,submit=lambda _:None)
+        self.assertEqual(len(created),1)
+        row=scheduling.list_schedules('mizan')[0]
+        self.assertEqual(row['enabled'],0)
+        self.assertEqual(row['remaining'],0)
+        self.assertEqual(row['next_at'],at)
+        self.assertEqual(scheduling.tick(at+1,submit=lambda _:None),[])
     def test_concurrent_creation_preserves_active_schedule_limit(self):
         for _ in range(49):self.new()
         barrier=threading.Barrier(8)

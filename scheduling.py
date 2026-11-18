@@ -60,7 +60,7 @@ def tick(now=None,submit=None):
             key=f"schedule:{row['id']}:{row['next_at']}"
             run,_=db.create_in(c,row['agent'],row['goal'],json.loads(row['input']),row['mode'],bool(row['example']),key)
             remaining=row['remaining']-1;interval=row['every_seconds']
-            next_at=row['next_at']+((int((now-row['next_at'])//interval)+1)*interval) if interval else row['next_at']
+            next_at=row['next_at']+((int((now-row['next_at'])//interval)+1)*interval) if interval and remaining>0 else row['next_at']
             c.execute('UPDATE schedules SET next_at=?,remaining=?,enabled=?,last_run=? WHERE id=?',
               (next_at,remaining,int(remaining>0 and interval>0),run,row['id']))
             created.append(run)
