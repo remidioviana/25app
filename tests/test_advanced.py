@@ -109,6 +109,21 @@ class AdvancedTests(unittest.TestCase):
         db.ingest('mizan','Budget','Budget 500','source','')
         with patch('model_provider.embed',return_value=[[1.,0.]]) as m:
             retrieval.index('mizan');retrieval.index('mizan');self.assertEqual(m.call_count,1)
+    def test_index_rebuilds_stale_text_hash_and_reuses_unchanged_chunks(self):
+        document=db.ingest('mizan','Controlled evidence','Original budget','controlled','')
+        with patch('model_provider.embed',return_value=[[1.,0.]]):retrieval.index('mizan')
+        with db.connect() as connection:
+            connection.execute('UPDATE chunks SET text=? WHERE doc=?',('Updated budget',document['id']))
+        with patch('model_provider.embed',return_value=[[0.,1.]]) as embed:
+            self.assertEqual(retrieval.index('mizan')['indexed_chunks'],1)
+            self.assertEqual(retrieval.index('mizan')['indexed_chunks'],0)
+            embed.assert_called_once_with(['Updated budget'])
+            matches=retrieval.search('mizan','budget',True)['matches']
+        self.assertEqual(matches[0]['text'],'Updated budget')
+        self.assertAlmostEqual(matches[0]['similarity'],1.)
+        with db.connect() as connection:
+            row=connection.execute('SELECT text_hash FROM embeddings WHERE doc=?',(document['id'],)).fetchone()
+            self.assertEqual(row['text_hash'],db.digest('Updated budget'))
     def test_index_rejects_dimension_changes_across_batches_and_resumes(self):
         document=db.ingest('mizan','Controlled evidence','x'*33000,'controlled','')
         self.assertEqual(document['chunks'],33)

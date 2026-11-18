@@ -27,11 +27,14 @@ def index(agent):
     init();model=os.environ.get('OPENAI_EMBEDDING_MODEL')
     if not model: raise ValueError('Embedding model is not configured')
     with db.connect() as c:
-        rows=[dict(x) for x in c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text FROM chunks
+        rows=[]
+        for row in c.execute('''SELECT chunks.doc,chunks.chunk,chunks.text,e.text_hash FROM chunks
           LEFT JOIN embeddings e ON e.doc=chunks.doc AND e.chunk=chunks.chunk AND e.model=?
-          WHERE chunks.agent=? AND e.doc IS NULL
-          AND NOT EXISTS (SELECT 1 FROM public_source_versions v WHERE v.doc=chunks.doc AND v.agent=chunks.agent AND v.is_current=0)
-          LIMIT 512''',(model,agent))]
+          WHERE chunks.agent=?
+          AND NOT EXISTS (SELECT 1 FROM public_source_versions v WHERE v.doc=chunks.doc AND v.agent=chunks.agent AND v.is_current=0)''',(model,agent)):
+            if row['text_hash']==db.digest(row['text']):continue
+            rows.append(dict(row))
+            if len(rows)==512:break
     count=0
     for start in range(0,len(rows),32):
         batch=rows[start:start+32];vectors=model_provider.embed([x['text'] for x in batch])
