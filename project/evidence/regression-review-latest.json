@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-18T02:09:13.424989+00:00",
-  "source_commit": "3470513d5e35dff56cda3cb8e9e9103e49410f1e",
+  "checked_at": "2026-11-18T18:11:35.449924+00:00",
+  "source_commit": "6a79097b004a26459195f087b8b46a1c8cef092a",
   "scope": "Local regression and static consistency review; no new provider inference, authentic-case acceptance or physical-device testing.",
   "results": {
     "python_unittest": {
-      "passed": 251
+      "passed": 274
     },
     "mobile_tests": {
-      "passed": 92
+      "passed": 97
     },
     "typecheck": "passed",
     "eslint": "passed",
@@ -22,15 +22,22 @@
     },
     "portfolio_consistency": "passed",
     "localization": {
-      "files_scanned": 229,
-      "issues": []
+      "files_scanned": 259,
+      "issues": [],
+      "scope": "Source strings, specs and examples; excludes dependencies, tests and documentation. Heuristic scan, not a translation-quality guarantee."
     },
     "design_contrast_script": "passed"
   },
   "latest_code_checks": {
-    "url": "https://github.com/remidioviana/25app/actions/runs/44213508594",
-    "conclusion": "success"
+    "url": "https://github.com/remidioviana/25app/actions/runs/44361938760",
+    "conclusion": "success",
+    "source_commit": "6a79097b004a26459195f087b8b46a1c8cef092a"
   },
   "new_code_defects_confirmed": 0,
-  "remaining_acceptance": "Authentic primary cases, physical iOS/Android devices, signed releases and permanent deployment are not established by these checks."
+  "remaining_acceptance": "Authentic primary cases, physical iOS/Android devices, signed releases and permanent deployment are not established by these checks.",
+  "latest_provider_verification": {
+    "url": "https://github.com/remidioviana/25app/actions/runs/44089778189",
+    "conclusion": "success",
+    "scope": "Historical latest workflow result; no provider inference was performed in this review."
+  }
 }
