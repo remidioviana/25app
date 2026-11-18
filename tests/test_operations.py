@@ -210,6 +210,22 @@ class ConnectorTests(StoreCase):
         with patch.dict(os.environ,{'CONNECTOR_TEST_TOKEN':'dummy-secret'}),patch('connectors.public_addresses',return_value=['8.8.8.8']),patch('connectors.PinnedHTTPS',return_value=conn):
             r=connectors.fetch_json({'url':'https://example.com/snapshot','token_env':'CONNECTOR_TEST_TOKEN'})
         self.assertEqual(r,{'data':42});self.assertEqual(conn.request.call_args.args[0],'GET');self.assertTrue(conn.close.called)
+    def test_json_pointer_rejects_invalid_types_and_escapes(self):
+        data={'~2':'invalid escape','~':'literal tilde','':'empty key','~1':'literal sequence'}
+        for path in (None,False,0,[],{},'/~2','/~','/~01~2'):
+            with self.subTest(path=path),self.assertRaises(ValueError):connectors.pointer(data,path)
+        self.assertIs(connectors.pointer(data,''),data)
+        self.assertEqual(connectors.pointer(data,'/'),'empty key')
+        self.assertEqual(connectors.pointer(data,'/~0'),'literal tilde')
+        self.assertEqual(connectors.pointer(data,'/~01'),'literal sequence')
+    def test_invalid_pointer_cannot_create_a_success_receipt(self):
+        cfg={'url':'https://example.com/data','users':['alice'],'agents':['mizan'],'json_pointer':False}
+        with db.scope('alice'):
+            db.init()
+            with patch('connectors.configured',return_value={'finance':cfg}),patch('connectors.fetch_json',return_value=self.data()):
+                with self.assertRaisesRegex(ValueError,'must be a string'):connectors.pull('finance','mizan',engine.SPECS['mizan'])
+            with db.connect() as connection:
+                self.assertIsNone(connection.execute("SELECT name FROM sqlite_master WHERE name='connector_receipts'").fetchone())
     def test_json_pointer_rejects_noncanonical_array_indexes(self):
         data={'rows':['first','second']}
         for token in ('-1','01','+1',' 1','1 ','-','1.0',''):

@@ -70,9 +70,11 @@ def fetch_json(cfg):
     finally:connection.close()
 
 def pointer(value,path):
-    if not path:return value
-    if not isinstance(path,str) or not path.startswith('/'):raise ValueError('json_pointer must be empty or start with /')
+    if not isinstance(path,str):raise ValueError('json_pointer must be a string')
+    if path=='':return value
+    if not path.startswith('/'):raise ValueError('json_pointer must be empty or start with /')
     for part in path[1:].split('/'):
+        if re.search(r'~(?:[^01]|$)',part):raise ValueError('JSON pointer escapes must be ~0 or ~1')
         key=part.replace('~1','/').replace('~0','~')
         if isinstance(value,list) and not re.fullmatch(r'0|[1-9][0-9]*',key):raise ValueError('JSON pointer array indexes must be non-negative integers without leading zeros')
         try:value=value[int(key)] if isinstance(value,list) else value[key]
