@@ -146,6 +146,14 @@ class ImportTests(unittest.TestCase):
         content=io.BytesIO()
         with zipfile.ZipFile(content,'w') as z:z.writestr('word/document.xml','<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:r><w:t>Contrato de teste</w:t></w:r></w:p></w:body></w:document>')
         r=document_import.extract('test.docx',base64.b64encode(content.getvalue()).decode());self.assertEqual(r['text'],'Contrato de teste')
+    def test_docx_preserves_inline_tabs_and_line_breaks(self):
+        content=io.BytesIO()
+        xml='<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:r><w:t>Amount</w:t><w:tab/><w:t>500 AED</w:t><w:br/><w:t>Due tomorrow</w:t></w:r><w:r><w:cr/><w:t>Reference A</w:t></w:r></w:p><w:p><w:r><w:t>Next paragraph</w:t></w:r></w:p></w:body></w:document>'
+        with zipfile.ZipFile(content,'w') as z:z.writestr('word/document.xml',xml)
+        result=document_import.extract('records.docx',base64.b64encode(content.getvalue()).decode())
+        expected='Amount\t500 AED\nDue tomorrow\nReference A\nNext paragraph'
+        self.assertEqual(result['text'],expected)
+        self.assertEqual(result['provenance']['extracted_text_sha256'],hashlib.sha256(expected.encode()).hexdigest())
     def test_pdf_text_and_page_marker(self):
         try:from reportlab.pdfgen.canvas import Canvas
         except ImportError:self.skipTest('reportlab needed only to generate test fixture')

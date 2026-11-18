@@ -52,7 +52,11 @@ def parse(raw,suffix):
             xml=archive.read('word/document.xml')
             if b'<!DOCTYPE' in xml or b'<!ENTITY' in xml:raise ValueError('XML entities are not allowed')
             root=ET.fromstring(xml);ns='{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
-            text='\n'.join(''.join(n.text or '' for n in p.iter(ns+'t')) for p in root.iter(ns+'p'))
+            def paragraph_text(paragraph):
+                return ''.join((node.text or '') if node.tag==ns+'t' else
+                    '\t' if node.tag==ns+'tab' else '\n' if node.tag in (ns+'br',ns+'cr') else ''
+                    for node in paragraph.iter())
+            text='\n'.join(paragraph_text(p) for p in root.iter(ns+'p'))
         warnings.append('Body text extracted; notes, headers, images and formatting are not preserved')
     else:raise ValueError('Supported formats: TXT, MD, CSV, PDF or DOCX')
     if not text.strip():raise ValueError('No text extracted')
