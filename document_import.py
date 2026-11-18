@@ -53,7 +53,7 @@ def parse(raw,suffix):
             root=ET.fromstring(xml);ns='{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
             text='\n'.join(''.join(n.text or '' for n in p.iter(ns+'t')) for p in root.iter(ns+'p'))
         warnings.append('Body text extracted; notes, headers, images and formatting are not preserved')
-    else:raise ValueError('Formato aceito: TXT, MD, CSV, PDF ou DOCX')
+    else:raise ValueError('Supported formats: TXT, MD, CSV, PDF or DOCX')
     if not text.strip():raise ValueError('No text extracted')
     if len(text)>MAX_TEXT:raise ValueError('Extracted text exceeds 200,000 characters')
     return {'text':text,'warnings':warnings,'format':suffix,'characters':len(text)}

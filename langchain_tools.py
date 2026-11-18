@@ -9,7 +9,7 @@ from domain_tools import TOOLS
 
 class StrictStructuredTool(StructuredTool):
     def _to_args_and_kwargs(self,tool_input,tool_call_id):
-        if not isinstance(tool_input,dict):raise ValueError('Ferramentas exigem objeto JSON')
+        if not isinstance(tool_input,dict):raise ValueError('Tools require a JSON object')
         self.args_schema.model_validate(tool_input)
         return super()._to_args_and_kwargs(tool_input,tool_call_id)
 
