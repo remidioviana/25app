@@ -17,7 +17,16 @@ export class AgentAPI {
     if(signal?.aborted)controller.abort();const timer=setTimeout(cancel,200_000);
     try {
       const response=await this.transport(this.origin+path,{method,headers:{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'}),...(this.token?{Authorization:'Bearer '+this.token}:{}),...extra},body:body===undefined?undefined:JSON.stringify(body),signal:controller.signal,redirect:'error'});
-      const data=await response.json();if(!response.ok)throw new ApiError(data.error||'Server request failed',response.status);return data as T;
+      let data:unknown;
+      try{data=await response.json()}catch(error){
+        if(controller.signal.aborted||response.ok)throw error;
+        throw new ApiError('Server request failed',response.status);
+      }
+      if(!response.ok){
+        const message=data!==null&&typeof data==='object'&&!Array.isArray(data)?(data as Record<string,unknown>).error:undefined;
+        throw new ApiError(typeof message==='string'&&message.trim()?message:'Server request failed',response.status);
+      }
+      return data as T;
     } finally {clearTimeout(timer);signal?.removeEventListener('abort',cancel)}
   }
   config(){return this.request<Config>('/api/config')}

@@ -60,3 +60,23 @@ test('missing server error message uses English fallback',async()=>{
  const api=new AgentAPI('https://backend.example','t',false,(async()=>new Response('{}',{status:500})) as typeof fetch);
  await assert.rejects(api.searchEvidence('mizan','budget'),/Server request failed/);
 });
+
+test('non-JSON HTTP failures preserve status without displaying proxy response bodies',async()=>{
+ for(const [status,body]of [[401,'<html>Unauthorized</html>'],[429,'Rate limited'],[503,'']]as const){
+  const api=new AgentAPI('https://backend.example','test',false,(async()=>new Response(body,{status}))as typeof fetch);
+  await assert.rejects(api.agents(),e=>e instanceof ApiError&&e.status===status&&e.message==='Server request failed');
+ }
+});
+test('null and non-string JSON error payloads use the English HTTP fallback',async()=>{
+ for(const body of ['null','[]','{"error":{}}','{"error":123}','{"error":"  "}']){
+  const api=new AgentAPI('https://backend.example','test',false,(async()=>new Response(body,{status:502}))as typeof fetch);
+  await assert.rejects(api.agents(),e=>e instanceof ApiError&&e.status===502&&e.message==='Server request failed');
+ }
+});
+test('invalid successful JSON and aborted body reads remain failures',async()=>{
+ const malformed=new AgentAPI('https://backend.example','test',false,(async()=>new Response('not JSON'))as typeof fetch);
+ await assert.rejects(malformed.agents(),SyntaxError);
+ const controller=new AbortController(),aborted=new Error('cancelled while reading');
+ const api=new AgentAPI('https://backend.example','test',false,(async()=>({ok:false,status:503,json:async()=>{controller.abort();throw aborted}}as unknown as Response))as typeof fetch);
+ await assert.rejects(api.run('r',controller.signal),e=>e===aborted);
+});
