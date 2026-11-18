@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-18T02:09:13.424989+00:00",
+  "source_commit": "3470513d5e35dff56cda3cb8e9e9103e49410f1e",
+  "scope": "Local regression and static consistency review; no new provider inference, authentic-case acceptance or physical-device testing.",
+  "results": {
+    "python_unittest": {
+      "passed": 251
+    },
+    "mobile_tests": {
+      "passed": 92
+    },
+    "typecheck": "passed",
+    "eslint": "passed",
+    "variant_configurations": {
+      "passed": 25
+    },
+    "transparent_symbols": {
+      "passed": 25
+    },
+    "outlined_branding_files": {
+      "passed": 100
+    },
+    "portfolio_consistency": "passed",
+    "localization": {
+      "files_scanned": 229,
+      "issues": []
+    },
+    "design_contrast_script": "passed"
+  },
+  "latest_code_checks": {
+    "url": "https://github.com/remidioviana/25app/actions/runs/44213508594",
+    "conclusion": "success"
+  },
+  "new_code_defects_confirmed": 0,
+  "remaining_acceptance": "Authentic primary cases, physical iOS/Android devices, signed releases and permanent deployment are not established by these checks."
+}
