@@ -1,5 +1,5 @@
 import unittest
-from validation import validate, unique_json_object
+from validation import validate, unique_json_object, validate_json_unicode
 
 
 class NumericValidationTests(unittest.TestCase):
@@ -31,3 +31,17 @@ class JSONIntegrityTests(unittest.TestCase):
             with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate keys'):
                 json.loads(raw,object_pairs_hook=unique_json_object)
         self.assertEqual(json.loads('{"a":{"x":1},"b":{"x":2}}',object_pairs_hook=unique_json_object),{'a':{'x':1},'b':{'x':2}})
+
+
+class JSONUnicodeTests(unittest.TestCase):
+    def test_lone_surrogates_are_rejected_in_values_arrays_and_object_keys(self):
+        for value in ({'text':'\ud800'},{'items':['\udfff']},{'\ud800':'value'}):
+            with self.subTest(value=repr(value)),self.assertRaisesRegex(ValueError,'valid Unicode'):
+                validate_json_unicode(value)
+
+    def test_real_unicode_and_decoded_surrogate_pairs_remain_supported(self):
+        import json
+        value=json.loads('{"text":"\\ud83d\\ude00"}')
+        validate_json_unicode(value)
+        self.assertEqual(value['text'],'😀')
+        validate_json_unicode({'العربية':['😀','Résumé','中文',None,False,123]})

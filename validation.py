@@ -30,3 +30,16 @@ def unique_json_object(pairs):
         if key in result:raise ValueError('JSON object contains duplicate keys')
         result[key]=value
     return result
+
+
+def validate_json_unicode(value):
+    """Ensure decoded JSON text can be stored and hashed as UTF-8."""
+    pending=[value]
+    while pending:
+        item=pending.pop()
+        if isinstance(item,str):
+            try:item.encode('utf-8')
+            except UnicodeEncodeError:raise ValueError('JSON text must contain valid Unicode') from None
+        elif isinstance(item,dict):
+            pending.extend(item.keys());pending.extend(item.values())
+        elif isinstance(item,list):pending.extend(item)

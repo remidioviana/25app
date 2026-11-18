@@ -21,7 +21,7 @@ import source_tools
 from agent_runtime import SPECS, recover, submit
 from model_provider import configured
 import model_provider
-from validation import validate, unique_json_object
+from validation import validate, unique_json_object, validate_json_unicode
 
 ROOT=Path(__file__).resolve().parent
 TOKEN=os.environ.get('APP_TOKEN','')
@@ -119,6 +119,7 @@ class Handler(BaseHTTPRequestHandler):
             except (json.JSONDecodeError,UnicodeDecodeError): raise ValueError('Invalid JSON')
             except RecursionError: raise ValueError('JSON nesting is too deep') from None
             if not isinstance(data,dict): raise ValueError('The request body must be a JSON object')
+            validate_json_unicode(data)
         if path=='/api/me' and method=='GET':return self.reply({'user':db.USER.get(),'multiuser':bool(os.environ.get('APP_USERS_FILE'))})
         if path=='/api/import/preview' and method=='POST':return self.reply(document_import.extract(data.get('filename'),data.get('base64')))
         match=re.fullmatch(r'/api/schedules/([0-9a-f-]+)/disable',path)

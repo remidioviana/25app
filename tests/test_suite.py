@@ -175,6 +175,14 @@ class HTTPTests(Suite):
     def test_http_protect_private_files(self):
         for path in ['/server.py','/data/agents-v2.sqlite3','/../server.py','/agents/mizan/agent.json']:
             self.assertEqual(self.request(path)[0],404)
+    def test_http_invalid_unicode_document_is_rejected_before_storage(self):
+        for key in ('title','text'):
+            data={'title':'Record','text':'Document text','source':'','as_of':''};data[key]='\ud800'
+            with self.subTest(key=key):
+                status,body=self.request('/api/agents/mizan/documents','POST',data)
+                self.assertEqual(status,400)
+                self.assertIn('valid Unicode',body['error'])
+        self.assertEqual(db.documents('mizan'),[])
     def test_http_duplicate_json_keys_are_rejected_before_run_creation(self):
         raw=b'{"goal":"First","goal":"Second","input":'+json.dumps(self.example('mizan')).encode()+b'}'
         req=Request(self.base+'/api/agents/mizan/runs',data=raw,method='POST',headers={'Content-Type':'application/json'})

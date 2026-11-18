@@ -13,7 +13,7 @@ import socket
 import ssl
 from urllib.parse import urlsplit
 import storage as db
-from validation import validate, unique_json_object
+from validation import validate, unique_json_object, validate_json_unicode
 
 MAX_BYTES=2_000_000
 
@@ -65,7 +65,9 @@ def fetch_json(cfg):
         if 'application/json' not in response.getheader('Content-Type','').lower():raise ValueError('Connector did not return JSON')
         raw=response.read(MAX_BYTES+1)
         if len(raw)>MAX_BYTES:raise ValueError('Connector response exceeds 2 MB')
-        return json.loads(raw,object_pairs_hook=unique_json_object,parse_constant=lambda _:(_ for _ in ()).throw(ValueError('Non-finite JSON')))
+        data=json.loads(raw,object_pairs_hook=unique_json_object,parse_constant=lambda _:(_ for _ in ()).throw(ValueError('Non-finite JSON')))
+        validate_json_unicode(data)
+        return data
     except (OSError,http.client.HTTPException):raise ValueError('HTTPS connector read failed') from None
     finally:connection.close()
 
