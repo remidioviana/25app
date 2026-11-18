@@ -117,6 +117,7 @@ class Handler(BaseHTTPRequestHandler):
             if not 0<n<=maximum: return self.reply({'error':'Empty body or route size limit exceeded'},413)
             try: data=json.loads(self.rfile.read(n),parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Invalid JSON number')))
             except (json.JSONDecodeError,UnicodeDecodeError): raise ValueError('Invalid JSON')
+            except RecursionError: raise ValueError('JSON nesting is too deep') from None
             if not isinstance(data,dict): raise ValueError('The request body must be a JSON object')
         if path=='/api/me' and method=='GET':return self.reply({'user':db.USER.get(),'multiuser':bool(os.environ.get('APP_USERS_FILE'))})
         if path=='/api/import/preview' and method=='POST':return self.reply(document_import.extract(data.get('filename'),data.get('base64')))
