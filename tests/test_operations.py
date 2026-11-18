@@ -134,6 +134,14 @@ class ImportTests(unittest.TestCase):
     def test_utf8_csv_and_preview(self):
         r=document_import.extract('dados.csv',base64.b64encode('categoria,valor\nalimentação,50'.encode()).decode())
         self.assertIn('alimentação | 50',r['text'])
+    def test_csv_rejects_malformed_quoting_in_isolated_import(self):
+        for raw in (b'item,amount\n"unfinished,10',b'item,amount\n"value"unexpected,10'):
+            with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'Invalid CSV'):
+                document_import.extract('records.csv',base64.b64encode(raw).decode())
+    def test_csv_preserves_valid_quoted_commas_newlines_and_quotes(self):
+        raw=b'item,notes\r\n"Travel, local","Line one\nLine two with ""quotes"""\r\n'
+        result=document_import.extract('records.csv',base64.b64encode(raw).decode())
+        self.assertIn('Travel, local | Line one\nLine two with "quotes"',result['text'])
     def test_docx_text(self):
         content=io.BytesIO()
         with zipfile.ZipFile(content,'w') as z:z.writestr('word/document.xml','<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:r><w:t>Contrato de teste</w:t></w:r></w:p></w:body></w:document>')

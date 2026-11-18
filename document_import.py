@@ -24,7 +24,8 @@ def parse(raw,suffix):
         except UnicodeDecodeError:raise ValueError('Text must use UTF-8 encoding') from None
         if '\x00' in text:raise ValueError('Binary content is not allowed as text')
         if suffix=='.csv':
-            rows=list(csv.reader(io.StringIO(text)))
+            try:rows=list(csv.reader(io.StringIO(text),strict=True))
+            except csv.Error:raise ValueError('Invalid CSV: check quoting and field size') from None
             if len(rows)>5000:raise ValueError('CSV exceeds 5,000 rows')
             text='\n'.join(' | '.join(row) for row in rows)
     elif suffix=='.pdf':
