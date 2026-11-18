@@ -39,6 +39,10 @@ def index(agent):
         vectors=[vector(v) for v in vectors]
         if len({len(v) for v in vectors})!=1: raise ValueError('Incompatible dimensions')
         with db.connect() as c:
+            c.execute('BEGIN IMMEDIATE')
+            existing=c.execute('SELECT vector FROM embeddings WHERE agent=? AND model=? LIMIT 1',(agent,model)).fetchone()
+            if existing and len(json.loads(existing['vector']))!=len(vectors[0]):
+                raise ValueError('Embedding dimensions differ from the existing index for this model')
             for row,v in zip(batch,vectors):
                 # A concurrent deletion must not resurrect a deleted document.
                 if c.execute('SELECT 1 FROM documents WHERE id=? AND agent=?',(row['doc'],agent)).fetchone():

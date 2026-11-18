@@ -109,6 +109,21 @@ class AdvancedTests(unittest.TestCase):
         db.ingest('mizan','Budget','Budget 500','source','')
         with patch('model_provider.embed',return_value=[[1.,0.]]) as m:
             retrieval.index('mizan');retrieval.index('mizan');self.assertEqual(m.call_count,1)
+    def test_index_rejects_dimension_changes_across_batches_and_resumes(self):
+        document=db.ingest('mizan','Controlled evidence','x'*33000,'controlled','')
+        self.assertEqual(document['chunks'],33)
+        with patch('model_provider.embed',side_effect=[[[1.,0.]]*32,[[1.,0.,0.]]]):
+            with self.assertRaisesRegex(ValueError,'dimensions differ'):retrieval.index('mizan')
+        with db.connect() as connection:
+            rows=connection.execute('SELECT vector FROM embeddings WHERE agent=?',('mizan',)).fetchall()
+            self.assertEqual(len(rows),32)
+            self.assertEqual({len(json.loads(row['vector'])) for row in rows},{2})
+        with patch('model_provider.embed',return_value=[[1.,0.]]) as embed:
+            result=retrieval.index('mizan')
+            self.assertEqual(result['indexed_chunks'],1)
+            self.assertEqual(embed.call_count,1)
+        with db.connect() as connection:
+            self.assertEqual(connection.execute('SELECT COUNT(*) FROM embeddings').fetchone()[0],33)
     def test_dimension_mismatch_is_explicit(self):
         db.ingest('mizan','Budget','Budget 500','source','')
         with patch('model_provider.embed',return_value=[[1.,0.]]):retrieval.index('mizan')
