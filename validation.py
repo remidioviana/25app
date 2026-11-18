@@ -3,7 +3,7 @@ import math
 def validate(value, schema, path='$'):
     types=schema.get('type'); types=types if isinstance(types,list) else [types]
     valid={'object':isinstance(value,dict),'array':isinstance(value,list),'string':isinstance(value,str),
-           'number':type(value) in (int,float) and math.isfinite(value),'integer':type(value) is int,
+           'number':type(value) is int or (type(value) is float and math.isfinite(value)),'integer':type(value) is int,
            'boolean':type(value) is bool,'null':value is None}
     if not any(valid.get(t,False) for t in types): raise ValueError(f'{path}: expected type {types}')
     if 'enum' in schema and value not in schema['enum']:raise ValueError(path+': value is outside the permitted choices')
