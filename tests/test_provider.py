@@ -12,6 +12,21 @@ class ProviderTests(unittest.TestCase):
  def ok(self):return io.BytesIO(json.dumps({'choices':[{'message':{'content':'checked'}}],'usage':{'total_tokens':9}}).encode())
  def error(self,status):return HTTPError('https://api.groq.com',status,'mock',{},io.BytesIO(b'secret response must not leak'))
  def call(self,model=p.AUDIT_MODEL):return p.respond([{'role':'user','content':'Test'}],[],model_override=model)
+ def test_embedding_response_shape_is_validated_before_use(self):
+  cases=[None,[],{}, {'data':None},{'data':[None]},{'data':[{}]},
+    {'data':[{'index':False,'embedding':[1]}]},{'data':[{'index':0.0,'embedding':[1]}]},
+    {'data':[{'index':1,'embedding':[1]}]},{'data':[{'index':0}]},
+    {'data':[{'index':0,'embedding':'invalid'}]},{'data':[{'index':0,'embedding':[]}]}]
+  with patch.dict(os.environ,{'OPENAI_EMBEDDING_MODEL':'test-embedding'}):
+   for response in cases:
+    with self.subTest(response=response),patch.object(p,'_request',return_value=response):
+     with self.assertRaisesRegex(ValueError,'embedding response'):p.embed(['Controlled text'])
+ def test_embedding_response_reorders_valid_indexes_and_rejects_duplicates(self):
+  with patch.dict(os.environ,{'OPENAI_EMBEDDING_MODEL':'test-embedding'}):
+   with patch.object(p,'_request',return_value={'data':[{'index':1,'embedding':[0,1]},{'index':0,'embedding':[1,0]}]}):
+    self.assertEqual(p.embed(['First','Second']),[[1,0],[0,1]])
+   with patch.object(p,'_request',return_value={'data':[{'index':0,'embedding':[1,0]},{'index':0,'embedding':[0,1]}]}):
+    with self.assertRaisesRegex(ValueError,'embedding response'):p.embed(['First','Second'])
  def test_roles(self):self.assertEqual(p.ROLE_MODELS,{'planner':p.FAST_MODEL,'specialist':p.FAST_MODEL,'critic':p.AUDIT_MODEL})
  def test_rotation(self):
   with patch.object(p,'urlopen',side_effect=[self.ok(),self.ok(),self.ok(),self.ok()]) as send:

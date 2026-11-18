@@ -278,6 +278,11 @@ def embed(texts):
     if not model:raise ValueError('Configure OPENAI_EMBEDDING_MODEL for semantic indexing.')
     if not texts or len(texts)>32 or any(not isinstance(t,str) or not t.strip() or len(t)>4000 for t in texts):raise ValueError('Embeddings accept 1–32 non-empty texts, at most 4,000 characters each.')
     raw=_request('/embeddings',{'model':model,'input':texts},_key_order())
-    rows=sorted(raw.get('data',[]),key=lambda x:x['index'])
+    data=raw.get('data') if isinstance(raw,dict) else None
+    if not isinstance(data,list) or len(data)!=len(texts):raise ValueError('Incomplete embedding response.')
+    if any(not isinstance(row,dict) or type(row.get('index')) is not int or
+           not isinstance(row.get('embedding'),list) or not row['embedding'] for row in data):
+        raise ValueError('Invalid embedding response.')
+    rows=sorted(data,key=lambda x:x['index'])
     if [x['index'] for x in rows]!=list(range(len(texts))):raise ValueError('Incomplete embedding response.')
     return [x['embedding'] for x in rows]
