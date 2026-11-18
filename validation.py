@@ -21,3 +21,12 @@ def validate(value, schema, path='$'):
     if type(value) in (int,float):
         if 'minimum' in schema and value<schema['minimum']: raise ValueError(path+': below minimum')
         if 'maximum' in schema and value>schema['maximum']: raise ValueError(path+': above maximum')
+
+
+def unique_json_object(pairs):
+    """Reject ambiguous JSON objects without echoing keys or private values."""
+    result={}
+    for key,value in pairs:
+        if key in result:raise ValueError('JSON object contains duplicate keys')
+        result[key]=value
+    return result

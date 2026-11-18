@@ -21,7 +21,7 @@ import source_tools
 from agent_runtime import SPECS, recover, submit
 from model_provider import configured
 import model_provider
-from validation import validate
+from validation import validate, unique_json_object
 
 ROOT=Path(__file__).resolve().parent
 TOKEN=os.environ.get('APP_TOKEN','')
@@ -115,7 +115,7 @@ class Handler(BaseHTTPRequestHandler):
             n=int(self.headers.get('Content-Length','0'))
             maximum=3_800_000 if path.endswith('/documents') else (2_900_000 if path=='/api/import/preview' else 400000)
             if not 0<n<=maximum: return self.reply({'error':'Empty body or route size limit exceeded'},413)
-            try: data=json.loads(self.rfile.read(n),parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Invalid JSON number')))
+            try: data=json.loads(self.rfile.read(n),object_pairs_hook=unique_json_object,parse_constant=lambda _: (_ for _ in ()).throw(ValueError('Invalid JSON number')))
             except (json.JSONDecodeError,UnicodeDecodeError): raise ValueError('Invalid JSON')
             except RecursionError: raise ValueError('JSON nesting is too deep') from None
             if not isinstance(data,dict): raise ValueError('The request body must be a JSON object')

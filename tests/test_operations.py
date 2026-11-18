@@ -193,6 +193,12 @@ class ConnectorTests(StoreCase):
             db.init()
             with patch('connectors.fetch_json',return_value={'data':{}}):
                 with self.assertRaises(ValueError):connectors.pull('finance','mizan',engine.SPECS['mizan'])
+    def test_connector_rejects_duplicate_json_fields_and_closes_connection(self):
+        conn=MagicMock();response=conn.getresponse.return_value;response.status=200
+        response.getheader.return_value='application/json';response.read.return_value=b'{"data":{"amount":10,"amount":99}}'
+        with patch('connectors.public_addresses',return_value=['8.8.8.8']),patch('connectors.PinnedHTTPS',return_value=conn):
+            with self.assertRaisesRegex(ValueError,'duplicate keys'):connectors.fetch_json({'url':'https://example.com/snapshot'})
+        conn.close.assert_called_once()
     def test_private_and_mixed_dns_rejected(self):
         for addresses in [['127.0.0.1'],['10.0.0.1'],['169.254.169.254'],['::1'],['8.8.8.8','192.168.1.1']]:
             with patch('socket.getaddrinfo',return_value=[(2,1,6,'',(ip,443)) for ip in addresses]):

@@ -175,6 +175,15 @@ class HTTPTests(Suite):
     def test_http_protect_private_files(self):
         for path in ['/server.py','/data/agents-v2.sqlite3','/../server.py','/agents/mizan/agent.json']:
             self.assertEqual(self.request(path)[0],404)
+    def test_http_duplicate_json_keys_are_rejected_before_run_creation(self):
+        raw=b'{"goal":"First","goal":"Second","input":'+json.dumps(self.example('mizan')).encode()+b'}'
+        req=Request(self.base+'/api/agents/mizan/runs',data=raw,method='POST',headers={'Content-Type':'application/json'})
+        with patch('server.submit') as submit:
+            with self.assertRaises(HTTPError) as caught:urlopen(req)
+            self.assertEqual(caught.exception.code,400)
+            self.assertIn('duplicate keys',json.load(caught.exception)['error'])
+            submit.assert_not_called()
+        self.assertEqual(db.recent('mizan'),[])
     def test_http_excessive_json_nesting_is_a_client_error(self):
         raw=b'{"input":'+b'['*30000+b'0'+b']'*30000+b'}'
         req=Request(self.base+'/api/agents/mizan/runs',data=raw,method='POST',headers={'Content-Type':'application/json'})

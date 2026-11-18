@@ -1,5 +1,5 @@
 import unittest
-from validation import validate
+from validation import validate, unique_json_object
 
 
 class NumericValidationTests(unittest.TestCase):
@@ -22,3 +22,12 @@ class NumericValidationTests(unittest.TestCase):
         for value in (float('inf'),float('-inf'),float('nan'),True,False):
             with self.subTest(value=value),self.assertRaises(ValueError):
                 validate(value,{'type':'number'})
+
+
+class JSONIntegrityTests(unittest.TestCase):
+    def test_duplicate_keys_are_rejected_at_each_json_object_depth(self):
+        import json
+        for raw in ('{"x":1,"x":2}','{"nested":[{"x":1,"x":2}]}','{"x":null,"x":false}'):
+            with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate keys'):
+                json.loads(raw,object_pairs_hook=unique_json_object)
+        self.assertEqual(json.loads('{"a":{"x":1},"b":{"x":2}}',object_pairs_hook=unique_json_object),{'a':{'x':1},'b':{'x':2}})
