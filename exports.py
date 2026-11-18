@@ -108,7 +108,7 @@ def fold(line):
 
 def calendar(run,day):
     if run['agent'] not in ('rafiq','sawm'):raise ValueError('Calendar export is available only for Rafiq and Sawm')
-    parsed=date.fromisoformat(day);stamp=parsed.strftime('%Y%m%d')
+    parsed=date.fromisoformat(day);stamp=f'{parsed.year:04d}{parsed.month:02d}{parsed.day:02d}'
     lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Agent Studio//Local Export//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH']
     for i,block in enumerate(run['result']['analysis']['planned_blocks']):
         lines+=['BEGIN:VEVENT',f"UID:{run['id']}-{i}@agent-studio.local",'DTSTAMP:'+run['created'][:19].replace('-','').replace(':','')+'Z',

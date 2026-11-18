@@ -23,6 +23,14 @@ class ExportTests(unittest.TestCase):
         a=exports.export(run,'ics','2026-12-01');s=a.content.decode()
         self.assertIn('DTSTART:20261201T080000',s);self.assertIn('ação\\,teste\\;\\n',s)
         self.assertTrue(all(len(line)<=75 for line in a.content.split(b'\r\n')))
+    def test_ics_dates_always_use_four_digit_years(self):
+        for agent in ('rafiq','sawm'):
+            for day in ('0001-01-01','0099-12-31','0999-02-28','2028-02-29'):
+                with self.subTest(agent=agent,day=day):
+                    text=exports.export(self.run_data(agent),'ics',day).content.decode()
+                    stamp=day.replace('-','')
+                    self.assertIn('DTSTART:'+stamp+'T',text)
+                    self.assertIn('DTEND:'+stamp+'T',text)
     def test_csv_formula_injection(self):
         self.assertEqual(exports.safe_cell('=HYPERLINK("bad")'),'\'=HYPERLINK("bad")')
         self.assertTrue(exports.safe_cell('  +CMD').startswith("'"))
