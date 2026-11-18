@@ -37,6 +37,13 @@ class TenantTests(StoreCase):
     def test_identity_hashes_and_header_cannot_choose_user(self):
         self.assertEqual(identity.authenticate('Bearer alice-token'),'alice')
         with self.assertRaises(PermissionError):identity.authenticate('Bearer missing')
+    def test_legacy_token_comparison_handles_non_ascii_headers(self):
+        with patch.dict(os.environ,{'APP_USERS_FILE':''}):
+            for header in ('Bearer café','Bearer 中文','Bearer 😀'):
+                with self.subTest(header=header),self.assertRaises(PermissionError):
+                    identity.authenticate(header,'test-token')
+            self.assertEqual(identity.authenticate('Bearer test-token','test-token'),'default')
+            self.assertEqual(identity.authenticate('Bearer test-café-token','test-café-token'),'default')
     def test_database_and_memory_isolation(self):
         with db.scope('alice'):
             db.init();run,_=db.create('mizan','A',self.data(),'local',False,'same-key');engine.execute(run)

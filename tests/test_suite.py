@@ -183,6 +183,11 @@ class HTTPTests(Suite):
                 self.assertEqual(status,400)
                 self.assertIn('valid Unicode',body['error'])
         self.assertEqual(db.documents('mizan'),[])
+    def test_http_non_ascii_wrong_token_is_unauthorized_not_internal_error(self):
+        with patch.dict(os.environ,{'APP_USERS_FILE':''}),patch('server.TOKEN','test-token'):
+            status,body=self.request('/api/agents',headers={'Authorization':'Bearer café'})
+            self.assertEqual(status,401)
+            self.assertEqual(body['error'],'Access token required')
     def test_http_duplicate_json_keys_are_rejected_before_run_creation(self):
         raw=b'{"goal":"First","goal":"Second","input":'+json.dumps(self.example('mizan')).encode()+b'}'
         req=Request(self.base+'/api/agents/mizan/runs',data=raw,method='POST',headers={'Content-Type':'application/json'})

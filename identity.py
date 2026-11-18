@@ -31,5 +31,5 @@ def authenticate(header,legacy_token=''):
             if hmac.compare_digest(hashed,record['token_sha256']):found=user
         if found is None:raise PermissionError('Invalid access token')
         return found
-    if legacy_token and not hmac.compare_digest(header,'Bearer '+legacy_token):raise PermissionError('Access token required')
+    if legacy_token and not hmac.compare_digest(header.encode('utf-8'),('Bearer '+legacy_token).encode('utf-8')):raise PermissionError('Access token required')
     return 'default'
