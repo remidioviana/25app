@@ -210,6 +210,15 @@ class ConnectorTests(StoreCase):
         with patch.dict(os.environ,{'CONNECTOR_TEST_TOKEN':'dummy-secret'}),patch('connectors.public_addresses',return_value=['8.8.8.8']),patch('connectors.PinnedHTTPS',return_value=conn):
             r=connectors.fetch_json({'url':'https://example.com/snapshot','token_env':'CONNECTOR_TEST_TOKEN'})
         self.assertEqual(r,{'data':42});self.assertEqual(conn.request.call_args.args[0],'GET');self.assertTrue(conn.close.called)
+    def test_json_pointer_rejects_noncanonical_array_indexes(self):
+        data={'rows':['first','second']}
+        for token in ('-1','01','+1',' 1','1 ','-','1.0',''):
+            with self.subTest(token=token),self.assertRaises(ValueError):
+                connectors.pointer(data,'/rows/'+token)
+        self.assertEqual(connectors.pointer(data,'/rows/0'),'first')
+        self.assertEqual(connectors.pointer(data,'/rows/1'),'second')
+        self.assertEqual(connectors.pointer({'-1':'literal key','01':'another key'},'/-1'),'literal key')
+        self.assertEqual(connectors.pointer({'01':'another key'},'/01'),'another key')
     def test_json_pointer_escaping(self):self.assertEqual(connectors.pointer({'a/b':[{'~x':3}]},'/a~1b/0/~0x'),3)
 
 class TenantHTTPTests(StoreCase):

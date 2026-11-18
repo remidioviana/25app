@@ -49,7 +49,7 @@ class PinnedHTTPS(http.client.HTTPSConnection):
 def fetch_json(cfg):
     url=urlsplit(cfg.get('url',''))
     if url.scheme!='https' or not url.hostname or url.port not in (None,443) or url.username or url.password or url.fragment:
-        raise ValueError('Conector exige URL HTTPS sem credenciais, fragmento ou porta alternativa')
+        raise ValueError('Connector requires HTTPS without credentials, fragments or an alternate port')
     ip=public_addresses(url.hostname)[0];headers={'Accept':'application/json','User-Agent':'AgentStudio/4.0'}
     env=cfg.get('token_env')
     if env:
@@ -71,9 +71,10 @@ def fetch_json(cfg):
 
 def pointer(value,path):
     if not path:return value
-    if not isinstance(path,str) or not path.startswith('/'):raise ValueError('json_pointer deve ser vazio ou iniciar com /')
+    if not isinstance(path,str) or not path.startswith('/'):raise ValueError('json_pointer must be empty or start with /')
     for part in path[1:].split('/'):
         key=part.replace('~1','/').replace('~0','~')
+        if isinstance(value,list) and not re.fullmatch(r'0|[1-9][0-9]*',key):raise ValueError('JSON pointer array indexes must be non-negative integers without leading zeros')
         try:value=value[int(key)] if isinstance(value,list) else value[key]
         except (KeyError,IndexError,ValueError,TypeError):raise ValueError('Response does not contain the configured JSON path') from None
     return value
