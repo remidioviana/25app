@@ -1,0 +1,149 @@
+{
+  "scope": "24 individual symbol briefs plus the previously approved Munagasah folio; every final logo also receives a separately rendered exact-name wordmark.",
+  "items": [
+    {
+      "id": "himayah",
+      "concept": "Forensic document layers",
+      "brief": "Preserve the established smoked-indigo glass document leaves with titanium edges and coral inspection marker.",
+      "preserve_existing_identity": true
+    },
+    {
+      "id": "iqamah",
+      "concept": "Architectural belonging",
+      "brief": "Preserve the user-approved ivory travertine gateway, burgundy glass door and thin antique-gold threshold. Remove only the white backdrop for this isolated symbol; the launcher icon stays white.",
+      "preserve_existing_identity": true
+    },
+    {
+      "id": "istithmar",
+      "concept": "Spatial economic zones",
+      "brief": "Preserve the established interlocking pale-mint economic-zone volumes with the turquoise connector and deep-blue foundation.",
+      "preserve_existing_identity": true
+    },
+    {
+      "id": "sahil",
+      "concept": "Open civic path",
+      "brief": "Preserve the established pale-aqua ceramic civic-path ribbon and coastal-teal translucent endpoint.",
+      "preserve_existing_identity": true
+    },
+    {
+      "id": "tawteen",
+      "concept": "Interwoven workforce paths",
+      "brief": "Three pine-green satin ribbons interweave into a clear branching workforce-path symbol, with one terracotta connector and light-jade edge. Organic organizational geometry, not a corporate bar chart or generic people silhouettes.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "adl",
+      "concept": "Property rights architecture",
+      "brief": "An elegant dark-plum architectural corner balanced on two pale-lavender stone planes, with one muted-rose precision seam. Strong rectangular property silhouette, legal-editorial restraint. No arches, gavel, shield or justice scales.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "tawassul",
+      "concept": "Commercial bridge",
+      "brief": "A single refined copper bridge link spanning two malachite geometric anchors, with a cream inset that creates a clear connection. Strategic commercial confidence, sculptural but simple. No envelope, handshake or generic chain links.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "adab",
+      "concept": "Editorial campaign bloom",
+      "brief": "An expressive magenta and blush folded-paper composition opening into three lilac editorial petals with asymmetric rhythm. Rich creative-studio identity, tactile paper, sophisticated color blocking. No text-like glyphs, document stack, chat bubble or generic flower.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "khidmah",
+      "concept": "Responsive service loop",
+      "brief": "Two precisely interlocking ocean-blue ceramic service loops with a mint inner path and pale-yellow joint. Rounded, welcoming, fluid but highly readable. No speech bubbles, headset, robot or infinity-symbol cliche.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "jomrok",
+      "concept": "Cargo route checkpoint",
+      "brief": "Two miniature industrial-white and electric-blue cargo blocks held in a vivid-orange L-shaped shipment route. Bold ribbed container surfaces, precise logistics geometry, restrained industrial lighting. No globe, flag, ship, letters or tiny labels.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "khibrat",
+      "concept": "Evidence calibration",
+      "brief": "A refined charcoal evaluation frame around three warm-stone qualification tabs, aligned by one acid-lime precision cursor. Analytical and transparent, clear large shapes. No resume lettering, person silhouette, checkmark, magnifier or bar chart.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "majlis",
+      "concept": "Welcoming courtyard",
+      "brief": "A small open ultramarine architectural courtyard made of softly stepped porcelain planes with one orchid central welcome space. Warm, human, spatial onboarding. No arch, doorway, chair, people or generic house silhouette.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "rafiq",
+      "concept": "Companion support",
+      "brief": "A warm peach pebble gently supported by an organic soft-violet continuous cradle with a warm-white inner edge. Comforting tactile matte resin, balanced asymmetry, very clear silhouette. No heart, medical symbol, robot or chat bubble.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "sawm",
+      "concept": "Solar-cycle intention",
+      "brief": "A night-blue glazed solar disk with a candlelight inner arc and a carefully interrupted muted-gold orbital rim. Contemplative astronomical identity, a simple memorable silhouette. No moon-and-star religious emblem, cloud, clock numbers or borrowed weather icon.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "mizan",
+      "concept": "Values in balance",
+      "brief": "Two parallel evergreen precision beams supporting a single sage stone orb in a poised balanced composition, with chalk inner faces. Restrained financial editorial sculpture. No money, coins, religious seal, scales of justice or upward arrow.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "thawg",
+      "concept": "Culinary signature",
+      "brief": "A tactile shallow terracotta plate with a Mediterranean-blue rim, holding one beautifully formed vanilla-colored culinary curl and a small green herb accent. Sensory premium food identity with simplified forms. No cutlery, lettering, certification stamp, menu or restaurant scene.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "manzil",
+      "concept": "Household rooms",
+      "brief": "A warm ivory house cross-section with a precise aubergine roof and three nested peach-cream interior rooms, one dusty-rose room accent. Domestic ceramic architectural object, intimate and clear. No financial chart, coin, gateway or generic flat house pictogram.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "gurbah",
+      "concept": "Relocation atlas",
+      "brief": "A small parchment folded-map sculpture with slate-blue cartographic planes and one vivid-apricot route crossing a fold. Exploratory editorial identity, readable folded silhouette. No actual country outline, invented geographic labels, flag, passport or location pin.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "amanah-eco",
+      "concept": "Branching energy flow",
+      "brief": "A forest-green sculptural energy channel branching into three pale-citron flow tips around one lime reservoir. Organic measurable flow geometry, frosted recycled resin. No generic leaf, bulb, recycling arrows, electricity bolt or globe.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "nafas",
+      "concept": "Breathing membrane",
+      "brief": "One softly inflated eucalyptus translucent membrane forming a calm open oval with two delicate mist-colored breathing folds and a muted-sage inner rim. Quiet atmospheric glass, very restrained highlights. No path ribbon, infinity knot, heart, lungs or medical readings.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "tadweer",
+      "concept": "Material renewal",
+      "brief": "A single angular burnt-orange material loop with a recycled-paper cream laminated edge and one dark-petrol cut surface. Tactile fibers and clear circular-economy silhouette. No standard three-arrow recycling symbol, globe, leaf or trash bin.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "turath",
+      "concept": "Archival fragment",
+      "brief": "A refined bronze archival frame holding one sandstone pottery fragment with a sparse incised geometric line. Museum-quality tactile material, rich but restrained, clear at small sizes. An original conceptual heritage symbol, not a real attributed artifact. No text, national emblem or copied museum object.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "himam",
+      "concept": "Open accessible route",
+      "brief": "A bold royal-blue open-ended ramp-like navigation form with a warm-white passage and one sunflower tactile raised point. High legibility, restrained dimensional depth, empowering simplicity. No wheelchair symbol, person silhouette, medical sign or tiny details.",
+      "preserve_existing_identity": false
+    },
+    {
+      "id": "hisad",
+      "concept": "Shared harvest",
+      "brief": "Two distinctive harvest-red produce forms sharing one golden stem-path, one warm-cream cut face showing a few large sculpted seeds. Action-oriented food redistribution identity, tactile and generous. No plate, heart, handshake, grocery basket, lettering or certification badge.",
+      "preserve_existing_identity": false
+    }
+  ]
+}

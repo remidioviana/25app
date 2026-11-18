@@ -26,24 +26,24 @@
       "android_background": "#151E37"
     },
     "iqamah": {
-      "concept": "Architectural belonging",
-      "material_brief": "Ivory travertine gateway, burgundy glass plane and antique-gold threshold.",
+      "concept": "Residency dossier and open visa gateway",
+      "material_brief": "Burgundy residency booklet, ivory page block and a plain antique-gold doorway; pure white launcher background.",
       "generation": "Original AI-generated brand illustration; foreground separately edited using image generation. No generated lettering.",
       "icon": {
         "path": "mobile/assets/variants/iqamah/dimensional-icon.png",
-        "sha256": "39a8c61226803cb6f95e79ee0f4dd5d1125454ce7890428f47000e3c76fa2a6c",
+        "sha256": "0af5ad785f5bc72891be3d81a6fc3f9a678edb8cb5830dbfb3479e473285108c",
         "width": 1254,
         "height": 1254,
         "mode": "RGB",
-        "generated_original": "exec-54a7b130-521d-4266-aa1e-69cc00d7b4d2.png"
+        "generated_original": "exec-a919e9da-d30f-455c-ac98-491cf0e3ae0d.png"
       },
       "android_foreground": {
         "path": "mobile/assets/variants/iqamah/adaptive-foreground.png",
-        "sha256": "0040dc3b25f4ef0b35ae8ce0a81c1e856773653e37afaadeba2d6ac1fb020c85",
+        "sha256": "b3bbe7d8c7164edc457b49787225503f4da6265229192949d0a16dde479390ea",
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-cfa689c8-91c3-499a-b586-569df8ce2828.png"
+        "generated_original": "exec-c06c0f8a-72c6-4840-998b-8aca4b5ce9b5.png"
       },
       "small_size_expert_acceptance": false,
       "physical_device_verified": false,

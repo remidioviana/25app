@@ -9,9 +9,9 @@
     },
     {
       "id": "iqamah",
-      "concept": "Architectural belonging",
-      "brief": "Preserve the user-approved ivory travertine gateway, burgundy glass door and thin antique-gold threshold. Remove only the white backdrop for this isolated symbol; the launcher icon stays white.",
-      "preserve_existing_identity": true
+      "concept": "Residency dossier and open visa gateway",
+      "brief": "A dignified residency-document symbol: one partially open burgundy residency booklet, ivory page block, and a single sculpted antique-gold arched doorway recessed into the cover. A small plain gold corner tab evokes a visa document, without seals, flags, stars, stamps, checks or government emblems. The open doorway is integrated into the booklet, not separate buildings. Clear document silhouette at 48 pixels. Colors burgundy #502C43, ivory #F7EBD7, antique gold #C29A5C.",
+      "preserve_existing_identity": false
     },
     {
       "id": "istithmar",
@@ -75,14 +75,14 @@
     },
     {
       "id": "rafiq",
-      "concept": "Companion support",
-      "brief": "A warm peach pebble gently supported by an organic soft-violet continuous cradle with a warm-white inner edge. Comforting tactile matte resin, balanced asymmetry, very clear silhouette. No heart, medical symbol, robot or chat bubble.",
+      "concept": "A companion for an organized day",
+      "brief": "A friendly sophisticated daily-planner symbol: a small warm-ivory calendar tile with two lavender binding tabs, three clearly separated peach and purple time blocks, and a compact purple clock dial integrated into its lower-right corner. The dial has only two clean hands, no numbers. The calendar and clock form one balanced silhouette; the open space between time blocks communicates breathing room. Colors violet #6D5B98, peach #F4A89D, ivory #F9EEE8. No heart, pebble, generic swirl or infinity symbol.",
       "preserve_existing_identity": false
     },
     {
       "id": "sawm",
-      "concept": "Solar-cycle intention",
-      "brief": "A night-blue glazed solar disk with a candlelight inner arc and a carefully interrupted muted-gold orbital rim. Contemplative astronomical identity, a simple memorable silhouette. No moon-and-star religious emblem, cloud, clock numbers or borrowed weather icon.",
+      "concept": "Ramadan rhythm with protected rest",
+      "brief": "A graceful sculpted crescent in muted champagne gold opening around three small ivory rounded schedule bars, with one bar separated by a generous rest gap. A subtle indigo inset on the crescent ties night and daytime rhythm together. Crescent and schedule are one compact integrated silhouette. This is Ramadan routine planning, not astronomy or weather: no sunburst, compass, orbiting planets, stars, mosque, clock face or numerals. Colors midnight indigo #131F4D, warm ivory #FFE8B0 and muted gold #D0B87C.",
       "preserve_existing_identity": false
     },
     {
@@ -111,14 +111,14 @@
     },
     {
       "id": "amanah-eco",
-      "concept": "Branching energy flow",
-      "brief": "A forest-green sculptural energy channel branching into three pale-citron flow tips around one lime reservoir. Organic measurable flow geometry, frosted recycled resin. No generic leaf, bulb, recycling arrows, electricity bolt or globe.",
+      "concept": "Measured water and energy stewardship",
+      "brief": "An integrated resource-conservation emblem: a deep-green upright water droplet whose upper-right edge turns into a single crisp citron leaf; inside the droplet, two stepped ivory/green measurement columns separated by a slim open gap clearly communicate comparison of resource use. The drop, leaf and measured columns are one elegant bold silhouette. Restrained dimensional ceramic surfaces, not a liquid splash, atom or three-pronged abstract molecule. Colors evergreen #215B39, citron #BDD652, warm pale ivory #F8F8DA.",
       "preserve_existing_identity": false
     },
     {
       "id": "nafas",
-      "concept": "Breathing membrane",
-      "brief": "One softly inflated eucalyptus translucent membrane forming a calm open oval with two delicate mist-colored breathing folds and a muted-sage inner rim. Quiet atmospheric glass, very restrained highlights. No path ribbon, infinity knot, heart, lungs or medical readings.",
+      "concept": "A calm human breath",
+      "brief": "A humane mental-wellbeing and breathing symbol: a single calm eucalyptus-teal human face in side profile, eye softly closed, formed from a smooth rounded ceramic contour, with two short gently expanding pale-sage breath ribbons leaving the nose into generous open space. Face and breath should be immediately readable and form one compact mark. Softness without medical imagery: no lungs, brain, diagnostic cross, lotus, infinity loop or generic oval. Colors deep teal #4A7480, pale sage #AEC7BB and off-white #F0F4F1. Avoid uncanny realism; this is an elegant sculptural brand pictogram.",
       "preserve_existing_identity": false
     },
     {
@@ -135,14 +135,14 @@
     },
     {
       "id": "himam",
-      "concept": "Open accessible route",
-      "brief": "A bold royal-blue open-ended ramp-like navigation form with a warm-white passage and one sunflower tactile raised point. High legibility, restrained dimensional depth, empowering simplicity. No wheelchair symbol, person silhouette, medical sign or tiny details.",
+      "concept": "Independent accessible mobility",
+      "brief": "A clear dignified accessible-mobility symbol: an original modern seated human figure with a round head, upright royal-blue torso and bent arm, above one wide open circular wheelchair wheel. The lower wheel flows directly into a short smooth barrier-free gold path. Recognizable accessible mobility at small scale, confidently independent, not a hospital sign. Compact and bold, no text or signboard, no stairs, no abstract ramp alone. Colors royal blue #10358C, sunflower gold #E7C93B, warm white #FFFCE8. Sculpted matte ceramic with restrained depth.",
       "preserve_existing_identity": false
     },
     {
       "id": "hisad",
-      "concept": "Shared harvest",
-      "brief": "Two distinctive harvest-red produce forms sharing one golden stem-path, one warm-cream cut face showing a few large sculpted seeds. Action-oriented food redistribution identity, tactile and generous. No plate, heart, handshake, grocery basket, lettering or certification badge.",
+      "concept": "Food surplus passed into caring hands",
+      "brief": "A compact food-rescue and redistribution symbol: a deep terracotta-red food bowl with one stylized golden wheat sprig and a small green leaf emerging from it; two simplified warm-ivory cupped hand forms meet beneath the bowl from opposite sides, communicating sharing and transfer. Bowl, grain and hands form one deliberate coherent brand silhouette, not a still-life or fruit shopping icon. No tomato, badges, approval checks, arrows circle or delivery truck. Colors terracotta #A23E3C, harvest gold #F0BB52, cream #FCF3E4 and a restrained olive accent.",
       "preserve_existing_identity": false
     }
   ]

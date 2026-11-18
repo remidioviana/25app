@@ -26,19 +26,19 @@
       "app": "iqamah",
       "files": {
         "icon": {
-          "sha256": "39a8c61226803cb6f95e79ee0f4dd5d1125454ce7890428f47000e3c76fa2a6c",
+          "sha256": "0af5ad785f5bc72891be3d81a6fc3f9a678edb8cb5830dbfb3479e473285108c",
           "width": 1254,
           "height": 1254
         },
         "android_foreground": {
-          "sha256": "0040dc3b25f4ef0b35ae8ce0a81c1e856773653e37afaadeba2d6ac1fb020c85",
+          "sha256": "b3bbe7d8c7164edc457b49787225503f4da6265229192949d0a16dde479390ea",
           "width": 1254,
           "height": 1254,
           "edge_alpha_max": 0,
-          "core_pixels": 167924,
+          "core_pixels": 167121,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.30506587779978095,
+          "maximum_core_radius_fraction": 0.23496252338833143,
           "mask_geometry_checked": true
         }
       }

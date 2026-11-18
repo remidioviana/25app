@@ -58,16 +58,16 @@
     },
     "iqamah": {
       "name": "Iqamah AI",
-      "concept": "Architectural belonging",
-      "brief": "Preserve the user-approved ivory travertine gateway, burgundy glass door and thin antique-gold threshold. Remove only the white backdrop for this isolated symbol; the launcher icon stays white.",
+      "concept": "Residency dossier and open visa gateway",
+      "brief": "A dignified residency-document symbol: one partially open burgundy residency booklet, ivory page block, and a single sculpted antique-gold arched doorway recessed into the cover. A small plain gold corner tab evokes a visa document, without seals, flags, stars, stamps, checks or government emblems. The open doorway is integrated into the booklet, not separate buildings. Clear document silhouette at 48 pixels. Colors burgundy #502C43, ivory #F7EBD7, antique gold #C29A5C.",
       "symbol": {
         "path": "mobile/assets/variants/iqamah/dimensional-logo.png",
-        "sha256": "8d13b3f331cec530b13d86647ac90dabe0ab5965413d21918b0e67ff5126b4e6",
-        "bytes": 770616,
+        "sha256": "e0133485f5bb3654868c31bb4af11ae52c928d1beb7cb0c41587d149d8567a9e",
+        "bytes": 1093405,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-09e4ede4-ccfe-437f-ac1c-41dc56318290.png"
+        "generated_original": "/workspace/generated_images/exec-101a01c3-8a52-4ee8-9bd7-4950718715aa.png"
       },
       "typography": {
         "font": {
@@ -88,8 +88,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/iqamah/logo-on-light.svg",
-          "sha256": "3409c40abb8cef9670b8133d3191b420c88782b83914396a3cbbf1c51c7c07e9",
-          "bytes": 1033351
+          "sha256": "9d5c955f88f58af922703dbbaea48b65d8bf170b66345e6c2fd708b3dff822a8",
+          "bytes": 1463739
         },
         "wordmark_dark": {
           "path": "brand-assets/production/iqamah/wordmark-on-dark.svg",
@@ -98,8 +98,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/iqamah/logo-on-dark.svg",
-          "sha256": "5a84f75491efb53ffff4b5d090bf3f30822bda889e166ff00f1a7ab70942ddd6",
-          "bytes": 1033351
+          "sha256": "82be0602f611c55faff6e10a4d44f93c9897aa2ab3d4582853f50efaaae8840c",
+          "bytes": 1463739
         }
       },
       "composition": "stacked",
@@ -718,16 +718,16 @@
     },
     "rafiq": {
       "name": "Rafiq",
-      "concept": "Companion support",
-      "brief": "A warm peach pebble gently supported by an organic soft-violet continuous cradle with a warm-white inner edge. Comforting tactile matte resin, balanced asymmetry, very clear silhouette. No heart, medical symbol, robot or chat bubble.",
+      "concept": "A companion for an organized day",
+      "brief": "A friendly sophisticated daily-planner symbol: a small warm-ivory calendar tile with two lavender binding tabs, three clearly separated peach and purple time blocks, and a compact purple clock dial integrated into its lower-right corner. The dial has only two clean hands, no numbers. The calendar and clock form one balanced silhouette; the open space between time blocks communicates breathing room. Colors violet #6D5B98, peach #F4A89D, ivory #F9EEE8. No heart, pebble, generic swirl or infinity symbol.",
       "symbol": {
         "path": "mobile/assets/variants/rafiq/dimensional-logo.png",
-        "sha256": "6fba26b71d2ff8499b89e24829d8a003e54c629f3394687b9c644f49d8c5b841",
-        "bytes": 899997,
+        "sha256": "3d411e07a8a1404c53de4cd60fc75b1156bf860ae8caaad6a8863d3aed6146ff",
+        "bytes": 1131197,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-ffefbf4d-2ace-440f-a747-c83ac3f16c3f.png"
+        "generated_original": "/workspace/generated_images/exec-db4bfc57-8d4c-4b10-ad5b-e6e48f9fafaa.png"
       },
       "typography": {
         "font": {
@@ -748,8 +748,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/rafiq/logo-on-light.svg",
-          "sha256": "7da4011bc189abfacf8c002e2b1d93ca8b374ccdab85dfe03d4c5c0f1e385047",
-          "bytes": 1203260
+          "sha256": "52fd325d6b1285feca717e6e5f10051da2526af4e7da7668849c2d039ae0b1c6",
+          "bytes": 1511528
         },
         "wordmark_dark": {
           "path": "brand-assets/production/rafiq/wordmark-on-dark.svg",
@@ -758,8 +758,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/rafiq/logo-on-dark.svg",
-          "sha256": "ced005973b624dc9d3cdc4ce9253a5f9dd35e984bc1b16337990254cf8d2c926",
-          "bytes": 1203260
+          "sha256": "5fd017a4639b32bfd59e72671545290f4c04eb3dfe28f19ca21c057ce964faba",
+          "bytes": 1511528
         }
       },
       "composition": "horizontal",
@@ -773,16 +773,16 @@
     },
     "sawm": {
       "name": "Sawm AI",
-      "concept": "Solar-cycle intention",
-      "brief": "A night-blue glazed solar disk with a candlelight inner arc and a carefully interrupted muted-gold orbital rim. Contemplative astronomical identity, a simple memorable silhouette. No moon-and-star religious emblem, cloud, clock numbers or borrowed weather icon.",
+      "concept": "Ramadan rhythm with protected rest",
+      "brief": "A graceful sculpted crescent in muted champagne gold opening around three small ivory rounded schedule bars, with one bar separated by a generous rest gap. A subtle indigo inset on the crescent ties night and daytime rhythm together. Crescent and schedule are one compact integrated silhouette. This is Ramadan routine planning, not astronomy or weather: no sunburst, compass, orbiting planets, stars, mosque, clock face or numerals. Colors midnight indigo #131F4D, warm ivory #FFE8B0 and muted gold #D0B87C.",
       "symbol": {
         "path": "mobile/assets/variants/sawm/dimensional-logo.png",
-        "sha256": "ba10aec0d03ec3917264add3582adc6179a4e4b573d55a9337efe8367a112b34",
-        "bytes": 951197,
+        "sha256": "8ab9accc4f2aacc5e34360198056201aca4f5511641463a6728b30edb0e0b4c4",
+        "bytes": 926457,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-9115cf1f-7687-4b18-bf99-3ae09802493a.png"
+        "generated_original": "/workspace/generated_images/exec-0413748d-9892-4c99-b55f-9f5959e9d3bc.png"
       },
       "typography": {
         "font": {
@@ -803,8 +803,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/sawm/logo-on-light.svg",
-          "sha256": "528bd3be1a53a2ab5a824602203c93659a64a0ce594c5344e9e0841eb9acb8d7",
-          "bytes": 1271494
+          "sha256": "f7e2dd084523c118aa645aff1c244f3778febfc1d6f2c62dccf3467f59f5ac75",
+          "bytes": 1238506
         },
         "wordmark_dark": {
           "path": "brand-assets/production/sawm/wordmark-on-dark.svg",
@@ -813,8 +813,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/sawm/logo-on-dark.svg",
-          "sha256": "3a652de7069b815790f5c84d7fe0a91e3344307182d09d51ce7da127e8d782d4",
-          "bytes": 1271494
+          "sha256": "89a7311b71759c1f8b3e6c090514993bbec012703a930d78b112ddd2e1125103",
+          "bytes": 1238506
         }
       },
       "composition": "stacked",
@@ -1048,16 +1048,16 @@
     },
     "amanah-eco": {
       "name": "Amanah Eco",
-      "concept": "Branching energy flow",
-      "brief": "A forest-green sculptural energy channel branching into three pale-citron flow tips around one lime reservoir. Organic measurable flow geometry, frosted recycled resin. No generic leaf, bulb, recycling arrows, electricity bolt or globe.",
+      "concept": "Measured water and energy stewardship",
+      "brief": "An integrated resource-conservation emblem: a deep-green upright water droplet whose upper-right edge turns into a single crisp citron leaf; inside the droplet, two stepped ivory/green measurement columns separated by a slim open gap clearly communicate comparison of resource use. The drop, leaf and measured columns are one elegant bold silhouette. Restrained dimensional ceramic surfaces, not a liquid splash, atom or three-pronged abstract molecule. Colors evergreen #215B39, citron #BDD652, warm pale ivory #F8F8DA.",
       "symbol": {
         "path": "mobile/assets/variants/amanah-eco/dimensional-logo.png",
-        "sha256": "6e46a7bbf166c19465a403b7b1383cbef868bb5bbf51afc4dbcbfd62a58a7532",
-        "bytes": 561406,
+        "sha256": "f4a68deccfce047e2d46082abd8506f188407d64e99729e3e123d4ef5f859530",
+        "bytes": 879489,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-43c593ab-31c0-48ab-9459-45f09375e473.png"
+        "generated_original": "/workspace/generated_images/exec-db3a66fd-776f-4408-987b-b8b7aac79a30.png"
       },
       "typography": {
         "font": {
@@ -1078,8 +1078,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/amanah-eco/logo-on-light.svg",
-          "sha256": "e8140658defee4d99f15fee8d11b49250c2eb8759820cca42e5d7ec308ac2f87",
-          "bytes": 752529
+          "sha256": "8bbea8f816f94f94fe864a9aad4e5f12f3bb6000c34aa10d9b9cfe0dff8db57e",
+          "bytes": 1176637
         },
         "wordmark_dark": {
           "path": "brand-assets/production/amanah-eco/wordmark-on-dark.svg",
@@ -1088,8 +1088,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/amanah-eco/logo-on-dark.svg",
-          "sha256": "4dca1b669545dc5e6f2f79c1db3f790eaaa7fd51d6eeff858af67583e76f5298",
-          "bytes": 752529
+          "sha256": "e64749267e278abf1b6739e7058b516a185798fa44561012b859a4cf650cf83c",
+          "bytes": 1176637
         }
       },
       "composition": "horizontal",
@@ -1103,16 +1103,16 @@
     },
     "nafas": {
       "name": "Nafas AI",
-      "concept": "Breathing membrane",
-      "brief": "One softly inflated eucalyptus translucent membrane forming a calm open oval with two delicate mist-colored breathing folds and a muted-sage inner rim. Quiet atmospheric glass, very restrained highlights. No path ribbon, infinity knot, heart, lungs or medical readings.",
+      "concept": "A calm human breath",
+      "brief": "A humane mental-wellbeing and breathing symbol: a single calm eucalyptus-teal human face in side profile, eye softly closed, formed from a smooth rounded ceramic contour, with two short gently expanding pale-sage breath ribbons leaving the nose into generous open space. Face and breath should be immediately readable and form one compact mark. Softness without medical imagery: no lungs, brain, diagnostic cross, lotus, infinity loop or generic oval. Colors deep teal #4A7480, pale sage #AEC7BB and off-white #F0F4F1. Avoid uncanny realism; this is an elegant sculptural brand pictogram.",
       "symbol": {
         "path": "mobile/assets/variants/nafas/dimensional-logo.png",
-        "sha256": "732c05129b65b82e846c34d5829e1c1b14504ab75f097a2c8aa22b7ae4eee84a",
-        "bytes": 1029039,
+        "sha256": "0cb3ffb1072094466f37c68b6278f2ff687ab9b84cea8928d005c850adb8cf94",
+        "bytes": 729868,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-aa10b69b-bc09-440d-8277-2c11cd95b9f3.png"
+        "generated_original": "/workspace/generated_images/exec-eb17d6b4-86e7-436f-8359-6dd9805cec0c.png"
       },
       "typography": {
         "font": {
@@ -1133,8 +1133,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/nafas/logo-on-light.svg",
-          "sha256": "f308eb6557376261a99828a46fd57dd6b40d1ba7f5ab04e1c4be7e79ef612055",
-          "bytes": 1375501
+          "sha256": "4ad72808b1bfaefb090de54cda6384411363583551ee83e2e8e69141ca697c83",
+          "bytes": 976609
         },
         "wordmark_dark": {
           "path": "brand-assets/production/nafas/wordmark-on-dark.svg",
@@ -1143,8 +1143,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/nafas/logo-on-dark.svg",
-          "sha256": "d528ff222e6a75ad0b517e7c56acd2a5551eda3173373b3c085ecebfae9b964f",
-          "bytes": 1375501
+          "sha256": "4b425f64a3f7934d6c8e5074da4effe75f7c007848930d1d3310e333745b6637",
+          "bytes": 976609
         }
       },
       "composition": "stacked",
@@ -1268,16 +1268,16 @@
     },
     "himam": {
       "name": "Himam AI",
-      "concept": "Open accessible route",
-      "brief": "A bold royal-blue open-ended ramp-like navigation form with a warm-white passage and one sunflower tactile raised point. High legibility, restrained dimensional depth, empowering simplicity. No wheelchair symbol, person silhouette, medical sign or tiny details.",
+      "concept": "Independent accessible mobility",
+      "brief": "A clear dignified accessible-mobility symbol: an original modern seated human figure with a round head, upright royal-blue torso and bent arm, above one wide open circular wheelchair wheel. The lower wheel flows directly into a short smooth barrier-free gold path. Recognizable accessible mobility at small scale, confidently independent, not a hospital sign. Compact and bold, no text or signboard, no stairs, no abstract ramp alone. Colors royal blue #10358C, sunflower gold #E7C93B, warm white #FFFCE8. Sculpted matte ceramic with restrained depth.",
       "symbol": {
         "path": "mobile/assets/variants/himam/dimensional-logo.png",
-        "sha256": "3c07685b970e1ccde8dd25910de143a4960a2beabdd0c7cdd17ac35ebed5d2f8",
-        "bytes": 621572,
+        "sha256": "199689afb34153bd9d3c3b5b49a328fdb0860e5782bf16712cb452b6c10a50a7",
+        "bytes": 670900,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-889dfd2a-7385-4694-b3ca-eb6e4fdf12d3.png"
+        "generated_original": "/workspace/generated_images/exec-c8960f83-b32a-4426-8286-b9021c4405b7.png"
       },
       "typography": {
         "font": {
@@ -1298,8 +1298,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/himam/logo-on-light.svg",
-          "sha256": "dbc10b9b5650203e48b85996e085b0c42cbb7c6cdeb70381cd6895d8d8acf7b6",
-          "bytes": 830978
+          "sha256": "d00eb40bcd3a0fad1cb78cc5a8cbadc35b1eb1f99bb7208811d5fd67b68b8719",
+          "bytes": 896750
         },
         "wordmark_dark": {
           "path": "brand-assets/production/himam/wordmark-on-dark.svg",
@@ -1308,8 +1308,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/himam/logo-on-dark.svg",
-          "sha256": "8a30d2c550a7125f7aa9cc4f10f6c78bb97c84f2bcf00b21569971818ae38115",
-          "bytes": 830978
+          "sha256": "7678b164a5e5b485c806b63aff3ee6b26b24989d790c01074bd661a02d3840d8",
+          "bytes": 896750
         }
       },
       "composition": "horizontal",
@@ -1323,16 +1323,16 @@
     },
     "hisad": {
       "name": "Hisad AI",
-      "concept": "Shared harvest",
-      "brief": "Two distinctive harvest-red produce forms sharing one golden stem-path, one warm-cream cut face showing a few large sculpted seeds. Action-oriented food redistribution identity, tactile and generous. No plate, heart, handshake, grocery basket, lettering or certification badge.",
+      "concept": "Food surplus passed into caring hands",
+      "brief": "A compact food-rescue and redistribution symbol: a deep terracotta-red food bowl with one stylized golden wheat sprig and a small green leaf emerging from it; two simplified warm-ivory cupped hand forms meet beneath the bowl from opposite sides, communicating sharing and transfer. Bowl, grain and hands form one deliberate coherent brand silhouette, not a still-life or fruit shopping icon. No tomato, badges, approval checks, arrows circle or delivery truck. Colors terracotta #A23E3C, harvest gold #F0BB52, cream #FCF3E4 and a restrained olive accent.",
       "symbol": {
         "path": "mobile/assets/variants/hisad/dimensional-logo.png",
-        "sha256": "b043d85d3316fd4e5c5f399c0ee0403cdf330f4efe4c489b9d5d653cfa54457b",
-        "bytes": 1072600,
+        "sha256": "2e89059c4554f6481fa10354a32d2b73161f51d36583d9e7e3ebd0425c46e301",
+        "bytes": 946955,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-cc9fc117-f84b-4bde-9e42-7fab735c947a.png"
+        "generated_original": "/workspace/generated_images/exec-89ec1c3c-cf9c-4a8c-9e4b-6c69b3e7b994.png"
       },
       "typography": {
         "font": {
@@ -1353,8 +1353,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/hisad/logo-on-light.svg",
-          "sha256": "e9c1b2c36ef3ecf38e9c7aa0a2d2383f6fb6dac5f1da75124d9e822a0f5c4d50",
-          "bytes": 1432701
+          "sha256": "0b5e544eb41c162a8c8ea1a1a99d85c108fec3fce32971979c827a85e241cbe7",
+          "bytes": 1265173
         },
         "wordmark_dark": {
           "path": "brand-assets/production/hisad/wordmark-on-dark.svg",
@@ -1363,8 +1363,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/hisad/logo-on-dark.svg",
-          "sha256": "f3f7341223ea225baee711d0531aefe0e37724993c38a039fdaa82c6bee4c54f",
-          "bytes": 1432701
+          "sha256": "386f63675f79467fa9ac45a1a7de31815c2395807768d76ecf49987d9ea60530",
+          "bytes": 1265173
         }
       },
       "composition": "horizontal",

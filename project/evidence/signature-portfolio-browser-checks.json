@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-17T23:15:28.043820+00:00",
-  "source_commit": "23c600f3436274382b56042251e0cd8b60b580f8",
+  "checked_at": "2026-11-18T23:12:49.115625+00:00",
+  "source_commit": "774a39a28057fcd45d29bfe1b464ab465d9db715",
   "viewport": {
     "width": 390,
     "height": 844
@@ -231,5 +231,8 @@
       "external_actions": 0,
       "console_warnings_and_errors": []
     }
-  ]
+  ],
+  "source_commit_scope": "Base commit before committing the seven-symbol working-tree revision",
+  "branding_revision": "2026-11-18-purpose-redesign",
+  "branding_registry_sha256": "354fc40984046d9a2396d1ca65f78914d252b86bc99eea9dc6e9b1713aca4761"
 }
