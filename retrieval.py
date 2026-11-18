@@ -2,6 +2,7 @@
 import json
 import math
 import os
+import sys
 import storage as db
 import model_provider
 
@@ -13,11 +14,14 @@ def init():
         c.execute('CREATE INDEX IF NOT EXISTS embeddings_scope ON embeddings(agent,model)')
 
 def vector(v):
-    if not isinstance(v,list) or not v or len(v)>16384 or any(type(x) not in (int,float) or not math.isfinite(x) for x in v):
+    if not isinstance(v,list) or not v or len(v)>16384 or any(not ((type(x) is int and abs(x)<=sys.float_info.max) or (type(x) is float and math.isfinite(x))) for x in v):
         raise ValueError('Invalid vector')
-    norm=math.sqrt(sum(x*x for x in v))
-    if not math.isfinite(norm) or not norm: raise ValueError('Zero or non-finite vector')
-    return [x/norm for x in v]
+    scale=max(abs(x) for x in v)
+    if not scale: raise ValueError('Zero or non-finite vector')
+    # Scale before squaring to avoid overflow or underflow of finite coordinates.
+    scaled=[x/scale for x in v]
+    norm=math.sqrt(math.fsum(x*x for x in scaled))
+    return [x/norm for x in scaled]
 
 def index(agent):
     init();model=os.environ.get('OPENAI_EMBEDDING_MODEL')

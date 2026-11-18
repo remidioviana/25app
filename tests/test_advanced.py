@@ -85,6 +85,16 @@ class AdvancedTests(unittest.TestCase):
     def test_vector_validation(self):
         for v in [[],[0,0],[float('nan'),0],[True,0],['1',2]]:
             with self.assertRaises(ValueError):retrieval.vector(v)
+    def test_vector_normalization_preserves_direction_across_extreme_scales(self):
+        for scale in (1e-300,1e-200,1,1e200,1e300):
+            with self.subTest(scale=scale):
+                normalized=retrieval.vector([3*scale,-4*scale,0])
+                self.assertAlmostEqual(normalized[0],0.6)
+                self.assertAlmostEqual(normalized[1],-0.8)
+                self.assertEqual(normalized[2],0)
+                self.assertAlmostEqual(sum(x*x for x in normalized),1)
+        for value in (float('inf'),float('-inf'),10**400):
+            with self.assertRaises(ValueError):retrieval.vector([value,1])
     def test_semantic_index_scope_and_delete(self):
         doc=db.ingest('mizan','Gastos','alimentação e transporte','source','')
         db.ingest('hisad','Privado','outra alimentação','private','')
