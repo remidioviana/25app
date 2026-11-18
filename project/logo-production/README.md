@@ -18,3 +18,7 @@ The inherited Expo server stopped during the first wider browser audit attempt. 
 GitHub Code checks passed for the implementation commit: https://github.com/remidioviana/25app/actions/runs/44197595234 . Android/iOS JavaScript/assets exports completed successfully for all 25 apps: first five https://github.com/remidioviana/25app/actions/runs/44197627239 and remaining lots https://github.com/remidioviana/25app/actions/runs/44197631854 . These runs export JavaScript and assets; they do not establish a signed binary, installation or physical-device acceptance.
 
 CI path filters now include `brand-assets/**` for pushes and pull requests, so changes to production symbols, vector compositions or their integrity registries trigger the existing Python/mobile checks.
+
+## Completeness regression check
+
+The variant validator now requires exactly four SVG entries per brand, each at its canonical brand-specific path, and verifies the source typeface hash. A registry that omits an SVG can no longer pass while claiming 100 validated files. Local fault injection in isolated Node processes rejected a missing dark logo, a wordmark pointing at another brand and a stale typeface hash; no repository assets were modified by those checks. ESLint and all 25 variant checks passed with the complete registry.
