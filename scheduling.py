@@ -33,6 +33,8 @@ def create(agent,goal,data,mode,example,first_at,every_seconds=0,max_runs=1):
     if every_seconds==0 and max_runs!=1:raise ValueError('One-time run requires max_runs=1')
     init();schedule=str(uuid.uuid4())
     with db.connect() as c:
+        # Serialize capacity checking with insertion across concurrent requests.
+        c.execute('BEGIN IMMEDIATE')
         if c.execute('SELECT COUNT(*) FROM schedules WHERE enabled=1').fetchone()[0]>=50:raise ValueError('Limit of 50 active schedules per user')
         c.execute('INSERT INTO schedules VALUES(?,?,?,?,?,?,?,?,?,?,?,NULL)',
           (schedule,agent,goal,db.encode(data),mode,int(example),at,every_seconds,max_runs,1,db.now()))
