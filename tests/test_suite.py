@@ -72,6 +72,17 @@ class Suite(unittest.TestCase):
             with self.assertRaises(ValueError):TOOLS[a](d)
             d['tasks'][0]['depends_on']=['missing']
             with self.assertRaises(ValueError):TOOLS[a](d)
+    def test_calendar_never_truncates_fractional_minutes(self):
+        for agent in ('rafiq','sawm'):
+            for field in ('buffer','duration'):
+                data=self.example(agent)
+                if field=='buffer':data['buffer_minutes']=0.9
+                else:data['tasks'][0]['minutes']=1.9
+                with self.subTest(agent=agent,field=field),self.assertRaisesRegex(ValueError,'whole number of minutes'):
+                    TOOLS[agent](data)
+            data=self.example(agent);data['buffer_minutes']=0.0
+            data['tasks']=[{'title':'Controlled task','minutes':1.0}]
+            self.assertEqual(len(TOOLS[agent](data)['planned_blocks']),1)
     def test_calendar_preserves_busy_buffer(self):
         for a in ['rafiq','sawm']:
             d=self.example(a);r=TOOLS[a](d)

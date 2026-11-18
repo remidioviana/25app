@@ -191,7 +191,9 @@ def schedule(d):
     def clock(m): return f'{m//60:02d}:{m%60:02d}'
     start, end = minute(d['start']), minute(d['end'])
     if start >= end: raise ValueError('End must be later than start on the same day')
-    buffer = int(positive(d['buffer_minutes']))
+    buffer = positive(d['buffer_minutes'])
+    if buffer % 1:raise ValueError('Buffer must be a whole number of minutes')
+    buffer = int(buffer)
     busy = sorted([(minute(x['start']), minute(x['end']), x['title']) for x in d['busy']])
     if any(a>=b for a,b,_ in busy): raise ValueError('Invalid occupied time block')
     conflicts = [{'a': a[2], 'b': b[2]} for i,a in enumerate(busy) for b in busy[i+1:] if b[0] < a[1]+buffer]
@@ -203,7 +205,9 @@ def schedule(d):
     if cursor<end: free.append([cursor,end])
     assigned, unscheduled = [], []
     for x in d['tasks']:
-        duration = int(positive(x['minutes']))
+        duration = positive(x['minutes'])
+        if duration % 1:raise ValueError('Task duration must be a whole number of minutes')
+        duration = int(duration)
         if duration <= 0: raise ValueError('Duration must be positive')
         for slot in free:
             if slot[1]-slot[0]>=duration:
