@@ -109,6 +109,18 @@ class AdvancedTests(unittest.TestCase):
         db.ingest('mizan','Budget','Budget 500','source','')
         with patch('model_provider.embed',return_value=[[1.,0.]]) as m:
             retrieval.index('mizan');retrieval.index('mizan');self.assertEqual(m.call_count,1)
+    def test_only_stale_vectors_fall_back_before_query_embedding(self):
+        document=db.ingest('mizan','Controlled evidence','Original budget','controlled','')
+        with patch('model_provider.embed',return_value=[[1.,0.]]):retrieval.index('mizan')
+        with db.connect() as connection:
+            connection.execute('UPDATE chunks SET text=? WHERE doc=?',('Updated budget',document['id']))
+            connection.execute('UPDATE embeddings SET vector=? WHERE doc=?',('obsolete malformed vector',document['id']))
+        with patch('model_provider.embed') as embed:
+            result=retrieval.search('mizan','budget',True)
+            embed.assert_not_called()
+        self.assertEqual(result['method'],'bm25')
+        self.assertEqual(result['matches'][0]['text'],'Updated budget')
+        self.assertTrue(any('Outdated vectors' in item for item in result['warnings']))
     def test_index_rebuilds_stale_text_hash_and_reuses_unchanged_chunks(self):
         document=db.ingest('mizan','Controlled evidence','Original budget','controlled','')
         with patch('model_provider.embed',return_value=[[1.,0.]]):retrieval.index('mizan')

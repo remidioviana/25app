@@ -66,11 +66,14 @@ def search(agent,query,semantic=False):
           AND NOT EXISTS (SELECT 1 FROM public_source_versions old WHERE old.doc=e.doc AND old.agent=e.agent AND old.is_current=0)
           LIMIT 10000''',(agent,agent,agent,model))]
     if not rows: return {'matches':lexical,'method':'bm25','warnings':['No vectors for this model; index the app evidence first.']}
-    q=vector(model_provider.embed([query[:4000]])[0]);ranked=[];warnings=[]
-    for row in rows:
+    current=[row for row in rows if row['text_hash']==db.digest(row['text'])]
+    warnings=['Outdated vectors were excluded; reindex the app evidence.'] if len(current)!=len(rows) else []
+    if not current:return {'matches':lexical,'method':'bm25','warnings':warnings}
+    q=vector(model_provider.embed([query[:4000]])[0]);ranked=[]
+    for row in current:
+        row.pop('text_hash')
         v=vector(json.loads(row.pop('vector')))
         if len(v)!=len(q): raise ValueError('Index/query dimension mismatch; select the same model and reindex')
-        if row.pop('text_hash')!=db.digest(row['text']): continue
         row['citation']=row['doc']+':'+str(row['chunk']);row['similarity']=sum(a*b for a,b in zip(q,v));ranked.append(row)
     ranked.sort(key=lambda x:x['similarity'],reverse=True)
     merged={};scores={}
