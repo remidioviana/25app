@@ -30,3 +30,7 @@ The user explicitly approved all 25 identities after seeing the seven purpose-le
 The existing variant validator now compares current production assets with this reference as well as verifying their bytes. Accidental regeneration cannot silently replace an approved identity merely by updating its production registry. Future user-requested redesigns should update the reference with the corresponding approval provenance. No runtime approval flow is added to any app.
 
 ESLint and all 25 variant checks passed. In-memory fault injection into an Iqamah symbol hash and a Hisad dark-logo hash was rejected with the approved-reference diagnostic; no production artwork was changed by those checks. The approved artwork implementation passed GitHub Code checks: https://github.com/remidioviana/25app/actions/runs/44418870353 .
+
+### Approval of the complete current set
+
+After the latest Adab and Adl revisions, the user explicitly confirmed “Todos aprovados” (“All approved”). The identity-reference manifest now records all 25 current systems as `user_approved`, with source artwork commit `bfc87153c761933b5a4c26ce6f20f2e473f87337`. Earlier approval and revision requests remain in its history. No pixels, vector paths, typefaces or app behavior changed while recording this confirmation. All 25 variant checks passed against the unchanged production hashes. The approval remains visual; it is not functional acceptance or physical-device evidence.

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "scope": "Current identity reference preserving original approval history and subsequent explicit user-requested revisions. Revision entries are not represented as subsequently approved.",
-  "source_asset_commit": "bc07294c892c799056bacdf06a789a258dcf719e",
+  "scope": "Explicit user visual approval of all 25 current symbols, exact-name wordmarks and light/dark logo compositions. Not functional, factual, trademark or physical-device acceptance.",
+  "source_asset_commit": "bfc87153c761933b5a4c26ce6f20f2e473f87337",
   "approval_source": "Explicit user message in this conversation",
-  "statement_original": "Todos absolutamente aprovados",
-  "statement_translation": "All absolutely approved",
+  "statement_original": "Todos aprovados",
+  "statement_translation": "All approved",
   "products": {
     "himayah": {
       "name": "Himayah AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
@@ -139,7 +139,7 @@
     },
     "tawteen": {
       "name": "Tawteen AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "local-workforce-tenancy-customer-care",
       "files": {
         "symbol": {
@@ -166,7 +166,7 @@
     },
     "adl": {
       "name": "Adl AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "campaign-language-tenancy-mediation",
       "files": {
         "symbol": {
@@ -193,7 +193,7 @@
     },
     "tawassul": {
       "name": "Tawassul B2B",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
@@ -220,7 +220,7 @@
     },
     "adab": {
       "name": "Adab AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "campaign-language-tenancy-mediation",
       "files": {
         "symbol": {
@@ -247,7 +247,7 @@
     },
     "khidmah": {
       "name": "Khidmah AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "local-workforce-tenancy-customer-care",
       "files": {
         "symbol": {
@@ -326,7 +326,7 @@
     },
     "majlis": {
       "name": "Majlis AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
@@ -379,7 +379,7 @@
     },
     "sawm": {
       "name": "Sawm AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
@@ -536,7 +536,7 @@
     },
     "nafas": {
       "name": "Nafas AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "campaign-writing-tenancy-evidence-breathing",
       "files": {
         "symbol": {
@@ -563,7 +563,7 @@
     },
     "tadweer": {
       "name": "Tadweer AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
@@ -590,7 +590,7 @@
     },
     "turath": {
       "name": "Turath AI",
-      "reference_state": "user_requested_revision",
+      "reference_state": "user_approved",
       "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
@@ -675,5 +675,19 @@
     "Improve Tawteen, Adl and Khidmah to better represent their app purposes.",
     "Improve Adab, Adl and Nafas to better represent their app purposes.",
     "Improve Adab and Adl to better represent campaign-language adaptation and tenancy disputes, retaining their existing app associations."
+  ],
+  "approval_history": [
+    {
+      "source_asset_commit": "bc07294c892c799056bacdf06a789a258dcf719e",
+      "statement_original": "Todos absolutamente aprovados",
+      "statement_translation": "All absolutely approved",
+      "scope": "Original explicit visual approval; subsequent revision requests remain in the revision history."
+    },
+    {
+      "source_asset_commit": "bfc87153c761933b5a4c26ce6f20f2e473f87337",
+      "statement_original": "Todos aprovados",
+      "statement_translation": "All approved",
+      "scope": "Explicit user approval of all 25 current identity systems after the latest Adab and Adl revisions."
+    }
   ]
 }
