@@ -69,3 +69,5 @@ Campaign term scanning uses the backend's full, locale-independent Unicode casef
 Service-document checkpoints reuse dossier validation and assessment. Recorded expiry before the entered reference date is flagged; expiry on that date remains recorded, while missing expiry stays unknown. Duplicate names and invalid calendar dates prevent a positive checkpoint assessment instead of selecting an arbitrary record. Document presence still does not establish authenticity or service eligibility.
 
 Dossier requirement names, document names and references use the same Unicode code-point limit as schema validation and the backend. A supplementary-plane character does not consume two character slots in Iqamah or Sahil; inputs above the actual limit still fail validation.
+
+Paged record compositions preserve global ordinals within the filtered list. Source 25 is displayed as chapter 25 rather than restarting chapter numbers on the second page. Regression tests keep ordinals, record details and evidence references aligned across source pages, filtering, deletion and empty collections.

@@ -1,3 +1,4 @@
+import {recordPage} from '../src/experience/recordPage';
 import {useReducedMotion} from '../src/experience/useReducedMotion';
 import React,{useState,useEffect} from 'react';
 import {View,Text,Pressable,ScrollView,Animated,Platform} from 'react-native';
@@ -23,7 +24,7 @@ export function InteractiveRecords({editLink=true,input}:{editLink?:boolean;inpu
  if(inputIssue(draft,spec.schema))return null;
  const scene=interactiveRecords(brandId,draft);if(!scene)return null;
  const records=scene.records.filter(x=>filter==='all'||x.state!=='recorded');
- const pageCount=Math.max(1,Math.ceil(records.length/24)),currentPage=Math.min(page,pageCount-1),visible=records.slice(currentPage*24,(currentPage+1)*24);
+ const pagination=recordPage(records,page),pageCount=pagination.pageCount,currentPage=pagination.page,visible=pagination.items.map(x=>x.record);
  const selected=visible.find(x=>`${x.id}:${x.label}`===selection)||visible[0];
  const max=Math.max(1,...scene.records.map(x=>Math.abs(x.value)));
  const choose=(r:InteractiveRecord)=>setSelection(`${r.id}:${r.label}`);
@@ -55,7 +56,7 @@ export function InteractiveRecords({editLink=true,input}:{editLink?:boolean;inpu
  return <View testID={`interactive-${brandId}`} style={{gap:16,paddingVertical:22,borderTopWidth:2,borderColor:d.accent}}>
   <Text style={s.tag}>{scene.axis} · entered records</Text><Text accessibilityRole="header" style={[s.h2,{fontFamily:font}]}>{scene.title}</Text>
   <View style={{flexDirection:'row',gap:10,flexWrap:'wrap'}}>{(['all','attention'] as const).map(value=><Pressable key={value} accessibilityRole="button" accessibilityState={{selected:filter===value}} aria-pressed={filter===value} onPress={()=>{setFilter(value);setPage(0)}} style={{minHeight:44,padding:12,borderRadius:22,borderWidth:1,borderColor:filter===value?d.accent:d.line}}><Text style={{color:filter===value?d.accent:d.muted}}>{value==='all'?'All records':'Needs attention'}</Text></Pressable>)}</View>
-  {ribbon.has(scene.view)?<ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{gap:12,paddingBottom:6}}>{visible.map(item)}</ScrollView>:<View style={{gap:12,...(tile.has(scene.view)?{flexDirection:'row' as const,flexWrap:'wrap' as const}: {})}}>{visible.map(item)}</View>}
+  {ribbon.has(scene.view)?<ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{gap:12,paddingBottom:6}}>{pagination.items.map(({record,ordinal})=>item(record,ordinal-1))}</ScrollView>:<View style={{gap:12,...(tile.has(scene.view)?{flexDirection:'row' as const,flexWrap:'wrap' as const}: {})}}>{pagination.items.map(({record,ordinal})=>item(record,ordinal-1))}</View>}
   {pageCount>1&&<View style={{gap:12}}><Text style={s.muted}>Page {currentPage+1} of {pageCount} · {records.length} records</Text><Button secondary title="Previous records" disabled={currentPage===0} onPress={()=>setPage(currentPage-1)}/><Button secondary title="Next records" disabled={currentPage===pageCount-1} onPress={()=>setPage(currentPage+1)}/></View>}
   {selected?<Animated.View testID="selected-record-detail" accessibilityLiveRegion="polite" style={{opacity,gap:12,padding:20,backgroundColor:d.panel,borderLeftWidth:3,borderColor:d.accent,borderRadius:d.radius}}><Text style={s.tag}>Selected record</Text><Text style={s.h3}>{selected.label}</Text><Text selectable style={s.text}>{selected.detail}</Text>{!!selected.reference&&<Text selectable style={s.muted}>{selected.reference}</Text>}</Animated.View>:<Text style={s.muted}>{filter==='attention'?'No flagged or unknown records in this view.':'Add records in the case details to explore this view.'}</Text>}
   {editLink&&<Button secondary title="Edit these records" onPress={()=>router.push('/mission')}/>}
