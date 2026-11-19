@@ -38,3 +38,24 @@ test('empty typed collections produce empty scenes rather than fabricated metric
  assert.deepEqual(interactiveRecords('adl',{...catalog.adl.example,events:[]})!.records,[]);
  assert.equal(interactiveRecords('amanah-eco',{...catalog['amanah-eco'].example,current_days:0})!.records[1].state,'unknown');
 });
+test('invalid and reversed day blocks remain unavailable, while valid zero duration is explicit',()=>{
+ for(const [start,end] of [['25:00','26:00'],['9:3','10:00'],['12:00','11:00'],['','10:00']]){
+  const input={...catalog.rafiq.example,busy:[{title:'Block',start,end}]};
+  const record=interactiveRecords('rafiq',input)!.records[0];
+  assert.equal(record.available,false,`${start}–${end}`);assert.equal(record.state,'unknown');
+ }
+ for(const [start,end,expected] of [['09:00','09:00',0],['09:00','10:30',90]] as const){
+  const record=interactiveRecords('rafiq',{...catalog.rafiq.example,busy:[{title:'Block',start,end}]})!.records[0];
+  assert.equal(record.available,true);assert.equal(record.value,expected);
+ }
+});
+test('empty route evidence and missing needs never establish access; explicit barriers are flagged',()=>{
+ const input=structuredClone(catalog.himam.example) as Record<string,any>;
+ input.routes[0].segments=[];
+ assert.equal(interactiveRecords('himam',input)!.records[0].state,'unknown');
+ input.needs=[];
+ assert.equal(interactiveRecords('himam',input)!.records[1].state,'unknown');
+ input.needs=['step_free'];input.routes[0].segments=[{name:'Stairs',access:{step_free:false}}];
+ const record=interactiveRecords('himam',input)!.records[0];
+ assert.equal(record.state,'attention');assert.match(record.detail,/reported barrier/);
+});

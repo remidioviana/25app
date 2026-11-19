@@ -51,3 +51,7 @@ The variant guard verifies file hashes against the registry and approval referen
 Reproduce the browser audit with Expo started using `EXPO_PUBLIC_VISUAL_AUDIT=1`; run `python scripts/audit_interactive_mobile.py --origin http://localhost:8106 --chromium /path/to/chrome`. This development-only variant selector is not a production navigation feature.
 
 All visual values are derived from entered records or explicitly chosen examples. This update does not add live provider inference, government submissions, financial certification, venue availability or external actions.
+
+## Follow-up: unavailable durations and incomplete access evidence
+
+Day-block previews reject malformed clocks and reversed intervals instead of displaying zero minutes as an observed duration. A valid same-time block still displays zero. Accessibility previews require both declared needs and nonempty segment evidence before reporting all needs available; an explicit barrier is flagged separately from missing evidence. Regression tests cover these cases.
