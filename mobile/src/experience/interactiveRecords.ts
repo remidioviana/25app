@@ -1,3 +1,4 @@
+import {characterCount} from './textMetrics';
 import {isCalendarDate} from '../dossier';
 import {timestampInput} from '../scheduleInput';
 import type {Json} from '../types';
@@ -22,7 +23,7 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  case 'tawteen':return scene('workforce','People behind the target','Active headcount',d.employees.map((e:any)=>row(e.id,e.active?1:0,'active',`${e.active?'Active':'Inactive'} employee; ${e.national?'reported national':'not reported national'}. Supplied target ${d.target_percent}%.`)));
  case 'adl':return scene('chronology','Evidence chronology','Sequence in the supplied file',[...d.events].sort((a:any,b:any)=>a.date.localeCompare(b.date)).map((e:any,i:number)=>row(e.description,i+1,'event',e.date,'recorded',e.reference)));
  case 'tawassul':return scene('account','Account fit canvas','Needs matched',d.products.map((p:any)=>{const tags=d.needs.filter((n:string)=>p.tags.includes(n));return row(p.name,tags.length,'needs',p.approved_fact,tags.length?'recorded':'attention',tags.join(', ')||'No matching need in supplied tags')}));
- case 'adab':return scene('editorial','Claim editing desk','Characters', [{...row('Original copy',d.copy.length,'characters',d.copy,d.copy.length>d.max_characters?'attention':'recorded')},...d.approved_claims.map((x:string,i:number)=>row(`Approved wording ${i+1}`,x.length,'characters',x,x.length>d.max_characters?'attention':'recorded'))]);
+ case 'adab':return scene('editorial','Claim editing desk','Characters', [{...row('Original copy',characterCount(d.copy),'characters',d.copy,characterCount(d.copy)>d.max_characters?'attention':'recorded')},...d.approved_claims.map((x:string,i:number)=>row(`Approved wording ${i+1}`,characterCount(x),'characters',x,characterCount(x)>d.max_characters?'attention':'recorded'))]);
  case 'khidmah':{const elapsed=isCalendarDate(d.as_of)&&isCalendarDate(d.purchase_date)?(Date.parse(d.as_of)-Date.parse(d.purchase_date))/86400000:NaN;return scene('policy','Return policy gates','Supplied policy checks',[
  row('Amount',d.amount,'amount',`Supplied refund limit ${d.refund_limit}.`,d.amount<=d.refund_limit?'recorded':'attention'),
  row('Return window',elapsed,'elapsed days',`Purchase ${d.purchase_date}; reference ${d.as_of}; allowed window ${d.return_window_days} days.`,elapsed>=0&&elapsed<=d.return_window_days?'recorded':'attention'),
@@ -48,7 +49,7 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  row('Current period',d.current_days?d.current_usage/d.current_days:NaN,`${d.unit}/day`,`${d.current_usage} ${d.unit} across ${d.current_days} days.`,d.current_days?'recorded':'unknown')]);
  case 'nafas':return scene('reflection','Make room for a pause','Preferred activities',d.preferred_activities.map((x:string)=>row(x,0,'',`Preferred activity from your ${d.days}-day plan starting ${d.start_date}. Choose a comfortable pace and stop whenever needed.`)));
  case 'tadweer':return scene('materials','Material destination map','Entered distance',d.routes.map((r:any)=>{const fit=r.accepted_materials.includes(d.material)&&(!d.hazardous||r.accepts_hazardous);return row(r.name,r.distance_km,'km',`Accepts ${r.accepted_materials.join(', ')}; ${r.accepts_hazardous?'accepts':'does not accept'} declared hazardous material. Confirm with the operator.`,fit?'recorded':'attention')}));
- case 'turath':return scene('chapters','Source reading trail','Excerpt length',d.sources.map((x:any)=>row(x.title,x.excerpt.length,'characters',x.excerpt,'recorded',x.reference)));
+ case 'turath':return scene('chapters','Source reading trail','Excerpt length',d.sources.map((x:any)=>row(x.title,characterCount(x.excerpt),'characters',x.excerpt,'recorded',x.reference)));
  case 'himam':return scene('accessibility','Access along the route','Entered travel duration',d.routes.map((r:any)=>{const known=d.needs.length>0&&r.segments.length>0&&r.segments.every((x:any)=>d.needs.every((n:string)=>x.access[n]===true));const barrier=r.segments.some((x:any)=>d.needs.some((n:string)=>x.access[n]===false));return row(r.name,r.minutes,'minutes',r.segments.map((x:any)=>`${x.name}: ${d.needs.map((n:string)=>`${n} ${x.access[n]===true?'reported available':x.access[n]===false?'reported barrier':'unknown'}`).join(', ')}`).join(' · '),known?'recorded':barrier?'attention':'unknown')}));
  case 'hisad':{
   const current=timestamp(d.as_of),expires=timestamp(d.lot.expires),knownTime=Number.isFinite(current)&&Number.isFinite(expires);

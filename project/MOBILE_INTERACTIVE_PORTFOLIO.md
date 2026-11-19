@@ -61,3 +61,5 @@ Budget comparisons reuse the reconciler's decimal totals and remaining amounts, 
 Food-recipient previews also screen arrival against the entered expiry, matching the backend boundary: arrival at expiry is flagged. Strict timestamp validation requires an explicit timezone and a valid calendar date; missing or malformed timing remains unknown. These checks use the entered reference time, not live freshness or a food-safety certification.
 
 Return-policy date gates reuse the strict calendar-date validator. Impossible dates and timestamps in date-only fields are displayed as unavailable instead of being normalized by JavaScript into a different day. Valid leap-day arithmetic and inclusive return-window boundaries remain supported.
+
+Editorial counters, allowance meters and source-excerpt lengths count Unicode code points, matching Python string lengths and the existing form validator. Emoji no longer count as two UTF-16 units; combining marks continue to count individually under that backend contract.

@@ -94,3 +94,14 @@ test('return window rejects normalized impossible dates and requires date-only i
  const leap=interactiveRecords('khidmah',{...catalog.khidmah.example,purchase_date:'2028-02-29',as_of:'2028-03-01',return_window_days:1})!.records[1];
  assert.equal(leap.available,true);assert.equal(leap.value,1);assert.equal(leap.state,'recorded');
 });
+test('editorial limits count Unicode code points like the backend for Arabic and emoji',()=>{
+ const input={...catalog.adab.example,copy:'مرحبا 🌍',approved_claims:['🌍'],max_characters:7};
+ const records=interactiveRecords('adab',input)!.records;
+ assert.equal(records[0].value,7);assert.equal(records[0].state,'recorded');assert.equal(records[1].value,1);
+ input.max_characters=6;
+ assert.equal(interactiveRecords('adab',input)!.records[0].state,'attention');
+ const combined=interactiveRecords('adab',{...input,copy:'e\u0301',max_characters:2})!.records[0];
+ assert.equal(combined.value,2);assert.equal(combined.state,'recorded');
+ const source=interactiveRecords('turath',{topics:[],sources:[{title:'Excerpt',topics:[],excerpt:'🌍',reference:'test:1'}]})!.records[0];
+ assert.equal(source.value,1);
+});
