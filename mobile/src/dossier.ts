@@ -1,3 +1,4 @@
+import {characterCount} from './experience/textMetrics';
 /** Deterministic dossier preparation. No legal/eligibility or authenticity inference. */
 export type DocumentState = 'missing' | 'expired' | 'present_unverified';
 export interface DossierDocument {name:string;expires:string;reference:string}
@@ -26,7 +27,7 @@ export function dossierIssue(value:unknown):string|null {
   if(d.requirements.length>500)return 'Use no more than 500 checklist requirements.';
   const names=new Set<string>();
   for(const name of d.requirements){
-    if(typeof name!=='string'||!name.trim()||name.length>100000)return 'Each requirement needs a non-empty name within 100,000 characters.';
+    if(typeof name!=='string'||!name.trim()||characterCount(name)>100000)return 'Each requirement needs a non-empty name within 100,000 characters.';
     if(names.has(name))return 'Remove duplicate checklist requirement names.';
     names.add(name);
   }
@@ -35,10 +36,10 @@ export function dossierIssue(value:unknown):string|null {
   for(const value of d.documents){
     if(!value||typeof value!=='object'||Array.isArray(value))return 'Each document must be an object with a name, expiry and reference.';
     const doc=value as Record<string,unknown>;
-    if(typeof doc.name!=='string'||!doc.name.trim()||doc.name.length>100000)return 'Each document needs a non-empty name within 100,000 characters.';
+    if(typeof doc.name!=='string'||!doc.name.trim()||characterCount(doc.name)>100000)return 'Each document needs a non-empty name within 100,000 characters.';
     if(records.has(doc.name))return 'Resolve duplicate document names before checking the dossier.';
     records.add(doc.name);
-    if(typeof doc.reference!=='string'||doc.reference.length>100000)return 'Each document reference must be text within 100,000 characters.';
+    if(typeof doc.reference!=='string'||characterCount(doc.reference)>100000)return 'Each document reference must be text within 100,000 characters.';
     if(typeof doc.expires!=='string'||(doc.expires!==''&&!isCalendarDate(doc.expires)))return 'Use YYYY-MM-DD for expiry dates, or leave expiry blank when unknown.';
   }
   return null;

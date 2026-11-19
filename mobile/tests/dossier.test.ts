@@ -38,3 +38,12 @@ test('matching is exact, no record is silently promoted to an official requireme
   assert.equal(assessDossier(input).checks[0].status,'missing');
   assert.equal(JSON.stringify(input),before);
 });
+
+test('dossier names and references share schema Unicode character limits',()=>{
+  const atLimit='🌍'.repeat(100000),tooLong=atLimit+'x';
+  const input={as_of:'2026-11-14',requirements:[atLimit],documents:[{name:atLimit,expires:'',reference:atLimit}]};
+  assert.equal(dossierIssue(input),null);
+  assert.match(dossierIssue({...input,requirements:[tooLong]})!,/requirement/);
+  assert.match(dossierIssue({...input,documents:[{...input.documents[0],name:tooLong}]})!,/document needs/);
+  assert.match(dossierIssue({...input,documents:[{...input.documents[0],reference:tooLong}]})!,/reference/);
+});
