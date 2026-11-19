@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Current visual reference: twenty previously user-approved identities and five subsequent explicitly user-requested revisions. The revised five are not represented as subsequently approved.",
+  "scope": "Current identity reference preserving original approval history and subsequent explicit user-requested revisions. Revision entries are not represented as subsequently approved.",
   "source_asset_commit": "bc07294c892c799056bacdf06a789a258dcf719e",
   "approval_source": "Explicit user message in this conversation",
   "statement_original": "Todos absolutamente aprovados",
@@ -140,11 +140,11 @@
     "tawteen": {
       "name": "Tawteen AI",
       "reference_state": "user_requested_revision",
-      "revision": "five-purpose-refinement",
+      "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
-          "sha256": "c11c6a6e5083e96a6becd273e2063e2790792d00c24b5b8f87dba6fc25e694e4"
+          "sha256": "a58c9594b8c71a8005cac099327192e9a5c4d7f55acd04a0d0ce93525580e967"
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawteen/wordmark-on-light.svg",
@@ -152,7 +152,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "255a4df4002c8540e0a90ac68849b9be039540bffd9683b5ec2053dad5ecd6aa"
+          "sha256": "15bed5d70028c8d11ceede097d7cd015b431ebd893d14f05adb6d51e9a68f10c"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
@@ -160,16 +160,18 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "b92039ef56bf36e55ae9a4233a5ff5cfc5bd905db892241b74e6825bb1f265c7"
+          "sha256": "3951179051de74349d3067116b0192745b128fe170b527354e987985e95de776"
         }
       }
     },
     "adl": {
       "name": "Adl AI",
+      "reference_state": "user_requested_revision",
+      "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/adl/dimensional-logo.png",
-          "sha256": "51a0b2a2607b8b12db6dd5523ab2ce83dc1d2c5d6281c258912d715fbd5d047a"
+          "sha256": "099b65e2dc0d3f49640bce187beed130a96613e4a10d2b42a160eafe8e73e05b"
         },
         "wordmark_light": {
           "path": "brand-assets/production/adl/wordmark-on-light.svg",
@@ -177,7 +179,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "4e4941d85635ee1954271c370e0268dcde6721b72fc2f87a6e9fc179fd6dcaf2"
+          "sha256": "6bbd9e674a943fcd410bf774a46c6b2ac4eb62de29396871df0eeca921a06b91"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -185,17 +187,18 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "124379f9add35458a7d9be26f60cf4128e08b94756fe38654aacb86fb1182204"
+          "sha256": "eb97dcbaf146c68ae833f30770ebd88c6a40a8f2da7c66a0cb95c25a39e1e7bf"
         }
-      },
-      "reference_state": "user_approved"
+      }
     },
     "tawassul": {
       "name": "Tawassul B2B",
+      "reference_state": "user_requested_revision",
+      "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/tawassul/dimensional-logo.png",
-          "sha256": "32d1f19d8f5a0100ca2627ae1cf78487cc42b83095460963aedda5aacf490f95"
+          "sha256": "f2df5f55f15ba5989d8ce4cbe6be25c72415d696bebd4209e1a27f4dd2021c21"
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawassul/wordmark-on-light.svg",
@@ -203,7 +206,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawassul/logo-on-light.svg",
-          "sha256": "985c07e980418033946dfe68f3a9611d51810e9154188ae92a4bc9af4918c1f4"
+          "sha256": "56a2fb3e7aba8283441b6588b5085226ba2ff57518ecff1bf60801252fe53201"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawassul/wordmark-on-dark.svg",
@@ -211,10 +214,9 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawassul/logo-on-dark.svg",
-          "sha256": "3cbc008ad15086fb999decf3441d81529486a02ef06c6062ea199cbcc259d17b"
+          "sha256": "698cb80344aa205f21bc1170811a218306a4411e1d91c7099bb552119aa642b5"
         }
-      },
-      "reference_state": "user_approved"
+      }
     },
     "adab": {
       "name": "Adab AI",
@@ -532,10 +534,12 @@
     },
     "nafas": {
       "name": "Nafas AI",
+      "reference_state": "user_requested_revision",
+      "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/nafas/dimensional-logo.png",
-          "sha256": "0cb3ffb1072094466f37c68b6278f2ff687ab9b84cea8928d005c850adb8cf94"
+          "sha256": "adda93a5a9c4b2545ee66fe07954c2b5beb6031aab168ac74135993f9e73624c"
         },
         "wordmark_light": {
           "path": "brand-assets/production/nafas/wordmark-on-light.svg",
@@ -543,7 +547,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/nafas/logo-on-light.svg",
-          "sha256": "4ad72808b1bfaefb090de54cda6384411363583551ee83e2e8e69141ca697c83"
+          "sha256": "aa174e1cad8a73f53be6c21ff987697d8b87c2802cf4c6f7344998b448b92dba"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/nafas/wordmark-on-dark.svg",
@@ -551,17 +555,18 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/nafas/logo-on-dark.svg",
-          "sha256": "4b425f64a3f7934d6c8e5074da4effe75f7c007848930d1d3310e333745b6637"
+          "sha256": "1b5eddcd05426fba6ed7bb63fac5dd0a06f0ad7978bbaee5f1f541fd10397e98"
         }
-      },
-      "reference_state": "user_approved"
+      }
     },
     "tadweer": {
       "name": "Tadweer AI",
+      "reference_state": "user_requested_revision",
+      "revision": "workforce-b2b-care-property-recycling",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/tadweer/dimensional-logo.png",
-          "sha256": "e6f1ef5b5a2065d2732199c71c91681df06c8cfcbc21fd0390bbad4310d36cf3"
+          "sha256": "6312909ee5ca6967079ab8f667ef05f33846b2b0b4f49656ad24ac12a2e08519"
         },
         "wordmark_light": {
           "path": "brand-assets/production/tadweer/wordmark-on-light.svg",
@@ -569,7 +574,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tadweer/logo-on-light.svg",
-          "sha256": "31b489108c91e75fd8fd3d40abc825515e07cab1e8d05f3fb0872033b9bb60ba"
+          "sha256": "4d68547ff5dd83f1f1340c5d5ea3360c22630043a71febb7bdd450eebeef2b41"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tadweer/wordmark-on-dark.svg",
@@ -577,10 +582,9 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tadweer/logo-on-dark.svg",
-          "sha256": "657ebed0bd0ebcca175ff99c0bf42ef7481b6998694b85d1c93a21317e4b3f6c"
+          "sha256": "ed5af507de53a9681c00acd55de5ad46b735ddde86c5a8032d99d6258c721b23"
         }
-      },
-      "reference_state": "user_approved"
+      }
     },
     "turath": {
       "name": "Turath AI",
@@ -662,5 +666,9 @@
       "reference_state": "user_approved"
     }
   },
-  "subsequent_request": "Improve the Himayah, Tawteen, Sawm, Majlis and Turath logos to better represent their purposes."
+  "subsequent_request": "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes.",
+  "revision_requests": [
+    "Improve the Himayah, Tawteen, Sawm, Majlis and Turath logos to better represent their purposes.",
+    "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes."
+  ]
 }

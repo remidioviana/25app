@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-19T00:54:57.316936+00:00",
-  "source_commit": "8f48968e34ae9e9fef592dbc1f0640b2bb91ee73",
+  "checked_at": "2026-11-19T01:24:20.534717+00:00",
+  "source_commit": "5f0b6577144d51b6028df45a5934fafa3dbb98f9",
   "viewport": {
     "width": 390,
     "height": 844
@@ -232,7 +232,7 @@
       "console_warnings_and_errors": []
     }
   ],
-  "source_commit_scope": "Base commit before committing the five-symbol working-tree refinement",
-  "branding_revision": "five-purpose-refinement",
-  "branding_registry_sha256": "5046b586ee38640e68ae92e5a53f8f1018510654acd9008b164fc2dfd6eefea8"
+  "source_commit_scope": "Base commit before committing the five-symbol working-tree revision",
+  "branding_revision": "workforce-b2b-care-property-recycling",
+  "branding_registry_sha256": "bdf90b51d2ab0dfcce5dfa93229e20bcc164a8ae84d7dbe39e8ea31e33a10209"
 }
