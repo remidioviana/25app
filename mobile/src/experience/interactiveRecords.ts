@@ -1,3 +1,4 @@
+import {isCalendarDate} from '../dossier';
 import {timestampInput} from '../scheduleInput';
 import type {Json} from '../types';
 import {ledgerPreview} from './ledgerPreview';
@@ -22,10 +23,10 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  case 'adl':return scene('chronology','Evidence chronology','Sequence in the supplied file',[...d.events].sort((a:any,b:any)=>a.date.localeCompare(b.date)).map((e:any,i:number)=>row(e.description,i+1,'event',e.date,'recorded',e.reference)));
  case 'tawassul':return scene('account','Account fit canvas','Needs matched',d.products.map((p:any)=>{const tags=d.needs.filter((n:string)=>p.tags.includes(n));return row(p.name,tags.length,'needs',p.approved_fact,tags.length?'recorded':'attention',tags.join(', ')||'No matching need in supplied tags')}));
  case 'adab':return scene('editorial','Claim editing desk','Characters', [{...row('Original copy',d.copy.length,'characters',d.copy,d.copy.length>d.max_characters?'attention':'recorded')},...d.approved_claims.map((x:string,i:number)=>row(`Approved wording ${i+1}`,x.length,'characters',x,x.length>d.max_characters?'attention':'recorded'))]);
- case 'khidmah':return scene('policy','Return policy gates','Supplied policy checks',[
+ case 'khidmah':{const elapsed=isCalendarDate(d.as_of)&&isCalendarDate(d.purchase_date)?(Date.parse(d.as_of)-Date.parse(d.purchase_date))/86400000:NaN;return scene('policy','Return policy gates','Supplied policy checks',[
  row('Amount',d.amount,'amount',`Supplied refund limit ${d.refund_limit}.`,d.amount<=d.refund_limit?'recorded':'attention'),
- row('Return window',Math.floor((Date.parse(d.as_of)-Date.parse(d.purchase_date))/86400000),'elapsed days',`Purchase ${d.purchase_date}; reference ${d.as_of}; allowed window ${d.return_window_days} days.`,Date.parse(d.as_of)>=Date.parse(d.purchase_date)&&Date.parse(d.as_of)-Date.parse(d.purchase_date)<=d.return_window_days*86400000?'recorded':'attention'),
- row('Reason',d.eligible_reasons.includes(d.reason)?1:0,'eligible reason',d.reason,d.eligible_reasons.includes(d.reason)?'recorded':'attention')]);
+ row('Return window',elapsed,'elapsed days',`Purchase ${d.purchase_date}; reference ${d.as_of}; allowed window ${d.return_window_days} days.`,elapsed>=0&&elapsed<=d.return_window_days?'recorded':'attention'),
+ row('Reason',d.eligible_reasons.includes(d.reason)?1:0,'eligible reason',d.reason,d.eligible_reasons.includes(d.reason)?'recorded':'attention')]);}
  case 'jomrok':return scene('manifest','Cargo manifest desk','Fields supplied',d.required_fields.map((k:string)=>row(k,String(d.shipment[k]??'').trim()?1:0,'present',String(d.shipment[k]??'')||'No value entered.',String(d.shipment[k]??'').trim()?'recorded':'attention')));
  case 'khibrat':return scene('competencies','Competency evidence map','References listed',d.criteria.map((c:string)=>{const evidence=d.evidence.filter((e:any)=>e.criterion===c);return row(c,evidence.length,'references','A reference is evidence to inspect, not an ability score.',evidence.length?'recorded':'unknown',evidence.map((e:any)=>e.reference).join(' · '))}));
  case 'majlis':return scene('onboarding','Onboarding commitments','Completion declarations',d.tasks.map((t:any)=>row(t.title,t.done?1:0,'complete',`Due ${t.due}; dependencies: ${t.depends_on.join(', ')||'none listed'}.`,t.done?'recorded':'attention',t.id)));

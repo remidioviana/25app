@@ -84,3 +84,13 @@ test('food rescue flags expiry and arrival boundaries using timezone-aware refer
   input.lot.expires=expires;record=interactiveRecords('hisad',input)!.records[0];assert.equal(record.state,'unknown');assert.match(record.detail,/timing unknown/);
  }
 });
+test('return window rejects normalized impossible dates and requires date-only input',()=>{
+ for(const date of ['2026-02-30','2026-02-29','2026-13-01','2026-11-14T00:00:00Z']){
+  for(const field of ['purchase_date','as_of']){
+   const record=interactiveRecords('khidmah',{...catalog.khidmah.example,[field]:date})!.records[1];
+   assert.equal(record.available,false,field+': '+date);assert.equal(record.state,'unknown');
+  }
+ }
+ const leap=interactiveRecords('khidmah',{...catalog.khidmah.example,purchase_date:'2028-02-29',as_of:'2028-03-01',return_window_days:1})!.records[1];
+ assert.equal(leap.available,true);assert.equal(leap.value,1);assert.equal(leap.state,'recorded');
+});

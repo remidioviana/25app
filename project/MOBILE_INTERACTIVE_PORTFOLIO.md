@@ -59,3 +59,5 @@ Day-block previews reject malformed clocks and reversed intervals instead of dis
 Budget comparisons reuse the reconciler's decimal totals and remaining amounts, avoiding binary floating-point false overruns. Categories with entered transactions but no supplied budget remain visible as unknown instead of disappearing from the comparison. Duplicate transaction IDs retain the reconciler's first-record policy.
 
 Food-recipient previews also screen arrival against the entered expiry, matching the backend boundary: arrival at expiry is flagged. Strict timestamp validation requires an explicit timezone and a valid calendar date; missing or malformed timing remains unknown. These checks use the entered reference time, not live freshness or a food-safety certification.
+
+Return-policy date gates reuse the strict calendar-date validator. Impossible dates and timestamps in date-only fields are displayed as unavailable instead of being normalized by JavaScript into a different day. Valid leap-day arithmetic and inclusive return-window boundaries remain supported.
