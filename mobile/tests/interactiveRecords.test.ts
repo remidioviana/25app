@@ -73,3 +73,14 @@ test('unbudgeted spending remains visible and duplicate IDs stay excluded',()=>{
  assert.equal(records[1].label,'transport');assert.equal(records[1].value,2.5);assert.equal(records[1].state,'unknown');
  assert.match(records[1].detail,/No category budget supplied/);assert.match(records[1].detail,/1 duplicate IDs excluded/);
 });
+test('food rescue flags expiry and arrival boundaries using timezone-aware reference times',()=>{
+ const input={as_of:'2026-11-14T12:00:00+04:00',lot:{quantity:1,expires:'2026-11-14T12:30:00+04:00',allergens_known:true,allergens:[],handling_verified:true},recipients:[{name:'Recipient',capacity:2,excluded_allergens:[],travel_minutes:29}]};
+ assert.equal(interactiveRecords('hisad',input)!.records[0].state,'recorded');
+ input.recipients[0].travel_minutes=30;
+ let record=interactiveRecords('hisad',input)!.records[0];assert.equal(record.state,'attention');assert.match(record.detail,/reaches expiry or later/);
+ input.lot.expires='2026-11-14T07:59:00Z';
+ record=interactiveRecords('hisad',input)!.records[0];assert.equal(record.state,'attention');assert.match(record.detail,/Expired/);
+ for(const expires of ['2026-11-14T13:00:00','2026-02-30T13:00:00+04:00','invalid']){
+  input.lot.expires=expires;record=interactiveRecords('hisad',input)!.records[0];assert.equal(record.state,'unknown');assert.match(record.detail,/timing unknown/);
+ }
+});

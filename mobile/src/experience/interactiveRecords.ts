@@ -1,3 +1,4 @@
+import {timestampInput} from '../scheduleInput';
 import type {Json} from '../types';
 import {ledgerPreview} from './ledgerPreview';
 export type RecordView='clauses'|'checkpoints'|'coverage'|'workforce'|'chronology'|'account'|'editorial'|'policy'|'manifest'|'competencies'|'onboarding'|'day'|'energy'|'budget'|'dining'|'receipts'|'dependencies'|'consumption'|'reflection'|'materials'|'chapters'|'accessibility'|'rescue';
@@ -7,6 +8,7 @@ const number=(v:unknown)=>typeof v==='number'&&Number.isFinite(v)?v:0;
 const unique=(rows:any[])=>rows.filter((r,i)=>rows.findIndex(x=>x.id===r.id)===i);
 const minutes=(v:string)=>{if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(v))return NaN;const [h,m]=v.split(':').map(Number);return h*60+m};
 const duration=(start:string,end:string)=>{const delta=minutes(end)-minutes(start);return delta>=0?delta:NaN};
+const timestamp=(value:string)=>{try{return Date.parse(timestampInput(value))}catch{return NaN}};
 /** Derive only from the current draft. Values are never regulatory scores or live feeds. */
 export function interactiveRecords(id:string,input:Record<string,Json>):RecordScene|null{
  const d=input as Record<string,any>;
@@ -47,7 +49,15 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  case 'tadweer':return scene('materials','Material destination map','Entered distance',d.routes.map((r:any)=>{const fit=r.accepted_materials.includes(d.material)&&(!d.hazardous||r.accepts_hazardous);return row(r.name,r.distance_km,'km',`Accepts ${r.accepted_materials.join(', ')}; ${r.accepts_hazardous?'accepts':'does not accept'} declared hazardous material. Confirm with the operator.`,fit?'recorded':'attention')}));
  case 'turath':return scene('chapters','Source reading trail','Excerpt length',d.sources.map((x:any)=>row(x.title,x.excerpt.length,'characters',x.excerpt,'recorded',x.reference)));
  case 'himam':return scene('accessibility','Access along the route','Entered travel duration',d.routes.map((r:any)=>{const known=d.needs.length>0&&r.segments.length>0&&r.segments.every((x:any)=>d.needs.every((n:string)=>x.access[n]===true));const barrier=r.segments.some((x:any)=>d.needs.some((n:string)=>x.access[n]===false));return row(r.name,r.minutes,'minutes',r.segments.map((x:any)=>`${x.name}: ${d.needs.map((n:string)=>`${n} ${x.access[n]===true?'reported available':x.access[n]===false?'reported barrier':'unknown'}`).join(', ')}`).join(' · '),known?'recorded':barrier?'attention':'unknown')}));
- case 'hisad':return scene('rescue','Recipient capacity board','Capacity in entered records',d.recipients.map((r:any)=>{const conflict=r.excluded_allergens.some((a:string)=>d.lot.allergens.includes(a));return row(r.name,r.capacity,'units',`${r.travel_minutes} minutes entered travel; lot ${d.lot.quantity} units; ${conflict?'allergen conflict':'no conflict in entered allergen lists'}. Handling and expiry still require confirmation.`,conflict||r.capacity<d.lot.quantity||!d.lot.allergens_known||!d.lot.handling_verified?'attention':'recorded')}));
+ case 'hisad':{
+  const current=timestamp(d.as_of),expires=timestamp(d.lot.expires),knownTime=Number.isFinite(current)&&Number.isFinite(expires);
+  return scene('rescue','Recipient capacity board','Capacity in entered records',d.recipients.map((r:any)=>{
+   const conflict=r.excluded_allergens.some((a:string)=>d.lot.allergens.includes(a)),late=knownTime&&current+r.travel_minutes*60000>=expires;
+   const attention=conflict||r.capacity<d.lot.quantity||!d.lot.allergens_known||!d.lot.handling_verified||late;
+   const timing=!knownTime?'Expiry timing unknown: enter valid timestamps with timezone.':expires<=current?'Expired at the entered reference time.':late?'Entered travel reaches expiry or later.':'Entered travel arrives before the recorded expiry.';
+   return row(r.name,r.capacity,'units',`${r.travel_minutes} minutes entered travel; lot ${d.lot.quantity} units; ${conflict?'allergen conflict':'no conflict in entered allergen lists'}. ${timing} Handling and actual conditions still require confirmation.`,attention?'attention':knownTime?'recorded':'unknown');
+  }));
+ }
  default:return null;
  }
 }

@@ -1,5 +1,5 @@
 /** Validate the mobile schedule controls before sending an authenticated request. */
-export function scheduleInput(first:string,interval:number,count:string){
+export function timestampInput(first:string){
  const match=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{1,3}))?)?(Z|[+-]\d{2}:\d{2})$/.exec(first.trim());
  if(!match)throw new Error('Use an ISO date and time with timezone, such as 2026-12-01T09:00:00+04:00.');
  const [,year,month,day,hour,minute,second,,zone]=match;
@@ -9,9 +9,13 @@ export function scheduleInput(first:string,interval:number,count:string){
  if(zone!=='Z'&&(Number(zone.slice(1,3))>23||Number(zone.slice(4))>59))throw new Error('Enter a valid timezone offset.');
  const at=new Date(first.trim());if(!Number.isFinite(at.getTime()))throw new Error('Enter a valid calendar date and time.');
  if(at.getUTCFullYear()<1||at.getUTCFullYear()>9999)throw new Error('Choose a timestamp within UTC years 1 to 9999.');
+ return at.toISOString();
+}
+export function scheduleInput(first:string,interval:number,count:string){
+ const first_at=timestampInput(first);
  if(![0,3600,86400].includes(interval))throw new Error('Choose Once, Hourly or 24 hours.');
  if(!/^\d+$/.test(count.trim())||Number(count)<1||Number(count)>100)throw new Error('Choose a whole number from 1 to 100 runs.');
  const runs=Number(count);
  if(interval===0&&runs!==1)throw new Error('A one-time schedule must have exactly one run.');
- return {first_at:at.toISOString(),every_seconds:interval,max_runs:runs};
+ return {first_at,every_seconds:interval,max_runs:runs};
 }

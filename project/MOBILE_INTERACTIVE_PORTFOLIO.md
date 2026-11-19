@@ -57,3 +57,5 @@ All visual values are derived from entered records or explicitly chosen examples
 Day-block previews reject malformed clocks and reversed intervals instead of displaying zero minutes as an observed duration. A valid same-time block still displays zero. Accessibility previews require both declared needs and nonempty segment evidence before reporting all needs available; an explicit barrier is flagged separately from missing evidence. Regression tests cover these cases.
 
 Budget comparisons reuse the reconciler's decimal totals and remaining amounts, avoiding binary floating-point false overruns. Categories with entered transactions but no supplied budget remain visible as unknown instead of disappearing from the comparison. Duplicate transaction IDs retain the reconciler's first-record policy.
+
+Food-recipient previews also screen arrival against the entered expiry, matching the backend boundary: arrival at expiry is flagged. Strict timestamp validation requires an explicit timezone and a valid calendar date; missing or malformed timing remains unknown. These checks use the entered reference time, not live freshness or a food-safety certification.
