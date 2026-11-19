@@ -22,3 +22,11 @@ CI path filters now include `brand-assets/**` for pushes and pull requests, so c
 ## Completeness regression check
 
 The variant validator now requires exactly four SVG entries per brand, each at its canonical brand-specific path, and verifies the source typeface hash. A registry that omits an SVG can no longer pass while claiming 100 validated files. Local fault injection in isolated Node processes rejected a missing dark logo, a wordmark pointing at another brand and a stale typeface hash; no repository assets were modified by those checks. ESLint and all 25 variant checks passed with the complete registry.
+
+## User-approved visual reference
+
+The user explicitly approved all 25 identities after seeing the seven purpose-led revisions. `brand-assets/approved-identities.json` records the approval statement, source asset commit and exact paths/SHA-256 hashes of 25 transparent symbols and 100 outlined wordmark/logo files. This is user visual approval, not functional acceptance, physical-device testing or trademark clearance.
+
+The existing variant validator now compares current production assets with this reference as well as verifying their bytes. Accidental regeneration cannot silently replace an approved identity merely by updating its production registry. Future user-requested redesigns should update the reference with the corresponding approval provenance. No runtime approval flow is added to any app.
+
+ESLint and all 25 variant checks passed. In-memory fault injection into an Iqamah symbol hash and a Hisad dark-logo hash was rejected with the approved-reference diagnostic; no production artwork was changed by those checks. The approved artwork implementation passed GitHub Code checks: https://github.com/remidioviana/25app/actions/runs/44418870353 .
