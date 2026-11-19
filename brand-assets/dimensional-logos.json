@@ -333,16 +333,16 @@
     },
     "adl": {
       "name": "Adl AI",
-      "concept": "Tenancy rights and dispute resolution",
-      "brief": "An elegant property-dispute symbol made from ONLY TWO principal objects: one large dark-plum rental KEY with a simple hollow house-shaped bow and broad short shaft, paired diagonally with one muted rose-metal legal GAVEL. The gavel head is clearly a gavel, with a short ivory striking face; it rests against the key shaft in a balanced compact composition. The two forms together immediately say rental property and legal dispute resolution. Refined deep plum #3C283B, muted rose #BE8E9C, pale ivory-lavender #E3D7E9. No house frame around scales, no justice balance, document page, court seal, lettering or clutter. Restrained tactile ceramic and brushed metal.",
+      "concept": "Evidence-led review of rental agreements",
+      "brief": "A clear tenancy-evidence review symbol: an upright pale-ivory RENTAL AGREEMENT folio whose top edge is clipped by a bold dark-plum HOUSE-shaped paperclip/roof. On the folio are three short recessed clause lines and a muted rose vertical chronological rail with three large evidence nodes. A small rose inspection lens integrates into the lower edge, visibly inspecting the last clause. House/document/evidence review must read as one balanced icon, not a judge or a real-estate-sales logo. Plum #3C283B, pale lavender ivory #E3D7E9, muted rose #BE8E9C. No gavel, key, scales, court seal, writing, numbers or approval tick. Strong broad forms; lens subordinate to the rental dossier.",
       "symbol": {
         "path": "mobile/assets/variants/adl/dimensional-logo.png",
-        "sha256": "2012d82e386629e51fd78ab1bd964f1148866a673161008fc9629e18ad1d4170",
-        "bytes": 753117,
+        "sha256": "098fba19023e0e6a358295e1087907dad2a2fd3f89474beaa3c6c09ae4deaf87",
+        "bytes": 882878,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-f522566a-07d2-46af-ae8c-4637cb0f0610.png"
+        "generated_original": "/workspace/generated_images/exec-3a803211-f60c-462d-96d9-e4efc3cc82c9.png"
       },
       "typography": {
         "font": {
@@ -363,8 +363,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "bed5dd853568f65690d4e00972e53207e51b29481009c082d6af99da5ac7de0c",
-          "bytes": 1006364
+          "sha256": "291fecc8608db97c317e1cfc8c1278199aa739ce4f90910b8131a6291b7886ed",
+          "bytes": 1179380
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -373,8 +373,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "93d390c9627e441e06fcf6d7950b51617229d9cb4c9a0ae609b8a2801ba4a223",
-          "bytes": 1006364
+          "sha256": "08969a5506ee1a9cca8ad32330a4f8b68259dc9fd1832ae47160dd049db3199a",
+          "bytes": 1179380
         }
       },
       "composition": "horizontal",
@@ -443,16 +443,16 @@
     },
     "adab": {
       "name": "Adab AI",
-      "concept": "Editorial campaign bloom",
-      "brief": "An expressive magenta and blush folded-paper composition opening into three lilac editorial petals with asymmetric rhythm. Rich creative-studio identity, tactile paper, sophisticated color blocking. No text-like glyphs, document stack, chat bubble or generic flower.",
+      "concept": "Culturally considered campaign writing",
+      "brief": "An original editorial-marketing symbol: a deep-magenta MEGAPHONE whose broad front cone is formed by one sculpted blush-paper fold, with a single lavender fountain-PEN NIB integrated diagonally along its body. It must immediately communicate writing/refining advertising messages, not a decorative flower, generic book or chat app. Only megaphone + paper fold + clear pen nib, one coherent compact silhouette. Magenta #782859, blush #F9DAE0 and soft lavender #D6B0FC. No letters, calligraphy, speech text, approval checks, decorative petals or national symbols. Refined tactile surfaces, minimal fine detail.",
       "symbol": {
         "path": "mobile/assets/variants/adab/dimensional-logo.png",
-        "sha256": "7f9ab0bd7ce5d158eb54da6d624fa9883a8d2898f52663eaa22492f6692b3b80",
-        "bytes": 755697,
+        "sha256": "1f66bdfb685fed1332bd92aa5294f91a1470528fb7523859b0dfee598ea6a532",
+        "bytes": 784419,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-c8704d98-768b-4492-b1a0-fb4df1f1a54b.png"
+        "generated_original": "/workspace/generated_images/exec-b077d6ec-5975-4436-a36d-27410acb2a47.png"
       },
       "typography": {
         "font": {
@@ -473,8 +473,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adab/logo-on-light.svg",
-          "sha256": "73d8a509a4e56bc814f384e4cd53d5bbc8f3403521b22b5523b9153014d3c855",
-          "bytes": 1012435
+          "sha256": "7de4fb40a5fb36381e1c3208f8e8a5cc5c5897da20cbef1c3a605653b92c3080",
+          "bytes": 1050731
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adab/wordmark-on-dark.svg",
@@ -483,8 +483,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adab/logo-on-dark.svg",
-          "sha256": "616b32c241cc654cd1f8139890d31a53601867b1b4635de0ba9588cd2f80c243",
-          "bytes": 1012435
+          "sha256": "466aac4fa8143e62ea761a1e6cf9c7eaa97289f48aada2a47037840b3705f2c3",
+          "bytes": 1050731
         }
       },
       "composition": "horizontal",
@@ -1103,16 +1103,16 @@
     },
     "nafas": {
       "name": "Nafas AI",
-      "concept": "Emotional support and room to breathe",
-      "brief": "A warm mental-wellbeing and emotional-support emblem: two soft eucalyptus-teal cupped hand/arm forms make a clean OPEN HEART silhouette around a small pale-sage human figure, represented by a round head and gentle shoulder curve. Generous air between the protective arms and the person gives breathing room. The silhouette must clearly read as a person held in a caring heart, not a decorative face, lungs, leaf or infinity loop. Teal #4A7480, sage #AEC7BB, off-white #F0F4F1. Tactile understated ceramic, very few rounded forms; no medical cross, ECG or clinical imagery.",
+      "concept": "A quiet breathing and wellbeing pause",
+      "brief": "A serene wellbeing-practice symbol: one elegantly simplified adult human figure seated cross-legged in a calm upright breathing posture, head a small pale-sage sphere, shoulders/arms and legs formed by broad eucalyptus-teal ceramic curves. Hands rest openly on the knees, no ritual mudras. One airy pale-sage OPEN ARC behind the shoulders suggests a slow expanding breath and generous personal space. Clear human breathing/relaxation practice, not a heart-care badge, face mask, medical icon or abstract loop. Teal #4A7480, sage #AEC7BB and off-white #F0F4F1. No face details, clothing texture, religious symbols, lotus petals, clinical cross, ECG, brain anatomy or text. Compact dignified silhouette, not a toy mascot.",
       "symbol": {
         "path": "mobile/assets/variants/nafas/dimensional-logo.png",
-        "sha256": "adda93a5a9c4b2545ee66fe07954c2b5beb6031aab168ac74135993f9e73624c",
-        "bytes": 809991,
+        "sha256": "461c15b5d7a843e19a58e158466261fd268da77280dc02eb15e0e1aabaa522fe",
+        "bytes": 707635,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-0b9d9a71-39fe-404c-824f-75a042d9fd39.png"
+        "generated_original": "/workspace/generated_images/exec-5feb8156-b7fd-46d5-93ee-e8f35de616ab.png"
       },
       "typography": {
         "font": {
@@ -1133,8 +1133,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/nafas/logo-on-light.svg",
-          "sha256": "aa174e1cad8a73f53be6c21ff987697d8b87c2802cf4c6f7344998b448b92dba",
-          "bytes": 1083437
+          "sha256": "aab99be02c33c037f75b641b3c80461cbd58bae2286cb5f65612bf17a9b86da5",
+          "bytes": 946965
         },
         "wordmark_dark": {
           "path": "brand-assets/production/nafas/wordmark-on-dark.svg",
@@ -1143,8 +1143,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/nafas/logo-on-dark.svg",
-          "sha256": "1b5eddcd05426fba6ed7bb63fac5dd0a06f0ad7978bbaee5f1f541fd10397e98",
-          "bytes": 1083437
+          "sha256": "54ff2f6c04195496f28c8f32039406432976e379c4354c7cd715ad12c3b9b617",
+          "bytes": 946965
         }
       },
       "composition": "stacked",

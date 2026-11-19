@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-19T01:34:25.276462+00:00",
-  "source_commit": "a77e07ba1b468f10e927c75e409810cce378f317",
+  "checked_at": "2026-11-19T01:46:11.178980+00:00",
+  "source_commit": "cf2aeced7e1c48b61f7c03733030dc24e96c1b57",
   "viewport": {
     "width": 390,
     "height": 844
@@ -233,6 +233,6 @@
     }
   ],
   "source_commit_scope": "Base commit before committing the three-symbol working-tree revision",
-  "branding_revision": "local-workforce-tenancy-customer-care",
-  "branding_registry_sha256": "aa8d08083150aad62a03b0ee828ccac1becd9d724d44357bbd326c7e695e3263"
+  "branding_revision": "campaign-writing-tenancy-evidence-breathing",
+  "branding_registry_sha256": "6c93e47a1d28c03f0fa4e5ab86b1cacf5aae657526a6419e5fe92af24dd2a858"
 }

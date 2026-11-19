@@ -100,16 +100,16 @@
     },
     {
       "id": "adl",
-      "symbol_sha256": "2012d82e386629e51fd78ab1bd964f1148866a673161008fc9629e18ad1d4170",
+      "symbol_sha256": "098fba19023e0e6a358295e1087907dad2a2fd3f89474beaa3c6c09ae4deaf87",
       "size": [
         1254,
         1254
       ],
       "edge_alpha_max": 1,
       "alpha_bounds": [
-        33,
-        134,
-        1224,
+        0,
+        15,
+        1240,
         1254
       ],
       "exact_name_vector_files": 4
@@ -132,7 +132,7 @@
     },
     {
       "id": "adab",
-      "symbol_sha256": "7f9ab0bd7ce5d158eb54da6d624fa9883a8d2898f52663eaa22492f6692b3b80",
+      "symbol_sha256": "1f66bdfb685fed1332bd92aa5294f91a1470528fb7523859b0dfee598ea6a532",
       "size": [
         1254,
         1254
@@ -140,9 +140,9 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        23,
-        1234,
-        1222
+        37,
+        1246,
+        1254
       ],
       "exact_name_vector_files": 4
     },
@@ -324,7 +324,7 @@
     },
     {
       "id": "nafas",
-      "symbol_sha256": "adda93a5a9c4b2545ee66fe07954c2b5beb6031aab168ac74135993f9e73624c",
+      "symbol_sha256": "461c15b5d7a843e19a58e158466261fd268da77280dc02eb15e0e1aabaa522fe",
       "size": [
         1254,
         1254
@@ -332,8 +332,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        17,
-        1214,
+        23,
+        1200,
         1254
       ],
       "exact_name_vector_files": 4
