@@ -8,3 +8,19 @@ delete process.env.AGENT_ID;assert.equal(getConfig(root).exp.extra.agentId,'miza
 console.log('PASS: 25 standalone portrait variants; unique names/IDs/icons/splashes, logos and EAS profiles; Mizan default; invalid variants rejected. No signed binary/device validation claimed.');
 require('./check-dimensional-icons.cjs');
 require('./check-dimensional-logos.cjs');
+
+// An individually hashed SVG must still embed the current symbol, never an older revision.
+const {Buffer}=require('node:buffer');
+const crypto=require('crypto'),logoProducts=require('../../brand-assets/dimensional-logos.json').products;
+for(const {id} of brands){
+ const symbol=fs.readFileSync(path.resolve(root,'..',logoProducts[id].symbol.path));
+ const actual=crypto.createHash('sha256').update(symbol).digest('hex');
+ assert.equal(actual,logoProducts[id].symbol.sha256,`${id}: dimensional symbol hash mismatch; rebuild the registry after an approved revision`);
+ for(const theme of ['light','dark']){
+  const composition=fs.readFileSync(path.resolve(root,'..',logoProducts[id].files['logo_'+theme].path),'utf8');
+  const embedded=[...composition.matchAll(/href="data:image\/png;base64,([^"\s]+)"/g)];
+  assert.equal(embedded.length,1,`${id}: expected exactly one embedded dimensional symbol`);
+  assert.deepEqual(Buffer.from(embedded[0][1],'base64'),symbol,`${id}: ${theme} composition embeds an outdated symbol`);
+ }
+}
+console.log('PASS: every light/dark logo composition embeds the exact current dimensional PNG.');
