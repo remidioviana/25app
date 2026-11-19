@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-19T01:46:11.178980+00:00",
-  "source_commit": "cf2aeced7e1c48b61f7c03733030dc24e96c1b57",
+  "checked_at": "2026-11-19T01:56:16.291501+00:00",
+  "source_commit": "2c1e5e58121e3f6dd554d791d0840e55fcc8fa8b",
   "viewport": {
     "width": 390,
     "height": 844
@@ -232,7 +232,7 @@
       "console_warnings_and_errors": []
     }
   ],
-  "source_commit_scope": "Base commit before committing the three-symbol working-tree revision",
-  "branding_revision": "campaign-writing-tenancy-evidence-breathing",
-  "branding_registry_sha256": "6c93e47a1d28c03f0fa4e5ab86b1cacf5aae657526a6419e5fe92af24dd2a858"
+  "source_commit_scope": "Base commit before committing the two-symbol working-tree revision",
+  "branding_revision": "campaign-language-tenancy-mediation",
+  "branding_registry_sha256": "d56c0a875cd9c37a38952311c7f0f61921e5761bfcc6424ccd107e2bd78e4620"
 }

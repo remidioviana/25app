@@ -167,11 +167,11 @@
     "adl": {
       "name": "Adl AI",
       "reference_state": "user_requested_revision",
-      "revision": "campaign-writing-tenancy-evidence-breathing",
+      "revision": "campaign-language-tenancy-mediation",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/adl/dimensional-logo.png",
-          "sha256": "098fba19023e0e6a358295e1087907dad2a2fd3f89474beaa3c6c09ae4deaf87"
+          "sha256": "3dcddff849cd20eb9b56e62e4f5ccbbc8ff5d7585d5a312d22d8a1584178574d"
         },
         "wordmark_light": {
           "path": "brand-assets/production/adl/wordmark-on-light.svg",
@@ -179,7 +179,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "291fecc8608db97c317e1cfc8c1278199aa739ce4f90910b8131a6291b7886ed"
+          "sha256": "1a6cc8edbc3aa7a92f4af905411d2e62219ce794a17e988a57fb2ba2463246f4"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -187,7 +187,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "08969a5506ee1a9cca8ad32330a4f8b68259dc9fd1832ae47160dd049db3199a"
+          "sha256": "6660114676576a8656a7b11f6228bd8a2b0c1efb86abcb05889f7ce6fc23ed42"
         }
       }
     },
@@ -221,11 +221,11 @@
     "adab": {
       "name": "Adab AI",
       "reference_state": "user_requested_revision",
-      "revision": "campaign-writing-tenancy-evidence-breathing",
+      "revision": "campaign-language-tenancy-mediation",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/adab/dimensional-logo.png",
-          "sha256": "1f66bdfb685fed1332bd92aa5294f91a1470528fb7523859b0dfee598ea6a532"
+          "sha256": "2fee05a01f5bbc5a1efd7ecb6adc64bc46eff1a351700c9617e2c16b67b0582a"
         },
         "wordmark_light": {
           "path": "brand-assets/production/adab/wordmark-on-light.svg",
@@ -233,7 +233,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adab/logo-on-light.svg",
-          "sha256": "7de4fb40a5fb36381e1c3208f8e8a5cc5c5897da20cbef1c3a605653b92c3080"
+          "sha256": "f0fd04a20e14c78a135b613f5baa53a46a75a5efeb54dbe06eaa04567eff0a59"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adab/wordmark-on-dark.svg",
@@ -241,7 +241,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adab/logo-on-dark.svg",
-          "sha256": "466aac4fa8143e62ea761a1e6cf9c7eaa97289f48aada2a47037840b3705f2c3"
+          "sha256": "27cc683dfad97aab3de86813c0a8537bc58415c96db4d86283f9c046fa033850"
         }
       }
     },
@@ -668,11 +668,12 @@
       "reference_state": "user_approved"
     }
   },
-  "subsequent_request": "Improve Adab, Adl and Nafas to better represent their app purposes.",
+  "subsequent_request": "Improve Adab and Adl to better represent campaign-language adaptation and tenancy disputes, retaining their existing app associations.",
   "revision_requests": [
     "Improve the Himayah, Tawteen, Sawm, Majlis and Turath logos to better represent their purposes.",
     "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes.",
     "Improve Tawteen, Adl and Khidmah to better represent their app purposes.",
-    "Improve Adab, Adl and Nafas to better represent their app purposes."
+    "Improve Adab, Adl and Nafas to better represent their app purposes.",
+    "Improve Adab and Adl to better represent campaign-language adaptation and tenancy disputes, retaining their existing app associations."
   ]
 }

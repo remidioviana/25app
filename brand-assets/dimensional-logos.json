@@ -333,16 +333,16 @@
     },
     "adl": {
       "name": "Adl AI",
-      "concept": "Evidence-led review of rental agreements",
-      "brief": "A clear tenancy-evidence review symbol: an upright pale-ivory RENTAL AGREEMENT folio whose top edge is clipped by a bold dark-plum HOUSE-shaped paperclip/roof. On the folio are three short recessed clause lines and a muted rose vertical chronological rail with three large evidence nodes. A small rose inspection lens integrates into the lower edge, visibly inspecting the last clause. House/document/evidence review must read as one balanced icon, not a judge or a real-estate-sales logo. Plum #3C283B, pale lavender ivory #E3D7E9, muted rose #BE8E9C. No gavel, key, scales, court seal, writing, numbers or approval tick. Strong broad forms; lens subordinate to the rental dossier.",
+      "concept": "Mediation between parties in a tenancy dispute",
+      "brief": "A sophisticated tenancy-dispute mediation emblem: two simplified clearly recognizable hands, one muted rose and one pale ivory-lavender, meet in a restrained handshake directly beneath ONE strong dark-plum peaked HOUSE ROOF. The handshake forms the foundation of the home silhouette. Clear property + two parties + mediation, not real-estate sales, court authority or generic security. Make it an elegant compact brand sculpture, with minimal anatomical detail and no sleeves beyond two broad cuffs. Plum #3C283B, muted rose #BE8E9C, pale lavender-ivory #E3D7E9. No gavel, justice scales, key, magnifier, document page, seal, checkmark or text. Two main ideas only: home and agreement between parties.",
       "symbol": {
         "path": "mobile/assets/variants/adl/dimensional-logo.png",
-        "sha256": "098fba19023e0e6a358295e1087907dad2a2fd3f89474beaa3c6c09ae4deaf87",
-        "bytes": 882878,
+        "sha256": "3dcddff849cd20eb9b56e62e4f5ccbbc8ff5d7585d5a312d22d8a1584178574d",
+        "bytes": 942773,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-3a803211-f60c-462d-96d9-e4efc3cc82c9.png"
+        "generated_original": "/workspace/generated_images/exec-62a1a487-f0a9-4848-b704-eda0fda8eaec.png"
       },
       "typography": {
         "font": {
@@ -363,8 +363,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "291fecc8608db97c317e1cfc8c1278199aa739ce4f90910b8131a6291b7886ed",
-          "bytes": 1179380
+          "sha256": "1a6cc8edbc3aa7a92f4af905411d2e62219ce794a17e988a57fb2ba2463246f4",
+          "bytes": 1259240
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -373,8 +373,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "08969a5506ee1a9cca8ad32330a4f8b68259dc9fd1832ae47160dd049db3199a",
-          "bytes": 1179380
+          "sha256": "6660114676576a8656a7b11f6228bd8a2b0c1efb86abcb05889f7ce6fc23ed42",
+          "bytes": 1259240
         }
       },
       "composition": "horizontal",
@@ -443,16 +443,16 @@
     },
     "adab": {
       "name": "Adab AI",
-      "concept": "Culturally considered campaign writing",
-      "brief": "An original editorial-marketing symbol: a deep-magenta MEGAPHONE whose broad front cone is formed by one sculpted blush-paper fold, with a single lavender fountain-PEN NIB integrated diagonally along its body. It must immediately communicate writing/refining advertising messages, not a decorative flower, generic book or chat app. Only megaphone + paper fold + clear pen nib, one coherent compact silhouette. Magenta #782859, blush #F9DAE0 and soft lavender #D6B0FC. No letters, calligraphy, speech text, approval checks, decorative petals or national symbols. Refined tactile surfaces, minimal fine detail.",
+      "concept": "Thoughtful adaptation of campaign language",
+      "brief": "A distinctive editorial copy-adaptation emblem: TWO large sculpted quotation-mark forms, one deep magenta and one soft blush, face one another around a single broad lavender fountain-pen nib. The pen nib bridges the two voices, showing a message being carefully rewritten for a different audience and cultural tone. Integrate the forms into one confident balanced silhouette with generous negative space. The quote forms should have a graceful calligraphic curvature without forming Arabic letters. Magenta #782859, blush #F9DAE0, lavender #D6B0FC, tiny warm-ivory nib slit. No megaphone, flower, book stack, document checklist, chat bubble, alphabetic text, flags or approval marks. Broad minimal surfaces; readable at48px.",
       "symbol": {
         "path": "mobile/assets/variants/adab/dimensional-logo.png",
-        "sha256": "1f66bdfb685fed1332bd92aa5294f91a1470528fb7523859b0dfee598ea6a532",
-        "bytes": 784419,
+        "sha256": "2fee05a01f5bbc5a1efd7ecb6adc64bc46eff1a351700c9617e2c16b67b0582a",
+        "bytes": 851709,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-b077d6ec-5975-4436-a36d-27410acb2a47.png"
+        "generated_original": "/workspace/generated_images/exec-6f53770e-1e86-4407-9a80-96e38ba9b9be.png"
       },
       "typography": {
         "font": {
@@ -473,8 +473,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adab/logo-on-light.svg",
-          "sha256": "7de4fb40a5fb36381e1c3208f8e8a5cc5c5897da20cbef1c3a605653b92c3080",
-          "bytes": 1050731
+          "sha256": "f0fd04a20e14c78a135b613f5baa53a46a75a5efeb54dbe06eaa04567eff0a59",
+          "bytes": 1140451
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adab/wordmark-on-dark.svg",
@@ -483,8 +483,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adab/logo-on-dark.svg",
-          "sha256": "466aac4fa8143e62ea761a1e6cf9c7eaa97289f48aada2a47037840b3705f2c3",
-          "bytes": 1050731
+          "sha256": "27cc683dfad97aab3de86813c0a8537bc58415c96db4d86283f9c046fa033850",
+          "bytes": 1140451
         }
       },
       "composition": "horizontal",

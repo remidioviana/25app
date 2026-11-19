@@ -100,7 +100,7 @@
     },
     {
       "id": "adl",
-      "symbol_sha256": "098fba19023e0e6a358295e1087907dad2a2fd3f89474beaa3c6c09ae4deaf87",
+      "symbol_sha256": "3dcddff849cd20eb9b56e62e4f5ccbbc8ff5d7585d5a312d22d8a1584178574d",
       "size": [
         1254,
         1254
@@ -108,8 +108,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        15,
-        1240,
+        53,
+        1230,
         1254
       ],
       "exact_name_vector_files": 4
@@ -132,7 +132,7 @@
     },
     {
       "id": "adab",
-      "symbol_sha256": "1f66bdfb685fed1332bd92aa5294f91a1470528fb7523859b0dfee598ea6a532",
+      "symbol_sha256": "2fee05a01f5bbc5a1efd7ecb6adc64bc46eff1a351700c9617e2c16b67b0582a",
       "size": [
         1254,
         1254
@@ -140,8 +140,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        37,
-        1246,
+        0,
+        1234,
         1254
       ],
       "exact_name_vector_files": 4

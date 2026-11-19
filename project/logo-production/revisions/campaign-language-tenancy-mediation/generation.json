@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "id": "adab",
+      "concept": "Thoughtful adaptation of campaign language",
+      "brief": "A distinctive editorial copy-adaptation emblem: TWO large sculpted quotation-mark forms, one deep magenta and one soft blush, face one another around a single broad lavender fountain-pen nib. The pen nib bridges the two voices, showing a message being carefully rewritten for a different audience and cultural tone. Integrate the forms into one confident balanced silhouette with generous negative space. The quote forms should have a graceful calligraphic curvature without forming Arabic letters. Magenta #782859, blush #F9DAE0, lavender #D6B0FC, tiny warm-ivory nib slit. No megaphone, flower, book stack, document checklist, chat bubble, alphabetic text, flags or approval marks. Broad minimal surfaces; readable at48px.",
+      "prompt": "Create one original premium mobile-app brand SYMBOL on a fully transparent RGBA square. Elegant restrained 3D ceramic and brushed-metal depth, soft premium studio lighting, crisp confident silhouette and few broad forms. Centered with longest extent around72% of canvas and fully transparent margins. No background tile, lettering, words, numerals, ground shadow or debris. Clear at48px. Specific purpose-led direction: A distinctive editorial copy-adaptation emblem: TWO large sculpted quotation-mark forms, one deep magenta and one soft blush, face one another around a single broad lavender fountain-pen nib. The pen nib bridges the two voices, showing a message being carefully rewritten for a different audience and cultural tone. Integrate the forms into one confident balanced silhouette with generous negative space. The quote forms should have a graceful calligraphic curvature without forming Arabic letters. Magenta #782859, blush #F9DAE0, lavender #D6B0FC, tiny warm-ivory nib slit. No megaphone, flower, book stack, document checklist, chat bubble, alphabetic text, flags or approval marks. Broad minimal surfaces; readable at48px.",
+      "generated_original": "/workspace/generated_images/exec-6f53770e-1e86-4407-9a80-96e38ba9b9be.png",
+      "symbol": "mobile/assets/variants/adab/dimensional-logo.png",
+      "status": "file_verified_and_comparison_reviewed"
+    },
+    {
+      "id": "adl",
+      "concept": "Mediation between parties in a tenancy dispute",
+      "brief": "A sophisticated tenancy-dispute mediation emblem: two simplified clearly recognizable hands, one muted rose and one pale ivory-lavender, meet in a restrained handshake directly beneath ONE strong dark-plum peaked HOUSE ROOF. The handshake forms the foundation of the home silhouette. Clear property + two parties + mediation, not real-estate sales, court authority or generic security. Make it an elegant compact brand sculpture, with minimal anatomical detail and no sleeves beyond two broad cuffs. Plum #3C283B, muted rose #BE8E9C, pale lavender-ivory #E3D7E9. No gavel, justice scales, key, magnifier, document page, seal, checkmark or text. Two main ideas only: home and agreement between parties.",
+      "prompt": "Create one original premium mobile-app brand SYMBOL on a fully transparent RGBA square. Elegant restrained 3D ceramic and brushed-metal depth, soft premium studio lighting, crisp confident silhouette and few broad forms. Centered with longest extent around72% of canvas and fully transparent margins. No background tile, lettering, words, numerals, ground shadow or debris. Clear at48px. Specific purpose-led direction: A sophisticated tenancy-dispute mediation emblem: two simplified clearly recognizable hands, one muted rose and one pale ivory-lavender, meet in a restrained handshake directly beneath ONE strong dark-plum peaked HOUSE ROOF. The handshake forms the foundation of the home silhouette. Clear property + two parties + mediation, not real-estate sales, court authority or generic security. Make it an elegant compact brand sculpture, with minimal anatomical detail and no sleeves beyond two broad cuffs. Plum #3C283B, muted rose #BE8E9C, pale lavender-ivory #E3D7E9. No gavel, justice scales, key, magnifier, document page, seal, checkmark or text. Two main ideas only: home and agreement between parties.",
+      "generated_original": "/workspace/generated_images/exec-62a1a487-f0a9-4848-b704-eda0fda8eaec.png",
+      "symbol": "mobile/assets/variants/adl/dimensional-logo.png",
+      "status": "file_verified_and_comparison_reviewed"
+    }
+  ]
+}
