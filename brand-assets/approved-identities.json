@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "User visual approval of 25 symbols, exact-name wordmarks and light/dark logo compositions. Not functional, factual, trademark or physical-device acceptance.",
+  "scope": "Current visual reference: twenty previously user-approved identities and five subsequent explicitly user-requested revisions. The revised five are not represented as subsequently approved.",
   "source_asset_commit": "bc07294c892c799056bacdf06a789a258dcf719e",
   "approval_source": "Explicit user message in this conversation",
   "statement_original": "Todos absolutamente aprovados",
@@ -8,10 +8,12 @@
   "products": {
     "himayah": {
       "name": "Himayah AI",
+      "reference_state": "user_requested_revision",
+      "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/himayah/dimensional-logo.png",
-          "sha256": "7bd4382a0a53218daa401f0b3de70b3590df1bb8165c410404b227f9d56ed018"
+          "sha256": "bad5ced98985c62a312830a660b5df511a98947d245b7dc4a6dd55e409a052e3"
         },
         "wordmark_light": {
           "path": "brand-assets/production/himayah/wordmark-on-light.svg",
@@ -19,7 +21,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/himayah/logo-on-light.svg",
-          "sha256": "ad5c13168029198521aa78bede252e37e04f1e7195c92b5b236543136fe4c209"
+          "sha256": "38b811c1d5393e86fc77d2066c12d30945114f27e445b362c44696e1ee36a02e"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/himayah/wordmark-on-dark.svg",
@@ -27,7 +29,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/himayah/logo-on-dark.svg",
-          "sha256": "ccd05791ea0741050c7790dd970c1d47c14319e30a6b9571e101e06ca41eca69"
+          "sha256": "bde303de9c5aa8368552c27f4179859dfe53c7c22b45837a522568cbad34b589"
         }
       }
     },
@@ -54,7 +56,8 @@
           "path": "brand-assets/production/iqamah/logo-on-dark.svg",
           "sha256": "82be0602f611c55faff6e10a4d44f93c9897aa2ab3d4582853f50efaaae8840c"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "istithmar": {
       "name": "Istithmar AI",
@@ -79,7 +82,8 @@
           "path": "brand-assets/production/istithmar/logo-on-dark.svg",
           "sha256": "9cb4c8237af2a7c567016550cf9ac79512f5668416dbf72217b80dcb96556114"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "munagasah": {
       "name": "Munagasah AI",
@@ -104,7 +108,8 @@
           "path": "brand-assets/production/munagasah/logo-on-dark.svg",
           "sha256": "c2671ce7c42ba338e94fa7ff44dc18ed1753d601b2a38e15715906d50d067f0b"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "sahil": {
       "name": "Sahil AI",
@@ -129,14 +134,17 @@
           "path": "brand-assets/production/sahil/logo-on-dark.svg",
           "sha256": "e234d3da39ea6ea3d23d89b43ce296a3ed191f997507e4fad1f1b2d5333e6b99"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "tawteen": {
       "name": "Tawteen AI",
+      "reference_state": "user_requested_revision",
+      "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
-          "sha256": "94d6052a3f0bee6ab66b4213cbe01a31acf5f1bdf350b873b1fc2c4768af1868"
+          "sha256": "c11c6a6e5083e96a6becd273e2063e2790792d00c24b5b8f87dba6fc25e694e4"
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawteen/wordmark-on-light.svg",
@@ -144,7 +152,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "f5866c6f9ab7c07274c80d3135847f177496926aa4f2aba62912eee2ce0dbba7"
+          "sha256": "255a4df4002c8540e0a90ac68849b9be039540bffd9683b5ec2053dad5ecd6aa"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
@@ -152,7 +160,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "ebed483d172f97cc2cdcc277e3b58c797d53ae1d15b2aa115c96c9199e433dbf"
+          "sha256": "b92039ef56bf36e55ae9a4233a5ff5cfc5bd905db892241b74e6825bb1f265c7"
         }
       }
     },
@@ -179,7 +187,8 @@
           "path": "brand-assets/production/adl/logo-on-dark.svg",
           "sha256": "124379f9add35458a7d9be26f60cf4128e08b94756fe38654aacb86fb1182204"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "tawassul": {
       "name": "Tawassul B2B",
@@ -204,7 +213,8 @@
           "path": "brand-assets/production/tawassul/logo-on-dark.svg",
           "sha256": "3cbc008ad15086fb999decf3441d81529486a02ef06c6062ea199cbcc259d17b"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "adab": {
       "name": "Adab AI",
@@ -229,7 +239,8 @@
           "path": "brand-assets/production/adab/logo-on-dark.svg",
           "sha256": "616b32c241cc654cd1f8139890d31a53601867b1b4635de0ba9588cd2f80c243"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "khidmah": {
       "name": "Khidmah AI",
@@ -254,7 +265,8 @@
           "path": "brand-assets/production/khidmah/logo-on-dark.svg",
           "sha256": "e0bb8caaeb8b92ec4745a12f1e2f6872d841831352ece3ae8c5b10402aa3adc9"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "jomrok": {
       "name": "Jomrok AI",
@@ -279,7 +291,8 @@
           "path": "brand-assets/production/jomrok/logo-on-dark.svg",
           "sha256": "7f0eed5fc450c59a297b052fcf2c709bd4f521e70111ed17d376e66cf35c50cf"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "khibrat": {
       "name": "Khibrat AI",
@@ -304,14 +317,17 @@
           "path": "brand-assets/production/khibrat/logo-on-dark.svg",
           "sha256": "77dc0c0b34b371ee75a97f4e944a9c870a92f569ae554b3f3604ccae52efe3c7"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "majlis": {
       "name": "Majlis AI",
+      "reference_state": "user_requested_revision",
+      "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/majlis/dimensional-logo.png",
-          "sha256": "2587b67ff9cf4bcacf38bd6bf75227e67ca16d885aedec6e63447bd6d01db525"
+          "sha256": "6186add31a310f42336387309d7abb4e404372593bc58719bcca6d523a8d1046"
         },
         "wordmark_light": {
           "path": "brand-assets/production/majlis/wordmark-on-light.svg",
@@ -319,7 +335,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/majlis/logo-on-light.svg",
-          "sha256": "bcf071877018a5703e56a3bd655da8f1068d4ed2d3af6d406c4037204ad2cb08"
+          "sha256": "f4cf23bbaa1fbfcad9f4be9b9894b65002e9fb5f6e9c4d27d7e265ad11873b73"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/majlis/wordmark-on-dark.svg",
@@ -327,7 +343,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/majlis/logo-on-dark.svg",
-          "sha256": "bb3d3f879b10dcb29f2a039e80df86dbac14dca4507f30e32e193af6b58429d3"
+          "sha256": "bbd16082b26aab66fb73fb2f8136972a06bc45380da7001e4e02b1ea6a5319f7"
         }
       }
     },
@@ -354,14 +370,17 @@
           "path": "brand-assets/production/rafiq/logo-on-dark.svg",
           "sha256": "5fd017a4639b32bfd59e72671545290f4c04eb3dfe28f19ca21c057ce964faba"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "sawm": {
       "name": "Sawm AI",
+      "reference_state": "user_requested_revision",
+      "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/sawm/dimensional-logo.png",
-          "sha256": "8ab9accc4f2aacc5e34360198056201aca4f5511641463a6728b30edb0e0b4c4"
+          "sha256": "f0097859e4c6e96d50a58f0ad09ecfe53c914e639f3567d59b085f5618d486db"
         },
         "wordmark_light": {
           "path": "brand-assets/production/sawm/wordmark-on-light.svg",
@@ -369,7 +388,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/sawm/logo-on-light.svg",
-          "sha256": "f7e2dd084523c118aa645aff1c244f3778febfc1d6f2c62dccf3467f59f5ac75"
+          "sha256": "22df698bbe042f19114a8284b12ac57b74caa6be5987deeaebcc1d5f16011068"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/sawm/wordmark-on-dark.svg",
@@ -377,7 +396,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/sawm/logo-on-dark.svg",
-          "sha256": "89a7311b71759c1f8b3e6c090514993bbec012703a930d78b112ddd2e1125103"
+          "sha256": "780902bd68301823cda1f9d278ce058552f7a3a52685b5269784b96abc4fdeb9"
         }
       }
     },
@@ -404,7 +423,8 @@
           "path": "brand-assets/production/mizan/logo-on-dark.svg",
           "sha256": "34110cb9cea81f30e6280fc64041b9b90aa46f5425f718d527213e25085de716"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "thawg": {
       "name": "Thawg AI",
@@ -429,7 +449,8 @@
           "path": "brand-assets/production/thawg/logo-on-dark.svg",
           "sha256": "94bd503d7e15eb5b4fc5919c52af5db2c9bc9008b20e4df8c946e0c2ac526423"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "manzil": {
       "name": "Manzil AI",
@@ -454,7 +475,8 @@
           "path": "brand-assets/production/manzil/logo-on-dark.svg",
           "sha256": "e593aead3a5df4b861f3c9b7a54f24d7ed29eaa983136e4934a0435fb7346af6"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "gurbah": {
       "name": "Gurbah AI",
@@ -479,7 +501,8 @@
           "path": "brand-assets/production/gurbah/logo-on-dark.svg",
           "sha256": "f8516d1e60b15852dc0cac7384fcb1b9e9d067a088b881a29b1d3c5ae7b9912b"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "amanah-eco": {
       "name": "Amanah Eco",
@@ -504,7 +527,8 @@
           "path": "brand-assets/production/amanah-eco/logo-on-dark.svg",
           "sha256": "e64749267e278abf1b6739e7058b516a185798fa44561012b859a4cf650cf83c"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "nafas": {
       "name": "Nafas AI",
@@ -529,7 +553,8 @@
           "path": "brand-assets/production/nafas/logo-on-dark.svg",
           "sha256": "4b425f64a3f7934d6c8e5074da4effe75f7c007848930d1d3310e333745b6637"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "tadweer": {
       "name": "Tadweer AI",
@@ -554,14 +579,17 @@
           "path": "brand-assets/production/tadweer/logo-on-dark.svg",
           "sha256": "657ebed0bd0ebcca175ff99c0bf42ef7481b6998694b85d1c93a21317e4b3f6c"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "turath": {
       "name": "Turath AI",
+      "reference_state": "user_requested_revision",
+      "revision": "five-purpose-refinement",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/turath/dimensional-logo.png",
-          "sha256": "89277125b3c7a093b509f13f7b4559ab612f0fcf4d73ca679fcedaa5a8885c7c"
+          "sha256": "eda665f1da99fef5bc24ef213eb9eaa3c309394fd0e0ebeb99762a835f5d5fc9"
         },
         "wordmark_light": {
           "path": "brand-assets/production/turath/wordmark-on-light.svg",
@@ -569,7 +597,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/turath/logo-on-light.svg",
-          "sha256": "5dafb18a7a6b185038a42fb60186c922e8560dbcc9270f597a10724e6dd452c8"
+          "sha256": "a222c9aa8fce4c201548de8538b237819c45a02435df4679cea233dfee285685"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/turath/wordmark-on-dark.svg",
@@ -577,7 +605,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/turath/logo-on-dark.svg",
-          "sha256": "d0c07580c3a4e88e5c9994277d812a1802fb59db36c1d03d776e690a1f3957cc"
+          "sha256": "157ded9feca2c157d5994a4e727babeb08d095320a098171dbfddfb246cedf0c"
         }
       }
     },
@@ -604,7 +632,8 @@
           "path": "brand-assets/production/himam/logo-on-dark.svg",
           "sha256": "7678b164a5e5b485c806b63aff3ee6b26b24989d790c01074bd661a02d3840d8"
         }
-      }
+      },
+      "reference_state": "user_approved"
     },
     "hisad": {
       "name": "Hisad AI",
@@ -629,7 +658,9 @@
           "path": "brand-assets/production/hisad/logo-on-dark.svg",
           "sha256": "386f63675f79467fa9ac45a1a7de31815c2395807768d76ecf49987d9ea60530"
         }
-      }
+      },
+      "reference_state": "user_approved"
     }
-  }
+  },
+  "subsequent_request": "Improve the Himayah, Tawteen, Sawm, Majlis and Turath logos to better represent their purposes."
 }

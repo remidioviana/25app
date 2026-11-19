@@ -2,24 +2,24 @@
   "scope": "First-five original dimensional launcher artwork and separate Android adaptive foregrounds. Flattened iOS PNG artwork, not Icon Composer files or live system-lighting layers.",
   "icons": {
     "himayah": {
-      "concept": "Forensic document layers",
-      "material_brief": "Smoked indigo glass and brushed titanium; coral inspection marker.",
+      "concept": "Protected contract and clause inspection",
+      "material_brief": "Smoked-indigo shield, titanium rim, ivory contract and coral clause-inspection magnifier.",
       "generation": "Original AI-generated brand illustration; foreground separately edited using image generation. No generated lettering.",
       "icon": {
         "path": "mobile/assets/variants/himayah/dimensional-icon.png",
-        "sha256": "1e90986c0731e24200dc092c1b0529d23397659df26828f839d9796cfd5be2d6",
+        "sha256": "cc6663a0a95bb44f10dda528baca19688714753c227dd4ba02efeb3300f86a23",
         "width": 1254,
         "height": 1254,
         "mode": "RGB",
-        "generated_original": "exec-00ea9131-29b0-42b5-bca2-306054a17f5c.png"
+        "generated_original": "exec-e450876e-c38d-4369-a96a-b8d7c703666d.png"
       },
       "android_foreground": {
         "path": "mobile/assets/variants/himayah/adaptive-foreground.png",
-        "sha256": "93af3a48922de20e01dc225a50c994e6d13b71ca6178b0d96609e18bee16a1a2",
+        "sha256": "805cffff322fb7f92113d5c258db14233bf8aab9f6827f9608a2ee367a64b36e",
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-06b04a0b-5f3f-438c-aedd-8798f201108c.png"
+        "generated_original": "exec-845ac7f8-ebc0-4f57-b6cc-320ac3f11d60.png"
       },
       "small_size_expert_acceptance": false,
       "physical_device_verified": false,

@@ -3,16 +3,16 @@
   "products": {
     "himayah": {
       "name": "Himayah AI",
-      "concept": "Forensic document layers",
-      "brief": "Preserve the established smoked-indigo glass document leaves with titanium edges and coral inspection marker.",
+      "concept": "Protected contract and clause inspection",
+      "brief": "One deep-indigo protective shield enclosing a warm ivory contract page. Two simple recessed clause lines appear on the page; a small coral magnifying ring is integrated with the lower-right page edge, clearly inspecting a clause. Shield and contract must be one bold, compact silhouette. Smoked indigo #0B192C, titanium #C5C9D0, ivory #F4E7D5, coral #E7655A. This is privacy-contract protection and source-linked review. No government emblems, approval check, keyhole or unrelated location marker.",
       "symbol": {
         "path": "mobile/assets/variants/himayah/dimensional-logo.png",
-        "sha256": "7bd4382a0a53218daa401f0b3de70b3590df1bb8165c410404b227f9d56ed018",
-        "bytes": 956824,
+        "sha256": "bad5ced98985c62a312830a660b5df511a98947d245b7dc4a6dd55e409a052e3",
+        "bytes": 1093146,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-f8ae0dca-5b11-4da7-a373-331ee1663bca.png"
+        "generated_original": "/workspace/generated_images/exec-c74be7c3-87c3-4efc-b3ac-d5c43f462a0e.png"
       },
       "typography": {
         "font": {
@@ -33,8 +33,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/himayah/logo-on-light.svg",
-          "sha256": "ad5c13168029198521aa78bede252e37e04f1e7195c92b5b236543136fe4c209",
-          "bytes": 1278571
+          "sha256": "38b811c1d5393e86fc77d2066c12d30945114f27e445b362c44696e1ee36a02e",
+          "bytes": 1460331
         },
         "wordmark_dark": {
           "path": "brand-assets/production/himayah/wordmark-on-dark.svg",
@@ -43,8 +43,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/himayah/logo-on-dark.svg",
-          "sha256": "ccd05791ea0741050c7790dd970c1d47c14319e30a6b9571e101e06ca41eca69",
-          "bytes": 1278571
+          "sha256": "bde303de9c5aa8368552c27f4179859dfe53c7c22b45837a522568cbad34b589",
+          "bytes": 1460331
         }
       },
       "composition": "horizontal",
@@ -278,16 +278,16 @@
     },
     "tawteen": {
       "name": "Tawteen AI",
-      "concept": "Interwoven workforce paths",
-      "brief": "Three pine-green satin ribbons interweave into a clear branching workforce-path symbol, with one terracotta connector and light-jade edge. Organic organizational geometry, not a corporate bar chart or generic people silhouettes.",
+      "concept": "A workforce built around local opportunity",
+      "brief": "Three clear upright stylized human figures with rounded heads, arranged inside a wide open deep-green architectural employment frame. The central figure is terracotta, the two side figures are jade and warm ivory. A shared solid foundation connects their roles; one small stepped gold/green hiring tab joins the frame. The idea is a balanced professional workforce and local hiring opportunity, not abstract arrows or plants. Forest green #174F40, jade #4C8668, terracotta #BE7154 and warm ivory. No flags, racial markers, demographic percentages, arrows or written labels.",
       "symbol": {
         "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
-        "sha256": "94d6052a3f0bee6ab66b4213cbe01a31acf5f1bdf350b873b1fc2c4768af1868",
-        "bytes": 792199,
+        "sha256": "c11c6a6e5083e96a6becd273e2063e2790792d00c24b5b8f87dba6fc25e694e4",
+        "bytes": 1064418,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-cad62f4c-3b56-4f21-bc49-91ee7fa3c4e7.png"
+        "generated_original": "/workspace/generated_images/exec-ec80a02d-6050-4c5b-91bc-aa4706b03f7f.png"
       },
       "typography": {
         "font": {
@@ -308,8 +308,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "f5866c6f9ab7c07274c80d3135847f177496926aa4f2aba62912eee2ce0dbba7",
-          "bytes": 1059312
+          "sha256": "255a4df4002c8540e0a90ac68849b9be039540bffd9683b5ec2053dad5ecd6aa",
+          "bytes": 1422268
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
@@ -318,8 +318,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "ebed483d172f97cc2cdcc277e3b58c797d53ae1d15b2aa115c96c9199e433dbf",
-          "bytes": 1059312
+          "sha256": "b92039ef56bf36e55ae9a4233a5ff5cfc5bd905db892241b74e6825bb1f265c7",
+          "bytes": 1422268
         }
       },
       "composition": "horizontal",
@@ -663,16 +663,16 @@
     },
     "majlis": {
       "name": "Majlis AI",
-      "concept": "Welcoming courtyard",
-      "brief": "A small open ultramarine architectural courtyard made of softly stepped porcelain planes with one orchid central welcome space. Warm, human, spatial onboarding. No arch, doorway, chair, people or generic house silhouette.",
+      "concept": "A welcoming professional arrival",
+      "brief": "A modern corporate onboarding symbol: an open squared ultramarine office doorway with a single warm-ivory employee identity badge crossing the threshold. The badge bears only a simple sculpted human bust and two short recessed lines, no lettering. Three short orchid step-tabs integrate with the base, suggesting sequenced onboarding tasks. Compact dignified welcome into an organization, not a garden courtyard or real estate icon. Ultramarine #253CA5, porcelain ivory #F7F5EE and restrained orchid #B88AC8. No flags, palm trees, arches, handshake anatomy or approval check.",
       "symbol": {
         "path": "mobile/assets/variants/majlis/dimensional-logo.png",
-        "sha256": "2587b67ff9cf4bcacf38bd6bf75227e67ca16d885aedec6e63447bd6d01db525",
-        "bytes": 918498,
+        "sha256": "6186add31a310f42336387309d7abb4e404372593bc58719bcca6d523a8d1046",
+        "bytes": 668752,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-8cc82b16-1c21-4bfd-89ca-42da70b81d64.png"
+        "generated_original": "/workspace/generated_images/exec-69bc5a30-f339-4541-ae8a-3cc6ded4ac1d.png"
       },
       "typography": {
         "font": {
@@ -693,8 +693,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/majlis/logo-on-light.svg",
-          "sha256": "bcf071877018a5703e56a3bd655da8f1068d4ed2d3af6d406c4037204ad2cb08",
-          "bytes": 1227221
+          "sha256": "f4cf23bbaa1fbfcad9f4be9b9894b65002e9fb5f6e9c4d27d7e265ad11873b73",
+          "bytes": 894229
         },
         "wordmark_dark": {
           "path": "brand-assets/production/majlis/wordmark-on-dark.svg",
@@ -703,8 +703,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/majlis/logo-on-dark.svg",
-          "sha256": "bb3d3f879b10dcb29f2a039e80df86dbac14dca4507f30e32e193af6b58429d3",
-          "bytes": 1227221
+          "sha256": "bbd16082b26aab66fb73fb2f8136972a06bc45380da7001e4e02b1ea6a5319f7",
+          "bytes": 894229
         }
       },
       "composition": "stacked",
@@ -773,16 +773,16 @@
     },
     "sawm": {
       "name": "Sawm AI",
-      "concept": "Ramadan rhythm with protected rest",
-      "brief": "A graceful sculpted crescent in muted champagne gold opening around three small ivory rounded schedule bars, with one bar separated by a generous rest gap. A subtle indigo inset on the crescent ties night and daytime rhythm together. Crescent and schedule are one compact integrated silhouette. This is Ramadan routine planning, not astronomy or weather: no sunburst, compass, orbiting planets, stars, mosque, clock face or numerals. Colors midnight indigo #131F4D, warm ivory #FFE8B0 and muted gold #D0B87C.",
+      "concept": "Intentional time and rest during Ramadan",
+      "brief": "An elegant single champagne-gold crescent embracing a compact hourglass with a deep-indigo frame and warm ivory sand. The hourglass is clearly recognizable with two balanced chambers, connecting productivity windows and intentional rest during Ramadan. Strong simple integrated silhouette, no schedule bars from the previous design. Midnight indigo #131F4D, gold #D0B87C and ivory #FFE8B0. No stars, sunburst, mosque, clock face, calendar tile, fake religious seal or countdown numerals.",
       "symbol": {
         "path": "mobile/assets/variants/sawm/dimensional-logo.png",
-        "sha256": "8ab9accc4f2aacc5e34360198056201aca4f5511641463a6728b30edb0e0b4c4",
-        "bytes": 926457,
+        "sha256": "f0097859e4c6e96d50a58f0ad09ecfe53c914e639f3567d59b085f5618d486db",
+        "bytes": 885049,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-0413748d-9892-4c99-b55f-9f5959e9d3bc.png"
+        "generated_original": "/workspace/generated_images/exec-2611d718-f39e-4f27-84e1-ded95f96ada6.png"
       },
       "typography": {
         "font": {
@@ -803,8 +803,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/sawm/logo-on-light.svg",
-          "sha256": "f7e2dd084523c118aa645aff1c244f3778febfc1d6f2c62dccf3467f59f5ac75",
-          "bytes": 1238506
+          "sha256": "22df698bbe042f19114a8284b12ac57b74caa6be5987deeaebcc1d5f16011068",
+          "bytes": 1183298
         },
         "wordmark_dark": {
           "path": "brand-assets/production/sawm/wordmark-on-dark.svg",
@@ -813,8 +813,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/sawm/logo-on-dark.svg",
-          "sha256": "89a7311b71759c1f8b3e6c090514993bbec012703a930d78b112ddd2e1125103",
-          "bytes": 1238506
+          "sha256": "780902bd68301823cda1f9d278ce058552f7a3a52685b5269784b96abc4fdeb9",
+          "bytes": 1183298
         }
       },
       "composition": "stacked",
@@ -1213,16 +1213,16 @@
     },
     "turath": {
       "name": "Turath AI",
-      "concept": "Archival fragment",
-      "brief": "A refined bronze archival frame holding one sandstone pottery fragment with a sparse incised geometric line. Museum-quality tactile material, rich but restrained, clear at small sizes. An original conceptual heritage symbol, not a real attributed artifact. No text, national emblem or copied museum object.",
+      "concept": "Learning the living Gulf heritage",
+      "brief": "A refined heritage-learning symbol: an open warm-parchment book whose central page fold rises into a single small stylized Gulf wind-tower/barjeel in sandstone, with four clearly cut ventilation openings and a restrained bronze rim. Book and heritage architecture are physically integrated into one strong silhouette. The purpose is learning history through source-backed reading, not an archaeological fragment or museum seal. Sandstone #CBA16A, parchment #F0E1C6 and bronze #805C3C. No invented inscriptions, emblems, Arabic lettering, flags or generic mosque dome.",
       "symbol": {
         "path": "mobile/assets/variants/turath/dimensional-logo.png",
-        "sha256": "89277125b3c7a093b509f13f7b4559ab612f0fcf4d73ca679fcedaa5a8885c7c",
-        "bytes": 1092442,
+        "sha256": "eda665f1da99fef5bc24ef213eb9eaa3c309394fd0e0ebeb99762a835f5d5fc9",
+        "bytes": 1132662,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-e0a3b65a-2adc-4fbd-8e8a-c63e9936ce6d.png"
+        "generated_original": "/workspace/generated_images/exec-42b02496-22b8-4d89-9a9f-057cab5e021d.png"
       },
       "typography": {
         "font": {
@@ -1243,8 +1243,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/turath/logo-on-light.svg",
-          "sha256": "5dafb18a7a6b185038a42fb60186c922e8560dbcc9270f597a10724e6dd452c8",
-          "bytes": 1460385
+          "sha256": "a222c9aa8fce4c201548de8538b237819c45a02435df4679cea233dfee285685",
+          "bytes": 1514009
         },
         "wordmark_dark": {
           "path": "brand-assets/production/turath/wordmark-on-dark.svg",
@@ -1253,8 +1253,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/turath/logo-on-dark.svg",
-          "sha256": "d0c07580c3a4e88e5c9994277d812a1802fb59db36c1d03d776e690a1f3957cc",
-          "bytes": 1460385
+          "sha256": "157ded9feca2c157d5994a4e727babeb08d095320a098171dbfddfb246cedf0c",
+          "bytes": 1514009
         }
       },
       "composition": "stacked",

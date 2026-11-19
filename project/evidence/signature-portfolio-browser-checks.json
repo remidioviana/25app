@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-18T23:12:49.115625+00:00",
-  "source_commit": "774a39a28057fcd45d29bfe1b464ab465d9db715",
+  "checked_at": "2026-11-19T00:54:57.316936+00:00",
+  "source_commit": "8f48968e34ae9e9fef592dbc1f0640b2bb91ee73",
   "viewport": {
     "width": 390,
     "height": 844
@@ -232,7 +232,7 @@
       "console_warnings_and_errors": []
     }
   ],
-  "source_commit_scope": "Base commit before committing the seven-symbol working-tree revision",
-  "branding_revision": "2026-11-18-purpose-redesign",
-  "branding_registry_sha256": "354fc40984046d9a2396d1ca65f78914d252b86bc99eea9dc6e9b1713aca4761"
+  "source_commit_scope": "Base commit before committing the five-symbol working-tree refinement",
+  "branding_revision": "five-purpose-refinement",
+  "branding_registry_sha256": "5046b586ee38640e68ae92e5a53f8f1018510654acd9008b164fc2dfd6eefea8"
 }

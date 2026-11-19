@@ -4,7 +4,7 @@
   "products": [
     {
       "id": "himayah",
-      "symbol_sha256": "7bd4382a0a53218daa401f0b3de70b3590df1bb8165c410404b227f9d56ed018",
+      "symbol_sha256": "bad5ced98985c62a312830a660b5df511a98947d245b7dc4a6dd55e409a052e3",
       "size": [
         1254,
         1254
@@ -12,9 +12,9 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        30,
-        1218,
-        1254
+        9,
+        1242,
+        1234
       ],
       "exact_name_vector_files": 4
     },
@@ -84,7 +84,7 @@
     },
     {
       "id": "tawteen",
-      "symbol_sha256": "94d6052a3f0bee6ab66b4213cbe01a31acf5f1bdf350b873b1fc2c4768af1868",
+      "symbol_sha256": "c11c6a6e5083e96a6becd273e2063e2790792d00c24b5b8f87dba6fc25e694e4",
       "size": [
         1254,
         1254
@@ -92,8 +92,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        19,
-        1253,
+        9,
+        1254,
         1254
       ],
       "exact_name_vector_files": 4
@@ -196,17 +196,17 @@
     },
     {
       "id": "majlis",
-      "symbol_sha256": "2587b67ff9cf4bcacf38bd6bf75227e67ca16d885aedec6e63447bd6d01db525",
+      "symbol_sha256": "6186add31a310f42336387309d7abb4e404372593bc58719bcca6d523a8d1046",
       "size": [
         1254,
         1254
       ],
-      "edge_alpha_max": 1,
+      "edge_alpha_max": 0,
       "alpha_bounds": [
-        0,
-        29,
-        1226,
-        1254
+        31,
+        19,
+        1216,
+        1238
       ],
       "exact_name_vector_files": 4
     },
@@ -228,7 +228,7 @@
     },
     {
       "id": "sawm",
-      "symbol_sha256": "8ab9accc4f2aacc5e34360198056201aca4f5511641463a6728b30edb0e0b4c4",
+      "symbol_sha256": "f0097859e4c6e96d50a58f0ad09ecfe53c914e639f3567d59b085f5618d486db",
       "size": [
         1254,
         1254
@@ -236,8 +236,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        9,
-        1240,
+        23,
+        1251,
         1254
       ],
       "exact_name_vector_files": 4
@@ -356,7 +356,7 @@
     },
     {
       "id": "turath",
-      "symbol_sha256": "89277125b3c7a093b509f13f7b4559ab612f0fcf4d73ca679fcedaa5a8885c7c",
+      "symbol_sha256": "eda665f1da99fef5bc24ef213eb9eaa3c309394fd0e0ebeb99762a835f5d5fc9",
       "size": [
         1254,
         1254
@@ -364,8 +364,8 @@
       "edge_alpha_max": 1,
       "alpha_bounds": [
         0,
-        31,
-        1212,
+        20,
+        1236,
         1254
       ],
       "exact_name_vector_files": 4

@@ -5,19 +5,19 @@
       "app": "himayah",
       "files": {
         "icon": {
-          "sha256": "1e90986c0731e24200dc092c1b0529d23397659df26828f839d9796cfd5be2d6",
+          "sha256": "cc6663a0a95bb44f10dda528baca19688714753c227dd4ba02efeb3300f86a23",
           "width": 1254,
           "height": 1254
         },
         "android_foreground": {
-          "sha256": "93af3a48922de20e01dc225a50c994e6d13b71ca6178b0d96609e18bee16a1a2",
+          "sha256": "805cffff322fb7f92113d5c258db14233bf8aab9f6827f9608a2ee367a64b36e",
           "width": 1254,
           "height": 1254,
-          "edge_alpha_max": 1,
-          "core_pixels": 234688,
+          "edge_alpha_max": 0,
+          "core_pixels": 105595,
           "fraction_inside_66dp": 1,
           "fraction_inside_72dp": 1,
-          "maximum_core_radius_fraction": 0.28220258572120277,
+          "maximum_core_radius_fraction": 0.17904886857510133,
           "mask_geometry_checked": true
         }
       }
