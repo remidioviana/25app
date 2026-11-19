@@ -45,3 +45,39 @@ test('a failed replacement start resumes polling the previously displayed active
  w.setAPI(()=>Promise.resolve({id:'existing',status:'completed'}));await active[0].callback();
  assert.equal(w.state().currentRun.status,'completed');assert.equal(w.state().renders,1);
 });
+test('only the latest document search may render excerpts or errors',async()=>{
+ const w=workspace(),first=deferred(),second=deferred();let calls=0;
+ w.setAPI((url:string)=>url.endsWith('/documents')?Promise.resolve({documents:[]}):++calls===1?first.promise:second.promise);
+ await w.run('tab="docs";renderDocs()');w.run('$("#doc-query").value="first";$("#semantic-search").checked=false;');
+ const old=w.nodes['#search-doc'].onclick();w.run('$("#doc-query").value="second";');const latest=w.nodes['#search-doc'].onclick();
+ second.resolve({matches:[{title:'Latest',text:'Current evidence',citation:'ref:2'}]});await latest;
+ first.resolve({matches:[{title:'Stale',text:'Old evidence',citation:'ref:1'}]});await old;
+ assert.match(w.nodes['#matches'].innerHTML,/Latest/);assert.doesNotMatch(w.nodes['#matches'].innerHTML,/Stale/);
+});
+test('query changes invalidate pending searches even when the original text is restored',async()=>{
+ const w=workspace(),response=deferred();w.setAPI((url:string)=>url.endsWith('/documents')?Promise.resolve({documents:[]}):response.promise);
+ await w.run('tab="docs";renderDocs()');w.run('$("#doc-query").value="first";$("#semantic-search").checked=false;');const pending=w.nodes['#search-doc'].onclick();
+ w.run('$("#doc-query").value="edited";');w.nodes['#doc-query'].oninput();w.run('$("#doc-query").value="first";');w.nodes['#doc-query'].oninput();
+ response.reject(new Error('stale search error'));await pending;assert.equal(w.nodes['#matches'].innerHTML,'');assert.deepEqual(w.state().notices,[]);
+});
+test('an older document panel cannot replace a newly opened panel in the same workspace',async()=>{
+ const w=workspace(),old=deferred();let calls=0;w.setAPI(()=>++calls===1?old.promise:Promise.resolve({documents:[]}));
+ const first=w.run('tab="docs";renderDocs()');await w.run('tab="input";tab="docs";renderDocs()');
+ old.resolve({documents:[{id:'old',title:'STALE SOURCE',source:'ref:1',as_of:''}]});await first;
+ assert.doesNotMatch(w.nodes['#left'].innerHTML,/STALE SOURCE/);
+});
+test('older intake responses cannot replace a newer proposal or enable its pending button',async()=>{
+ const w=workspace(),old=deferred(),latest=deferred();let calls=0;w.setAPI(()=>++calls===1?old.promise:latest.promise);w.run('config.model_configured=true;goal="First";');
+ const first=w.run('prepareIntake()');w.run('goal="Second";');const second=w.run('prepareIntake()');
+ old.resolve({status:'needs_information',questions:['Old question']});await first;
+ assert.equal(w.nodes['#intake'].disabled,true);assert.equal(w.nodes['#intake-result'].innerHTML,'');
+ latest.resolve({status:'needs_information',questions:['Latest question']});await second;
+ assert.match(w.nodes['#intake-result'].innerHTML,/Latest question/);assert.equal(w.nodes['#intake'].disabled,false);
+});
+test('editing and restoring the goal invalidates a pending proposal without trapping the action disabled',async()=>{
+ const w=workspace(),response=deferred();w.setAPI((url:string)=>url.endsWith('/connectors')?Promise.resolve({connectors:[]}):response.promise);
+ w.run('config.model_configured=true;goal="First";renderInputOriginal();');const pending=w.run('prepareIntake()');
+ w.nodes['#goal'].oninput({target:{value:'Edited'}});w.nodes['#goal'].oninput({target:{value:'First'}});
+ response.resolve({status:'needs_information',questions:['Stale question']});await pending;
+ assert.equal(w.nodes['#intake-result'].innerHTML,'');assert.equal(w.nodes['#intake'].disabled,false);
+});

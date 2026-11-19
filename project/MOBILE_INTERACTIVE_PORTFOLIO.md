@@ -77,3 +77,5 @@ The Web workspace example flow preserves the first pre-example draft, provenance
 Web responses are bound to the workspace instance that started them. Run starts and history selections are ordered; stale polling, document results and loader completions cannot replace the current workspace after navigation, including leaving and reopening the same app. Deferred-response regressions exercise successful and failed requests. This isolates presentation state; already-started server operations retain their own lifecycle.
 
 If a replacement run fails to start, polling resumes for the previously displayed active run. The failure does not silently strand that run in its last recorded status.
+
+Document panels and searches have independent generations. Only the latest search for the current query and mode can render; editing the query invalidates pending results, including editing back to the same text. Intake proposals are ordered and tied to the current goal and input panel; changing the goal clears stale proposal controls and releases the action for a fresh request.
