@@ -1,0 +1,16 @@
+{
+  "scope": "Shared mobile code and assets exported for Android and iOS during implementation. Not signed binaries or physical-device acceptance.",
+  "default_variant": "mizan",
+  "platforms": {
+    "ios": {
+      "bundle_sha256": "da31c99dca060d01c39c3749a6dceea32f097ca42bc97a550c50d69a5e86f1b9",
+      "bytes": 3290494,
+      "assets": 198
+    },
+    "android": {
+      "bundle_sha256": "1e507fa4c3eb92d6e62339bed2eae0fd96d2c2b2f8daeebd96817af01aa2f8bc",
+      "bytes": 3276620,
+      "assets": 201
+    }
+  }
+}

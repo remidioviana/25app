@@ -20,8 +20,14 @@
         "design/himayah/VERIFICATION.md",
         "design/himayah/index.html"
       ],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -48,7 +54,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/groq-remaining-four-three-model-rag.json"
       ],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 2,
@@ -166,8 +173,14 @@
       "design_unit": "in_progress",
       "browser_views": 34,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -194,7 +207,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/groq-munagasah-three-model-rag-verified.json"
       ],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 5,
@@ -210,8 +224,14 @@
       "design_unit": "in_progress",
       "browser_views": 34,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -238,7 +258,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/groq-iqamah-sahil-three-model-rag-verified.json"
       ],
-      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance"
+      "three_model_graph_diagnostic_scope": "Preview evaluation with synthetic inputs; not Production acceptance",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 6,
@@ -254,8 +275,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -282,7 +309,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-2-groq-targeted-retry.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 7,
@@ -298,8 +326,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -326,7 +360,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-2-groq-paced-attempt.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 8,
@@ -342,8 +377,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -370,7 +411,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-2-groq-paced-attempt.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 9,
@@ -386,8 +428,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -414,7 +462,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-2-groq-targeted-retry.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 10,
@@ -430,8 +479,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -458,7 +513,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-2-groq-paced-attempt.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 11,
@@ -474,8 +530,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -502,7 +564,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-3-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 12,
@@ -518,8 +581,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -546,7 +615,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-3-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 13,
@@ -562,8 +632,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -590,7 +666,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-3-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 14,
@@ -606,8 +683,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -634,7 +717,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-3-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 15,
@@ -650,8 +734,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -678,7 +768,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-3-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance."
+      "three_model_graph_diagnostic_scope": "GPT-OSS20B, Qwen Preview and GPT-OSS120B observed; synthetic input, not permanent deployment or production acceptance.",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 16,
@@ -694,8 +785,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -725,7 +822,8 @@
         "project/evidence/mizan-official-finance-groq-retry.json",
         "project/evidence/lot-4-mizan-current-retry.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 17,
@@ -741,8 +839,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -769,7 +873,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-4-groq-live-attempt.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 18,
@@ -785,8 +890,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -816,7 +927,8 @@
         "project/evidence/lot-4-financial-groq-retry.json",
         "project/evidence/lot-4-finance-current-retest.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 19,
@@ -832,8 +944,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -860,7 +978,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-4-groq-live-attempt.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 20,
@@ -876,8 +995,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -904,7 +1029,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-4-groq-targeted-retry.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 21,
@@ -920,8 +1046,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -948,7 +1080,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-5-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 22,
@@ -964,8 +1097,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -992,7 +1131,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-5-groq-targeted-retry.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 23,
@@ -1008,8 +1148,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -1036,7 +1182,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-5-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 24,
@@ -1052,8 +1199,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -1080,7 +1233,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-5-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     },
     {
       "order": 25,
@@ -1096,8 +1250,14 @@
       "design_unit": "pending",
       "browser_views": 0,
       "design_evidence": [],
-      "native_increment": "none",
-      "native_evidence": [],
+      "native_increment": "overview",
+      "native_evidence": [
+        "mobile/components/InteractiveRecords.tsx",
+        "mobile/src/experience/interactiveRecords.ts",
+        "project/MOBILE_INTERACTIVE_PORTFOLIO.md",
+        "project/evidence/interactive-portfolio-browser.json",
+        "project/evidence/interactive-native-export.json"
+      ],
       "native_flow_verified": false,
       "device_evidence": [],
       "agent_verified": false,
@@ -1124,7 +1284,8 @@
       "three_model_graph_diagnostic_evidence": [
         "project/evidence/lot-5-groq-live.json"
       ],
-      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment"
+      "three_model_graph_diagnostic_scope": "20B, Qwen Preview and 120B observed in synthetic evaluation; not permanent deployment",
+      "native_increment_scope": "Interactive entered-record views with domain-specific selection and details; controlled browser and shared native bundle export, not physical-device or primary-flow acceptance."
     }
   ]
 }

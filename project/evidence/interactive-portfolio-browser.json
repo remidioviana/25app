@@ -1,0 +1,179 @@
+{
+  "scope": "Controlled Chromium mobile-width interactions; not physical iOS/Android acceptance or live inference",
+  "results": [
+    {
+      "id": "himayah",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "iqamah",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "istithmar",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "munagasah",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "sahil",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "tawteen",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "adl",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "tawassul",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "adab",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "khidmah",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "jomrok",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "khibrat",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "majlis",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "rafiq",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "sawm",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "mizan",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "passed"
+    },
+    {
+      "id": "thawg",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "manzil",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "gurbah",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "amanah-eco",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "nafas",
+      "native_surface": "activity choice and local plan",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "tadweer",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "turath",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "himam",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    },
+    {
+      "id": "hisad",
+      "demo_label": "See How It Works",
+      "passed": true,
+      "errors": [],
+      "restore_previous_inputs": "not_exercised"
+    }
+  ]
+}
