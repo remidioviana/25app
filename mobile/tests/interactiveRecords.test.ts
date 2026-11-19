@@ -105,3 +105,11 @@ test('editorial limits count Unicode code points like the backend for Arabic and
  const source=interactiveRecords('turath',{topics:[],sources:[{title:'Excerpt',topics:[],excerpt:'🌍',reference:'test:1'}]})!.records[0];
  assert.equal(source.value,1);
 });
+test('campaign flags are case-insensitive and agree for expanded Unicode folds',()=>{
+ for(const [copy,term] of [['Guaranteed delivery','guaranteed'],['STRASSE','Straße'],['ΟΣ','ος'],['مرحبا بالعالم','مرحبا']]){
+  const record=interactiveRecords('adab',{...catalog.adab.example,copy,prohibited_terms:[term],max_characters:100})!.records[0];
+  assert.equal(record.state,'attention',copy);assert.match(record.detail,/Flagged terms:/);
+ }
+ const accent=interactiveRecords('adab',{...catalog.adab.example,copy:'café',prohibited_terms:['cafe'],max_characters:100})!.records[0];
+ assert.equal(accent.state,'recorded');
+});

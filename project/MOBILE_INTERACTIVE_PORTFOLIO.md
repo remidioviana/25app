@@ -63,3 +63,5 @@ Food-recipient previews also screen arrival against the entered expiry, matching
 Return-policy date gates reuse the strict calendar-date validator. Impossible dates and timestamps in date-only fields are displayed as unavailable instead of being normalized by JavaScript into a different day. Valid leap-day arithmetic and inclusive return-window boundaries remain supported.
 
 Editorial counters, allowance meters and source-excerpt lengths count Unicode code points, matching Python string lengths and the existing form validator. Emoji no longer count as two UTF-16 units; combining marks continue to count individually under that backend contract.
+
+Campaign term scanning uses the backend's full, locale-independent Unicode casefold semantics. The same hit list drives the text scan and the selected record's attention state. The generated table is pinned to Python's Unicode database; a Python regression checks its complete mapping against the runtime. Regenerate it with `python scripts/generate_mobile_casefold.py` when upgrading the backend Unicode contract. Casefold does not strip accents or normalize distinct combining sequences.

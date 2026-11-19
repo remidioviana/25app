@@ -1,4 +1,4 @@
-import {characterCount} from './textMetrics';
+import {characterCount,prohibitedTermHits} from './textMetrics';
 import {isCalendarDate} from '../dossier';
 import {timestampInput} from '../scheduleInput';
 import type {Json} from '../types';
@@ -23,7 +23,7 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  case 'tawteen':return scene('workforce','People behind the target','Active headcount',d.employees.map((e:any)=>row(e.id,e.active?1:0,'active',`${e.active?'Active':'Inactive'} employee; ${e.national?'reported national':'not reported national'}. Supplied target ${d.target_percent}%.`)));
  case 'adl':return scene('chronology','Evidence chronology','Sequence in the supplied file',[...d.events].sort((a:any,b:any)=>a.date.localeCompare(b.date)).map((e:any,i:number)=>row(e.description,i+1,'event',e.date,'recorded',e.reference)));
  case 'tawassul':return scene('account','Account fit canvas','Needs matched',d.products.map((p:any)=>{const tags=d.needs.filter((n:string)=>p.tags.includes(n));return row(p.name,tags.length,'needs',p.approved_fact,tags.length?'recorded':'attention',tags.join(', ')||'No matching need in supplied tags')}));
- case 'adab':return scene('editorial','Claim editing desk','Characters', [{...row('Original copy',characterCount(d.copy),'characters',d.copy,characterCount(d.copy)>d.max_characters?'attention':'recorded')},...d.approved_claims.map((x:string,i:number)=>row(`Approved wording ${i+1}`,characterCount(x),'characters',x,characterCount(x)>d.max_characters?'attention':'recorded'))]);
+ case 'adab':{const hits=prohibitedTermHits(d.copy,d.prohibited_terms);return scene('editorial','Claim editing desk','Characters', [{...row('Original copy',characterCount(d.copy),'characters',d.copy+(hits.length?'\nFlagged terms: '+hits.join(', '):''),characterCount(d.copy)>d.max_characters||hits.length>0?'attention':'recorded')},...d.approved_claims.map((x:string,i:number)=>row(`Approved wording ${i+1}`,characterCount(x),'characters',x,characterCount(x)>d.max_characters?'attention':'recorded'))]);}
  case 'khidmah':{const elapsed=isCalendarDate(d.as_of)&&isCalendarDate(d.purchase_date)?(Date.parse(d.as_of)-Date.parse(d.purchase_date))/86400000:NaN;return scene('policy','Return policy gates','Supplied policy checks',[
  row('Amount',d.amount,'amount',`Supplied refund limit ${d.refund_limit}.`,d.amount<=d.refund_limit?'recorded':'attention'),
  row('Return window',elapsed,'elapsed days',`Purchase ${d.purchase_date}; reference ${d.as_of}; allowed window ${d.return_window_days} days.`,elapsed>=0&&elapsed<=d.return_window_days?'recorded':'attention'),
