@@ -1,5 +1,5 @@
 import {characterCount,prohibitedTermHits} from './textMetrics';
-import {isCalendarDate} from '../dossier';
+import {isCalendarDate,dossierIssue,assessDossier} from '../dossier';
 import {timestampInput} from '../scheduleInput';
 import type {Json} from '../types';
 import {ledgerPreview} from './ledgerPreview';
@@ -18,7 +18,15 @@ export function interactiveRecords(id:string,input:Record<string,Json>):RecordSc
  const scene=(view:RecordView,title:string,axis:string,rows:Omit<InteractiveRecord,'id'>[]):RecordScene=>({view,title,axis,records:rows.map((r,i)=>({...r,id:`${view}-${i}`}))});
  switch(id){
  case 'himayah':return scene('clauses','Clause lens','Phrase occurrences',d.rules.map((r:any)=>{const count=r.phrase?d.text.toLowerCase().split(r.phrase.toLowerCase()).length-1:0;return row(r.label,count,'matches',r.phrase?`Screening phrase: “${r.phrase}”. ${r.required?'Marked required in your rule.':'Review flag in your rule.'}`:'No screening phrase supplied.',count?'recorded':'attention')}));
- case 'sahil':return scene('checkpoints','Service checkpoints','Documents listed',d.requirements.map((name:string)=>{const doc=d.documents.find((x:any)=>x.name===name);return row(name,doc?1:0,'listed',doc?`Expiry ${doc.expires}; reference date ${d.as_of}. Listing does not establish validity.`:'No matching document in this draft.',doc?'recorded':'attention',doc?.reference)}));
+ case 'sahil':{
+  const issue=dossierIssue(d);
+  if(issue)return scene('checkpoints','Service checkpoints','Documents listed',d.requirements.map((name:string)=>row(name,NaN,'listed',issue,'unknown')));
+  return scene('checkpoints','Service checkpoints','Documents listed',assessDossier(d).checks.map(check=>{
+   const state=check.status==='missing'||check.status==='expired'?'attention':check.expires?'recorded':'unknown';
+   const detail=check.status==='missing'?'No matching document in this draft.':check.status==='expired'?`Expired on ${check.expires}, before the reference date ${d.as_of}.`:`${check.expires?'Recorded expiry '+check.expires:'Expiry not provided'}; reference date ${d.as_of}. Presence does not establish authenticity or service eligibility.`;
+   return row(check.requirement,check.status==='missing'?0:1,'listed',detail,state,check.reference??undefined);
+  }));
+ }
  case 'munagasah':return scene('coverage','Tender coverage','Capability matches',d.requirements.map((name:string)=>row(name,d.capabilities.includes(name)?1:0,'matched',`Tender deadline ${d.deadline}; reference date ${d.as_of}. Confirm against the buyer’s tender pack.`,d.capabilities.includes(name)?'recorded':'attention')));
  case 'tawteen':return scene('workforce','People behind the target','Active headcount',d.employees.map((e:any)=>row(e.id,e.active?1:0,'active',`${e.active?'Active':'Inactive'} employee; ${e.national?'reported national':'not reported national'}. Supplied target ${d.target_percent}%.`)));
  case 'adl':return scene('chronology','Evidence chronology','Sequence in the supplied file',[...d.events].sort((a:any,b:any)=>a.date.localeCompare(b.date)).map((e:any,i:number)=>row(e.description,i+1,'event',e.date,'recorded',e.reference)));

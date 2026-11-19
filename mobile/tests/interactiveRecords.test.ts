@@ -113,3 +113,20 @@ test('campaign flags are case-insensitive and agree for expanded Unicode folds',
  const accent=interactiveRecords('adab',{...catalog.adab.example,copy:'café',prohibited_terms:['cafe'],max_characters:100})!.records[0];
  assert.equal(accent.state,'recorded');
 });
+test('service document checkpoints flag expiry while preserving date-boundary semantics',()=>{
+ const input={as_of:'2026-11-14',requirements:['identity'],documents:[{name:'identity',expires:'2026-11-13',reference:'doc:1'}]};
+ let record=interactiveRecords('sahil',input)!.records[0];assert.equal(record.state,'attention');assert.equal(record.value,1);assert.match(record.detail,/Expired/);
+ input.documents[0].expires='2026-11-14';
+ record=interactiveRecords('sahil',input)!.records[0];assert.equal(record.state,'recorded');assert.match(record.detail,/does not establish authenticity/);
+ input.documents[0].expires='';assert.equal(interactiveRecords('sahil',input)!.records[0].state,'unknown');
+ input.documents=[];record=interactiveRecords('sahil',input)!.records[0];assert.equal(record.state,'attention');assert.equal(record.value,0);
+});
+test('ambiguous or malformed document records cannot produce a confirmed checkpoint',()=>{
+ const base={as_of:'2026-11-14',requirements:['identity'],documents:[{name:'identity',expires:'2027-01-01',reference:'doc:1'}]};
+ const duplicate={...base,documents:[...base.documents,{...base.documents[0],expires:'2025-01-01'}]};
+ let record=interactiveRecords('sahil',duplicate)!.records[0];assert.equal(record.state,'unknown');assert.equal(record.available,false);assert.match(record.detail,/duplicate/);
+ for(const input of [{...base,as_of:'2026-02-30'},{...base,documents:[{...base.documents[0],expires:'2026-02-30'}]}]){
+  record=interactiveRecords('sahil',input)!.records[0];assert.equal(record.state,'unknown');assert.equal(record.available,false);
+ }
+ assert.deepEqual(interactiveRecords('sahil',{...base,requirements:[]})!.records,[]);
+});
