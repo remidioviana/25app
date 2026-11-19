@@ -55,3 +55,5 @@ All visual values are derived from entered records or explicitly chosen examples
 ## Follow-up: unavailable durations and incomplete access evidence
 
 Day-block previews reject malformed clocks and reversed intervals instead of displaying zero minutes as an observed duration. A valid same-time block still displays zero. Accessibility previews require both declared needs and nonempty segment evidence before reporting all needs available; an explicit barrier is flagged separately from missing evidence. Regression tests cover these cases.
+
+Budget comparisons reuse the reconciler's decimal totals and remaining amounts, avoiding binary floating-point false overruns. Categories with entered transactions but no supplied budget remain visible as unknown instead of disappearing from the comparison. Duplicate transaction IDs retain the reconciler's first-record policy.

@@ -59,3 +59,17 @@ test('empty route evidence and missing needs never establish access; explicit ba
  const record=interactiveRecords('himam',input)!.records[0];
  assert.equal(record.state,'attention');assert.match(record.detail,/reported barrier/);
 });
+test('budget visualizations use reconciled decimal totals without false overruns',()=>{
+ const input={currency:'AED',budgets:{food:.3},transactions:[{id:'a',category:'food',amount:.1,verified:true},{id:'b',category:'food',amount:.2,verified:true}]};
+ const record=interactiveRecords('mizan',input)!.records[0];
+ assert.equal(record.value,.3);assert.equal(record.state,'recorded');
+ input.transactions[1].amount=.21;
+ assert.equal(interactiveRecords('mizan',input)!.records[0].state,'attention');
+});
+test('unbudgeted spending remains visible and duplicate IDs stay excluded',()=>{
+ const input={currency:'AED',budgets:{food:10},transactions:[{id:'a',category:'transport',amount:2.5,verified:true},{id:'a',category:'transport',amount:20,verified:true}]};
+ const records=interactiveRecords('mizan',input)!.records;
+ assert.equal(records.length,2);assert.equal(records[0].label,'food');assert.equal(records[0].value,0);
+ assert.equal(records[1].label,'transport');assert.equal(records[1].value,2.5);assert.equal(records[1].state,'unknown');
+ assert.match(records[1].detail,/No category budget supplied/);assert.match(records[1].detail,/1 duplicate IDs excluded/);
+});
