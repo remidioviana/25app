@@ -79,3 +79,5 @@ Web responses are bound to the workspace instance that started them. Run starts 
 If a replacement run fails to start, polling resumes for the previously displayed active run. The failure does not silently strand that run in its last recorded status.
 
 Document panels and searches have independent generations. Only the latest search for the current query and mode can render; editing the query invalidates pending results, including editing back to the same text. Intake proposals are ordered and tied to the current goal and input panel; changing the goal clears stale proposal controls and releases the action for a fresh request.
+
+Connector reads and file previews apply only while their draft snapshot remains current. Edits made during retrieval/extraction are kept, newer selections supersede older ones, and file reading stops before uploading for extraction when edits have already invalidated the import. Clearing case inputs also invalidates a pending run-start response so it cannot repopulate the cleared result panel.

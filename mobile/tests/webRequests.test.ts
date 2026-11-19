@@ -81,3 +81,49 @@ test('editing and restoring the goal invalidates a pending proposal without trap
  response.resolve({status:'needs_information',questions:['Stale question']});await pending;
  assert.equal(w.nodes['#intake-result'].innerHTML,'');assert.equal(w.nodes['#intake'].disabled,false);
 });
+test('connector reads preserve edits made while data is pending',async()=>{
+ const w=workspace(),response=deferred(),button={dataset:{connector:'service'},disabled:false};w.lists['[data-connector]']=[button];
+ w.setAPI((url:string)=>url.endsWith('/connectors')?Promise.resolve({connectors:[{id:'service',label:'Service'}]}):response.promise);
+ await w.run('inputs={amount:1};renderConnectors()');const pending=(button as any).onclick();w.run('inputs.amount=99;markInputs();inputs.amount=1;markInputs();');
+ response.resolve({input:{amount:2}});await pending;assert.equal(w.state().inputs.amount,1);assert.match(w.state().notices[0],/edits were kept/);
+});
+test('only the most recently selected connector may replace a draft',async()=>{
+ const w=workspace(),old=deferred(),latest=deferred(),buttons=[{dataset:{connector:'old'},disabled:false},{dataset:{connector:'latest'},disabled:false}];w.lists['[data-connector]']=buttons;
+ w.setAPI((url:string)=>url.endsWith('/connectors')?Promise.resolve({connectors:[]}):url.includes('/old/')?old.promise:latest.promise);
+ await w.run('inputs={amount:1};renderConnectors()');const first=(buttons[0] as any).onclick(),second=(buttons[1] as any).onclick();
+ old.resolve({input:{amount:2}});await first;assert.equal(w.state().inputs.amount,1);
+ latest.resolve({input:{amount:3}});await second;assert.equal(w.state().inputs.amount,3);
+});
+function file(name:string){const buffer=new TextEncoder().encode('Evidence').buffer;return {name,size:buffer.byteLength,arrayBuffer:()=>Promise.resolve(buffer)}}
+test('file import cannot overwrite document fields edited during extraction',async()=>{for(const emitInput of [false,true]){
+ const w=workspace(),response=deferred(),started=deferred();w.setAPI((url:string)=>{if(url.endsWith('/documents'))return Promise.resolve({documents:[]});started.resolve(true);return response.promise});
+ await w.run('tab="docs";renderDocs()');const pending=w.nodes['#doc-file'].onchange({target:{files:[file('source.txt')]}});await started.promise;
+ w.nodes['#doc-text'].value='My revised text';if(emitInput)w.nodes['#doc-text'].oninput();response.resolve({text:'Old extracted text',warnings:[]});await pending;
+ assert.equal(w.nodes['#doc-text'].value,'My revised text');assert.match(w.state().notices[0],/document edits were kept/);
+}});
+
+test('a newer file selection wins over a delayed earlier extraction',async()=>{
+ const w=workspace(),first=deferred(),last=deferred(),startedFirst=deferred(),startedLast=deferred();let calls=0;
+ w.setAPI((url:string)=>{if(url.endsWith('/documents'))return Promise.resolve({documents:[]});if(++calls===1){startedFirst.resolve(true);return first.promise}startedLast.resolve(true);return last.promise});
+ await w.run('tab="docs";renderDocs()');const old=w.nodes['#doc-file'].onchange({target:{files:[file('old.txt')]}});await startedFirst.promise;
+ const latest=w.nodes['#doc-file'].onchange({target:{files:[file('latest.txt')]}});await startedLast.promise;
+ first.resolve({text:'Old',warnings:[]});await old;assert.notEqual(w.nodes['#doc-text'].value,'Old');
+ last.resolve({text:'Latest',warnings:[]});await latest;assert.equal(w.nodes['#doc-text'].value,'Latest');assert.equal(w.nodes['#doc-title'].value,'latest.txt');
+});
+test('clearing inputs invalidates a pending run start in the current workspace',async()=>{
+ const w=workspace(),response=deferred();w.setAPI((url:string)=>url.endsWith('/connectors')?Promise.resolve({connectors:[]}):response.promise);
+ w.run('renderInputOriginal();hasInputs=true;');const pending=w.run('runTask()');w.nodes['#reset'].onclick();const renders=w.state().renders;
+ response.resolve({id:'old',status:'completed'});await pending;assert.equal(w.state().currentRun,null);assert.equal(w.state().hasInputs,false);assert.equal(w.state().renders,renders);
+});
+test('loading an example invalidates an earlier connector draft replacement',async()=>{
+ const w=workspace(),response=deferred(),button={dataset:{connector:'service'},disabled:false};w.lists['[data-connector]']=[button];
+ w.setAPI((url:string)=>url.endsWith('/connectors')?Promise.resolve({connectors:[]}):response.promise);
+ await w.run('renderConnectors()');const pending=(button as any).onclick();w.run('loadExample()');
+ response.resolve({input:{amount:999}});await pending;assert.equal(w.state().inputs.amount,2);assert.equal(w.state().isExample,true);
+});
+test('edits during file reading prevent a redundant extraction upload',async()=>{
+ const w=workspace(),bytes=deferred();let uploads=0;w.setAPI((url:string)=>{if(url.endsWith('/documents'))return Promise.resolve({documents:[]});uploads++;return Promise.resolve({text:'Old',warnings:[]})});
+ await w.run('tab="docs";renderDocs()');const pending=w.nodes['#doc-file'].onchange({target:{files:[{name:'source.txt',size:8,arrayBuffer:()=>bytes.promise}]}});
+ w.nodes['#doc-text'].value='Edited while reading';w.nodes['#doc-text'].oninput();bytes.resolve(new TextEncoder().encode('Evidence').buffer);await pending;
+ assert.equal(uploads,0);assert.equal(w.nodes['#doc-text'].value,'Edited while reading');
+});
