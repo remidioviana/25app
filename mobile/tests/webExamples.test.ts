@@ -1,15 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import vm from 'node:vm';
-import path from 'node:path';
-function workspace(){
- const source=fs.readFileSync(path.resolve(__dirname,'../../../public/app.js'),'utf8').replace(/boot\(\);\s*$/,'');
- const nodes:Record<string,any>={};
- const context=vm.createContext({window:{},document:{querySelector:(key:string)=>nodes[key]??(nodes[key]={value:'',style:{}})},setTimeout:()=>0,clearTimeout:()=>{}});
- vm.runInContext(source,context);vm.runInContext(`renderInput=()=>{};workspace=()=>{};agents=[{id:'a',goal:'',schema:{type:'object',properties:{}},example:{amount:2}},{id:'b',goal:'',schema:{type:'object',properties:{}},example:{other:3}}];openAgent('a');`,context);
- return {run:(code:string)=>vm.runInContext(code,context),state:()=>JSON.parse(vm.runInContext('JSON.stringify({inputs,isExample,hasInputs,view,beforeExample})',context)),nodes};
-}
+import {workspace} from './webWorkspaceHarness';
+
 test('repeated Web example loads preserve the original draft and its provenance',()=>{
  const w=workspace();w.run('inputs={amount:1};hasInputs=true;loadExample();inputs.amount=99;loadExample();restoreExample();');
  assert.deepEqual(w.state().inputs,{amount:1});assert.equal(w.state().isExample,false);assert.equal(w.state().hasInputs,true);assert.equal(w.state().beforeExample,null);

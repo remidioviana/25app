@@ -73,3 +73,7 @@ Dossier requirement names, document names and references use the same Unicode co
 Paged record compositions preserve global ordinals within the filtered list. Source 25 is displayed as chapter 25 rather than restarting chapter numbers on the second page. Regression tests keep ordinals, record details and evidence references aligned across source pages, filtering, deletion and empty collections.
 
 The Web workspace example flow preserves the first pre-example draft, provenance and editor mode, including pending valid JSON edits. Invalid JSON remains in place until corrected; changing agents clears the restore snapshot. Logo registry repairs must match both the actual versioned file bytes and the previously approved hashes; a metadata change alone does not approve new artwork.
+
+Web responses are bound to the workspace instance that started them. Run starts and history selections are ordered; stale polling, document results and loader completions cannot replace the current workspace after navigation, including leaving and reopening the same app. Deferred-response regressions exercise successful and failed requests. This isolates presentation state; already-started server operations retain their own lifecycle.
+
+If a replacement run fails to start, polling resumes for the previously displayed active run. The failure does not silently strand that run in its last recorded status.
