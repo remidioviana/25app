@@ -1,0 +1,231 @@
+{
+  "edition": "Gold color comparison \u2014 not a replacement of approved production assets",
+  "policy": "Color accents on existing components; no intentional shape redesign. Original wordmarks preserved.",
+  "brands": [
+    {
+      "id": "himayah",
+      "name": "Himayah AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing silver/titanium shield perimeter rim to warm polished champagne gold. Keep the indigo field, ivory contract and coral magnifier unchanged.",
+      "source_sha256": "bad5ced98985c62a312830a660b5df511a98947d245b7dc4a6dd55e409a052e3",
+      "preview_sha256": "aa1b942c991eba93a22693bd851aa77f0ee71fd01357b62b1c017498d4dbdca9",
+      "alpha_core_iou": 0.993278
+    },
+    {
+      "id": "iqamah",
+      "name": "Iqamah AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "e0133485f5bb3654868c31bb4af11ae52c928d1beb7cb0c41587d149d8567a9e",
+      "preview_sha256": "e0133485f5bb3654868c31bb4af11ae52c928d1beb7cb0c41587d149d8567a9e",
+      "alpha_core_iou": 1.0
+    },
+    {
+      "id": "istithmar",
+      "name": "Istithmar AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing dark-blue bottom foundation/plinth to warm metallic gold. All mint and turquoise interlocking volumes must remain their original colors.",
+      "source_sha256": "d0d6a0f20b7696558f8da54f7f91f8183e1b3dd2160b390e432964191def26d5",
+      "preview_sha256": "b6ae7fbbecd98e8534242a000652f6e3b8931f67a4ca950fc9ba19c15b4e9730",
+      "alpha_core_iou": 0.989432
+    },
+    {
+      "id": "munagasah",
+      "name": "Munagasah AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "747feaf51e09de36aad70a378e6bb4488c5d75defec2184b2c47b2f5272fedf0",
+      "preview_sha256": "747feaf51e09de36aad70a378e6bb4488c5d75defec2184b2c47b2f5272fedf0",
+      "alpha_core_iou": 1.0
+    },
+    {
+      "id": "sahil",
+      "name": "Sahil AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing dark-teal terminal tip of the flowing S-like path to champagne gold. Leave the pale aqua rest of the path unchanged.",
+      "source_sha256": "43d156f49444e4b796c13d214519c45ecfca55f638a7fe00319d8fdee90e878a",
+      "preview_sha256": "a7d5d9c2f66bb2f6ba4e35cdd3b960e54d65fe97bbb1fca4e347911f3ea0f941",
+      "alpha_core_iou": 0.986284
+    },
+    {
+      "id": "tawteen",
+      "name": "Tawteen AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing small copper-colored briefcase clasp to yellow champagne gold. Leave both professional figures, attire, briefcase body and handle unchanged.",
+      "source_sha256": "d9faec62ad8e1dac0f8b11a005aa501b32dd0fb880d386773a52897da02bfdb8",
+      "preview_sha256": "cd406fa0b8f60258bb985c6702f68b998e9d5c350adca0432241443a21e1006b",
+      "alpha_core_iou": 0.989626
+    },
+    {
+      "id": "adl",
+      "name": "Adl AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing four small square window panes underneath the house roof to champagne gold. Keep the purple roof and entire rose/ivory handshake unchanged.",
+      "source_sha256": "3dcddff849cd20eb9b56e62e4f5ccbbc8ff5d7585d5a312d22d8a1584178574d",
+      "preview_sha256": "096d46e0f0b3cd6202c226e186b111dde2fa73ca069045aa6b0d022b0a8de564",
+      "alpha_core_iou": 0.984756
+    },
+    {
+      "id": "tawassul",
+      "name": "Tawassul B2B",
+      "edited": true,
+      "accent": "Recolor ONLY the existing copper-colored chain link to warm yellow gold. Keep the other green link and ivory proposal folio unchanged.",
+      "source_sha256": "f2df5f55f15ba5989d8ce4cbe6be25c72415d696bebd4209e1a27f4dd2021c21",
+      "preview_sha256": "17f88b1836e8889363ba01a2022aeb2a214883e4e44c4f708227218b8b1ecd1b",
+      "alpha_core_iou": 0.991109
+    },
+    {
+      "id": "adab",
+      "name": "Adab AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing lavender fountain-pen nib to champagne gold, retaining its existing slit, highlights and geometry. Keep both magenta and blush quotation forms unchanged.",
+      "source_sha256": "2fee05a01f5bbc5a1efd7ecb6adc64bc46eff1a351700c9617e2c16b67b0582a",
+      "preview_sha256": "ec7491a2dccf84865bbabf2efb9c117a64baff656ca97b4d982bd302a8aef766",
+      "alpha_core_iou": 0.990664
+    },
+    {
+      "id": "khidmah",
+      "name": "Khidmah AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing silver metallic earcup trim rings and small microphone collar to champagne gold. Preserve the blue headset, ivory parcel and mint return arrow.",
+      "source_sha256": "021052730f01951f7430051bc7cc2c4479661fb26878f0ff96d8acefe35feed3",
+      "preview_sha256": "b828d596317b52eb26ff6de63fde827b70e942dde60a4b51c20492d3a72a4df9",
+      "alpha_core_iou": 0.988608
+    },
+    {
+      "id": "jomrok",
+      "name": "Jomrok AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing silver corner reinforcement rails of the ivory cargo container to champagne gold. Preserve the ivory panels, blue container and orange route arrow.",
+      "source_sha256": "d5d7d55da405668ed8d24a46cb11185bb93180f0154ed25490949d60ac5aacc8",
+      "preview_sha256": "d737089fc8da066b86a9b6b1439e06de1fbbf4143e7a6f67239962026412944b",
+      "alpha_core_iou": 0.991922
+    },
+    {
+      "id": "khibrat",
+      "name": "Khibrat AI",
+      "edited": true,
+      "accent": "Recolor ONLY the topmost existing pale evidence card to brushed champagne gold. Preserve the other two beige cards, dark inspection frame and lime marker.",
+      "source_sha256": "405a7a5066b078c2079cc8a9dc5b2df680764d67a4d5c494d73f50a860305347",
+      "preview_sha256": "04454f77fddb309156868c93eccfcda9f90e6107151c20c5df26617c33252c51",
+      "alpha_core_iou": 0.975177
+    },
+    {
+      "id": "majlis",
+      "name": "Majlis AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing small ivory door handle on the blue office door to champagne gold. Preserve every other color, employee badge and purple steps.",
+      "source_sha256": "6186add31a310f42336387309d7abb4e404372593bc58719bcca6d523a8d1046",
+      "preview_sha256": "15936c5e6e7826a95fd2d46546e4c765cc95e296c47c32673aafc96e04de90e8",
+      "alpha_core_iou": 0.985177
+    },
+    {
+      "id": "rafiq",
+      "name": "Rafiq",
+      "edited": true,
+      "accent": "Recolor ONLY the two existing ivory clock hands to champagne gold. Leave the clock face, rim, planner blocks and calendar binding tabs unchanged.",
+      "source_sha256": "3d411e07a8a1404c53de4cd60fc75b1156bf860ae8caaad6a8863d3aed6146ff",
+      "preview_sha256": "599fe228f323f3b5dc0ff14f8734ebe718c33e734a8f2fba1638fcba3bfa1e7d",
+      "alpha_core_iou": 0.994037
+    },
+    {
+      "id": "sawm",
+      "name": "Sawm AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "f0097859e4c6e96d50a58f0ad09ecfe53c914e639f3567d59b085f5618d486db",
+      "preview_sha256": "f0097859e4c6e96d50a58f0ad09ecfe53c914e639f3567d59b085f5618d486db",
+      "alpha_core_iou": 1.0
+    },
+    {
+      "id": "mizan",
+      "name": "Mizan AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing narrow ivory edge strips on the two green horizontal balance beams to champagne gold. Preserve the green orb and green beam faces.",
+      "source_sha256": "13affb6e8a53181dd3de41b2d372ef63f30b40963ff434947923a0ef164ef2a9",
+      "preview_sha256": "85d48237221928c2c097fda921076099f87bb163bfbdc6ed6b208ac58b1b56d5",
+      "alpha_core_iou": 0.988782
+    },
+    {
+      "id": "thawg",
+      "name": "Thawg AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing blue outer rim of the terracotta dining plate to metallic champagne gold. Preserve the plate interior, pasta curl and herb.",
+      "source_sha256": "ecf36034cf57d75814f6d603cbf5082d1c3055b6cccebedbe88bebf5eeb84693",
+      "preview_sha256": "ad69dd9d42611bda17d55277d4c1d6a013b853c5eb76b603c33ff9ec8a60b373",
+      "alpha_core_iou": 0.989173
+    },
+    {
+      "id": "manzil",
+      "name": "Manzil AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing small chimney on the house roof to champagne gold. Preserve the entire house, burgundy roof, rooms and furniture.",
+      "source_sha256": "d3a24bf68095ce1a454465c525cd94270016aa82a8c477acace28368325a84ac",
+      "preview_sha256": "8c355f58bae5a9a09b370648b4de9e6e1087e27d7d0e5a5eac4e2ce2ae7a5940",
+      "alpha_core_iou": 0.989783
+    },
+    {
+      "id": "gurbah",
+      "name": "Gurbah AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing thin orange route line on the folded map to champagne gold, preserving exactly its path and width. Leave the slate-blue map and parchment borders unchanged.",
+      "source_sha256": "3fc8b4a2d0e78e473def5c14ed2d9d66d655d1bb717c23aa09864708655a1fbc",
+      "preview_sha256": "16f9f5f37b0049cb721f8d6b9b8b19ce99db37ba64b574c32cc9c6e781567606",
+      "alpha_core_iou": 0.99292
+    },
+    {
+      "id": "amanah-eco",
+      "name": "Amanah Eco",
+      "edited": true,
+      "accent": "Recolor ONLY the top rectangular segment of the taller left ivory measurement column to champagne gold. Preserve the rest of both columns, green droplet and citron leaf.",
+      "source_sha256": "f4a68deccfce047e2d46082abd8506f188407d64e99729e3e123d4ef5f859530",
+      "preview_sha256": "636d0af928e9265e35b0a38ad36fb7d72cc2883c2cd85c5323c4e5e17e9f927b",
+      "alpha_core_iou": 0.986499
+    },
+    {
+      "id": "nafas",
+      "name": "Nafas AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing pale-sage open breathing arc behind the seated figure to champagne gold. Preserve the whole seated human figure, head, hands, posture and all other colors.",
+      "source_sha256": "461c15b5d7a843e19a58e158466261fd268da77280dc02eb15e0e1aabaa522fe",
+      "preview_sha256": "4136993ca62640d0bd5094ddace3939f9e1e6b2a541f5f2ca0392e448ff9e10c",
+      "alpha_core_iou": 0.975627
+    },
+    {
+      "id": "tadweer",
+      "name": "Tadweer AI",
+      "edited": true,
+      "accent": "Recolor ONLY the existing small folded-over upper-right corner of the ivory paper sheet to champagne gold. Preserve the rest of the paper, dark bottle and all three orange arrows.",
+      "source_sha256": "6312909ee5ca6967079ab8f667ef05f33846b2b0b4f49656ad24ac12a2e08519",
+      "preview_sha256": "ed143678e23f2f9ce50dd655f1a59fa34c64a042b1d6a001368c615074fb2bd5",
+      "alpha_core_iou": 0.979878
+    },
+    {
+      "id": "turath",
+      "name": "Turath AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "eda665f1da99fef5bc24ef213eb9eaa3c309394fd0e0ebeb99762a835f5d5fc9",
+      "preview_sha256": "eda665f1da99fef5bc24ef213eb9eaa3c309394fd0e0ebeb99762a835f5d5fc9",
+      "alpha_core_iou": 1.0
+    },
+    {
+      "id": "himam",
+      "name": "Himam AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "199689afb34153bd9d3c3b5b49a328fdb0860e5782bf16712cb452b6c10a50a7",
+      "preview_sha256": "199689afb34153bd9d3c3b5b49a328fdb0860e5782bf16712cb452b6c10a50a7",
+      "alpha_core_iou": 1.0
+    },
+    {
+      "id": "hisad",
+      "name": "Hisad AI",
+      "edited": false,
+      "accent": "Existing gold \u2014 unchanged",
+      "source_sha256": "2e89059c4554f6481fa10354a32d2b73161f51d36583d9e7e3ebd0425c46e301",
+      "preview_sha256": "2e89059c4554f6481fa10354a32d2b73161f51d36583d9e7e3ebd0425c46e301",
+      "alpha_core_iou": 1.0
+    }
+  ]
+}
