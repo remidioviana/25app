@@ -278,16 +278,16 @@
     },
     "tawteen": {
       "name": "Tawteen AI",
-      "concept": "Workforce composition and hiring targets",
-      "brief": "A clear workforce-planning emblem, not a team inside a house: one deep-green upright personnel ID panel bearing a simple ivory human bust, three short aligned jade headcount bars, and a small terracotta two-ring hiring target integrated into the lower-right edge. The person, measured workforce bars and target form ONE compact balanced mark. Broad strong geometry. Forest #1F4945, pale jade #C0E7DD, warm peach #F1CAB1 and restrained terracotta. No house, roof, briefcase, arrows tree, text, numbers, flag or official seal.",
+      "concept": "Local professionals entering the workforce",
+      "brief": "A compact Emiratisation workforce emblem: two simplified adult Emirati professional busts emerge from a single deep-forest-green business briefcase. One wears a clean ivory kandura and white ghutra secured by a minimal black agal; the other wears a dignified deep-green abaya and sheila. Blank warm-peach faces, no eyes or realistic features. The briefcase has a broad single jade handle visible behind them and one plain small copper clasp. Balanced equal figures, few large sculptural forms. Forest #1F4945, ivory, pale jade #C0E7DD and warm peach #F1CAB1. Clear local employment, inclusive professional workforce. No roof, target, ID card, numbers, flags, official seals or rising arrows.",
       "symbol": {
         "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
-        "sha256": "a58c9594b8c71a8005cac099327192e9a5c4d7f55acd04a0d0ce93525580e967",
-        "bytes": 741741,
+        "sha256": "d9faec62ad8e1dac0f8b11a005aa501b32dd0fb880d386773a52897da02bfdb8",
+        "bytes": 1311542,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-113250be-7226-4e6c-9b76-fae66f7749a7.png"
+        "generated_original": "/workspace/generated_images/exec-828c0149-d8f9-41b9-a680-9c16fe0c9a86.png"
       },
       "typography": {
         "font": {
@@ -308,8 +308,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "15bed5d70028c8d11ceede097d7cd015b431ebd893d14f05adb6d51e9a68f10c",
-          "bytes": 992032
+          "sha256": "bdfb30396c2091305faa7b999f40fddb0a433de20d5b590923928ec4edecbb93",
+          "bytes": 1751768
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
@@ -318,8 +318,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "3951179051de74349d3067116b0192745b128fe170b527354e987985e95de776",
-          "bytes": 992032
+          "sha256": "a4340ae3b4694a7daf94bc1fafe93d3eb599fae438f66e05121f2c1263a8b11d",
+          "bytes": 1751768
         }
       },
       "composition": "horizontal",
@@ -333,16 +333,16 @@
     },
     "adl": {
       "name": "Adl AI",
-      "concept": "Fair resolution of tenancy disputes",
-      "brief": "A strong property-dispute and fairness emblem: a simple dark-plum HOUSE OUTLINE with a peaked roof, containing one clearly recognizable balanced justice scale. The scale has a single warm-rose vertical stem, short horizontal beam and two equal ivory pans. House and balance share a coherent foundation and read as one compact symbol. Dark plum #3C283B, pale lavender #E3D7E9 and muted rose metal #BE8E9C. No gavel, key, court seal, document stack, tiny inscriptions or official crest. Clear silhouette at48px.",
+      "concept": "Tenancy rights and dispute resolution",
+      "brief": "An elegant property-dispute symbol made from ONLY TWO principal objects: one large dark-plum rental KEY with a simple hollow house-shaped bow and broad short shaft, paired diagonally with one muted rose-metal legal GAVEL. The gavel head is clearly a gavel, with a short ivory striking face; it rests against the key shaft in a balanced compact composition. The two forms together immediately say rental property and legal dispute resolution. Refined deep plum #3C283B, muted rose #BE8E9C, pale ivory-lavender #E3D7E9. No house frame around scales, no justice balance, document page, court seal, lettering or clutter. Restrained tactile ceramic and brushed metal.",
       "symbol": {
         "path": "mobile/assets/variants/adl/dimensional-logo.png",
-        "sha256": "099b65e2dc0d3f49640bce187beed130a96613e4a10d2b42a160eafe8e73e05b",
-        "bytes": 643105,
+        "sha256": "2012d82e386629e51fd78ab1bd964f1148866a673161008fc9629e18ad1d4170",
+        "bytes": 753117,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "/workspace/generated_images/exec-6eac9b71-8e44-470d-a139-fe7bcdbf5214.png"
+        "generated_original": "/workspace/generated_images/exec-f522566a-07d2-46af-ae8c-4637cb0f0610.png"
       },
       "typography": {
         "font": {
@@ -363,8 +363,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "6bbd9e674a943fcd410bf774a46c6b2ac4eb62de29396871df0eeca921a06b91",
-          "bytes": 859684
+          "sha256": "bed5dd853568f65690d4e00972e53207e51b29481009c082d6af99da5ac7de0c",
+          "bytes": 1006364
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -373,8 +373,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "eb97dcbaf146c68ae833f30770ebd88c6a40a8f2da7c66a0cb95c25a39e1e7bf",
-          "bytes": 859684
+          "sha256": "93d390c9627e441e06fcf6d7950b51617229d9cb4c9a0ae609b8a2801ba4a223",
+          "bytes": 1006364
         }
       },
       "composition": "horizontal",
@@ -498,16 +498,16 @@
     },
     "khidmah": {
       "name": "Khidmah AI",
-      "concept": "Responsive service loop",
-      "brief": "Two precisely interlocking ocean-blue ceramic service loops with a mint inner path and pale-yellow joint. Rounded, welcoming, fluid but highly readable. No speech bubbles, headset, robot or infinity-symbol cliche.",
+      "concept": "Customer support and return resolution",
+      "brief": "One coherent customer-care and returns emblem: a premium rounded deep-blue support HEADSET with a clearly visible small microphone, embracing one small warm-ivory parcel box. A SINGLE mint-green curved return arrow is sculpted on the front of the parcel, integrating customer support with returns/resolution. Strong readable three-part silhouette, headset + parcel + one arrow. Deep blue #225B74, creamy yellow #FFF5CC and mint #77E2C8. Friendly service, not an infinity loop, chat bubble or generic medical care. No letters, currency signs, thumbs-up, approval checkmarks or badges. Avoid busy box seams; large calm surfaces.",
       "symbol": {
         "path": "mobile/assets/variants/khidmah/dimensional-logo.png",
-        "sha256": "063cda76daa7a2200dd5fa33eef9b036c7ef20aafcafa01484067ef3efe06324",
-        "bytes": 639340,
+        "sha256": "021052730f01951f7430051bc7cc2c4479661fb26878f0ff96d8acefe35feed3",
+        "bytes": 1094996,
         "width": 1254,
         "height": 1254,
         "mode": "RGBA",
-        "generated_original": "exec-14192ebb-14db-40b5-89fb-dde6492f2130.png"
+        "generated_original": "/workspace/generated_images/exec-39f67cc7-dc09-4d15-943b-ea3f53ea78ae.png"
       },
       "typography": {
         "font": {
@@ -528,8 +528,8 @@
         },
         "logo_light": {
           "path": "brand-assets/production/khidmah/logo-on-light.svg",
-          "sha256": "cc76a6391ee71c66fa00ff4e4b345d7d7f9643da72c9afb196180550d3518044",
-          "bytes": 855217
+          "sha256": "37254970584c12fe310947ba57c104e1ea2e8021d2818ce778f08fd0aab41419",
+          "bytes": 1462757
         },
         "wordmark_dark": {
           "path": "brand-assets/production/khidmah/wordmark-on-dark.svg",
@@ -538,8 +538,8 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/khidmah/logo-on-dark.svg",
-          "sha256": "e0bb8caaeb8b92ec4745a12f1e2f6872d841831352ece3ae8c5b10402aa3adc9",
-          "bytes": 855217
+          "sha256": "957aa2b1339ec8282e1b27c69caecbccc4547765ffe971ca7e606d1e69b63647",
+          "bytes": 1462757
         }
       },
       "composition": "horizontal",

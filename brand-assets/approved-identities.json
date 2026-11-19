@@ -140,11 +140,11 @@
     "tawteen": {
       "name": "Tawteen AI",
       "reference_state": "user_requested_revision",
-      "revision": "workforce-b2b-care-property-recycling",
+      "revision": "local-workforce-tenancy-customer-care",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/tawteen/dimensional-logo.png",
-          "sha256": "a58c9594b8c71a8005cac099327192e9a5c4d7f55acd04a0d0ce93525580e967"
+          "sha256": "d9faec62ad8e1dac0f8b11a005aa501b32dd0fb880d386773a52897da02bfdb8"
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawteen/wordmark-on-light.svg",
@@ -152,7 +152,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "15bed5d70028c8d11ceede097d7cd015b431ebd893d14f05adb6d51e9a68f10c"
+          "sha256": "bdfb30396c2091305faa7b999f40fddb0a433de20d5b590923928ec4edecbb93"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
@@ -160,18 +160,18 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "3951179051de74349d3067116b0192745b128fe170b527354e987985e95de776"
+          "sha256": "a4340ae3b4694a7daf94bc1fafe93d3eb599fae438f66e05121f2c1263a8b11d"
         }
       }
     },
     "adl": {
       "name": "Adl AI",
       "reference_state": "user_requested_revision",
-      "revision": "workforce-b2b-care-property-recycling",
+      "revision": "local-workforce-tenancy-customer-care",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/adl/dimensional-logo.png",
-          "sha256": "099b65e2dc0d3f49640bce187beed130a96613e4a10d2b42a160eafe8e73e05b"
+          "sha256": "2012d82e386629e51fd78ab1bd964f1148866a673161008fc9629e18ad1d4170"
         },
         "wordmark_light": {
           "path": "brand-assets/production/adl/wordmark-on-light.svg",
@@ -179,7 +179,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "6bbd9e674a943fcd410bf774a46c6b2ac4eb62de29396871df0eeca921a06b91"
+          "sha256": "bed5dd853568f65690d4e00972e53207e51b29481009c082d6af99da5ac7de0c"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
@@ -187,7 +187,7 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "eb97dcbaf146c68ae833f30770ebd88c6a40a8f2da7c66a0cb95c25a39e1e7bf"
+          "sha256": "93d390c9627e441e06fcf6d7950b51617229d9cb4c9a0ae609b8a2801ba4a223"
         }
       }
     },
@@ -246,10 +246,12 @@
     },
     "khidmah": {
       "name": "Khidmah AI",
+      "reference_state": "user_requested_revision",
+      "revision": "local-workforce-tenancy-customer-care",
       "files": {
         "symbol": {
           "path": "mobile/assets/variants/khidmah/dimensional-logo.png",
-          "sha256": "063cda76daa7a2200dd5fa33eef9b036c7ef20aafcafa01484067ef3efe06324"
+          "sha256": "021052730f01951f7430051bc7cc2c4479661fb26878f0ff96d8acefe35feed3"
         },
         "wordmark_light": {
           "path": "brand-assets/production/khidmah/wordmark-on-light.svg",
@@ -257,7 +259,7 @@
         },
         "logo_light": {
           "path": "brand-assets/production/khidmah/logo-on-light.svg",
-          "sha256": "cc76a6391ee71c66fa00ff4e4b345d7d7f9643da72c9afb196180550d3518044"
+          "sha256": "37254970584c12fe310947ba57c104e1ea2e8021d2818ce778f08fd0aab41419"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/khidmah/wordmark-on-dark.svg",
@@ -265,10 +267,9 @@
         },
         "logo_dark": {
           "path": "brand-assets/production/khidmah/logo-on-dark.svg",
-          "sha256": "e0bb8caaeb8b92ec4745a12f1e2f6872d841831352ece3ae8c5b10402aa3adc9"
+          "sha256": "957aa2b1339ec8282e1b27c69caecbccc4547765ffe971ca7e606d1e69b63647"
         }
-      },
-      "reference_state": "user_approved"
+      }
     },
     "jomrok": {
       "name": "Jomrok AI",
@@ -666,9 +667,10 @@
       "reference_state": "user_approved"
     }
   },
-  "subsequent_request": "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes.",
+  "subsequent_request": "Improve Tawteen, Adl and Khidmah to better represent their app purposes.",
   "revision_requests": [
     "Improve the Himayah, Tawteen, Sawm, Majlis and Turath logos to better represent their purposes.",
-    "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes."
+    "Improve Tawteen, Tawassul, Nafas, Adl and Tadweer to better represent their app purposes.",
+    "Improve Tawteen, Adl and Khidmah to better represent their app purposes."
   ]
 }

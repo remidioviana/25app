@@ -84,7 +84,7 @@
     },
     {
       "id": "tawteen",
-      "symbol_sha256": "a58c9594b8c71a8005cac099327192e9a5c4d7f55acd04a0d0ce93525580e967",
+      "symbol_sha256": "d9faec62ad8e1dac0f8b11a005aa501b32dd0fb880d386773a52897da02bfdb8",
       "size": [
         1254,
         1254
@@ -93,24 +93,24 @@
       "alpha_bounds": [
         0,
         0,
-        1218,
+        1228,
         1254
       ],
       "exact_name_vector_files": 4
     },
     {
       "id": "adl",
-      "symbol_sha256": "099b65e2dc0d3f49640bce187beed130a96613e4a10d2b42a160eafe8e73e05b",
+      "symbol_sha256": "2012d82e386629e51fd78ab1bd964f1148866a673161008fc9629e18ad1d4170",
       "size": [
         1254,
         1254
       ],
-      "edge_alpha_max": 0,
+      "edge_alpha_max": 1,
       "alpha_bounds": [
-        41,
-        31,
-        1212,
-        1236
+        33,
+        134,
+        1224,
+        1254
       ],
       "exact_name_vector_files": 4
     },
@@ -148,16 +148,16 @@
     },
     {
       "id": "khidmah",
-      "symbol_sha256": "063cda76daa7a2200dd5fa33eef9b036c7ef20aafcafa01484067ef3efe06324",
+      "symbol_sha256": "021052730f01951f7430051bc7cc2c4479661fb26878f0ff96d8acefe35feed3",
       "size": [
         1254,
         1254
       ],
       "edge_alpha_max": 1,
       "alpha_bounds": [
-        25,
-        23,
-        1230,
+        0,
+        17,
+        1238,
         1254
       ],
       "exact_name_vector_files": 4
