@@ -1,3 +1,4 @@
+import {InteractiveRecords} from './InteractiveRecords';
 import React,{useState} from 'react';
 import {View,Text,Pressable} from 'react-native';
 import {useApp,spec} from '../src/AppState';
@@ -45,5 +46,5 @@ export function CaseDetails(){
  case 'himam':body=<>{section('Your access requirements come first',['needs'],'sheet')}{section('Routes and barrier evidence',['routes'])}{note('Missing access evidence stays unknown; it is not a safe-route guarantee.')}</>;break;
  case 'hisad':body=<>{section('Food available for rescue',['lot'],'rule')}{section('Handling reference',['as_of'])}{section('Recipient capacities',['recipients'],'sheet')}{note('Allocation depends on recorded handling conditions and actual recipient constraints.')}</>;break;
  }
- return <View style={{gap:24}}>{body}</View>;
+ return <View style={{gap:24}}><InteractiveRecords editLink={false}/>{body}</View>;
 }

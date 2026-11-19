@@ -1,3 +1,4 @@
+import {InteractiveRecords} from './InteractiveRecords';
 import React,{useState} from 'react';
 import {View,Text,TextInput,Switch,Pressable} from 'react-native';
 import Svg,{Circle} from 'react-native-svg';
@@ -23,7 +24,7 @@ export function DomainExperience(){
  const {draft}=useApp();const issue=inputIssue(draft,spec.schema);
  if(issue)return <Card title="Complete your inputs"><Note>{issue}</Note><Note>Open Mission and review structured inputs. Your draft has been preserved.</Note></Card>;
  if(['sahil','munagasah'].includes(brandId)&&Array.isArray(draft.requirements)&&draft.requirements.length===0)return <Card title="Add checklist requirements"><Note>No readiness score can be calculated without requirements. Open Mission to add your checklist.</Note></Card>;
- return <DomainContent/>;
+ return <><InteractiveRecords/><DomainContent/></>;
 }
 function DomainContent(){const {draft,setDraft}=useApp();const d=draft as Record<string,any>;const [choice,setChoice]=useState(''),[value,setValue]=useState(0),[second,setSecond]=useState<number|null>(null),[assumption,setAssumption]=useState<number|null>(null),[checked,setChecked]=useState<Record<string,boolean>>({}),[text,setText]=useState(''),[show,setShow]=useState(false);const patch=(key:string,val:any)=>setDraft(old=>({...old,[key]:val}));const toggle=(key:string)=>setChecked(old=>({...old,[key]:!old[key]}));
  switch(brandId){
