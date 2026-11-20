@@ -127,3 +127,39 @@ test('edits during file reading prevent a redundant extraction upload',async()=>
  w.nodes['#doc-text'].value='Edited while reading';w.nodes['#doc-text'].oninput();bytes.resolve(new TextEncoder().encode('Evidence').buffer);await pending;
  assert.equal(uploads,0);assert.equal(w.nodes['#doc-text'].value,'Edited while reading');
 });
+function documentFields(w:ReturnType<typeof workspace>){w.run('$("#doc-title").value="Draft title";$("#doc-text").value="Draft text";$("#doc-source").value="source:1";$("#doc-date").value="2026-11-19";')}
+test('save refreshes only the list and preserves edits made during the save',async()=>{
+ const w=workspace(),saved=deferred();let reads=0;w.setAPI((url:string,method='GET')=>method==='POST'?saved.promise:Promise.resolve({documents:++reads===1?[]:[{id:'saved',title:'Saved source',source:'ref:1',as_of:''}]}));
+ await w.run('tab="docs";renderDocs()');documentFields(w);const pending=w.nodes['#save-doc'].onclick();
+ w.nodes['#doc-text'].value='Newer draft';w.nodes['#doc-text'].oninput();saved.resolve({id:'saved'});await pending;
+ assert.equal(w.nodes['#doc-text'].value,'Newer draft');assert.equal(w.nodes['#doc-title'].value,'Draft title');assert.match(w.nodes['#document-list'].innerHTML,/Saved source/);assert.match(w.state().notices[0],/newer draft edits were kept/);
+});
+test('an unchanged saved draft clears only after confirmed success',async()=>{
+ const w=workspace(),saved=deferred();w.setAPI((url:string,method='GET')=>method==='POST'?saved.promise:Promise.resolve({documents:[]}));
+ await w.run('tab="docs";renderDocs()');documentFields(w);const pending=w.nodes['#save-doc'].onclick();assert.equal(w.nodes['#doc-text'].value,'Draft text');
+ saved.resolve({id:'saved'});await pending;for(const id of ['#doc-title','#doc-text','#doc-source','#doc-date'])assert.equal(w.nodes[id].value,'');
+});
+test('deleting an indexed document leaves an unsaved editor draft intact',async()=>{
+ const w=workspace(),deleted=deferred(),button={dataset:{delete:'old'},disabled:false};w.lists['[data-delete]']=[button];
+ w.setAPI((url:string,method='GET')=>method==='DELETE'?deleted.promise:Promise.resolve({documents:[]}));await w.run('tab="docs";renderDocs()');documentFields(w);
+ const pending=(button as any).onclick();deleted.resolve({});await pending;
+ assert.equal(w.nodes['#doc-title'].value,'Draft title');assert.equal(w.nodes['#doc-text'].value,'Draft text');assert.match(w.nodes['#document-list'].innerHTML,/0 documents/);
+});
+test('newer list refreshes win when save and delete receipts return close together',async()=>{
+ const w=workspace(),old=deferred(),latest=deferred(),startedOld=deferred(),startedLatest=deferred(),button={dataset:{delete:'old'},disabled:false};w.lists['[data-delete]']=[button];let reads=0;
+ w.setAPI((url:string,method='GET')=>{if(method!=='GET')return Promise.resolve({});if(++reads===1)return Promise.resolve({documents:[]});if(reads===2){startedOld.resolve(true);return old.promise}startedLatest.resolve(true);return latest.promise});
+ await w.run('tab="docs";renderDocs()');documentFields(w);const save=w.nodes['#save-doc'].onclick();await startedOld.promise;
+ const remove=(button as any).onclick();await startedLatest.promise;latest.resolve({documents:[{id:'latest',title:'LATEST LIST',source:'ref:2',as_of:''}]});await remove;
+ old.resolve({documents:[{id:'old',title:'STALE LIST',source:'ref:1',as_of:''}]});await save;
+ assert.match(w.nodes['#document-list'].innerHTML,/LATEST LIST/);assert.doesNotMatch(w.nodes['#document-list'].innerHTML,/STALE LIST/);
+});
+test('refresh failures after a confirmed save retain the successful receipt',async()=>{
+ const w=workspace();let reads=0;w.setAPI((url:string,method='GET')=>method==='POST'?Promise.resolve({id:'saved'}):++reads===1?Promise.resolve({documents:[]}):Promise.reject(new Error('list unavailable')));
+ await w.run('tab="docs";renderDocs()');documentFields(w);await w.nodes['#save-doc'].onclick();
+ assert.match(w.state().notices.at(-1),/Document indexed.*list could not refresh/);assert.equal(w.nodes['#save-doc'].disabled,false);
+});
+test('a failed save preserves the draft and repeated clicks cannot duplicate its request',async()=>{
+ const w=workspace(),response=deferred();let writes=0;w.setAPI((url:string,method='GET')=>{if(method==='POST'){writes++;return response.promise}return Promise.resolve({documents:[]})});
+ await w.run('tab="docs";renderDocs()');documentFields(w);const pending=w.nodes['#save-doc'].onclick();await w.nodes['#save-doc'].onclick();assert.equal(writes,1);
+ response.reject(new Error('save failed'));await pending;assert.equal(w.nodes['#doc-text'].value,'Draft text');assert.equal(w.nodes['#save-doc'].disabled,false);assert.deepEqual(w.state().notices,['save failed']);
+});
