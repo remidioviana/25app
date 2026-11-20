@@ -89,3 +89,7 @@ Web schedule creation validates local calendar times, supported repeat settings,
 Disabled schedules are labeled Inactive with their remaining run count; disabling future runs does not establish that those runs completed.
 
 Ambiguous local times during a backward clock change are rejected as well as nonexistent spring-forward times, so the Web form never silently chooses one of two matching wall-clock instants. The Dubai conversion and an ordinary time after a backward transition remain accepted.
+
+### Web notification timing
+
+Successive portal notifications now cancel the preceding dismissal timer and ignore stale callbacks. Each new message stays visible for its own six-second interval, including refresh errors following confirmed writes. A regression test exercises the actual portal notification function with controlled timers; no provider inference or external action is involved.
