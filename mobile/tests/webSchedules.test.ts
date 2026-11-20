@@ -37,6 +37,8 @@ test('browser-local schedule conversion respects Dubai time, clock gaps and back
  }
  assert.equal(parse('Asia/Dubai','2026-12-01T09:00').first_at,'2026-12-01T05:00:00.000Z');
  assert.match(parse('America/New_York','2026-03-08T02:30').error,/valid local calendar/);
+ assert.match(parse('America/New_York','2026-11-01T01:30').error,/occurs twice/);
+ assert.equal(parse('America/New_York','2026-11-01T02:30').first_at,'2026-11-01T07:30:00.000Z');
  assert.match(parse('America/New_York','9999-12-31T23:59').error,/UTC years/);
  assert.match(parse('Asia/Dubai','0001-01-01T00:00').error,/UTC years/);
 });

@@ -87,3 +87,5 @@ Document mutations refresh only the collection list. A confirmed save clears the
 Web schedule creation validates local calendar times, supported repeat settings, one-time counts and the backend's UTC year bounds before submission. Collection updates preserve edited controls, stale panel/list responses are ignored, and the last confirmed identical payload is suppressed while the panel remains open. Refresh errors retain the creation/disable receipt. Timezone regressions cover Dubai conversion and daylight-saving clock gaps.
 
 Disabled schedules are labeled Inactive with their remaining run count; disabling future runs does not establish that those runs completed.
+
+Ambiguous local times during a backward clock change are rejected as well as nonexistent spring-forward times, so the Web form never silently chooses one of two matching wall-clock instants. The Dubai conversion and an ordinary time after a backward transition remain accepted.

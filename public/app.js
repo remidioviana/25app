@@ -96,6 +96,8 @@ function webScheduleInput(first,intervalText,countText){
  const [,year,month,day,hour,minute]=match,at=new Date(first);
  if(Number(year)<1||!Number.isFinite(at.getTime())||at.getFullYear()!==Number(year)||at.getMonth()+1!==Number(month)||at.getDate()!==Number(day)||at.getHours()!==Number(hour)||at.getMinutes()!==Number(minute))throw Error('Enter a valid local calendar date and time.');
  if(at.getUTCFullYear()<1||at.getUTCFullYear()>9999)throw Error('Choose a timestamp within UTC years 1 to 9999.');
+ const offsetChange=new Date(at.getTime()+86400000).getTimezoneOffset()-at.getTimezoneOffset(),repeated=new Date(at.getTime()+offsetChange*60000);
+ if(offsetChange>0&&repeated.getFullYear()===at.getFullYear()&&repeated.getMonth()===at.getMonth()&&repeated.getDate()===at.getDate()&&repeated.getHours()===at.getHours()&&repeated.getMinutes()===at.getMinutes())throw Error('This local time occurs twice during a clock change. Choose an unambiguous time.');
  const interval=Number(intervalText),count=Number(countText);
  if(!/^\d+$/.test(intervalText)||![0,3600,86400,604800].includes(interval))throw Error('Choose a supported repeat interval.');
  if(!/^\d+$/.test(countText.trim())||!Number.isInteger(count)||count<1||count>100)throw Error('Choose a whole number from 1 to 100 runs.');
