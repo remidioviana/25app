@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef} from 'react';
+import React,{useState,useEffect,useRef,useMemo} from 'react';
 import {View,Text,TextInput,Platform} from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import {File} from 'expo-file-system';
@@ -7,6 +7,7 @@ import type {Document,ImportFile} from '../src/types';
 import {styles as s,colors} from '../src/theme';
 import {EvidenceSearch} from './EvidenceSearch';
 import {Button,Notice} from './Controls';
+import {documentOperation,saveDocument} from '../src/documentSave';
 import {pickedFileBase64} from '../src/experience/pickedFile';
 type DocumentProps={api:AgentAPI;agent:string;onError:(v:string)=>void;refreshVersion?:number};
 export function Documents(props:DocumentProps){
@@ -17,6 +18,7 @@ export function Documents(props:DocumentProps){
 function DocumentForm({api,agent,onError,refreshVersion=0}:DocumentProps){
  const [documents,setDocuments]=useState<Document[]>([]),[title,setTitle]=useState(''),[text,setText]=useState(''),[source,setSource]=useState(''),[asOf,setAsOf]=useState(''),[warnings,setWarnings]=useState<string[]>([]),[busy,setBusy]=useState(false);
  const [importFile,setImportFile]=useState<ImportFile|undefined>();
+ const perform=useMemo(()=>documentOperation(),[]);
  const scope=useRef<object|null>(null),listingRevision=useRef(0),errorHandler=useRef(onError);
  useEffect(()=>{errorHandler.current=onError},[onError]);
  useEffect(()=>{
@@ -31,7 +33,7 @@ function DocumentForm({api,agent,onError,refreshVersion=0}:DocumentProps){
   return()=>{active=false};
  },[api,agent,refreshVersion]);
  async function pick(){
-  const current=scope.current;setBusy(true);
+  const current=scope.current;await perform(async()=>{
   try{
    const result=await DocumentPicker.getDocumentAsync({type:['text/plain','text/markdown','text/csv','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],copyToCacheDirectory:true,multiple:false,base64:true});
    if(scope.current!==current||result.canceled)return;
@@ -40,16 +42,17 @@ function DocumentForm({api,agent,onError,refreshVersion=0}:DocumentProps){
    const extracted=await api.preview(asset.name,content);if(scope.current!==current)return;
    setImportFile({filename:asset.name,base64:content});setTitle(asset.name);setText(extracted.text);setSource('');setAsOf('');setWarnings(extracted.warnings);
   }catch(e){if(scope.current===current)errorHandler.current(e instanceof Error?e.message:'Import failed')}
-  finally{if(scope.current===current)setBusy(false)}
+  },()=>current!==null&&scope.current===current,setBusy);
  }
  async function save(){
-  const current=scope.current;setBusy(true);
-  try{
-   await api.addDocument(agent,title,text,source,asOf,importFile);if(scope.current!==current)return;
-   setImportFile(undefined);setTitle('');setText('');setSource('');setAsOf('');setWarnings([]);
-   const listing=++listingRevision.current,result=await api.documents(agent);if(scope.current===current&&listingRevision.current===listing)setDocuments(result.documents);
-  }catch(e){if(scope.current===current)errorHandler.current(e instanceof Error?e.message:'Save failed')}
-  finally{if(scope.current===current)setBusy(false)}
+  const current=scope.current;await perform(async()=>{
+   await saveDocument(()=>api.addDocument(agent,title,text,source,asOf,importFile),{
+    current:()=>scope.current===current,
+    saved:()=>{setImportFile(undefined);setTitle('');setText('');setSource('');setAsOf('');setWarnings([])},
+    refresh:async()=>{const listing=++listingRevision.current,result=await api.documents(agent);if(scope.current===current&&listingRevision.current===listing)setDocuments(result.documents)},
+    error:message=>errorHandler.current(message),
+   });
+  },()=>current!==null&&scope.current===current,setBusy);
  }
  return <View style={{gap:12}}><EvidenceSearch key={agent} api={api} agent={agent}/><Text style={s.h2}>Evidence library</Text><Text style={s.muted}>TXT, MD, CSV, text PDF or DOCX, up to 2 MB. Extraction runs on your server. Review the text before saving it.</Text><Button secondary busy={busy} title="Choose document" onPress={pick}/>{warnings.length>0&&<Notice>{warnings.map((w,i)=><Text key={i} style={s.text}>{w}</Text>)}</Notice>}
  <TextInput editable={!busy} style={s.input} accessibilityLabel="Document title" placeholder="Title" placeholderTextColor={colors.muted} value={title} onChangeText={setTitle}/><TextInput editable={!busy} style={s.input} accessibilityLabel="Source reference" placeholder="Source / reference" placeholderTextColor={colors.muted} value={source} onChangeText={setSource}/><TextInput editable={!busy} style={s.input} accessibilityLabel="Source date" placeholder="Source date: YYYY-MM-DD (optional)" placeholderTextColor={colors.muted} value={asOf} onChangeText={setAsOf}/><TextInput editable={!busy} style={[s.input,{minHeight:160,maxHeight:320,textAlignVertical:'top'}]} multiline accessibilityLabel="Extracted text" placeholder="Extracted or pasted text" placeholderTextColor={colors.muted} value={text} onChangeText={setText}/><Button title="Add to evidence" busy={busy} disabled={!title.trim()||!text.trim()} onPress={save}/>

@@ -161,3 +161,7 @@ Connect and disconnect share a synchronous pending-operation lock and a focused-
 ### Unicode import filename limits
 
 The mobile document picker now counts filename Unicode code points, matching the Python server's 200-character limit. Valid names containing supplementary Arabic characters or symbols are no longer rejected because they occupy two UTF-16 units. Boundary tests cover 200 accepted and 201 rejected characters across Web, iOS and Android reader branches, preserving rejection before file reads for oversized names. Tests use simulated file contents, not device acceptance.
+
+### Document save confirmation and operation locking
+
+The mobile evidence editor separates a failed document write from a confirmed save followed by a failed list refresh. Failed writes retain the draft; confirmed saves clear it once and explicitly report that the document was saved if refreshing the list fails. Picking/importing and saving share a synchronous pending-operation lock. Existing editor-scope checks prevent late responses from clearing another editor or reporting after unmount. Controlled tests cover both write phases, stale responses, operation overlap and lock release without real storage or provider calls.
