@@ -109,3 +109,7 @@ JSON, report, CSV and calendar downloads now remain scoped to the originating wo
 ### Status polling recovery
 
 Transient network, timeout and server failures during run-status reads receive at most three retries, with progressive delays of 1.8, 3.6 and 7.2 seconds. A successful read resets the retry budget. These are GET requests for the existing run; no mission or inference is restarted. Authentication, missing-run and quota errors stop immediately. Exhausted retries explain how to reopen the run from history, and navigation invalidates pending retries. API errors preserve HTTP status even for non-JSON error bodies. Controlled regression tests cover recovery, backoff limits, reset, non-retryable responses and workspace changes.
+
+### JSON draft shape validation
+
+The Web editor requires mission inputs to be a JSON object before returning to the form, changing tabs, loading an example or starting a run. Invalid roots retain the raw editor content and previous object draft for correction. Schema lookup tolerates additional nested fields; arrays without an item schema retain their contents and removal controls without offering an unsupported Add action. Regression tests cover scalar, null, array and malformed roots plus valid nested objects.
