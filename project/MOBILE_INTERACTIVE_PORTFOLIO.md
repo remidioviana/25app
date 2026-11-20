@@ -145,3 +145,7 @@ The portal distinguishes completed execution from the final answer outcome. Miss
 ### Saved schedule state and provenance
 
 Mobile disabled schedules now read Inactive rather than Finished, preserving the distinction between disabling future runs and completing them. Saved schedule cards in mobile and the portal display their persisted execution mode and demonstration/supplied-input provenance. Missing legacy provenance is explicitly unreported rather than assumed real. Creation views also identify the current draft provenance. Tests cover stored boolean/numeric flags, the three execution modes and inactive schedules with remaining runs.
+
+### Mobile agenda request lifecycle
+
+Agenda list loads and mutations now belong to a mounted API/agent session. Disposal or effect replay invalidates earlier responses, errors and busy-state updates. A synchronous operation lock prevents duplicate pending writes, and post-mutation reads supersede earlier list loads. Confirmed creation/disable receipts remain explicit when the subsequent list refresh fails. Controlled request tests cover lifecycle changes, replay, duplicate clicks, refresh failure and retry without creating real schedules or invoking models.
