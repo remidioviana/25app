@@ -85,3 +85,5 @@ Connector reads and file previews apply only while their draft snapshot remains 
 Document mutations refresh only the collection list. A confirmed save clears the submitted form only if no fields have changed; newer edits and drafts present during deletion stay intact. List refreshes are ordered, duplicate save clicks are suppressed, and refresh failures preserve the distinction between a successful mutation receipt and an unavailable refreshed list.
 
 Web schedule creation validates local calendar times, supported repeat settings, one-time counts and the backend's UTC year bounds before submission. Collection updates preserve edited controls, stale panel/list responses are ignored, and the last confirmed identical payload is suppressed while the panel remains open. Refresh errors retain the creation/disable receipt. Timezone regressions cover Dubai conversion and daylight-saving clock gaps.
+
+Disabled schedules are labeled Inactive with their remaining run count; disabling future runs does not establish that those runs completed.

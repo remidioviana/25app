@@ -22,8 +22,8 @@ test('duplicate schedule clicks are suppressed both pending and after a confirme
 });
 test('disabling future runs refreshes only the list and keeps new schedule settings',async()=>{
  const w=workspace(),response=deferred(),button={dataset:{disableSchedule:'old'},disabled:false};w.lists['[data-disable-schedule]']=[button];
- w.setAPI((url:string,method='GET')=>method==='POST'?response.promise:Promise.resolve({schedules:[]}));await w.run('tab="schedules";renderSchedules()');fields(w);
- const pending=(button as any).onclick();w.nodes['#schedule-count'].value='7';response.resolve({});await pending;assert.equal(w.nodes['#schedule-count'].value,'7');assert.match(w.nodes['#schedule-list'].innerHTML,/No schedules/);
+ let disabled=false;w.setAPI((url:string,method='GET')=>method==='POST'?response.promise.then(value=>{disabled=true;return value}):Promise.resolve({schedules:[{id:'old',goal:'Saved plan',enabled:!disabled,next_at_iso:'2026-12-01T09:00:00Z',remaining:7}]}));await w.run('tab="schedules";renderSchedules()');fields(w);
+ const pending=(button as any).onclick();w.nodes['#schedule-count'].value='7';response.resolve({});await pending;assert.equal(w.nodes['#schedule-count'].value,'7');assert.match(w.nodes['#schedule-list'].innerHTML,/Inactive/);assert.match(w.nodes['#schedule-list'].innerHTML,/remaining: 7/);assert.doesNotMatch(w.nodes['#schedule-list'].innerHTML,/Finished|data-disable-schedule/);
 });
 test('an older schedule panel cannot replace a reopened panel for the same app',async()=>{
  const w=workspace(),old=deferred();let calls=0;w.setAPI(()=>++calls===1?old.promise:Promise.resolve({schedules:[]}));const first=w.run('tab="schedules";renderSchedules()');await w.run('tab="input";tab="schedules";renderSchedules()');
