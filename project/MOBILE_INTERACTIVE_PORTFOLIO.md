@@ -153,3 +153,7 @@ Agenda list loads and mutations now belong to a mounted API/agent session. Dispo
 ### Focused mobile history sessions
 
 Private case history reloads each time the activity route gains focus. Focus cleanup invalidates pending list and case-opening responses, so leaving the route or replacing its connection cannot trigger a stale mission redirect. Only the latest case selection may open; duplicate clicks on the same pending case are ignored, and current failures allow retry. Controlled asynchronous tests cover focus changes, response ordering, stale errors and disconnected state. Expo Router focus behavior was checked against the cached SDK 58 reference and installed matching API declarations.
+
+### Connection form action lifecycle
+
+Connect and disconnect share a synchronous pending-operation lock and a focused-screen generation. Late completions cannot navigate back or update errors after leaving/reopening the route. Saved-connection removal failures stay visible and allow retry, including after the active session has already been cleared. Pending actions disable editable credentials and the remember control. The connection form uses the existing Web-safe switch, with native disabled behavior preserved. Controlled lifecycle tests use no credentials or real storage.
