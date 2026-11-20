@@ -113,3 +113,7 @@ Transient network, timeout and server failures during run-status reads receive a
 ### JSON draft shape validation
 
 The Web editor requires mission inputs to be a JSON object before returning to the form, changing tabs, loading an example or starting a run. Invalid roots retain the raw editor content and previous object draft for correction. Schema lookup tolerates additional nested fields; arrays without an item schema retain their contents and removal controls without offering an unsupported Add action. Regression tests cover scalar, null, array and malformed roots plus valid nested objects.
+
+### Execution mode preservation
+
+The Web mission editor preserves its selected execution mode when rebuilding form fields, adding or removing rows, switching JSON/form views, loading/restoring examples and returning from another workspace tab. Opening another app resets the selection to local tools. Regression tests verify the rendered selected options and submitted mode, preventing silent downgrades from AI/team mode during editing.
