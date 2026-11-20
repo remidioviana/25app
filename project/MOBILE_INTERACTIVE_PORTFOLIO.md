@@ -173,3 +173,7 @@ A confirmed document save clears the previous save error before refreshing the e
 ### Agenda retry error state
 
 Confirmed schedule creation and disable operations clear the preceding operation error before refreshing the list. Failed writes retain their error, and failed post-confirmation refreshes still display the saved-operation receipt. Regression tests cover a failure followed by a confirmed retry for both actions.
+
+### Mission submission identity
+
+Mission starts now use a synchronous submission gate and retry identity outside React state updates. Rapid repeated actions cannot create overlapping POST requests with different keys. An unchanged request on the same API client retains its key after an uncertain failure; changed content or connection gets a new key. A confirmed response clears the retry identity for a deliberate subsequent mission. Controlled tests verify request counts, keys and gate release without model inference.
