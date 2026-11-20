@@ -125,3 +125,7 @@ Clear inputs now discards the pre-example snapshot along with the visible draft.
 ### JSON numeric overflow
 
 Mission JSON parsing rejects numbers that overflow the finite JavaScript range, including nested object and array values. They can no longer become Infinity during editing and silently serialize as null when submitted. Existing invalid-draft tests also exercise overflow through form switching, tab navigation, example loading and mission submission. A separate regression verifies finite values, explicit zero and unknown null remain distinct through submission and JSON serialization.
+
+### History and tab loading isolation
+
+Each history load belongs to a specific visit, so older responses cannot overwrite a newer list after leaving and reopening the tab. Current history failures replace the loading indicator with a recovery message. Initial document and schedule loading errors are also scoped to the originating tab visit. Controlled asynchronous tests cover response reordering, stale errors and current failure recovery without provider calls.
