@@ -10,7 +10,7 @@ export interface RunSummary {id:string;goal:string;status:Run['status'];created:
 export interface ImportFile {filename:string;base64:string}
 export interface ImportProvenance {filename:string;raw_sha256:string;extracted_text_sha256:string;saved_text_sha256:string;raw_bytes:number;text_edited:boolean;authenticity_verified:false;scope:string;warnings:string[]}
 export interface Document {id:string;title:string;source:string;as_of:string;created:string;source_version_state?:'current'|'superseded';import_provenance?:ImportProvenance}
-export interface Schedule {id:string;goal:string;enabled:number;remaining:number;next_at_iso:string;mode:Mode}
+export interface Schedule {id:string;goal:string;enabled:number;remaining:number;next_at_iso:string;mode:Mode;example?:boolean|number}
 export interface Intake {status:'needs_information'|'ready_for_review';questions?:string[];input?:Record<string,Json>;uncertainties?:string[];warning?:string}
 
 export interface EvidenceMatch {citation:string;title:string;text:string;source:string;as_of:string;doc:string;chunk:number;retrieved_at?:string|null}

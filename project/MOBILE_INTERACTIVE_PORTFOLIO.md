@@ -141,3 +141,7 @@ Run results now show recorded retrieval warnings before the domain analysis, rat
 ### Final answer outcome visibility
 
 The portal distinguishes completed execution from the final answer outcome. Missing-information and inconclusive decisions show their recorded final questions and limitations prominently. An answered label requires a matching final outcome and empty question/limitation lists; missing, contradictory or inconsistent metadata cannot fabricate final approval. Earlier audit revision feedback remains historical rather than replacing the final resolution. Regression tests exercise the actual result renderer and escaped list content without provider calls.
+
+### Saved schedule state and provenance
+
+Mobile disabled schedules now read Inactive rather than Finished, preserving the distinction between disabling future runs and completing them. Saved schedule cards in mobile and the portal display their persisted execution mode and demonstration/supplied-input provenance. Missing legacy provenance is explicitly unreported rather than assumed real. Creation views also identify the current draft provenance. Tests cover stored boolean/numeric flags, the three execution modes and inactive schedules with remaining runs.
