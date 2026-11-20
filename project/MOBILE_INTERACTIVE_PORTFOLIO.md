@@ -117,3 +117,7 @@ The Web editor requires mission inputs to be a JSON object before returning to t
 ### Execution mode preservation
 
 The Web mission editor preserves its selected execution mode when rebuilding form fields, adding or removing rows, switching JSON/form views, loading/restoring examples and returning from another workspace tab. Opening another app resets the selection to local tools. Regression tests verify the rendered selected options and submitted mode, preventing silent downgrades from AI/team mode during editing.
+
+### Clearing example restoration state
+
+Clear inputs now discards the pre-example snapshot along with the visible draft. The restore control disappears, and even a detached stale restore handler cannot recover the cleared data. Loading another example starts a new restoration baseline. Regression tests verify both clearing and subsequent example cycles without provider calls.
