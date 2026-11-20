@@ -14,7 +14,7 @@ export function agendaRequests(api:API,agent:string,view:{items:(rows:Schedule[]
  async function mutate(operation:()=>Promise<unknown>,failure:string,confirmed:string){
   if(!live||busy)return false;
   const version=generation;busy=true;view.busy(true);
-  try{await operation();if(!current(version))return false;await load(version,confirmed);return true}
+  try{await operation();if(!current(version))return false;view.error('');await load(version,confirmed);return true}
   catch(error){if(current(version))view.error(message(error,failure));return false}
   finally{if(current(version)){busy=false;view.busy(false)}}
  }

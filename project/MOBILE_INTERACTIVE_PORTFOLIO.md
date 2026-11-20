@@ -169,3 +169,7 @@ The mobile evidence editor separates a failed document write from a confirmed sa
 ### Document retry error state
 
 A confirmed document save clears the previous save error before refreshing the evidence list. Failed retries retain their current error and draft, and a subsequent list-refresh failure still replaces the cleared error with the explicit saved-document receipt. Regression coverage verifies consecutive failures followed by a confirmed retry.
+
+### Agenda retry error state
+
+Confirmed schedule creation and disable operations clear the preceding operation error before refreshing the list. Failed writes retain their error, and failed post-confirmation refreshes still display the saved-operation receipt. Regression tests cover a failure followed by a confirmed retry for both actions.
