@@ -121,3 +121,7 @@ The Web mission editor preserves its selected execution mode when rebuilding for
 ### Clearing example restoration state
 
 Clear inputs now discards the pre-example snapshot along with the visible draft. The restore control disappears, and even a detached stale restore handler cannot recover the cleared data. Loading another example starts a new restoration baseline. Regression tests verify both clearing and subsequent example cycles without provider calls.
+
+### JSON numeric overflow
+
+Mission JSON parsing rejects numbers that overflow the finite JavaScript range, including nested object and array values. They can no longer become Infinity during editing and silently serialize as null when submitted. Existing invalid-draft tests also exercise overflow through form switching, tab navigation, example loading and mission submission. A separate regression verifies finite values, explicit zero and unknown null remain distinct through submission and JSON serialization.
