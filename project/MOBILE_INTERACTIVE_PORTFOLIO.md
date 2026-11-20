@@ -129,3 +129,7 @@ Mission JSON parsing rejects numbers that overflow the finite JavaScript range, 
 ### History and tab loading isolation
 
 Each history load belongs to a specific visit, so older responses cannot overwrite a newer list after leaving and reopening the tab. Current history failures replace the loading indicator with a recovery message. Initial document and schedule loading errors are also scoped to the originating tab visit. Controlled asynchronous tests cover response reordering, stale errors and current failure recovery without provider calls.
+
+### Search method and retrieval warnings
+
+The portal document search displays the backend-reported retrieval method and warnings alongside excerpts. A requested semantic search that falls back to keywords because vectors are absent or outdated is no longer presented without that context. Warning text is escaped, and changing the query clears both the old excerpts and their method/warnings. Regression tests cover lexical fallback, hybrid retrieval, missing method metadata and safe warning rendering without provider calls.
