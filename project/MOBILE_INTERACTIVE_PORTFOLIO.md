@@ -157,3 +157,7 @@ Private case history reloads each time the activity route gains focus. Focus cle
 ### Connection form action lifecycle
 
 Connect and disconnect share a synchronous pending-operation lock and a focused-screen generation. Late completions cannot navigate back or update errors after leaving/reopening the route. Saved-connection removal failures stay visible and allow retry, including after the active session has already been cleared. Pending actions disable editable credentials and the remember control. The connection form uses the existing Web-safe switch, with native disabled behavior preserved. Controlled lifecycle tests use no credentials or real storage.
+
+### Unicode import filename limits
+
+The mobile document picker now counts filename Unicode code points, matching the Python server's 200-character limit. Valid names containing supplementary Arabic characters or symbols are no longer rejected because they occupy two UTF-16 units. Boundary tests cover 200 accepted and 201 rejected characters across Web, iOS and Android reader branches, preserving rejection before file reads for oversized names. Tests use simulated file contents, not device acceptance.

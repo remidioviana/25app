@@ -16,3 +16,16 @@ test('file data URLs must declare base64 instead of silently reinterpreting plai
  assert.equal(await pickedFileBase64({name:'record.txt',uri:'blob:local',base64},'web',async()=>''),'QUJD');
  assert.equal(await pickedFileBase64({name:'record.txt',uri:'file:local'},'android',async()=>'QUJD'),'QUJD');
 });
+
+test('Unicode filenames at the server character limit work on Web, iOS and Android',async()=>{
+ for(const platform of ['web','ios','android'])for(const character of ['a','م','𞸀','🏠']){
+  const name=character.repeat(196)+'.txt';assert.equal(Array.from(name).length,200);
+  const data=await pickedFileBase64({name,uri:'local:record',size:3,base64:'QUJD'},platform,async()=>'QUJD');assert.equal(data,'QUJD');
+ }
+});
+test('filenames over the Unicode limit are rejected before reading their contents',async()=>{
+ for(const platform of ['web','ios','android'])for(const character of ['a','م','𞸀','🏠']){
+  let reads=0;const name=character.repeat(197)+'.txt';assert.equal(Array.from(name).length,201);
+  await assert.rejects(pickedFileBase64({name,uri:'local:record',base64:'QUJD'},platform,async()=>{reads++;return 'QUJD'}),/at most 200 characters/);assert.equal(reads,0);
+ }
+});
