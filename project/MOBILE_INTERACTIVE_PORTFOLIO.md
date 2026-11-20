@@ -105,3 +105,7 @@ The portal result panel and mission history share status badges: only completed 
 ### Export request isolation
 
 JSON, report, CSV and calendar downloads now remain scoped to the originating workspace and run. Navigation suppresses delayed downloads and unrelated error notices, including responses whose body is still loading. Repeated clicks on a pending export are ignored. Only calendar exports send a date parameter, and temporary object URLs are scheduled for cleanup even if initiating the download throws. Regression tests use simulated responses without provider calls.
+
+### Status polling recovery
+
+Transient network, timeout and server failures during run-status reads receive at most three retries, with progressive delays of 1.8, 3.6 and 7.2 seconds. A successful read resets the retry budget. These are GET requests for the existing run; no mission or inference is restarted. Authentication, missing-run and quota errors stop immediately. Exhausted retries explain how to reopen the run from history, and navigation invalidates pending retries. API errors preserve HTTP status even for non-JSON error bodies. Controlled regression tests cover recovery, backoff limits, reset, non-retryable responses and workspace changes.
