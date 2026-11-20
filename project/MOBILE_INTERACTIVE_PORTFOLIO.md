@@ -93,3 +93,7 @@ Ambiguous local times during a backward clock change are rejected as well as non
 ### Web notification timing
 
 Successive portal notifications now cancel the preceding dismissal timer and ignore stale callbacks. Each new message stays visible for its own six-second interval, including refresh errors following confirmed writes. A regression test exercises the actual portal notification function with controlled timers; no provider inference or external action is involved.
+
+### Result action isolation
+
+Cancel, resume and artifact-review responses are scoped to the originating workspace and run request. Late responses and errors cannot replace a newly opened run or app, including leaving and reopening the same app. Pending duplicate clicks are suppressed, and failed current actions restore polling. Controlled asynchronous regression tests cover these paths without provider calls.
