@@ -137,3 +137,7 @@ The portal document search displays the backend-reported retrieval method and wa
 ### Result retrieval warnings
 
 Run results now show recorded retrieval warnings before the domain analysis, rather than leaving them only inside the complete JSON. The panel renders warning strings as escaped text, tolerates missing or malformed legacy metadata, and removes earlier warnings when a different result is opened. Regression tests exercise the actual result renderer without provider calls or fabricated acceptance evidence.
+
+### Final answer outcome visibility
+
+The portal distinguishes completed execution from the final answer outcome. Missing-information and inconclusive decisions show their recorded final questions and limitations prominently. An answered label requires a matching final outcome and empty question/limitation lists; missing, contradictory or inconsistent metadata cannot fabricate final approval. Earlier audit revision feedback remains historical rather than replacing the final resolution. Regression tests exercise the actual result renderer and escaped list content without provider calls.
