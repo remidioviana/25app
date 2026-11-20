@@ -101,3 +101,7 @@ Cancel, resume and artifact-review responses are scoped to the originating works
 ### Run status presentation
 
 The portal result panel and mission history share status badges: only completed runs use the success color, failed runs use an error treatment, and queued, running and cancelled runs remain neutral. Unknown statuses display an explicit Unknown label. A rendered-result/history regression covers all five supported statuses and unexpected values. This change does not alter backend run outcomes or acceptance evidence.
+
+### Export request isolation
+
+JSON, report, CSV and calendar downloads now remain scoped to the originating workspace and run. Navigation suppresses delayed downloads and unrelated error notices, including responses whose body is still loading. Repeated clicks on a pending export are ignored. Only calendar exports send a date parameter, and temporary object URLs are scheduled for cleanup even if initiating the download throws. Regression tests use simulated responses without provider calls.
