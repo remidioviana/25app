@@ -149,3 +149,7 @@ Mobile disabled schedules now read Inactive rather than Finished, preserving the
 ### Mobile agenda request lifecycle
 
 Agenda list loads and mutations now belong to a mounted API/agent session. Disposal or effect replay invalidates earlier responses, errors and busy-state updates. A synchronous operation lock prevents duplicate pending writes, and post-mutation reads supersede earlier list loads. Confirmed creation/disable receipts remain explicit when the subsequent list refresh fails. Controlled request tests cover lifecycle changes, replay, duplicate clicks, refresh failure and retry without creating real schedules or invoking models.
+
+### Focused mobile history sessions
+
+Private case history reloads each time the activity route gains focus. Focus cleanup invalidates pending list and case-opening responses, so leaving the route or replacing its connection cannot trigger a stale mission redirect. Only the latest case selection may open; duplicate clicks on the same pending case are ignored, and current failures allow retry. Controlled asynchronous tests cover focus changes, response ordering, stale errors and disconnected state. Expo Router focus behavior was checked against the cached SDK 58 reference and installed matching API declarations.
