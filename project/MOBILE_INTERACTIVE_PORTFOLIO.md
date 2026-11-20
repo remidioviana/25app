@@ -165,3 +165,7 @@ The mobile document picker now counts filename Unicode code points, matching the
 ### Document save confirmation and operation locking
 
 The mobile evidence editor separates a failed document write from a confirmed save followed by a failed list refresh. Failed writes retain the draft; confirmed saves clear it once and explicitly report that the document was saved if refreshing the list fails. Picking/importing and saving share a synchronous pending-operation lock. Existing editor-scope checks prevent late responses from clearing another editor or reporting after unmount. Controlled tests cover both write phases, stale responses, operation overlap and lock release without real storage or provider calls.
+
+### Document retry error state
+
+A confirmed document save clears the previous save error before refreshing the evidence list. Failed retries retain their current error and draft, and a subsequent list-refresh failure still replaces the cleared error with the explicit saved-document receipt. Regression coverage verifies consecutive failures followed by a confirmed retry.

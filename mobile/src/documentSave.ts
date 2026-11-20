@@ -2,7 +2,7 @@
 export async function saveDocument(write:()=>Promise<unknown>,view:{current:()=>boolean;saved:()=>void;refresh:()=>Promise<void>;error:(message:string)=>void}){
  try{await write()}catch(error){if(view.current())view.error(error instanceof Error?error.message:'Save failed.');return false}
  if(!view.current())return false;
- view.saved();
+ view.error('');view.saved();
  try{await view.refresh()}catch{if(view.current())view.error('Document saved. The evidence list could not refresh. Reopen Evidence to reload it.')}
  return true;
 }
