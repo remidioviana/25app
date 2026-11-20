@@ -133,3 +133,7 @@ Each history load belongs to a specific visit, so older responses cannot overwri
 ### Search method and retrieval warnings
 
 The portal document search displays the backend-reported retrieval method and warnings alongside excerpts. A requested semantic search that falls back to keywords because vectors are absent or outdated is no longer presented without that context. Warning text is escaped, and changing the query clears both the old excerpts and their method/warnings. Regression tests cover lexical fallback, hybrid retrieval, missing method metadata and safe warning rendering without provider calls.
+
+### Result retrieval warnings
+
+Run results now show recorded retrieval warnings before the domain analysis, rather than leaving them only inside the complete JSON. The panel renders warning strings as escaped text, tolerates missing or malformed legacy metadata, and removes earlier warnings when a different result is opened. Regression tests exercise the actual result renderer without provider calls or fabricated acceptance evidence.
