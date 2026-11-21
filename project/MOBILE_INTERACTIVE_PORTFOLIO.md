@@ -241,3 +241,7 @@ Starting a live source read now cancels any older catalogue/history request. A l
 ### Home mission launch ownership
 
 The Home primary action now uses the shared synchronous mission-submission and focused-operation controllers. A response from an abandoned Home view cannot publish a run, navigate or display a stale connection error. Connection replacement creates an independent submission session. An unchanged retry after an uncertain failure preserves its idempotency key; changing the mission content or API does not reuse it. Controlled tests cover success/failure after focus disposal and retry identity across reopening, without starting real missions or inference.
+
+### Reduced-motion preference ordering
+
+The shared motion provider now subscribes before reading the initial accessibility preference. A newer system preference event takes priority over a delayed startup snapshot, preventing motion from being re-enabled after the user requested reduced motion. Disposed observers ignore both pending reads and queued events, and a failed initial query retains the conservative reduced-motion default. Controlled tests cover both preference directions, delayed reads, disposal and query failure. Existing per-app animation behavior and artwork are unchanged.
