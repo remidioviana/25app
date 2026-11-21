@@ -233,3 +233,7 @@ PDF import, model analysis and annotation export now share a synchronous operati
 ### Preparation export focus ownership
 
 Iqamah, Istithmar and Munagasah preparation exports now use the focused operation controller shared with result reports. Duplicate presses cannot generate overlapping files or share sheets. Leaving the screen or replacing its base inputs invalidates pending completion; a delayed availability check cannot open a stale share sheet. Owned temporary files are still cleaned up, and a new focused session can export independently. Web downloads retain their names, JSON content and URL cleanup. Controlled tests exercise duplicate report generation and session replacement during native availability checks without real files or sharing.
+
+### Source catalogue and read ordering
+
+Starting a live source read now cancels any older catalogue/history request. A late catalogue snapshot cannot overwrite the newly confirmed retrieval receipt. The same request scope prevents overlapping source reads, blocks reloads during a read, and ignores cancelled or superseded completions. Replacing a catalogue request or disposing the panel invalidates its response even if the transport resolves after cancellation. Controlled tests cover delayed snapshot delivery, duplicate reads, cancellation followed by a new read and panel disposal; no official source or inference is contacted by these tests.

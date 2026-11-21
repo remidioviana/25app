@@ -1,3 +1,4 @@
+import {sourceRequestScope} from '../src/sourceRequestScope';
 import React,{useEffect,useRef,useState} from 'react';
 import {View,Text} from 'react-native';
 import type {AgentAPI} from '../src/api';
@@ -15,36 +16,36 @@ export function PublicSources(props:Props){
 }
 function SourcePanel({api,agent,onRetrieved}:Props){
  const [sources,setSources]=useState<PublicSource[]>([]),[reads,setReads]=useState<PublicSourceRead[]>([]),[loading,setLoading]=useState(!!api),[busy,setBusy]=useState<string|null>(null),[error,setError]=useState('');
- const generation=useRef(0),operation=useRef<AbortController|null>(null),catalogue=useRef<AbortController|null>(null),retrieved=useRef(onRetrieved);
+ const [requests]=useState(()=>sourceRequestScope()),retrieved=useRef(onRetrieved);
  useEffect(()=>{retrieved.current=onRetrieved},[onRetrieved]);
  useEffect(()=>{
-  const lifetime=generation,id=++lifetime.current,controller=new AbortController();operation.current?.abort();operation.current=null;catalogue.current?.abort();catalogue.current=controller;
-  if(api)api.publicSources(agent,controller.signal).then(result=>{if(lifetime.current===id&&!controller.signal.aborted){setSources(result.sources);setReads(result.reads)}}).catch(e=>{if(lifetime.current===id&&!controller.signal.aborted)setError(e instanceof Error?e.message:'Could not load the source catalogue.')}).finally(()=>{if(lifetime.current===id&&catalogue.current===controller){setLoading(false);catalogue.current=null}});
-  return()=>{lifetime.current++;controller.abort();catalogue.current?.abort();catalogue.current=null;operation.current?.abort();operation.current=null};
- },[api,agent]);
+  requests.start();const controller=requests.catalogue()!;
+  if(api)api.publicSources(agent,controller.signal).then(result=>{if(requests.current(controller)){setSources(result.sources);setReads(result.reads)}}).catch(e=>{if(requests.current(controller))setError(e instanceof Error?e.message:'Could not load the source catalogue.')}).finally(()=>{if(requests.current(controller)){setLoading(false);requests.finish(controller)}});
+  return()=>requests.dispose();
+ },[api,agent,requests]);
  async function reload(){
-  if(!api||operation.current)return;
-  const id=generation.current,controller=new AbortController();catalogue.current?.abort();catalogue.current=controller;setLoading(true);setError('');
-  try{const value=await api.publicSources(agent,controller.signal);if(generation.current===id&&!controller.signal.aborted){setSources(value.sources);setReads(value.reads)}}
-  catch(e){if(generation.current===id&&!controller.signal.aborted)setError(e instanceof Error?e.message:'Could not reload source history.')}
-  finally{if(generation.current===id&&catalogue.current===controller){catalogue.current=null;setLoading(false)}}
+  if(!api)return;const controller=requests.catalogue();if(!controller)return;
+  setLoading(true);setError('');
+  try{const value=await api.publicSources(agent,controller.signal);if(requests.current(controller)){setSources(value.sources);setReads(value.reads)}}
+  catch(e){if(requests.current(controller))setError(e instanceof Error?e.message:'Could not reload source history.')}
+  finally{if(requests.current(controller)){requests.finish(controller);setLoading(false)}}
  }
  async function refresh(source:PublicSource){
-  if(!api||operation.current)return;
-  const id=generation.current,controller=new AbortController();operation.current=controller;setBusy(source.id);setError('');
+  if(!api)return;const controller=requests.read();if(!controller)return;
+  setLoading(false);setBusy(source.id);setError('');
   try{
    const value=await api.refreshPublicSource(agent,source.id,controller.signal);
-   if(generation.current!==id||controller.signal.aborted)return;
+   if(!requests.current(controller))return;
    if(value.receipt.status!=='retrieved'||value.receipt.source_id!==source.id)throw new Error('The server did not confirm the requested source read.');
    setReads(old=>[value.receipt,...old].slice(0,20));retrieved.current?.();
   }catch(e){
-   if(generation.current!==id||controller.signal.aborted)return;
+   if(!requests.current(controller))return;
    setError(e instanceof Error?e.message:'The source read was not confirmed.');
    // The backend records failed read attempts; show their actual receipts too.
-   try{const latest=await api.publicSources(agent,controller.signal);if(generation.current===id&&!controller.signal.aborted)setReads(latest.reads)}catch{/* Keep the real read error; do not invent a failed receipt. */}
-  }finally{if(generation.current===id&&operation.current===controller){setBusy(null);operation.current=null}}
+   try{const latest=await api.publicSources(agent,controller.signal);if(requests.current(controller))setReads(latest.reads)}catch{/* Keep the real read error; do not invent a failed receipt. */}
+  }finally{if(requests.current(controller)){setBusy(null);requests.finish(controller)}}
  }
- function cancel(){operation.current?.abort();operation.current=null;setBusy(null);setError('Stopped waiting for the source read. The server may finish a request already started; revisit the source history to reconcile it.')}
+ function cancel(){requests.cancelRead();setBusy(null);setError('Stopped waiting for the source read. The server may finish a request already started; revisit the source history to reconcile it.')}
  return <View style={{gap:12}}>
   <Text style={s.h2}>Public source evidence</Text>
   <Text style={s.muted}>Read-only retrieval from fixed, reviewed URLs on your server. A source in the catalogue has not necessarily been read successfully.</Text>
