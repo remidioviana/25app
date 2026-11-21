@@ -28,3 +28,9 @@ test('Web sharing creates no native file and native share failures still clean u
  const web=runtime();web.adapter.web=true;await shareRunReport(async()=>'report',()=>true,web.adapter);assert.equal(web.shares(),1);assert.equal(web.writes(),0);assert.equal(web.deletes(),0);
  const native=runtime();native.adapter.available=async()=>false;await assert.rejects(shareRunReport(async()=>'report',()=>true,native.adapter),/unavailable/);assert.equal(native.deletes(),1);
 });
+
+test('confirmed result-action retries clear old errors without hiding a new failure',async()=>{
+ const w=view();assert.equal(await w.operations.execute(async()=>{throw Error('Previous failure')},w.success,w.error,w.onBusy,'Failed'),false);assert.deepEqual(w.errors,['Previous failure']);
+ assert.equal(await w.operations.execute(async()=>'confirmed',w.success,w.error,w.onBusy,'Failed'),true);assert.equal(w.errors.at(-1),'');assert.deepEqual(w.values,['confirmed']);
+ assert.equal(await w.operations.execute(async()=>{throw Error('Current failure')},w.success,w.error,w.onBusy,'Failed'),false);assert.equal(w.errors.at(-1),'Current failure');assert.equal(w.busy.at(-1),false);
+});

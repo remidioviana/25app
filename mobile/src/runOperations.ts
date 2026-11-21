@@ -7,7 +7,7 @@ export function runOperations(){
   async execute<T>(work:(current:()=>boolean)=>Promise<T>,success:(value:T)=>void,onError:(message:string)=>void,onBusy:(value:boolean)=>void,fallback:string){
    if(!live||busy)return false;
    const version=generation,current=()=>live&&generation===version;busy=true;onBusy(true);
-   try{const value=await work(current);if(!current())return false;success(value);return true}
+   try{const value=await work(current);if(!current())return false;onError('');success(value);return true}
    catch(error){if(current())onError(error instanceof Error?error.message:fallback);return false}
    finally{if(current()){busy=false;onBusy(false)}}
   },

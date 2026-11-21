@@ -209,3 +209,7 @@ Result mutations and exports share a synchronous pending-operation lock. Focus c
 ### Reopened result synchronization
 
 Run views adopt externally refreshed results even when the run ID and status are unchanged. Such refreshes advance the result-session revision, invalidating earlier polling and pending operations. An unchanged initial prop cannot roll back locally fetched data, and an echoed local update does not restart the session. Regression tests cover source identity, same-case review updates and API replacement.
+
+### Result operation retry messages
+
+A successful result action or export clears its preceding operation error only after the asynchronous work completes in the current session. New action, sharing or cleanup failures remain visible. Operation notices belong to the result panel, so clearing them does not clear separate mission, planning or inspector form errors. Regression coverage checks failure, confirmed retry and a subsequent distinct failure, alongside the existing stale-session and cleanup-failure tests.
