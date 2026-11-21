@@ -197,3 +197,7 @@ Mission goals, evidence-search queries and category names now count Unicode code
 ### Bounded mobile result status recovery
 
 Run status reads now retry transient network/time-out/server failures at most three times, with 2/4/8-second delays. Authentication, missing-run and quota errors stop immediately; terminal results stop polling. A dedicated polling notice clears on recovery without clearing action/export errors. Users can explicitly refresh status after a failure. Disposal aborts and ignores delayed responses. These operations only read an existing run; they never restart a mission or inference. Controlled timer tests cover recovery, retry bounds, non-retryable errors and cancellation.
+
+### Mobile final-review consistency
+
+The completed-final-answer label now requires matching answered metadata with explicit empty question and limitation lists. Contradictory or incomplete final metadata is marked unverified while its recorded questions and limitations stay visible. Final-only or decision-only review records are no longer hidden by the panel's visibility condition. Legacy recorded audit acceptance remains distinct from final-answer completion, and local results do not invent a review panel. Regression tests cover these combinations without provider calls.
