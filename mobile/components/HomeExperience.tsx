@@ -1,7 +1,9 @@
-import React,{useEffect,useRef,useState} from 'react';
+import React,{useCallback,useEffect,useMemo,useState} from 'react';
 import {View,Text,ScrollView,Pressable,Linking,Platform,StyleSheet} from 'react-native';
 import {FocusScreen} from './FocusScreen';
-import {router} from 'expo-router';
+import {router,useFocusEffect} from 'expo-router';
+import {missionSubmission} from '../src/missionSubmission';
+import {runOperations} from '../src/runOperations';
 import * as Crypto from 'expo-crypto';
 import {useApp,spec} from '../src/AppState';
 import {brandId} from '../src/brand';
@@ -30,13 +32,15 @@ export function SourceBrief({brief,status}:{brief:OfficialBrief;status:string}){
  return <View style={{gap:10}}><View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8}}><Text style={[v.kicker,{flex:1}]}>{brief.authority}</Text><Text style={{fontSize:11,color:d.muted}}>{status}</Text></View><Text selectable style={{fontFamily:d.serif?serif:undefined,fontSize:17,lineHeight:27,color:d.ink}}>{brief.quote}</Text><View style={{flexDirection:'row',flexWrap:'wrap',gap:18}}><Pressable accessibilityRole="button" accessibilityLabel="Open official source" style={{minHeight:48,minWidth:48,justifyContent:'center'}} onPress={()=>{Linking.openURL(brief.url).catch(()=>setError('Could not open the source.'));}}><Text style={v.link}>Read the source</Text></Pressable><Pressable accessibilityRole="button" accessibilityState={{expanded}} style={{minHeight:48,minWidth:48,justifyContent:'center'}} onPress={()=>setExpanded(!expanded)}><Text style={{fontSize:12,color:d.muted}}>{expanded?'Hide source details':'Source details'}</Text></Pressable></View>{expanded&&<View style={{gap:8,borderTopWidth:1,borderColor:d.line,paddingTop:10}}><Text style={s.muted}>Retrieved {new Date(brief.fetched_at).toLocaleString('en-GB',{timeZone:'UTC'})} UTC</Text><Text style={s.muted}>{brief.scope||'Source applicability depends on the case.'}</Text><Text selectable style={[s.code,{fontSize:11}]}>Source fingerprint {brief.text_sha256.slice(0,20)}</Text></View>}{!!error&&<Text style={s.error}>{error}</Text>}</View>;
 }
 export function HomeExperience(){
- const app=useApp();const [intelligence,setIntelligence]=useState(()=>savedIntelligence(brandId));const [brief,setBrief]=useState<OfficialBrief>(briefs[brandId]),[fresh,setFresh]=useState('Read '+new Date(briefs[brandId].fetched_at).toLocaleDateString('en-GB',{day:'2-digit',month:'short'})),[busy,setBusy]=useState(false),[error,setError]=useState('');const lock=useRef(false);const pending=useRef<{payload:string;key:string}|null>(null);
+ const app=useApp();const [intelligence,setIntelligence]=useState(()=>savedIntelligence(brandId));const [brief,setBrief]=useState<OfficialBrief>(briefs[brandId]),[fresh,setFresh]=useState('Read '+new Date(briefs[brandId].fetched_at).toLocaleDateString('en-GB',{day:'2-digit',month:'short'})),[busy,setBusy]=useState(false),[error,setError]=useState('');const launchSession=useMemo(()=>({api:app.api,operations:runOperations(),sender:missionSubmission(()=>Crypto.randomUUID())}),[app.api]);
+ useFocusEffect(useCallback(()=>{launchSession.operations.start(setBusy);setError('');return()=>launchSession.operations.dispose()},[launchSession]));
  useEffect(()=>{const api=app.api;if(!api)return;const controller=new AbortController();let live=true;api.refreshPublicSource(brandId,briefs[brandId].source_id,controller.signal).then(result=>{if(!live)return;const updated=reconcileBrief(briefs[brandId],result);if(updated){setBrief(updated);setFresh('Source checked')}else setFresh('New version available')}).catch(()=>{if(live)setFresh('Saved source · refresh unavailable')});return()=>{live=false;controller.abort()}},[app.api]);
  useEffect(()=>{const origin=app.api?.origin||process.env.EXPO_PUBLIC_API_URL;if(!origin)return;const controller=new AbortController();let live=true;const timer=setTimeout(()=>controller.abort(),12000);let base:string;try{base=serverURL(origin,__DEV__)}catch{clearTimeout(timer);return}fetch(base+'/public/intelligence.json',{signal:controller.signal,credentials:'omit',redirect:'error'}).then(async response=>{if(!response.ok)return;const text=await response.text();if(text.length>1000000)return;const data=JSON.parse(text);const value=publicIntelligence(data[brandId],brandId);if(live&&value)setIntelligence(current=>!current||Date.parse(value.generated_at)>Date.parse(current.generated_at)?value:current)}).catch(()=>{}).finally(()=>clearTimeout(timer));return()=>{live=false;clearTimeout(timer);controller.abort()}},[app.api]);
  async function launch(){
-  if(lock.current)return;
+  if(launchSession.sender.busy)return;
   if(!app.api||!app.hasInputs||caseInputIssue(brandId,app.draft)||inputIssue(app.draft,spec.schema)||!providerStatus(app.config).canAttempt||!app.config?.langgraph_available){router.push(brandId==='himayah'?'/workbench':'/mission');return}
-  lock.current=true;setBusy(true);setError('');try{const payload=JSON.stringify([spec.goal,app.draft,app.example]);if(pending.current?.payload!==payload)pending.current={payload,key:Crypto.randomUUID()};app.setRun(await app.api.start(brandId,spec.goal,app.draft,'team',app.example,pending.current!.key));pending.current=null;router.push('/mission')}catch(e){setError(e instanceof Error?e.message:'Could not start the workflow.')}finally{lock.current=false;setBusy(false)}
+  const api=launchSession.api;if(!api)return;
+  await launchSession.operations.execute(()=>launchSession.sender.submit(api,{agent:brandId,goal:spec.goal,input:app.draft,mode:'team',example:app.example}),run=>{if(run){app.setRun(run);router.push('/mission')}},setError,setBusy,'Could not start the workflow.');
  }
  const action=<Button title={d.action} busy={busy} onPress={launch}/>;
  const source=<View>{intelligence&&brandId!=='himayah'&&<IntelligenceNote value={intelligence}/>}<SourceBrief brief={brief} status={fresh}/></View>;

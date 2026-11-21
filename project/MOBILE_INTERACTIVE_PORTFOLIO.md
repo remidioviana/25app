@@ -237,3 +237,7 @@ Iqamah, Istithmar and Munagasah preparation exports now use the focused operatio
 ### Source catalogue and read ordering
 
 Starting a live source read now cancels any older catalogue/history request. A late catalogue snapshot cannot overwrite the newly confirmed retrieval receipt. The same request scope prevents overlapping source reads, blocks reloads during a read, and ignores cancelled or superseded completions. Replacing a catalogue request or disposing the panel invalidates its response even if the transport resolves after cancellation. Controlled tests cover delayed snapshot delivery, duplicate reads, cancellation followed by a new read and panel disposal; no official source or inference is contacted by these tests.
+
+### Home mission launch ownership
+
+The Home primary action now uses the shared synchronous mission-submission and focused-operation controllers. A response from an abandoned Home view cannot publish a run, navigate or display a stale connection error. Connection replacement creates an independent submission session. An unchanged retry after an uncertain failure preserves its idempotency key; changing the mission content or API does not reuse it. Controlled tests cover success/failure after focus disposal and retry identity across reopening, without starting real missions or inference.

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {missionSubmission} from '../src/missionSubmission';
+import {runOperations} from '../src/runOperations';
 import type {MissionRequest} from '../src/missionSubmission';
 import type {Run} from '../src/types';
 const request:MissionRequest={agent:'mizan',goal:'Analyze',input:{amount:17},mode:'team',example:false};
@@ -22,4 +23,22 @@ test('changed mission content or connection cannot reuse a previous request iden
 });
 test('a confirmed mission clears retry identity so a deliberate new mission receives a new key',async()=>{
  const w=submission(),keys:string[]=[];const api={start:async(...args:any[])=>{keys.push(args[5]);return run}};await w.sender.submit(api,request);await w.sender.submit(api,request);assert.deepEqual(keys,['key-1','key-2']);
+});
+
+test('a Home launch finishing after focus disposal cannot navigate or publish an error',async()=>{
+ for(const failure of [false,true]){
+  const w=submission(),operations=runOperations(),response=deferred(),errors:string[]=[],busy:boolean[]=[],published:Run[]=[];
+  const onBusy=(value:boolean)=>busy.push(value);operations.start(onBusy);
+  const pending=operations.execute(()=>w.sender.submit({start:()=>response.promise},request),value=>{if(value)published.push(value)},message=>errors.push(message),onBusy,'Launch failed');
+  operations.dispose();if(failure)response.reject(Error('Old workspace error'));else response.resolve(run);
+  assert.equal(await pending,false);assert.deepEqual(published,[]);assert.deepEqual(errors,[]);assert.deepEqual(busy,[false,true]);
+ }
+});
+
+test('reopening Home preserves the idempotency key for an uncertain unchanged launch',async()=>{
+ const w=submission(),operations=runOperations(),keys:string[]=[],errors:string[]=[],onBusy=()=>{};
+ const api={start:async(...args:any[])=>{keys.push(args[5]);if(keys.length===1)throw Error('Response lost');return run}};
+ const launch=()=>operations.execute(()=>w.sender.submit(api,request),()=>{},message=>errors.push(message),onBusy,'Launch failed');
+ operations.start(onBusy);assert.equal(await launch(),false);operations.dispose();operations.start(onBusy);
+ assert.equal(await launch(),true);assert.deepEqual(keys,['key-1','key-1']);assert.deepEqual(errors,['Response lost','']);
 });
