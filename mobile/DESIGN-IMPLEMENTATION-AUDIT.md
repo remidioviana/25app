@@ -40,7 +40,10 @@ home screen and the inspector, persisted on native devices using SecureStore,
 and defaults to English. Arabic labels and direction are applied to the
 inspector's primary controls and document-review states. Dynamic evidence,
 agent output, navigation, other screens and cultural review remain pending.
-Web preview preferences are session-only. This is not full RTL acceptance.
+Web preview preferences are session-only. The five Himayah navigation
+destinations and drawer accessibility labels now also use the shared locale,
+with a language switch directly in the drawer and Arabic internal branding.
+This is not full RTL acceptance.
 
 These are review and implementation targets, not claims of completed usability
 research. Each starts from the architecture already expressed in the repository.

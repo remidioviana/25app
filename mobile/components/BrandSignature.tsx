@@ -1,15 +1,22 @@
 import React from 'react';
 import {StyleSheet,View,Text} from 'react-native';
-import {brand} from '../src/brand';
+import {brand,brandId} from '../src/brand';
 import {colors,experience as d} from '../src/theme';
+import {useHimayahLanguage} from '../src/experience/HimayahLanguage';
+import {himayahNavigation} from '../src/experience/himayahNavigation';
 /** The 3D brand asset is reserved for the launcher, splash and presentation. */
 export function BrandSignature(){
- const kicker=d.kicker||brand.name.toUpperCase();
+ const {language}=useHimayahLanguage();
+ const localized=brandId==='himayah'?himayahNavigation[language]:null;
+ const rtl=!!localized&&language==='ar';
+ const name=localized?.name??brand.name;
+ const kicker=localized?.kicker??(d.kicker||brand.name.toUpperCase());
+ const aligned=rtl?{textAlign:'right' as const,writingDirection:'rtl' as const}:undefined;
  return (
-  <View accessible accessibilityRole="header" accessibilityLabel={brand.name} style={v.header}>
+  <View accessible accessibilityRole="header" accessibilityLabel={name} style={[v.header,rtl&&{direction:'rtl'}]}>
    <View style={v.copy}>
-    <Text style={v.kicker}>{kicker}</Text>
-    <Text style={v.title}>{brand.name}</Text>
+    <Text style={[v.kicker,aligned]}>{kicker}</Text>
+    <Text style={[v.title,aligned]}>{name}</Text>
     <View style={v.tint}/>
    </View>
   </View>
