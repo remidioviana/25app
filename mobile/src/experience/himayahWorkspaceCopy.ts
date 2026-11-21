@@ -31,6 +31,18 @@ export const himayahWorkspaceArabic:Record<string,string>={
   "RECORD": "سجل",
   "Connect for clauses": "اتصل لمراجعة البنود",
   "Provide your own inputs before starting a mission.": "أضف مدخلاتك قبل بدء المهمة.",
-  "Mission failed": "تعذرت المهمة"
+  "Mission failed": "تعذرت المهمة",
+  "Data": "البيانات",
+  "Text": "النص",
+  "Rules": "القواعد",
+  "Rule label": "اسم القاعدة",
+  "Screening phrase": "عبارة الفحص",
+  "Phrase required": "العبارة مطلوبة",
+  "Item": "البند",
+  "Remove item": "إزالة البند",
+  "Add item": "إضافة بند",
+  "Not provided": "غير محدد",
+  "Set no": "تعيين لا",
+  "Clear answer": "مسح الإجابة"
 };
-export function translateHimayah(value:string,arabic:boolean){return arabic?(himayahWorkspaceArabic[value]??value):value;}
+export function translateHimayah(value:string,arabic:boolean){return arabic&&Object.prototype.hasOwnProperty.call(himayahWorkspaceArabic,value)?himayahWorkspaceArabic[value]:value;}
