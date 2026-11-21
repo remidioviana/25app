@@ -205,3 +205,7 @@ The completed-final-answer label now requires matching answered metadata with ex
 ### Focus-scoped result operations and report cleanup
 
 Result mutations and exports share a synchronous pending-operation lock. Focus cleanup invalidates late results, error notices and share-sheet initiation. Status polling is stopped synchronously before an operation and remains suspended while it is busy. Temporary reports are removed on failure or supersession; cleanup errors cannot strand the busy state or mask an earlier export failure. Controlled tests cover duplicate operations, reopened sessions, delayed sharing, Web/native adapters and cleanup failure. No real file sharing or external submission is used in these tests.
+
+### Reopened result synchronization
+
+Run views adopt externally refreshed results even when the run ID and status are unchanged. Such refreshes advance the result-session revision, invalidating earlier polling and pending operations. An unchanged initial prop cannot roll back locally fetched data, and an echoed local update does not restart the session. Regression tests cover source identity, same-case review updates and API replacement.

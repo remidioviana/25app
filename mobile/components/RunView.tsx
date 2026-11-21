@@ -7,6 +7,7 @@ import {runOperations,shareRunReport} from '../src/runOperations';
 import {AgentAPI} from '../src/api';
 import type {Run,Json} from '../src/types';
 import {styles as s,colors} from '../src/theme';
+import {reconcileRunSource} from '../src/runViewSource';
 import {pollRunStatus} from '../src/runPolling';
 import {inputLabel} from '../src/forms';
 import {ClaimEvidence} from './ClaimEvidence';
@@ -21,7 +22,10 @@ function Values({value}:{value:Json}){
 }
 export function RunView({api,initial,onError,onUpdate}:{api:AgentAPI;initial:Run;onError:(s:string)=>void;onUpdate?:(r:Run)=>void}){
  const [run,setRun]=useState(initial),[busy,setBusy]=useState(false),[details,setDetails]=useState(false),[pollingError,setPollingError]=useState(''),[pollVersion,setPollVersion]=useState(0),[foreground,setForeground]=useState(AppState.currentState==='active');
- const session=useMemo(()=>({api,id:run.id,operations:runOperations()}),[api,run.id]);
+ const [source,setSource]=useState({api,initial,revision:0});
+ const incoming=reconcileRunSource(source,api,initial,run);
+ if(incoming){setSource(incoming.source);if(incoming.changed){setRun(incoming.run);setPollingError('')}}
+ const session=useMemo(()=>({api,id:run.id,revision:source.revision,operations:runOperations()}),[api,run.id,source.revision]);
  const operations=session.operations;
  const stopPolling=useRef<(()=>void)|null>(null);
  useFocusEffect(useCallback(()=>{operations.start(setBusy);return operations.dispose},[operations,setBusy]));
@@ -29,7 +33,7 @@ export function RunView({api,initial,onError,onUpdate}:{api:AgentAPI;initial:Run
  useEffect(()=>{
   if(!foreground||busy||!['queued','running'].includes(run.status))return;
   const stop=pollRunStatus(api,run.id,{run:next=>{setRun(next);onUpdate?.(next)},error:setPollingError});stopPolling.current=stop;return()=>{stop();if(stopPolling.current===stop)stopPolling.current=null};
- },[api,run.id,run.status,foreground,onUpdate,pollVersion,busy]);
+ },[api,run.id,run.status,foreground,onUpdate,pollVersion,busy,source.revision]);
  async function action(name:'cancel'|'retry'|'accepted'|'rejected'){
   await operations.execute(async()=>{stopPolling.current?.();return name==='cancel'||name==='retry'?session.api.action(session.id,name):session.api.review(run,name)},next=>{setRun(next);onUpdate?.(next)},onError,setBusy,'Action failed');
  }
