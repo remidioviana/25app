@@ -1,5 +1,5 @@
 import {InteractiveRecords} from './InteractiveRecords';
-import React,{useState,useRef,useEffect} from 'react';
+import React,{useState,useMemo,useCallback} from 'react';
 import {View,Text,TextInput,Pressable,ScrollView} from 'react-native';
 import {FocusScreen} from './FocusScreen';
 import {BrandSignature} from './BrandSignature';
@@ -12,18 +12,23 @@ import {useApp,spec} from '../src/AppState';
 import {providerStatus} from '../src/providerStatus';
 import {styles as s,experience as d,screenEdges} from '../src/theme';
 import {ExperienceTitle,useScriptFont} from '../src/experience/TypefaceProvider';
-import {router} from 'expo-router';
+import {router,useFocusEffect} from 'expo-router';
+import {missionSubmission} from '../src/missionSubmission';
+import {runOperations} from '../src/runOperations';
 import * as Crypto from 'expo-crypto';
 type Screen='activities'|'reflections'|'planning'|'breathing';
 const activities=[{name:'Gentle breathing',detail:'Use the pacing timer and stop whenever you need.'},{name:'A short walk',detail:'Choose a comfortable, accessible place and pace.'},{name:'A quiet reflection',detail:'Write what you would like to make room for.'}];
 export function NafasExperience({screen}:{screen:Screen}){
  const local=useNafas(),app=useApp(),[text,setText]=useState(''),[start,setStart]=useState(''),[days,setDays]=useState(3),[error,setError]=useState(''),[busy,setBusy]=useState(false),font=useScriptFont(text);
- const lock=useRef(false),pending=useRef<{payload:string;key:string}|null>(null),currentApi=useRef(app.api);useEffect(()=>{currentApi.current=app.api},[app.api]);
+ const session=useMemo(()=>({api:app.api,sender:missionSubmission(()=>Crypto.randomUUID()),operations:runOperations()}),[app.api]);
+ useFocusEffect(useCallback(()=>{session.operations.start(setBusy);setError('');return()=>session.operations.dispose()},[session]));
  const titles={activities:'What would help today?',reflections:'A page of your own.',planning:'Make room in the days ahead.',breathing:'Your breathing space.'},route=screen==='activities'?'mission':screen==='reflections'?'evidence':screen==='planning'?'activity':'workbench';
  async function ask(){
-  if(!app.api||!local.plan.length||lock.current)return;lock.current=true;setBusy(true);setError('');const api=app.api;
-  try{const input={start_date:local.plan[0].date,days:local.plan.length,preferred_activities:local.plan[0].activities},payload=JSON.stringify(input);if(pending.current?.payload!==payload)pending.current={payload,key:Crypto.randomUUID()};app.setDraft(input);const run=await api.start('nafas',spec.goal,input,'team',false,pending.current!.key);if(currentApi.current===api){pending.current=null;app.setRun(run)}}catch(e){if(currentApi.current===api)setError(e instanceof Error?e.message:'The routine analysis could not start.')}finally{lock.current=false;setBusy(false)}
+  const api=session.api;if(!api||!local.plan.length||session.sender.busy)return;
+  const input={start_date:local.plan[0].date,days:local.plan.length,preferred_activities:local.plan[0].activities};
+  await session.operations.execute(()=>{app.setDraft(input);app.setExample(false);return session.sender.submit(api,{agent:'nafas',goal:spec.goal,input,mode:'team',example:false})},run=>{if(run)app.setRun(run)},setError,setBusy,'The routine analysis could not start.');
  }
+
  return <FocusScreen route={route} style={s.screen} edges={screenEdges}><ScrollView contentContainerStyle={{padding:24,gap:24,paddingBottom:40}} keyboardShouldPersistTaps="handled"><BrandSignature/><ExperienceTitle>{titles[screen]}</ExperienceTitle>{screen==='activities'&&local.selected.length>0&&<InteractiveRecords editLink={false} input={{start_date:start||localCalendarDate(new Date()),days,preferred_activities:local.selected}}/>}{!!error&&<Text role="alert" style={s.error}>{error}</Text>}
  {screen==='activities'&&<><Text style={s.text}>Choose what feels useful. These choices guide your local plan; they do not measure your health.</Text>{activities.map(a=><Pressable key={a.name} accessibilityRole="checkbox" accessibilityState={{checked:local.selected.includes(a.name)}} aria-checked={local.selected.includes(a.name)} onPress={()=>local.setSelected(local.selected.includes(a.name)?local.selected.filter(x=>x!==a.name):[...local.selected,a.name])} style={{paddingVertical:22,borderBottomWidth:1,borderColor:d.line,gap:8,minHeight:64}}><Text style={s.h2}>{local.selected.includes(a.name)?'✓ ':''}{a.name}</Text><Text style={s.text}>{a.detail}</Text></Pressable>)}<Button title="Plan my chosen activities" onPress={()=>router.navigate('/activity')}/></>}
  {screen==='reflections'&&<><Text style={s.text}>Your words stay in this app session. They are never included in an agent request.</Text><TextInput accessibilityLabel="Private reflection" multiline maxLength={10000} value={text} onChangeText={setText} style={[s.input,{minHeight:180,textAlignVertical:'top',fontFamily:font,writingDirection:'auto'}]} placeholder="What would you like to make room for?" placeholderTextColor={d.muted}/><Button title="Keep this reflection" disabled={!text.trim()} onPress={()=>{local.addReflection(text);setText('')}}/>{local.reflections.map(note=><View key={note.id} style={{gap:12,paddingVertical:18,borderTopWidth:1,borderColor:d.line}}><Text style={s.muted}>{new Date(note.at).toLocaleString('en-GB')}</Text><Text selectable style={s.text}>{note.text}</Text><Button secondary title="Delete this reflection" onPress={()=>local.removeReflection(note.id)}/></View>)}<Button secondary title="Clear local reflections, plans and activity records" onPress={local.clear}/></>}

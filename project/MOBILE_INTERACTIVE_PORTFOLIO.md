@@ -245,3 +245,7 @@ The Home primary action now uses the shared synchronous mission-submission and f
 ### Reduced-motion preference ordering
 
 The shared motion provider now subscribes before reading the initial accessibility preference. A newer system preference event takes priority over a delayed startup snapshot, preventing motion from being re-enabled after the user requested reduced motion. Disposed observers ignore both pending reads and queued events, and a failed initial query retains the conservative reduced-motion default. Controlled tests cover both preference directions, delayed reads, disposal and query failure. Existing per-app animation behavior and artwork are unchanged.
+
+### Nafas routine analysis session
+
+Optional Nafas routine analysis now uses the shared focused-operation and mission-submission controllers. Leaving the screen invalidates late run/error updates; replacing the API creates a separate request session. Uncertain unchanged retries retain their idempotency key, and duplicate pending submissions remain blocked. Applying a locally chosen routine clears the prior demonstration flag to match the request's supplied-input provenance. Private reflections remain excluded. Existing controller regressions cover focus disposal, API/content identity, duplicates and retry keys; local routine tests cover calendar handling and activity ownership. No real inference was started for this change.
