@@ -177,3 +177,7 @@ Confirmed schedule creation and disable operations clear the preceding operation
 ### Mission submission identity
 
 Mission starts now use a synchronous submission gate and retry identity outside React state updates. Rapid repeated actions cannot create overlapping POST requests with different keys. An unchanged request on the same API client retains its key after an uncertain failure; changed content or connection gets a new key. A confirmed response clears the retry identity for a deliberate subsequent mission. Controlled tests verify request counts, keys and gate release without model inference.
+
+### Mobile intake goal revisions
+
+Case preparation now tracks the goal revision and API session. Editing a goal invalidates both pending and displayed proposals, including changing it and returning to the original text. Only the current ready proposal may apply, once. A synchronous gate blocks duplicate preparation requests, and mission starts also respect that pending gate. Current failures allow retry; disposed sessions cannot update errors or busy state. Controlled tests use no provider inference.
