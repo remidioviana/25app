@@ -14,7 +14,8 @@ export function emptyWorkspace(schema:Schema):{draft:Record<string,Json>;example
 }
 /** Copy draft values and their supplied/example flags as one restoration snapshot. */
 export function copyWorkspaceDraft(workspace:WorkspaceDraft):WorkspaceDraft {
- return {draft:JSON.parse(JSON.stringify(workspace.draft)),example:workspace.example,hasInputs:workspace.hasInputs};
+ const copy=(value:Json):Json=>Array.isArray(value)?value.map(copy):value!==null&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([key,item])=>[key,copy(item)])):value;
+ return {draft:copy(workspace.draft) as Record<string,Json>,example:workspace.example,hasInputs:workspace.hasInputs};
 }
 export function replaceAt(root:Json,path:(string|number)[],value:Json):Json {
  if(!path.length)return value;

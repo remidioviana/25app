@@ -185,3 +185,7 @@ Case preparation now tracks the goal revision and API session. Editing a goal in
 ### Example restoration provenance
 
 Mobile pre-example snapshots now include hasInputs alongside values and the demonstration flag. Restoration updates those fields together rather than passing through the ordinary edit setter, which always marks a draft as supplied. Restoring an untouched workspace therefore preserves unknown values and hasInputs=false, matching the Web behavior. Snapshot copying also isolates later edits from the saved original. Regression tests cover blank, supplied and demonstration states plus nested data isolation.
+
+### Invalid numeric draft preservation
+
+Workspace snapshots now copy nested values without JSON serialization. Invalid numeric editor values such as NaN remain invalid when an example is restored, instead of silently becoming nullable missing fields. Mission validation continues to reject those values; this does not permit sending non-finite numbers. Regression tests verify nested validation before/after restoration, explicit null/zero, signed zero and safe copying of prototype-named keys.
