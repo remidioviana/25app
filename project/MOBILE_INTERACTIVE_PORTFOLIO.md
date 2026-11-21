@@ -225,3 +225,7 @@ Run reports and Himayah, Iqamah, Istithmar and Munagasah preparation exports use
 ### Web export URL cleanup
 
 Himayah, Iqamah, Istithmar and Munagasah Web exports share one text-download helper. Object URL revocation is scheduled in a finally block, including link-creation and click failures. Filenames, content, MIME types and delayed release remain unchanged. Controlled browser-adapter tests cover normal downloads and failures before/after URL allocation without initiating real downloads. Native report handling is unchanged.
+
+### Himayah inspector operation ownership
+
+PDF import, model analysis and annotation export now share a synchronous operation lease. Export can no longer bypass the import/analysis gate, and completion from an earlier API revision cannot unlock a newer operation. Stale exports do not open a share sheet or report errors after a session replacement. Import resource cleanup runs inside a protected finally path so URL/file cleanup failure cannot strand the controls. Pure gate tests cover overlap, session replacement, duplicate completion and token identity without inference or real files.

@@ -1,3 +1,4 @@
+import {operationGate} from '../src/operationGate';
 import {downloadText} from '../src/webDownload';
 import {temporaryReportFile} from '../src/temporaryReportFile';
 import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
@@ -30,7 +31,7 @@ export function HimayahInspector(){
  const [editor,setEditor]=useState(false),[editText,setEditText]=useState(''),[selected,setSelected]=useState<{snapshot:string;id:string}|null>(null),[notes,setNotes]=useState<{snapshot:string;values:Record<string,string>}>({snapshot:'',values:{}}),[hash,setHash]=useState<{text:string;value:string}|null>(null),[imported,setImported]=useState<Imported|null>(null),[busyState,setBusyState]=useState<{api:AgentAPI|null;value:boolean}>({api:null,value:false}),[error,setError]=useState(''),[warnings,setWarnings]=useState<string[]>([]),[analysisOpen,setAnalysisOpen]=useState(false),[findingsLimit,setFindingsLimit]=useState(25),[panel]=useState(()=>new Animated.Value(0));
  const busy=busyState.api===app.api&&busyState.value,setBusy=(value:boolean)=>setBusyState({api:app.api,value});
  const abort=useRef<AbortController|null>(null);
- const revision=useRef(0),list=useRef<FlatList<ReturnType<typeof documentBlocks>[number]>>(null),pending=useRef<{payload:string;key:string}|null>(null),lock=useRef(false),reduced=useReducedMotion(),scriptFont=useScriptFont(text),editFont=useScriptFont(editText);
+ const revision=useRef(0),list=useRef<FlatList<ReturnType<typeof documentBlocks>[number]>>(null),pending=useRef<{payload:string;key:string}|null>(null),gate=useMemo(()=>operationGate(),[]),reduced=useReducedMotion(),scriptFont=useScriptFont(text),editFont=useScriptFont(editText);
  useEffect(()=>{const id=++revision.current;return()=>{revision.current=id+1;abort.current?.abort()}},[app.api]);
  useEffect(()=>{let active=true;Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256,text).then(value=>{if(active)setHash({text,value})}).catch(()=>{if(active)setError('The current document fingerprint could not be computed.')});return()=>{active=false}},[text]);
  const review=useMemo(()=>{try{return {value:inspectClauses(text,rules),error:''}}catch(e){return {value:null,error:e instanceof Error?e.message:'Check the screening rules.'}}},[text,rulesKey]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -40,7 +41,7 @@ export function HimayahInspector(){
  useEffect(()=>{panel.stopAnimation();if(!hit)return;if(reduced){panel.setValue(1);return}panel.setValue(0);const spring=Animated.spring(panel,{toValue:1,damping:24,stiffness:240,mass:.8,useNativeDriver:Platform.OS!=='web'});spring.start();return()=>spring.stop()},[hit?.id,reduced,panel]); // eslint-disable-line react-hooks/exhaustive-deps
  function choose(h:ClauseHit){setSelected({snapshot,id:h.id})}
  async function pick(){
-  if(!app.api){router.push('/connect');return}if(lock.current)return;lock.current=true;setBusy(true);setError('');const api=app.api,scope=revision.current,controller=new AbortController();abort.current=controller;let cache:File|undefined;let blob:string|undefined;
+  if(!app.api){router.push('/connect');return}const scope=revision.current,lease=gate.acquire(scope);if(!lease)return;setBusy(true);setError('');const api=app.api,controller=new AbortController();abort.current=controller;let cache:File|undefined;let blob:string|undefined;
   try{
    const picked=await DocumentPicker.getDocumentAsync({type:'application/pdf',copyToCacheDirectory:true,multiple:false,base64:true});if(picked.canceled||revision.current!==scope)return;
    const asset=picked.assets[0];if(!/\.pdf$/i.test(asset.name))throw Error('Choose a PDF file for the document inspector.');if(Platform.OS==='web'&&asset.uri.startsWith('blob:'))blob=asset.uri;
@@ -50,17 +51,17 @@ export function HimayahInspector(){
    const documents=await api.documents('himayah',controller.signal);if(revision.current!==scope)return;const document=documents.documents.find(doc=>doc.id===saved.id);if(!document?.import_provenance)throw Error('The PDF was saved, but its import receipt could not be loaded. Reopen the evidence library to inspect it.');
    if(!app.commitDraft(app.draft,{...app.draft,text:preview.text}))throw Error('The PDF was saved, but your case changed while importing. Your newer edits were preserved; reimport to replace them.');setImported({api,document,originalText:preview.text});setWarnings(preview.warnings);app.setExample(false);setSelected(null);setEditor(false);
   }catch(e){if(revision.current===scope)setError(e instanceof Error?e.message:'PDF import failed.')}
-  finally{if(blob)URL.revokeObjectURL(blob);if(cache?.exists&&cache.uri.startsWith(Paths.cache.uri))try{cache.delete()}catch{}lock.current=false;if(revision.current===scope)setBusy(false)}
+  finally{try{if(blob)URL.revokeObjectURL(blob);if(cache?.exists&&cache.uri.startsWith(Paths.cache.uri))cache.delete()}catch{if(revision.current===scope)setError(previous=>previous||'Could not remove temporary import resources.')}finally{if(gate.release(lease)&&revision.current===scope)setBusy(false)}}
  }
  async function analyze(){
-  if(!app.api){router.push('/connect');return}if(lock.current)return;const issue=inputIssue(app.draft,spec.schema);if(issue||!text.trim()){setError(issue||'Add document text first.');return}lock.current=true;setBusy(true);setError('');const scope=revision.current;
-  try{const payload=JSON.stringify(app.draft);if(pending.current?.payload!==payload)pending.current={payload,key:Crypto.randomUUID()};const run=await app.api.start('himayah',spec.goal,app.draft,'team',app.example,pending.current!.key);if(revision.current===scope){pending.current=null;app.setRun(run);setAnalysisOpen(true)}}catch(e){if(revision.current===scope)setError(e instanceof Error?e.message:'Analysis could not start.')}finally{lock.current=false;if(revision.current===scope)setBusy(false)}
+  if(!app.api){router.push('/connect');return}const scope=revision.current,lease=gate.acquire(scope);if(!lease)return;const issue=inputIssue(app.draft,spec.schema);if(issue||!text.trim()){gate.release(lease);setError(issue||'Add document text first.');return}setBusy(true);setError('');
+  try{const payload=JSON.stringify(app.draft);if(pending.current?.payload!==payload)pending.current={payload,key:Crypto.randomUUID()};const run=await app.api.start('himayah',spec.goal,app.draft,'team',app.example,pending.current!.key);if(revision.current===scope){pending.current=null;app.setRun(run);setAnalysisOpen(true)}}catch(e){if(revision.current===scope)setError(e instanceof Error?e.message:'Analysis could not start.')}finally{if(gate.release(lease)&&revision.current===scope)setBusy(false)}
  }
  async function exportReview(){
-  if(!review.value||!fingerprint)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
+  if(!review.value||!fingerprint)return;const scope=revision.current,lease=gate.acquire(scope);if(!lease)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
   try{const source=currentImport?.document.import_provenance;const md=inspectionMarkdown(text,fingerprint,review.value,activeNotes,source?{filename:source.filename,rawSha256:source.raw_sha256,extractedSha256:source.extracted_text_sha256,documentId:currentImport!.document.id}:{});
-   if(Platform.OS==='web'){downloadText(md,'himayah-inspection.md','text/markdown;charset=utf-8')}else{file=temporaryReportFile('himayah-inspection','md');file.create();file.write(md);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
-  }catch(e){setError(e instanceof Error?e.message:'Annotation export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}
+   if(Platform.OS==='web'){downloadText(md,'himayah-inspection.md','text/markdown;charset=utf-8')}else{file=temporaryReportFile('himayah-inspection','md');file.create();file.write(md);const available=await Sharing.isAvailableAsync();if(revision.current!==scope)return;if(!available)throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
+  }catch(e){if(revision.current===scope)setError(e instanceof Error?e.message:'Annotation export failed.')}finally{const cleaned=cleanupTemporaryReport(file);if(gate.release(lease)&&revision.current===scope){if(!cleaned)setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}}
  }
  function renderBlock(block:ReturnType<typeof documentBlocks>[number]){
   const chars=Array.from(block.text),ranges=review.value?.hits.filter(h=>h.start<block.end&&h.end>block.start)||[];const cuts=[...new Set([block.start,block.end,...ranges.flatMap(h=>[Math.max(block.start,h.start),Math.min(block.end,h.end)])])].sort((a,b)=>a-b);
