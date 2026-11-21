@@ -257,3 +257,7 @@ Public startup analysis validates distinct, nonblank model identifiers for the t
 ### Cross-platform production identity hashes
 
 The failed Code checks run 44938380427 came from 100 SVG hashes calculated with CRLF line endings, while the committed SVG artwork uses LF. All 100 committed files match the earlier passing identity references byte for byte. The two registries now retain those verified references, and `.gitattributes` pins production SVG checkout line endings to LF, including Windows checkouts with automatic CRLF conversion. No symbol, outlined wordmark, font, embedded PNG or approved art was replaced. The new native internal header is preserved.
+
+### Explicit unresolved public-analysis outcomes
+
+Public startup analysis now enforces the generator's outcome contract: `needs_information` requires actual questions, and `inconclusive` requires actual limitations. Empty, whitespace-only or non-text list entries cannot stand in for an unresolved reason. Expanded analysis details display the recorded questions alongside limitations, rather than hiding the information needed to understand an incomplete outcome. Existing archived readings remain subject to the same validation; no new inference or factual certification is inferred. Regression coverage checks malformed unresolved outcomes and preservation of real recorded questions and limitations.

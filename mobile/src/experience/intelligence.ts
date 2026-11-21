@@ -10,7 +10,9 @@ export function publicIntelligence(value:unknown,app:keyof typeof briefs):Public
  if(models.critic!=='openai/gpt-oss-120b'||!roleModels.every(model=>typeof model==='string'&&model.trim().length>0)||new Set(roleModels).size!==3)return null;
  if(!['answered','inconclusive','needs_information'].includes(analysis.outcome as string)||typeof draft.summary!=='string'||!draft.summary.trim()||!Array.isArray(draft.claims)||!draft.claims.length)return null;
  if(!draft.claims.every(x=>{const c=record(x);return typeof c.text==='string'&&c.basis==='evidence'&&Array.isArray(c.citations)&&c.citations.length>0&&c.citations.every(id=>id===b.source_id+':public-0')}))return null;
- if(![draft.next_steps,analysis.questions,analysis.limitations].every(x=>Array.isArray(x)&&x.every(y=>typeof y==='string')))return null;
+ if(![draft.next_steps,analysis.questions,analysis.limitations].every(x=>Array.isArray(x)&&x.every(y=>typeof y==='string'&&y.trim().length>0)))return null;
+ if(analysis.outcome==='needs_information'&&!(analysis.questions as unknown[]).length)return null;
+ if(analysis.outcome==='inconclusive'&&!(analysis.limitations as unknown[]).length)return null;
  if(analysis.outcome==='answered'&&((analysis.questions as unknown[]).length||(analysis.limitations as unknown[]).length))return null;
  return v as unknown as PublicIntelligence;
 }

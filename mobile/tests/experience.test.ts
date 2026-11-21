@@ -34,3 +34,28 @@ test('public analysis requires nonblank identities for each execution role',()=>
  (value.model_roles as Record<string,unknown>).extra='unrelated/model';
  assert.ok(publicIntelligence(value,'himayah'));
 });
+
+
+test('incomplete public analysis requires an explicit unresolved reason',()=>{
+ for(const [outcome,field] of [['needs_information','questions'],['inconclusive','limitations']] as const){
+  for(const items of [[],[''],['   '],[null]]){
+   const value=structuredClone(rawIntelligence.himayah);
+   (value.analysis as Record<string,unknown>).outcome=outcome;
+   (value.analysis as Record<string,unknown>)[field]=items;
+   assert.equal(publicIntelligence(value,'himayah'),null,outcome+': '+JSON.stringify(items));
+  }
+ }
+});
+
+test('public analysis preserves actual questions and limitations without inventing completion',()=>{
+ for(const outcome of ['needs_information','inconclusive'] as const){
+  const value=structuredClone(rawIntelligence.himayah);
+  (value.analysis as Record<string,unknown>).outcome=outcome;
+  (value.analysis as Record<string,unknown>).questions=['Which agreement date applies?'];
+  value.analysis.limitations=['Only the cited public excerpt was analyzed.'];
+  const parsed=publicIntelligence(value,'himayah');assert.ok(parsed);
+  assert.equal(parsed.analysis.outcome,outcome);
+  assert.deepEqual(parsed.analysis.questions,value.analysis.questions);
+  assert.deepEqual(parsed.analysis.limitations,value.analysis.limitations);
+ }
+});
