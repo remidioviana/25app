@@ -201,3 +201,7 @@ Run status reads now retry transient network/time-out/server failures at most th
 ### Mobile final-review consistency
 
 The completed-final-answer label now requires matching answered metadata with explicit empty question and limitation lists. Contradictory or incomplete final metadata is marked unverified while its recorded questions and limitations stay visible. Final-only or decision-only review records are no longer hidden by the panel's visibility condition. Legacy recorded audit acceptance remains distinct from final-answer completion, and local results do not invent a review panel. Regression tests cover these combinations without provider calls.
+
+### Focus-scoped result operations and report cleanup
+
+Result mutations and exports share a synchronous pending-operation lock. Focus cleanup invalidates late results, error notices and share-sheet initiation. Status polling is stopped synchronously before an operation and remains suspended while it is busy. Temporary reports are removed on failure or supersession; cleanup errors cannot strand the busy state or mask an earlier export failure. Controlled tests cover duplicate operations, reopened sessions, delayed sharing, Web/native adapters and cleanup failure. No real file sharing or external submission is used in these tests.
