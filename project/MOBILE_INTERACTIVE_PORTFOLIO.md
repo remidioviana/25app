@@ -249,3 +249,7 @@ The shared motion provider now subscribes before reading the initial accessibili
 ### Nafas routine analysis session
 
 Optional Nafas routine analysis now uses the shared focused-operation and mission-submission controllers. Leaving the screen invalidates late run/error updates; replacing the API creates a separate request session. Uncertain unchanged retries retain their idempotency key, and duplicate pending submissions remain blocked. Applying a locally chosen routine clears the prior demonstration flag to match the request's supplied-input provenance. Private reflections remain excluded. Existing controller regressions cover focus disposal, API/content identity, duplicates and retry keys; local routine tests cover calendar handling and activity ownership. No real inference was started for this change.
+
+### Public analysis role identity validation
+
+Public startup analysis validates distinct, nonblank model identifiers for the three actual execution roles: planner, specialist and critic. Unrelated metadata entries cannot inflate the distinct-model count and disguise duplicated role identities. The required final critic remains GPT-OSS120B; existing archived analyses and their original scope remain unchanged. Regression tests cover duplicated roles with an extra identifier, blank/missing identities and unrelated extra metadata. This validates receipt structure; it does not establish new inference or deployment.

@@ -15,3 +15,22 @@ test('body, secondary and action text meet normal-text contrast against their su
 
 test('only archived actual model output is available as startup AI analysis',()=>{for(const id of Object.keys(briefs) as (keyof typeof briefs)[])assert.equal(!!savedIntelligence(id),Object.prototype.hasOwnProperty.call(rawIntelligence,id))});
 test('startup analysis rejects fabricated role identity, foreign sources and contradictory approval',()=>{for(const kind of ['roles','source','claims','outcome']){const v=structuredClone(rawIntelligence.himayah);if(kind==='roles')v.model_roles.critic='openai/gpt-oss-20b';if(kind==='source')v.source.source_id='other-app';if(kind==='claims')v.analysis.draft.claims[0].citations=['invented:0'];if(kind==='outcome')v.analysis.outcome='answered';assert.equal(publicIntelligence(v,'himayah'),null,kind)}});
+
+
+test('extra model metadata cannot disguise duplicate execution-role identities',()=>{
+ const value=structuredClone(rawIntelligence.himayah);
+ const models=value.model_roles as Record<string,unknown>;
+ models.specialist=models.planner;models.extra='unrelated/model';
+ assert.equal(publicIntelligence(value,'himayah'),null);
+});
+
+test('public analysis requires nonblank identities for each execution role',()=>{
+ for(const role of ['planner','specialist'])for(const identity of ['', '   ',null,undefined]){
+  const value=structuredClone(rawIntelligence.himayah);
+  (value.model_roles as Record<string,unknown>)[role]=identity;
+  assert.equal(publicIntelligence(value,'himayah'),null,role+': '+String(identity));
+ }
+ const value=structuredClone(rawIntelligence.himayah);
+ (value.model_roles as Record<string,unknown>).extra='unrelated/model';
+ assert.ok(publicIntelligence(value,'himayah'));
+});

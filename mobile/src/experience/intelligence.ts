@@ -6,7 +6,8 @@ export function publicIntelligence(value:unknown,app:keyof typeof briefs):Public
  const v=record(value),source=record(v.source),analysis=record(v.analysis),draft=record(analysis.draft),models=record(v.model_roles),b=briefs[app];
  if(v.kind!=='actual_model_analysis'||v.factual_certification!==false||source.source_id!==b.source_id||source.url!==b.url||typeof v.generated_at!=='string'||!Number.isFinite(Date.parse(v.generated_at)))return null;
  if(typeof source.fetched_at!=='string'||!Number.isFinite(Date.parse(source.fetched_at))||!['raw_sha256','text_sha256'].every(k=>typeof source[k]==='string'&&/^[a-f\d]{64}$/.test(source[k] as string)))return null;
- if(models.critic!=='openai/gpt-oss-120b'||!['planner','specialist','critic'].every(k=>typeof models[k]==='string')||new Set(Object.values(models)).size!==3)return null;
+ const roleModels=['planner','specialist','critic'].map(role=>models[role]);
+ if(models.critic!=='openai/gpt-oss-120b'||!roleModels.every(model=>typeof model==='string'&&model.trim().length>0)||new Set(roleModels).size!==3)return null;
  if(!['answered','inconclusive','needs_information'].includes(analysis.outcome as string)||typeof draft.summary!=='string'||!draft.summary.trim()||!Array.isArray(draft.claims)||!draft.claims.length)return null;
  if(!draft.claims.every(x=>{const c=record(x);return typeof c.text==='string'&&c.basis==='evidence'&&Array.isArray(c.citations)&&c.citations.length>0&&c.citations.every(id=>id===b.source_id+':public-0')}))return null;
  if(![draft.next_steps,analysis.questions,analysis.limitations].every(x=>Array.isArray(x)&&x.every(y=>typeof y==='string')))return null;
