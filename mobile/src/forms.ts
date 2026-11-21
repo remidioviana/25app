@@ -1,4 +1,4 @@
-import type {Json,Schema} from './types';
+import type {Json,Schema,WorkspaceDraft} from './types';
 export function blank(schema:Schema):Json {
  if(schema.type==='object')return Object.fromEntries(Object.entries(schema.properties||{}).map(([key,value])=>[key,blank(value)]));
  if(schema.type==='array')return [];
@@ -11,6 +11,10 @@ export function emptyWorkspace(schema:Schema):{draft:Record<string,Json>;example
  const value=blank(schema);
  if(value===null||typeof value!=='object'||Array.isArray(value))throw new Error('An application workspace requires an object schema.');
  return {draft:value,example:false,hasInputs:false};
+}
+/** Copy draft values and their supplied/example flags as one restoration snapshot. */
+export function copyWorkspaceDraft(workspace:WorkspaceDraft):WorkspaceDraft {
+ return {draft:JSON.parse(JSON.stringify(workspace.draft)),example:workspace.example,hasInputs:workspace.hasInputs};
 }
 export function replaceAt(root:Json,path:(string|number)[],value:Json):Json {
  if(!path.length)return value;

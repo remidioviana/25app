@@ -181,3 +181,7 @@ Mission starts now use a synchronous submission gate and retry identity outside 
 ### Mobile intake goal revisions
 
 Case preparation now tracks the goal revision and API session. Editing a goal invalidates both pending and displayed proposals, including changing it and returning to the original text. Only the current ready proposal may apply, once. A synchronous gate blocks duplicate preparation requests, and mission starts also respect that pending gate. Current failures allow retry; disposed sessions cannot update errors or busy state. Controlled tests use no provider inference.
+
+### Example restoration provenance
+
+Mobile pre-example snapshots now include hasInputs alongside values and the demonstration flag. Restoration updates those fields together rather than passing through the ordinary edit setter, which always marks a draft as supplied. Restoring an untouched workspace therefore preserves unknown values and hasInputs=false, matching the Web behavior. Snapshot copying also isolates later edits from the saved original. Regression tests cover blank, supplied and demonstration states plus nested data isolation.

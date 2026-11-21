@@ -1,4 +1,5 @@
 export type Json = null | boolean | number | string | Json[] | {[key:string]:Json};
+export interface WorkspaceDraft {draft:Record<string,Json>;example:boolean;hasInputs:boolean}
 export type Mode = 'local'|'model'|'team';
 export interface Schema {type:string|string[];properties?:Record<string,Schema>;items?:Schema;additionalProperties?:boolean|Schema;required?:string[];minimum?:number;maximum?:number;maxItems?:number;maxLength?:number}
 export interface Agent {id:string;name:string;title:string;category:string;icon:string;accent:string;goal:string;schema:Schema;example:Record<string,Json>}
