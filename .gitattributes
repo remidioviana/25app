@@ -1,0 +1,2 @@
+# Production SVG identity hashes use the exact committed LF bytes on every OS.
+brand-assets/production/**/*.svg text eol=lf

@@ -253,3 +253,7 @@ Optional Nafas routine analysis now uses the shared focused-operation and missio
 ### Public analysis role identity validation
 
 Public startup analysis validates distinct, nonblank model identifiers for the three actual execution roles: planner, specialist and critic. Unrelated metadata entries cannot inflate the distinct-model count and disguise duplicated role identities. The required final critic remains GPT-OSS120B; existing archived analyses and their original scope remain unchanged. Regression tests cover duplicated roles with an extra identifier, blank/missing identities and unrelated extra metadata. This validates receipt structure; it does not establish new inference or deployment.
+
+### Cross-platform production identity hashes
+
+The failed Code checks run 44938380427 came from 100 SVG hashes calculated with CRLF line endings, while the committed SVG artwork uses LF. All 100 committed files match the earlier passing identity references byte for byte. The two registries now retain those verified references, and `.gitattributes` pins production SVG checkout line endings to LF, including Windows checkouts with automatic CRLF conversion. No symbol, outlined wordmark, font, embedded PNG or approved art was replaced. The new native internal header is preserved.
