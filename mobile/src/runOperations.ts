@@ -1,3 +1,4 @@
+import type {TemporaryReport} from './temporaryReport';
 /** One focused result view owns its pending mutation or export. */
 export function runOperations(){
  let live=false,generation=0,busy=false;
@@ -13,7 +14,6 @@ export function runOperations(){
   },
  };
 }
-export interface TemporaryReport {uri:string;exists:boolean;create:(options:{overwrite:boolean})=>void;write:(text:string)=>void;delete:()=>void}
 export interface ReportRuntime {web:boolean;shareText:(text:string)=>Promise<unknown>;file:()=>TemporaryReport;available:()=>Promise<boolean>;shareFile:(uri:string)=>Promise<unknown>}
 /** Recheck the view after asynchronous stages; cleanup never masks the primary failure. */
 export async function shareRunReport(read:()=>Promise<string>,current:()=>boolean,runtime:ReportRuntime){
@@ -21,7 +21,7 @@ export async function shareRunReport(read:()=>Promise<string>,current:()=>boolea
  try{
   const text=await read();if(!current())return;
   if(runtime.web){await runtime.shareText(text);return}
-  file=runtime.file();file.create({overwrite:true});file.write(text);
+  file=runtime.file();file.create();file.write(text);
   const available=await runtime.available();if(!current())return;
   if(!available)throw new Error('Sharing is unavailable on this device');
   await runtime.shareFile(file.uri);

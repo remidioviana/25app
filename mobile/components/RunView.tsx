@@ -1,7 +1,7 @@
 import React,{useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {AppState,View,Text,Pressable,Share,Platform} from 'react-native';
 import * as Sharing from 'expo-sharing';
-import {File,Paths} from 'expo-file-system';
+import {temporaryReportFile} from '../src/temporaryReportFile';
 import {useFocusEffect} from 'expo-router';
 import {runOperations,shareRunReport} from '../src/runOperations';
 import {AgentAPI} from '../src/api';
@@ -40,7 +40,7 @@ export function RunView({api,initial,onUpdate}:{api:AgentAPI;initial:Run;onUpdat
  }
  async function share(){
   await operations.execute(async current=>{stopPolling.current?.();await shareRunReport(()=>session.api.exportMarkdown(session.id),current,{
-   web:Platform.OS==='web',shareText:text=>Share.share({message:text}),file:()=>new File(Paths.cache,`agent-${session.id}.md`),available:()=>Sharing.isAvailableAsync(),shareFile:uri=>Sharing.shareAsync(uri,{mimeType:'text/markdown',dialogTitle:'Share report'}),
+   web:Platform.OS==='web',shareText:text=>Share.share({message:text}),file:()=>temporaryReportFile(`agent-${session.id}`,'md'),available:()=>Sharing.isAvailableAsync(),shareFile:uri=>Sharing.shareAsync(uri,{mimeType:'text/markdown',dialogTitle:'Share report'}),
   })},()=>{},setOperationError,setBusy,'Export failed');
  }
  return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}{!!operationError&&<Text accessibilityRole="alert" style={s.error}>{operationError}</Text>}{!!pollingError&&<><Text accessibilityRole="alert" style={s.error}>{pollingError}</Text>{['queued','running'].includes(run.status)&&<Button secondary disabled={busy} title="Refresh run status" onPress={()=>setPollVersion(value=>value+1)}/>}</>}

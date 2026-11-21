@@ -1,3 +1,5 @@
+import {temporaryReportFile} from '../src/temporaryReportFile';
+import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
 import {InteractiveRecords} from './InteractiveRecords';
 import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {View,Text,TextInput,FlatList,Modal,ScrollView,Platform,Animated} from 'react-native';
@@ -54,10 +56,10 @@ export function HimayahInspector(){
   try{const payload=JSON.stringify(app.draft);if(pending.current?.payload!==payload)pending.current={payload,key:Crypto.randomUUID()};const run=await app.api.start('himayah',spec.goal,app.draft,'team',app.example,pending.current!.key);if(revision.current===scope){pending.current=null;app.setRun(run);setAnalysisOpen(true)}}catch(e){if(revision.current===scope)setError(e instanceof Error?e.message:'Analysis could not start.')}finally{lock.current=false;if(revision.current===scope)setBusy(false)}
  }
  async function exportReview(){
-  if(!review.value||!fingerprint)return;setBusy(true);setError('');let file:File|undefined;
+  if(!review.value||!fingerprint)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
   try{const source=currentImport?.document.import_provenance;const md=inspectionMarkdown(text,fingerprint,review.value,activeNotes,source?{filename:source.filename,rawSha256:source.raw_sha256,extractedSha256:source.extracted_text_sha256,documentId:currentImport!.document.id}:{});
-   if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([md],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=uri;a.download='himayah-inspection.md';a.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=new File(Paths.cache,'himayah-inspection.md');file.create({overwrite:true});file.write(md);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
-  }catch(e){setError(e instanceof Error?e.message:'Annotation export failed.')}finally{if(file?.exists)file.delete();setBusy(false)}
+   if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([md],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=uri;a.download='himayah-inspection.md';a.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=temporaryReportFile('himayah-inspection','md');file.create();file.write(md);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
+  }catch(e){setError(e instanceof Error?e.message:'Annotation export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}
  }
  function renderBlock(block:ReturnType<typeof documentBlocks>[number]){
   const chars=Array.from(block.text),ranges=review.value?.hits.filter(h=>h.start<block.end&&h.end>block.start)||[];const cuts=[...new Set([block.start,block.end,...ranges.flatMap(h=>[Math.max(block.start,h.start),Math.min(block.end,h.end)])])].sort((a,b)=>a-b);

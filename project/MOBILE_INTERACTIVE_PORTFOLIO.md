@@ -217,3 +217,7 @@ A successful result action or export clears its preceding operation error only a
 ### Shared result updates and focus ownership
 
 Mission and Nafas result panels now publish polled and action-confirmed runs through AppState's API-scoped setter. Other screens receive the current recorded result instead of retaining the initial queued snapshot. Status polling follows route focus as well as app foreground state, preventing hidden panels from publishing older reads. Existing polling disposal and echoed-source regression coverage applies to this wiring. Result operation and connection notices use alert accessibility semantics. No mission or inference is started by this change.
+
+### Temporary export file ownership
+
+Run reports and Himayah, Iqamah, Istithmar and Munagasah preparation exports use UUID-scoped cache filenames instead of fixed names or timestamps. Files are created without overwrite, and cleanup is restricted to a file whose creation succeeded in that operation. A failed creation cannot delete another export's file. Cleanup errors remain contained and visible without stranding the controls or replacing an earlier primary error. Existing Web download names are unchanged. Controlled storage tests cover collisions, independent cleanup and cleanup retry; no real sharing occurs.

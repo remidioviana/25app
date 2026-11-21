@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {View,Text,Pressable,TextInput,Animated,Platform} from 'react-native';
-import {File,Paths} from 'expo-file-system';
+import {temporaryReportFile} from '../src/temporaryReportFile';
+import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
 import * as Sharing from 'expo-sharing';
 import {assessDossier,dossierIssue,type DocumentState,type DossierInput} from '../src/dossier';
 import {updateDossierRecord,dossierExport} from '../src/experience/dossierPreparation';
@@ -20,8 +21,8 @@ export function IqamahDossier({input,onChange}:{input:unknown;onChange?:(next:Do
  const result=assessDossier(input),value=input as DossierInput,active=result.checks.find(x=>x.requirement===selected);
  function open(name:string){const doc=value.documents.find(x=>x.name===name);setSelection(name===selected?null:{input,name});setReference(doc?.reference||'');setExpires(doc?.expires||'');setError('')}
  function save(remove=false){if(!onChange||!active)return;try{onChange(updateDossierRecord(input,active.requirement,remove?null:{reference,expires}));setError('');setSelection(null)}catch(e){setError(e instanceof Error?e.message:'Check the document record.')}}
- async function exportFile(){if(busy)return;setBusy(true);setError('');let file:File|undefined;
-  try{const content=dossierExport(input);if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([content],{type:'application/json;charset=utf-8'}));const link=document.createElement('a');link.href=uri;link.download='iqamah-preparation.json';link.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=new File(Paths.cache,'iqamah-preparation-'+Date.now()+'.json');file.create();file.write(content);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'application/json',dialogTitle:'Export visa preparation dossier'})}}catch(e){setError(e instanceof Error?e.message:'Dossier export failed.')}finally{if(file?.exists)try{file.delete()}catch{}setBusy(false)}
+ async function exportFile(){if(busy)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
+  try{const content=dossierExport(input);if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([content],{type:'application/json;charset=utf-8'}));const link=document.createElement('a');link.href=uri;link.download='iqamah-preparation.json';link.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=temporaryReportFile('iqamah-preparation','json');file.create();file.write(content);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'application/json',dialogTitle:'Export visa preparation dossier'})}}catch(e){setError(e instanceof Error?e.message:'Dossier export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}
  }
  return <View style={{gap:28}}>
   <View style={{borderTopWidth:1,borderBottomWidth:1,borderColor:d.ink,paddingVertical:24,gap:12}}><Text style={s.tag}>IQAMAH / PREPARATION FOLIO</Text><Text accessibilityRole="header" style={{fontFamily:font,fontSize:38,lineHeight:44,color:d.ink}}>A place for every piece of evidence.</Text><Text style={s.text}>Review date · {result.as_of}</Text><Text style={s.muted}>Your selected checklist, organized into a working dossier. Open Criteria to consult the official requirements.</Text></View>
