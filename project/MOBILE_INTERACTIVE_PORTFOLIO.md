@@ -189,3 +189,7 @@ Mobile pre-example snapshots now include hasInputs alongside values and the demo
 ### Invalid numeric draft preservation
 
 Workspace snapshots now copy nested values without JSON serialization. Invalid numeric editor values such as NaN remain invalid when an example is restored, instead of silently becoming nullable missing fields. Mission validation continues to reject those values; this does not permit sending non-finite numbers. Regression tests verify nested validation before/after restoration, explicit null/zero, signed zero and safe copying of prototype-named keys.
+
+### Unicode goal, query and category limits
+
+Mission goals, evidence-search queries and category names now count Unicode code points rather than UTF-16 units. Goal and search editors use controlled code-point limits so supplementary characters are not split or rejected at half the intended capacity. Mission submission uses the shared goal validator. Boundary tests cover Latin, Arabic, supplementary Arabic and symbol input at 2,000/2,001 characters, category names at 80/81, and transport suppression for oversized searches.

@@ -1,3 +1,4 @@
+import {characterCount} from './experience/textMetrics';
 import type {Agent,Config,Run,RunSummary,Document,ImportFile,Schedule,Intake,Mode,Json,EvidenceSearchResult,PublicSourcesResult,PublicSourceRefresh} from './types';
 
 export class ApiError extends Error {constructor(message:string,public status:number){super(message);this.name='ApiError'}}
@@ -46,7 +47,7 @@ export class AgentAPI {
   }
   searchEvidence(agent:string,query:string,signal?:AbortSignal){
     const normalized=query.trim();
-    if(!normalized||normalized.length>2000)return Promise.reject(new Error('Enter a search query of 1 to 2,000 characters.'));
+    if(!normalized||characterCount(normalized)>2000)return Promise.reject(new Error('Enter a search query of 1 to 2,000 characters.'));
     return this.request<EvidenceSearchResult>(`/api/agents/${encodeURIComponent(agent)}/search`,'POST',{query:normalized,semantic:false},{},signal);
   }
   preview(filename:string,base64:string,signal?:AbortSignal){return this.request<{text:string;warnings:string[]}>('/api/import/preview','POST',{filename,base64},{},signal)}

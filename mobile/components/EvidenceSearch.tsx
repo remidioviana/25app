@@ -1,5 +1,6 @@
 import React,{useEffect,useRef,useState} from 'react';
 import {View,Text,TextInput} from 'react-native';
+import {limitCharacters} from '../src/experience/textMetrics';
 import {AgentAPI} from '../src/api';
 import type {EvidenceSearchResult} from '../src/types';
 import {styles as s,colors} from '../src/theme';
@@ -25,7 +26,7 @@ function SearchPanel({api,agent}:{api:AgentAPI;agent:string}){
  return <View style={s.card}>
   <Text style={s.h2}>Find supporting evidence</Text>
   <Text style={s.muted}>Search documents saved to this app on your server. Keyword search does not call an AI provider. A matching excerpt is not proof that its source is correct.</Text>
-  <TextInput accessibilityLabel="Search evidence" placeholder="Enter a phrase or topic" placeholderTextColor={colors.muted} style={s.input} maxLength={2000} value={query} onChangeText={value=>{clear();setQuery(value)}}/>
+  <TextInput accessibilityLabel="Search evidence" placeholder="Enter a phrase or topic" placeholderTextColor={colors.muted} style={s.input} value={query} onChangeText={value=>{const next=limitCharacters(value,2000);if(next!==query){clear();setQuery(next)}}}/>
   <View style={s.row}><Button title="Search documents" busy={busy} disabled={!query.trim()} onPress={search}/><Button secondary title={busy?'Cancel search':'Clear results'} onPress={clear}/></View>
   {!!error&&<Text accessibilityRole="alert" style={s.error}>{error}</Text>}
   {result&&<><Text style={s.h3}>{result.matches.length} excerpts for “{searched}”</Text>{result.matches.length===0&&<Text style={s.muted}>No matching evidence. Try another term or add a document below.</Text>}
