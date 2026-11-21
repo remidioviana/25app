@@ -19,4 +19,8 @@ for(const {id} of brands){
  }else assert.equal(id,'adab');
 }
 assert.equal(hashes.size,25);
+const signature=fs.readFileSync(path.join(root,'mobile/components/BrandSignature.tsx'),'utf8');
+const home=fs.readFileSync(path.join(root,'mobile/components/HomeExperience.tsx'),'utf8');
+assert.ok(!/premiumIcons|<Image\b|showMark/.test(signature),'Internal header must remain typography-only');
+assert.ok(!/showMark|premiumIcons/.test(home),'Home workspace must not render the launcher mark');
 console.log('PASS: 25 unique approved opaque 1024px PNG assets, 24 adaptive foregrounds, static registry and provenance hashes; device validation pending.');

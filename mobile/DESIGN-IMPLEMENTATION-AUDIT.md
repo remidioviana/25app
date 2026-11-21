@@ -15,9 +15,14 @@ Implemented in this revision:
   and the revised Tawassul artwork. The rejected flat Mobile-First assets are
   not used by these launcher configurations.
 - The native launch screen uses the same approved artwork and ivory surface.
-- The actual application's `BrandSignature` uses the approved colored icon
-  rather than the previous artwork, with a minimum 64-point presentation size.
-  At narrow widths and larger fonts, the signature uses a stacked arrangement.
+- The actual application's `BrandSignature` is typographic only: a large
+  native title and restrained accent, including the internal home screen.
+  The approved 3D artwork remains exclusive to launcher, native splash and
+  commercial presentation material. It must not consume workspace height.
+- Commercial deliverables: 25 landscape PDF pitch decks of 15 pages each
+  and 25 cinematic 30-second demonstration videos. The approved mark belongs
+  on presentation covers and footers; native splash targets approximately one
+  second when startup permits, without adding an artificial startup delay.
 - Existing distinct home compositions and functional case workflows remain intact.
 - The existing alternate assets are preserved, not destroyed.
 
