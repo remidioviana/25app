@@ -1,9 +1,6 @@
-import {downloadText} from '../src/webDownload';
+import {usePreparationExport} from '../src/usePreparationExport';
 import React,{useEffect,useState} from 'react';
 import {View,Text,Pressable,TextInput,Animated,Platform} from 'react-native';
-import {temporaryReportFile} from '../src/temporaryReportFile';
-import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
-import * as Sharing from 'expo-sharing';
 import {assessDossier,dossierIssue,type DocumentState,type DossierInput} from '../src/dossier';
 import {updateDossierRecord,dossierExport} from '../src/experience/dossierPreparation';
 import {styles as s,experience as d} from '../src/theme';
@@ -13,7 +10,8 @@ import {Button} from './Controls';
 const labels:Record<DocumentState,string>={missing:'Missing evidence',expired:'Recorded expiry has passed',present_unverified:'Recorded · authenticity unverified'};
 /** Editorial preparation desk. Every finding is derived from the supplied checklist. */
 export function IqamahDossier({input,onChange}:{input:unknown;onChange?:(next:DossierInput)=>void}){
- const [selection,setSelection]=useState<{input:unknown;name:string}|null>(null),[reference,setReference]=useState(''),[expires,setExpires]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false),[limit,setLimit]=useState(25),[reveal]=useState(()=>new Animated.Value(1));
+ const {busy,error,setError,exportReport}=usePreparationExport(input);
+ const [selection,setSelection]=useState<{input:unknown;name:string}|null>(null),[reference,setReference]=useState(''),[expires,setExpires]=useState(''),[limit,setLimit]=useState(25),[reveal]=useState(()=>new Animated.Value(1));
  const selected=selection&&selection.input===input?selection.name:null;
  const reduced=useReducedMotion(),font=useHeadlineFont(),scriptFont=useScriptFont(reference);
  useEffect(()=>{reveal.stopAnimation();if(reduced||!selected){reveal.setValue(1);return}reveal.setValue(0);const animation=Animated.timing(reveal,{toValue:1,duration:280,useNativeDriver:Platform.OS!=='web'});animation.start();return()=>animation.stop()},[selected,reduced,reveal]);
@@ -22,9 +20,7 @@ export function IqamahDossier({input,onChange}:{input:unknown;onChange?:(next:Do
  const result=assessDossier(input),value=input as DossierInput,active=result.checks.find(x=>x.requirement===selected);
  function open(name:string){const doc=value.documents.find(x=>x.name===name);setSelection(name===selected?null:{input,name});setReference(doc?.reference||'');setExpires(doc?.expires||'');setError('')}
  function save(remove=false){if(!onChange||!active)return;try{onChange(updateDossierRecord(input,active.requirement,remove?null:{reference,expires}));setError('');setSelection(null)}catch(e){setError(e instanceof Error?e.message:'Check the document record.')}}
- async function exportFile(){if(busy)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
-  try{const content=dossierExport(input);if(Platform.OS==='web'){downloadText(content,'iqamah-preparation.json','application/json;charset=utf-8')}else{file=temporaryReportFile('iqamah-preparation','json');file.create();file.write(content);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'application/json',dialogTitle:'Export visa preparation dossier'})}}catch(e){setError(e instanceof Error?e.message:'Dossier export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}
- }
+ function exportFile(){void exportReport(()=>dossierExport(input),'iqamah-preparation','Export visa preparation dossier')}
  return <View style={{gap:28}}>
   <View style={{borderTopWidth:1,borderBottomWidth:1,borderColor:d.ink,paddingVertical:24,gap:12}}><Text style={s.tag}>IQAMAH / PREPARATION FOLIO</Text><Text accessibilityRole="header" style={{fontFamily:font,fontSize:38,lineHeight:44,color:d.ink}}>A place for every piece of evidence.</Text><Text style={s.text}>Review date · {result.as_of}</Text><Text style={s.muted}>Your selected checklist, organized into a working dossier. Open Criteria to consult the official requirements.</Text></View>
   <View style={{gap:0}}>{[{n:result.checks.length,label:'Checklist items'},{n:result.counts.missing,label:'Evidence to gather'},{n:result.counts.expired,label:'Recorded expiries to resolve'},{n:result.counts.present_unverified,label:'Document records to verify'}].map((step,index)=><View key={step.label} style={{flexDirection:'row',gap:18,minHeight:64}}><View style={{width:28,alignItems:'center'}}><Text style={{fontFamily:font,fontSize:24,color:d.ink}}>{index+1}</Text>{index<3&&<View style={{width:1,flex:1,backgroundColor:d.line}}/>}</View><View style={{flex:1,borderBottomWidth:1,borderColor:d.line,paddingBottom:18,marginBottom:16}}><Text style={s.h3}>{step.n} · {step.label}</Text></View></View>)}</View>

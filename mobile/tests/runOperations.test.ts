@@ -34,3 +34,21 @@ test('confirmed result-action retries clear old errors without hiding a new fail
  assert.equal(await w.operations.execute(async()=>'confirmed',w.success,w.error,w.onBusy,'Failed'),true);assert.equal(w.errors.at(-1),'');assert.deepEqual(w.values,['confirmed']);
  assert.equal(await w.operations.execute(async()=>{throw Error('Current failure')},w.success,w.error,w.onBusy,'Failed'),false);assert.equal(w.errors.at(-1),'Current failure');assert.equal(w.busy.at(-1),false);
 });
+
+test('preparation exports serialize report generation through native sharing',async()=>{
+ const w=view(),r=runtime(),available=deferred<boolean>(),started=deferred();let reads=0;
+ r.adapter.available=()=>{started.resolve();return available.promise};
+ const exportSnapshot=()=>w.operations.execute(current=>shareRunReport(async()=>{reads++;return 'clicked checklist'},current,r.adapter),w.success,w.error,w.onBusy,'Export failed');
+ const first=exportSnapshot();await started.promise;
+ assert.equal(await exportSnapshot(),false);assert.equal(reads,1);assert.equal(r.writes(),1);
+ available.resolve(true);assert.equal(await first,true);assert.equal(r.shares(),1);assert.equal(r.deletes(),1);
+});
+
+test('preparation export disposal blocks stale sharing and permits a fresh snapshot',async()=>{
+ const w=view(),old=runtime(),available=deferred<boolean>(),started=deferred();
+ old.adapter.available=()=>{started.resolve();return available.promise};
+ const first=w.operations.execute(current=>shareRunReport(async()=>'old checklist',current,old.adapter),w.success,w.error,w.onBusy,'Export failed');
+ await started.promise;w.operations.dispose();w.operations.start(w.onBusy);
+ const fresh=runtime();await w.operations.execute(current=>shareRunReport(async()=>'new checklist',current,fresh.adapter),w.success,w.error,w.onBusy,'Export failed');
+ available.resolve(true);assert.equal(await first,false);assert.equal(old.shares(),0);assert.equal(old.deletes(),1);assert.equal(fresh.shares(),1);assert.equal(fresh.deletes(),1);assert.deepEqual(w.errors,['']);
+});

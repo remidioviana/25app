@@ -229,3 +229,7 @@ Himayah, Iqamah, Istithmar and Munagasah Web exports share one text-download hel
 ### Himayah inspector operation ownership
 
 PDF import, model analysis and annotation export now share a synchronous operation lease. Export can no longer bypass the import/analysis gate, and completion from an earlier API revision cannot unlock a newer operation. Stale exports do not open a share sheet or report errors after a session replacement. Import resource cleanup runs inside a protected finally path so URL/file cleanup failure cannot strand the controls. Pure gate tests cover overlap, session replacement, duplicate completion and token identity without inference or real files.
+
+### Preparation export focus ownership
+
+Iqamah, Istithmar and Munagasah preparation exports now use the focused operation controller shared with result reports. Duplicate presses cannot generate overlapping files or share sheets. Leaving the screen or replacing its base inputs invalidates pending completion; a delayed availability check cannot open a stale share sheet. Owned temporary files are still cleaned up, and a new focused session can export independently. Web downloads retain their names, JSON content and URL cleanup. Controlled tests exercise duplicate report generation and session replacement during native availability checks without real files or sharing.

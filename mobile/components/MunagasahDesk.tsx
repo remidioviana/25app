@@ -1,22 +1,20 @@
-import {downloadText} from '../src/webDownload';
+import {usePreparationExport} from '../src/usePreparationExport';
 import React,{useEffect,useState} from 'react';
 import {View,Text,Pressable,Animated,Platform} from 'react-native';
-import {temporaryReportFile} from '../src/temporaryReportFile';
-import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
-import * as Sharing from 'expo-sharing';
 import {prepareTender,tenderIssue,toggleTenderCapability,tenderReport,type TenderInput} from '../src/experience/tenderPreparation';
 import {styles as s,experience as d} from '../src/theme';
 import {useHeadlineFont} from '../src/experience/TypefaceProvider';
 import {useReducedMotion} from '../src/experience/useReducedMotion';
 import {Button} from './Controls';
 export function MunagasahDesk({input,onChange}:{input:unknown;onChange:(next:TenderInput)=>void}){
- const [filter,setFilter]=useState<'all'|'gaps'|'recorded'>('all'),[limit,setLimit]=useState(25),[error,setError]=useState(''),[busy,setBusy]=useState(false),[signal]=useState(()=>new Animated.Value(1)),font=useHeadlineFont(),reduced=useReducedMotion();
+ const {busy,error,setError,exportReport}=usePreparationExport(input);
+ const [filter,setFilter]=useState<'all'|'gaps'|'recorded'>('all'),[limit,setLimit]=useState(25),[signal]=useState(()=>new Animated.Value(1)),font=useHeadlineFont(),reduced=useReducedMotion();
  const issue=tenderIssue(input),plan=issue?null:prepareTender(input),gaps=plan?.gaps;
  useEffect(()=>{signal.stopAnimation();if(reduced){signal.setValue(1);return}signal.setValue(.5);const animation=Animated.timing(signal,{toValue:1,duration:140,useNativeDriver:Platform.OS!=='web'});animation.start();return()=>animation.stop()},[gaps,reduced,signal]);
  if(issue||!plan)return <View style={s.notice}><Text style={s.h2}>Complete the bid inputs</Text><Text role="alert" style={s.error}>{issue}</Text><Text style={s.text}>Open Proposal to correct the requirement lists and dates.</Text></View>;
  const value=input as TenderInput,rows=plan.requirements.filter(x=>filter==='all'||(filter==='gaps'?!x.recorded_match:x.recorded_match));
  function toggle(name:string){try{onChange(toggleTenderCapability(input,name));setError('')}catch(e){setError(e instanceof Error?e.message:'The capability record could not be changed.')}}
- async function exportFile(){if(busy)return;setBusy(true);setError('');let file:TemporaryReport|undefined;try{const content=tenderReport(input);if(Platform.OS==='web'){downloadText(content,'munagasah-preparation.json','application/json;charset=utf-8')}else{file=temporaryReportFile('munagasah-preparation','json');file.create();file.write(content);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'application/json',dialogTitle:'Export bid preparation pack'})}}catch(e){setError(e instanceof Error?e.message:'Preparation export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}}
+ function exportFile(){void exportReport(()=>tenderReport(input),'munagasah-preparation','Export bid preparation pack')}
  return <View style={{gap:24}}><View style={{borderTopWidth:4,borderColor:d.accent,paddingTop:18,gap:10}}><Text style={s.tag}>MUNAGASAH / BID CONTROL</Text><Text accessibilityRole="header" style={{fontFamily:font,fontSize:38,lineHeight:42,color:d.ink}}>Close the gaps. Build the bid.</Text><Text style={s.muted}>Requirement names and recorded capabilities stay connected to every preparation step.</Text></View>
  <View style={{borderWidth:1,borderColor:d.line,padding:18,gap:12}}><Text style={s.tag}>RECORDED DEADLINE</Text><Text style={{fontFamily:font,fontSize:34,color:d.ink}}>{value.deadline}</Text><Text testID="tender-deadline-distance" style={s.text}>{plan.calendar_days_between_dates<0?`${Math.abs(plan.calendar_days_between_dates)} calendar days after the recorded deadline`:plan.calendar_days_between_dates===0?'Same calendar date as the recorded deadline':`${plan.calendar_days_between_dates} calendar days between the recorded dates`}</Text><Text style={s.muted}>Review date · {value.as_of}. Closing time and timezone are not supplied.</Text></View>
  <Animated.View testID="tender-gap-signal" style={{opacity:signal,borderLeftWidth:4,borderColor:d.accent,paddingLeft:16,gap:8}}><Text testID="tender-gap-count" style={{fontFamily:font,fontSize:34,color:d.ink}}>{plan.gaps} capability {plan.gaps===1?'gap':'gaps'}</Text><Text style={s.text}>{plan.recorded_matches} of {plan.requirements.length} requirement names have a recorded match.</Text></Animated.View>
