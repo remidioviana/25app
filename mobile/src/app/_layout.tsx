@@ -8,4 +8,5 @@ import {experience} from '../theme';
 import {MotionProvider} from '../experience/useReducedMotion';
 import {TypefaceProvider} from '../experience/TypefaceProvider';
 import {NafasProvider} from '../experience/NafasState';
-export default function Layout(){return <MaterialProvider><MotionProvider><TypefaceProvider><SafeAreaProvider><AppProvider><NafasProvider><StatusBar style={experience.dark?"light":"dark"}/><Stack screenOptions={{headerShown:false}}><Stack.Screen name="(tabs)"/><Stack.Screen name="connect" options={{presentation:'modal',headerShown:true,title:'Connection'}}/></Stack></NafasProvider></AppProvider></SafeAreaProvider></TypefaceProvider></MotionProvider></MaterialProvider>}
+import {HimayahLanguageProvider} from '../experience/HimayahLanguage';
+export default function Layout(){return <MaterialProvider><MotionProvider><TypefaceProvider><SafeAreaProvider><AppProvider><NafasProvider><HimayahLanguageProvider><StatusBar style={experience.dark?"light":"dark"}/><Stack screenOptions={{headerShown:false}}><Stack.Screen name="(tabs)"/><Stack.Screen name="connect" options={{presentation:'modal',headerShown:true,title:'Connection'}}/></Stack></HimayahLanguageProvider></NafasProvider></AppProvider></SafeAreaProvider></TypefaceProvider></MotionProvider></MaterialProvider>}

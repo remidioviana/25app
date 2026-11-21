@@ -6,14 +6,15 @@ export default ({config}:ConfigContext):ExpoConfig=>{
  const brands=JSON.parse(fs.readFileSync(path.join(__dirname,'../brand-assets/brands.json'),'utf8'));
  const brand=brands.find((item:{id:string})=>item.id===id);if(!brand)throw Error('Unknown AGENT_ID');
  const identity=JSON.parse(fs.readFileSync(path.join(__dirname,'src/experience/identities.json'),'utf8'))[id];
- const dimensional=JSON.parse(fs.readFileSync(path.join(__dirname,'../brand-assets/dimensional-icons.json'),'utf8')).icons[id];
- const icon=dimensional?`./assets/variants/${id}/dimensional-icon.png`:`./assets/variants/${id}/icon.png`;
- const foreground=dimensional?`./assets/variants/${id}/adaptive-foreground.png`:icon;
+ const premium=JSON.parse(fs.readFileSync(path.join(__dirname,'../brand-assets/premium-ivory.json'),'utf8')).icons[id];
+ if(!premium)throw Error('Missing approved Premium 3D icon');
+ const icon=`./assets/variants/${id}/premium-ivory.png`;
+ const foreground=premium.androidForeground?`./assets/variants/${id}/premium-adaptive-foreground.png`:undefined;
  const prefix=process.env.APP_ID_PREFIX||'com.agenticmobile';
  if(!/^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)+$/.test(prefix))throw Error('Invalid APP_ID_PREFIX');
  return {...config,name:brand.name,slug:'25app',owner:'remidiovianas-team',version:'6.0.0',orientation:'portrait',userInterfaceStyle:identity.appearance,scheme:id+'-mobile',
  ios:{supportsTablet:false,bundleIdentifier:prefix+'.'+id.replaceAll('-','')},
- android:{package:prefix+'.'+id.replaceAll('-',''),adaptiveIcon:{foregroundImage:foreground,backgroundColor:dimensional?.android_background||identity.bg}},
- plugins:[['expo-font',{fonts:[`./assets/typefaces/${id}.ttf`,`./assets/typefaces/${id}-arabic.ttf`]}],'expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:`./assets/variants/${id}/splash.png`,imageWidth:390,resizeMode:'contain',backgroundColor:identity.bg}]],
+ android:{package:prefix+'.'+id.replaceAll('-',''),...(foreground?{adaptiveIcon:{foregroundImage:foreground,backgroundColor:premium.background}}:{})},
+ plugins:[['expo-font',{fonts:[`./assets/typefaces/${id}.ttf`,`./assets/typefaces/${id}-arabic.ttf`]}],'expo-router','expo-secure-store','expo-document-picker','expo-sharing',['expo-splash-screen',{image:icon,imageWidth:180,resizeMode:'contain',backgroundColor:premium.background}]],
  extra:{agentId:id,standalone:true,eas:{projectId:'b2d48b85-5e43-4a6f-8cdb-826487e7b03e'}},icon,web:{bundler:'metro',output:'single',favicon:icon}};
 };

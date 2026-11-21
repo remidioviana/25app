@@ -1,0 +1,155 @@
+{
+  "collection": "Premium 3D Ivory",
+  "icons": {
+    "himayah": {
+      "icon": "mobile/assets/variants/himayah/premium-ivory.png",
+      "sha256": "d72f62e63798fe0b09df2735e77760673235b17af146608af0f3e3de18c33628",
+      "androidForeground": "mobile/assets/variants/himayah/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "iqamah": {
+      "icon": "mobile/assets/variants/iqamah/premium-ivory.png",
+      "sha256": "41c68ef9864752c4b678b23bd8638190e30f06870aa9e4de298d6778195bc6c8",
+      "androidForeground": "mobile/assets/variants/iqamah/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "istithmar": {
+      "icon": "mobile/assets/variants/istithmar/premium-ivory.png",
+      "sha256": "5d9be9846abf14914f8980b82c789ec99ac264f4525f08d4d2cedacf7b536a0d",
+      "androidForeground": "mobile/assets/variants/istithmar/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "munagasah": {
+      "icon": "mobile/assets/variants/munagasah/premium-ivory.png",
+      "sha256": "6bb65d5a3288b82a09ff46f3129bb9d09d66ed6a5efed1797214c67cd01ceda9",
+      "androidForeground": "mobile/assets/variants/munagasah/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "sahil": {
+      "icon": "mobile/assets/variants/sahil/premium-ivory.png",
+      "sha256": "5adb9553fb219e5db1ab8507b7a6480586f62dda2f021e418019a72bbe87cb65",
+      "androidForeground": "mobile/assets/variants/sahil/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "tawteen": {
+      "icon": "mobile/assets/variants/tawteen/premium-ivory.png",
+      "sha256": "83a5de74517ddd40f642ac1c7cfea10f9e69209244d79ac2c49e19dc7d3e48c8",
+      "androidForeground": "mobile/assets/variants/tawteen/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "adl": {
+      "icon": "mobile/assets/variants/adl/premium-ivory.png",
+      "sha256": "ddd16d412d4726443988a0c9ed2acd22eff53be1c3dbd8fcd08aa242cfaef915",
+      "androidForeground": "mobile/assets/variants/adl/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "tawassul": {
+      "icon": "mobile/assets/variants/tawassul/premium-ivory.png",
+      "sha256": "44b4e670350391c2c61d946de0416d23e35b9a1513e86549e400aca85f6bdf01",
+      "androidForeground": "mobile/assets/variants/tawassul/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "adab": {
+      "icon": "mobile/assets/variants/adab/premium-ivory.png",
+      "sha256": "1eeafdeac3918098cd04d853fd86fe38808e8812e6ac16ec512a9c828691c5b1",
+      "androidForeground": null,
+      "background": "#F5E8D0"
+    },
+    "khidmah": {
+      "icon": "mobile/assets/variants/khidmah/premium-ivory.png",
+      "sha256": "e11413e18f6c94685b62334d7041e912eb8f680f7cf61fce2d1114ac773de634",
+      "androidForeground": "mobile/assets/variants/khidmah/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "jomrok": {
+      "icon": "mobile/assets/variants/jomrok/premium-ivory.png",
+      "sha256": "de2befc16f6113d852c8e10b37c7a3cfd1ffdcf3fb6ae065cd5445698de9d5bc",
+      "androidForeground": "mobile/assets/variants/jomrok/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "khibrat": {
+      "icon": "mobile/assets/variants/khibrat/premium-ivory.png",
+      "sha256": "c66ff60d0c73a7f309bdbfd9e5020fe7a71bfbbd24e3ba5bef75ecc0d84dfecc",
+      "androidForeground": "mobile/assets/variants/khibrat/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "majlis": {
+      "icon": "mobile/assets/variants/majlis/premium-ivory.png",
+      "sha256": "e79a6c2a2bd2e4868e3a2c214bd23c4cba26fb7b11877a39631197c052178da4",
+      "androidForeground": "mobile/assets/variants/majlis/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "rafiq": {
+      "icon": "mobile/assets/variants/rafiq/premium-ivory.png",
+      "sha256": "af0831922f8d976c6142b9421eb1895c26821bc7cba4d11c624e352ccb69215d",
+      "androidForeground": "mobile/assets/variants/rafiq/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "sawm": {
+      "icon": "mobile/assets/variants/sawm/premium-ivory.png",
+      "sha256": "4e98ac899ecf1e20b529460a328ceb562b6dbf02764099cbe9ee123a3e7f9aa9",
+      "androidForeground": "mobile/assets/variants/sawm/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "mizan": {
+      "icon": "mobile/assets/variants/mizan/premium-ivory.png",
+      "sha256": "c7a38abe8aca3f8c441fa5352ad05b7a3d4f67933af068fda13eaa34b7c7f6d7",
+      "androidForeground": "mobile/assets/variants/mizan/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "thawg": {
+      "icon": "mobile/assets/variants/thawg/premium-ivory.png",
+      "sha256": "a904dcf1ab0b2c6494f43120a1c5637e79a7a260556a3ace00f9ceaad5fac032",
+      "androidForeground": "mobile/assets/variants/thawg/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "manzil": {
+      "icon": "mobile/assets/variants/manzil/premium-ivory.png",
+      "sha256": "a1c65124d327b5925bc7056420ffc224cfa470f564ef140743eddd9409fcf4e1",
+      "androidForeground": "mobile/assets/variants/manzil/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "gurbah": {
+      "icon": "mobile/assets/variants/gurbah/premium-ivory.png",
+      "sha256": "b6c2560aeabcf7de9705c029b3b8cd73ffa4132b949f6432575c5ab5b953a6a5",
+      "androidForeground": "mobile/assets/variants/gurbah/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "amanah-eco": {
+      "icon": "mobile/assets/variants/amanah-eco/premium-ivory.png",
+      "sha256": "1cf289a3796dc362f20de2041be60b6feec4db420f6e738c734f53a42fbeeef1",
+      "androidForeground": "mobile/assets/variants/amanah-eco/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "nafas": {
+      "icon": "mobile/assets/variants/nafas/premium-ivory.png",
+      "sha256": "541b9d00725e63c3f5270527264d3300a9e81cd36e74534129fa8b25e3201d5e",
+      "androidForeground": "mobile/assets/variants/nafas/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "tadweer": {
+      "icon": "mobile/assets/variants/tadweer/premium-ivory.png",
+      "sha256": "393da6ca0859e84f449a8cffb19c89bd064fe8a6188951a2981179924ccf5bba",
+      "androidForeground": "mobile/assets/variants/tadweer/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "turath": {
+      "icon": "mobile/assets/variants/turath/premium-ivory.png",
+      "sha256": "4a87cf5a85ee0b4a312886fb3a806ae95b2aa234e084db739ffb9530c75f5d5a",
+      "androidForeground": "mobile/assets/variants/turath/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "himam": {
+      "icon": "mobile/assets/variants/himam/premium-ivory.png",
+      "sha256": "561772ecac43d395b945e400a851cd64ae4d5daf3fc083556ee1426c1ef84497",
+      "androidForeground": "mobile/assets/variants/himam/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    },
+    "hisad": {
+      "icon": "mobile/assets/variants/hisad/premium-ivory.png",
+      "sha256": "ef74b96e1e76854facf4088b9b19d0042c874be3b346a133b78daa5158842c09",
+      "androidForeground": "mobile/assets/variants/hisad/premium-adaptive-foreground.png",
+      "background": "#F5E8D0"
+    }
+  }
+}
