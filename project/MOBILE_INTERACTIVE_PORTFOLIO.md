@@ -193,3 +193,7 @@ Workspace snapshots now copy nested values without JSON serialization. Invalid n
 ### Unicode goal, query and category limits
 
 Mission goals, evidence-search queries and category names now count Unicode code points rather than UTF-16 units. Goal and search editors use controlled code-point limits so supplementary characters are not split or rejected at half the intended capacity. Mission submission uses the shared goal validator. Boundary tests cover Latin, Arabic, supplementary Arabic and symbol input at 2,000/2,001 characters, category names at 80/81, and transport suppression for oversized searches.
+
+### Bounded mobile result status recovery
+
+Run status reads now retry transient network/time-out/server failures at most three times, with 2/4/8-second delays. Authentication, missing-run and quota errors stop immediately; terminal results stop polling. A dedicated polling notice clears on recovery without clearing action/export errors. Users can explicitly refresh status after a failure. Disposal aborts and ignores delayed responses. These operations only read an existing run; they never restart a mission or inference. Controlled timer tests cover recovery, retry bounds, non-retryable errors and cancellation.

@@ -5,6 +5,7 @@ import {File,Paths} from 'expo-file-system';
 import {AgentAPI} from '../src/api';
 import type {Run,Json} from '../src/types';
 import {styles as s,colors} from '../src/theme';
+import {pollRunStatus} from '../src/runPolling';
 import {inputLabel} from '../src/forms';
 import {ClaimEvidence} from './ClaimEvidence';
 import {AgentReview} from './AgentReview';
@@ -17,14 +18,12 @@ function Values({value}:{value:Json}){
  return <Text selectable style={s.text}>{value===null?'Not provided':typeof value==='boolean'?(value?'Yes':'No'):String(value)}</Text>;
 }
 export function RunView({api,initial,onError,onUpdate}:{api:AgentAPI;initial:Run;onError:(s:string)=>void;onUpdate?:(r:Run)=>void}){
- const [run,setRun]=useState(initial),[busy,setBusy]=useState(false),[details,setDetails]=useState(false),[foreground,setForeground]=useState(AppState.currentState==='active');
+ const [run,setRun]=useState(initial),[busy,setBusy]=useState(false),[details,setDetails]=useState(false),[pollingError,setPollingError]=useState(''),[pollVersion,setPollVersion]=useState(0),[foreground,setForeground]=useState(AppState.currentState==='active');
  useEffect(()=>{const sub=AppState.addEventListener('change',state=>setForeground(state==='active'));return ()=>sub.remove()},[]);
  useEffect(()=>{
   if(!foreground||!['queued','running'].includes(run.status))return;
-  const controller=new AbortController();let stopped=false;let timer:ReturnType<typeof setTimeout>;
-  async function poll(){try{const next=await api.run(run.id,controller.signal);if(!stopped){setRun(next);onUpdate?.(next)}}catch(e){if(!stopped)onError(e instanceof Error?e.message:'Connection failed')}finally{if(!stopped)timer=setTimeout(poll,2000)}}
-  timer=setTimeout(poll,500);return ()=>{stopped=true;clearTimeout(timer);controller.abort()};
- },[api,run.id,run.status,foreground,onError,onUpdate]);
+  return pollRunStatus(api,run.id,{run:next=>{setRun(next);onUpdate?.(next)},error:setPollingError});
+ },[api,run.id,run.status,foreground,onUpdate,pollVersion]);
  async function action(name:'cancel'|'retry'|'accepted'|'rejected'){
   setBusy(true);try{const next=name==='cancel'||name==='retry'?await api.action(run.id,name):await api.review(run,name);setRun(next);onUpdate?.(next)}catch(e){onError(e instanceof Error?e.message:'Action failed')}finally{setBusy(false)}
  }
@@ -36,7 +35,7 @@ export function RunView({api,initial,onError,onUpdate}:{api:AgentAPI;initial:Run
    else throw new Error('Sharing is unavailable on this device');
   }catch(e){onError(e instanceof Error?e.message:'Export failed')}finally{if(file?.exists)file.delete();setBusy(false)}
  }
- return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}
+ return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}{!!pollingError&&<><Text style={s.error}>{pollingError}</Text>{['queued','running'].includes(run.status)&&<Button secondary title="Refresh run status" onPress={()=>setPollVersion(value=>value+1)}/>}</>}
  <ExecutionMap run={run}/>{run.result&&<><AgentReview result={run.result}/><ClaimEvidence result={run.result}/><Text style={s.h3}>Tool analysis</Text>{run.result.decision==='requires_human_review'&&<Notice><Text style={s.text}>The reviewer found unresolved issues. Review before use.</Text></Notice>}<Values value={run.result.analysis}/>{run.result.narrative&&<><Text style={s.h3}>AI synthesis</Text><Text selectable style={s.text}>{run.result.narrative}</Text></>}
  <Text style={s.muted}>External actions: {run.result.external_actions_performed?'recorded in this run':'none'}. Feedback: {run.review}.</Text>{run.review==='pending'&&<View style={s.row}><Button disabled={busy} title="Mark useful" onPress={()=>action('accepted')}/><Button secondary disabled={busy} title="Not useful" onPress={()=>action('rejected')}/></View>}<Button secondary busy={busy} title="Share report" onPress={share}/>
  {run.result.evidence.length>0&&<><Text style={s.h3}>Evidence</Text>{run.result.evidence.map(e=><View key={e.citation} style={s.group}><Text style={s.h3}>{e.title}</Text><Text selectable style={s.text}>{e.text}</Text><Text style={s.muted}>{e.source} · {e.as_of||'undated'}</Text><Text selectable style={s.code}>{e.citation}</Text></View>)}</>}
