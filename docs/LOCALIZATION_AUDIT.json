@@ -1,5 +1,5 @@
 {
-  "files_scanned": 277,
+  "files_scanned": 278,
   "issues": [],
   "scope": "Source strings, specs and examples; excludes dependencies, tests and documentation. Heuristic scan, not a translation-quality guarantee."
 }

@@ -1,3 +1,4 @@
+import {downloadText} from '../src/webDownload';
 import {temporaryReportFile} from '../src/temporaryReportFile';
 import {cleanupTemporaryReport,type TemporaryReport} from '../src/temporaryReport';
 import {InteractiveRecords} from './InteractiveRecords';
@@ -58,7 +59,7 @@ export function HimayahInspector(){
  async function exportReview(){
   if(!review.value||!fingerprint)return;setBusy(true);setError('');let file:TemporaryReport|undefined;
   try{const source=currentImport?.document.import_provenance;const md=inspectionMarkdown(text,fingerprint,review.value,activeNotes,source?{filename:source.filename,rawSha256:source.raw_sha256,extractedSha256:source.extracted_text_sha256,documentId:currentImport!.document.id}:{});
-   if(Platform.OS==='web'){const uri=URL.createObjectURL(new Blob([md],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=uri;a.download='himayah-inspection.md';a.click();setTimeout(()=>URL.revokeObjectURL(uri),1000)}else{file=temporaryReportFile('himayah-inspection','md');file.create();file.write(md);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
+   if(Platform.OS==='web'){downloadText(md,'himayah-inspection.md','text/markdown;charset=utf-8')}else{file=temporaryReportFile('himayah-inspection','md');file.create();file.write(md);if(!await Sharing.isAvailableAsync())throw Error('Sharing is unavailable on this device.');await Sharing.shareAsync(file.uri,{mimeType:'text/markdown',dialogTitle:'Export document annotations'})}
   }catch(e){setError(e instanceof Error?e.message:'Annotation export failed.')}finally{if(!cleanupTemporaryReport(file))setError(previous=>previous||'Could not remove the temporary report file.');setBusy(false)}
  }
  function renderBlock(block:ReturnType<typeof documentBlocks>[number]){

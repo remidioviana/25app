@@ -221,3 +221,7 @@ Mission and Nafas result panels now publish polled and action-confirmed runs thr
 ### Temporary export file ownership
 
 Run reports and Himayah, Iqamah, Istithmar and Munagasah preparation exports use UUID-scoped cache filenames instead of fixed names or timestamps. Files are created without overwrite, and cleanup is restricted to a file whose creation succeeded in that operation. A failed creation cannot delete another export's file. Cleanup errors remain contained and visible without stranding the controls or replacing an earlier primary error. Existing Web download names are unchanged. Controlled storage tests cover collisions, independent cleanup and cleanup retry; no real sharing occurs.
+
+### Web export URL cleanup
+
+Himayah, Iqamah, Istithmar and Munagasah Web exports share one text-download helper. Object URL revocation is scheduled in a finally block, including link-creation and click failures. Filenames, content, MIME types and delayed release remain unchanged. Controlled browser-adapter tests cover normal downloads and failures before/after URL allocation without initiating real downloads. Native report handling is unchanged.
