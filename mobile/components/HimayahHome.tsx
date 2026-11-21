@@ -1,9 +1,10 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import {router} from 'expo-router';
 import {useApp} from '../src/AppState';
 import {colors,styles as s} from '../src/theme';
 import {Button} from './Controls';
+import {useHimayahLanguage} from '../src/experience/HimayahLanguage';
 
 const copy={
  en:{name:'Himayah',title:'Your privacy docket',description:'Review the obligations in an agreement, trace the evidence and keep decisions yours.',language:'Preview language',document:'Document',rules:'Screening rules',ready:'Text added',missing:'No text added',empty:'Start a new review',resume:'Continue document review',ruleNote:'User-defined phrase rules',evidence:'Official sources',evidenceNote:'Read the published context before making a decision.',privacy:'Local phrase screening is not a legal verdict. Connected analysis requires a configured service.',scope:'English is used in the remaining workflow while full localization is in development.',next:'Your next step'},
@@ -13,7 +14,7 @@ const copy={
 /** Task-first entry to the existing document inspector. No simulated findings. */
 export function HimayahHome(){
  const {draft}=useApp();
- const [language,setLanguage]=useState<'en'|'ar'>('en');
+ const {language,setLanguage,storageError}=useHimayahLanguage();
  const rtl=language==='ar',t=copy[language];
  const direction=rtl?'rtl':'ltr';
  const align=rtl?'right':'left';
@@ -31,6 +32,7 @@ export function HimayahHome(){
    <Text accessibilityRole="header" style={[v.title,aligned]}>{t.title}</Text>
    <Text style={[s.text,aligned]}>{t.description}</Text>
   </View>
+  {storageError&&<Text accessibilityRole="alert" style={[s.muted,aligned]}>{rtl?'تعذر حفظ تفضيل اللغة على هذا الجهاز.':'Language preference could not be saved on this device.'}</Text>}
   <View style={v.docket}>
    <View style={v.record}>
     <Text style={[v.label,aligned]}>{t.document}</Text>
@@ -50,7 +52,7 @@ export function HimayahHome(){
    <Text style={[s.h3,aligned]}>{t.evidence}</Text>
    <Text style={[s.muted,aligned]}>{t.evidenceNote}</Text>
   </Pressable>
-  {rtl&&<Text style={[s.muted,aligned]}>{t.scope}</Text>}
+  {rtl&&<Text style={[s.muted,aligned]}>تتوفر العربية للصفحة الرئيسية وعناصر الفاحص الأساسية. قد تظهر نتائج التحليل والمصادر وبعض خطوات العمل بالإنجليزية.</Text>}
  </View>;
 }
 
