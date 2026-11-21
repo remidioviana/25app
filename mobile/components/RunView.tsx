@@ -27,13 +27,14 @@ export function RunView({api,initial,onUpdate}:{api:AgentAPI;initial:Run;onUpdat
  if(incoming){setSource(incoming.source);if(incoming.changed){setRun(incoming.run);setPollingError('');setOperationError('')}}
  const session=useMemo(()=>({api,id:run.id,revision:source.revision,operations:runOperations()}),[api,run.id,source.revision]);
  const operations=session.operations;
+ const polling=useMemo(()=>({api,id:run.id,retry:pollVersion,revision:source.revision}),[api,run.id,pollVersion,source.revision]);
  const stopPolling=useRef<(()=>void)|null>(null);
  useFocusEffect(useCallback(()=>{operations.start(setBusy);return operations.dispose},[operations,setBusy]));
  useEffect(()=>{const sub=AppState.addEventListener('change',state=>setForeground(state==='active'));return ()=>sub.remove()},[]);
- useEffect(()=>{
+ useFocusEffect(useCallback(()=>{
   if(!foreground||busy||!['queued','running'].includes(run.status))return;
-  const stop=pollRunStatus(api,run.id,{run:next=>{setRun(next);onUpdate?.(next)},error:setPollingError});stopPolling.current=stop;return()=>{stop();if(stopPolling.current===stop)stopPolling.current=null};
- },[api,run.id,run.status,foreground,onUpdate,pollVersion,busy,source.revision]);
+  const stop=pollRunStatus(polling.api,polling.id,{run:next=>{setRun(next);onUpdate?.(next)},error:setPollingError});stopPolling.current=stop;return()=>{stop();if(stopPolling.current===stop)stopPolling.current=null};
+ },[polling,run.status,foreground,onUpdate,busy]));
  async function action(name:'cancel'|'retry'|'accepted'|'rejected'){
   await operations.execute(async()=>{stopPolling.current?.();return name==='cancel'||name==='retry'?session.api.action(session.id,name):session.api.review(run,name)},next=>{setRun(next);onUpdate?.(next)},setOperationError,setBusy,'Action failed');
  }
@@ -42,7 +43,7 @@ export function RunView({api,initial,onUpdate}:{api:AgentAPI;initial:Run;onUpdat
    web:Platform.OS==='web',shareText:text=>Share.share({message:text}),file:()=>new File(Paths.cache,`agent-${session.id}.md`),available:()=>Sharing.isAvailableAsync(),shareFile:uri=>Sharing.shareAsync(uri,{mimeType:'text/markdown',dialogTitle:'Share report'}),
   })},()=>{},setOperationError,setBusy,'Export failed');
  }
- return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}{!!operationError&&<Text style={s.error}>{operationError}</Text>}{!!pollingError&&<><Text style={s.error}>{pollingError}</Text>{['queued','running'].includes(run.status)&&<Button secondary disabled={busy} title="Refresh run status" onPress={()=>setPollVersion(value=>value+1)}/>}</>}
+ return <View style={s.card}><View style={[s.row,{justifyContent:'space-between'}]}><Text style={s.h2}>Run</Text><Text style={s.tag}>{status[run.status]}</Text></View><Text style={s.muted}>{run.goal}</Text>{!!run.example&&<Notice><Text style={s.text}>Demo data</Text></Notice>}{run.error&&<Text style={s.error}>{run.error}</Text>}{!!operationError&&<Text accessibilityRole="alert" style={s.error}>{operationError}</Text>}{!!pollingError&&<><Text accessibilityRole="alert" style={s.error}>{pollingError}</Text>{['queued','running'].includes(run.status)&&<Button secondary disabled={busy} title="Refresh run status" onPress={()=>setPollVersion(value=>value+1)}/>}</>}
  <ExecutionMap run={run}/>{run.result&&<><AgentReview result={run.result}/><ClaimEvidence result={run.result}/><Text style={s.h3}>Tool analysis</Text>{run.result.decision==='requires_human_review'&&<Notice><Text style={s.text}>The reviewer found unresolved issues. Review before use.</Text></Notice>}<Values value={run.result.analysis}/>{run.result.narrative&&<><Text style={s.h3}>AI synthesis</Text><Text selectable style={s.text}>{run.result.narrative}</Text></>}
  <Text style={s.muted}>External actions: {run.result.external_actions_performed?'recorded in this run':'none'}. Feedback: {run.review}.</Text>{run.review==='pending'&&<View style={s.row}><Button disabled={busy} title="Mark useful" onPress={()=>action('accepted')}/><Button secondary disabled={busy} title="Not useful" onPress={()=>action('rejected')}/></View>}<Button secondary busy={busy} title="Share report" onPress={share}/>
  {run.result.evidence.length>0&&<><Text style={s.h3}>Evidence</Text>{run.result.evidence.map(e=><View key={e.citation} style={s.group}><Text style={s.h3}>{e.title}</Text><Text selectable style={s.text}>{e.text}</Text><Text style={s.muted}>{e.source} · {e.as_of||'undated'}</Text><Text selectable style={s.code}>{e.citation}</Text></View>)}</>}

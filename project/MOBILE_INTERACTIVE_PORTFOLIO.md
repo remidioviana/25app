@@ -213,3 +213,7 @@ Run views adopt externally refreshed results even when the run ID and status are
 ### Result operation retry messages
 
 A successful result action or export clears its preceding operation error only after the asynchronous work completes in the current session. New action, sharing or cleanup failures remain visible. Operation notices belong to the result panel, so clearing them does not clear separate mission, planning or inspector form errors. Regression coverage checks failure, confirmed retry and a subsequent distinct failure, alongside the existing stale-session and cleanup-failure tests.
+
+### Shared result updates and focus ownership
+
+Mission and Nafas result panels now publish polled and action-confirmed runs through AppState's API-scoped setter. Other screens receive the current recorded result instead of retaining the initial queued snapshot. Status polling follows route focus as well as app foreground state, preventing hidden panels from publishing older reads. Existing polling disposal and echoed-source regression coverage applies to this wiring. Result operation and connection notices use alert accessibility semantics. No mission or inference is started by this change.
