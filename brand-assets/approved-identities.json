@@ -17,19 +17,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/himayah/wordmark-on-light.svg",
-          "sha256": "fd4823e78f1e496b1561476b350ba555bfe7fec6fafcc74181db21e79d140222"
+          "sha256": "4edd4c3145feb25b3a2dbd4ac245413d7b039d0e06e73ad6d6813a5c43c1d28d"
         },
         "logo_light": {
           "path": "brand-assets/production/himayah/logo-on-light.svg",
-          "sha256": "38b811c1d5393e86fc77d2066c12d30945114f27e445b362c44696e1ee36a02e"
+          "sha256": "1264c06ef86883783529dedb508036312d10e81c843a2eb536d6adc5fdf86734"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/himayah/wordmark-on-dark.svg",
-          "sha256": "83318908f99b769da66db0e1f9d73b87f865479b0e7bb83f5895c584b4d91320"
+          "sha256": "921960957f70060f1d0773f60569507ffbbe8f48acbae742161f94d3aaf7a7ca"
         },
         "logo_dark": {
           "path": "brand-assets/production/himayah/logo-on-dark.svg",
-          "sha256": "bde303de9c5aa8368552c27f4179859dfe53c7c22b45837a522568cbad34b589"
+          "sha256": "1e2eb9c46cf62ed0073a014884839704f2d73c7a58e5b4abf14c48fe28089e0b"
         }
       }
     },
@@ -42,19 +42,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/iqamah/wordmark-on-light.svg",
-          "sha256": "6348f4ead4517171486d7321e4f83f7dac675a61e639dc7182da853432c665c4"
+          "sha256": "2cda86b882ff71f2b8f91f66e3de4eb24f175bb907d29d460cf0f000b97169d4"
         },
         "logo_light": {
           "path": "brand-assets/production/iqamah/logo-on-light.svg",
-          "sha256": "9d5c955f88f58af922703dbbaea48b65d8bf170b66345e6c2fd708b3dff822a8"
+          "sha256": "2cfdf443fd8490614d3adbf60f0b723026f8d2f42cb9d354f90d52f2164a09ac"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/iqamah/wordmark-on-dark.svg",
-          "sha256": "a8e0e05e9513949716ae26b929ca6db3455334a9e73b7659fbd4286ede74d0f7"
+          "sha256": "07a1e4046e97a61527aa600d8d23cc02029b23069e5877e00dd49237848e38a8"
         },
         "logo_dark": {
           "path": "brand-assets/production/iqamah/logo-on-dark.svg",
-          "sha256": "82be0602f611c55faff6e10a4d44f93c9897aa2ab3d4582853f50efaaae8840c"
+          "sha256": "4edf6c234288710a2185986f2fd77ba5095c022bf4ed7c12dc4673e020a81d06"
         }
       },
       "reference_state": "user_approved"
@@ -68,19 +68,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/istithmar/wordmark-on-light.svg",
-          "sha256": "ec63087d0bd220054fbde8ffd085815bc007558caf10f1098bea4d68f9bc91af"
+          "sha256": "e519cb74127f1c9ebc73bc858fd66e067ce6d69c7916fdfe703e6e00cd02468b"
         },
         "logo_light": {
           "path": "brand-assets/production/istithmar/logo-on-light.svg",
-          "sha256": "7c50fd23e7726f4955386a3f6f1809fa326f80ff9e8934248487dbfbc86fb02f"
+          "sha256": "95e74cab0abb060af87a022fd5185e7d9e63952a5d030ad01c388d253e9c4200"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/istithmar/wordmark-on-dark.svg",
-          "sha256": "dc8bad99a972297f9cbe8b4fff712a78811d3ebc24b1ad5bb7a6cf0b78842989"
+          "sha256": "5b012dadc366af546271b033992dc318c0d4a2e28415b27e6284a47983f5563f"
         },
         "logo_dark": {
           "path": "brand-assets/production/istithmar/logo-on-dark.svg",
-          "sha256": "9cb4c8237af2a7c567016550cf9ac79512f5668416dbf72217b80dcb96556114"
+          "sha256": "396221d8cd3de6cebfaae29890343eec87743b71320f4a3f98e4aa26f508ff72"
         }
       },
       "reference_state": "user_approved"
@@ -94,19 +94,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/munagasah/wordmark-on-light.svg",
-          "sha256": "eece9bfd6d2316b03a8037f3af3f4f70bf2e10b796bf6c252abd556016dc9f28"
+          "sha256": "f548bf5a86514e73d5841370894cad30832c62f95ab7783fbaec507c0f7150c7"
         },
         "logo_light": {
           "path": "brand-assets/production/munagasah/logo-on-light.svg",
-          "sha256": "3da0125ceedd11b0a7744e3db5cb8ca9b8c3cd6ccece5c575c1cb609efd5f355"
+          "sha256": "63efa1662ba19a0e5ba50a2becc76ff92449d55696a4f6493e364738ff30d50a"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/munagasah/wordmark-on-dark.svg",
-          "sha256": "a04d6a9fdca025db16ed4436153c63e04398a5e9018f8d362e1237a147d5fb1c"
+          "sha256": "72e12a97066bfc0b4a421d1044f3eb2c418bbbad6a2cca0dac021599b4f67d10"
         },
         "logo_dark": {
           "path": "brand-assets/production/munagasah/logo-on-dark.svg",
-          "sha256": "c2671ce7c42ba338e94fa7ff44dc18ed1753d601b2a38e15715906d50d067f0b"
+          "sha256": "db944d9feee5a9ca952ac17bf4734b065faebbb7ef21aa3c93772544abb9a5cd"
         }
       },
       "reference_state": "user_approved"
@@ -120,19 +120,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/sahil/wordmark-on-light.svg",
-          "sha256": "822c497bc27eddad03856192cdc7fc3cb58d956582c629750e7a346126574452"
+          "sha256": "d7fbb3bd943f66e47bec3975892b4681df8c7664d07e316cfdeaca67d7e5bb58"
         },
         "logo_light": {
           "path": "brand-assets/production/sahil/logo-on-light.svg",
-          "sha256": "028d63c583946ccc1f935564131a352b96c9b000f9de06f9e2feb2f0ffed6b2a"
+          "sha256": "7f426d02439fb85f17faed3f764043db7725a40ce3e220f425149f32a52981ac"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/sahil/wordmark-on-dark.svg",
-          "sha256": "7cddbe022142f0e59f10cd9bb6082346607ab49184cf8af4bb846caaf78231b5"
+          "sha256": "4bdb216076559cf519846426ab33d1130f89d093d82370492a6b095602dd9ab5"
         },
         "logo_dark": {
           "path": "brand-assets/production/sahil/logo-on-dark.svg",
-          "sha256": "e234d3da39ea6ea3d23d89b43ce296a3ed191f997507e4fad1f1b2d5333e6b99"
+          "sha256": "09782e6128795c11c767f62fd107ad264b2534a3e7a1edcff80b7e8d778fa73d"
         }
       },
       "reference_state": "user_approved"
@@ -148,19 +148,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawteen/wordmark-on-light.svg",
-          "sha256": "fcb44d6e73409ff3dc4296dd1f8c48e7dced45147f736b913791f90ef1e60483"
+          "sha256": "05801313efd7aad805029bc6e4236c60a5df493d66664d2fcfa90a187d648442"
         },
         "logo_light": {
           "path": "brand-assets/production/tawteen/logo-on-light.svg",
-          "sha256": "bdfb30396c2091305faa7b999f40fddb0a433de20d5b590923928ec4edecbb93"
+          "sha256": "2391a0348361db3daf45d99454e37fd33caf3546cfb8bb6c4878719f91619939"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawteen/wordmark-on-dark.svg",
-          "sha256": "b0938cf551270ace025008cbb937ee9aede0a12dfe6ee82c6b092b0ce721a864"
+          "sha256": "526c273a19ded5d1f95debfbc78515b6acfa4b9a8139b880cd0753727551ce38"
         },
         "logo_dark": {
           "path": "brand-assets/production/tawteen/logo-on-dark.svg",
-          "sha256": "a4340ae3b4694a7daf94bc1fafe93d3eb599fae438f66e05121f2c1263a8b11d"
+          "sha256": "851826768b12048115f7bcd495fd91c9c14a9a283745935b45d76f34b47c37c9"
         }
       }
     },
@@ -175,19 +175,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/adl/wordmark-on-light.svg",
-          "sha256": "cbf08844c0e1d7df91d6b860766e5b1493dd39a97f9dbc68763353b57d2f1fd7"
+          "sha256": "3dde99567ed618cb80cd35ce44c1ef96b795bee31eef02c9500cf4c9fabbddb5"
         },
         "logo_light": {
           "path": "brand-assets/production/adl/logo-on-light.svg",
-          "sha256": "1a6cc8edbc3aa7a92f4af905411d2e62219ce794a17e988a57fb2ba2463246f4"
+          "sha256": "9bcda305ed37f495dac1c9f0152051ebf021c1fa327fa18f3c4922c89dee38de"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adl/wordmark-on-dark.svg",
-          "sha256": "ed46fc8156896c808878f501c59793e00cb0a991336ab215b98c0c5d87e691cf"
+          "sha256": "a2875bc3add6817c11361ee5e5550aeed9385acb016a9df91454014283adf478"
         },
         "logo_dark": {
           "path": "brand-assets/production/adl/logo-on-dark.svg",
-          "sha256": "6660114676576a8656a7b11f6228bd8a2b0c1efb86abcb05889f7ce6fc23ed42"
+          "sha256": "c9c9e0a98f62226f512b3b0a284536ef0a9663cf271c4c8d507295882e2b5a0d"
         }
       }
     },
@@ -202,19 +202,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/tawassul/wordmark-on-light.svg",
-          "sha256": "5bc14632a255635bc5d7f82ad2762be7848d66ed07d0ffe092201c2cc9664307"
+          "sha256": "b26807492e4a06fd89c89251470517cf4f1ab3889fe78cfeb34678dd791e2cfc"
         },
         "logo_light": {
           "path": "brand-assets/production/tawassul/logo-on-light.svg",
-          "sha256": "56a2fb3e7aba8283441b6588b5085226ba2ff57518ecff1bf60801252fe53201"
+          "sha256": "d4b897f6a71f864284025daa2f65bb9e41f90eedb16e430d0f1d298489ae48ab"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tawassul/wordmark-on-dark.svg",
-          "sha256": "a99f8bae99e1e9c3c4bb733fa075ed25227b17eacd07c18398ab453d413289aa"
+          "sha256": "0180dd89085c687cbba38d2327b19bc8fad2aaf6c8fe4095c322b3eb450305b1"
         },
         "logo_dark": {
           "path": "brand-assets/production/tawassul/logo-on-dark.svg",
-          "sha256": "698cb80344aa205f21bc1170811a218306a4411e1d91c7099bb552119aa642b5"
+          "sha256": "b1c9300526cfb32e5fd608ee5ff1bf4ec6e87b88b9202ef5c6aee2c20f028866"
         }
       }
     },
@@ -229,19 +229,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/adab/wordmark-on-light.svg",
-          "sha256": "f2f3de69c9fd0d9c2c3ff5a0755bb43ef061fbd0d4f23b3fe7133e46a51e8504"
+          "sha256": "e21e49eea93dc7e4ee3e29997703a94f2d4e864b6cca9f96b9f7c5682e8f4c97"
         },
         "logo_light": {
           "path": "brand-assets/production/adab/logo-on-light.svg",
-          "sha256": "f0fd04a20e14c78a135b613f5baa53a46a75a5efeb54dbe06eaa04567eff0a59"
+          "sha256": "e7f2ab317ca8bfb99c0d14b00935f1eec7d2453047855f0d83315053a666bff7"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/adab/wordmark-on-dark.svg",
-          "sha256": "3403a60b8c0b59857bf7cf6a157ad87e4067556108de6aa9d55f59f602c11b63"
+          "sha256": "025dae0602f84e311aa5b9451ca06a170534b7ad912db2ebe8f24a2932b7bc45"
         },
         "logo_dark": {
           "path": "brand-assets/production/adab/logo-on-dark.svg",
-          "sha256": "27cc683dfad97aab3de86813c0a8537bc58415c96db4d86283f9c046fa033850"
+          "sha256": "9dbac3dc830ab186571dad29e4ceaaae7df0490c1438c0ce8c566715f5274bdd"
         }
       }
     },
@@ -256,19 +256,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/khidmah/wordmark-on-light.svg",
-          "sha256": "43e0c30610830e8e02bbb1252046f76e03a18ffe451f807ce81119b17df6315e"
+          "sha256": "1e20af6b41a864f32894505306243ab1dffdab26b73677fbe210f972fe0d4848"
         },
         "logo_light": {
           "path": "brand-assets/production/khidmah/logo-on-light.svg",
-          "sha256": "37254970584c12fe310947ba57c104e1ea2e8021d2818ce778f08fd0aab41419"
+          "sha256": "c6d58e80619d30a1948778bf22498629487b78635cf66c52967df485081a3529"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/khidmah/wordmark-on-dark.svg",
-          "sha256": "28de7c9a65fbb8ad7de07f2d5866feb9f08c792df5c54af07dbf3e925d4848f6"
+          "sha256": "9f088c9e3a9c9494e97db4653b25ba64d8b225c4321e9aaa052ec6f66c6abb5f"
         },
         "logo_dark": {
           "path": "brand-assets/production/khidmah/logo-on-dark.svg",
-          "sha256": "957aa2b1339ec8282e1b27c69caecbccc4547765ffe971ca7e606d1e69b63647"
+          "sha256": "412b42dd954273341a50e188d8324948ac7a39bc7873b0e3b54e17c524d9e6ef"
         }
       }
     },
@@ -281,19 +281,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/jomrok/wordmark-on-light.svg",
-          "sha256": "ec5502fdf6021f36cde14785a1ed14e56c0043e3ed391177810b556af52ba33e"
+          "sha256": "2e336be23df2f00df01b00c72afbf4a42d35aff124607ab7f70047253a133667"
         },
         "logo_light": {
           "path": "brand-assets/production/jomrok/logo-on-light.svg",
-          "sha256": "5df73453e2681652698e3755d7869bda30141b41a869a7280ef801eb0491c578"
+          "sha256": "ec352ff0e6ba6c6145813b7dca14632036ba2febe4a30f3b2c7e1e89a35fe170"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/jomrok/wordmark-on-dark.svg",
-          "sha256": "a5e32a83e3ad912448baddbae91217f3a0072dbb64c99f7bd0a00cfeafa70645"
+          "sha256": "31ad3ce5b28524260821556c21d9cc7fe4ad2923a2aa593218edbf3bbe6a163c"
         },
         "logo_dark": {
           "path": "brand-assets/production/jomrok/logo-on-dark.svg",
-          "sha256": "7f0eed5fc450c59a297b052fcf2c709bd4f521e70111ed17d376e66cf35c50cf"
+          "sha256": "418a8532bc773d1a9dc5edb3ef4d5b7300fc95a154aa5d5d31bdb4bd94b45e14"
         }
       },
       "reference_state": "user_approved"
@@ -307,19 +307,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/khibrat/wordmark-on-light.svg",
-          "sha256": "6582e33b8b698c545e3bda486cf6a509c3a64ac352224851a74b292c4b298ea1"
+          "sha256": "0fb4500a71b303e516e7ce2f285e52c7b2532cfe13875adbd6931c15bc35479f"
         },
         "logo_light": {
           "path": "brand-assets/production/khibrat/logo-on-light.svg",
-          "sha256": "33021fca79e7ba418e8536e44940d44aa7c0084d3a9aaa690af2607e0aeacfa2"
+          "sha256": "a060f0237b12b8250a474485ae028f581b2e10dcaebe850651f0a1658bb3c42c"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/khibrat/wordmark-on-dark.svg",
-          "sha256": "07f0eb6144ada2618a09922c0f46e0022d2fcab8c92c14eae40161a6d2a6ee81"
+          "sha256": "30085b425809fd7b0d2780868d3382c0bd78ec29e58952f82e3561aec2eea222"
         },
         "logo_dark": {
           "path": "brand-assets/production/khibrat/logo-on-dark.svg",
-          "sha256": "77dc0c0b34b371ee75a97f4e944a9c870a92f569ae554b3f3604ccae52efe3c7"
+          "sha256": "04169b9698f401102c15a841a7536fc25474457b391a617e1829517485c1635c"
         }
       },
       "reference_state": "user_approved"
@@ -335,19 +335,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/majlis/wordmark-on-light.svg",
-          "sha256": "f91b9df985d6f7779c23e46892f5a2cb7e520c23e1f83d158afc3d43646a5940"
+          "sha256": "698c9df7d7f69ab426224a582ffba7b028744d0bbab5fc7f4d900ab8266b7efc"
         },
         "logo_light": {
           "path": "brand-assets/production/majlis/logo-on-light.svg",
-          "sha256": "f4cf23bbaa1fbfcad9f4be9b9894b65002e9fb5f6e9c4d27d7e265ad11873b73"
+          "sha256": "55ba521665a8429044f0d3a267983e270fd8361f9bccf0885705234cb7f0ed65"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/majlis/wordmark-on-dark.svg",
-          "sha256": "a3f87b1831241b7416b270541fe651413cbf7618764228acacf027a1411cab83"
+          "sha256": "703efdb91f27579fa38ceae9983f8e8e75665f3ddef52c9eab4024505a2ba61c"
         },
         "logo_dark": {
           "path": "brand-assets/production/majlis/logo-on-dark.svg",
-          "sha256": "bbd16082b26aab66fb73fb2f8136972a06bc45380da7001e4e02b1ea6a5319f7"
+          "sha256": "92f41d4d817ede9ab6a118291999e18144c10c4a33411e2979c2af9077be430b"
         }
       }
     },
@@ -360,19 +360,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/rafiq/wordmark-on-light.svg",
-          "sha256": "27b5f6dd7af150d169c071a73a6caa134c4d03e09cd8b74ccd909f794eca8671"
+          "sha256": "c5b104a1d8d592c2efa50c554ebb90fde720310c4fcb1f589ad074a8904c303a"
         },
         "logo_light": {
           "path": "brand-assets/production/rafiq/logo-on-light.svg",
-          "sha256": "52fd325d6b1285feca717e6e5f10051da2526af4e7da7668849c2d039ae0b1c6"
+          "sha256": "e6ecd43e6cb08fccebb213b504874c08da6345d969122b440fbb0117f07d400b"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/rafiq/wordmark-on-dark.svg",
-          "sha256": "920e97a78e99ead6537385795e3ffb808140549dd97398802efb309dd2123639"
+          "sha256": "4c4dd1ee5e18d9e7e2e98e0c88c8f2a3a2f0ffe61618fbd2117a5597c1a11f7c"
         },
         "logo_dark": {
           "path": "brand-assets/production/rafiq/logo-on-dark.svg",
-          "sha256": "5fd017a4639b32bfd59e72671545290f4c04eb3dfe28f19ca21c057ce964faba"
+          "sha256": "5dd61c4641aacb7230571a3579d2a10d79a792a61d108f1463238e25ca190f24"
         }
       },
       "reference_state": "user_approved"
@@ -388,19 +388,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/sawm/wordmark-on-light.svg",
-          "sha256": "69f4768536520c8715ca4a7b07c2ee1e50ca1f562e713f4ecc0b9f16f60130ce"
+          "sha256": "4f922637ee32361e0d7af00080bddbd62aae97926b7530dc3a3860e1a7dc2ed9"
         },
         "logo_light": {
           "path": "brand-assets/production/sawm/logo-on-light.svg",
-          "sha256": "22df698bbe042f19114a8284b12ac57b74caa6be5987deeaebcc1d5f16011068"
+          "sha256": "f5463e9fbee974bf3c11557144ce694abd6c7d88f6ffd14e2a0b0bf1546b835c"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/sawm/wordmark-on-dark.svg",
-          "sha256": "3d818505e1e62d7baed4f5345e2cb141c0ff9b2a22556e9384fa9002e5f6b85f"
+          "sha256": "900f30fd7afaffc4cc633cb3577425159556e84a7b741b596bb971065dfc3200"
         },
         "logo_dark": {
           "path": "brand-assets/production/sawm/logo-on-dark.svg",
-          "sha256": "780902bd68301823cda1f9d278ce058552f7a3a52685b5269784b96abc4fdeb9"
+          "sha256": "21f4094d4219cba40920878ddc2c2da576f4f51509b853c29c2cc3e32e3bc9f0"
         }
       }
     },
@@ -413,19 +413,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/mizan/wordmark-on-light.svg",
-          "sha256": "c4a7e27b3138a85649b9fe23c7c5f0f81eccee9187fb48159f54f10d1ec85140"
+          "sha256": "525d70eddb22c87e1937969bacbed0977e3312fc1ad6172c02ade2985dec73e7"
         },
         "logo_light": {
           "path": "brand-assets/production/mizan/logo-on-light.svg",
-          "sha256": "f3d9ac7e8971e4a04ea2ba5b1aa6cc2ca21609887ab8906b1abd288d068b9264"
+          "sha256": "87efb5750c6b036666ebbe324429eb4e53db37b8476aa16c6248249c9d086af2"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/mizan/wordmark-on-dark.svg",
-          "sha256": "3236de3dd5de97575054606e609310f35db600b587f4d2eeba94fa1804111315"
+          "sha256": "154bb365718aca7165f54488ebdc747a7ed1215ee7e741b654115dddb795c229"
         },
         "logo_dark": {
           "path": "brand-assets/production/mizan/logo-on-dark.svg",
-          "sha256": "34110cb9cea81f30e6280fc64041b9b90aa46f5425f718d527213e25085de716"
+          "sha256": "64a322c46c6a1b71e8df0919a69c7759d3a57e8ed54ee7d770cc6342529a6f7d"
         }
       },
       "reference_state": "user_approved"
@@ -439,19 +439,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/thawg/wordmark-on-light.svg",
-          "sha256": "25b41c9c60cf06d3d89ca3b9f1f407bba01aa938075d73a49062f718945b24ac"
+          "sha256": "4ed78dd6ab750f31e964f809eb7daf7965bdb9e5459bc5863eb185fd614745a8"
         },
         "logo_light": {
           "path": "brand-assets/production/thawg/logo-on-light.svg",
-          "sha256": "f54fd45cca1b4172cd24cdd9826e7d025f8ea82bce30038cd1de2807975a2bbb"
+          "sha256": "1b3ab409655fe23e438e9ed2cd31f3bd951c5a101a2b0f8a3341c2f9ad338497"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/thawg/wordmark-on-dark.svg",
-          "sha256": "01a82beb33e22cce9d171be1ebcbcc8da11d3104fbca232e898ec7e033cddf3c"
+          "sha256": "3075a8cbe3a82b42aa3b0602092d4b9886bcbc9d27fecfa83d24e143e59523f5"
         },
         "logo_dark": {
           "path": "brand-assets/production/thawg/logo-on-dark.svg",
-          "sha256": "94bd503d7e15eb5b4fc5919c52af5db2c9bc9008b20e4df8c946e0c2ac526423"
+          "sha256": "114cc531282fe4de1f94594ea042ca1bd7588b91294d85754a4e5e5f3c05e1ce"
         }
       },
       "reference_state": "user_approved"
@@ -465,19 +465,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/manzil/wordmark-on-light.svg",
-          "sha256": "bb0bf02846b5c158e79297178a561da9cc14c42aaae5491e650ed6f2bb1dca6b"
+          "sha256": "2258c7f5705e5b4d4908c5f8050f8313792ec2526d0f552ea7359b755de463f8"
         },
         "logo_light": {
           "path": "brand-assets/production/manzil/logo-on-light.svg",
-          "sha256": "8916bb27a918cb3046535937334b57ed34d11ea91052e0a19217efd587f94b32"
+          "sha256": "c7c46d999d7070be673d174c4cc39adacd05b5cab3d1658228d90d968361986c"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/manzil/wordmark-on-dark.svg",
-          "sha256": "eab964e82f11f09abb9eef4890d302ac2c667f0c332713ed653eb18254a9990e"
+          "sha256": "2ca25f24553bc504ebad00b3e2ad313202449bbd8be791af0a7ff0d0645be77a"
         },
         "logo_dark": {
           "path": "brand-assets/production/manzil/logo-on-dark.svg",
-          "sha256": "e593aead3a5df4b861f3c9b7a54f24d7ed29eaa983136e4934a0435fb7346af6"
+          "sha256": "ce4e1a33ee7ef74b670b252f10dbf2f335118b7ab4ba41ed216617485752f58f"
         }
       },
       "reference_state": "user_approved"
@@ -491,19 +491,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/gurbah/wordmark-on-light.svg",
-          "sha256": "b7beec84132429085e87676e6186bade7317eb61bb7fdf2b507afee1e89127b9"
+          "sha256": "e220edeb31e09efa109608a34ade15cec171d11a0488f8c1d62896fe4a9f6df1"
         },
         "logo_light": {
           "path": "brand-assets/production/gurbah/logo-on-light.svg",
-          "sha256": "16bd177d473160f6da4e16596a0569adefdc2a668ef7a0ec7b5f404a25e18b3c"
+          "sha256": "3fca936bf546d07003c8912941d1e5c3f448248edc9a33716177864aecbb8df4"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/gurbah/wordmark-on-dark.svg",
-          "sha256": "dc5b4397197ba695233d11cd5d68e3680d326a4bedcfb34886e08537bd73befe"
+          "sha256": "f0f8920ea85f6ded15d1d1ee70294b1994ceafa18cb5d8e59c8ace0fb0f11514"
         },
         "logo_dark": {
           "path": "brand-assets/production/gurbah/logo-on-dark.svg",
-          "sha256": "f8516d1e60b15852dc0cac7384fcb1b9e9d067a088b881a29b1d3c5ae7b9912b"
+          "sha256": "32e13e705596109a734762f9adc640ccd66b840587b1f0dad716dd3bda0ebda0"
         }
       },
       "reference_state": "user_approved"
@@ -517,19 +517,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/amanah-eco/wordmark-on-light.svg",
-          "sha256": "beb3005215ae55a6af25dc675e7e5e721e00e8635cf1d8ddf15bf494903d5a15"
+          "sha256": "db6916a503d79f8387dcbeee1b549cdf34706d96b0c26db1f260b777d5fcca0b"
         },
         "logo_light": {
           "path": "brand-assets/production/amanah-eco/logo-on-light.svg",
-          "sha256": "8bbea8f816f94f94fe864a9aad4e5f12f3bb6000c34aa10d9b9cfe0dff8db57e"
+          "sha256": "1b6de4e78ce422db7fb2032c1aef391e8d19ef0afc49846c02200bcb13527f03"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/amanah-eco/wordmark-on-dark.svg",
-          "sha256": "28b8939f181b7dd6d707b89d87196ba3e8afba92db9a8babe6dac09a8b6c40b7"
+          "sha256": "ae39df7d42e50acc07c17027353422ef38ea1a463bc5c005179eb8f4f4f68952"
         },
         "logo_dark": {
           "path": "brand-assets/production/amanah-eco/logo-on-dark.svg",
-          "sha256": "e64749267e278abf1b6739e7058b516a185798fa44561012b859a4cf650cf83c"
+          "sha256": "702217c7f2dd7d589a6e9cd777bd3cc42d9a542d370617314d52455379d83c34"
         }
       },
       "reference_state": "user_approved"
@@ -545,19 +545,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/nafas/wordmark-on-light.svg",
-          "sha256": "55adc9ad1bd659fb3fab3242e2db34329ac7bad22158eaf46c0aba382bdad169"
+          "sha256": "2d7a41592aefc71940a95f7bacd29d2efcf2ddedbcf934f367410c7837238663"
         },
         "logo_light": {
           "path": "brand-assets/production/nafas/logo-on-light.svg",
-          "sha256": "aab99be02c33c037f75b641b3c80461cbd58bae2286cb5f65612bf17a9b86da5"
+          "sha256": "1fe99036651411f5b780b0db4337bc64996c22fbf4275bb6e95385ba633e1f14"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/nafas/wordmark-on-dark.svg",
-          "sha256": "f0d37a4de51dbaa90805ecfac9fbeb7a7cd7021c1c2d1769d03fe4ecce4f5d3c"
+          "sha256": "53b947b42120e3bfdce09c74245898bf7c3dc8095bef95a41bfad2eda41fec2d"
         },
         "logo_dark": {
           "path": "brand-assets/production/nafas/logo-on-dark.svg",
-          "sha256": "54ff2f6c04195496f28c8f32039406432976e379c4354c7cd715ad12c3b9b617"
+          "sha256": "af14ca7a40bf5089f748344553fce1f1482da80621af99901ff92e5bdc9cfb61"
         }
       }
     },
@@ -572,19 +572,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/tadweer/wordmark-on-light.svg",
-          "sha256": "55b2dccdc86c67dcfab209a7e0a7d2127b96a9e61831751573f4196b595e5b0e"
+          "sha256": "cf1141b0586664fcba982fe98af6a5e0998ee5b4ae32ea6bea3d7b36b8407a44"
         },
         "logo_light": {
           "path": "brand-assets/production/tadweer/logo-on-light.svg",
-          "sha256": "4d68547ff5dd83f1f1340c5d5ea3360c22630043a71febb7bdd450eebeef2b41"
+          "sha256": "c6bf2b8c12f5405c74882e5f7c45353d65427d13720d3ba37091ac93b3d54c45"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/tadweer/wordmark-on-dark.svg",
-          "sha256": "7ebb883c52542a669e81ef2e8e3a740a6c98e94ad9fe5e9ae3a833fe855254e7"
+          "sha256": "423747a9fcede6adb8437b3a1a2efb00dd661b28995351fdcb2bcd4faf927b8c"
         },
         "logo_dark": {
           "path": "brand-assets/production/tadweer/logo-on-dark.svg",
-          "sha256": "ed5af507de53a9681c00acd55de5ad46b735ddde86c5a8032d99d6258c721b23"
+          "sha256": "d837780e5388b7e5081bd23f2067a0363d9baa81b75c8924196a9d3088b28d1a"
         }
       }
     },
@@ -599,19 +599,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/turath/wordmark-on-light.svg",
-          "sha256": "58f9b782518ea78e8e67ff7eca1d9ff3b86d0e67f6f52f9355e19255d5b96c5b"
+          "sha256": "fd70cbe911e093bf6186810b21498867686fc12f22ebc787de2ec12db819d30b"
         },
         "logo_light": {
           "path": "brand-assets/production/turath/logo-on-light.svg",
-          "sha256": "a222c9aa8fce4c201548de8538b237819c45a02435df4679cea233dfee285685"
+          "sha256": "e5b6237717a022a290192e6f93054644c968b157b3e5855426aca338f109fd20"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/turath/wordmark-on-dark.svg",
-          "sha256": "14971abb6872391e27f3d80218acf98ba296fc00dd5a3516200ddd8b9cde879e"
+          "sha256": "1a355c8a7527dfdb0b139cca0e470b3aa1e2243fdc88ae58df2a7f286c7c6cb3"
         },
         "logo_dark": {
           "path": "brand-assets/production/turath/logo-on-dark.svg",
-          "sha256": "157ded9feca2c157d5994a4e727babeb08d095320a098171dbfddfb246cedf0c"
+          "sha256": "a3c6f9fb096f83e5d6288eda9ed885c7ba1eb2b6aba69608de65ab110da60d77"
         }
       }
     },
@@ -624,19 +624,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/himam/wordmark-on-light.svg",
-          "sha256": "ee3153e57fcea16bc7018868d63a4abfe34d5e808d855d568cd6b9cbf72f4992"
+          "sha256": "1d60ead3f6fbdd28c2a72bf71ad84c1ab1d80ac23982ea57a94e47ec8296877c"
         },
         "logo_light": {
           "path": "brand-assets/production/himam/logo-on-light.svg",
-          "sha256": "d00eb40bcd3a0fad1cb78cc5a8cbadc35b1eb1f99bb7208811d5fd67b68b8719"
+          "sha256": "fdb830d1f85997073b48e54a410cb5f08e0543db49f6ee1ea3ab35801a13d0e9"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/himam/wordmark-on-dark.svg",
-          "sha256": "c9f59b2b7416a342755d40b419f5bae3024d1092cd8560d6b841e04554836818"
+          "sha256": "b120d976f07954b816a9c5ab4222a5cf3f01f8bc4200ee6c26ed6193f5634d1e"
         },
         "logo_dark": {
           "path": "brand-assets/production/himam/logo-on-dark.svg",
-          "sha256": "7678b164a5e5b485c806b63aff3ee6b26b24989d790c01074bd661a02d3840d8"
+          "sha256": "2eaa7e2171a9104e96f5518966202136384ea6cb2befe6fe78a37928df394016"
         }
       },
       "reference_state": "user_approved"
@@ -650,19 +650,19 @@
         },
         "wordmark_light": {
           "path": "brand-assets/production/hisad/wordmark-on-light.svg",
-          "sha256": "fe84ac2e8809668fe81ace0c85b20d979e63822e98b90363c9bd2b73bdc8a4e3"
+          "sha256": "ab5bcae727135a0fbe1070abb94148669d9077d2d2d43cf701c182e76e705a2d"
         },
         "logo_light": {
           "path": "brand-assets/production/hisad/logo-on-light.svg",
-          "sha256": "0b5e544eb41c162a8c8ea1a1a99d85c108fec3fce32971979c827a85e241cbe7"
+          "sha256": "f2cc7a4ed39d2eae9065067c68fba0325eb993886a55b55a18e7329ec73bf789"
         },
         "wordmark_dark": {
           "path": "brand-assets/production/hisad/wordmark-on-dark.svg",
-          "sha256": "c8a7ea46a8ecae01daf3ad193b949f26079e09eca0e6721c4a1fec13cddfa13a"
+          "sha256": "bcc24e0532b36779b4816213e793b8397650d3a055b2fe2d1e418705637e34a4"
         },
         "logo_dark": {
           "path": "brand-assets/production/hisad/logo-on-dark.svg",
-          "sha256": "386f63675f79467fa9ac45a1a7de31815c2395807768d76ecf49987d9ea60530"
+          "sha256": "13d5abd9ea5e2c0146e65cb4c56da5285500049f3e1add7c0430a38d6644d8f7"
         }
       },
       "reference_state": "user_approved"
