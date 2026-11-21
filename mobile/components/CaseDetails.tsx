@@ -1,3 +1,4 @@
+import {useHimayahWorkspaceCopy} from '../src/experience/useHimayahWorkspaceCopy';
 import {InteractiveRecords} from './InteractiveRecords';
 import React,{useState} from 'react';
 import {View,Text,Pressable} from 'react-native';
@@ -9,18 +10,18 @@ import {inputLabel} from '../src/forms';
 import {DataForm} from './DataForm';
 import {Button} from './Controls';
 /** Leaf field editing is shared; the domain chooses order, grouping and disclosure. */
-export function CaseDetails(){
+export function CaseDetails(){const {t,aligned}=useHimayahWorkspaceCopy();
  const app=useApp(),form=caseForms[brandId];const [step,setStep]=useState(0),[pane,setPane]=useState(0),[detail,setDetail]=useState(false);
  const field=(key:string)=><DataForm key={key} label={inputLabel(key)} schema={spec.schema.properties![key]} value={app.draft[key]} onChange={value=>app.setDraft(old=>({...old,[key]:value}))}/>;
- const note=(text:string)=><Text style={s.muted}>{text}</Text>;
- const title=(text:string)=><Text accessibilityRole="header" style={[s.h3,{lineHeight:25}]}>{text}</Text>;
+ const note=(text:string)=><Text style={[s.muted,aligned]}>{text}</Text>;
+ const title=(text:string)=><Text accessibilityRole="header" style={[s.h3,{lineHeight:25},aligned]}>{text}</Text>;
  const section=(name:string,keys:string[],kind:'plain'|'rule'|'sheet'='plain')=><View style={{gap:12,padding:kind==='sheet'?18:0,paddingTop:kind==='rule'?15:kind==='sheet'?18:0,borderTopWidth:kind==='rule'?2:0,borderColor:d.accent,backgroundColor:kind==='sheet'?d.panel:d.bg,borderRadius:kind==='sheet'?d.radius:0}}>{title(name)}{keys.map(field)}</View>;
  const panes=(labels:string[])=><View accessibilityRole="tablist" style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>{labels.map((label,i)=><Pressable key={label} accessibilityRole="tab" accessibilityState={{selected:pane===i}} onPress={()=>setPane(i)} style={{minHeight:48,padding:12,borderBottomWidth:2,borderColor:pane===i?d.accent:d.line,justifyContent:'center'}}><Text style={{fontSize:14,color:pane===i?d.accent:d.muted}}>{label}</Text></Pressable>)}</View>;
  const reveal=(label:string,children:React.ReactNode)=><View style={{gap:12}}><Button secondary title={(detail?'Hide ':'Open ')+label} onPress={()=>setDetail(!detail)}/>{detail&&children}</View>;
  const journey=()=><View style={{gap:16}}><View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>{form.sections.map((x,i)=><Pressable key={x.title} accessibilityRole="button" accessibilityLabel={x.title} accessibilityState={{selected:step===i}} onPress={()=>setStep(i)} style={{minHeight:48,padding:12,borderBottomWidth:2,borderColor:step===i?d.accent:d.line}}><Text style={{color:step===i?d.accent:d.muted,fontSize:14}}>Step {i+1}</Text></Pressable>)}</View>{section(form.sections[step].title,form.sections[step].fields)}{step<form.sections.length-1&&<Button secondary title={'Next: '+form.sections[step+1].title} onPress={()=>setStep(step+1)}/>}</View>;
  let body:React.ReactNode;
  switch(brandId){
- case 'himayah':body=<>{section('The agreement',['text'])}<View style={{borderLeftWidth:3,borderColor:d.accent,paddingLeft:17,gap:12}}>{title('Margin instructions')}{note('Keep clause rules beside the text they govern.')}{field('rules')}</View></>;break;
+ case 'himayah':body=<>{section(t("The agreement"),['text'])}<View style={{borderLeftWidth:3,borderColor:d.accent,paddingLeft:17,gap:12}}>{title(t("Margin instructions"))}{note(t("Keep clause rules beside the text they govern."))}{field('rules')}</View></>;break;
  case 'iqamah':body=<>{section('Dossier reference date',['as_of'],'rule')}{panes(['Route requirements','Documents held'])}{pane===0?section('What the selected route asks for',['requirements'],'sheet'):section('The document shelf',['documents'])}{note('A listed document is not verified eligibility.')}</>;break;
  case 'istithmar':body=<>{section('The activity brief',['activity','currency'])}<View style={{borderTopWidth:1,borderBottomWidth:1,borderColor:d.accent,paddingVertical:16,gap:12}}>{title('Set the comparison horizon')}{field('years')}{field('visas')}</View>{section('Alternatives to compare',['options'])}</>;break;
  case 'munagasah':body=<>{section('Tender clock',['deadline','as_of'],'rule')}{panes(['Buyer requirements','Our evidence'])}{section(pane===0?'Requirement register':'Capability register',[pane===0?'requirements':'capabilities'],'sheet')}{note('Public procurement guidance does not replace the tender pack.')}</>;break;

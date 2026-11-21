@@ -43,6 +43,11 @@ agent output, navigation, other screens and cultural review remain pending.
 Web preview preferences are session-only. The five Himayah navigation
 destinations and drawer accessibility labels now also use the shared locale,
 with a language switch directly in the drawer and Arabic internal branding.
+Mission, evidence and activity screens share 33 translated workspace labels,
+with localized section titles and directional layout. Case-details headings
+also use this dictionary. Original document and evidence content, nested
+form controls, server messages and agent output remain untranslated where
+no verified translation exists.
 This is not full RTL acceptance.
 
 These are review and implementation targets, not claims of completed usability
